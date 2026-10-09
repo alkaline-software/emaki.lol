@@ -1,0 +1,8 @@
+# emaki.lol
+
+> Documentation for emaki
+
+## Pages
+
+- [About](https://emaki.lol/about.llms.md)
+- [emaki](https://emaki.lol/index.llms.md)
