@@ -1,0 +1,15 @@
+---
+title: "404"
+toc: false
+---
+
+<br>
+<center>
+
+# Whoops!
+
+### The requested page does not exist 😔
+
+### [Return to home](https://emaki.lol)
+
+</center>

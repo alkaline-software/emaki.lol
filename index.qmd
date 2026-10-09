@@ -1,0 +1,8 @@
+---
+title: "emaki"
+toc: false
+---
+
+Welcome to the emaki docs. This site is a work in progress.
+
+Press <kbd>?</kbd> for keyboard shortcuts.

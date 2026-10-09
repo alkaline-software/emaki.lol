@@ -1,0 +1,49 @@
+project:
+  type: website
+  output-dir: _site
+  preview:
+    port: 5680
+    browser: true
+  resources:
+    - js/
+
+website:
+  title: emaki.lol
+  description: Documentation for emaki
+  llms-txt: true
+  site-url: https://emaki.lol
+  repo-url: https://github.com/alkaline-software/emaki.lol
+  back-to-top-navigation: true
+  open-graph:
+    site-name: emaki.lol
+  page-footer:
+    background: dark
+    center:
+      - text: "Site made with <i class='bi bi-heart-fill'></i> and <a href='https://quarto.org/' target='_blank'>Quarto</a>"
+
+  navbar:
+    search: true
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "About"
+        href: about.qmd
+    right:
+      # js/navbar-widgets.js swaps this link for the stars/forks widget
+      - icon: github
+        href: https://github.com/alkaline-software/emaki.lol
+
+format:
+  html:
+    theme:
+      light: [cosmo, css/theme.scss]
+      dark: [cosmo, css/theme.scss, css/dark.scss]
+    anchor-sections: true
+    smooth-scroll: true
+    link-external-newwindow: true
+    link-external-icon: false
+    link-external-filter: '^(?:http:|https:)\/\/(?:www\.)?emaki\.lol'
+    toc: true
+    toc-location: right
+    include-after-body:
+      - text: "<script src=\"/js/navbar-widgets.js\"></script>"
