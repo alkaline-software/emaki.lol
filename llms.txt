@@ -1,8 +1,11 @@
-# emaki.lol
+# Emaki
 
-> Documentation for emaki
+> Every coding-agent session on your machine, kept for good, in one window you can also talk to.
 
 ## Pages
 
 - [About](https://emaki.lol/about.llms.md)
-- [emaki](https://emaki.lol/index.llms.md)
+- [index](https://emaki.lol/index.llms.md)
+- [Features](https://emaki.lol/features.llms.md)
+- [Releases](https://emaki.lol/releases.llms.md)
+- [Install](https://emaki.lol/install.llms.md)

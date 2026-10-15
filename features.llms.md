@@ -1,0 +1,121 @@
+# Features
+
+Most of Emaki explains itself once it is open. This is the tour, and the shortcuts are at the foot.
+
+## Sessions and projects
+
+The sidebar lists every project, with pinned ones above the rest and headings at the foot for hidden projects and temporary folders. **All Sessions** unfolds each project in place, every session dated, archived projects in their own section.
+
+Select sessions or projects together — `⌘`-click, `⇧`-click, a dragged rectangle, or `⌘A` — then archive them now, delete them, or open them in Finder. Archive checks Emaki’s own copy first; Delete moves every copy to the Trash. Nothing in a project’s own folder is touched.
+
+A session Claude Code has deleted stays listed, marked *kept*. Renaming a session renames it for Claude Code too. Each one keeps its own draft.
+
+Tabs group into per-project pills, drag to reorder, and answer to `⌘1`–`⌘9`.
+
+## Search
+
+`⌘K` searches every session on the machine. The index holds one document per *item* — a prompt, a reply paragraph, a thought, a tool call — so a hit lands on the thing you remembered rather than the file it was in. Live and archived sessions are searched together.
+
+`⌘F` finds inside the conversation you are reading, `⌘G` and `⌘⇧G` step through the hits.
+
+## Conversation
+
+Prompts, replies, tool calls, thoughts and subagents, laid out like the Claude app. Prompts sit in a bubble with a tail; tool badges are coloured by kind; tool calls, thoughts and rows open and close in motion rather than jumping. Code blocks are syntax-coloured, carry a copy button, and scroll sideways instead of wrapping.
+
+**Explain** puts one plain sentence on an opaque tool call, asked of the session’s own agent — Haiku for Claude Code, Codex’s light model for Codex.
+
+The **outline** (`⌘⇧O`) is a short label per prompt; click one to jump there. A progress note shows as part of the reply, as it does in the terminal, and a running command says what it is for.
+
+## Composer
+
+Type to reply. A session running in a terminal gets the message through Claude Code’s inbox; a finished one resumes under Emaki.
+
+- Attach files by paste, drop, or the **+** button.
+- `@` picks a file or folder from the project. An existing path takes the accent colour.
+- `/` lists the folder’s slash commands.
+- Spelling and grammar are checked as you type (English US and UK; Spanish, French and German spelling on a Mac), with corrections, *Learn Spelling* and *Ignore* on the right-click menu.
+- **Dictation** (`⌘⇧D`) writes down what you say, on this machine, with a model you download in Settings — Qwen3-ASR or Whisper, Chinese and English mixed. macOS for now.
+- Send with `⌘↩︎` or `↩︎`, your choice; `⇧↩︎` is always a new line. Drafts survive quitting.
+
+## Agent control
+
+Mode, model and effort are pills under the composer, each in the agent’s own colours, each opening a list in place. `⇧Tab` steps the mode as it does in the terminal. Approvals, questions and plans arrive as cards — including whatever the agent asks that Emaki has no card for, so nothing waits unseen. A plan is shown on its approval card and kept in the conversation.
+
+Stop a turn from the window, and the stopped message comes back to the composer if the agent had not started on it.
+
+The row under the composer shows context left and rate limits, for both agents.
+
+## Terminal
+
+The button at the top right opens a terminal beside the conversation: a shell in the session’s folder, or the session’s own agent as it runs, drawn whole and two-way. Shells open in tabs. Mouse selection copies on release, mouse-aware programs take clicks and scrolls, and the Mac’s terminal line keys work (`⌘←`, `⌘→`, `⌘⌫`, `⇧↩︎`, `⌘K`).
+
+`⌘⇧S` and `⌘⇧A` show and hide the two sides of the panel.
+
+## Files and editing
+
+The files panel is a tree of the project with git’s marks on it, and it works like a file manager: drag in from Finder, drag rows to move, cut, copy, duplicate, remove with `⌘⌫`, undo with `⌘Z`.
+
+Click a file to open it in a pane beside the conversation:
+
+|  |  |
+|----|----|
+| Code | line numbers, colours, a gutter mark per git change with a card to see or revert it |
+| Markdown | as it reads or as written; a YAML header shows as a table of its fields |
+| CSV | a grid with lettered columns, editable in place, each column its own colour |
+| Parquet | a table with each column’s type and the row count |
+| Word | pages you can type in, style and format, saved with `⌘S` |
+| PowerPoint, Excel | slides drawn as they look, cells with their number formats |
+| PDF | sharp at any width, with search, selection, page previews and a table of contents |
+| HTML | in the system’s web view, scripts and all |
+| Pictures | shown |
+
+Unsaved changes are never lost without asking. Format on save covers ten languages — R, Python, Rust, Go, C and C++, TypeScript, JavaScript, JSON, Markdown, TOML — and is off until you turn it on.
+
+## Git
+
+The **Changes** sheet commits the files you tick, discards several at once, and has a History tab: browse commits, undo the last one, revert one. Push, Pull and Fetch sit where the counts are. Branches can be listed, created, switched (carrying changes along or leaving them behind) and published.
+
+## Settings
+
+`⌘,` opens nine pages: Appearance, Fonts, Composer, Dictate, New sessions, Terminal, Files, Updates, About.
+
+Appearance follows the system or pins light or dark, and the accent is one of six — terracotta, blue, green, violet, teal, graphite. Eight chat faces and four monospace faces ship with the app, all under the Open Font License, with one text size across the conversation, the file editor and the terminal.
+
+## What it will not do
+
+These hold everywhere, by design:
+
+- **No hooks, ever.**
+- Nothing writes to a transcript. The JSONL file is the only source of truth, and Emaki is a reader of it.
+- Nothing Emaki does enters a session’s context window.
+- Nothing is typed into a terminal of yours, and no terminal app is asked for anything. Emaki runs its own, hidden.
+- Copy first, render second. If rendering fails, the bytes are already safe.
+
+## Keyboard
+
+`⌘` on macOS, `Ctrl` elsewhere.
+
+|                     |                                              |
+|---------------------|----------------------------------------------|
+| `⌘K`                | search every session                         |
+| `⌘F` · `⌘G` · `⌘⇧G` | find in this conversation, next, previous    |
+| `⌘N`                | new session                                  |
+| `⌘T`                | new session in this project                  |
+| `⌘O`                | choose a folder                              |
+| `⌘L`                | sessions                                     |
+| `⌘E`                | agents                                       |
+| `⌘,`                | settings                                     |
+| `⌘B`                | sidebar                                      |
+| `⌘⇧E`               | files panel                                  |
+| `⌘⇧O`               | outline                                      |
+| `⌘⇧S` · `⌘⇧A`       | the terminal panel’s shell, the agent’s side |
+| `⌘1`–`⌘9`           | tabs                                         |
+| `⌘W` · `⌘⇧T`        | close a tab, reopen the last                 |
+| `⌘S`                | save the file                                |
+| `⌘↩︎`                | send                                         |
+| `⌘⇧N`               | new branch                                   |
+| `⌘⇧D`               | dictate                                      |
+| `⌘R`                | refresh                                      |
+| `Esc`               | stop, or close what is open                  |
+
+Back to top

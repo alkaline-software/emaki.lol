@@ -1,7 +1,54 @@
 # About
 
-## Overview
+## The name
 
-About emaki. Content coming soon.
+An *emaki* (絵巻) is a Japanese picture handscroll: a long painted scene held between two rolls of paper, read by winding it from one to the other, a span at a time. It is a good name for a window whose job is a conversation too long to see at once.
+
+The app’s icon is a handscroll seen from the front, with a conversation on its sheet — the agent on the left with its spark, your reply on the right. The drawing on the home page is the same scroll, with a landscape on it, and it winds as you move across it.
+
+## Why it exists
+
+Claude Code deletes its transcripts after `cleanupPeriodDays`, thirty by default, with no warning. Every other tool in this space reads `~/.claude/projects` and stops there, so they all inherit that expiry.
+
+So Emaki copies first and renders second. The archive sweep runs before anything else touches a session, for exactly this reason: if rendering fails, the bytes are already safe. The archive is not a backup but a peer source — live and archived transcripts are unioned, so a session Claude Code has deleted stays listed, searchable, renderable and exportable, flagged as *kept*.
+
+Compaction, for what it is worth, was never the threat: it appends a boundary and keeps writing to the same file, leaving the earlier rows intact.
+
+## How it is built
+
+Rust, with [GPUI](https://www.gpui.rs) — the Zed editor’s UI framework — and [gpui-component](https://github.com/longbridge/gpui-component) for the window. There is no daemon, no browser and no hook.
+
+    crates/emaki-core    everything without a window, plus the emaki-core CLI
+    crates/emaki-app     the window
+    vendor/              the gpui-component crates, with a few changes of ours
+    scripts/             packaging, the icon, the status line
+
+The core works in this order:
+
+1.  **Adapters**, one per agent, find each agent’s sessions on disk.
+2.  **Archive** copies them byte for byte, before anything else touches them.
+3.  **Build** parses the JSONL transcript into a model of rounds, items and tool calls. The transcript is the only source of truth.
+4.  **Render** writes that model as markdown under `~/.emaki/logs`.
+5.  **Search** indexes every item in SQLite FTS5.
+
+The app reads the same model and draws it. A file watcher says when to look again. To reply, it either writes to a terminal session’s inbox socket or runs a headless `claude -p --resume` child that appends to the same transcript.
+
+## Where it is going
+
+Three stages. The first is a complete app for Claude Code — permanent history, organization by recency, project and agent, readable conversations, and an explanation on any step. The second is the public release and the feedback that comes with it. The third extends the same features to Codex, Kimi and the other mainstream coding agents, so Emaki works across all of them.
+
+Codex support landed in v0.2.0; the [releases](releases.llms.md) are the honest record of where things actually are.
+
+## Credits
+
+The home page’s figure follows the line-drawing manner of [hairline](https://github.com/lucasmarkes/hairline)’s figures: nothing filled, no words, what is far is dimmer, and one bright mark.
+
+Icons are [Tabler](https://tabler.io/icons)’s outline set, drawn at a stroke of 1.75 where Tabler’s own is 2. The file tree’s icons are [Catppuccin](https://github.com/catppuccin/vscode-icons)’s. The code colours are [Rosé Pine](https://rosepinetheme.com)’s hues, retinted for contrast. The terminal keeps [Kaku](https://github.com/kakuapp)’s cream in the light appearance. Every face the app carries is under the SIL Open Font License.
+
+## Licence
+
+MIT. © 2026 John Paul Helveston, Pingfan Hu, and Alkaline Software.
+
+The source is at [github.com/alkaline-software/emaki](https://github.com/alkaline-software/emaki), and this site’s at [github.com/alkaline-software/emaki.lol](https://github.com/alkaline-software/emaki.lol).
 
 Back to top

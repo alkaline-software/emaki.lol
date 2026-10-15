@@ -2,10 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://emaki.lol/about.html</loc>
-    <lastmod>2026-10-09T11:47:29.943Z</lastmod>
+    <lastmod>2026-10-15T10:51:04.556Z</lastmod>
   </url>
   <url>
     <loc>https://emaki.lol/index.html</loc>
-    <lastmod>2026-10-09T11:47:29.923Z</lastmod>
+    <lastmod>2026-10-15T10:51:04.557Z</lastmod>
+  </url>
+  <url>
+    <loc>https://emaki.lol/features.html</loc>
+    <lastmod>2026-10-15T10:51:04.557Z</lastmod>
+  </url>
+  <url>
+    <loc>https://emaki.lol/releases.html</loc>
+    <lastmod>2026-10-15T10:51:04.557Z</lastmod>
+  </url>
+  <url>
+    <loc>https://emaki.lol/install.html</loc>
+    <lastmod>2026-10-15T10:51:04.557Z</lastmod>
   </url>
 </urlset>

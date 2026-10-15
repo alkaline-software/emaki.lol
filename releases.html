@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Releases – Emaki</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./assets/favicon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a8ed1fdfbcec6579b90b7ee144169e0.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-bab0f5612fed1953452f8dfcc661655a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-976c8dd317a6c0fdb0a6b2707c48f89b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;family=Belleza&amp;display=swap">
+
+
+<meta property="og:title" content="Releases – Emaki">
+<meta property="og:description" content="Every coding-agent session on your machine, kept for good, in one window you can also talk to.">
+<meta property="og:image" content="https://emaki.lol/assets/emaki-icon.png">
+<meta property="og:site_name" content="Emaki">
+<meta property="og:image:height" content="512">
+<meta property="og:image:width" content="512">
+</head>
+
+<body class="nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = true;
+    const darkModeDefault = authorPrefersDark;
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./assets/emaki-icon.png" alt="" class="navbar-logo light-content">
+    <img src="./assets/emaki-icon.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Emaki</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./install.html"> 
+<span class="menu-text">Install</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./features.html"> 
+<span class="menu-text">Features</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./releases.html" aria-current="page"> 
+<span class="menu-text">Releases</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/alkaline-software/emaki"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#v0.2.6-15-october-2026" id="toc-v0.2.6-15-october-2026" class="nav-link active" data-scroll-target="#v0.2.6-15-october-2026">v0.2.6 · 15 October 2026</a></li>
+  <li><a href="#v0.2.5-14-october-2026" id="toc-v0.2.5-14-october-2026" class="nav-link" data-scroll-target="#v0.2.5-14-october-2026">v0.2.5 · 14 October 2026</a></li>
+  <li><a href="#v0.2.4-13-october-2026" id="toc-v0.2.4-13-october-2026" class="nav-link" data-scroll-target="#v0.2.4-13-october-2026">v0.2.4 · 13 October 2026</a></li>
+  <li><a href="#v0.2.3-13-october-2026" id="toc-v0.2.3-13-october-2026" class="nav-link" data-scroll-target="#v0.2.3-13-october-2026">v0.2.3 · 13 October 2026</a></li>
+  <li><a href="#v0.2.2-12-october-2026" id="toc-v0.2.2-12-october-2026" class="nav-link" data-scroll-target="#v0.2.2-12-october-2026">v0.2.2 · 12 October 2026</a></li>
+  <li><a href="#v0.2.1-11-october-2026" id="toc-v0.2.1-11-october-2026" class="nav-link" data-scroll-target="#v0.2.1-11-october-2026">v0.2.1 · 11 October 2026</a></li>
+  <li><a href="#v0.2.0-10-october-2026" id="toc-v0.2.0-10-october-2026" class="nav-link" data-scroll-target="#v0.2.0-10-october-2026">v0.2.0 · 10 October 2026</a></li>
+  <li><a href="#v0.1.9-9-october-2026" id="toc-v0.1.9-9-october-2026" class="nav-link" data-scroll-target="#v0.1.9-9-october-2026">v0.1.9 · 9 October 2026</a></li>
+  <li><a href="#v0.1.8-8-october-2026" id="toc-v0.1.8-8-october-2026" class="nav-link" data-scroll-target="#v0.1.8-8-october-2026">v0.1.8 · 8 October 2026</a></li>
+  <li><a href="#v0.1.7-7-october-2026" id="toc-v0.1.7-7-october-2026" class="nav-link" data-scroll-target="#v0.1.7-7-october-2026">v0.1.7 · 7 October 2026</a></li>
+  <li><a href="#v0.1.6-6-october-2026" id="toc-v0.1.6-6-october-2026" class="nav-link" data-scroll-target="#v0.1.6-6-october-2026">v0.1.6 · 6 October 2026</a></li>
+  <li><a href="#v0.1.5-4-october-2026" id="toc-v0.1.5-4-october-2026" class="nav-link" data-scroll-target="#v0.1.5-4-october-2026">v0.1.5 · 4 October 2026</a></li>
+  <li><a href="#v0.1.4-3-october-2026" id="toc-v0.1.4-3-october-2026" class="nav-link" data-scroll-target="#v0.1.4-3-october-2026">v0.1.4 · 3 October 2026</a></li>
+  <li><a href="#v0.1.3-2-october-2026" id="toc-v0.1.3-2-october-2026" class="nav-link" data-scroll-target="#v0.1.3-2-october-2026">v0.1.3 · 2 October 2026</a></li>
+  <li><a href="#v0.1.2-30-september-2026" id="toc-v0.1.2-30-september-2026" class="nav-link" data-scroll-target="#v0.1.2-30-september-2026">v0.1.2 · 30 September 2026</a></li>
+  <li><a href="#v0.1.1-29-september-2026" id="toc-v0.1.1-29-september-2026" class="nav-link" data-scroll-target="#v0.1.1-29-september-2026">v0.1.1 · 29 September 2026</a></li>
+  <li><a href="#v0.1.0-29-september-2026" id="toc-v0.1.0-29-september-2026" class="nav-link" data-scroll-target="#v0.1.0-29-september-2026">v0.1.0 · 29 September 2026</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Releases</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Every release, newest first. The installers are on the <a href="https://github.com/alkaline-software/emaki/releases">releases page</a>; the app also updates itself from Settings.</p>
+<section id="v0.2.6-15-october-2026" class="level2">
+<h2 class="anchored" data-anchor-id="v0.2.6-15-october-2026">v0.2.6 · 15 October 2026</h2>
+<ul>
+<li>Dictation post-processing: a small model downloaded to this Mac (Qwen3.5 4B, 2B or 0.8B) removes hesitations, applies corrections (“100, no, 200”), mends grammar and makes lists, in any language, without translating. Turn it on in Settings, Dictate.</li>
+<li>Settings, Dictate has two lists, Speech to Text and Post-processing, each showing the model in use and opening to the rest. Several models can download at once.</li>
+<li>Dictation history: kept on this Mac for as long as you choose, with a window to look back and copy what was said, as heard or post-processed.</li>
+<li>Dictation starts and stops on a modifier tapped alone, such as Right ⌘ or Fn, chosen under More; Esc cancels it while listening. Softer chimes.</li>
+<li>The Agents page shows the steps for this machine only, and GitHub in place of GitHub Desktop.</li>
+<li>Every button has an icon, and every Off and On switch turns at a click anywhere on it.</li>
+<li>Fixes: sessions ordered by when they last did something; a tooltip left on screen after its sheet closed; text that went on selecting after a click in the Changes sheet; scrolling in a window over Settings.</li>
+</ul>
+</section>
+<section id="v0.2.5-14-october-2026" class="level2">
+<h2 class="anchored" data-anchor-id="v0.2.5-14-october-2026">v0.2.5 · 14 October 2026</h2>
+<ul>
+<li>Dictation: talk into the composer with the microphone button or ⌘⇧D. A model you download in Settings, Dictate (Qwen3-ASR or Whisper) writes it down on this Mac, Chinese and English mixed. Mac only for now.</li>
+<li>The Changes sheet commits the files you tick and has a History tab: browse commits, undo the last one or revert one. Push, Pull and Fetch sit where the counts are.</li>
+<li>Settings has a page a section, Off and On for every switch, a field for dictation’s key with Reset, and an About page.</li>
+<li>Codex sessions are archived, unarchived and deleted through Codex itself, and an archived session is unarchived from its menu in the sidebar.</li>
+<li>The Agents page walks through installing git and each agent and signing in, a numbered step at a time, for the system you choose.</li>
+<li>Cards that come up while a session runs stand at the conversation’s end and scroll with it; a dialog’s tabs sit in a strip with arrows.</li>
+<li>A Claude Code left running after its terminal closed is named as such, with a button to stop it and continue here.</li>
+<li>Fixes: square corners that showed past rounded panels, sheets, menus and cards; Codex’s usage limits.</li>
+</ul>
+</section>
+<section id="v0.2.4-13-october-2026" class="level2">
+<h2 class="anchored" data-anchor-id="v0.2.4-13-october-2026">v0.2.4 · 13 October 2026</h2>
+<ul>
+<li>Whatever an agent asks is shown: a question Emaki has no card for, such as Claude Code asking whether a new folder is trusted, comes up on the terminal card in the conversation and no longer waits unseen.</li>
+<li>Sessions in the sidebar are selected together with ⌘-click, ⇧-click or a dragged rectangle, across projects, and archived or deleted from their menu. A selection is projects or sessions, whichever was touched first.</li>
+<li>A project’s menu in the sidebar archives or deletes its sessions, for one project or several.</li>
+<li>The Changes sheet selects files the same ways, has a right-click menu, discards several files at once, and closes with ⌘W.</li>
+<li>A markdown file’s YAML header shows as a table of its fields over the text.</li>
+<li>⇧↑ and ⇧↓ select to the start and the end in every one-line field.</li>
+<li>The buttons on question cards are pills with an icon, as Select on All Sessions is.</li>
+<li>Fixes: a table column no longer breaks a word in its middle.</li>
+</ul>
+</section>
+<section id="v0.2.3-13-october-2026" class="level2">
+<h2 class="anchored" data-anchor-id="v0.2.3-13-october-2026">v0.2.3 · 13 October 2026</h2>
+<ul>
+<li>The sidebar lists every project and scrolls; pinned projects stay put above the rest, up to half the list.</li>
+<li>Projects in the sidebar are selected together with ⌘-click, ⇧-click, a dragged rectangle or ⌘A, then opened in Finder or hidden. Hidden projects and ones run in temporary folders sit under their own headings at the foot.</li>
+<li>All Projects is now All Sessions, with a scroll for its icon: projects unfold in place, each row shows its date, and archived projects have their own section.</li>
+<li>Sessions can be selected there, by project or one by one, and archived now or deleted. Archive checks Emaki’s copy first; Delete moves every copy to the Trash. Nothing in a project’s folder is touched.</li>
+<li>An agent’s progress notes show as part of the reply, as in the terminal, and a running command says what it is for.</li>
+<li>Code blocks no longer wrap: a wide one scrolls sideways.</li>
+<li>A session begun by <code>/clear</code> opens with <code>/clear</code>, and no longer flashes under a stray folder in the sidebar.</li>
+<li>“New messages” scrolls down to the new part, and a project opened near the foot of a list scrolls into view.</li>
+<li>Fixes: stray lines around the logo in About.</li>
+</ul>
+</section>
+<section id="v0.2.2-12-october-2026" class="level2">
+<h2 class="anchored" data-anchor-id="v0.2.2-12-october-2026">v0.2.2 · 12 October 2026</h2>
+<ul>
+<li>Word documents open as pages and can be written in: type, select, style, format, undo and save with ⌘S, on WordCraft’s engine. Try it on a copy first: a save rewrites the file.</li>
+<li>PowerPoint slides are drawn as they look, Excel cells show their number formats, and PDF pages are sharp at any width.</li>
+<li>HTML files show in the system’s web view, scripts and all.</li>
+<li>Parquet files open as a table, with each column’s type and the file’s row count.</li>
+<li>The files tree works like a file manager: drag files in from Finder, drag rows to move them, cut, copy, duplicate, remove with ⌘⌫, and take it all back with ⌘Z and ⌘⇧Z.</li>
+<li>Files, folders and sessions are renamed in place, and tables keep their heads in view and select blocks of cells.</li>
+<li>A file can take over the conversation’s room with the enlarge button, and files open as they read rather than as source.</li>
+<li>Explanations and outline labels come from the session’s own agent: Haiku for Claude Code, Codex’s light model for Codex.</li>
+<li>⌘↩︎ or the send button with nothing typed starts a session on the home page, and each agent’s page links to its sessions.</li>
+<li>What is typed in the composer survives closing the window, and Settings has an About section.</li>
+<li>Fixes: the keyboard is no longer lost after a file closes, ⌘W closes a file or a tab before the window, and pages no longer blink when the pane is resized.</li>
+</ul>
+</section>
+<section id="v0.2.1-11-october-2026" class="level2">
+<h2 class="anchored" data-anchor-id="v0.2.1-11-october-2026">v0.2.1 · 11 October 2026</h2>
+<ul>
+<li>A new look: the sidebar and a thin frame around the content in graphite, the page near white, and in the dark appearance a darker page in a lighter frame.</li>
+<li>Settings, Fonts: eight chat fonts and four monospace fonts, all built into the app, and one font size for the conversation, the file editor and the terminal.</li>
+<li>Format on save covers ten languages: R, Python, Rust, Go, C and C++, TypeScript, JavaScript, JSON, Markdown and TOML. It is off until you turn it on.</li>
+<li>A message shows in the conversation the moment it is sent, a prompt’s bubble has a tail, and tool badges are in colour.</li>
+<li>Pin a project to the top of the sidebar, start a session in the current project with ⌘T, and choose a folder with ⌘O.</li>
+<li>/clear is followed to the session it starts.</li>
+<li>In the files panel: ⌘A selects everything, and a drag over the rows selects the ones it covers.</li>
+<li>A right click in the file editor selects the word under it.</li>
+<li>Explanations work with Codex alone: when Claude Code is not installed, a light Codex model writes them.</li>
+<li>The home page says so when no agent is installed, and points to the Agents page, which lists GitHub Desktop too.</li>
+<li>Settings is shorter: one Spelling Check entry with its languages, flags on the languages, icons on the themes, and fewer notes.</li>
+<li>Fixes: “New messages” glides to the end, buttons and menu rows show in the dark appearance, and a small window shows one pane at a time.</li>
+</ul>
+</section>
+<section id="v0.2.0-10-october-2026" class="level2">
+<h2 class="anchored" data-anchor-id="v0.2.0-10-october-2026">v0.2.0 · 10 October 2026</h2>
+<ul>
+<li>Codex joins Claude Code: its sessions are kept, read and searched, and you can start, continue and stop one from the window, with its approvals, questions and plans on the same cards.</li>
+<li>Codex’s own terminal is on the terminal panel, joined to the same session, so a turn typed there shows in the conversation and the other way round.</li>
+<li>An Agents page (⌘E) says which agents are installed and signed in, with the commands to set one up and a shell beside them.</li>
+<li>A new session’s agent is chosen on the strip under the composer, also on one begun from a project’s plus. Its mode, effort and model are lists there, and Settings, New sessions has them for each agent.</li>
+<li>The mode pill opens a list for Claude Code too, in each mode’s colour; ⇧Tab still steps as in the terminal.</li>
+<li>The row under the composer shows context and usage for Codex, with whatever windows its plan has.</li>
+<li>Each agent has its colour: Claude’s terracotta and Codex’s green, on its mark and on its page.</li>
+<li>Tabs keep a readable width and scroll once they no longer fit, the tab you are on stays in view, and ⌘ shows 1 to 9 on the tabs those keys go to.</li>
+<li>Branches: fetch, make a branch from the list, publish a local one, and see how to sign in when the remote refuses.</li>
+<li>A plan is shown on its approval card and stays in the conversation, and tool calls, thoughts and rows open and close in motion.</li>
+<li>The archive is a folder an agent; an older one is moved into place at launch.</li>
+<li>Fixes: a session begun from a folder no longer ends with “No conversation found”, and lists in the dark appearance show the row under the pointer.</li>
+</ul>
+</section>
+<section id="v0.1.9-9-october-2026" class="level2">
+<h2 class="anchored" data-anchor-id="v0.1.9-9-october-2026">v0.1.9 · 9 October 2026</h2>
+<ul>
+<li>Edit files in the pane beside the conversation and save with ⌘S. Unsaved changes are never lost without asking, and git’s changes are marked in the margin, each with a card to see or revert it.</li>
+<li>A CSV opens as a grid with lettered columns and numbered rows; edit a cell in place, or edit the file as written, where each column has its own colour.</li>
+<li>Word, PowerPoint and Excel files (docx, pptx, xlsx, xls) open to read.</li>
+<li>Tabs are grouped by project into pills; drag a tab within its pill, or a pill by its folder mark.</li>
+<li>The home page is the greeting and the composer, with the folder to start in on a strip under it: four recent folders, or any folder you choose.</li>
+<li>A plus on a project in the sidebar starts a new session there, on a tab of its own.</li>
+<li>In the files panel: Copy and Paste on the menu, ⌘C and ⌘V on a row (to and from Finder too), and ⌘Z to take a paste back.</li>
+<li>Discard a file’s changes from the Changes panel, after a confirmation.</li>
+<li>A rename made while the agent is working waits its turn, and the new name shows only once it is real.</li>
+<li>Settings, Files: turn formatting R files on save (Air) on or off.</li>
+<li>Copying from the agent’s terminal reaches the clipboard, and a session stays in the folder it started in.</li>
+<li>Emaki no longer asks any terminal app for anything.</li>
+</ul>
+</section>
+<section id="v0.1.8-8-october-2026" class="level2">
+<h2 class="anchored" data-anchor-id="v0.1.8-8-october-2026">v0.1.8 · 8 October 2026</h2>
+<ul>
+<li>Click a file in the files panel to read it in a pane beside the conversation; click it again, or press ⌘W, to close it.</li>
+<li>That pane shows code with line numbers and colours, markdown as it reads or as written, pictures, tables, and PDFs with search, selection, page previews and a table of contents.</li>
+<li>The composer checks spelling and grammar as you type (English US or UK; Spanish, French and German spelling on a Mac) and capitalizes a new sentence. Right-click a marked word for corrections, Learn Spelling or Ignore.</li>
+<li>Every text field has Emaki’s own right-click menu.</li>
+<li>The conversation follows new content when you are near the bottom, and a “New messages” button takes you to what arrived while you were reading higher up.</li>
+<li>One terminal look for the shell and the agent’s screen, after Kaku, with a Terminal section in Settings.</li>
+<li>⌘⇧T and ⌘⇧A show and hide the two sides of the terminal panel; in the shell, ⌘T opens a tab and ⌘W closes it.</li>
+<li>The model and effort pills open a list in place, and code blocks in a conversation are coloured.</li>
+<li>The archive copies sessions as clones where the disk allows, and a session its agent deleted stays listed as archived.</li>
+<li>New icons (Tabler); the board is gone, and Projects is now All Projects.</li>
+<li>A folder inside a repository shows git’s marks for its own files only.</li>
+<li>Fixes: a question with previews reads correctly and can be answered, a session whose process is gone stops showing as working, and a stopped prompt is not sent twice.</li>
+</ul>
+</section>
+<section id="v0.1.7-7-october-2026" class="level2">
+<h2 class="anchored" data-anchor-id="v0.1.7-7-october-2026">v0.1.7 · 7 October 2026</h2>
+<ul>
+<li>A terminal inside Emaki, at the conversation’s right: shells in tabs, and the session’s own agent as it runs. Nothing opens a terminal app any more.</li>
+<li>In it: select with the mouse (copied on release), click and scroll in programs that take the mouse, and the line keys of a Mac terminal (⌘←, ⌘→, ⌘⌫, ⇧↩︎, ⌘K).</li>
+<li>A files panel beside the conversation: the project’s folder as a tree with git’s marks, a file’s contents, and what changed.</li>
+<li>Switch branches from the files panel, carrying your changes along or leaving them behind to restore later.</li>
+<li>An outline of the conversation, a short label per prompt; click one to go there.</li>
+<li>Right-click menus on sessions, tabs, files, the conversation, attachments and the branch name.</li>
+<li>Code blocks have a copy button, and a right click on a word selects it.</li>
+<li>Settings, Composer: send with ⌘↩︎ or with ↩︎; ⇧↩︎ is always a new line.</li>
+<li>Running subagents show in a row over the composer; click it to see them.</li>
+<li>Hold ⌘ to see each tab’s number.</li>
+<li>A question asked in a named session shows as a card, and “Type something” takes your own answer.</li>
+</ul>
+</section>
+<section id="v0.1.6-6-october-2026" class="level2">
+<h2 class="anchored" data-anchor-id="v0.1.6-6-october-2026">v0.1.6 · 6 October 2026</h2>
+<ul>
+<li>Sessions run in a hidden terminal of Emaki’s own; nothing done in Emaki touches a terminal of yours.</li>
+<li>⇧Tab or the mode pill changes the mode in place; the model and effort pills show Claude Code’s picker on a card.</li>
+<li>Type <code>@</code> in the composer to pick a file or folder from the project; a path that exists takes the accent colour.</li>
+<li>A command left running in the background shows in a row over the composer; click it for its output.</li>
+<li>Set your own picture and name in Settings, Appearance.</li>
+<li>Drag the sidebar’s edge to resize it, or double-click the edge to fit it.</li>
+<li>The sidebar lists Agents and Projects on cards; the Projects page lists projects first, then their sessions.</li>
+<li>Tabs switch instantly, share the row, drag to reorder, and answer to ⌘1 to ⌘9.</li>
+<li>Renaming a session renames it for Claude Code too, and every session keeps its own draft.</li>
+<li>The sidebar button and search sit beside the traffic lights; the terminal button opens your default terminal.</li>
+<li>New icons (Phosphor), and scrollbars that fade after a second.</li>
+</ul>
+</section>
+<section id="v0.1.5-4-october-2026" class="level2">
+<h2 class="anchored" data-anchor-id="v0.1.5-4-october-2026">v0.1.5 · 4 October 2026</h2>
+<ul>
+<li>A new icon: the scroll on cream, with a conversation on its sheet.</li>
+<li>A question or approval waiting in a terminal shows as a card in the window; answer it and move between its questions there.</li>
+<li>While Claude works in a terminal, the row under the conversation shows the terminal’s own line (“Embellishing… (13s · ↓ 1.0k tokens)”) in its colours.</li>
+<li>The prompt Claude Code suggests after a turn shows in the composer; → or Tab takes it.</li>
+<li>A session started in Emaki shows in the terminal’s resume list.</li>
+<li>Modes, models and effort levels are read from Claude Code and coloured as it colours them.</li>
+<li>A change of mode, model or effort is one short line in the conversation.</li>
+<li>⇧Tab in the composer steps a terminal session’s mode, and the pill follows.</li>
+<li>The effort and model pills open the session’s terminal when it has none, then the picker there.</li>
+<li>Stop, or Escape, gives your message back only when Claude had not started on it, and sending it again works.</li>
+<li>In the composer, ⇧↑ and ⇧↓ select one line at a time, and a paste or dictation scrolls to the caret.</li>
+<li>Durations read in whole seconds.</li>
+</ul>
+</section>
+<section id="v0.1.4-3-october-2026" class="level2">
+<h2 class="anchored" data-anchor-id="v0.1.4-3-october-2026">v0.1.4 · 3 October 2026</h2>
+<ul>
+<li>A new icon: a handscroll on the terracotta plate.</li>
+<li>The home page shows recent folders as cards under a serif greeting.</li>
+<li>Recents and the sessions page are grouped by day, and a live row shows its state.</li>
+<li>The board is four open columns that reflow with the window and never scroll sideways.</li>
+<li>Settings has sections and segmented controls. Updates are one button.</li>
+<li>Type “/” for the folder’s slash commands. A command runs; a skill goes into the message.</li>
+<li>Claude’s questions show as cards, and a session started in Emaki answers them from the window.</li>
+<li>Stop a turn from the window. The stopped message returns to the composer.</li>
+<li>On a terminal session, questions, approvals, commands, mode, model and effort take you to the terminal, and the window comes back when you are done.</li>
+<li>A message sent while Claude is working shows at once, marked as queued.</li>
+<li>Fixed: <code>/compact</code> left the board on “working”, and the context percentage used the wrong window size.</li>
+<li>Softer shadows, pages that fade in, less work while idle.</li>
+</ul>
+</section>
+<section id="v0.1.3-2-october-2026" class="level2">
+<h2 class="anchored" data-anchor-id="v0.1.3-2-october-2026">v0.1.3 · 2 October 2026</h2>
+<ul>
+<li>The terminal, project folder and transcript buttons sit together at the top right.</li>
+<li>The session’s folder path is under the tabs, in place of the long line of stats.</li>
+<li>The app’s icon and name are in the sidebar.</li>
+<li>A copy button and the time appear under a prompt or reply on hover.</li>
+<li>Inline code is drawn in the accent colour on a tinted plate, as in the Claude app.</li>
+<li>Code is set in SF Mono, or Anthropic Mono when it is in <code>~/.emaki/fonts</code>.</li>
+<li>A tool card names its tool once.</li>
+</ul>
+</section>
+<section id="v0.1.2-30-september-2026" class="level2">
+<h2 class="anchored" data-anchor-id="v0.1.2-30-september-2026">v0.1.2 · 30 September 2026</h2>
+<ul>
+<li>The status line script ships with the app and feeds the limits row. <code>emaki-core statusline restore</code> puts the old setting back.</li>
+<li>Open in your terminal: continue a session with <code>claude --resume</code> in a terminal window.</li>
+<li>A session opens at its end and follows the reply as it streams.</li>
+<li>Text matches the Claude app: 16px, semibold for bold, monospaced inline code.</li>
+<li>Claude’s own mark, turning while it works.</li>
+<li>Notices show under the composer, not in the sidebar.</li>
+<li>Fixed: bold drew as regular, scroll momentum crossed panes, arrow keys stopped short of the composer’s ends.</li>
+</ul>
+</section>
+<section id="v0.1.1-29-september-2026" class="level2">
+<h2 class="anchored" data-anchor-id="v0.1.1-29-september-2026">v0.1.1 · 29 September 2026</h2>
+<p>The app stands alone. The Python command-line tool and web daemon are gone.</p>
+<ul>
+<li>Emaki updates itself, from Settings or a daily check.</li>
+<li>Explain: one plain sentence on what an opaque tool call does, on tool cards and permission cards.</li>
+<li>Context and rate limits under the composer.</li>
+<li>Long tool output scrolls inside its card.</li>
+<li>Pasted pictures show their names.</li>
+<li>Fixed: a crash on some Codex sessions, and ⌘↩︎ leaving a line break.</li>
+<li>No hooks. If <code>~/.claude/settings.json</code> still has entries naming <code>emaki-hook</code>, delete them.</li>
+</ul>
+</section>
+<section id="v0.1.0-29-september-2026" class="level2">
+<h2 class="anchored" data-anchor-id="v0.1.0-29-september-2026">v0.1.0 · 29 September 2026</h2>
+<p>The first release. Emaki keeps every coding-agent session on your machine and lets you read, search and continue them in one window.</p>
+<ul>
+<li>Every Claude Code and Codex session is archived byte for byte, and stays after Claude Code deletes it.</li>
+<li>A board of live sessions: needs you, planning, working, your turn.</li>
+<li>Full-text search across every session (⌘K), and find inside one (⌘F).</li>
+<li>A conversation view laid out like the Claude app.</li>
+<li>Reply from the window, with attachments, permission cards, and mode, model and effort pills.</li>
+<li>Every session also renders to a markdown file.</li>
+<li>Settings for appearance, accent, font and text size.</li>
+</ul>
+<p>Install: on macOS drag Emaki to Applications (signed and notarized). On Windows SmartScreen asks once: <em>More info</em>, then <em>Run anyway</em>. On Linux run the AppImage or install the <code>.deb</code>.</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("^(?:http:|https:)\/\/(?:www\.)?emaki\.lol");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ Site made with <i class="bi bi-heart-fill"></i> and <a href="https://quarto.org/" target="_blank">Quarto</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script src="js/navbar-widgets.js"></script>
+<script src="js/hero-scroll.js"></script>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

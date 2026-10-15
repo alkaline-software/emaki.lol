@@ -2,20 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – emaki.lol</title>
+<title>About – Emaki</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -33,20 +36,19 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./assets/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a8ed1fdfbcec6579b90b7ee144169e0.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8f07520eb40add9e4e65e209de3c216c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-1f9976ac7639e48976c8033805466498.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-8f07520eb40add9e4e65e209de3c216c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-bab0f5612fed1953452f8dfcc661655a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-976c8dd317a6c0fdb0a6b2707c48f89b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,14 +77,20 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;family=Belleza&amp;display=swap">
 
 
-<meta property="og:title" content="About – emaki.lol">
-<meta property="og:description" content="Documentation for emaki">
-<meta property="og:site_name" content="emaki.lol">
+<meta property="og:title" content="About – Emaki">
+<meta property="og:description" content="Every coding-agent session on your machine, kept for good, in one window you can also talk to.">
+<meta property="og:image" content="https://emaki.lol/assets/emaki-icon.png">
+<meta property="og:site_name" content="Emaki">
+<meta property="og:image:height" content="512">
+<meta property="og:image:width" content="512">
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -224,10 +232,8 @@ ul.task-list li input[type="checkbox"] {
         changeGiscusTheme();
       }
     };
-    const authorPrefersDark = false;
+    const authorPrefersDark = true;
     const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
     let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
     // Dark / light mode switch
     window.quartoToggleColorScheme = () => {
@@ -251,8 +257,12 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./assets/emaki-icon.png" alt="" class="navbar-logo light-content">
+    <img src="./assets/emaki-icon.png" alt="" class="navbar-logo dark-content">
+    </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">emaki.lol</span>
+    <span class="navbar-title">Emaki</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -266,13 +276,25 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./install.html"> 
+<span class="menu-text">Install</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./features.html"> 
+<span class="menu-text">Features</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./releases.html"> 
+<span class="menu-text">Releases</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link active" href="./about.html" aria-current="page"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/alkaline-software/emaki.lol"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/alkaline-software/emaki"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -293,7 +315,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#the-name" id="toc-the-name" class="nav-link active" data-scroll-target="#the-name">The name</a></li>
+  <li><a href="#why-it-exists" id="toc-why-it-exists" class="nav-link" data-scroll-target="#why-it-exists">Why it exists</a></li>
+  <li><a href="#how-it-is-built" id="toc-how-it-is-built" class="nav-link" data-scroll-target="#how-it-is-built">How it is built</a></li>
+  <li><a href="#where-it-is-going" id="toc-where-it-is-going" class="nav-link" data-scroll-target="#where-it-is-going">Where it is going</a></li>
+  <li><a href="#credits" id="toc-credits" class="nav-link" data-scroll-target="#credits">Credits</a></li>
+  <li><a href="#licence" id="toc-licence" class="nav-link" data-scroll-target="#licence">Licence</a></li>
   </ul>
 </nav>
     </div>
@@ -320,9 +347,48 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>About emaki. Content coming soon.</p>
+<section id="the-name" class="level2">
+<h2 class="anchored" data-anchor-id="the-name">The name</h2>
+<p>An <em>emaki</em> (絵巻) is a Japanese picture handscroll: a long painted scene held between two rolls of paper, read by winding it from one to the other, a span at a time. It is a good name for a window whose job is a conversation too long to see at once.</p>
+<p>The app’s icon is a handscroll seen from the front, with a conversation on its sheet — the agent on the left with its spark, your reply on the right. The drawing on the home page is the same scroll, with a landscape on it, and it winds as you move across it.</p>
+</section>
+<section id="why-it-exists" class="level2">
+<h2 class="anchored" data-anchor-id="why-it-exists">Why it exists</h2>
+<p>Claude Code deletes its transcripts after <code>cleanupPeriodDays</code>, thirty by default, with no warning. Every other tool in this space reads <code>~/.claude/projects</code> and stops there, so they all inherit that expiry.</p>
+<p>So Emaki copies first and renders second. The archive sweep runs before anything else touches a session, for exactly this reason: if rendering fails, the bytes are already safe. The archive is not a backup but a peer source — live and archived transcripts are unioned, so a session Claude Code has deleted stays listed, searchable, renderable and exportable, flagged as <em>kept</em>.</p>
+<p>Compaction, for what it is worth, was never the threat: it appends a boundary and keeps writing to the same file, leaving the earlier rows intact.</p>
+</section>
+<section id="how-it-is-built" class="level2">
+<h2 class="anchored" data-anchor-id="how-it-is-built">How it is built</h2>
+<p>Rust, with <a href="https://www.gpui.rs">GPUI</a> — the Zed editor’s UI framework — and <a href="https://github.com/longbridge/gpui-component">gpui-component</a> for the window. There is no daemon, no browser and no hook.</p>
+<pre><code>crates/emaki-core    everything without a window, plus the emaki-core CLI
+crates/emaki-app     the window
+vendor/              the gpui-component crates, with a few changes of ours
+scripts/             packaging, the icon, the status line</code></pre>
+<p>The core works in this order:</p>
+<ol type="1">
+<li><strong>Adapters</strong>, one per agent, find each agent’s sessions on disk.</li>
+<li><strong>Archive</strong> copies them byte for byte, before anything else touches them.</li>
+<li><strong>Build</strong> parses the JSONL transcript into a model of rounds, items and tool calls. The transcript is the only source of truth.</li>
+<li><strong>Render</strong> writes that model as markdown under <code>~/.emaki/logs</code>.</li>
+<li><strong>Search</strong> indexes every item in SQLite FTS5.</li>
+</ol>
+<p>The app reads the same model and draws it. A file watcher says when to look again. To reply, it either writes to a terminal session’s inbox socket or runs a headless <code>claude -p --resume</code> child that appends to the same transcript.</p>
+</section>
+<section id="where-it-is-going" class="level2">
+<h2 class="anchored" data-anchor-id="where-it-is-going">Where it is going</h2>
+<p>Three stages. The first is a complete app for Claude Code — permanent history, organization by recency, project and agent, readable conversations, and an explanation on any step. The second is the public release and the feedback that comes with it. The third extends the same features to Codex, Kimi and the other mainstream coding agents, so Emaki works across all of them.</p>
+<p>Codex support landed in v0.2.0; the <a href="./releases.html">releases</a> are the honest record of where things actually are.</p>
+</section>
+<section id="credits" class="level2">
+<h2 class="anchored" data-anchor-id="credits">Credits</h2>
+<p>The home page’s figure follows the line-drawing manner of <a href="https://github.com/lucasmarkes/hairline">hairline</a>’s figures: nothing filled, no words, what is far is dimmer, and one bright mark.</p>
+<p>Icons are <a href="https://tabler.io/icons">Tabler</a>’s outline set, drawn at a stroke of 1.75 where Tabler’s own is 2. The file tree’s icons are <a href="https://github.com/catppuccin/vscode-icons">Catppuccin</a>’s. The code colours are <a href="https://rosepinetheme.com">Rosé Pine</a>’s hues, retinted for contrast. The terminal keeps <a href="https://github.com/kakuapp">Kaku</a>’s cream in the light appearance. Every face the app carries is under the SIL Open Font License.</p>
+</section>
+<section id="licence" class="level2">
+<h2 class="anchored" data-anchor-id="licence">Licence</h2>
+<p>MIT. © 2026 John Paul Helveston, Pingfan Hu, and Alkaline Software.</p>
+<p>The source is at <a href="https://github.com/alkaline-software/emaki">github.com/alkaline-software/emaki</a>, and this site’s at <a href="https://github.com/alkaline-software/emaki.lol">github.com/alkaline-software/emaki.lol</a>.</p>
 
 
 </section>
@@ -764,7 +830,8 @@ ul.task-list li input[type="checkbox"] {
     </div>
   </div>
 </footer>
-<script src="./js/navbar-widgets.js"></script>
+<script src="js/navbar-widgets.js"></script>
+<script src="js/hero-scroll.js"></script>
 
 
 
