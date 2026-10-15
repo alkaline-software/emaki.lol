@@ -645,19 +645,18 @@ pre code.sourceCode {
   color: var(--emaki-muted);
 }
 
-// Pandoc wraps a run of links in a paragraph, so the row is laid out on
-// whichever of the two actually holds the pills.
-.hero-cta,
-.hero-cta > p {
+.hero-cta {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
   justify-content: center;
-  margin: 0;
-}
-
-.hero-cta {
   margin: 2rem 0 0.5rem;
+
+  // As with .downloads: drop Pandoc's paragraph from the box tree so the
+  // pills are the flex items and the gap between them is real.
+  > p {
+    display: contents;
+  }
 }
 
 // A pill with an icon before its word, which is every button in the window
@@ -726,25 +725,28 @@ pre code.sourceCode {
 
 // As with .hero-cta: Pandoc puts the run of links in a paragraph, so the grid
 // goes on whichever element actually holds them.
-// Four buttons on one centred row, wrapping to two when the page is narrow.
-// As with .hero-cta, Pandoc may put the run of links in a paragraph, so the
-// row is laid out on whichever element holds them.
-.downloads,
-.downloads > p {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.75rem;
-  margin: 0;
-}
-
+// Four buttons as a centred two-by-two block. Two columns of a fixed width
+// rather than fractions, so the buttons stay a sensible size instead of
+// stretching to the page. As with .hero-cta, Pandoc may put the run of links
+// in a paragraph, so the grid goes on whichever element holds them.
 .downloads {
-  margin: 1.75rem 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 21rem;
+  margin: 1.75rem auto 2rem;
+
+  // Pandoc wraps the run of links in a paragraph of its own making. Left
+  // alone it becomes the grid's only item and the buttons get half the room;
+  // `contents` drops it from the box tree so the four are laid out directly.
+  > p {
+    display: contents;
+  }
 }
 
 .download {
   display: flex;
-  flex: 0 1 9rem;
   flex-direction: column;
   align-items: center;
   gap: 0.1rem;
