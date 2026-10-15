@@ -1,21 +1,27 @@
 project:
   type: website
   output-dir: _site
+  # Writes _releases.md from the app's GitHub releases. Fails soft: the
+  # committed copy stands in if the API cannot be reached.
+  pre-render: scripts/fetch-releases.sh
   preview:
     port: 5680
     browser: true
   resources:
     - js/
+    - assets/
 
 website:
-  title: emaki.lol
-  description: Documentation for emaki
+  title: Emaki
+  description: "Every coding-agent session on your machine, kept for good, in one window you can also talk to."
   llms-txt: true
   site-url: https://emaki.lol
   repo-url: https://github.com/alkaline-software/emaki.lol
+  favicon: assets/favicon.png
   back-to-top-navigation: true
   open-graph:
     site-name: emaki.lol
+    image: assets/emaki-icon.png
   page-footer:
     background: dark
     center:
@@ -23,21 +29,30 @@ website:
 
   navbar:
     search: true
+    logo: assets/emaki-icon.png
     left:
       - text: "Home"
         href: index.qmd
+      - text: "Install"
+        href: install.qmd
+      - text: "Features"
+        href: features.qmd
+      - text: "Releases"
+        href: releases.qmd
       - text: "About"
         href: about.qmd
     right:
-      # js/navbar-widgets.js swaps this link for the stars/forks widget
+      # js/navbar-widgets.js swaps this link for the stars/forks widget, and
+      # reads the owner and repo from it: the app's, not this site's.
       - icon: github
-        href: https://github.com/alkaline-software/emaki.lol
+        href: https://github.com/alkaline-software/emaki
 
 format:
   html:
     theme:
-      light: [cosmo, css/theme.scss]
+      # Dark is listed first, which is what makes it the default appearance.
       dark: [cosmo, css/theme.scss, css/dark.scss]
+      light: [cosmo, css/theme.scss]
     anchor-sections: true
     smooth-scroll: true
     link-external-newwindow: true
@@ -45,5 +60,16 @@ format:
     link-external-filter: '^(?:http:|https:)\/\/(?:www\.)?emaki\.lol'
     toc: true
     toc-location: right
+    include-in-header:
+      # The app's own faces: Source Serif for text, JetBrains Mono for code,
+      # and Belleza for the name where the system has no Optima.
+      - text: |
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:wght@400;500&family=Belleza&display=swap">
     include-after-body:
-      - text: "<script src=\"/js/navbar-widgets.js\"></script>"
+      # Relative, so both resolve in a subdirectory preview as well as on the
+      # deployed domain.
+      - text: |
+          <script src="js/navbar-widgets.js"></script>
+          <script src="js/hero-scroll.js"></script>

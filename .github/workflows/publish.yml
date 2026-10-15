@@ -22,6 +22,11 @@ jobs:
 
       - name: Render Quarto Project
         uses: quarto-dev/quarto-actions/render@v2
+        env:
+          # scripts/fetch-releases.sh runs as a pre-render step and reads the
+          # app repo's releases API; a token keeps it off the 60-an-hour
+          # unauthenticated limit that a shared runner IP may have spent.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to GitHub Pages
         if: github.event_name != 'pull_request'

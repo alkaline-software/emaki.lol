@@ -1,63 +1,184 @@
 /*-- scss:defaults --*/
 
-$accent: #2882e6;
+// The app's palette and type, so the site reads as the window does.
+// Source of truth: emaki/crates/emaki-app/themes/emaki.json ("Emaki Light"
+// and "Emaki Dark") and emaki/docs/look.md.
+
+$accent: #D97757;   // terracotta, the app's default accent
 $primary: $accent;
+
+$font-family-sans-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+$font-family-monospace: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+$font-size-root: 16px;   // the app's medium chat size
+$line-height-base: 1.5;
+$border-radius: 8px;     // theme radius
+$border-radius-lg: 12px; // theme radius_lg
+$border-radius-sm: 5px;
 
 /*-- scss:rules --*/
 
-// Widget colors as CSS variables so dark mode is one override block.
+// Three grounds kept apart by more than a shade (docs/look.md): the graphite
+// frame, the near-white page with its de-saturated greys, and the accent, the
+// one warm colour left, which is why it stands out.
 :root {
-  --w-bg: rgba(0, 0, 0, 0.06);
-  --w-bg-hover: rgba(0, 0, 0, 0.10);
-  --w-border: rgba(0, 0, 0, 0.15);
-  --w-border-hover: rgba(0, 0, 0, 0.25);
-  --w-fg: #1e1e1e;
+  --emaki-page: #FBFBFA;
+  --emaki-ink: #1F1E1D;
+  --emaki-frame: #3D3A36;
+  --emaki-sidebar: #EEEDEB;
+  --emaki-border: #DFDFDC;
+  --emaki-muted: #77746B;
+  --emaki-panel: #F0EFED;
+  --emaki-accent: #D97757;
+  --emaki-accent-hover: #C96A4B;
+  --emaki-accent-active: #B85F3F;
+  --emaki-link: #B85F3F;
+  --code-plate-bg: rgb(217 119 87 / 0.1);
+  --code-plate-border: rgb(217 119 87 / 0.22);
+  --shadow-float: 0 12px 32px -8px rgb(31 30 29 / 0.08), 0 1px 3px rgb(31 30 29 / 0.05);
+
+  // The code inks, retinted Rosé Pine hues (look::INKS_LIGHT).
+  --ink-blue: #286983;
+  --ink-violet: #7A6398;
+  --ink-gold: #8A6A1E;
+  --ink-rose: #A3566F;
+  --ink-teal: #357783;
+  --ink-green: #4C7B58;
+  --ink-red: #B0505F;
+  --ink-grey: #85818F;
+  --ink-plain: #1F1F1F;
+
+  // gpui's ease_out_quint, which every motion in the window eases with.
+  --ease: cubic-bezier(0.23, 1, 0.32, 1);
+
+  // The face the name is set in: Optima's flared strokes where the system has
+  // them, as the app's sidebar does, else the Belleza it carries.
+  --font-wordmark: Optima, "Avenir Next", Avenir, Belleza, sans-serif;
+
+  // Popovers float over the page, so they take the page's appearance.
   --pop-bg: #ffffff;
-  --pop-border: #d0d7de;
-  --pop-fg: #24292f;
-  --pop-muted: #57606a;
-  --pop-hover: #f6f8fa;
-  --pop-divider: #d8dee4;
-  --badge-bg: #ddf4ff;
-  --badge-fg: #0969da;
-  --kbd-bg: #f8f9fa;
-  --kbd-border: #dee2e6;
-  --kbd-fg: #495057;
-  --row-border: rgba(0, 0, 0, 0.05);
-  --heading-fg: #212529;
-  --group-fg: #868e96;
-  --nav-bg: #ffffff;
-  --nav-fg: #1e1e1e;
+  --pop-border: #DFDFDC;
+  --pop-fg: #1F1E1D;
+  --pop-muted: #77746B;
+  --pop-hover: #F0EFED;
+  --pop-divider: #DFDFDC;
+  --badge-bg: #F4E3DC;
+  --badge-fg: #B85F3F;
+  --kbd-bg: #F0EFED;
+  --kbd-border: #D4D3D0;
+  --kbd-fg: #5C5951;
+  --row-border: rgb(31 30 29 / 0.06);
+  --heading-fg: #1F1E1D;
+  --group-fg: #938F85;
+
+  // The frame, and so the navbar on it: graphite in both appearances, the
+  // page a well in a lighter shell.
+  --nav-bg: #3D3A36;
+  --nav-fg: #F3F1EA;
+
+  // The navbar's widgets sit on that graphite in both appearances, so their
+  // washes are the light-on-dark ones throughout.
+  --w-bg: rgb(255 255 255 / 0.08);
+  --w-bg-hover: rgb(255 255 255 / 0.16);
+  --w-border: rgb(255 255 255 / 0.18);
+  --w-border-hover: rgb(255 255 255 / 0.3);
+  --w-fg: #F3F1EA;
 }
 
 body.quarto-dark {
-  --w-bg: rgba(255, 255, 255, 0.08);
-  --w-bg-hover: rgba(255, 255, 255, 0.14);
-  --w-border: rgba(255, 255, 255, 0.18);
-  --w-border-hover: rgba(255, 255, 255, 0.28);
-  --w-fg: #f8f9fa;
-  --pop-bg: #212529;
-  --pop-border: #3d444d;
-  --pop-fg: #e6edf3;
-  --pop-muted: #9198a1;
-  --pop-hover: #2b3137;
-  --pop-divider: #3d444d;
-  --badge-bg: #10304f;
-  --badge-fg: #79c0ff;
-  --kbd-bg: #2b3137;
-  --kbd-border: #495057;
-  --kbd-fg: #dee2e6;
-  --row-border: rgba(255, 255, 255, 0.08);
-  --heading-fg: #f8f9fa;
-  --group-fg: #9198a1;
-  --nav-bg: #1b1d20;
-  --nav-fg: #f8f9fa;
+  --emaki-page: #1A1918;
+  --emaki-ink: #F3F1EA;
+  --emaki-frame: #3A3733;
+  --emaki-sidebar: #242322;
+  --emaki-border: #32312E;
+  --emaki-muted: #A09D94;
+  --emaki-panel: #222120;
+  --emaki-accent-hover: #E0866A;
+  --emaki-link: #E39A7F;
+  --code-plate-bg: rgb(217 119 87 / 0.18);
+  --code-plate-border: rgb(217 119 87 / 0.3);
+  --shadow-float: 0 12px 32px -8px rgb(0 0 0 / 0.45), 0 1px 3px rgb(0 0 0 / 0.3);
+
+  --ink-blue: #7FB4D0;
+  --ink-violet: #C4A7E7;
+  --ink-gold: #E9C083;
+  --ink-rose: #E8B0AE;
+  --ink-teal: #9CCFD8;
+  --ink-green: #A3CCA4;
+  --ink-red: #EB8FA6;
+  --ink-grey: #8F8BA0;
+  --ink-plain: #D4D4D4;
+
+  --pop-bg: #343230;
+  --pop-border: #3B3A37;
+  --pop-fg: #F3F1EA;
+  --pop-muted: #A09D94;
+  --pop-hover: #272624;
+  --pop-divider: #3B3A37;
+  --badge-bg: #3B2C26;
+  --badge-fg: #E39A7F;
+  --kbd-bg: #2F2E2B;
+  --kbd-border: #4A4945;
+  --kbd-fg: #C9C6BC;
+  --row-border: rgb(255 255 255 / 0.08);
+  --heading-fg: #F3F1EA;
+  --group-fg: #85827A;
+
+  --nav-bg: #3A3733;
+}
+
+/* ---- The page ---- */
+
+body {
+  background-color: var(--emaki-page);
+  color: var(--emaki-ink);
+}
+
+// The app's bold is weight 600, not 700.
+strong,
+b {
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-fg);
+  font-weight: 600;
+}
+
+h2 {
+  border-bottom: 1px solid var(--emaki-border);
+  padding-bottom: 0.3rem;
+}
+
+a {
+  color: var(--emaki-link);
+
+  &:hover,
+  &:focus {
+    color: var(--emaki-accent-hover);
+  }
+}
+
+hr {
+  border-color: var(--emaki-border);
+  opacity: 1;
+}
+
+blockquote {
+  border-left: 2px solid var(--emaki-accent);
+  padding-left: 1rem;
+  color: var(--emaki-muted);
 }
 
 /* ---- Navbar ---- */
 
 .navbar {
   background-color: var(--nav-bg) !important;
+  border-bottom: none;
 
   .navbar-title,
   .navbar-nav .nav-link,
@@ -65,6 +186,30 @@ body.quarto-dark {
   .aa-DetachedSearchButton,
   .bi {
     color: var(--nav-fg) !important;
+  }
+
+  // The name, as the window sets it: a light, elegant sans in the accent.
+  .navbar-title {
+    font-family: var(--font-wordmark);
+    font-size: 1.35rem;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    color: var(--emaki-accent) !important;
+  }
+
+  .navbar-nav .nav-link {
+    opacity: 0.82;
+    transition: opacity 0.2s var(--ease);
+
+    &:hover,
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  .navbar-logo {
+    max-height: 26px;
+    border-radius: 6px;
   }
 }
 
@@ -386,4 +531,301 @@ kbd {
   border: 1px solid var(--kbd-border);
   border-radius: 0.3rem;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+/* ---- Code ---- */
+
+// Inline code: the accent on a tinted plate, as the Claude app sets it
+// (v0.1.3).
+//
+// The selector is long on purpose. Quarto lays its own
+// `code:not(.sourceCode), li code:not(.sourceCode), td code:not(.sourceCode)`
+// down after this sheet, so anything shorter loses the background to its grey
+// whatever the order. `:not(pre) >` keeps the plate off code inside a block,
+// which Quarto sets to `initial` for good reason.
+html body :not(pre) > code:not(.sourceCode) {
+  color: var(--emaki-link);
+  background: var(--code-plate-bg);
+  border: 1px solid var(--code-plate-border);
+  border-radius: 5px;
+  padding: 0.05em 0.35em;
+  font-size: 0.875em;
+}
+
+div.sourceCode,
+pre:not(.sourceCode) {
+  background: var(--emaki-panel);
+  border: 1px solid var(--emaki-border);
+  border-radius: $border-radius;
+}
+
+// A wide code block scrolls sideways rather than wrapping, as the app's do.
+pre code.sourceCode {
+  white-space: pre;
+}
+
+// The ink for a block's unhighlighted text. A fence with no language has no
+// `.sourceCode` classes at all, so without this it keeps Bootstrap's own
+// near-black and goes unreadable in the dark appearance.
+pre,
+pre code,
+pre code.sourceCode {
+  color: var(--ink-plain);
+}
+
+// Token to ink, from the theme JSON's highlight.syntax.
+.sourceCode {
+  .kw, .tag                { color: var(--ink-blue); }
+  .cf, .pp, .dv, .bn, .fl, .cn, .at { color: var(--ink-violet); }
+  .st, .ch, .vs, .ss       { color: var(--ink-gold); }
+  .fu, .bu, .sc            { color: var(--ink-rose); }
+  .dt, .ot                 { color: var(--ink-teal); }
+  .co, .cm, .do            { color: var(--ink-grey); font-style: italic; }
+  .va, .op                 { color: var(--ink-plain); }
+  .er, .al                 { color: var(--ink-red); }
+  .wa                      { color: var(--ink-gold); }
+}
+
+/* ---- The handscroll ---- */
+
+.hero-fig {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto 1.75rem;
+  color: var(--emaki-ink);
+  touch-action: pan-y;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  // Every line is drawn at the width the window draws it, whatever size the
+  // figure is shown at: the hairline is the point of it.
+  svg * {
+    vector-effect: non-scaling-stroke;
+  }
+}
+
+// The one bright mark.
+#hero-sun {
+  stroke: var(--emaki-accent);
+}
+
+/* ---- Landing page ---- */
+
+.hero {
+  text-align: center;
+  padding: 1rem 0 0.5rem;
+
+  h1 {
+    font-family: var(--font-wordmark);
+    font-size: clamp(3rem, 11vw, 4.75rem);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    color: var(--emaki-accent);
+    border: none;
+    margin: 0 0 0.75rem;
+  }
+}
+
+.hero-lede {
+  max-width: 34rem;
+  margin: 0 auto;
+  font-size: 1.3rem;
+  line-height: 1.45;
+  color: var(--emaki-ink);
+}
+
+.hero-sub {
+  max-width: 36rem;
+  margin: 1rem auto 0;
+  color: var(--emaki-muted);
+}
+
+// Pandoc wraps a run of links in a paragraph, so the row is laid out on
+// whichever of the two actually holds the pills.
+.hero-cta,
+.hero-cta > p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin: 0;
+}
+
+.hero-cta {
+  margin: 2rem 0 0.5rem;
+}
+
+// A pill with an icon before its word, which is every button in the window
+// (`choice_pill`): filled with the accent for the answer a card is for,
+// quiet for one of several.
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--emaki-border);
+  background: transparent;
+  color: var(--emaki-ink) !important;
+  font-size: 0.95rem;
+  text-decoration: none !important;
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
+
+  &:hover {
+    background: var(--emaki-panel);
+    border-color: var(--emaki-muted);
+  }
+
+  &.pill-accent {
+    background: var(--emaki-accent);
+    border-color: var(--emaki-accent);
+    color: #FFFFFF !important;
+
+    &:hover {
+      background: var(--emaki-accent-hover);
+      border-color: var(--emaki-accent-hover);
+    }
+  }
+}
+
+/* ---- Cards ---- */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1rem;
+  margin: 2.5rem 0;
+}
+
+.card-emaki {
+  border: 1px solid var(--emaki-border);
+  border-radius: $border-radius-lg;
+  background: var(--emaki-panel);
+  padding: 1.1rem 1.25rem 1.25rem;
+
+  h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1.05rem;
+    border: none;
+  }
+
+  p {
+    margin: 0;
+    color: var(--emaki-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}
+
+/* ---- Downloads ---- */
+
+// As with .hero-cta: Pandoc puts the run of links in a paragraph, so the grid
+// goes on whichever element actually holds them.
+// Four buttons on one centred row, wrapping to two when the page is narrow.
+// As with .hero-cta, Pandoc may put the run of links in a paragraph, so the
+// row is laid out on whichever element holds them.
+.downloads,
+.downloads > p {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.downloads {
+  margin: 1.75rem 0 2rem;
+}
+
+.download {
+  display: flex;
+  flex: 0 1 9rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--emaki-border);
+  border-radius: $border-radius;
+  background: var(--emaki-panel);
+  color: var(--emaki-ink) !important;
+  text-align: center;
+  text-decoration: none !important;
+  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+
+  &:hover {
+    border-color: var(--emaki-accent);
+    box-shadow: var(--shadow-float);
+  }
+
+  strong {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  span {
+    color: var(--emaki-muted);
+    font-family: $font-family-monospace;
+    font-size: 0.72rem;
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+}
+
+/* ---- Tables ---- */
+
+.table,
+table {
+  --bs-table-bg: transparent;
+  border-color: var(--emaki-border);
+
+  th {
+    border-bottom: 1px solid var(--emaki-border);
+    font-weight: 600;
+  }
+
+  td,
+  th {
+    border-color: color-mix(in srgb, var(--emaki-border) 70%, transparent);
+  }
+}
+
+/* ---- Footer ---- */
+
+.nav-footer {
+  background-color: var(--emaki-frame) !important;
+  border-top: none;
+  color: #F3F1EA;
+
+  a {
+    color: #F3F1EA;
+  }
+}
+
+// The landing page sets its own name in the hero, so it carries no `title`
+// and Quarto leaves an empty title block behind. Take its room back.
+#title-block-header.quarto-title-block:empty {
+  display: none;
+}
+
+// Past about fifteen entries Quarto marks the table of contents `collapse`,
+// which Bootstrap then hides outright, leaving an "On this page" heading with
+// nothing under it (the Releases page, with one entry a version). The version
+// list is exactly what that sidebar is for, so keep it open.
+#TOC > ul.collapse {
+  display: block;
+}
+
+// Back to top sits on the page, so it takes the page's own ink rather than
+// Bootstrap's near-black, which vanished in the dark appearance.
+#quarto-back-to-top {
+  color: var(--emaki-ink);
+
+  &:hover {
+    color: var(--emaki-accent);
+  }
 }

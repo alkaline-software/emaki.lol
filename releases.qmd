@@ -1,0 +1,10 @@
+---
+title: "Releases"
+toc-depth: 2
+---
+
+Every release, newest first. The installers are on the
+[releases page](https://github.com/alkaline-software/emaki/releases); the app
+also updates itself from Settings.
+
+{{< include _releases.md >}}
