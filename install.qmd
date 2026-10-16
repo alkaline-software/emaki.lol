@@ -1,84 +1,106 @@
 ---
 title: "Install"
+subtitle: "Three steps, and the first may be done already."
 ---
 
-Download the installer for your system. Each link takes the asset from the
-[latest release](https://github.com/alkaline-software/emaki/releases/latest).
+::: {.steps}
 
-::: {.downloads}
-<a class="download" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-arm64.dmg"><strong>macOS</strong> <span>Apple silicon</span></a>
-<a class="download" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-x64.dmg"><strong>macOS</strong> <span>Intel</span></a>
-<a class="download" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-windows-x64-setup.exe"><strong>Windows</strong> <span>x64</span></a>
-<a class="download" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-x64.AppImage"><strong>Linux</strong> <span>x64</span></a>
+1.  ### Have an agent
+
+    Emaki reads and drives the coding agents on your machine, so at least
+    one has to be installed and signed in.
+
+    ::: {.agents}
+
+    ::: {.agent .agent-claude}
+    **Claude Code**
+
+    [Install it from Anthropic's documentation](https://docs.claude.com/en/docs/claude-code),
+    then run `claude` once to sign in.
+    :::
+
+    ::: {.agent .agent-codex}
+    **Codex**
+
+    [Install it from OpenAI's documentation](https://developers.openai.com/codex/cli),
+    then run `codex` once to sign in.
+    :::
+
+    :::
+
+    Not sure what this machine has? Emaki's Agents page ([⌘E]{.kbd}) says,
+    and walks through installing an agent a numbered step at a time, with a
+    shell beside the steps. Git is optional: with it, Emaki shows a
+    project's changes and branches and commits for you.
+
+2.  ### Download Emaki
+
+    ::: {.downloads}
+    <a class="download" data-os="mac" data-chip="arm64" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-arm64.dmg"><strong>macOS</strong> <span>Apple silicon</span></a>
+    <a class="download" data-os="mac" data-chip="x64" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-x64.dmg"><strong>macOS</strong> <span>Intel</span></a>
+    <a class="download" data-os="windows" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-windows-x64-setup.exe"><strong>Windows</strong> <span>x64 installer</span></a>
+    <a class="download" data-os="linux" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-x64.AppImage"><strong>Linux</strong> <span>x64 AppImage</span></a>
+    :::
+
+    Each link takes the [latest release](https://github.com/alkaline-software/emaki/releases/latest).
+    The Mac image is signed and notarized and opens without argument; it
+    needs macOS 14 or later. Windows is unsigned, so SmartScreen asks once:
+    *More info*, then *Run anyway*. On Linux run the AppImage, or install
+    the `.deb` from the release page.
+
+3.  ### Open it
+
+    The first launch copies every Claude Code transcript it finds into
+    `~/.emaki/archive`, and every later launch catches up, so nothing is
+    lost while the app was closed. Pick a folder and type a message to
+    start a session, or open one from the sidebar.
+
+    From then on the app updates itself: from Settings, Updates, or on a
+    daily check.
+
 :::
 
-The Mac downloads are disk images, Windows an installer, Linux an
-AppImage. A `.deb` is on the
-[release page](https://github.com/alkaline-software/emaki/releases/latest) too.
+## What it keeps
 
-macOS 14 or later. The Mac image is signed and notarized, so it opens without
-argument. Windows is unsigned, so SmartScreen asks once: *More info*, then
-*Run anyway*.
-
-## You need an agent first
-
-Emaki reads and drives the coding agents already on your machine, so at least
-one of them has to be installed and signed in:
-
-- [Claude Code](https://docs.claude.com/en/docs/claude-code) --- fully
-  supported: read, search, and continue a session from the window.
-- [Codex](https://developers.openai.com/codex/cli) --- read, search, start,
-  continue and stop, with approvals, questions and plans on the same cards.
-
-The Agents page in the app (`⌘E`) shows which are installed and which are
-signed in, and walks through installing git and each agent a numbered step at a
-time for your system, with a shell beside the instructions.
-
-## The first launch
-
-Open the app. The first launch copies every transcript it finds into
-`~/.emaki/archive`, and every later launch catches up. Capture does not depend
-on the app running: whenever you open it, it backfills every session you have
-ever run.
-
-Everything Emaki keeps is under `~/.emaki`:
+Everything is under `~/.emaki`:
 
 | | |
 |---|---|
-| `archive/` | every session, copied byte for byte, one folder per agent |
+| `archive/` | every Claude Code session, copied byte for byte, a folder an agent and a project |
 | `logs/` | each session rendered as markdown |
 | `search.db` | the full-text index |
+| `models/` | the dictation models you download |
 | `config.json` | your settings |
 
-Only `archive/` cannot be rebuilt from something else. That is the directory to
+: {.table-keys tbl-colwidths="[24,76]"}
+
+Only `archive/` cannot be rebuilt from something else. That is the folder to
 back up.
 
 ## The one thing it changes
 
-Emaki sets a single thing in Claude Code's settings: its own status line, which
-feeds the context and rate-limit row shown under the composer. Nothing else is
-touched, and no hook is installed.
-
-To put your old status line back:
+Emaki sets a single thing in Claude Code's settings: its own status line,
+which feeds the context and rate-limit row under the composer. Nothing else
+is touched, and no hook is installed. To put your old status line back:
 
 ```sh
 emaki-core statusline restore
 ```
 
-## Updating
+## Dictation
 
-The app updates itself --- from Settings, or on a daily check. Nothing to
-reinstall.
+On a Mac, Settings, Dictate downloads a speech model (Qwen3-ASR or Whisper)
+and, if you want it, a small language model that tidies what was said. Both
+run on this machine, and nothing you say leaves it. To dictate into other
+apps, allow Accessibility when Dictate asks. [More on dictation](features.qmd#dictation).
 
 ## Building from source
 
-Rust, with [GPUI](https://www.gpui.rs):
+Rust, with [GPUI](https://www.gpui.rs). On a Mac the build needs CMake
+(`brew install cmake`) for the dictation model runner.
 
 ```sh
 git clone https://github.com/alkaline-software/emaki
 cd emaki
 cargo build -p emaki-app && ./target/debug/Emaki
 ```
-
-On a Mac the build needs CMake (`brew install cmake`) for the dictation
-model runner.

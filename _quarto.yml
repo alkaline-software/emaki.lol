@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: _site
+  # The pages alone: docs/ and the repository's own files are not the site.
+  render:
+    - "*.qmd"
   # Writes _releases.md from the app's GitHub releases. Fails soft: the
   # committed copy stands in if the API cannot be reached.
   pre-render: scripts/fetch-releases.sh
@@ -24,8 +27,13 @@ website:
     image: assets/emaki-icon.png
   page-footer:
     background: dark
-    center:
-      - text: "Site made with <i class='bi bi-heart-fill'></i> and <a href='https://quarto.org/' target='_blank'>Quarto</a>"
+    left: "MIT · © 2026 John Paul Helveston, Pingfan Hu, and Alkaline Software"
+    center: "Made with <a href='https://quarto.org/' target='_blank'>Quarto</a>"
+    right:
+      - text: "Emaki on GitHub"
+        href: https://github.com/alkaline-software/emaki
+      - text: "This site"
+        href: https://github.com/alkaline-software/emaki.lol
 
   navbar:
     search: true
@@ -50,9 +58,16 @@ website:
 format:
   html:
     theme:
-      # Dark is listed first, which is what makes it the default appearance.
-      dark: [cosmo, css/theme.scss, css/dark.scss]
       light: [cosmo, css/theme.scss]
+      dark: [cosmo, css/theme.scss, css/dark.scss]
+    # The appearance follows the system, as the app's does by default; the
+    # toggle in the navbar pins one.
+    respect-user-color-scheme: true
+    grid:
+      sidebar-width: 220px
+      body-width: 640px
+      margin-width: 240px
+      gutter-width: 2.5rem
     anchor-sections: true
     smooth-scroll: true
     link-external-newwindow: true
@@ -60,9 +75,10 @@ format:
     link-external-filter: '^(?:http:|https:)\/\/(?:www\.)?emaki\.lol'
     toc: true
     toc-location: right
+    toc-title: "On this page"
     include-in-header:
-      # The app's own faces: Source Serif for text, JetBrains Mono for code,
-      # and Belleza for the name where the system has no Optima.
+      # The app's own faces: Source Serif for the words, JetBrains Mono for
+      # code, and Belleza for the name where the system has no Optima.
       - text: |
           <link rel="preconnect" href="https://fonts.googleapis.com">
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,3 +89,4 @@ format:
       - text: |
           <script src="js/navbar-widgets.js"></script>
           <script src="js/hero-scroll.js"></script>
+          <script src="js/page.js"></script>

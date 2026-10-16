@@ -1,15 +1,11 @@
 ---
-title: "404"
+title: "Not here"
 toc: false
+anchor-sections: false
 ---
 
-<br>
-<center>
+The page you asked for does not exist, or has moved.
 
-# Whoops!
-
-### The requested page does not exist 😔
-
-### [Return to home](https://emaki.lol)
-
-</center>
+::: {.hero-cta style="justify-content: flex-start"}
+[Home](https://emaki.lol){.pill .pill-accent .i-scroll}
+:::

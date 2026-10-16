@@ -8,6 +8,9 @@
 # Deliberately curl and jq rather than R or Python: the publish workflow
 # installs neither, and both of these are on the runner already.
 #
+# The date after a version is a span (`{.rel-date}`): the sheet sets it
+# quiet beside the version, and the table of contents leaves it out.
+#
 # It fails soft. _releases.md is committed, so an offline preview, a rate limit
 # or an API hiccup leaves the last good copy in place instead of breaking the
 # build. Quarto runs this as a pre-render step.
@@ -53,7 +56,7 @@ md=$(printf '%s' "$raw" | jq -r '
               + " " + .[0:4];
   [ .[]
     | select(.draft == false and .prerelease == false)
-    | "## " + .tag_name + " · " + (.published_at | pretty) + "\n\n"
+    | "## " + .tag_name + " [" + (.published_at | pretty) + "]{.rel-date}\n\n"
       + (.body // "" | gsub("\r"; "") | sub("^\n+"; "") | sub("\n+$"; ""))
       + "\n"
   ] | join("\n")

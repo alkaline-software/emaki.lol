@@ -1,99 +1,115 @@
 ---
 title: "Features"
+subtitle: "Most of Emaki explains itself once it is open. This is the tour; the shortcuts are at the foot."
 ---
 
-Most of Emaki explains itself once it is open. This is the tour, and the
-shortcuts are at the foot.
+## Sessions and projects {.i-scroll}
 
-## Sessions and projects
+The sidebar lists every project, pinned ones above the rest, with headings at
+the foot for hidden projects and temporary folders. **All Sessions** unfolds
+each project in place, every session dated and ordered by when it last did
+something, archived projects in their own section.
 
-The sidebar lists every project, with pinned ones above the rest and headings
-at the foot for hidden projects and temporary folders. **All Sessions** unfolds
-each project in place, every session dated, archived projects in their own
-section.
-
-Select sessions or projects together --- `⌘`-click, `⇧`-click, a dragged
-rectangle, or `⌘A` --- then archive them now, delete them, or open them in
-Finder. Archive checks Emaki's own copy first; Delete moves every copy to the
-Trash. Nothing in a project's own folder is touched.
+Select sessions or projects together ([⌘]{.kbd}-click, [⇧]{.kbd}-click, a
+dragged rectangle or [⌘A]{.kbd}), then archive them now, delete them, or
+open them in Finder. Archive checks Emaki's own copy first; Delete moves
+every copy to the Trash. Nothing in a project's own folder is touched.
 
 A session Claude Code has deleted stays listed, marked *kept*. Renaming a
-session renames it for Claude Code too. Each one keeps its own draft.
+session renames it for Claude Code too, and each one keeps its own draft.
+Tabs group into per-project pills, drag to reorder, and answer to
+[⌘1]{.kbd} to [⌘9]{.kbd}.
 
-Tabs group into per-project pills, drag to reorder, and answer to `⌘1`--`⌘9`.
+## Search {.i-search}
 
-## Search
-
-`⌘K` searches every session on the machine. The index holds one document per
-*item* --- a prompt, a reply paragraph, a thought, a tool call --- so a hit
+[⌘K]{.kbd} searches every session on the machine. The index holds one entry
+per *item*, a prompt, a reply's paragraph, a thought, a tool call, so a hit
 lands on the thing you remembered rather than the file it was in. Live and
-archived sessions are searched together.
+kept sessions are searched together.
 
-`⌘F` finds inside the conversation you are reading, `⌘G` and `⌘⇧G` step
-through the hits.
+[⌘F]{.kbd} finds inside the conversation you are reading; [⌘G]{.kbd} and
+[⌘⇧G]{.kbd} step through the hits.
 
-## Conversation
+## Conversation {.i-book-open}
 
-Prompts, replies, tool calls, thoughts and subagents, laid out like the Claude
-app. Prompts sit in a bubble with a tail; tool badges are coloured by kind;
-tool calls, thoughts and rows open and close in motion rather than jumping.
-Code blocks are syntax-coloured, carry a copy button, and scroll sideways
-instead of wrapping.
+Prompts, replies, tool calls, thoughts and subagents, laid out like the
+Claude app. Prompts sit in a bubble with a tail, tool badges are coloured by
+kind, and tool calls, thoughts and rows open and close in motion. Code
+blocks are coloured, carry a copy button and scroll sideways instead of
+wrapping.
 
 **Explain** puts one plain sentence on an opaque tool call, asked of the
-session's own agent --- Haiku for Claude Code, Codex's light model for Codex.
+session's own agent: Haiku for Claude Code, Codex's light model for Codex.
+The **outline** ([⌘⇧O]{.kbd}) is a short label per prompt; click one to
+jump there. An agent's progress notes show as part of the reply, as in the
+terminal, and a running command says what it is for.
 
-The **outline** (`⌘⇧O`) is a short label per prompt; click one to jump there.
-A progress note shows as part of the reply, as it does in the terminal, and a
-running command says what it is for.
+## Composer {.i-inbox}
 
-## Composer
+Type to reply. A session running in a terminal gets the message through
+Claude Code's inbox; a finished one resumes under Emaki.
 
-Type to reply. A session running in a terminal gets the message through Claude
-Code's inbox; a finished one resumes under Emaki.
-
-- Attach files by paste, drop, or the **+** button.
-- `@` picks a file or folder from the project. An existing path takes the
-  accent colour.
-- `/` lists the folder's slash commands.
+- Attach files by paste, drop or the **+** button.
+- `@` picks a file or folder from the project; a path that exists takes the
+  accent colour. `/` lists the folder's slash commands.
 - Spelling and grammar are checked as you type (English US and UK; Spanish,
-  French and German spelling on a Mac), with corrections, *Learn Spelling* and
-  *Ignore* on the right-click menu.
-- **Dictation** (`⌘⇧D`) writes down what you say, on this machine, with a
-  model you download in Settings --- Qwen3-ASR or Whisper, Chinese and English
-  mixed. macOS for now.
-- Send with `⌘↩` or `↩`, your choice; `⇧↩` is always a new line. Drafts
-  survive quitting.
+  French and German spelling on a Mac), with corrections, *Learn Spelling*
+  and *Ignore* on the right-click menu.
+- Send with [⌘↩]{.kbd} or [↩]{.kbd}, your choice; [⇧↩]{.kbd} is always a new
+  line. Drafts survive quitting.
 
-## Agent control
+## Dictation {.i-microphone}
+
+On a Mac, press [⌘⇧D]{.kbd} or the microphone button and talk. A model you
+download once in Settings, Dictate (Qwen3-ASR or Whisper) writes it down on
+this machine, Chinese and English mixed in one sentence, and the words go in
+at the caret. Nothing you say leaves the Mac. [Esc]{.kbd} cancels while it
+listens.
+
+- **Post-processing**, when it is on, hands the words to a small language
+  model (Qwen3.5, in three sizes) that removes hesitations, applies
+  corrections ("100, no, 200"), mends grammar and makes lists, in any
+  language, without translating. What it writes is taken only when it keeps
+  to what was said.
+- **Preferences** are your own instructions to that model, in plain words,
+  which it follows over its own rules. **Terms** are names and words written
+  exactly as you save them, capitals and all.
+- The shortcut works in any app: the words are pasted where you type, your
+  clipboard put back after, and a pill at the top of the screen shows it
+  listening. Allow Accessibility from Settings, Dictate.
+- Dictation can also start and stop on a modifier tapped alone, such as
+  Right ⌘ or Fn. A history of what was said is kept on this Mac for as long
+  as you choose, with a window to look back and copy.
+
+## Agent control {.i-sparkles}
 
 Mode, model and effort are pills under the composer, each in the agent's own
-colours, each opening a list in place. `⇧Tab` steps the mode as it does in the
-terminal. Approvals, questions and plans arrive as cards --- including whatever
-the agent asks that Emaki has no card for, so nothing waits unseen. A plan is
-shown on its approval card and kept in the conversation.
+colours, each opening a list in place. [⇧Tab]{.kbd} steps the mode as it
+does in the terminal. Approvals, questions and plans arrive as cards at the
+conversation's end, and whatever else the agent asks that Emaki has no card
+for comes up on the terminal card, so nothing waits unseen. A plan is shown
+on its approval card and kept in the conversation.
 
-Stop a turn from the window, and the stopped message comes back to the composer
-if the agent had not started on it.
+Stop a turn from the window; the stopped message comes back to the composer
+if the agent had not started on it. A Claude Code left running after its
+terminal closed is named as such, with a button to stop it and continue
+here. The row under the composer shows context left and rate limits, for
+both agents.
 
-The row under the composer shows context left and rate limits, for both agents.
+## Terminal {.i-terminal}
 
-## Terminal
+The button at the top right opens a terminal beside the conversation: a
+shell in the session's folder, or the session's own agent as it runs, drawn
+whole and two-way. Shells open in tabs. Mouse selection copies on release,
+mouse-aware programs take clicks and scrolls, and the Mac's terminal line
+keys work ([⌘←]{.kbd}, [⌘→]{.kbd}, [⌘⌫]{.kbd}, [⇧↩]{.kbd}, [⌘K]{.kbd}).
+[⌘⇧S]{.kbd} and [⌘⇧A]{.kbd} show and hide the panel's two sides.
 
-The button at the top right opens a terminal beside the conversation: a shell
-in the session's folder, or the session's own agent as it runs, drawn whole and
-two-way. Shells open in tabs. Mouse selection copies on release, mouse-aware
-programs take clicks and scrolls, and the Mac's terminal line keys work
-(`⌘←`, `⌘→`, `⌘⌫`, `⇧↩`, `⌘K`).
+## Files and editing {.i-tree-view}
 
-`⌘⇧S` and `⌘⇧A` show and hide the two sides of the panel.
-
-## Files and editing
-
-The files panel is a tree of the project with git's marks on it, and it works
-like a file manager: drag in from Finder, drag rows to move, cut, copy,
-duplicate, remove with `⌘⌫`, undo with `⌘Z`.
-
+The files panel ([⌘⇧E]{.kbd}) is a tree of the project with git's marks on
+it, and it works like a file manager: drag in from Finder, drag rows to
+move, cut, copy, duplicate, remove with [⌘⌫]{.kbd}, undo with [⌘Z]{.kbd}.
 Click a file to open it in a pane beside the conversation:
 
 | | |
@@ -102,68 +118,81 @@ Click a file to open it in a pane beside the conversation:
 | Markdown | as it reads or as written; a YAML header shows as a table of its fields |
 | CSV | a grid with lettered columns, editable in place, each column its own colour |
 | Parquet | a table with each column's type and the row count |
-| Word | pages you can type in, style and format, saved with `⌘S` |
+| Word | pages you can type in, style and format, saved with [⌘S]{.kbd} |
 | PowerPoint, Excel | slides drawn as they look, cells with their number formats |
 | PDF | sharp at any width, with search, selection, page previews and a table of contents |
 | HTML | in the system's web view, scripts and all |
 | Pictures | shown |
 
+: {.table-keys tbl-colwidths="[26,74]"}
+
 Unsaved changes are never lost without asking. Format on save covers ten
-languages --- R, Python, Rust, Go, C and C++, TypeScript, JavaScript, JSON,
-Markdown, TOML --- and is off until you turn it on.
+languages (R, Python, Rust, Go, C and C++, TypeScript, JavaScript, JSON,
+Markdown, TOML) and is off until you turn it on.
 
-## Git
+## Git {.i-git-branch}
 
-The **Changes** sheet commits the files you tick, discards several at once, and
-has a History tab: browse commits, undo the last one, revert one. Push, Pull
-and Fetch sit where the counts are. Branches can be listed, created, switched
-(carrying changes along or leaving them behind) and published.
+The **Changes** sheet commits the files you tick, discards several at once,
+and has a History tab: browse commits, undo the last one, revert one. Push,
+Pull and Fetch sit where the counts are. Branches are listed, created
+([⌘⇧N]{.kbd}), switched, carrying your changes along or leaving them behind,
+and published. When the remote refuses, a sheet says how to sign in.
 
-## Settings
+## Agents {.i-bot}
 
-`⌘,` opens nine pages: Appearance, Fonts, Composer, Dictate, New sessions,
-Terminal, Files, Updates, About.
+The Agents page ([⌘E]{.kbd}) says which agents are installed and signed in,
+and walks through installing one, a numbered step at a time for this
+machine, with a shell beside the steps. GitHub is there too: install git,
+sign in, and tell git who your commits are by.
 
-Appearance follows the system or pins light or dark, and the accent is one of
-six --- terracotta, blue, green, violet, teal, graphite. Eight chat faces and
-four monospace faces ship with the app, all under the Open Font License, with
-one text size across the conversation, the file editor and the terminal.
+## Settings {.i-settings}
 
-## What it will not do
+[⌘,]{.kbd} opens nine pages: Appearance, Fonts, Composer, Dictate, New
+sessions, Terminal, Files, Updates and About. Appearance follows the system
+or pins light or dark, and the accent is one of six: terracotta, blue, green,
+violet, teal or graphite. Eight chat faces and four monospace faces ship with
+the app, all under the Open Font License, with one text size across the
+conversation, the file editor and the terminal. New sessions sets each
+agent's mode, model and effort to begin with.
 
-These hold everywhere, by design:
+## What it will not do {.i-shield}
 
+::: {.checks}
 - **No hooks, ever.**
-- Nothing writes to a transcript. The JSONL file is the only source of truth,
-  and Emaki is a reader of it.
+- Nothing writes to a transcript. The JSONL file is the only source of truth, and Emaki reads it.
 - Nothing Emaki does enters a session's context window.
-- Nothing is typed into a terminal of yours, and no terminal app is asked for
-  anything. Emaki runs its own, hidden.
+- Nothing is typed into a terminal of yours, and no terminal app is asked for anything. Emaki runs its own, hidden.
 - Copy first, render second. If rendering fails, the bytes are already safe.
+:::
 
-## Keyboard
+## Keyboard {.i-keyboard}
 
-`⌘` on macOS, `Ctrl` elsewhere.
+[⌘]{.kbd} on macOS, [Ctrl]{.kbd} elsewhere.
 
 | | |
 |---|---|
-| `⌘K` | search every session |
-| `⌘F` &middot; `⌘G` &middot; `⌘⇧G` | find in this conversation, next, previous |
-| `⌘N` | new session |
-| `⌘T` | new session in this project |
-| `⌘O` | choose a folder |
-| `⌘L` | sessions |
-| `⌘E` | agents |
-| `⌘,` | settings |
-| `⌘B` | sidebar |
-| `⌘⇧E` | files panel |
-| `⌘⇧O` | outline |
-| `⌘⇧S` &middot; `⌘⇧A` | the terminal panel's shell, the agent's side |
-| `⌘1`--`⌘9` | tabs |
-| `⌘W` &middot; `⌘⇧T` | close a tab, reopen the last |
-| `⌘S` | save the file |
-| `⌘↩` | send |
-| `⌘⇧N` | new branch |
-| `⌘⇧D` | dictate |
-| `⌘R` | refresh |
-| `Esc` | stop, or close what is open |
+| [⌘K]{.kbd} | search every session |
+| [⌘F]{.kbd} · [⌘G]{.kbd} · [⌘⇧G]{.kbd} | find in this conversation, next, previous |
+| [⌘N]{.kbd} | new session |
+| [⌘T]{.kbd} | new session in this project |
+| [⌘O]{.kbd} | choose a folder |
+| [⌘L]{.kbd} | sessions |
+| [⌘E]{.kbd} | agents |
+| [⌘,]{.kbd} | settings |
+| [⌘B]{.kbd} | sidebar |
+| [⌘⇧E]{.kbd} | files panel |
+| [⌘⇧O]{.kbd} | outline |
+| [⌘⇧S]{.kbd} · [⌘⇧A]{.kbd} | the terminal panel's shell, the agent's side |
+| [⌘1]{.kbd} to [⌘9]{.kbd} | tabs |
+| [⌘W]{.kbd} · [⌘⇧T]{.kbd} | close a tab, reopen the last |
+| [⌘S]{.kbd} | save the file |
+| [⌘↩]{.kbd} | send |
+| [⌘⇧N]{.kbd} | new branch |
+| [⌘⇧D]{.kbd} | dictate |
+| [⌘R]{.kbd} | refresh |
+| [Esc]{.kbd} | stop, or close what is open |
+
+: {.table-keys tbl-colwidths="[38,62]"}
+
+In the terminal, [⌘T]{.kbd} opens a tab, [⌘W]{.kbd} closes it and
+[⌘K]{.kbd} clears the screen.

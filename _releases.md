@@ -1,4 +1,4 @@
-## v0.2.7 · 15 October 2026
+## v0.2.7 [15 October 2026]{.rel-date}
 
 - Dictation works in any app: the shortcut starts and stops it in WeChat, Obsidian, Notes and the rest, and the words are pasted where you type, your clipboard put back after. A pill at the top of the screen shows it listening. Allow Accessibility from Settings, Dictate.
 - In Emaki, dictation writes into the field you are in, such as a file's editor, not only the composer.
@@ -9,7 +9,7 @@
 - Long sessions open about four times faster.
 - Settings, Composer shows the send keys as keys. Esc cancelling dictation no longer plays the stop sound.
 
-## v0.2.6 · 15 October 2026
+## v0.2.6 [15 October 2026]{.rel-date}
 
 - Dictation post-processing: a small model downloaded to this Mac (Qwen3.5 4B, 2B or 0.8B) removes hesitations, applies corrections ("100, no, 200"), mends grammar and makes lists, in any language, without translating. Turn it on in Settings, Dictate.
 - Settings, Dictate has two lists, Speech to Text and Post-processing, each showing the model in use and opening to the rest. Several models can download at once.
@@ -19,7 +19,7 @@
 - Every button has an icon, and every Off and On switch turns at a click anywhere on it.
 - Fixes: sessions ordered by when they last did something; a tooltip left on screen after its sheet closed; text that went on selecting after a click in the Changes sheet; scrolling in a window over Settings.
 
-## v0.2.5 · 14 October 2026
+## v0.2.5 [14 October 2026]{.rel-date}
 
 - Dictation: talk into the composer with the microphone button or ⌘⇧D. A model you download in Settings, Dictate (Qwen3-ASR or Whisper) writes it down on this Mac, Chinese and English mixed. Mac only for now.
 - The Changes sheet commits the files you tick and has a History tab: browse commits, undo the last one or revert one. Push, Pull and Fetch sit where the counts are.
@@ -30,7 +30,7 @@
 - A Claude Code left running after its terminal closed is named as such, with a button to stop it and continue here.
 - Fixes: square corners that showed past rounded panels, sheets, menus and cards; Codex's usage limits.
 
-## v0.2.4 · 13 October 2026
+## v0.2.4 [13 October 2026]{.rel-date}
 
 - Whatever an agent asks is shown: a question Emaki has no card for, such as Claude Code asking whether a new folder is trusted, comes up on the terminal card in the conversation and no longer waits unseen.
 - Sessions in the sidebar are selected together with ⌘-click, ⇧-click or a dragged rectangle, across projects, and archived or deleted from their menu. A selection is projects or sessions, whichever was touched first.
@@ -41,7 +41,7 @@
 - The buttons on question cards are pills with an icon, as Select on All Sessions is.
 - Fixes: a table column no longer breaks a word in its middle.
 
-## v0.2.3 · 13 October 2026
+## v0.2.3 [13 October 2026]{.rel-date}
 
 - The sidebar lists every project and scrolls; pinned projects stay put above the rest, up to half the list.
 - Projects in the sidebar are selected together with ⌘-click, ⇧-click, a dragged rectangle or ⌘A, then opened in Finder or hidden. Hidden projects and ones run in temporary folders sit under their own headings at the foot.
@@ -53,7 +53,7 @@
 - "New messages" scrolls down to the new part, and a project opened near the foot of a list scrolls into view.
 - Fixes: stray lines around the logo in About.
 
-## v0.2.2 · 12 October 2026
+## v0.2.2 [12 October 2026]{.rel-date}
 
 - Word documents open as pages and can be written in: type, select, style, format, undo and save with ⌘S, on WordCraft's engine. Try it on a copy first: a save rewrites the file.
 - PowerPoint slides are drawn as they look, Excel cells show their number formats, and PDF pages are sharp at any width.
@@ -67,7 +67,7 @@
 - What is typed in the composer survives closing the window, and Settings has an About section.
 - Fixes: the keyboard is no longer lost after a file closes, ⌘W closes a file or a tab before the window, and pages no longer blink when the pane is resized.
 
-## v0.2.1 · 11 October 2026
+## v0.2.1 [11 October 2026]{.rel-date}
 
 - A new look: the sidebar and a thin frame around the content in graphite, the page near white, and in the dark appearance a darker page in a lighter frame.
 - Settings, Fonts: eight chat fonts and four monospace fonts, all built into the app, and one font size for the conversation, the file editor and the terminal.
@@ -82,7 +82,7 @@
 - Settings is shorter: one Spelling Check entry with its languages, flags on the languages, icons on the themes, and fewer notes.
 - Fixes: "New messages" glides to the end, buttons and menu rows show in the dark appearance, and a small window shows one pane at a time.
 
-## v0.2.0 · 10 October 2026
+## v0.2.0 [10 October 2026]{.rel-date}
 
 - Codex joins Claude Code: its sessions are kept, read and searched, and you can start, continue and stop one from the window, with its approvals, questions and plans on the same cards.
 - Codex's own terminal is on the terminal panel, joined to the same session, so a turn typed there shows in the conversation and the other way round.
@@ -97,7 +97,7 @@
 - The archive is a folder an agent; an older one is moved into place at launch.
 - Fixes: a session begun from a folder no longer ends with "No conversation found", and lists in the dark appearance show the row under the pointer.
 
-## v0.1.9 · 9 October 2026
+## v0.1.9 [9 October 2026]{.rel-date}
 
 - Edit files in the pane beside the conversation and save with ⌘S. Unsaved changes are never lost without asking, and git's changes are marked in the margin, each with a card to see or revert it.
 - A CSV opens as a grid with lettered columns and numbered rows; edit a cell in place, or edit the file as written, where each column has its own colour.
@@ -112,7 +112,7 @@
 - Copying from the agent's terminal reaches the clipboard, and a session stays in the folder it started in.
 - Emaki no longer asks any terminal app for anything.
 
-## v0.1.8 · 8 October 2026
+## v0.1.8 [8 October 2026]{.rel-date}
 
 - Click a file in the files panel to read it in a pane beside the conversation; click it again, or press ⌘W, to close it.
 - That pane shows code with line numbers and colours, markdown as it reads or as written, pictures, tables, and PDFs with search, selection, page previews and a table of contents.
@@ -127,7 +127,7 @@
 - A folder inside a repository shows git's marks for its own files only.
 - Fixes: a question with previews reads correctly and can be answered, a session whose process is gone stops showing as working, and a stopped prompt is not sent twice.
 
-## v0.1.7 · 7 October 2026
+## v0.1.7 [7 October 2026]{.rel-date}
 
 - A terminal inside Emaki, at the conversation's right: shells in tabs, and the session's own agent as it runs. Nothing opens a terminal app any more.
 - In it: select with the mouse (copied on release), click and scroll in programs that take the mouse, and the line keys of a Mac terminal (⌘←, ⌘→, ⌘⌫, ⇧↩, ⌘K).
@@ -141,7 +141,7 @@
 - Hold ⌘ to see each tab's number.
 - A question asked in a named session shows as a card, and "Type something" takes your own answer.
 
-## v0.1.6 · 6 October 2026
+## v0.1.6 [6 October 2026]{.rel-date}
 
 - Sessions run in a hidden terminal of Emaki's own; nothing done in Emaki touches a terminal of yours.
 - ⇧Tab or the mode pill changes the mode in place; the model and effort pills show Claude Code's picker on a card.
@@ -155,7 +155,7 @@
 - The sidebar button and search sit beside the traffic lights; the terminal button opens your default terminal.
 - New icons (Phosphor), and scrollbars that fade after a second.
 
-## v0.1.5 · 4 October 2026
+## v0.1.5 [4 October 2026]{.rel-date}
 
 - A new icon: the scroll on cream, with a conversation on its sheet.
 - A question or approval waiting in a terminal shows as a card in the window; answer it and move between its questions there.
@@ -170,7 +170,7 @@
 - In the composer, ⇧↑ and ⇧↓ select one line at a time, and a paste or dictation scrolls to the caret.
 - Durations read in whole seconds.
 
-## v0.1.4 · 3 October 2026
+## v0.1.4 [3 October 2026]{.rel-date}
 
 - A new icon: a handscroll on the terracotta plate.
 - The home page shows recent folders as cards under a serif greeting.
@@ -185,7 +185,7 @@
 - Fixed: `/compact` left the board on "working", and the context percentage used the wrong window size.
 - Softer shadows, pages that fade in, less work while idle.
 
-## v0.1.3 · 2 October 2026
+## v0.1.3 [2 October 2026]{.rel-date}
 
 - The terminal, project folder and transcript buttons sit together at the top right.
 - The session's folder path is under the tabs, in place of the long line of stats.
@@ -195,7 +195,7 @@
 - Code is set in SF Mono, or Anthropic Mono when it is in `~/.emaki/fonts`.
 - A tool card names its tool once.
 
-## v0.1.2 · 30 September 2026
+## v0.1.2 [30 September 2026]{.rel-date}
 
 - The status line script ships with the app and feeds the limits row. `emaki-core statusline restore` puts the old setting back.
 - Open in your terminal: continue a session with `claude --resume` in a terminal window.
@@ -205,7 +205,7 @@
 - Notices show under the composer, not in the sidebar.
 - Fixed: bold drew as regular, scroll momentum crossed panes, arrow keys stopped short of the composer's ends.
 
-## v0.1.1 · 29 September 2026
+## v0.1.1 [29 September 2026]{.rel-date}
 
 The app stands alone. The Python command-line tool and web daemon are gone.
 
@@ -217,7 +217,7 @@ The app stands alone. The Python command-line tool and web daemon are gone.
 - Fixed: a crash on some Codex sessions, and ⌘↩ leaving a line break.
 - No hooks. If `~/.claude/settings.json` still has entries naming `emaki-hook`, delete them.
 
-## v0.1.0 · 29 September 2026
+## v0.1.0 [29 September 2026]{.rel-date}
 
 The first release. Emaki keeps every coding-agent session on your machine and
 lets you read, search and continue them in one window.

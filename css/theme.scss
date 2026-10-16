@@ -1,42 +1,63 @@
 /*-- scss:defaults --*/
 
-// The app's palette and type, so the site reads as the window does.
-// Source of truth: emaki/crates/emaki-app/themes/emaki.json ("Emaki Light"
-// and "Emaki Dark") and emaki/docs/look.md.
+// The standard this sheet keeps to is docs/design.md: the palette, its
+// roles, the faces, the sizes and the elements are all written there. The
+// neutrals are the app's (emaki/crates/emaki-app/themes/emaki.json); the
+// colours are the icon's.
 
-$accent: #D97757;   // terracotta, the app's default accent
-$primary: $accent;
+// Bootstrap's own knobs, so what Quarto draws itself (the table of
+// contents, the search, a form control) follows the accent and the page.
+// `!default` throughout: css/dark.scss sets the dark appearance's values
+// first, since Quarto lays a later sheet's defaults under an earlier one's.
+$primary: #5061B3 !default;
+$link-color: #4A5BAC !default;
+$body-bg: #FBFBFA !default;
+$body-color: #1F1E1D !default;
 
-$font-family-sans-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
-$font-family-monospace: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-$font-size-root: 16px;   // the app's medium chat size
-$line-height-base: 1.5;
-$border-radius: 8px;     // theme radius
-$border-radius-lg: 12px; // theme radius_lg
-$border-radius-sm: 5px;
+$font-family-sans-serif: "Source Serif 4", Georgia, "Times New Roman", serif !default;
+$font-family-monospace: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace !default;
+$font-size-root: 17px !default;   // the words' size; 16 below 600 wide
+$line-height-base: 1.6 !default;
+$headings-font-weight: 600 !default;
+$border-radius: 8px !default;     // the app's radius
+$border-radius-lg: 12px !default; // the app's radius_lg
+$border-radius-sm: 5px !default;
 
 /*-- scss:rules --*/
 
-// Three grounds kept apart by more than a shade (docs/look.md): the graphite
-// frame, the near-white page with its de-saturated greys, and the accent, the
-// one warm colour left, which is why it stands out.
-:root {
-  --emaki-page: #FBFBFA;
-  --emaki-ink: #1F1E1D;
-  --emaki-frame: #3D3A36;
-  --emaki-sidebar: #EEEDEB;
-  --emaki-border: #DFDFDC;
-  --emaki-muted: #77746B;
-  --emaki-panel: #F0EFED;
-  --emaki-accent: #D97757;
-  --emaki-accent-hover: #C96A4B;
-  --emaki-accent-active: #B85F3F;
-  --emaki-link: #B85F3F;
-  --code-plate-bg: rgb(217 119 87 / 0.1);
-  --code-plate-border: rgb(217 119 87 / 0.22);
-  --shadow-float: 0 12px 32px -8px rgb(31 30 29 / 0.08), 0 1px 3px rgb(31 30 29 / 0.05);
+/* ---- Tokens ---- */
 
-  // The code inks, retinted Rosé Pine hues (look::INKS_LIGHT).
+:root {
+  --page: #FBFBFA;
+  --ink: #1F1E1D;
+  --muted: #77746B;
+  --panel: #F0EFED;
+  --panel-2: #EAE9E6;          // a shade past the panel: a hover, a cap
+  --border: #DFDFDC;
+  --border-2: #D4D3D0;         // the input's edge, a cap's
+  --frame: #3D3A36;
+  --paper: #F3F1EA;            // words on the frame
+
+  --accent: #5061B3;
+  --accent-hover: #4A5BAC;
+  --accent-active: #4050A0;
+  --accent-on-frame: #94A7ED;  // the dark shade, which reads on graphite in both appearances
+  --on-accent: #FFFFFF;
+  --link: #4A5BAC;
+  --link-hover: #4050A0;
+  --wash: rgb(80 97 179 / 0.09);         // the accent as a plate
+  --wash-edge: rgb(80 97 179 / 0.22);
+  --mark: #D99A1F;
+  --spark: #715CC7;
+  --claude: #D97757;
+  --codex: #5F9E6E;
+
+  // Popovers float over the page and take its appearance.
+  --pop-bg: #FFFFFF;
+  --pop-border: #DFDFDC;
+  --shadow-float: 0 12px 32px -8px rgb(31 30 29 / 0.12), 0 1px 3px rgb(31 30 29 / 0.06);
+
+  // The code inks: Rosé Pine's hues retinted for contrast (look::INKS_LIGHT).
   --ink-blue: #286983;
   --ink-violet: #7A6398;
   --ink-gold: #8A6A1E;
@@ -50,52 +71,49 @@ $border-radius-sm: 5px;
   // gpui's ease_out_quint, which every motion in the window eases with.
   --ease: cubic-bezier(0.23, 1, 0.32, 1);
 
-  // The face the name is set in: Optima's flared strokes where the system has
-  // them, as the app's sidebar does, else the Belleza it carries.
+  // The faces, each with one job (docs/design.md, The type).
+  --font-words: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-wordmark: Optima, "Avenir Next", Avenir, Belleza, sans-serif;
 
-  // Popovers float over the page, so they take the page's appearance.
-  --pop-bg: #ffffff;
-  --pop-border: #DFDFDC;
-  --pop-fg: #1F1E1D;
-  --pop-muted: #77746B;
-  --pop-hover: #F0EFED;
-  --pop-divider: #DFDFDC;
-  --badge-bg: #F4E3DC;
-  --badge-fg: #B85F3F;
-  --kbd-bg: #F0EFED;
-  --kbd-border: #D4D3D0;
-  --kbd-fg: #5C5951;
-  --row-border: rgb(31 30 29 / 0.06);
-  --heading-fg: #1F1E1D;
-  --group-fg: #938F85;
+  // The columns.
+  --w-hero: 46rem;
+  --w-band: 40rem;
+  --w-grid: 48rem;
 
-  // The frame, and so the navbar on it: graphite in both appearances, the
-  // page a well in a lighter shell.
-  --nav-bg: #3D3A36;
-  --nav-fg: #F3F1EA;
-
-  // The navbar's widgets sit on that graphite in both appearances, so their
-  // washes are the light-on-dark ones throughout.
+  // The navbar's widgets sit on graphite in both appearances, so their
+  // washes are light-on-dark throughout.
   --w-bg: rgb(255 255 255 / 0.08);
   --w-bg-hover: rgb(255 255 255 / 0.16);
   --w-border: rgb(255 255 255 / 0.18);
   --w-border-hover: rgb(255 255 255 / 0.3);
-  --w-fg: #F3F1EA;
 }
 
 body.quarto-dark {
-  --emaki-page: #1A1918;
-  --emaki-ink: #F3F1EA;
-  --emaki-frame: #3A3733;
-  --emaki-sidebar: #242322;
-  --emaki-border: #32312E;
-  --emaki-muted: #A09D94;
-  --emaki-panel: #222120;
-  --emaki-accent-hover: #E0866A;
-  --emaki-link: #E39A7F;
-  --code-plate-bg: rgb(217 119 87 / 0.18);
-  --code-plate-border: rgb(217 119 87 / 0.3);
+  --page: #1A1918;
+  --ink: #F3F1EA;
+  --muted: #A09D94;
+  --panel: #222120;
+  --panel-2: #2F2E2B;
+  --border: #32312E;
+  --border-2: #4A4945;
+  --frame: #3A3733;
+
+  --accent: #94A7ED;
+  --accent-hover: #A0B3FB;
+  --accent-active: #879AE0;
+  --on-accent: #1F1E1D;
+  --link: #94A7ED;
+  --link-hover: #A0B3FB;
+  --wash: rgb(148 167 237 / 0.14);
+  --wash-edge: rgb(148 167 237 / 0.3);
+  --mark: #FFB83E;
+  --spark: #B5ADF4;
+  --codex: #79B487;
+
+  --pop-bg: #343230;
+  --pop-border: #3B3A37;
   --shadow-float: 0 12px 32px -8px rgb(0 0 0 / 0.45), 0 1px 3px rgb(0 0 0 / 0.3);
 
   --ink-blue: #7FB4D0;
@@ -107,109 +125,199 @@ body.quarto-dark {
   --ink-red: #EB8FA6;
   --ink-grey: #8F8BA0;
   --ink-plain: #D4D4D4;
+}
 
-  --pop-bg: #343230;
-  --pop-border: #3B3A37;
-  --pop-fg: #F3F1EA;
-  --pop-muted: #A09D94;
-  --pop-hover: #272624;
-  --pop-divider: #3B3A37;
-  --badge-bg: #3B2C26;
-  --badge-fg: #E39A7F;
-  --kbd-bg: #2F2E2B;
-  --kbd-border: #4A4945;
-  --kbd-fg: #C9C6BC;
-  --row-border: rgb(255 255 255 / 0.08);
-  --heading-fg: #F3F1EA;
-  --group-fg: #85827A;
+/* ---- Icons ---- */
 
-  --nav-bg: #3A3733;
+// The app's own Tabler files, copied into assets/icons/ under the names it
+// uses, drawn through a mask so each takes the colour of its place. A path
+// in `url()` is from the project's root: Quarto resolves it when it compiles
+// the sheet and carries the file over.
+$icons: download scroll github archive search book-open inbox terminal
+  tree-view git-branch microphone keyboard bot settings shield check
+  external-link arrow-right sparkles history info refresh hard-drive
+  file-text box eye circle-check palette typography list-numbers sun moon copy;
+
+@each $i in $icons {
+  .i-#{$i} { --icon: url("assets/icons/#{$i}.svg"); }
+}
+
+@mixin glyph($size: 1.25rem) {
+  content: "";
+  display: inline-block;
+  flex: none;
+  width: $size;
+  height: $size;
+  background: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
 }
 
 /* ---- The page ---- */
 
+@media (max-width: 599.98px) {
+  :root { font-size: 16px; }
+}
+
 body {
-  background-color: var(--emaki-page);
-  color: var(--emaki-ink);
+  background-color: var(--page);
+  color: var(--ink);
+  font-family: var(--font-words);
+  -webkit-font-smoothing: antialiased;
 }
 
-// The app's bold is weight 600, not 700.
-strong,
-b {
+::selection {
+  background: color-mix(in srgb, var(--accent) 24%, transparent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+// The app's bold is weight 600, never 700.
+strong, b { font-weight: 600; }
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3 {
+  color: var(--ink);
   font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--heading-fg);
-  font-weight: 600;
-}
+h1, .title { font-size: 2.25rem; }
 
+// No rule under a heading: the air over it and the table of contents do
+// that work (docs/design.md). Quarto draws one by default.
 h2 {
-  border-bottom: 1px solid var(--emaki-border);
-  padding-bottom: 0.3rem;
+  font-size: 1.5rem;
+  margin: 3rem 0 0.9rem;
+  border-bottom: none;
+  padding-bottom: 0;
 }
+h3 { font-size: 1.125rem; margin: 2rem 0 0.5rem; }
+h4 { font-size: 1rem; margin: 1.5rem 0 0.4rem; }
+
+// A heading with an icon class carries the icon before its words, in the
+// muted ink: a mark to scan by, not a decoration.
+h2[class*="i-"] {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  &::before { @include glyph(1.25rem); color: var(--muted); }
+}
+
+p, ul, ol, table { margin-bottom: 1rem; }
+
+// Air between a list's items, in the words alone: the navbar's and the
+// footer's items are lists too.
+main.content li + li { margin-top: 0.25rem; }
 
 a {
-  color: var(--emaki-link);
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+  text-decoration-color: color-mix(in srgb, var(--link) 45%, transparent);
+  transition: color 160ms var(--ease), text-decoration-color 160ms var(--ease);
 
-  &:hover,
-  &:focus {
-    color: var(--emaki-accent-hover);
+  &:hover, &:focus {
+    color: var(--link-hover);
+    text-decoration-color: currentColor;
   }
 }
 
 hr {
-  border-color: var(--emaki-border);
+  border-color: var(--border);
   opacity: 1;
+  margin: 2.5rem 0;
 }
 
 blockquote {
-  border-left: 2px solid var(--emaki-accent);
+  border-left: 1px solid var(--border);
   padding-left: 1rem;
-  color: var(--emaki-muted);
+  color: var(--muted);
+}
+
+// Quarto's title block: the page's h1 and the one line under it.
+#title-block-header {
+  margin-bottom: 1.75rem;
+
+  .title { margin: 0 0 0.5rem; }
+  .subtitle {
+    font-size: 1.2rem;
+    line-height: 1.45;
+    color: var(--muted);
+    margin: 0;
+  }
+  .quarto-title-meta { display: none; }
+}
+
+// The landing page sets its own name in the hero, so it carries no `title`
+// and Quarto leaves an empty title block behind. Take its room back.
+#title-block-header.quarto-title-block:empty { display: none; }
+
+// The content comes in over a moment; the toolkit's pages fade in too.
+@keyframes page-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#quarto-content {
+  animation: page-in 400ms var(--ease) both;
+}
+
+/* ---- The chrome's face ---- */
+
+// Everything that is a control or a label rather than a sentence.
+.navbar, .pill, kbd, .kbd, .chip, th, .nav-footer, #TOC, nav[role="doc-toc"],
+.rel-date, .download span, .download::after, .hero-meta, .gh-widget-trigger,
+.gh-dropdown, .kb-overlay, .code-copy-button, .anchorjs-link, .steps li::before {
+  font-family: var(--font-ui);
 }
 
 /* ---- Navbar ---- */
 
 .navbar {
-  background-color: var(--nav-bg) !important;
+  background-color: var(--frame) !important;
   border-bottom: none;
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
 
-  .navbar-title,
-  .navbar-nav .nav-link,
-  .navbar-brand,
-  .aa-DetachedSearchButton,
-  .bi {
-    color: var(--nav-fg) !important;
+  .navbar-title, .navbar-nav .nav-link, .navbar-brand, .aa-DetachedSearchButton, .bi {
+    color: var(--paper) !important;
   }
 
-  // The name, as the window sets it: a light, elegant sans in the accent.
+  // The name, as the window sets it: the wordmark face, regular, in the accent.
   .navbar-title {
     font-family: var(--font-wordmark);
     font-size: 1.35rem;
     font-weight: 400;
     letter-spacing: 0.01em;
-    color: var(--emaki-accent) !important;
+    color: var(--accent-on-frame) !important;
   }
 
-  .navbar-nav .nav-link {
-    opacity: 0.82;
-    transition: opacity 0.2s var(--ease);
+  .navbar-nav { align-items: center; }
+  .navbar-nav .nav-item { margin: 0; padding: 0; }
 
-    &:hover,
-    &.active {
-      opacity: 1;
-    }
+  .navbar-nav .nav-link {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.65rem;
+    opacity: 0.78;
+    transition: opacity 160ms var(--ease);
+
+    &:hover, &:focus, &.active { opacity: 1; }
   }
 
   .navbar-logo {
     max-height: 26px;
     border-radius: 6px;
+  }
+
+  .navbar-toggler {
+    border-color: var(--w-border);
+    &:focus { box-shadow: 0 0 0 2px var(--w-border); }
   }
 }
 
@@ -241,55 +349,73 @@ blockquote {
   margin: 0;
   background: var(--w-bg);
   border: 1px solid var(--w-border);
-  border-radius: 6px;
-  color: var(--w-fg);
+  border-radius: 8px;
+  color: var(--paper);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background 160ms var(--ease), border-color 160ms var(--ease);
 
   &:hover {
     background: var(--w-bg-hover);
     border-color: var(--w-border-hover);
   }
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--w-border);
-  }
-  svg {
-    display: block;
-  }
+  &:focus { outline: none; box-shadow: 0 0 0 2px var(--w-border); }
+  svg { display: block; }
 }
 
+// The appearance toggle shows the appearance a press would bring: the moon
+// on the light page, the sun on the dark. Drawn with the app's own icons in
+// place of Bootstrap's switch.
 #navbar-widgets .quarto-color-scheme-toggle .bi::before {
+  @include glyph(18px);
+  --icon: url("assets/icons/moon.svg");
   margin: 0;
 }
+body.quarto-dark #navbar-widgets .quarto-color-scheme-toggle .bi::before {
+  --icon: url("assets/icons/sun.svg");
+}
 
+// Narrow, one row: the menu button, the name, then the widgets at the
+// right; the links fold out under them. Quarto centres the name and puts
+// its tools on a second row, which read as two navbars.
 @media (max-width: 991.98px) {
-  .kb-btn {
-    display: none;
+  .kb-btn { display: none; }
+  #github-widget .gh-stats { display: none; }
+
+  .navbar .navbar-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
   }
+  .navbar .navbar-toggler { order: 0; margin-right: 0.5rem; }
+  .navbar .navbar-brand-container {
+    order: 1;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .navbar .quarto-navbar-tools { order: 2; margin-left: auto; }
+  .navbar .navbar-collapse { order: 3; flex-basis: 100%; }
 }
 
 /* ---- GitHub widget ---- */
 
-#github-widget {
-  position: relative;
-}
+#github-widget { position: relative; }
 
 .gh-widget-trigger {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 10px;
+  height: 34px;
+  padding: 0 10px;
   background: var(--w-bg);
   border: 1px solid var(--w-border);
-  border-radius: 6px;
-  color: var(--w-fg);
+  border-radius: 8px;
+  color: var(--paper);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background 160ms var(--ease), border-color 160ms var(--ease);
   font-size: 13px;
 
-  &:hover,
-  .gh-widget-open & {
+  &:hover, .gh-widget-open & {
     background: var(--w-bg-hover);
     border-color: var(--w-border-hover);
   }
@@ -302,52 +428,49 @@ blockquote {
   margin-left: 4px;
 }
 
+// Until the counts are known, or when they cannot be, the icon alone: a
+// question mark is not a number.
+#github-widget.gh-unknown .gh-stats { display: none; }
+
 .gh-stat {
   display: flex;
   align-items: center;
   gap: 3px;
   font-weight: 500;
-
-  svg {
-    opacity: 0.85;
-  }
+  svg { opacity: 0.85; }
 }
 
-.gh-count {
-  min-width: 16px;
-  text-align: center;
-}
+.gh-count { min-width: 16px; text-align: center; }
 
 .gh-dropdown-arrow {
   margin-left: 2px;
   opacity: 0.7;
-  transition: transform 0.2s ease;
-
-  .gh-widget-open & {
-    transform: rotate(180deg);
-  }
+  transition: transform 240ms var(--ease);
+  .gh-widget-open & { transform: rotate(180deg); }
 }
 
 .gh-dropdown {
   position: absolute;
   top: calc(100% + 6px);
   right: 0;
-  min-width: 180px;
+  min-width: 190px;
   background: var(--pop-bg);
   border: 1px solid var(--pop-border);
-  border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(31, 35, 40, 0.12);
+  border-radius: 10px;
+  box-shadow: var(--shadow-float);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-8px);
-  transition: all 0.2s ease;
+  transform: translateY(-6px);
+  transition: opacity 240ms var(--ease), transform 240ms var(--ease), visibility 0s linear 240ms;
   z-index: 1000;
   overflow: hidden;
+  padding: 4px;
 
   .gh-widget-open & {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    transition-delay: 0s;
   }
 }
 
@@ -355,26 +478,22 @@ blockquote {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 14px;
-  color: var(--pop-fg) !important;
+  padding: 8px 10px;
+  border-radius: 6px;
+  color: var(--ink) !important;
   text-decoration: none !important;
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 500;
-  transition: background 0.15s ease;
+  transition: background 160ms var(--ease);
 
-  &:hover {
-    background: var(--pop-hover);
-  }
-  svg {
-    color: var(--pop-muted);
-    flex-shrink: 0;
-  }
+  &:hover { background: var(--panel-2); }
+  svg { color: var(--muted); flex-shrink: 0; }
 }
 
 .gh-dropdown-divider {
   height: 1px;
-  margin: 4px 0;
-  background: var(--pop-divider);
+  margin: 4px 6px;
+  background: var(--border);
 }
 
 .gh-badge {
@@ -385,8 +504,8 @@ blockquote {
   height: 20px;
   padding: 0 6px;
   margin-left: auto;
-  background: var(--badge-bg);
-  color: var(--badge-fg);
+  background: var(--wash);
+  color: var(--link);
   border-radius: 10px;
   font-size: 12px;
   font-weight: 600;
@@ -401,46 +520,45 @@ blockquote {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgb(0 0 0 / 0.4);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
+  transition: opacity 240ms var(--ease), visibility 0s linear 240ms;
 
   &.kb-overlay-visible {
     opacity: 1;
     visibility: visible;
+    transition-delay: 0s;
   }
 }
 
 .kb-overlay-inner {
   width: 90%;
-  max-width: 520px;
+  max-width: 480px;
   max-height: 80vh;
   overflow-y: auto;
   background: var(--pop-bg);
-  color: var(--pop-fg);
-  border-radius: 0.75rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
-  padding: 1.5rem 2rem 2rem;
-  transform: translateY(12px);
-  transition: transform 0.2s ease;
+  color: var(--ink);
+  border: 1px solid var(--pop-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-float);
+  padding: 1.25rem 1.5rem 1.5rem;
+  transform: translateY(10px);
+  transition: transform 240ms var(--ease);
 
-  .kb-overlay-visible & {
-    transform: translateY(0);
-  }
+  .kb-overlay-visible & { transform: translateY(0); }
 }
 
 .kb-overlay-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 
   h2 {
     margin: 0;
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--heading-fg);
+    font-family: var(--font-words);
+    font-size: 1.1rem;
   }
 }
 
@@ -454,49 +572,40 @@ blockquote {
   border: none;
   border-radius: 50%;
   background: transparent;
-  color: var(--pop-muted);
+  color: var(--muted);
   cursor: pointer;
+  transition: background 160ms var(--ease), color 160ms var(--ease);
 
-  &:hover {
-    background: var(--w-bg-hover);
-    color: var(--heading-fg);
-  }
-  &:focus-visible {
-    outline: 2px solid $accent;
-    outline-offset: 2px;
-  }
+  &:hover { background: var(--panel-2); color: var(--ink); }
 }
 
 .kb-overlay-body {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.1rem;
 }
 
 .kb-group {
   h3 {
+    font-family: var(--font-ui);
     font-size: 0.75rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--group-fg);
-    margin: 0 0 0.5rem;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    margin: 0 0 0.4rem;
   }
-  dl {
-    margin: 0;
-  }
+  dl { margin: 0; }
 }
 
 .kb-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.35rem 0;
-  border-bottom: 1px solid var(--row-border);
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
 
-  &:last-child {
-    border-bottom: none;
-  }
+  &:last-child { border-bottom: none; }
   dt {
     display: flex;
     align-items: center;
@@ -504,39 +613,36 @@ blockquote {
     font-weight: normal;
     margin: 0;
   }
-  dd {
-    margin: 0;
-    color: var(--pop-muted);
-    font-size: 0.9rem;
-  }
+  dd { margin: 0; color: var(--muted); }
 }
 
-.kb-or {
-  font-size: 0.75rem;
-  color: var(--group-fg);
-}
+.kb-or { font-size: 0.75rem; color: var(--muted); }
 
-kbd {
+/* ---- Keys ---- */
+
+// A key is drawn as a key, as the window's `key_text` does, never as code.
+kbd, .kbd {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 1.6em;
-  padding: 0.15em 0.45em;
-  font-family: inherit;
-  font-size: 0.8rem;
+  min-width: 1.7em;
+  height: 1.55em;
+  padding: 0 0.45em;
+  font-size: 0.82em;
   font-weight: 500;
   line-height: 1;
-  color: var(--kbd-fg);
-  background: var(--kbd-bg);
-  border: 1px solid var(--kbd-border);
-  border-radius: 0.3rem;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+  color: var(--ink);
+  background: var(--panel-2);
+  border: 1px solid var(--border-2);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  vertical-align: 0.1em;
+  white-space: nowrap;
 }
 
 /* ---- Code ---- */
 
-// Inline code: the accent on a tinted plate, as the Claude app sets it
-// (v0.1.3).
+// Inline code: the accent on its faint plate.
 //
 // The selector is long on purpose. Quarto lays its own
 // `code:not(.sourceCode), li code:not(.sourceCode), td code:not(.sourceCode)`
@@ -544,9 +650,9 @@ kbd {
 // whatever the order. `:not(pre) >` keeps the plate off code inside a block,
 // which Quarto sets to `initial` for good reason.
 html body :not(pre) > code:not(.sourceCode) {
-  color: var(--emaki-link);
-  background: var(--code-plate-bg);
-  border: 1px solid var(--code-plate-border);
+  color: var(--link);
+  background: var(--wash);
+  border: 1px solid var(--wash-edge);
   border-radius: 5px;
   padding: 0.05em 0.35em;
   font-size: 0.875em;
@@ -554,24 +660,25 @@ html body :not(pre) > code:not(.sourceCode) {
 
 div.sourceCode,
 pre:not(.sourceCode) {
-  background: var(--emaki-panel);
-  border: 1px solid var(--emaki-border);
+  background: var(--panel);
+  border: 1px solid var(--border);
   border-radius: $border-radius;
+  margin: 1rem 0 1.25rem;
+}
+
+pre {
+  padding: 0.8rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
 }
 
 // A wide code block scrolls sideways rather than wrapping, as the app's do.
-pre code.sourceCode {
-  white-space: pre;
-}
+pre code.sourceCode { white-space: pre; }
 
 // The ink for a block's unhighlighted text. A fence with no language has no
 // `.sourceCode` classes at all, so without this it keeps Bootstrap's own
 // near-black and goes unreadable in the dark appearance.
-pre,
-pre code,
-pre code.sourceCode {
-  color: var(--ink-plain);
-}
+pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
 
 // Token to ink, from the theme JSON's highlight.syntax.
 .sourceCode {
@@ -586,13 +693,18 @@ pre code.sourceCode {
   .wa                      { color: var(--ink-gold); }
 }
 
+.code-copy-button {
+  color: var(--muted);
+  &:hover { color: var(--ink); }
+}
+
 /* ---- The handscroll ---- */
 
 .hero-fig {
   width: 100%;
-  max-width: 520px;
-  margin: 0 auto 1.75rem;
-  color: var(--emaki-ink);
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  color: var(--ink);
   touch-action: pan-y;
 
   svg {
@@ -603,21 +715,19 @@ pre code.sourceCode {
 
   // Every line is drawn at the width the window draws it, whatever size the
   // figure is shown at: the hairline is the point of it.
-  svg * {
-    vector-effect: non-scaling-stroke;
-  }
+  svg * { vector-effect: non-scaling-stroke; }
 }
 
 // The one bright mark.
-#hero-sun {
-  stroke: var(--emaki-accent);
-}
+#hero-sun { stroke: var(--mark); }
 
 /* ---- Landing page ---- */
 
 .hero {
+  max-width: var(--w-hero);
+  margin: 0 auto;
+  padding: 1.5rem 0 1rem;
   text-align: center;
-  padding: 1rem 0 0.5rem;
 
   h1 {
     font-family: var(--font-wordmark);
@@ -625,9 +735,8 @@ pre code.sourceCode {
     font-weight: 400;
     letter-spacing: 0.01em;
     line-height: 1;
-    color: var(--emaki-accent);
-    border: none;
-    margin: 0 0 0.75rem;
+    color: var(--accent);
+    margin: 0 0 1rem;
   }
 }
 
@@ -636,13 +745,15 @@ pre code.sourceCode {
   margin: 0 auto;
   font-size: 1.3rem;
   line-height: 1.45;
-  color: var(--emaki-ink);
+  color: var(--ink);
+  text-wrap: balance;
 }
 
 .hero-sub {
   max-width: 36rem;
   margin: 1rem auto 0;
-  color: var(--emaki-muted);
+  color: var(--muted);
+  text-wrap: balance;
 }
 
 .hero-cta {
@@ -650,119 +761,246 @@ pre code.sourceCode {
   flex-wrap: wrap;
   gap: 0.75rem;
   justify-content: center;
-  margin: 2rem 0 0.5rem;
+  margin: 2rem 0 0;
 
-  // As with .downloads: drop Pandoc's paragraph from the box tree so the
-  // pills are the flex items and the gap between them is real.
-  > p {
-    display: contents;
-  }
+  // Pandoc puts the run of links in a paragraph of its own; `contents`
+  // drops it from the box tree so the pills are the flex items.
+  > p { display: contents; }
 }
 
+.hero-meta {
+  margin: 1.25rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  p { margin: 0; }
+}
+
+// A band of words on the landing page: the words' column, centred.
+.band {
+  max-width: var(--w-band);
+  margin: 0 auto;
+
+  > h2:first-child { margin-top: 3.5rem; }
+}
+
+/* ---- Pills ---- */
+
 // A pill with an icon before its word, which is every button in the window
-// (`choice_pill`): filled with the accent for the answer a card is for,
-// quiet for one of several.
+// (`choice_pill`): filled with the accent for the one thing the page is for,
+// quiet for the rest.
 .pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.5rem 1.1rem;
+  gap: 0.5rem;
+  height: 2.5rem;
+  padding: 0 1.15rem;
   border-radius: 999px;
-  border: 1px solid var(--emaki-border);
+  border: 1px solid var(--border-2);
   background: transparent;
-  color: var(--emaki-ink) !important;
+  color: var(--ink) !important;
   font-size: 0.95rem;
+  font-weight: 500;
   text-decoration: none !important;
-  transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
+  transition: background 160ms var(--ease), border-color 160ms var(--ease), color 160ms var(--ease);
 
-  &:hover {
-    background: var(--emaki-panel);
-    border-color: var(--emaki-muted);
-  }
+  &[class*="i-"]::before { @include glyph(1.1em); }
+
+  &:hover { background: var(--panel); border-color: var(--muted); }
+  &:active { background: var(--panel-2); }
 
   &.pill-accent {
-    background: var(--emaki-accent);
-    border-color: var(--emaki-accent);
-    color: #FFFFFF !important;
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--on-accent) !important;
 
-    &:hover {
-      background: var(--emaki-accent-hover);
-      border-color: var(--emaki-accent-hover);
-    }
+    &:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+    &:active { background: var(--accent-active); border-color: var(--accent-active); }
   }
 }
 
 /* ---- Cards ---- */
 
+// Two by two: four cards in three columns left one alone on its row.
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
-  margin: 2.5rem 0;
+  max-width: var(--w-grid);
+  margin: 2rem auto 0;
 }
 
-.card-emaki {
-  border: 1px solid var(--emaki-border);
+.card {
+  border: 1px solid var(--border);
   border-radius: $border-radius-lg;
-  background: var(--emaki-panel);
-  padding: 1.1rem 1.25rem 1.25rem;
+  background: var(--panel);
+  padding: 1.25rem 1.35rem 1.4rem;
+
+  &[class*="i-"]::before {
+    @include glyph(1.5rem);
+    color: var(--muted);
+    margin-bottom: 0.9rem;
+  }
 
   h3 {
     margin: 0 0 0.4rem;
-    font-size: 1.05rem;
-    border: none;
+    font-size: 1.125rem;
   }
 
   p {
     margin: 0;
-    color: var(--emaki-muted);
     font-size: 0.95rem;
-    line-height: 1.5;
+    line-height: 1.55;
   }
 }
 
+/* ---- Checks ---- */
+
+// What holds, a check before each.
+.checks ul {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+
+  li {
+    position: relative;
+    padding-left: 2rem;
+    margin: 0 0 0.6rem;
+
+    &::before {
+      @include glyph(1.1rem);
+      --icon: url("assets/icons/check.svg");
+      position: absolute;
+      left: 0.1rem;
+      top: 0.3em;
+      color: var(--accent);
+    }
+  }
+}
+
+/* ---- Agents ---- */
+
+// An agent is its mark in its colour beside its name, and never the accent.
+.agents {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.agent {
+  display: grid;
+  grid-template-columns: 1.6rem 1fr;
+  column-gap: 0.9rem;
+  align-items: start;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--border);
+  border-radius: $border-radius-lg;
+
+  &::before {
+    @include glyph(1.4rem);
+    grid-row: 1 / span 4;
+    margin-top: 0.15rem;
+  }
+  &.agent-claude::before { --icon: url("assets/icons/claude.svg"); color: var(--claude); }
+  &.agent-codex::before { --icon: url("assets/icons/agents/codex.svg"); color: var(--codex); }
+
+  p { margin: 0; grid-column: 2; }
+  > p:first-child { margin-bottom: 0.1rem; }
+  > p + p { font-size: 0.95rem; line-height: 1.55; }
+}
+
+/* ---- Steps ---- */
+
+// A procedure: numbered discs on a rail, an h3 a step, its words, and any
+// command under them, as the app's Agents page draws its steps.
+.steps > ol {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  counter-reset: step;
+
+  > li {
+    position: relative;
+    padding: 0 0 2.25rem 3.25rem;
+    margin: 0;
+    counter-increment: step;
+
+    &::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: -0.2rem;
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 50%;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      display: grid;
+      place-items: center;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      left: calc(1.125rem - 0.5px);
+      top: 2.3rem;
+      bottom: 0.3rem;
+      width: 1px;
+      background: var(--border);
+    }
+
+    &:last-child { padding-bottom: 0.5rem; }
+
+    > h3 { margin: 0 0 0.6rem; }
+    > p:last-child { margin-bottom: 0; }
+  }
+}
+
+// Quarto takes the top margin off the first section's heading, taking it
+// to follow the title; after the steps it follows them, and keeps its air.
+main.content > div.steps + section.level2 > h2:first-child { margin-top: 3rem; }
+
 /* ---- Downloads ---- */
 
-// As with .hero-cta: Pandoc puts the run of links in a paragraph, so the grid
-// goes on whichever element actually holds them.
-// Four buttons as a centred two-by-two block. Two columns of a fixed width
-// rather than fractions, so the buttons stay a sensible size instead of
-// stretching to the page. As with .hero-cta, Pandoc may put the run of links
-// in a paragraph, so the grid goes on whichever element holds them.
+// Four tiles, each the system's mark, its name and a chip. Quiet, all four:
+// the visitor's own system is marked by js/page.js and gets the accent's
+// edge and a word.
 .downloads {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.75rem;
-  width: 100%;
-  max-width: 21rem;
-  margin: 1.75rem auto 2rem;
+  margin: 1.1rem 0 1.25rem;
 
-  // Pandoc wraps the run of links in a paragraph of its own making. Left
-  // alone it becomes the grid's only item and the buttons get half the room;
-  // `contents` drops it from the box tree so the four are laid out directly.
-  > p {
-    display: contents;
-  }
+  // Pandoc wraps the run of links in a paragraph; `contents` drops it so
+  // the four tiles are the grid's items.
+  > p { display: contents; }
 }
 
 .download {
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.5rem 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 0.85rem;
   align-items: center;
-  gap: 0.1rem;
   padding: 0.8rem 1rem;
-  border: 1px solid var(--emaki-border);
+  border: 1px solid var(--border);
   border-radius: $border-radius;
-  background: var(--emaki-panel);
-  color: var(--emaki-ink) !important;
-  text-align: center;
+  background: var(--panel);
+  color: var(--ink) !important;
   text-decoration: none !important;
-  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+  transition: border-color 160ms var(--ease), background 160ms var(--ease);
 
-  &:hover {
-    border-color: var(--emaki-accent);
-    box-shadow: var(--shadow-float);
+  &::before {
+    @include glyph(1.5rem);
+    grid-row: 1 / span 2;
+    color: var(--muted);
   }
+  &[data-os="mac"]::before { --icon: url("assets/icons/os/mac.svg"); }
+  &[data-os="windows"]::before { --icon: url("assets/icons/os/windows.svg"); }
+  &[data-os="linux"]::before { --icon: url("assets/icons/os/linux.svg"); }
 
   strong {
     font-size: 1rem;
@@ -770,64 +1008,234 @@ pre code.sourceCode {
   }
 
   span {
-    color: var(--emaki-muted);
-    font-family: $font-family-monospace;
-    font-size: 0.72rem;
+    color: var(--muted);
+    font-size: 0.8rem;
     line-height: 1.3;
     white-space: nowrap;
+  }
+
+  &:hover { border-color: var(--muted); background: var(--panel-2); }
+
+  &.download-here {
+    border-color: var(--accent);
+
+    &::after {
+      content: "This computer";
+      position: absolute;
+      top: 0.55rem;
+      right: 0.75rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: var(--link);
+    }
   }
 }
 
 /* ---- Tables ---- */
 
-.table,
-table {
+.table, table {
   --bs-table-bg: transparent;
-  border-color: var(--emaki-border);
+  --bs-table-color: var(--ink);
+  border-color: var(--border);
+  font-size: 0.95rem;
 
   th {
-    border-bottom: 1px solid var(--emaki-border);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    padding: 0.5rem 0.75rem 0.5rem 0;
+  }
+
+  td {
+    padding: 0.6rem 0.75rem 0.6rem 0;
+    border-color: var(--border);
+    vertical-align: top;
+  }
+
+  tr:last-child td { border-bottom: none; }
+}
+
+// A table whose first column is keys or names stays on one line there.
+.table-keys td:first-child { white-space: nowrap; width: 1%; }
+
+/* ---- Note ---- */
+
+.note {
+  border-left: 1px solid var(--border);
+  padding: 0.1rem 0 0.1rem 1rem;
+  margin: 1.25rem 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+
+  p { margin: 0; }
+}
+
+/* ---- Releases ---- */
+
+.releases {
+  h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    font-size: 1.25rem;
+    margin-top: 2.75rem;
+  }
+  .rel-date {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--muted);
+  }
+}
+
+// The table of contents says the version alone.
+nav[role="doc-toc"] .rel-date { display: none; }
+
+/* ---- Table of contents ---- */
+
+.sidebar nav[role="doc-toc"] {
+  font-size: 0.85rem;
+
+  > h2#toc-title {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
     font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    margin: 0 0 0.5rem;
+    display: block;
   }
 
-  td,
-  th {
-    border-color: color-mix(in srgb, var(--emaki-border) 70%, transparent);
+  > ul a {
+    color: var(--muted);
+    text-decoration: none;
+    border-left: 1px solid var(--border);
+    padding: 0.2rem 0 0.2rem 0.85rem;
+    transition: color 160ms var(--ease), border-color 160ms var(--ease);
+
+    &:hover { color: var(--ink); }
+    &.active {
+      color: var(--ink);
+      border-left-color: var(--accent);
+    }
   }
-}
-
-/* ---- Footer ---- */
-
-.nav-footer {
-  background-color: var(--emaki-frame) !important;
-  border-top: none;
-  color: #F3F1EA;
-
-  a {
-    color: #F3F1EA;
-  }
-}
-
-// The landing page sets its own name in the hero, so it carries no `title`
-// and Quarto leaves an empty title block behind. Take its room back.
-#title-block-header.quarto-title-block:empty {
-  display: none;
 }
 
 // Past about fifteen entries Quarto marks the table of contents `collapse`,
 // which Bootstrap then hides outright, leaving an "On this page" heading with
 // nothing under it (the Releases page, with one entry a version). The version
 // list is exactly what that sidebar is for, so keep it open.
-#TOC > ul.collapse {
-  display: block;
+#TOC > ul.collapse { display: block; }
+
+.anchorjs-link {
+  color: var(--muted) !important;
+  text-decoration: none !important;
+  &:hover { color: var(--link) !important; }
 }
 
 // Back to top sits on the page, so it takes the page's own ink rather than
 // Bootstrap's near-black, which vanished in the dark appearance.
 #quarto-back-to-top {
-  color: var(--emaki-ink);
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--muted);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  transition: color 160ms var(--ease), border-color 160ms var(--ease);
+  &:hover { color: var(--ink); border-color: var(--muted); }
+}
 
-  &:hover {
-    color: var(--emaki-accent);
+/* ---- Search ---- */
+
+.aa-DetachedSearchButton {
+  background: var(--w-bg) !important;
+  border: 1px solid var(--w-border) !important;
+  border-radius: 8px !important;
+  color: var(--paper) !important;
+  &:hover { background: var(--w-bg-hover) !important; }
+}
+
+// The search is a control, so its panel is in the chrome's face.
+.aa-DetachedContainer, .aa-Panel { font-family: var(--font-ui); }
+
+/* ---- Footer ---- */
+
+.nav-footer {
+  background-color: var(--frame) !important;
+  border-top: none;
+  color: var(--paper);
+  font-size: 0.85rem;
+  padding: 1.25rem 0;
+
+  a {
+    color: var(--paper);
+    text-decoration-color: rgb(243 241 234 / 0.4);
+    &:hover { color: var(--paper); text-decoration-color: currentColor; }
   }
+
+  .nav-footer-left, .nav-footer-center, .nav-footer-right { opacity: 0.85; }
+  .nav-footer-center { opacity: 0.6; }
+
+  p { margin: 0; }
+  .footer-items {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0;
+  }
+  .nav-link { padding: 0 0.4rem; }
+}
+
+/* ---- Motion ---- */
+
+// A `.rise` element on the landing page comes in as it comes into view,
+// once; js/page.js marks the root when it can watch for that, so without
+// the script nothing is hidden.
+html.js-rise .rise {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 500ms var(--ease), transform 600ms var(--ease);
+
+  &.in {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+html.js-rise .cards.rise > .card {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 500ms var(--ease), transform 600ms var(--ease);
+  @for $n from 1 through 8 {
+    &:nth-child(#{$n}) { transition-delay: #{($n - 1) * 70}ms; }
+  }
+}
+html.js-rise .cards.rise.in > .card {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  html.js-rise .rise, html.js-rise .cards.rise > .card { opacity: 1; transform: none; }
+}
+
+/* ---- Narrow ---- */
+
+@media (max-width: 599.98px) {
+  .downloads, .cards { grid-template-columns: minmax(0, 1fr); }
+  // The GitHub widget's icon alone, so the navbar stays one row.
+  #github-widget .gh-dropdown-arrow { display: none; }
+  .gh-widget-trigger { padding: 0 7px; }
+  .steps > ol > li { padding-left: 2.9rem; }
+  .steps > ol > li::before { width: 2rem; height: 2rem; font-size: 0.85rem; }
+  .steps > ol > li:not(:last-child)::after { left: calc(1rem - 0.5px); }
+  .hero { padding-top: 0.75rem; }
+  .hero-lede { font-size: 1.15rem; }
 }
