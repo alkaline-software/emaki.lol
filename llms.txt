@@ -4,8 +4,8 @@
 
 ## Pages
 
-- [About](https://emaki.lol/about.llms.md)
-- [index](https://emaki.lol/index.llms.md)
-- [Features](https://emaki.lol/features.llms.md)
 - [Releases](https://emaki.lol/releases.llms.md)
+- [index](https://emaki.lol/index.llms.md)
+- [About](https://emaki.lol/about.llms.md)
+- [Features](https://emaki.lol/features.llms.md)
 - [Install](https://emaki.lol/install.llms.md)

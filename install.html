@@ -80,10 +80,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a8ed1fdfbcec6579b90b7ee144169e0.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9f56d9517062daf1162fd6b1ea100ecb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-57274fccfcf8d7ae0570dbb9b1f319a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-3dac5a5dd82f6e4cac736f6507c8e5ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-3cacf9d9ed86fa4b71630d0a393ff628.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-3dac5a5dd82f6e4cac736f6507c8e5ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -118,14 +120,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <meta property="og:title" content="Install – Emaki">
-<meta property="og:description" content="Every coding-agent session on your machine, kept for good, in one window you can also talk to.">
+<meta property="og:description" content="Three steps, and the first may be done already.">
 <meta property="og:image" content="https://emaki.lol/assets/emaki-icon.png">
 <meta property="og:site_name" content="Emaki">
 <meta property="og:image:height" content="512">
 <meta property="og:image:width" content="512">
 </head>
 
-<body class="nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -267,8 +269,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         changeGiscusTheme();
       }
     };
-    const authorPrefersDark = true;
-    const darkModeDefault = authorPrefersDark;
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
     let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
     // Dark / light mode switch
     window.quartoToggleColorScheme = () => {
@@ -279,6 +284,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
     };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
     // Switch to dark mode if need be
     if (hasAlternateSentinel()) {
       toggleColorMode(true);
@@ -350,10 +363,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#you-need-an-agent-first" id="toc-you-need-an-agent-first" class="nav-link active" data-scroll-target="#you-need-an-agent-first">You need an agent first</a></li>
-  <li><a href="#the-first-launch" id="toc-the-first-launch" class="nav-link" data-scroll-target="#the-first-launch">The first launch</a></li>
+  <li><a href="#what-it-keeps" id="toc-what-it-keeps" class="nav-link active" data-scroll-target="#what-it-keeps">What it keeps</a></li>
   <li><a href="#the-one-thing-it-changes" id="toc-the-one-thing-it-changes" class="nav-link" data-scroll-target="#the-one-thing-it-changes">The one thing it changes</a></li>
-  <li><a href="#updating" id="toc-updating" class="nav-link" data-scroll-target="#updating">Updating</a></li>
+  <li><a href="#dictation" id="toc-dictation" class="nav-link" data-scroll-target="#dictation">Dictation</a></li>
   <li><a href="#building-from-source" id="toc-building-from-source" class="nav-link" data-scroll-target="#building-from-source">Building from source</a></li>
   </ul>
 </nav>
@@ -365,6 +377,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Install</h1>
+<p class="subtitle lead">Three steps, and the first may be done already.</p>
 </div>
 
 
@@ -381,34 +394,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Download the installer for your system. Each link takes the asset from the <a href="https://github.com/alkaline-software/emaki/releases/latest">latest release</a>.</p>
-<div class="downloads">
-<p><a class="download" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-arm64.dmg"><strong>macOS</strong> <span>Apple silicon</span></a> <a class="download" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-x64.dmg"><strong>macOS</strong> <span>Intel</span></a> <a class="download" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-windows-x64-setup.exe"><strong>Windows</strong> <span>x64</span></a> <a class="download" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-x64.AppImage"><strong>Linux</strong> <span>x64</span></a></p>
+<div class="steps">
+<ol type="1">
+<li><h3 id="have-an-agent" class="anchored">Have an agent</h3>
+<p>Emaki reads and drives the coding agents on your machine, so at least one has to be installed and signed in.</p>
+<div class="agents">
+<div class="agent agent-claude">
+<p><strong>Claude Code</strong></p>
+<p><a href="https://docs.claude.com/en/docs/claude-code">Install it from Anthropic’s documentation</a>, then run <code>claude</code> once to sign in.</p>
 </div>
-<p>The Mac downloads are disk images, Windows an installer, Linux an AppImage. A <code>.deb</code> is on the <a href="https://github.com/alkaline-software/emaki/releases/latest">release page</a> too.</p>
-<p>macOS 14 or later. The Mac image is signed and notarized, so it opens without argument. Windows is unsigned, so SmartScreen asks once: <em>More info</em>, then <em>Run anyway</em>.</p>
-<section id="you-need-an-agent-first" class="level2">
-<h2 class="anchored" data-anchor-id="you-need-an-agent-first">You need an agent first</h2>
-<p>Emaki reads and drives the coding agents already on your machine, so at least one of them has to be installed and signed in:</p>
-<ul>
-<li><a href="https://docs.claude.com/en/docs/claude-code">Claude Code</a> — fully supported: read, search, and continue a session from the window.</li>
-<li><a href="https://developers.openai.com/codex/cli">Codex</a> — read, search, start, continue and stop, with approvals, questions and plans on the same cards.</li>
-</ul>
-<p>The Agents page in the app (<code>⌘E</code>) shows which are installed and which are signed in, and walks through installing git and each agent a numbered step at a time for your system, with a shell beside the instructions.</p>
-</section>
-<section id="the-first-launch" class="level2">
-<h2 class="anchored" data-anchor-id="the-first-launch">The first launch</h2>
-<p>Open the app. The first launch copies every transcript it finds into <code>~/.emaki/archive</code>, and every later launch catches up. Capture does not depend on the app running: whenever you open it, it backfills every session you have ever run.</p>
-<p>Everything Emaki keeps is under <code>~/.emaki</code>:</p>
-<table class="caption-top table">
+<div class="agent agent-codex">
+<p><strong>Codex</strong></p>
+<p><a href="https://developers.openai.com/codex/cli">Install it from OpenAI’s documentation</a>, then run <code>codex</code> once to sign in.</p>
+</div>
+</div>
+<p>Not sure what this machine has? Emaki’s Agents page (<kbd>⌘E</kbd>) says, and walks through installing an agent a numbered step at a time, with a shell beside the steps. Git is optional: with it, Emaki shows a project’s changes and branches and commits for you.</p></li>
+<li><h3 id="download-emaki" class="anchored">Download Emaki</h3>
+<div class="downloads">
+<p><a class="download" data-os="mac" data-chip="arm64" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-arm64.dmg"><strong>macOS</strong> <span>Apple silicon</span></a> <a class="download" data-os="mac" data-chip="x64" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-x64.dmg"><strong>macOS</strong> <span>Intel</span></a> <a class="download" data-os="windows" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-windows-x64-setup.exe"><strong>Windows</strong> <span>x64 installer</span></a> <a class="download" data-os="linux" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-x64.AppImage"><strong>Linux</strong> <span>x64 AppImage</span></a></p>
+</div>
+<p>Each link takes the <a href="https://github.com/alkaline-software/emaki/releases/latest">latest release</a>. The Mac image is signed and notarized and opens without argument; it needs macOS 14 or later. Windows is unsigned, so SmartScreen asks once: <em>More info</em>, then <em>Run anyway</em>. On Linux run the AppImage, or install the <code>.deb</code> from the release page.</p></li>
+<li><h3 id="open-it" class="anchored">Open it</h3>
+<p>The first launch copies every Claude Code transcript it finds into <code>~/.emaki/archive</code>, and every later launch catches up, so nothing is lost while the app was closed. Pick a folder and type a message to start a session, or open one from the sidebar.</p>
+<p>From then on the app updates itself: from Settings, Updates, or on a daily check.</p></li>
+</ol>
+</div>
+<section id="what-it-keeps" class="level2">
+<h2 class="anchored" data-anchor-id="what-it-keeps">What it keeps</h2>
+<p>Everything is under <code>~/.emaki</code>:</p>
+<table class="table-keys caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 24%">
+<col style="width: 76%">
 </colgroup>
 <tbody>
 <tr class="odd">
 <td><code>archive/</code></td>
-<td>every session, copied byte for byte, one folder per agent</td>
+<td>every Claude Code session, copied byte for byte, a folder an agent and a project</td>
 </tr>
 <tr class="even">
 <td><code>logs/</code></td>
@@ -419,30 +441,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>the full-text index</td>
 </tr>
 <tr class="even">
+<td><code>models/</code></td>
+<td>the dictation models you download</td>
+</tr>
+<tr class="odd">
 <td><code>config.json</code></td>
 <td>your settings</td>
 </tr>
 </tbody>
 </table>
-<p>Only <code>archive/</code> cannot be rebuilt from something else. That is the directory to back up.</p>
+<p>Only <code>archive/</code> cannot be rebuilt from something else. That is the folder to back up.</p>
 </section>
 <section id="the-one-thing-it-changes" class="level2">
 <h2 class="anchored" data-anchor-id="the-one-thing-it-changes">The one thing it changes</h2>
-<p>Emaki sets a single thing in Claude Code’s settings: its own status line, which feeds the context and rate-limit row shown under the composer. Nothing else is touched, and no hook is installed.</p>
-<p>To put your old status line back:</p>
+<p>Emaki sets a single thing in Claude Code’s settings: its own status line, which feeds the context and rate-limit row under the composer. Nothing else is touched, and no hook is installed. To put your old status line back:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">emaki-core</span> statusline restore</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="updating" class="level2">
-<h2 class="anchored" data-anchor-id="updating">Updating</h2>
-<p>The app updates itself — from Settings, or on a daily check. Nothing to reinstall.</p>
+<section id="dictation" class="level2">
+<h2 class="anchored" data-anchor-id="dictation">Dictation</h2>
+<p>On a Mac, Settings, Dictate downloads a speech model (Qwen3-ASR or Whisper) and, if you want it, a small language model that tidies what was said. Both run on this machine, and nothing you say leaves it. To dictate into other apps, allow Accessibility when Dictate asks. <a href="./features.html#dictation">More on dictation</a>.</p>
 </section>
 <section id="building-from-source" class="level2">
 <h2 class="anchored" data-anchor-id="building-from-source">Building from source</h2>
-<p>Rust, with <a href="https://www.gpui.rs">GPUI</a>:</p>
+<p>Rust, with <a href="https://www.gpui.rs">GPUI</a>. On a Mac the build needs CMake (<code>brew install cmake</code>) for the dictation model runner.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/alkaline-software/emaki</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> emaki</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> build <span class="at">-p</span> emaki-app <span class="kw">&amp;&amp;</span> <span class="ex">./target/debug/Emaki</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>On a Mac the build needs CMake (<code>brew install cmake</code>) for the dictation model runner.</p>
 
 
 </section>
@@ -870,22 +894,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      &nbsp;
-    </div>   
+<p>MIT · © 2026 John Paul Helveston, Pingfan Hu, and Alkaline Software</p>
+</div>   
     <div class="nav-footer-center">
+<p>Made with <a href="https://quarto.org/" target="_blank">Quarto</a></p>
+</div>
+    <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
- Site made with <i class="bi bi-heart-fill"></i> and <a href="https://quarto.org/" target="_blank">Quarto</a>
+    <a class="nav-link" href="https://github.com/alkaline-software/emaki">
+<p>Emaki on GitHub</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/alkaline-software/emaki.lol">
+<p>This site</p>
+</a>
   </li>  
 </ul>
-    </div>
-    <div class="nav-footer-right">
-      &nbsp;
     </div>
   </div>
 </footer>
 <script src="js/navbar-widgets.js"></script>
 <script src="js/hero-scroll.js"></script>
+<script src="js/page.js"></script>
 
 
 

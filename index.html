@@ -44,10 +44,12 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a8ed1fdfbcec6579b90b7ee144169e0.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9f56d9517062daf1162fd6b1ea100ecb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-57274fccfcf8d7ae0570dbb9b1f319a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-3dac5a5dd82f6e4cac736f6507c8e5ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-3cacf9d9ed86fa4b71630d0a393ff628.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-3dac5a5dd82f6e4cac736f6507c8e5ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -89,7 +91,7 @@ ul.task-list li input[type="checkbox"] {
 <meta property="og:image:width" content="512">
 </head>
 
-<body class="nav-fixed fullcontent quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -231,8 +233,11 @@ ul.task-list li input[type="checkbox"] {
         changeGiscusTheme();
       }
     };
-    const authorPrefersDark = true;
-    const darkModeDefault = authorPrefersDark;
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
     let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
     // Dark / light mode switch
     window.quartoToggleColorScheme = () => {
@@ -243,6 +248,14 @@ ul.task-list li input[type="checkbox"] {
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
     };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
     // Switch to dark mode if need be
     if (hasAlternateSentinel()) {
       toggleColorMode(true);
@@ -306,12 +319,12 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
@@ -337,50 +350,92 @@ ul.task-list li input[type="checkbox"] {
 <p>Every coding-agent session on your machine, kept for good, in one window you can also talk to.</p>
 </div>
 <div class="hero-sub">
-<p>An agentic development environment: not an editor that an agent was added to, but a window built around the sessions themselves.</p>
+<p>A desktop app for Claude Code and Codex. It keeps every session byte for byte, renders and searches all of them, and lets you carry one on from the window.</p>
 </div>
 <div class="hero-cta">
-<p><a href="./install.html" class="pill pill-accent">Download</a> <a href="./features.html" class="pill">What’s in it</a> <a href="https://github.com/alkaline-software/emaki" class="pill">Source</a></p>
+<p><a href="./install.html" class="pill pill-accent i-download">Download</a> <a href="./features.html" class="pill i-scroll">What’s in it</a> <a href="https://github.com/alkaline-software/emaki" class="pill i-github">Source</a></p>
+</div>
+<div class="hero-meta">
+<p>For macOS, Windows and Linux. Open source, under the MIT licence.</p>
 </div>
 </section>
 </div>
-<section id="the-thirty-day-problem" class="level2">
+<section id="the-thirty-day-problem" class="level2 band rise">
 <h2 data-anchor-id="the-thirty-day-problem">The thirty-day problem</h2>
 <p>Claude Code deletes its transcripts after thirty days, with no warning. Every other tool in this space reads <code>~/.claude/projects</code> and stops there, so they all inherit that expiry.</p>
-<p>Emaki copies every Claude Code and Codex session before that happens, renders and searches all of them, and lets you continue a Claude Code session from the window. It never writes to a transcript and adds nothing to a session’s context.</p>
-<div class="cards">
-<section id="kept-for-good" class="level3 card-emaki">
+<p>Emaki copies first and renders second. A session is in its archive from the first time it is seen, so if anything else fails the bytes are already safe, and one Claude Code has since deleted is still listed, still searchable, marked <em>kept</em>.</p>
+</section>
+<div class="cards rise">
+<section id="kept-for-good" class="level3 card i-archive">
 <h3 data-anchor-id="kept-for-good">Kept for good</h3>
-<p>Every session is copied byte for byte into <code>~/.emaki/archive</code> before anything else touches it. One that Claude Code has since deleted is still there, still listed, still searchable, marked <em>kept</em>.</p>
+<p>Every Claude Code session is copied byte for byte into <code>~/.emaki/archive</code> before anything else touches it, and stays after Claude Code deletes it. Codex keeps its own, so those are read in place.</p>
 </section>
-<section id="search-everything" class="level3 card-emaki">
+<section id="search-everything" class="level3 card i-search">
 <h3 data-anchor-id="search-everything">Search everything</h3>
-<p><code>⌘K</code> searches every session you have ever run, indexed a paragraph at a time. <code>⌘F</code> finds inside the one you are reading.</p>
+<p><kbd>⌘K</kbd> searches every session you have ever run, a paragraph at a time, live and kept together. <kbd>⌘F</kbd> finds inside the one you are reading.</p>
 </section>
-<section id="read-what-it-did" class="level3 card-emaki">
+<section id="read-what-it-did" class="level3 card i-book-open">
 <h3 data-anchor-id="read-what-it-did">Read what it did</h3>
-<p>Prompts, replies, thoughts, tool calls and subagents, laid out like the Claude app rather than scrolled past in a terminal. Every session also renders to a markdown file.</p>
+<p>Prompts, replies, thoughts, tool calls and subagents, laid out like the Claude app. Ask for one plain sentence on any tool call you cannot read.</p>
 </section>
-<section id="carry-on-talking" class="level3 card-emaki">
+<section id="carry-on-talking" class="level3 card i-inbox">
 <h3 data-anchor-id="carry-on-talking">Carry on talking</h3>
-<p>Type in the composer to reply. A session running in a terminal gets the message through Claude Code’s inbox; a finished one resumes under Emaki.</p>
+<p>Type to reply. A session running in a terminal gets the message through its inbox; a finished one resumes under Emaki. Approvals, questions and plans come up as cards.</p>
 </section>
 </div>
+<section id="beside-the-conversation" class="level2 band rise">
+<h2 data-anchor-id="beside-the-conversation">Beside the conversation</h2>
+<p>The window is built around the sessions, and what you reach for while reading one sits at its side.</p>
 </section>
-<section id="nothing-it-will-do-to-you" class="level2">
+<div class="cards rise">
+<section id="a-terminal" class="level3 card i-terminal">
+<h3 data-anchor-id="a-terminal">A terminal</h3>
+<p>A shell in the session’s folder, or the agent’s own screen as it runs, two-way. Shells open in tabs.</p>
+</section>
+<section id="the-files" class="level3 card i-tree-view">
+<h3 data-anchor-id="the-files">The files</h3>
+<p>The project as a tree with git’s marks. Open a file beside the conversation: code, markdown, CSV, PDF, Word, slides, pictures. Edit it and save with <kbd>⌘S</kbd>.</p>
+</section>
+<section id="git" class="level3 card i-git-branch">
+<h3 data-anchor-id="git">Git</h3>
+<p>Commit the files you tick, browse the history, switch and publish branches, push and pull, without leaving the window.</p>
+</section>
+<section id="dictation" class="level3 card i-microphone">
+<h3 data-anchor-id="dictation">Dictation</h3>
+<p>On a Mac, talk instead of typing. A model downloaded to the machine writes it down, Chinese and English mixed, and the shortcut works in any app.</p>
+</section>
+</div>
+<section id="nothing-it-will-do-to-you" class="level2 band rise">
 <h2 data-anchor-id="nothing-it-will-do-to-you">Nothing it will do to you</h2>
-<p>No hooks, ever. Nothing writes to a transcript, and nothing Emaki does enters a session’s context window. It types in no terminal of yours and asks no terminal app for anything — it runs its own, hidden. There is no daemon and no browser.</p>
-<p>Everything lives in <code>~/.emaki</code>. Only <code>archive/</code> cannot be rebuilt, so that is the one directory to back up.</p>
-</section>
-<section id="built-on-the-agents-you-already-use" class="level2">
-<h2 data-anchor-id="built-on-the-agents-you-already-use">Built on the agents you already use</h2>
-<p>Emaki needs Claude Code or Codex installed; it adds three things on top of them. Conversations that never expire, one place to organize them, and a readable view of what the agent did.</p>
-<div class="hero-cta">
-<p><a href="./install.html" class="pill pill-accent">Install Emaki</a></p>
+<div class="checks">
+<ul>
+<li><strong>No hooks, ever.</strong></li>
+<li>Nothing writes to a transcript. The JSONL file is the only source of truth, and Emaki reads it.</li>
+<li>Nothing Emaki does enters a session’s context window.</li>
+<li>Nothing is typed into a terminal of yours, and no terminal app is asked for anything. Emaki runs its own, hidden.</li>
+<li>No daemon and no browser. Everything lives in <code>~/.emaki</code>, and only <code>archive/</code> cannot be rebuilt: that is the one folder to back up.</li>
+</ul>
 </div>
-
-
 </section>
+<section id="built-on-the-agents-you-already-use" class="level2 band rise">
+<h2 data-anchor-id="built-on-the-agents-you-already-use">Built on the agents you already use</h2>
+<p>Emaki needs Claude Code or Codex installed and signed in. It adds three things on top: conversations that never expire, one place to organize them, and a readable view of what the agent did.</p>
+<div class="agents">
+<div class="agent agent-claude">
+<p><strong>Claude Code</strong></p>
+<p>Read, search, keep and continue a session from the window, with its modes, models and effort levels.</p>
+</div>
+<div class="agent agent-codex">
+<p><strong>Codex</strong></p>
+<p>Read, search, start, continue and stop, with approvals, questions and plans on the same cards.</p>
+</div>
+</div>
+<div class="hero-cta">
+<p><a href="./install.html" class="pill pill-accent i-download">Install Emaki</a></p>
+</div>
+</section>
+
+
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -798,22 +853,30 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      &nbsp;
-    </div>   
+<p>MIT · © 2026 John Paul Helveston, Pingfan Hu, and Alkaline Software</p>
+</div>   
     <div class="nav-footer-center">
+<p>Made with <a href="https://quarto.org/" target="_blank">Quarto</a></p>
+</div>
+    <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
- Site made with <i class="bi bi-heart-fill"></i> and <a href="https://quarto.org/" target="_blank">Quarto</a>
+    <a class="nav-link" href="https://github.com/alkaline-software/emaki">
+<p>Emaki on GitHub</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/alkaline-software/emaki.lol">
+<p>This site</p>
+</a>
   </li>  
 </ul>
-    </div>
-    <div class="nav-footer-right">
-      &nbsp;
     </div>
   </div>
 </footer>
 <script src="js/navbar-widgets.js"></script>
 <script src="js/hero-scroll.js"></script>
+<script src="js/page.js"></script>
 
 
 

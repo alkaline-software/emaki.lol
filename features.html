@@ -45,10 +45,12 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a8ed1fdfbcec6579b90b7ee144169e0.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9f56d9517062daf1162fd6b1ea100ecb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-57274fccfcf8d7ae0570dbb9b1f319a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-3dac5a5dd82f6e4cac736f6507c8e5ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-3cacf9d9ed86fa4b71630d0a393ff628.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-3dac5a5dd82f6e4cac736f6507c8e5ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -83,14 +85,14 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Features – Emaki">
-<meta property="og:description" content="Every coding-agent session on your machine, kept for good, in one window you can also talk to.">
+<meta property="og:description" content="Most of Emaki explains itself once it is open. This is the tour; the shortcuts are at the foot.">
 <meta property="og:image" content="https://emaki.lol/assets/emaki-icon.png">
 <meta property="og:site_name" content="Emaki">
 <meta property="og:image:height" content="512">
 <meta property="og:image:width" content="512">
 </head>
 
-<body class="nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -232,8 +234,11 @@ ul.task-list li input[type="checkbox"] {
         changeGiscusTheme();
       }
     };
-    const authorPrefersDark = true;
-    const darkModeDefault = authorPrefersDark;
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
     let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
     // Dark / light mode switch
     window.quartoToggleColorScheme = () => {
@@ -244,6 +249,14 @@ ul.task-list li input[type="checkbox"] {
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
     };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
     // Switch to dark mode if need be
     if (hasAlternateSentinel()) {
       toggleColorMode(true);
@@ -319,10 +332,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#search" id="toc-search" class="nav-link" data-scroll-target="#search">Search</a></li>
   <li><a href="#conversation" id="toc-conversation" class="nav-link" data-scroll-target="#conversation">Conversation</a></li>
   <li><a href="#composer" id="toc-composer" class="nav-link" data-scroll-target="#composer">Composer</a></li>
+  <li><a href="#dictation" id="toc-dictation" class="nav-link" data-scroll-target="#dictation">Dictation</a></li>
   <li><a href="#agent-control" id="toc-agent-control" class="nav-link" data-scroll-target="#agent-control">Agent control</a></li>
   <li><a href="#terminal" id="toc-terminal" class="nav-link" data-scroll-target="#terminal">Terminal</a></li>
   <li><a href="#files-and-editing" id="toc-files-and-editing" class="nav-link" data-scroll-target="#files-and-editing">Files and editing</a></li>
   <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">Git</a></li>
+  <li><a href="#agents" id="toc-agents" class="nav-link" data-scroll-target="#agents">Agents</a></li>
   <li><a href="#settings" id="toc-settings" class="nav-link" data-scroll-target="#settings">Settings</a></li>
   <li><a href="#what-it-will-not-do" id="toc-what-it-will-not-do" class="nav-link" data-scroll-target="#what-it-will-not-do">What it will not do</a></li>
   <li><a href="#keyboard" id="toc-keyboard" class="nav-link" data-scroll-target="#keyboard">Keyboard</a></li>
@@ -336,6 +351,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Features</h1>
+<p class="subtitle lead">Most of Emaki explains itself once it is open. This is the tour; the shortcuts are at the foot.</p>
 </div>
 
 
@@ -352,56 +368,58 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Most of Emaki explains itself once it is open. This is the tour, and the shortcuts are at the foot.</p>
-<section id="sessions-and-projects" class="level2">
-<h2 class="anchored" data-anchor-id="sessions-and-projects">Sessions and projects</h2>
-<p>The sidebar lists every project, with pinned ones above the rest and headings at the foot for hidden projects and temporary folders. <strong>All Sessions</strong> unfolds each project in place, every session dated, archived projects in their own section.</p>
-<p>Select sessions or projects together — <code>⌘</code>-click, <code>⇧</code>-click, a dragged rectangle, or <code>⌘A</code> — then archive them now, delete them, or open them in Finder. Archive checks Emaki’s own copy first; Delete moves every copy to the Trash. Nothing in a project’s own folder is touched.</p>
-<p>A session Claude Code has deleted stays listed, marked <em>kept</em>. Renaming a session renames it for Claude Code too. Each one keeps its own draft.</p>
-<p>Tabs group into per-project pills, drag to reorder, and answer to <code>⌘1</code>–<code>⌘9</code>.</p>
+<section id="sessions-and-projects" class="level2 i-scroll">
+<h2 class="i-scroll anchored" data-anchor-id="sessions-and-projects">Sessions and projects</h2>
+<p>The sidebar lists every project, pinned ones above the rest, with headings at the foot for hidden projects and temporary folders. <strong>All Sessions</strong> unfolds each project in place, every session dated and ordered by when it last did something, archived projects in their own section.</p>
+<p>Select sessions or projects together (<kbd>⌘</kbd>-click, <kbd>⇧</kbd>-click, a dragged rectangle or <kbd>⌘A</kbd>), then archive them now, delete them, or open them in Finder. Archive checks Emaki’s own copy first; Delete moves every copy to the Trash. Nothing in a project’s own folder is touched.</p>
+<p>A session Claude Code has deleted stays listed, marked <em>kept</em>. Renaming a session renames it for Claude Code too, and each one keeps its own draft. Tabs group into per-project pills, drag to reorder, and answer to <kbd>⌘1</kbd> to <kbd>⌘9</kbd>.</p>
 </section>
-<section id="search" class="level2">
-<h2 class="anchored" data-anchor-id="search">Search</h2>
-<p><code>⌘K</code> searches every session on the machine. The index holds one document per <em>item</em> — a prompt, a reply paragraph, a thought, a tool call — so a hit lands on the thing you remembered rather than the file it was in. Live and archived sessions are searched together.</p>
-<p><code>⌘F</code> finds inside the conversation you are reading, <code>⌘G</code> and <code>⌘⇧G</code> step through the hits.</p>
+<section id="search" class="level2 i-search">
+<h2 class="i-search anchored" data-anchor-id="search">Search</h2>
+<p><kbd>⌘K</kbd> searches every session on the machine. The index holds one entry per <em>item</em>, a prompt, a reply’s paragraph, a thought, a tool call, so a hit lands on the thing you remembered rather than the file it was in. Live and kept sessions are searched together.</p>
+<p><kbd>⌘F</kbd> finds inside the conversation you are reading; <kbd>⌘G</kbd> and <kbd>⌘⇧G</kbd> step through the hits.</p>
 </section>
-<section id="conversation" class="level2">
-<h2 class="anchored" data-anchor-id="conversation">Conversation</h2>
-<p>Prompts, replies, tool calls, thoughts and subagents, laid out like the Claude app. Prompts sit in a bubble with a tail; tool badges are coloured by kind; tool calls, thoughts and rows open and close in motion rather than jumping. Code blocks are syntax-coloured, carry a copy button, and scroll sideways instead of wrapping.</p>
-<p><strong>Explain</strong> puts one plain sentence on an opaque tool call, asked of the session’s own agent — Haiku for Claude Code, Codex’s light model for Codex.</p>
-<p>The <strong>outline</strong> (<code>⌘⇧O</code>) is a short label per prompt; click one to jump there. A progress note shows as part of the reply, as it does in the terminal, and a running command says what it is for.</p>
+<section id="conversation" class="level2 i-book-open">
+<h2 class="i-book-open anchored" data-anchor-id="conversation">Conversation</h2>
+<p>Prompts, replies, tool calls, thoughts and subagents, laid out like the Claude app. Prompts sit in a bubble with a tail, tool badges are coloured by kind, and tool calls, thoughts and rows open and close in motion. Code blocks are coloured, carry a copy button and scroll sideways instead of wrapping.</p>
+<p><strong>Explain</strong> puts one plain sentence on an opaque tool call, asked of the session’s own agent: Haiku for Claude Code, Codex’s light model for Codex. The <strong>outline</strong> (<kbd>⌘⇧O</kbd>) is a short label per prompt; click one to jump there. An agent’s progress notes show as part of the reply, as in the terminal, and a running command says what it is for.</p>
 </section>
-<section id="composer" class="level2">
-<h2 class="anchored" data-anchor-id="composer">Composer</h2>
+<section id="composer" class="level2 i-inbox">
+<h2 class="i-inbox anchored" data-anchor-id="composer">Composer</h2>
 <p>Type to reply. A session running in a terminal gets the message through Claude Code’s inbox; a finished one resumes under Emaki.</p>
 <ul>
-<li>Attach files by paste, drop, or the <strong>+</strong> button.</li>
-<li><code>@</code> picks a file or folder from the project. An existing path takes the accent colour.</li>
-<li><code>/</code> lists the folder’s slash commands.</li>
+<li>Attach files by paste, drop or the <strong>+</strong> button.</li>
+<li><code>@</code> picks a file or folder from the project; a path that exists takes the accent colour. <code>/</code> lists the folder’s slash commands.</li>
 <li>Spelling and grammar are checked as you type (English US and UK; Spanish, French and German spelling on a Mac), with corrections, <em>Learn Spelling</em> and <em>Ignore</em> on the right-click menu.</li>
-<li><strong>Dictation</strong> (<code>⌘⇧D</code>) writes down what you say, on this machine, with a model you download in Settings — Qwen3-ASR or Whisper, Chinese and English mixed. macOS for now.</li>
-<li>Send with <code>⌘↩︎</code> or <code>↩︎</code>, your choice; <code>⇧↩︎</code> is always a new line. Drafts survive quitting.</li>
+<li>Send with <kbd>⌘↩︎</kbd> or <kbd>↩︎</kbd>, your choice; <kbd>⇧↩︎</kbd> is always a new line. Drafts survive quitting.</li>
 </ul>
 </section>
-<section id="agent-control" class="level2">
-<h2 class="anchored" data-anchor-id="agent-control">Agent control</h2>
-<p>Mode, model and effort are pills under the composer, each in the agent’s own colours, each opening a list in place. <code>⇧Tab</code> steps the mode as it does in the terminal. Approvals, questions and plans arrive as cards — including whatever the agent asks that Emaki has no card for, so nothing waits unseen. A plan is shown on its approval card and kept in the conversation.</p>
-<p>Stop a turn from the window, and the stopped message comes back to the composer if the agent had not started on it.</p>
-<p>The row under the composer shows context left and rate limits, for both agents.</p>
+<section id="dictation" class="level2 i-microphone">
+<h2 class="i-microphone anchored" data-anchor-id="dictation">Dictation</h2>
+<p>On a Mac, press <kbd>⌘⇧D</kbd> or the microphone button and talk. A model you download once in Settings, Dictate (Qwen3-ASR or Whisper) writes it down on this machine, Chinese and English mixed in one sentence, and the words go in at the caret. Nothing you say leaves the Mac. <kbd>Esc</kbd> cancels while it listens.</p>
+<ul>
+<li><strong>Post-processing</strong>, when it is on, hands the words to a small language model (Qwen3.5, in three sizes) that removes hesitations, applies corrections (“100, no, 200”), mends grammar and makes lists, in any language, without translating. What it writes is taken only when it keeps to what was said.</li>
+<li><strong>Preferences</strong> are your own instructions to that model, in plain words, which it follows over its own rules. <strong>Terms</strong> are names and words written exactly as you save them, capitals and all.</li>
+<li>The shortcut works in any app: the words are pasted where you type, your clipboard put back after, and a pill at the top of the screen shows it listening. Allow Accessibility from Settings, Dictate.</li>
+<li>Dictation can also start and stop on a modifier tapped alone, such as Right ⌘ or Fn. A history of what was said is kept on this Mac for as long as you choose, with a window to look back and copy.</li>
+</ul>
 </section>
-<section id="terminal" class="level2">
-<h2 class="anchored" data-anchor-id="terminal">Terminal</h2>
-<p>The button at the top right opens a terminal beside the conversation: a shell in the session’s folder, or the session’s own agent as it runs, drawn whole and two-way. Shells open in tabs. Mouse selection copies on release, mouse-aware programs take clicks and scrolls, and the Mac’s terminal line keys work (<code>⌘←</code>, <code>⌘→</code>, <code>⌘⌫</code>, <code>⇧↩︎</code>, <code>⌘K</code>).</p>
-<p><code>⌘⇧S</code> and <code>⌘⇧A</code> show and hide the two sides of the panel.</p>
+<section id="agent-control" class="level2 i-sparkles">
+<h2 class="i-sparkles anchored" data-anchor-id="agent-control">Agent control</h2>
+<p>Mode, model and effort are pills under the composer, each in the agent’s own colours, each opening a list in place. <kbd>⇧Tab</kbd> steps the mode as it does in the terminal. Approvals, questions and plans arrive as cards at the conversation’s end, and whatever else the agent asks that Emaki has no card for comes up on the terminal card, so nothing waits unseen. A plan is shown on its approval card and kept in the conversation.</p>
+<p>Stop a turn from the window; the stopped message comes back to the composer if the agent had not started on it. A Claude Code left running after its terminal closed is named as such, with a button to stop it and continue here. The row under the composer shows context left and rate limits, for both agents.</p>
 </section>
-<section id="files-and-editing" class="level2">
-<h2 class="anchored" data-anchor-id="files-and-editing">Files and editing</h2>
-<p>The files panel is a tree of the project with git’s marks on it, and it works like a file manager: drag in from Finder, drag rows to move, cut, copy, duplicate, remove with <code>⌘⌫</code>, undo with <code>⌘Z</code>.</p>
-<p>Click a file to open it in a pane beside the conversation:</p>
-<table class="caption-top table">
+<section id="terminal" class="level2 i-terminal">
+<h2 class="i-terminal anchored" data-anchor-id="terminal">Terminal</h2>
+<p>The button at the top right opens a terminal beside the conversation: a shell in the session’s folder, or the session’s own agent as it runs, drawn whole and two-way. Shells open in tabs. Mouse selection copies on release, mouse-aware programs take clicks and scrolls, and the Mac’s terminal line keys work (<kbd>⌘←</kbd>, <kbd>⌘→</kbd>, <kbd>⌘⌫</kbd>, <kbd>⇧↩︎</kbd>, <kbd>⌘K</kbd>). <kbd>⌘⇧S</kbd> and <kbd>⌘⇧A</kbd> show and hide the panel’s two sides.</p>
+</section>
+<section id="files-and-editing" class="level2 i-tree-view">
+<h2 class="i-tree-view anchored" data-anchor-id="files-and-editing">Files and editing</h2>
+<p>The files panel (<kbd>⌘⇧E</kbd>) is a tree of the project with git’s marks on it, and it works like a file manager: drag in from Finder, drag rows to move, cut, copy, duplicate, remove with <kbd>⌘⌫</kbd>, undo with <kbd>⌘Z</kbd>. Click a file to open it in a pane beside the conversation:</p>
+<table class="table-keys caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 26%">
+<col style="width: 74%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -422,7 +440,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td>Word</td>
-<td>pages you can type in, style and format, saved with <code>⌘S</code></td>
+<td>pages you can type in, style and format, saved with <kbd>⌘S</kbd></td>
 </tr>
 <tr class="even">
 <td>PowerPoint, Excel</td>
@@ -442,119 +460,124 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<p>Unsaved changes are never lost without asking. Format on save covers ten languages — R, Python, Rust, Go, C and C++, TypeScript, JavaScript, JSON, Markdown, TOML — and is off until you turn it on.</p>
+<p>Unsaved changes are never lost without asking. Format on save covers ten languages (R, Python, Rust, Go, C and C++, TypeScript, JavaScript, JSON, Markdown, TOML) and is off until you turn it on.</p>
 </section>
-<section id="git" class="level2">
-<h2 class="anchored" data-anchor-id="git">Git</h2>
-<p>The <strong>Changes</strong> sheet commits the files you tick, discards several at once, and has a History tab: browse commits, undo the last one, revert one. Push, Pull and Fetch sit where the counts are. Branches can be listed, created, switched (carrying changes along or leaving them behind) and published.</p>
+<section id="git" class="level2 i-git-branch">
+<h2 class="i-git-branch anchored" data-anchor-id="git">Git</h2>
+<p>The <strong>Changes</strong> sheet commits the files you tick, discards several at once, and has a History tab: browse commits, undo the last one, revert one. Push, Pull and Fetch sit where the counts are. Branches are listed, created (<kbd>⌘⇧N</kbd>), switched, carrying your changes along or leaving them behind, and published. When the remote refuses, a sheet says how to sign in.</p>
 </section>
-<section id="settings" class="level2">
-<h2 class="anchored" data-anchor-id="settings">Settings</h2>
-<p><code>⌘,</code> opens nine pages: Appearance, Fonts, Composer, Dictate, New sessions, Terminal, Files, Updates, About.</p>
-<p>Appearance follows the system or pins light or dark, and the accent is one of six — terracotta, blue, green, violet, teal, graphite. Eight chat faces and four monospace faces ship with the app, all under the Open Font License, with one text size across the conversation, the file editor and the terminal.</p>
+<section id="agents" class="level2 i-bot">
+<h2 class="i-bot anchored" data-anchor-id="agents">Agents</h2>
+<p>The Agents page (<kbd>⌘E</kbd>) says which agents are installed and signed in, and walks through installing one, a numbered step at a time for this machine, with a shell beside the steps. GitHub is there too: install git, sign in, and tell git who your commits are by.</p>
 </section>
-<section id="what-it-will-not-do" class="level2">
-<h2 class="anchored" data-anchor-id="what-it-will-not-do">What it will not do</h2>
-<p>These hold everywhere, by design:</p>
+<section id="settings" class="level2 i-settings">
+<h2 class="i-settings anchored" data-anchor-id="settings">Settings</h2>
+<p><kbd>⌘,</kbd> opens nine pages: Appearance, Fonts, Composer, Dictate, New sessions, Terminal, Files, Updates and About. Appearance follows the system or pins light or dark, and the accent is one of six: terracotta, blue, green, violet, teal or graphite. Eight chat faces and four monospace faces ship with the app, all under the Open Font License, with one text size across the conversation, the file editor and the terminal. New sessions sets each agent’s mode, model and effort to begin with.</p>
+</section>
+<section id="what-it-will-not-do" class="level2 i-shield">
+<h2 class="i-shield anchored" data-anchor-id="what-it-will-not-do">What it will not do</h2>
+<div class="checks">
 <ul>
 <li><strong>No hooks, ever.</strong></li>
-<li>Nothing writes to a transcript. The JSONL file is the only source of truth, and Emaki is a reader of it.</li>
+<li>Nothing writes to a transcript. The JSONL file is the only source of truth, and Emaki reads it.</li>
 <li>Nothing Emaki does enters a session’s context window.</li>
 <li>Nothing is typed into a terminal of yours, and no terminal app is asked for anything. Emaki runs its own, hidden.</li>
 <li>Copy first, render second. If rendering fails, the bytes are already safe.</li>
 </ul>
+</div>
 </section>
-<section id="keyboard" class="level2">
-<h2 class="anchored" data-anchor-id="keyboard">Keyboard</h2>
-<p><code>⌘</code> on macOS, <code>Ctrl</code> elsewhere.</p>
-<table class="caption-top table">
+<section id="keyboard" class="level2 i-keyboard">
+<h2 class="i-keyboard anchored" data-anchor-id="keyboard">Keyboard</h2>
+<p><kbd>⌘</kbd> on macOS, <kbd>Ctrl</kbd> elsewhere.</p>
+<table class="table-keys caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 38%">
+<col style="width: 62%">
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><code>⌘K</code></td>
+<td><kbd>⌘K</kbd></td>
 <td>search every session</td>
 </tr>
 <tr class="even">
-<td><code>⌘F</code> · <code>⌘G</code> · <code>⌘⇧G</code></td>
+<td><kbd>⌘F</kbd> · <kbd>⌘G</kbd> · <kbd>⌘⇧G</kbd></td>
 <td>find in this conversation, next, previous</td>
 </tr>
 <tr class="odd">
-<td><code>⌘N</code></td>
+<td><kbd>⌘N</kbd></td>
 <td>new session</td>
 </tr>
 <tr class="even">
-<td><code>⌘T</code></td>
+<td><kbd>⌘T</kbd></td>
 <td>new session in this project</td>
 </tr>
 <tr class="odd">
-<td><code>⌘O</code></td>
+<td><kbd>⌘O</kbd></td>
 <td>choose a folder</td>
 </tr>
 <tr class="even">
-<td><code>⌘L</code></td>
+<td><kbd>⌘L</kbd></td>
 <td>sessions</td>
 </tr>
 <tr class="odd">
-<td><code>⌘E</code></td>
+<td><kbd>⌘E</kbd></td>
 <td>agents</td>
 </tr>
 <tr class="even">
-<td><code>⌘,</code></td>
+<td><kbd>⌘,</kbd></td>
 <td>settings</td>
 </tr>
 <tr class="odd">
-<td><code>⌘B</code></td>
+<td><kbd>⌘B</kbd></td>
 <td>sidebar</td>
 </tr>
 <tr class="even">
-<td><code>⌘⇧E</code></td>
+<td><kbd>⌘⇧E</kbd></td>
 <td>files panel</td>
 </tr>
 <tr class="odd">
-<td><code>⌘⇧O</code></td>
+<td><kbd>⌘⇧O</kbd></td>
 <td>outline</td>
 </tr>
 <tr class="even">
-<td><code>⌘⇧S</code> · <code>⌘⇧A</code></td>
+<td><kbd>⌘⇧S</kbd> · <kbd>⌘⇧A</kbd></td>
 <td>the terminal panel’s shell, the agent’s side</td>
 </tr>
 <tr class="odd">
-<td><code>⌘1</code>–<code>⌘9</code></td>
+<td><kbd>⌘1</kbd> to <kbd>⌘9</kbd></td>
 <td>tabs</td>
 </tr>
 <tr class="even">
-<td><code>⌘W</code> · <code>⌘⇧T</code></td>
+<td><kbd>⌘W</kbd> · <kbd>⌘⇧T</kbd></td>
 <td>close a tab, reopen the last</td>
 </tr>
 <tr class="odd">
-<td><code>⌘S</code></td>
+<td><kbd>⌘S</kbd></td>
 <td>save the file</td>
 </tr>
 <tr class="even">
-<td><code>⌘↩︎</code></td>
+<td><kbd>⌘↩︎</kbd></td>
 <td>send</td>
 </tr>
 <tr class="odd">
-<td><code>⌘⇧N</code></td>
+<td><kbd>⌘⇧N</kbd></td>
 <td>new branch</td>
 </tr>
 <tr class="even">
-<td><code>⌘⇧D</code></td>
+<td><kbd>⌘⇧D</kbd></td>
 <td>dictate</td>
 </tr>
 <tr class="odd">
-<td><code>⌘R</code></td>
+<td><kbd>⌘R</kbd></td>
 <td>refresh</td>
 </tr>
 <tr class="even">
-<td><code>Esc</code></td>
+<td><kbd>Esc</kbd></td>
 <td>stop, or close what is open</td>
 </tr>
 </tbody>
 </table>
+<p>In the terminal, <kbd>⌘T</kbd> opens a tab, <kbd>⌘W</kbd> closes it and <kbd>⌘K</kbd> clears the screen.</p>
 
 
 </section>
@@ -982,22 +1005,30 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      &nbsp;
-    </div>   
+<p>MIT · © 2026 John Paul Helveston, Pingfan Hu, and Alkaline Software</p>
+</div>   
     <div class="nav-footer-center">
+<p>Made with <a href="https://quarto.org/" target="_blank">Quarto</a></p>
+</div>
+    <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
- Site made with <i class="bi bi-heart-fill"></i> and <a href="https://quarto.org/" target="_blank">Quarto</a>
+    <a class="nav-link" href="https://github.com/alkaline-software/emaki">
+<p>Emaki on GitHub</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/alkaline-software/emaki.lol">
+<p>This site</p>
+</a>
   </li>  
 </ul>
-    </div>
-    <div class="nav-footer-right">
-      &nbsp;
     </div>
   </div>
 </footer>
 <script src="js/navbar-widgets.js"></script>
 <script src="js/hero-scroll.js"></script>
+<script src="js/page.js"></script>
 
 
 

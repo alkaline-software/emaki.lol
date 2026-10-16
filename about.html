@@ -45,10 +45,12 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a8ed1fdfbcec6579b90b7ee144169e0.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9f56d9517062daf1162fd6b1ea100ecb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-57274fccfcf8d7ae0570dbb9b1f319a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-3dac5a5dd82f6e4cac736f6507c8e5ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-3cacf9d9ed86fa4b71630d0a393ff628.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-3dac5a5dd82f6e4cac736f6507c8e5ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -83,14 +85,14 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="About – Emaki">
-<meta property="og:description" content="Every coding-agent session on your machine, kept for good, in one window you can also talk to.">
+<meta property="og:description" content="The name, the reason, and how it is made.">
 <meta property="og:image" content="https://emaki.lol/assets/emaki-icon.png">
 <meta property="og:site_name" content="Emaki">
 <meta property="og:image:height" content="512">
 <meta property="og:image:width" content="512">
 </head>
 
-<body class="nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -232,8 +234,11 @@ ul.task-list li input[type="checkbox"] {
         changeGiscusTheme();
       }
     };
-    const authorPrefersDark = true;
-    const darkModeDefault = authorPrefersDark;
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
     let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
     // Dark / light mode switch
     window.quartoToggleColorScheme = () => {
@@ -244,6 +249,14 @@ ul.task-list li input[type="checkbox"] {
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
     };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
     // Switch to dark mode if need be
     if (hasAlternateSentinel()) {
       toggleColorMode(true);
@@ -331,6 +344,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">About</h1>
+<p class="subtitle lead">The name, the reason, and how it is made.</p>
 </div>
 
 
@@ -349,41 +363,41 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="the-name" class="level2">
 <h2 class="anchored" data-anchor-id="the-name">The name</h2>
-<p>An <em>emaki</em> (絵巻) is a Japanese picture handscroll: a long painted scene held between two rolls of paper, read by winding it from one to the other, a span at a time. It is a good name for a window whose job is a conversation too long to see at once.</p>
-<p>The app’s icon is a handscroll seen from the front, with a conversation on its sheet — the agent on the left with its spark, your reply on the right. The drawing on the home page is the same scroll, with a landscape on it, and it winds as you move across it.</p>
+<p>An <em>emaki</em> (絵巻) is a Japanese picture handscroll: a long painted scene held between two rolls, read by winding it from one to the other, a span at a time. It is a good name for a window whose job is a conversation too long to see at once.</p>
+<p>The app’s icon is a handscroll seen from the front, with a conversation on its sheet: the agent on the left with its spark, your reply on the right. The drawing on the home page is the same scroll with a landscape on it, and it winds as you move across it.</p>
 </section>
 <section id="why-it-exists" class="level2">
 <h2 class="anchored" data-anchor-id="why-it-exists">Why it exists</h2>
 <p>Claude Code deletes its transcripts after <code>cleanupPeriodDays</code>, thirty by default, with no warning. Every other tool in this space reads <code>~/.claude/projects</code> and stops there, so they all inherit that expiry.</p>
-<p>So Emaki copies first and renders second. The archive sweep runs before anything else touches a session, for exactly this reason: if rendering fails, the bytes are already safe. The archive is not a backup but a peer source — live and archived transcripts are unioned, so a session Claude Code has deleted stays listed, searchable, renderable and exportable, flagged as <em>kept</em>.</p>
+<p>So Emaki copies first and renders second. The archive sweep runs before anything else touches a session, for exactly this reason: if rendering fails, the bytes are already safe. The archive is not a backup but a peer source: live and kept transcripts are read together, so a session Claude Code has deleted stays listed, searchable and readable, marked <em>kept</em>.</p>
 <p>Compaction, for what it is worth, was never the threat: it appends a boundary and keeps writing to the same file, leaving the earlier rows intact.</p>
 </section>
 <section id="how-it-is-built" class="level2">
 <h2 class="anchored" data-anchor-id="how-it-is-built">How it is built</h2>
-<p>Rust, with <a href="https://www.gpui.rs">GPUI</a> — the Zed editor’s UI framework — and <a href="https://github.com/longbridge/gpui-component">gpui-component</a> for the window. There is no daemon, no browser and no hook.</p>
-<pre><code>crates/emaki-core    everything without a window, plus the emaki-core CLI
-crates/emaki-app     the window
-vendor/              the gpui-component crates, with a few changes of ours
-scripts/             packaging, the icon, the status line</code></pre>
+<p>Rust, with <a href="https://www.gpui.rs">GPUI</a>, the Zed editor’s UI framework, and <a href="https://github.com/longbridge/gpui-component">gpui-component</a> for the window. There is no daemon, no browser and no hook.</p>
+<pre><code>crates/emaki-core   everything without a window, and the CLI
+crates/emaki-app    the window
+vendor/             gpui-component, with a few changes of ours
+scripts/            packaging, the icon, the status line</code></pre>
 <p>The core works in this order:</p>
 <ol type="1">
 <li><strong>Adapters</strong>, one per agent, find each agent’s sessions on disk.</li>
-<li><strong>Archive</strong> copies them byte for byte, before anything else touches them.</li>
+<li><strong>Archive</strong> copies Claude Code’s byte for byte, before anything else touches them.</li>
 <li><strong>Build</strong> parses the JSONL transcript into a model of rounds, items and tool calls. The transcript is the only source of truth.</li>
 <li><strong>Render</strong> writes that model as markdown under <code>~/.emaki/logs</code>.</li>
 <li><strong>Search</strong> indexes every item in SQLite FTS5.</li>
 </ol>
-<p>The app reads the same model and draws it. A file watcher says when to look again. To reply, it either writes to a terminal session’s inbox socket or runs a headless <code>claude -p --resume</code> child that appends to the same transcript.</p>
+<p>The app reads the same model and draws it. A file watcher says when to look again. To reply, it writes to a terminal session’s inbox, or runs a headless agent of its own that appends to the same transcript.</p>
 </section>
 <section id="where-it-is-going" class="level2">
 <h2 class="anchored" data-anchor-id="where-it-is-going">Where it is going</h2>
-<p>Three stages. The first is a complete app for Claude Code — permanent history, organization by recency, project and agent, readable conversations, and an explanation on any step. The second is the public release and the feedback that comes with it. The third extends the same features to Codex, Kimi and the other mainstream coding agents, so Emaki works across all of them.</p>
-<p>Codex support landed in v0.2.0; the <a href="./releases.html">releases</a> are the honest record of where things actually are.</p>
+<p>Three stages. The first is a complete app for Claude Code: permanent history, organization by recency, project and agent, readable conversations, and an explanation on any step. The second is the public release and the feedback that comes with it. The third extends the same to Codex, Kimi and the other mainstream coding agents, so Emaki works across all of them.</p>
+<p>Codex arrived in v0.2.0, ahead of its stage; the <a href="./releases.html">releases</a> are the honest record of where things stand.</p>
 </section>
 <section id="credits" class="level2">
 <h2 class="anchored" data-anchor-id="credits">Credits</h2>
 <p>The home page’s figure follows the line-drawing manner of <a href="https://github.com/lucasmarkes/hairline">hairline</a>’s figures: nothing filled, no words, what is far is dimmer, and one bright mark.</p>
-<p>Icons are <a href="https://tabler.io/icons">Tabler</a>’s outline set, drawn at a stroke of 1.75 where Tabler’s own is 2. The file tree’s icons are <a href="https://github.com/catppuccin/vscode-icons">Catppuccin</a>’s. The code colours are <a href="https://rosepinetheme.com">Rosé Pine</a>’s hues, retinted for contrast. The terminal keeps <a href="https://github.com/kakuapp">Kaku</a>’s cream in the light appearance. Every face the app carries is under the SIL Open Font License.</p>
+<p>Icons are <a href="https://tabler.io/icons">Tabler</a>’s outline set, drawn at a stroke of 1.75 where Tabler’s own is 2, in the app and on this site. The file tree’s icons are <a href="https://github.com/catppuccin/vscode-icons">Catppuccin</a>’s. The code colours are <a href="https://rosepinetheme.com">Rosé Pine</a>’s hues, retinted for contrast. The terminal keeps <a href="https://github.com/kakuapp">Kaku</a>’s cream in the light appearance. Every face the app carries is under the SIL Open Font License, and so are this site’s: Source Serif 4, JetBrains Mono and Belleza.</p>
 </section>
 <section id="licence" class="level2">
 <h2 class="anchored" data-anchor-id="licence">Licence</h2>
@@ -816,22 +830,30 @@ scripts/             packaging, the icon, the status line</code></pre>
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      &nbsp;
-    </div>   
+<p>MIT · © 2026 John Paul Helveston, Pingfan Hu, and Alkaline Software</p>
+</div>   
     <div class="nav-footer-center">
+<p>Made with <a href="https://quarto.org/" target="_blank">Quarto</a></p>
+</div>
+    <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
- Site made with <i class="bi bi-heart-fill"></i> and <a href="https://quarto.org/" target="_blank">Quarto</a>
+    <a class="nav-link" href="https://github.com/alkaline-software/emaki">
+<p>Emaki on GitHub</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/alkaline-software/emaki.lol">
+<p>This site</p>
+</a>
   </li>  
 </ul>
-    </div>
-    <div class="nav-footer-right">
-      &nbsp;
     </div>
   </div>
 </footer>
 <script src="js/navbar-widgets.js"></script>
 <script src="js/hero-scroll.js"></script>
+<script src="js/page.js"></script>
 
 
 

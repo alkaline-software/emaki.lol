@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>404 – Emaki</title>
+<title>Not here – Emaki</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -41,14 +41,15 @@ ul.task-list li input[type="checkbox"] {
 <script src="/site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="/site_libs/quarto-html/popper.min.js"></script>
 <script src="/site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="/site_libs/quarto-html/anchor.min.js"></script>
 <link href="/site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="/site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
 <link href="/site_libs/quarto-html/quarto-syntax-highlighting-dark-0a8ed1fdfbcec6579b90b7ee144169e0.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="/site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="/site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="/site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="/site_libs/bootstrap/bootstrap-9f56d9517062daf1162fd6b1ea100ecb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="/site_libs/bootstrap/bootstrap-dark-57274fccfcf8d7ae0570dbb9b1f319a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="/site_libs/bootstrap/bootstrap-3dac5a5dd82f6e4cac736f6507c8e5ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="/site_libs/bootstrap/bootstrap-dark-3cacf9d9ed86fa4b71630d0a393ff628.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="/site_libs/bootstrap/bootstrap-3dac5a5dd82f6e4cac736f6507c8e5ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -82,14 +83,15 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;family=Belleza&amp;display=swap">
 
 
-<meta property="og:title" content="404 – Emaki">
+<meta property="og:title" content="Not here – Emaki">
+<meta property="og:description" content="Every coding-agent session on your machine, kept for good, in one window you can also talk to.">
 <meta property="og:image" content="https://emaki.lol/assets/emaki-icon.png">
 <meta property="og:site_name" content="Emaki">
 <meta property="og:image:height" content="512">
 <meta property="og:image:width" content="512">
 </head>
 
-<body class="nav-fixed fullcontent quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -231,8 +233,11 @@ ul.task-list li input[type="checkbox"] {
         changeGiscusTheme();
       }
     };
-    const authorPrefersDark = true;
-    const darkModeDefault = authorPrefersDark;
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
     let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
     // Dark / light mode switch
     window.quartoToggleColorScheme = () => {
@@ -243,6 +248,14 @@ ul.task-list li input[type="checkbox"] {
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
     };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
     // Switch to dark mode if need be
     if (hasAlternateSentinel()) {
       toggleColorMode(true);
@@ -316,7 +329,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">404</h1>
+<h1 class="title">Not here</h1>
 </div>
 
 
@@ -333,18 +346,10 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<br>
-<center>
-<section id="whoops" class="level1">
-<h1>Whoops!</h1>
-<section id="the-requested-page-does-not-exist" class="level3">
-<h3 class="anchored" data-anchor-id="the-requested-page-does-not-exist">The requested page does not exist 😔</h3>
-</section>
-<section id="return-to-home" class="level3">
-<h3 class="anchored" data-anchor-id="return-to-home"><a href="https://emaki.lol">Return to home</a></h3>
-</section></section></center>
-
-
+<p>The page you asked for does not exist, or has moved.</p>
+<div class="hero-cta" style="justify-content: flex-start">
+<p><a href="https://emaki.lol" class="pill pill-accent i-scroll">Home</a></p>
+</div>
 
 
 
@@ -364,13 +369,6 @@ ul.task-list li input[type="checkbox"] {
       window.document.body.appendChild(a);
     }
     setColorSchemeToggle(hasAlternateSentinel())
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
@@ -771,22 +769,30 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      &nbsp;
-    </div>   
+<p>MIT · © 2026 John Paul Helveston, Pingfan Hu, and Alkaline Software</p>
+</div>   
     <div class="nav-footer-center">
+<p>Made with <a href="https://quarto.org/" target="_blank">Quarto</a></p>
+</div>
+    <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
- Site made with <i class="bi bi-heart-fill"></i> and <a href="https://quarto.org/" target="_blank">Quarto</a>
+    <a class="nav-link" href="https://github.com/alkaline-software/emaki">
+<p>Emaki on GitHub</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/alkaline-software/emaki.lol">
+<p>This site</p>
+</a>
   </li>  
 </ul>
-    </div>
-    <div class="nav-footer-right">
-      &nbsp;
     </div>
   </div>
 </footer>
 <script src="/js/navbar-widgets.js"></script>
 <script src="/js/hero-scroll.js"></script>
+<script src="/js/page.js"></script>
 
 
 

@@ -4,41 +4,73 @@
 
 Every coding-agent session on your machine, kept for good, in one window you can also talk to.
 
-An agentic development environment: not an editor that an agent was added to, but a window built around the sessions themselves.
+A desktop app for Claude Code and Codex. It keeps every session byte for byte, renders and searches all of them, and lets you carry one on from the window.
 
 [Download](install.llms.md) [What’s in it](features.llms.md) [Source](https://github.com/alkaline-software/emaki)
+
+For macOS, Windows and Linux. Open source, under the MIT licence.
 
 ## The thirty-day problem
 
 Claude Code deletes its transcripts after thirty days, with no warning. Every other tool in this space reads `~/.claude/projects` and stops there, so they all inherit that expiry.
 
-Emaki copies every Claude Code and Codex session before that happens, renders and searches all of them, and lets you continue a Claude Code session from the window. It never writes to a transcript and adds nothing to a session’s context.
+Emaki copies first and renders second. A session is in its archive from the first time it is seen, so if anything else fails the bytes are already safe, and one Claude Code has since deleted is still listed, still searchable, marked *kept*.
 
 ### Kept for good
 
-Every session is copied byte for byte into `~/.emaki/archive` before anything else touches it. One that Claude Code has since deleted is still there, still listed, still searchable, marked *kept*.
+Every Claude Code session is copied byte for byte into `~/.emaki/archive` before anything else touches it, and stays after Claude Code deletes it. Codex keeps its own, so those are read in place.
 
 ### Search everything
 
-`⌘K` searches every session you have ever run, indexed a paragraph at a time. `⌘F` finds inside the one you are reading.
+⌘K searches every session you have ever run, a paragraph at a time, live and kept together. ⌘F finds inside the one you are reading.
 
 ### Read what it did
 
-Prompts, replies, thoughts, tool calls and subagents, laid out like the Claude app rather than scrolled past in a terminal. Every session also renders to a markdown file.
+Prompts, replies, thoughts, tool calls and subagents, laid out like the Claude app. Ask for one plain sentence on any tool call you cannot read.
 
 ### Carry on talking
 
-Type in the composer to reply. A session running in a terminal gets the message through Claude Code’s inbox; a finished one resumes under Emaki.
+Type to reply. A session running in a terminal gets the message through its inbox; a finished one resumes under Emaki. Approvals, questions and plans come up as cards.
+
+## Beside the conversation
+
+The window is built around the sessions, and what you reach for while reading one sits at its side.
+
+### A terminal
+
+A shell in the session’s folder, or the agent’s own screen as it runs, two-way. Shells open in tabs.
+
+### The files
+
+The project as a tree with git’s marks. Open a file beside the conversation: code, markdown, CSV, PDF, Word, slides, pictures. Edit it and save with ⌘S.
+
+### Git
+
+Commit the files you tick, browse the history, switch and publish branches, push and pull, without leaving the window.
+
+### Dictation
+
+On a Mac, talk instead of typing. A model downloaded to the machine writes it down, Chinese and English mixed, and the shortcut works in any app.
 
 ## Nothing it will do to you
 
-No hooks, ever. Nothing writes to a transcript, and nothing Emaki does enters a session’s context window. It types in no terminal of yours and asks no terminal app for anything — it runs its own, hidden. There is no daemon and no browser.
-
-Everything lives in `~/.emaki`. Only `archive/` cannot be rebuilt, so that is the one directory to back up.
+- **No hooks, ever.**
+- Nothing writes to a transcript. The JSONL file is the only source of truth, and Emaki reads it.
+- Nothing Emaki does enters a session’s context window.
+- Nothing is typed into a terminal of yours, and no terminal app is asked for anything. Emaki runs its own, hidden.
+- No daemon and no browser. Everything lives in `~/.emaki`, and only `archive/` cannot be rebuilt: that is the one folder to back up.
 
 ## Built on the agents you already use
 
-Emaki needs Claude Code or Codex installed; it adds three things on top of them. Conversations that never expire, one place to organize them, and a readable view of what the agent did.
+Emaki needs Claude Code or Codex installed and signed in. It adds three things on top: conversations that never expire, one place to organize them, and a readable view of what the agent did.
+
+**Claude Code**
+
+Read, search, keep and continue a session from the window, with its modes, models and effort levels.
+
+**Codex**
+
+Read, search, start, continue and stop, with approvals, questions and plans on the same cards.
 
 [Install Emaki](install.llms.md)
 

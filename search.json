@@ -1,45 +1,213 @@
 [
   {
+    "objectID": "releases.html",
+    "href": "releases.html",
+    "title": "Releases",
+    "section": "",
+    "text": "The installers are on the releases page; the app also updates itself, from Settings, Updates, or on a daily check."
+  },
+  {
+    "objectID": "releases.html#v0.2.7-15-october-2026",
+    "href": "releases.html#v0.2.7-15-october-2026",
+    "title": "Releases",
+    "section": "v0.2.7 15 October 2026",
+    "text": "v0.2.7 15 October 2026\n\nDictation works in any app: the shortcut starts and stops it in WeChat, Obsidian, Notes and the rest, and the words are pasted where you type, your clipboard put back after. A pill at the top of the screen shows it listening. Allow Accessibility from Settings, Dictate.\nIn Emaki, dictation writes into the field you are in, such as a file’s editor, not only the composer.\nDictation Preferences: your own instructions for post-processing, in plain words, which it follows over its own rules.\nDictation Terms: names and words written exactly as you save them, capitals and all, added several at once.\nPost-processing writes numbers said in words as digits when asked, and numbers lists when asked.\nThe dictation history’s folder is a click away, and a shorter time trims it at once.\nLong sessions open about four times faster.\nSettings, Composer shows the send keys as keys. Esc cancelling dictation no longer plays the stop sound."
+  },
+  {
+    "objectID": "releases.html#v0.2.6-15-october-2026",
+    "href": "releases.html#v0.2.6-15-october-2026",
+    "title": "Releases",
+    "section": "v0.2.6 15 October 2026",
+    "text": "v0.2.6 15 October 2026\n\nDictation post-processing: a small model downloaded to this Mac (Qwen3.5 4B, 2B or 0.8B) removes hesitations, applies corrections (“100, no, 200”), mends grammar and makes lists, in any language, without translating. Turn it on in Settings, Dictate.\nSettings, Dictate has two lists, Speech to Text and Post-processing, each showing the model in use and opening to the rest. Several models can download at once.\nDictation history: kept on this Mac for as long as you choose, with a window to look back and copy what was said, as heard or post-processed.\nDictation starts and stops on a modifier tapped alone, such as Right ⌘ or Fn, chosen under More; Esc cancels it while listening. Softer chimes.\nThe Agents page shows the steps for this machine only, and GitHub in place of GitHub Desktop.\nEvery button has an icon, and every Off and On switch turns at a click anywhere on it.\nFixes: sessions ordered by when they last did something; a tooltip left on screen after its sheet closed; text that went on selecting after a click in the Changes sheet; scrolling in a window over Settings."
+  },
+  {
+    "objectID": "releases.html#v0.2.5-14-october-2026",
+    "href": "releases.html#v0.2.5-14-october-2026",
+    "title": "Releases",
+    "section": "v0.2.5 14 October 2026",
+    "text": "v0.2.5 14 October 2026\n\nDictation: talk into the composer with the microphone button or ⌘⇧D. A model you download in Settings, Dictate (Qwen3-ASR or Whisper) writes it down on this Mac, Chinese and English mixed. Mac only for now.\nThe Changes sheet commits the files you tick and has a History tab: browse commits, undo the last one or revert one. Push, Pull and Fetch sit where the counts are.\nSettings has a page a section, Off and On for every switch, a field for dictation’s key with Reset, and an About page.\nCodex sessions are archived, unarchived and deleted through Codex itself, and an archived session is unarchived from its menu in the sidebar.\nThe Agents page walks through installing git and each agent and signing in, a numbered step at a time, for the system you choose.\nCards that come up while a session runs stand at the conversation’s end and scroll with it; a dialog’s tabs sit in a strip with arrows.\nA Claude Code left running after its terminal closed is named as such, with a button to stop it and continue here.\nFixes: square corners that showed past rounded panels, sheets, menus and cards; Codex’s usage limits."
+  },
+  {
+    "objectID": "releases.html#v0.2.4-13-october-2026",
+    "href": "releases.html#v0.2.4-13-october-2026",
+    "title": "Releases",
+    "section": "v0.2.4 13 October 2026",
+    "text": "v0.2.4 13 October 2026\n\nWhatever an agent asks is shown: a question Emaki has no card for, such as Claude Code asking whether a new folder is trusted, comes up on the terminal card in the conversation and no longer waits unseen.\nSessions in the sidebar are selected together with ⌘-click, ⇧-click or a dragged rectangle, across projects, and archived or deleted from their menu. A selection is projects or sessions, whichever was touched first.\nA project’s menu in the sidebar archives or deletes its sessions, for one project or several.\nThe Changes sheet selects files the same ways, has a right-click menu, discards several files at once, and closes with ⌘W.\nA markdown file’s YAML header shows as a table of its fields over the text.\n⇧↑ and ⇧↓ select to the start and the end in every one-line field.\nThe buttons on question cards are pills with an icon, as Select on All Sessions is.\nFixes: a table column no longer breaks a word in its middle."
+  },
+  {
+    "objectID": "releases.html#v0.2.3-13-october-2026",
+    "href": "releases.html#v0.2.3-13-october-2026",
+    "title": "Releases",
+    "section": "v0.2.3 13 October 2026",
+    "text": "v0.2.3 13 October 2026\n\nThe sidebar lists every project and scrolls; pinned projects stay put above the rest, up to half the list.\nProjects in the sidebar are selected together with ⌘-click, ⇧-click, a dragged rectangle or ⌘A, then opened in Finder or hidden. Hidden projects and ones run in temporary folders sit under their own headings at the foot.\nAll Projects is now All Sessions, with a scroll for its icon: projects unfold in place, each row shows its date, and archived projects have their own section.\nSessions can be selected there, by project or one by one, and archived now or deleted. Archive checks Emaki’s copy first; Delete moves every copy to the Trash. Nothing in a project’s folder is touched.\nAn agent’s progress notes show as part of the reply, as in the terminal, and a running command says what it is for.\nCode blocks no longer wrap: a wide one scrolls sideways.\nA session begun by /clear opens with /clear, and no longer flashes under a stray folder in the sidebar.\n“New messages” scrolls down to the new part, and a project opened near the foot of a list scrolls into view.\nFixes: stray lines around the logo in About."
+  },
+  {
+    "objectID": "releases.html#v0.2.2-12-october-2026",
+    "href": "releases.html#v0.2.2-12-october-2026",
+    "title": "Releases",
+    "section": "v0.2.2 12 October 2026",
+    "text": "v0.2.2 12 October 2026\n\nWord documents open as pages and can be written in: type, select, style, format, undo and save with ⌘S, on WordCraft’s engine. Try it on a copy first: a save rewrites the file.\nPowerPoint slides are drawn as they look, Excel cells show their number formats, and PDF pages are sharp at any width.\nHTML files show in the system’s web view, scripts and all.\nParquet files open as a table, with each column’s type and the file’s row count.\nThe files tree works like a file manager: drag files in from Finder, drag rows to move them, cut, copy, duplicate, remove with ⌘⌫, and take it all back with ⌘Z and ⌘⇧Z.\nFiles, folders and sessions are renamed in place, and tables keep their heads in view and select blocks of cells.\nA file can take over the conversation’s room with the enlarge button, and files open as they read rather than as source.\nExplanations and outline labels come from the session’s own agent: Haiku for Claude Code, Codex’s light model for Codex.\n⌘↩︎ or the send button with nothing typed starts a session on the home page, and each agent’s page links to its sessions.\nWhat is typed in the composer survives closing the window, and Settings has an About section.\nFixes: the keyboard is no longer lost after a file closes, ⌘W closes a file or a tab before the window, and pages no longer blink when the pane is resized."
+  },
+  {
+    "objectID": "releases.html#v0.2.1-11-october-2026",
+    "href": "releases.html#v0.2.1-11-october-2026",
+    "title": "Releases",
+    "section": "v0.2.1 11 October 2026",
+    "text": "v0.2.1 11 October 2026\n\nA new look: the sidebar and a thin frame around the content in graphite, the page near white, and in the dark appearance a darker page in a lighter frame.\nSettings, Fonts: eight chat fonts and four monospace fonts, all built into the app, and one font size for the conversation, the file editor and the terminal.\nFormat on save covers ten languages: R, Python, Rust, Go, C and C++, TypeScript, JavaScript, JSON, Markdown and TOML. It is off until you turn it on.\nA message shows in the conversation the moment it is sent, a prompt’s bubble has a tail, and tool badges are in colour.\nPin a project to the top of the sidebar, start a session in the current project with ⌘T, and choose a folder with ⌘O.\n/clear is followed to the session it starts.\nIn the files panel: ⌘A selects everything, and a drag over the rows selects the ones it covers.\nA right click in the file editor selects the word under it.\nExplanations work with Codex alone: when Claude Code is not installed, a light Codex model writes them.\nThe home page says so when no agent is installed, and points to the Agents page, which lists GitHub Desktop too.\nSettings is shorter: one Spelling Check entry with its languages, flags on the languages, icons on the themes, and fewer notes.\nFixes: “New messages” glides to the end, buttons and menu rows show in the dark appearance, and a small window shows one pane at a time."
+  },
+  {
+    "objectID": "releases.html#v0.2.0-10-october-2026",
+    "href": "releases.html#v0.2.0-10-october-2026",
+    "title": "Releases",
+    "section": "v0.2.0 10 October 2026",
+    "text": "v0.2.0 10 October 2026\n\nCodex joins Claude Code: its sessions are kept, read and searched, and you can start, continue and stop one from the window, with its approvals, questions and plans on the same cards.\nCodex’s own terminal is on the terminal panel, joined to the same session, so a turn typed there shows in the conversation and the other way round.\nAn Agents page (⌘E) says which agents are installed and signed in, with the commands to set one up and a shell beside them.\nA new session’s agent is chosen on the strip under the composer, also on one begun from a project’s plus. Its mode, effort and model are lists there, and Settings, New sessions has them for each agent.\nThe mode pill opens a list for Claude Code too, in each mode’s colour; ⇧Tab still steps as in the terminal.\nThe row under the composer shows context and usage for Codex, with whatever windows its plan has.\nEach agent has its colour: Claude’s terracotta and Codex’s green, on its mark and on its page.\nTabs keep a readable width and scroll once they no longer fit, the tab you are on stays in view, and ⌘ shows 1 to 9 on the tabs those keys go to.\nBranches: fetch, make a branch from the list, publish a local one, and see how to sign in when the remote refuses.\nA plan is shown on its approval card and stays in the conversation, and tool calls, thoughts and rows open and close in motion.\nThe archive is a folder an agent; an older one is moved into place at launch.\nFixes: a session begun from a folder no longer ends with “No conversation found”, and lists in the dark appearance show the row under the pointer."
+  },
+  {
+    "objectID": "releases.html#v0.1.9-9-october-2026",
+    "href": "releases.html#v0.1.9-9-october-2026",
+    "title": "Releases",
+    "section": "v0.1.9 9 October 2026",
+    "text": "v0.1.9 9 October 2026\n\nEdit files in the pane beside the conversation and save with ⌘S. Unsaved changes are never lost without asking, and git’s changes are marked in the margin, each with a card to see or revert it.\nA CSV opens as a grid with lettered columns and numbered rows; edit a cell in place, or edit the file as written, where each column has its own colour.\nWord, PowerPoint and Excel files (docx, pptx, xlsx, xls) open to read.\nTabs are grouped by project into pills; drag a tab within its pill, or a pill by its folder mark.\nThe home page is the greeting and the composer, with the folder to start in on a strip under it: four recent folders, or any folder you choose.\nA plus on a project in the sidebar starts a new session there, on a tab of its own.\nIn the files panel: Copy and Paste on the menu, ⌘C and ⌘V on a row (to and from Finder too), and ⌘Z to take a paste back.\nDiscard a file’s changes from the Changes panel, after a confirmation.\nA rename made while the agent is working waits its turn, and the new name shows only once it is real.\nSettings, Files: turn formatting R files on save (Air) on or off.\nCopying from the agent’s terminal reaches the clipboard, and a session stays in the folder it started in.\nEmaki no longer asks any terminal app for anything."
+  },
+  {
+    "objectID": "releases.html#v0.1.8-8-october-2026",
+    "href": "releases.html#v0.1.8-8-october-2026",
+    "title": "Releases",
+    "section": "v0.1.8 8 October 2026",
+    "text": "v0.1.8 8 October 2026\n\nClick a file in the files panel to read it in a pane beside the conversation; click it again, or press ⌘W, to close it.\nThat pane shows code with line numbers and colours, markdown as it reads or as written, pictures, tables, and PDFs with search, selection, page previews and a table of contents.\nThe composer checks spelling and grammar as you type (English US or UK; Spanish, French and German spelling on a Mac) and capitalizes a new sentence. Right-click a marked word for corrections, Learn Spelling or Ignore.\nEvery text field has Emaki’s own right-click menu.\nThe conversation follows new content when you are near the bottom, and a “New messages” button takes you to what arrived while you were reading higher up.\nOne terminal look for the shell and the agent’s screen, after Kaku, with a Terminal section in Settings.\n⌘⇧T and ⌘⇧A show and hide the two sides of the terminal panel; in the shell, ⌘T opens a tab and ⌘W closes it.\nThe model and effort pills open a list in place, and code blocks in a conversation are coloured.\nThe archive copies sessions as clones where the disk allows, and a session its agent deleted stays listed as archived.\nNew icons (Tabler); the board is gone, and Projects is now All Projects.\nA folder inside a repository shows git’s marks for its own files only.\nFixes: a question with previews reads correctly and can be answered, a session whose process is gone stops showing as working, and a stopped prompt is not sent twice."
+  },
+  {
+    "objectID": "releases.html#v0.1.7-7-october-2026",
+    "href": "releases.html#v0.1.7-7-october-2026",
+    "title": "Releases",
+    "section": "v0.1.7 7 October 2026",
+    "text": "v0.1.7 7 October 2026\n\nA terminal inside Emaki, at the conversation’s right: shells in tabs, and the session’s own agent as it runs. Nothing opens a terminal app any more.\nIn it: select with the mouse (copied on release), click and scroll in programs that take the mouse, and the line keys of a Mac terminal (⌘←, ⌘→, ⌘⌫, ⇧↩︎, ⌘K).\nA files panel beside the conversation: the project’s folder as a tree with git’s marks, a file’s contents, and what changed.\nSwitch branches from the files panel, carrying your changes along or leaving them behind to restore later.\nAn outline of the conversation, a short label per prompt; click one to go there.\nRight-click menus on sessions, tabs, files, the conversation, attachments and the branch name.\nCode blocks have a copy button, and a right click on a word selects it.\nSettings, Composer: send with ⌘↩︎ or with ↩︎; ⇧↩︎ is always a new line.\nRunning subagents show in a row over the composer; click it to see them.\nHold ⌘ to see each tab’s number.\nA question asked in a named session shows as a card, and “Type something” takes your own answer."
+  },
+  {
+    "objectID": "releases.html#v0.1.6-6-october-2026",
+    "href": "releases.html#v0.1.6-6-october-2026",
+    "title": "Releases",
+    "section": "v0.1.6 6 October 2026",
+    "text": "v0.1.6 6 October 2026\n\nSessions run in a hidden terminal of Emaki’s own; nothing done in Emaki touches a terminal of yours.\n⇧Tab or the mode pill changes the mode in place; the model and effort pills show Claude Code’s picker on a card.\nType @ in the composer to pick a file or folder from the project; a path that exists takes the accent colour.\nA command left running in the background shows in a row over the composer; click it for its output.\nSet your own picture and name in Settings, Appearance.\nDrag the sidebar’s edge to resize it, or double-click the edge to fit it.\nThe sidebar lists Agents and Projects on cards; the Projects page lists projects first, then their sessions.\nTabs switch instantly, share the row, drag to reorder, and answer to ⌘1 to ⌘9.\nRenaming a session renames it for Claude Code too, and every session keeps its own draft.\nThe sidebar button and search sit beside the traffic lights; the terminal button opens your default terminal.\nNew icons (Phosphor), and scrollbars that fade after a second."
+  },
+  {
+    "objectID": "releases.html#v0.1.5-4-october-2026",
+    "href": "releases.html#v0.1.5-4-october-2026",
+    "title": "Releases",
+    "section": "v0.1.5 4 October 2026",
+    "text": "v0.1.5 4 October 2026\n\nA new icon: the scroll on cream, with a conversation on its sheet.\nA question or approval waiting in a terminal shows as a card in the window; answer it and move between its questions there.\nWhile Claude works in a terminal, the row under the conversation shows the terminal’s own line (“Embellishing… (13s · ↓ 1.0k tokens)”) in its colours.\nThe prompt Claude Code suggests after a turn shows in the composer; → or Tab takes it.\nA session started in Emaki shows in the terminal’s resume list.\nModes, models and effort levels are read from Claude Code and coloured as it colours them.\nA change of mode, model or effort is one short line in the conversation.\n⇧Tab in the composer steps a terminal session’s mode, and the pill follows.\nThe effort and model pills open the session’s terminal when it has none, then the picker there.\nStop, or Escape, gives your message back only when Claude had not started on it, and sending it again works.\nIn the composer, ⇧↑ and ⇧↓ select one line at a time, and a paste or dictation scrolls to the caret.\nDurations read in whole seconds."
+  },
+  {
+    "objectID": "releases.html#v0.1.4-3-october-2026",
+    "href": "releases.html#v0.1.4-3-october-2026",
+    "title": "Releases",
+    "section": "v0.1.4 3 October 2026",
+    "text": "v0.1.4 3 October 2026\n\nA new icon: a handscroll on the terracotta plate.\nThe home page shows recent folders as cards under a serif greeting.\nRecents and the sessions page are grouped by day, and a live row shows its state.\nThe board is four open columns that reflow with the window and never scroll sideways.\nSettings has sections and segmented controls. Updates are one button.\nType “/” for the folder’s slash commands. A command runs; a skill goes into the message.\nClaude’s questions show as cards, and a session started in Emaki answers them from the window.\nStop a turn from the window. The stopped message returns to the composer.\nOn a terminal session, questions, approvals, commands, mode, model and effort take you to the terminal, and the window comes back when you are done.\nA message sent while Claude is working shows at once, marked as queued.\nFixed: /compact left the board on “working”, and the context percentage used the wrong window size.\nSofter shadows, pages that fade in, less work while idle."
+  },
+  {
+    "objectID": "releases.html#v0.1.3-2-october-2026",
+    "href": "releases.html#v0.1.3-2-october-2026",
+    "title": "Releases",
+    "section": "v0.1.3 2 October 2026",
+    "text": "v0.1.3 2 October 2026\n\nThe terminal, project folder and transcript buttons sit together at the top right.\nThe session’s folder path is under the tabs, in place of the long line of stats.\nThe app’s icon and name are in the sidebar.\nA copy button and the time appear under a prompt or reply on hover.\nInline code is drawn in the accent colour on a tinted plate, as in the Claude app.\nCode is set in SF Mono, or Anthropic Mono when it is in ~/.emaki/fonts.\nA tool card names its tool once."
+  },
+  {
+    "objectID": "releases.html#v0.1.2-30-september-2026",
+    "href": "releases.html#v0.1.2-30-september-2026",
+    "title": "Releases",
+    "section": "v0.1.2 30 September 2026",
+    "text": "v0.1.2 30 September 2026\n\nThe status line script ships with the app and feeds the limits row. emaki-core statusline restore puts the old setting back.\nOpen in your terminal: continue a session with claude --resume in a terminal window.\nA session opens at its end and follows the reply as it streams.\nText matches the Claude app: 16px, semibold for bold, monospaced inline code.\nClaude’s own mark, turning while it works.\nNotices show under the composer, not in the sidebar.\nFixed: bold drew as regular, scroll momentum crossed panes, arrow keys stopped short of the composer’s ends."
+  },
+  {
+    "objectID": "releases.html#v0.1.1-29-september-2026",
+    "href": "releases.html#v0.1.1-29-september-2026",
+    "title": "Releases",
+    "section": "v0.1.1 29 September 2026",
+    "text": "v0.1.1 29 September 2026\nThe app stands alone. The Python command-line tool and web daemon are gone.\n\nEmaki updates itself, from Settings or a daily check.\nExplain: one plain sentence on what an opaque tool call does, on tool cards and permission cards.\nContext and rate limits under the composer.\nLong tool output scrolls inside its card.\nPasted pictures show their names.\nFixed: a crash on some Codex sessions, and ⌘↩︎ leaving a line break.\nNo hooks. If ~/.claude/settings.json still has entries naming emaki-hook, delete them."
+  },
+  {
+    "objectID": "releases.html#v0.1.0-29-september-2026",
+    "href": "releases.html#v0.1.0-29-september-2026",
+    "title": "Releases",
+    "section": "v0.1.0 29 September 2026",
+    "text": "v0.1.0 29 September 2026\nThe first release. Emaki keeps every coding-agent session on your machine and lets you read, search and continue them in one window.\n\nEvery Claude Code and Codex session is archived byte for byte, and stays after Claude Code deletes it.\nA board of live sessions: needs you, planning, working, your turn.\nFull-text search across every session (⌘K), and find inside one (⌘F).\nA conversation view laid out like the Claude app.\nReply from the window, with attachments, permission cards, and mode, model and effort pills.\nEvery session also renders to a markdown file.\nSettings for appearance, accent, font and text size.\n\nInstall: on macOS drag Emaki to Applications (signed and notarized). On Windows SmartScreen asks once: More info, then Run anyway. On Linux run the AppImage or install the .deb."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Emaki",
+    "section": "",
+    "text": "Every coding-agent session on your machine, kept for good, in one window you can also talk to.\n\n\nA desktop app for Claude Code and Codex. It keeps every session byte for byte, renders and searches all of them, and lets you carry one on from the window.\n\n\nDownload What’s in it Source\n\n\nFor macOS, Windows and Linux. Open source, under the MIT licence."
+  },
+  {
+    "objectID": "index.html#the-thirty-day-problem",
+    "href": "index.html#the-thirty-day-problem",
+    "title": "Emaki",
+    "section": "The thirty-day problem",
+    "text": "The thirty-day problem\nClaude Code deletes its transcripts after thirty days, with no warning. Every other tool in this space reads ~/.claude/projects and stops there, so they all inherit that expiry.\nEmaki copies first and renders second. A session is in its archive from the first time it is seen, so if anything else fails the bytes are already safe, and one Claude Code has since deleted is still listed, still searchable, marked kept."
+  },
+  {
+    "objectID": "index.html#beside-the-conversation",
+    "href": "index.html#beside-the-conversation",
+    "title": "Emaki",
+    "section": "Beside the conversation",
+    "text": "Beside the conversation\nThe window is built around the sessions, and what you reach for while reading one sits at its side."
+  },
+  {
+    "objectID": "index.html#nothing-it-will-do-to-you",
+    "href": "index.html#nothing-it-will-do-to-you",
+    "title": "Emaki",
+    "section": "Nothing it will do to you",
+    "text": "Nothing it will do to you\n\n\nNo hooks, ever.\nNothing writes to a transcript. The JSONL file is the only source of truth, and Emaki reads it.\nNothing Emaki does enters a session’s context window.\nNothing is typed into a terminal of yours, and no terminal app is asked for anything. Emaki runs its own, hidden.\nNo daemon and no browser. Everything lives in ~/.emaki, and only archive/ cannot be rebuilt: that is the one folder to back up."
+  },
+  {
+    "objectID": "index.html#built-on-the-agents-you-already-use",
+    "href": "index.html#built-on-the-agents-you-already-use",
+    "title": "Emaki",
+    "section": "Built on the agents you already use",
+    "text": "Built on the agents you already use\nEmaki needs Claude Code or Codex installed and signed in. It adds three things on top: conversations that never expire, one place to organize them, and a readable view of what the agent did.\n\n\nClaude Code\nRead, search, keep and continue a session from the window, with its modes, models and effort levels.\n\n\nCodex\nRead, search, start, continue and stop, with approvals, questions and plans on the same cards.\n\n\n\nInstall Emaki"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "An emaki (絵巻) is a Japanese picture handscroll: a long painted scene held between two rolls of paper, read by winding it from one to the other, a span at a time. It is a good name for a window whose job is a conversation too long to see at once.\nThe app’s icon is a handscroll seen from the front, with a conversation on its sheet — the agent on the left with its spark, your reply on the right. The drawing on the home page is the same scroll, with a landscape on it, and it winds as you move across it."
+    "text": "An emaki (絵巻) is a Japanese picture handscroll: a long painted scene held between two rolls, read by winding it from one to the other, a span at a time. It is a good name for a window whose job is a conversation too long to see at once.\nThe app’s icon is a handscroll seen from the front, with a conversation on its sheet: the agent on the left with its spark, your reply on the right. The drawing on the home page is the same scroll with a landscape on it, and it winds as you move across it."
   },
   {
     "objectID": "about.html#the-name",
     "href": "about.html#the-name",
     "title": "About",
     "section": "",
-    "text": "An emaki (絵巻) is a Japanese picture handscroll: a long painted scene held between two rolls of paper, read by winding it from one to the other, a span at a time. It is a good name for a window whose job is a conversation too long to see at once.\nThe app’s icon is a handscroll seen from the front, with a conversation on its sheet — the agent on the left with its spark, your reply on the right. The drawing on the home page is the same scroll, with a landscape on it, and it winds as you move across it."
+    "text": "An emaki (絵巻) is a Japanese picture handscroll: a long painted scene held between two rolls, read by winding it from one to the other, a span at a time. It is a good name for a window whose job is a conversation too long to see at once.\nThe app’s icon is a handscroll seen from the front, with a conversation on its sheet: the agent on the left with its spark, your reply on the right. The drawing on the home page is the same scroll with a landscape on it, and it winds as you move across it."
   },
   {
     "objectID": "about.html#why-it-exists",
     "href": "about.html#why-it-exists",
     "title": "About",
     "section": "Why it exists",
-    "text": "Why it exists\nClaude Code deletes its transcripts after cleanupPeriodDays, thirty by default, with no warning. Every other tool in this space reads ~/.claude/projects and stops there, so they all inherit that expiry.\nSo Emaki copies first and renders second. The archive sweep runs before anything else touches a session, for exactly this reason: if rendering fails, the bytes are already safe. The archive is not a backup but a peer source — live and archived transcripts are unioned, so a session Claude Code has deleted stays listed, searchable, renderable and exportable, flagged as kept.\nCompaction, for what it is worth, was never the threat: it appends a boundary and keeps writing to the same file, leaving the earlier rows intact."
+    "text": "Why it exists\nClaude Code deletes its transcripts after cleanupPeriodDays, thirty by default, with no warning. Every other tool in this space reads ~/.claude/projects and stops there, so they all inherit that expiry.\nSo Emaki copies first and renders second. The archive sweep runs before anything else touches a session, for exactly this reason: if rendering fails, the bytes are already safe. The archive is not a backup but a peer source: live and kept transcripts are read together, so a session Claude Code has deleted stays listed, searchable and readable, marked kept.\nCompaction, for what it is worth, was never the threat: it appends a boundary and keeps writing to the same file, leaving the earlier rows intact."
   },
   {
     "objectID": "about.html#how-it-is-built",
     "href": "about.html#how-it-is-built",
     "title": "About",
     "section": "How it is built",
-    "text": "How it is built\nRust, with GPUI — the Zed editor’s UI framework — and gpui-component for the window. There is no daemon, no browser and no hook.\ncrates/emaki-core    everything without a window, plus the emaki-core CLI\ncrates/emaki-app     the window\nvendor/              the gpui-component crates, with a few changes of ours\nscripts/             packaging, the icon, the status line\nThe core works in this order:\n\nAdapters, one per agent, find each agent’s sessions on disk.\nArchive copies them byte for byte, before anything else touches them.\nBuild parses the JSONL transcript into a model of rounds, items and tool calls. The transcript is the only source of truth.\nRender writes that model as markdown under ~/.emaki/logs.\nSearch indexes every item in SQLite FTS5.\n\nThe app reads the same model and draws it. A file watcher says when to look again. To reply, it either writes to a terminal session’s inbox socket or runs a headless claude -p --resume child that appends to the same transcript."
+    "text": "How it is built\nRust, with GPUI, the Zed editor’s UI framework, and gpui-component for the window. There is no daemon, no browser and no hook.\ncrates/emaki-core   everything without a window, and the CLI\ncrates/emaki-app    the window\nvendor/             gpui-component, with a few changes of ours\nscripts/            packaging, the icon, the status line\nThe core works in this order:\n\nAdapters, one per agent, find each agent’s sessions on disk.\nArchive copies Claude Code’s byte for byte, before anything else touches them.\nBuild parses the JSONL transcript into a model of rounds, items and tool calls. The transcript is the only source of truth.\nRender writes that model as markdown under ~/.emaki/logs.\nSearch indexes every item in SQLite FTS5.\n\nThe app reads the same model and draws it. A file watcher says when to look again. To reply, it writes to a terminal session’s inbox, or runs a headless agent of its own that appends to the same transcript."
   },
   {
     "objectID": "about.html#where-it-is-going",
     "href": "about.html#where-it-is-going",
     "title": "About",
     "section": "Where it is going",
-    "text": "Where it is going\nThree stages. The first is a complete app for Claude Code — permanent history, organization by recency, project and agent, readable conversations, and an explanation on any step. The second is the public release and the feedback that comes with it. The third extends the same features to Codex, Kimi and the other mainstream coding agents, so Emaki works across all of them.\nCodex support landed in v0.2.0; the releases are the honest record of where things actually are."
+    "text": "Where it is going\nThree stages. The first is a complete app for Claude Code: permanent history, organization by recency, project and agent, readable conversations, and an explanation on any step. The second is the public release and the feedback that comes with it. The third extends the same to Codex, Kimi and the other mainstream coding agents, so Emaki works across all of them.\nCodex arrived in v0.2.0, ahead of its stage; the releases are the honest record of where things stand."
   },
   {
     "objectID": "about.html#credits",
     "href": "about.html#credits",
     "title": "About",
     "section": "Credits",
-    "text": "Credits\nThe home page’s figure follows the line-drawing manner of hairline’s figures: nothing filled, no words, what is far is dimmer, and one bright mark.\nIcons are Tabler’s outline set, drawn at a stroke of 1.75 where Tabler’s own is 2. The file tree’s icons are Catppuccin’s. The code colours are Rosé Pine’s hues, retinted for contrast. The terminal keeps Kaku’s cream in the light appearance. Every face the app carries is under the SIL Open Font License."
+    "text": "Credits\nThe home page’s figure follows the line-drawing manner of hairline’s figures: nothing filled, no words, what is far is dimmer, and one bright mark.\nIcons are Tabler’s outline set, drawn at a stroke of 1.75 where Tabler’s own is 2, in the app and on this site. The file tree’s icons are Catppuccin’s. The code colours are Rosé Pine’s hues, retinted for contrast. The terminal keeps Kaku’s cream in the light appearance. Every face the app carries is under the SIL Open Font License, and so are this site’s: Source Serif 4, JetBrains Mono and Belleza."
   },
   {
     "objectID": "about.html#licence",
@@ -49,290 +217,136 @@
     "text": "Licence\nMIT. © 2026 John Paul Helveston, Pingfan Hu, and Alkaline Software.\nThe source is at github.com/alkaline-software/emaki, and this site’s at github.com/alkaline-software/emaki.lol."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Emaki",
-    "section": "",
-    "text": "Every coding-agent session on your machine, kept for good, in one window you can also talk to.\n\n\nAn agentic development environment: not an editor that an agent was added to, but a window built around the sessions themselves.\n\n\nDownload What’s in it Source"
-  },
-  {
-    "objectID": "index.html#the-thirty-day-problem",
-    "href": "index.html#the-thirty-day-problem",
-    "title": "Emaki",
-    "section": "The thirty-day problem",
-    "text": "The thirty-day problem\nClaude Code deletes its transcripts after thirty days, with no warning. Every other tool in this space reads ~/.claude/projects and stops there, so they all inherit that expiry.\nEmaki copies every Claude Code and Codex session before that happens, renders and searches all of them, and lets you continue a Claude Code session from the window. It never writes to a transcript and adds nothing to a session’s context.\n\n\nKept for good\nEvery session is copied byte for byte into ~/.emaki/archive before anything else touches it. One that Claude Code has since deleted is still there, still listed, still searchable, marked kept.\n\n\nSearch everything\n⌘K searches every session you have ever run, indexed a paragraph at a time. ⌘F finds inside the one you are reading.\n\n\nRead what it did\nPrompts, replies, thoughts, tool calls and subagents, laid out like the Claude app rather than scrolled past in a terminal. Every session also renders to a markdown file.\n\n\nCarry on talking\nType in the composer to reply. A session running in a terminal gets the message through Claude Code’s inbox; a finished one resumes under Emaki."
-  },
-  {
-    "objectID": "index.html#nothing-it-will-do-to-you",
-    "href": "index.html#nothing-it-will-do-to-you",
-    "title": "Emaki",
-    "section": "Nothing it will do to you",
-    "text": "Nothing it will do to you\nNo hooks, ever. Nothing writes to a transcript, and nothing Emaki does enters a session’s context window. It types in no terminal of yours and asks no terminal app for anything — it runs its own, hidden. There is no daemon and no browser.\nEverything lives in ~/.emaki. Only archive/ cannot be rebuilt, so that is the one directory to back up."
-  },
-  {
-    "objectID": "index.html#built-on-the-agents-you-already-use",
-    "href": "index.html#built-on-the-agents-you-already-use",
-    "title": "Emaki",
-    "section": "Built on the agents you already use",
-    "text": "Built on the agents you already use\nEmaki needs Claude Code or Codex installed; it adds three things on top of them. Conversations that never expire, one place to organize them, and a readable view of what the agent did.\n\nInstall Emaki"
-  },
-  {
     "objectID": "features.html",
     "href": "features.html",
     "title": "Features",
     "section": "",
-    "text": "Most of Emaki explains itself once it is open. This is the tour, and the shortcuts are at the foot."
+    "text": "The sidebar lists every project, pinned ones above the rest, with headings at the foot for hidden projects and temporary folders. All Sessions unfolds each project in place, every session dated and ordered by when it last did something, archived projects in their own section.\nSelect sessions or projects together (⌘-click, ⇧-click, a dragged rectangle or ⌘A), then archive them now, delete them, or open them in Finder. Archive checks Emaki’s own copy first; Delete moves every copy to the Trash. Nothing in a project’s own folder is touched.\nA session Claude Code has deleted stays listed, marked kept. Renaming a session renames it for Claude Code too, and each one keeps its own draft. Tabs group into per-project pills, drag to reorder, and answer to ⌘1 to ⌘9."
   },
   {
     "objectID": "features.html#sessions-and-projects",
     "href": "features.html#sessions-and-projects",
     "title": "Features",
-    "section": "Sessions and projects",
-    "text": "Sessions and projects\nThe sidebar lists every project, with pinned ones above the rest and headings at the foot for hidden projects and temporary folders. All Sessions unfolds each project in place, every session dated, archived projects in their own section.\nSelect sessions or projects together — ⌘-click, ⇧-click, a dragged rectangle, or ⌘A — then archive them now, delete them, or open them in Finder. Archive checks Emaki’s own copy first; Delete moves every copy to the Trash. Nothing in a project’s own folder is touched.\nA session Claude Code has deleted stays listed, marked kept. Renaming a session renames it for Claude Code too. Each one keeps its own draft.\nTabs group into per-project pills, drag to reorder, and answer to ⌘1–⌘9."
+    "section": "",
+    "text": "The sidebar lists every project, pinned ones above the rest, with headings at the foot for hidden projects and temporary folders. All Sessions unfolds each project in place, every session dated and ordered by when it last did something, archived projects in their own section.\nSelect sessions or projects together (⌘-click, ⇧-click, a dragged rectangle or ⌘A), then archive them now, delete them, or open them in Finder. Archive checks Emaki’s own copy first; Delete moves every copy to the Trash. Nothing in a project’s own folder is touched.\nA session Claude Code has deleted stays listed, marked kept. Renaming a session renames it for Claude Code too, and each one keeps its own draft. Tabs group into per-project pills, drag to reorder, and answer to ⌘1 to ⌘9."
   },
   {
     "objectID": "features.html#search",
     "href": "features.html#search",
     "title": "Features",
     "section": "Search",
-    "text": "Search\n⌘K searches every session on the machine. The index holds one document per item — a prompt, a reply paragraph, a thought, a tool call — so a hit lands on the thing you remembered rather than the file it was in. Live and archived sessions are searched together.\n⌘F finds inside the conversation you are reading, ⌘G and ⌘⇧G step through the hits."
+    "text": "Search\n⌘K searches every session on the machine. The index holds one entry per item, a prompt, a reply’s paragraph, a thought, a tool call, so a hit lands on the thing you remembered rather than the file it was in. Live and kept sessions are searched together.\n⌘F finds inside the conversation you are reading; ⌘G and ⌘⇧G step through the hits."
   },
   {
     "objectID": "features.html#conversation",
     "href": "features.html#conversation",
     "title": "Features",
     "section": "Conversation",
-    "text": "Conversation\nPrompts, replies, tool calls, thoughts and subagents, laid out like the Claude app. Prompts sit in a bubble with a tail; tool badges are coloured by kind; tool calls, thoughts and rows open and close in motion rather than jumping. Code blocks are syntax-coloured, carry a copy button, and scroll sideways instead of wrapping.\nExplain puts one plain sentence on an opaque tool call, asked of the session’s own agent — Haiku for Claude Code, Codex’s light model for Codex.\nThe outline (⌘⇧O) is a short label per prompt; click one to jump there. A progress note shows as part of the reply, as it does in the terminal, and a running command says what it is for."
+    "text": "Conversation\nPrompts, replies, tool calls, thoughts and subagents, laid out like the Claude app. Prompts sit in a bubble with a tail, tool badges are coloured by kind, and tool calls, thoughts and rows open and close in motion. Code blocks are coloured, carry a copy button and scroll sideways instead of wrapping.\nExplain puts one plain sentence on an opaque tool call, asked of the session’s own agent: Haiku for Claude Code, Codex’s light model for Codex. The outline (⌘⇧O) is a short label per prompt; click one to jump there. An agent’s progress notes show as part of the reply, as in the terminal, and a running command says what it is for."
   },
   {
     "objectID": "features.html#composer",
     "href": "features.html#composer",
     "title": "Features",
     "section": "Composer",
-    "text": "Composer\nType to reply. A session running in a terminal gets the message through Claude Code’s inbox; a finished one resumes under Emaki.\n\nAttach files by paste, drop, or the + button.\n@ picks a file or folder from the project. An existing path takes the accent colour.\n/ lists the folder’s slash commands.\nSpelling and grammar are checked as you type (English US and UK; Spanish, French and German spelling on a Mac), with corrections, Learn Spelling and Ignore on the right-click menu.\nDictation (⌘⇧D) writes down what you say, on this machine, with a model you download in Settings — Qwen3-ASR or Whisper, Chinese and English mixed. macOS for now.\nSend with ⌘↩︎ or ↩︎, your choice; ⇧↩︎ is always a new line. Drafts survive quitting."
+    "text": "Composer\nType to reply. A session running in a terminal gets the message through Claude Code’s inbox; a finished one resumes under Emaki.\n\nAttach files by paste, drop or the + button.\n@ picks a file or folder from the project; a path that exists takes the accent colour. / lists the folder’s slash commands.\nSpelling and grammar are checked as you type (English US and UK; Spanish, French and German spelling on a Mac), with corrections, Learn Spelling and Ignore on the right-click menu.\nSend with ⌘↩︎ or ↩︎, your choice; ⇧↩︎ is always a new line. Drafts survive quitting."
+  },
+  {
+    "objectID": "features.html#dictation",
+    "href": "features.html#dictation",
+    "title": "Features",
+    "section": "Dictation",
+    "text": "Dictation\nOn a Mac, press ⌘⇧D or the microphone button and talk. A model you download once in Settings, Dictate (Qwen3-ASR or Whisper) writes it down on this machine, Chinese and English mixed in one sentence, and the words go in at the caret. Nothing you say leaves the Mac. Esc cancels while it listens.\n\nPost-processing, when it is on, hands the words to a small language model (Qwen3.5, in three sizes) that removes hesitations, applies corrections (“100, no, 200”), mends grammar and makes lists, in any language, without translating. What it writes is taken only when it keeps to what was said.\nPreferences are your own instructions to that model, in plain words, which it follows over its own rules. Terms are names and words written exactly as you save them, capitals and all.\nThe shortcut works in any app: the words are pasted where you type, your clipboard put back after, and a pill at the top of the screen shows it listening. Allow Accessibility from Settings, Dictate.\nDictation can also start and stop on a modifier tapped alone, such as Right ⌘ or Fn. A history of what was said is kept on this Mac for as long as you choose, with a window to look back and copy."
   },
   {
     "objectID": "features.html#agent-control",
     "href": "features.html#agent-control",
     "title": "Features",
     "section": "Agent control",
-    "text": "Agent control\nMode, model and effort are pills under the composer, each in the agent’s own colours, each opening a list in place. ⇧Tab steps the mode as it does in the terminal. Approvals, questions and plans arrive as cards — including whatever the agent asks that Emaki has no card for, so nothing waits unseen. A plan is shown on its approval card and kept in the conversation.\nStop a turn from the window, and the stopped message comes back to the composer if the agent had not started on it.\nThe row under the composer shows context left and rate limits, for both agents."
+    "text": "Agent control\nMode, model and effort are pills under the composer, each in the agent’s own colours, each opening a list in place. ⇧Tab steps the mode as it does in the terminal. Approvals, questions and plans arrive as cards at the conversation’s end, and whatever else the agent asks that Emaki has no card for comes up on the terminal card, so nothing waits unseen. A plan is shown on its approval card and kept in the conversation.\nStop a turn from the window; the stopped message comes back to the composer if the agent had not started on it. A Claude Code left running after its terminal closed is named as such, with a button to stop it and continue here. The row under the composer shows context left and rate limits, for both agents."
   },
   {
     "objectID": "features.html#terminal",
     "href": "features.html#terminal",
     "title": "Features",
     "section": "Terminal",
-    "text": "Terminal\nThe button at the top right opens a terminal beside the conversation: a shell in the session’s folder, or the session’s own agent as it runs, drawn whole and two-way. Shells open in tabs. Mouse selection copies on release, mouse-aware programs take clicks and scrolls, and the Mac’s terminal line keys work (⌘←, ⌘→, ⌘⌫, ⇧↩︎, ⌘K).\n⌘⇧S and ⌘⇧A show and hide the two sides of the panel."
+    "text": "Terminal\nThe button at the top right opens a terminal beside the conversation: a shell in the session’s folder, or the session’s own agent as it runs, drawn whole and two-way. Shells open in tabs. Mouse selection copies on release, mouse-aware programs take clicks and scrolls, and the Mac’s terminal line keys work (⌘←, ⌘→, ⌘⌫, ⇧↩︎, ⌘K). ⌘⇧S and ⌘⇧A show and hide the panel’s two sides."
   },
   {
     "objectID": "features.html#files-and-editing",
     "href": "features.html#files-and-editing",
     "title": "Features",
     "section": "Files and editing",
-    "text": "Files and editing\nThe files panel is a tree of the project with git’s marks on it, and it works like a file manager: drag in from Finder, drag rows to move, cut, copy, duplicate, remove with ⌘⌫, undo with ⌘Z.\nClick a file to open it in a pane beside the conversation:\n\n\n\n\n\n\n\nCode\nline numbers, colours, a gutter mark per git change with a card to see or revert it\n\n\nMarkdown\nas it reads or as written; a YAML header shows as a table of its fields\n\n\nCSV\na grid with lettered columns, editable in place, each column its own colour\n\n\nParquet\na table with each column’s type and the row count\n\n\nWord\npages you can type in, style and format, saved with ⌘S\n\n\nPowerPoint, Excel\nslides drawn as they look, cells with their number formats\n\n\nPDF\nsharp at any width, with search, selection, page previews and a table of contents\n\n\nHTML\nin the system’s web view, scripts and all\n\n\nPictures\nshown\n\n\n\nUnsaved changes are never lost without asking. Format on save covers ten languages — R, Python, Rust, Go, C and C++, TypeScript, JavaScript, JSON, Markdown, TOML — and is off until you turn it on."
+    "text": "Files and editing\nThe files panel (⌘⇧E) is a tree of the project with git’s marks on it, and it works like a file manager: drag in from Finder, drag rows to move, cut, copy, duplicate, remove with ⌘⌫, undo with ⌘Z. Click a file to open it in a pane beside the conversation:\n\n\n\n\n\n\n\nCode\nline numbers, colours, a gutter mark per git change with a card to see or revert it\n\n\nMarkdown\nas it reads or as written; a YAML header shows as a table of its fields\n\n\nCSV\na grid with lettered columns, editable in place, each column its own colour\n\n\nParquet\na table with each column’s type and the row count\n\n\nWord\npages you can type in, style and format, saved with ⌘S\n\n\nPowerPoint, Excel\nslides drawn as they look, cells with their number formats\n\n\nPDF\nsharp at any width, with search, selection, page previews and a table of contents\n\n\nHTML\nin the system’s web view, scripts and all\n\n\nPictures\nshown\n\n\n\nUnsaved changes are never lost without asking. Format on save covers ten languages (R, Python, Rust, Go, C and C++, TypeScript, JavaScript, JSON, Markdown, TOML) and is off until you turn it on."
   },
   {
     "objectID": "features.html#git",
     "href": "features.html#git",
     "title": "Features",
     "section": "Git",
-    "text": "Git\nThe Changes sheet commits the files you tick, discards several at once, and has a History tab: browse commits, undo the last one, revert one. Push, Pull and Fetch sit where the counts are. Branches can be listed, created, switched (carrying changes along or leaving them behind) and published."
+    "text": "Git\nThe Changes sheet commits the files you tick, discards several at once, and has a History tab: browse commits, undo the last one, revert one. Push, Pull and Fetch sit where the counts are. Branches are listed, created (⌘⇧N), switched, carrying your changes along or leaving them behind, and published. When the remote refuses, a sheet says how to sign in."
+  },
+  {
+    "objectID": "features.html#agents",
+    "href": "features.html#agents",
+    "title": "Features",
+    "section": "Agents",
+    "text": "Agents\nThe Agents page (⌘E) says which agents are installed and signed in, and walks through installing one, a numbered step at a time for this machine, with a shell beside the steps. GitHub is there too: install git, sign in, and tell git who your commits are by."
   },
   {
     "objectID": "features.html#settings",
     "href": "features.html#settings",
     "title": "Features",
     "section": "Settings",
-    "text": "Settings\n⌘, opens nine pages: Appearance, Fonts, Composer, Dictate, New sessions, Terminal, Files, Updates, About.\nAppearance follows the system or pins light or dark, and the accent is one of six — terracotta, blue, green, violet, teal, graphite. Eight chat faces and four monospace faces ship with the app, all under the Open Font License, with one text size across the conversation, the file editor and the terminal."
+    "text": "Settings\n⌘, opens nine pages: Appearance, Fonts, Composer, Dictate, New sessions, Terminal, Files, Updates and About. Appearance follows the system or pins light or dark, and the accent is one of six: terracotta, blue, green, violet, teal or graphite. Eight chat faces and four monospace faces ship with the app, all under the Open Font License, with one text size across the conversation, the file editor and the terminal. New sessions sets each agent’s mode, model and effort to begin with."
   },
   {
     "objectID": "features.html#what-it-will-not-do",
     "href": "features.html#what-it-will-not-do",
     "title": "Features",
     "section": "What it will not do",
-    "text": "What it will not do\nThese hold everywhere, by design:\n\nNo hooks, ever.\nNothing writes to a transcript. The JSONL file is the only source of truth, and Emaki is a reader of it.\nNothing Emaki does enters a session’s context window.\nNothing is typed into a terminal of yours, and no terminal app is asked for anything. Emaki runs its own, hidden.\nCopy first, render second. If rendering fails, the bytes are already safe."
+    "text": "What it will not do\n\n\nNo hooks, ever.\nNothing writes to a transcript. The JSONL file is the only source of truth, and Emaki reads it.\nNothing Emaki does enters a session’s context window.\nNothing is typed into a terminal of yours, and no terminal app is asked for anything. Emaki runs its own, hidden.\nCopy first, render second. If rendering fails, the bytes are already safe."
   },
   {
     "objectID": "features.html#keyboard",
     "href": "features.html#keyboard",
     "title": "Features",
     "section": "Keyboard",
-    "text": "Keyboard\n⌘ on macOS, Ctrl elsewhere.\n\n\n\n\n\n\n\n⌘K\nsearch every session\n\n\n⌘F · ⌘G · ⌘⇧G\nfind in this conversation, next, previous\n\n\n⌘N\nnew session\n\n\n⌘T\nnew session in this project\n\n\n⌘O\nchoose a folder\n\n\n⌘L\nsessions\n\n\n⌘E\nagents\n\n\n⌘,\nsettings\n\n\n⌘B\nsidebar\n\n\n⌘⇧E\nfiles panel\n\n\n⌘⇧O\noutline\n\n\n⌘⇧S · ⌘⇧A\nthe terminal panel’s shell, the agent’s side\n\n\n⌘1–⌘9\ntabs\n\n\n⌘W · ⌘⇧T\nclose a tab, reopen the last\n\n\n⌘S\nsave the file\n\n\n⌘↩︎\nsend\n\n\n⌘⇧N\nnew branch\n\n\n⌘⇧D\ndictate\n\n\n⌘R\nrefresh\n\n\nEsc\nstop, or close what is open"
-  },
-  {
-    "objectID": "releases.html",
-    "href": "releases.html",
-    "title": "Releases",
-    "section": "",
-    "text": "Every release, newest first. The installers are on the releases page; the app also updates itself from Settings."
-  },
-  {
-    "objectID": "releases.html#v0.2.7-15-october-2026",
-    "href": "releases.html#v0.2.7-15-october-2026",
-    "title": "Releases",
-    "section": "v0.2.7 · 15 October 2026",
-    "text": "v0.2.7 · 15 October 2026\n\nDictation works in any app: the shortcut starts and stops it in WeChat, Obsidian, Notes and the rest, and the words are pasted where you type, your clipboard put back after. A pill at the top of the screen shows it listening. Allow Accessibility from Settings, Dictate.\nIn Emaki, dictation writes into the field you are in, such as a file’s editor, not only the composer.\nDictation Preferences: your own instructions for post-processing, in plain words, which it follows over its own rules.\nDictation Terms: names and words written exactly as you save them, capitals and all, added several at once.\nPost-processing writes numbers said in words as digits when asked, and numbers lists when asked.\nThe dictation history’s folder is a click away, and a shorter time trims it at once.\nLong sessions open about four times faster.\nSettings, Composer shows the send keys as keys. Esc cancelling dictation no longer plays the stop sound."
-  },
-  {
-    "objectID": "releases.html#v0.2.6-15-october-2026",
-    "href": "releases.html#v0.2.6-15-october-2026",
-    "title": "Releases",
-    "section": "v0.2.6 · 15 October 2026",
-    "text": "v0.2.6 · 15 October 2026\n\nDictation post-processing: a small model downloaded to this Mac (Qwen3.5 4B, 2B or 0.8B) removes hesitations, applies corrections (“100, no, 200”), mends grammar and makes lists, in any language, without translating. Turn it on in Settings, Dictate.\nSettings, Dictate has two lists, Speech to Text and Post-processing, each showing the model in use and opening to the rest. Several models can download at once.\nDictation history: kept on this Mac for as long as you choose, with a window to look back and copy what was said, as heard or post-processed.\nDictation starts and stops on a modifier tapped alone, such as Right ⌘ or Fn, chosen under More; Esc cancels it while listening. Softer chimes.\nThe Agents page shows the steps for this machine only, and GitHub in place of GitHub Desktop.\nEvery button has an icon, and every Off and On switch turns at a click anywhere on it.\nFixes: sessions ordered by when they last did something; a tooltip left on screen after its sheet closed; text that went on selecting after a click in the Changes sheet; scrolling in a window over Settings."
-  },
-  {
-    "objectID": "releases.html#v0.2.5-14-october-2026",
-    "href": "releases.html#v0.2.5-14-october-2026",
-    "title": "Releases",
-    "section": "v0.2.5 · 14 October 2026",
-    "text": "v0.2.5 · 14 October 2026\n\nDictation: talk into the composer with the microphone button or ⌘⇧D. A model you download in Settings, Dictate (Qwen3-ASR or Whisper) writes it down on this Mac, Chinese and English mixed. Mac only for now.\nThe Changes sheet commits the files you tick and has a History tab: browse commits, undo the last one or revert one. Push, Pull and Fetch sit where the counts are.\nSettings has a page a section, Off and On for every switch, a field for dictation’s key with Reset, and an About page.\nCodex sessions are archived, unarchived and deleted through Codex itself, and an archived session is unarchived from its menu in the sidebar.\nThe Agents page walks through installing git and each agent and signing in, a numbered step at a time, for the system you choose.\nCards that come up while a session runs stand at the conversation’s end and scroll with it; a dialog’s tabs sit in a strip with arrows.\nA Claude Code left running after its terminal closed is named as such, with a button to stop it and continue here.\nFixes: square corners that showed past rounded panels, sheets, menus and cards; Codex’s usage limits."
-  },
-  {
-    "objectID": "releases.html#v0.2.4-13-october-2026",
-    "href": "releases.html#v0.2.4-13-october-2026",
-    "title": "Releases",
-    "section": "v0.2.4 · 13 October 2026",
-    "text": "v0.2.4 · 13 October 2026\n\nWhatever an agent asks is shown: a question Emaki has no card for, such as Claude Code asking whether a new folder is trusted, comes up on the terminal card in the conversation and no longer waits unseen.\nSessions in the sidebar are selected together with ⌘-click, ⇧-click or a dragged rectangle, across projects, and archived or deleted from their menu. A selection is projects or sessions, whichever was touched first.\nA project’s menu in the sidebar archives or deletes its sessions, for one project or several.\nThe Changes sheet selects files the same ways, has a right-click menu, discards several files at once, and closes with ⌘W.\nA markdown file’s YAML header shows as a table of its fields over the text.\n⇧↑ and ⇧↓ select to the start and the end in every one-line field.\nThe buttons on question cards are pills with an icon, as Select on All Sessions is.\nFixes: a table column no longer breaks a word in its middle."
-  },
-  {
-    "objectID": "releases.html#v0.2.3-13-october-2026",
-    "href": "releases.html#v0.2.3-13-october-2026",
-    "title": "Releases",
-    "section": "v0.2.3 · 13 October 2026",
-    "text": "v0.2.3 · 13 October 2026\n\nThe sidebar lists every project and scrolls; pinned projects stay put above the rest, up to half the list.\nProjects in the sidebar are selected together with ⌘-click, ⇧-click, a dragged rectangle or ⌘A, then opened in Finder or hidden. Hidden projects and ones run in temporary folders sit under their own headings at the foot.\nAll Projects is now All Sessions, with a scroll for its icon: projects unfold in place, each row shows its date, and archived projects have their own section.\nSessions can be selected there, by project or one by one, and archived now or deleted. Archive checks Emaki’s copy first; Delete moves every copy to the Trash. Nothing in a project’s folder is touched.\nAn agent’s progress notes show as part of the reply, as in the terminal, and a running command says what it is for.\nCode blocks no longer wrap: a wide one scrolls sideways.\nA session begun by /clear opens with /clear, and no longer flashes under a stray folder in the sidebar.\n“New messages” scrolls down to the new part, and a project opened near the foot of a list scrolls into view.\nFixes: stray lines around the logo in About."
-  },
-  {
-    "objectID": "releases.html#v0.2.2-12-october-2026",
-    "href": "releases.html#v0.2.2-12-october-2026",
-    "title": "Releases",
-    "section": "v0.2.2 · 12 October 2026",
-    "text": "v0.2.2 · 12 October 2026\n\nWord documents open as pages and can be written in: type, select, style, format, undo and save with ⌘S, on WordCraft’s engine. Try it on a copy first: a save rewrites the file.\nPowerPoint slides are drawn as they look, Excel cells show their number formats, and PDF pages are sharp at any width.\nHTML files show in the system’s web view, scripts and all.\nParquet files open as a table, with each column’s type and the file’s row count.\nThe files tree works like a file manager: drag files in from Finder, drag rows to move them, cut, copy, duplicate, remove with ⌘⌫, and take it all back with ⌘Z and ⌘⇧Z.\nFiles, folders and sessions are renamed in place, and tables keep their heads in view and select blocks of cells.\nA file can take over the conversation’s room with the enlarge button, and files open as they read rather than as source.\nExplanations and outline labels come from the session’s own agent: Haiku for Claude Code, Codex’s light model for Codex.\n⌘↩︎ or the send button with nothing typed starts a session on the home page, and each agent’s page links to its sessions.\nWhat is typed in the composer survives closing the window, and Settings has an About section.\nFixes: the keyboard is no longer lost after a file closes, ⌘W closes a file or a tab before the window, and pages no longer blink when the pane is resized."
-  },
-  {
-    "objectID": "releases.html#v0.2.1-11-october-2026",
-    "href": "releases.html#v0.2.1-11-october-2026",
-    "title": "Releases",
-    "section": "v0.2.1 · 11 October 2026",
-    "text": "v0.2.1 · 11 October 2026\n\nA new look: the sidebar and a thin frame around the content in graphite, the page near white, and in the dark appearance a darker page in a lighter frame.\nSettings, Fonts: eight chat fonts and four monospace fonts, all built into the app, and one font size for the conversation, the file editor and the terminal.\nFormat on save covers ten languages: R, Python, Rust, Go, C and C++, TypeScript, JavaScript, JSON, Markdown and TOML. It is off until you turn it on.\nA message shows in the conversation the moment it is sent, a prompt’s bubble has a tail, and tool badges are in colour.\nPin a project to the top of the sidebar, start a session in the current project with ⌘T, and choose a folder with ⌘O.\n/clear is followed to the session it starts.\nIn the files panel: ⌘A selects everything, and a drag over the rows selects the ones it covers.\nA right click in the file editor selects the word under it.\nExplanations work with Codex alone: when Claude Code is not installed, a light Codex model writes them.\nThe home page says so when no agent is installed, and points to the Agents page, which lists GitHub Desktop too.\nSettings is shorter: one Spelling Check entry with its languages, flags on the languages, icons on the themes, and fewer notes.\nFixes: “New messages” glides to the end, buttons and menu rows show in the dark appearance, and a small window shows one pane at a time."
-  },
-  {
-    "objectID": "releases.html#v0.2.0-10-october-2026",
-    "href": "releases.html#v0.2.0-10-october-2026",
-    "title": "Releases",
-    "section": "v0.2.0 · 10 October 2026",
-    "text": "v0.2.0 · 10 October 2026\n\nCodex joins Claude Code: its sessions are kept, read and searched, and you can start, continue and stop one from the window, with its approvals, questions and plans on the same cards.\nCodex’s own terminal is on the terminal panel, joined to the same session, so a turn typed there shows in the conversation and the other way round.\nAn Agents page (⌘E) says which agents are installed and signed in, with the commands to set one up and a shell beside them.\nA new session’s agent is chosen on the strip under the composer, also on one begun from a project’s plus. Its mode, effort and model are lists there, and Settings, New sessions has them for each agent.\nThe mode pill opens a list for Claude Code too, in each mode’s colour; ⇧Tab still steps as in the terminal.\nThe row under the composer shows context and usage for Codex, with whatever windows its plan has.\nEach agent has its colour: Claude’s terracotta and Codex’s green, on its mark and on its page.\nTabs keep a readable width and scroll once they no longer fit, the tab you are on stays in view, and ⌘ shows 1 to 9 on the tabs those keys go to.\nBranches: fetch, make a branch from the list, publish a local one, and see how to sign in when the remote refuses.\nA plan is shown on its approval card and stays in the conversation, and tool calls, thoughts and rows open and close in motion.\nThe archive is a folder an agent; an older one is moved into place at launch.\nFixes: a session begun from a folder no longer ends with “No conversation found”, and lists in the dark appearance show the row under the pointer."
-  },
-  {
-    "objectID": "releases.html#v0.1.9-9-october-2026",
-    "href": "releases.html#v0.1.9-9-october-2026",
-    "title": "Releases",
-    "section": "v0.1.9 · 9 October 2026",
-    "text": "v0.1.9 · 9 October 2026\n\nEdit files in the pane beside the conversation and save with ⌘S. Unsaved changes are never lost without asking, and git’s changes are marked in the margin, each with a card to see or revert it.\nA CSV opens as a grid with lettered columns and numbered rows; edit a cell in place, or edit the file as written, where each column has its own colour.\nWord, PowerPoint and Excel files (docx, pptx, xlsx, xls) open to read.\nTabs are grouped by project into pills; drag a tab within its pill, or a pill by its folder mark.\nThe home page is the greeting and the composer, with the folder to start in on a strip under it: four recent folders, or any folder you choose.\nA plus on a project in the sidebar starts a new session there, on a tab of its own.\nIn the files panel: Copy and Paste on the menu, ⌘C and ⌘V on a row (to and from Finder too), and ⌘Z to take a paste back.\nDiscard a file’s changes from the Changes panel, after a confirmation.\nA rename made while the agent is working waits its turn, and the new name shows only once it is real.\nSettings, Files: turn formatting R files on save (Air) on or off.\nCopying from the agent’s terminal reaches the clipboard, and a session stays in the folder it started in.\nEmaki no longer asks any terminal app for anything."
-  },
-  {
-    "objectID": "releases.html#v0.1.8-8-october-2026",
-    "href": "releases.html#v0.1.8-8-october-2026",
-    "title": "Releases",
-    "section": "v0.1.8 · 8 October 2026",
-    "text": "v0.1.8 · 8 October 2026\n\nClick a file in the files panel to read it in a pane beside the conversation; click it again, or press ⌘W, to close it.\nThat pane shows code with line numbers and colours, markdown as it reads or as written, pictures, tables, and PDFs with search, selection, page previews and a table of contents.\nThe composer checks spelling and grammar as you type (English US or UK; Spanish, French and German spelling on a Mac) and capitalizes a new sentence. Right-click a marked word for corrections, Learn Spelling or Ignore.\nEvery text field has Emaki’s own right-click menu.\nThe conversation follows new content when you are near the bottom, and a “New messages” button takes you to what arrived while you were reading higher up.\nOne terminal look for the shell and the agent’s screen, after Kaku, with a Terminal section in Settings.\n⌘⇧T and ⌘⇧A show and hide the two sides of the terminal panel; in the shell, ⌘T opens a tab and ⌘W closes it.\nThe model and effort pills open a list in place, and code blocks in a conversation are coloured.\nThe archive copies sessions as clones where the disk allows, and a session its agent deleted stays listed as archived.\nNew icons (Tabler); the board is gone, and Projects is now All Projects.\nA folder inside a repository shows git’s marks for its own files only.\nFixes: a question with previews reads correctly and can be answered, a session whose process is gone stops showing as working, and a stopped prompt is not sent twice."
-  },
-  {
-    "objectID": "releases.html#v0.1.7-7-october-2026",
-    "href": "releases.html#v0.1.7-7-october-2026",
-    "title": "Releases",
-    "section": "v0.1.7 · 7 October 2026",
-    "text": "v0.1.7 · 7 October 2026\n\nA terminal inside Emaki, at the conversation’s right: shells in tabs, and the session’s own agent as it runs. Nothing opens a terminal app any more.\nIn it: select with the mouse (copied on release), click and scroll in programs that take the mouse, and the line keys of a Mac terminal (⌘←, ⌘→, ⌘⌫, ⇧↩︎, ⌘K).\nA files panel beside the conversation: the project’s folder as a tree with git’s marks, a file’s contents, and what changed.\nSwitch branches from the files panel, carrying your changes along or leaving them behind to restore later.\nAn outline of the conversation, a short label per prompt; click one to go there.\nRight-click menus on sessions, tabs, files, the conversation, attachments and the branch name.\nCode blocks have a copy button, and a right click on a word selects it.\nSettings, Composer: send with ⌘↩︎ or with ↩︎; ⇧↩︎ is always a new line.\nRunning subagents show in a row over the composer; click it to see them.\nHold ⌘ to see each tab’s number.\nA question asked in a named session shows as a card, and “Type something” takes your own answer."
-  },
-  {
-    "objectID": "releases.html#v0.1.6-6-october-2026",
-    "href": "releases.html#v0.1.6-6-october-2026",
-    "title": "Releases",
-    "section": "v0.1.6 · 6 October 2026",
-    "text": "v0.1.6 · 6 October 2026\n\nSessions run in a hidden terminal of Emaki’s own; nothing done in Emaki touches a terminal of yours.\n⇧Tab or the mode pill changes the mode in place; the model and effort pills show Claude Code’s picker on a card.\nType @ in the composer to pick a file or folder from the project; a path that exists takes the accent colour.\nA command left running in the background shows in a row over the composer; click it for its output.\nSet your own picture and name in Settings, Appearance.\nDrag the sidebar’s edge to resize it, or double-click the edge to fit it.\nThe sidebar lists Agents and Projects on cards; the Projects page lists projects first, then their sessions.\nTabs switch instantly, share the row, drag to reorder, and answer to ⌘1 to ⌘9.\nRenaming a session renames it for Claude Code too, and every session keeps its own draft.\nThe sidebar button and search sit beside the traffic lights; the terminal button opens your default terminal.\nNew icons (Phosphor), and scrollbars that fade after a second."
-  },
-  {
-    "objectID": "releases.html#v0.1.5-4-october-2026",
-    "href": "releases.html#v0.1.5-4-october-2026",
-    "title": "Releases",
-    "section": "v0.1.5 · 4 October 2026",
-    "text": "v0.1.5 · 4 October 2026\n\nA new icon: the scroll on cream, with a conversation on its sheet.\nA question or approval waiting in a terminal shows as a card in the window; answer it and move between its questions there.\nWhile Claude works in a terminal, the row under the conversation shows the terminal’s own line (“Embellishing… (13s · ↓ 1.0k tokens)”) in its colours.\nThe prompt Claude Code suggests after a turn shows in the composer; → or Tab takes it.\nA session started in Emaki shows in the terminal’s resume list.\nModes, models and effort levels are read from Claude Code and coloured as it colours them.\nA change of mode, model or effort is one short line in the conversation.\n⇧Tab in the composer steps a terminal session’s mode, and the pill follows.\nThe effort and model pills open the session’s terminal when it has none, then the picker there.\nStop, or Escape, gives your message back only when Claude had not started on it, and sending it again works.\nIn the composer, ⇧↑ and ⇧↓ select one line at a time, and a paste or dictation scrolls to the caret.\nDurations read in whole seconds."
-  },
-  {
-    "objectID": "releases.html#v0.1.4-3-october-2026",
-    "href": "releases.html#v0.1.4-3-october-2026",
-    "title": "Releases",
-    "section": "v0.1.4 · 3 October 2026",
-    "text": "v0.1.4 · 3 October 2026\n\nA new icon: a handscroll on the terracotta plate.\nThe home page shows recent folders as cards under a serif greeting.\nRecents and the sessions page are grouped by day, and a live row shows its state.\nThe board is four open columns that reflow with the window and never scroll sideways.\nSettings has sections and segmented controls. Updates are one button.\nType “/” for the folder’s slash commands. A command runs; a skill goes into the message.\nClaude’s questions show as cards, and a session started in Emaki answers them from the window.\nStop a turn from the window. The stopped message returns to the composer.\nOn a terminal session, questions, approvals, commands, mode, model and effort take you to the terminal, and the window comes back when you are done.\nA message sent while Claude is working shows at once, marked as queued.\nFixed: /compact left the board on “working”, and the context percentage used the wrong window size.\nSofter shadows, pages that fade in, less work while idle."
-  },
-  {
-    "objectID": "releases.html#v0.1.3-2-october-2026",
-    "href": "releases.html#v0.1.3-2-october-2026",
-    "title": "Releases",
-    "section": "v0.1.3 · 2 October 2026",
-    "text": "v0.1.3 · 2 October 2026\n\nThe terminal, project folder and transcript buttons sit together at the top right.\nThe session’s folder path is under the tabs, in place of the long line of stats.\nThe app’s icon and name are in the sidebar.\nA copy button and the time appear under a prompt or reply on hover.\nInline code is drawn in the accent colour on a tinted plate, as in the Claude app.\nCode is set in SF Mono, or Anthropic Mono when it is in ~/.emaki/fonts.\nA tool card names its tool once."
-  },
-  {
-    "objectID": "releases.html#v0.1.2-30-september-2026",
-    "href": "releases.html#v0.1.2-30-september-2026",
-    "title": "Releases",
-    "section": "v0.1.2 · 30 September 2026",
-    "text": "v0.1.2 · 30 September 2026\n\nThe status line script ships with the app and feeds the limits row. emaki-core statusline restore puts the old setting back.\nOpen in your terminal: continue a session with claude --resume in a terminal window.\nA session opens at its end and follows the reply as it streams.\nText matches the Claude app: 16px, semibold for bold, monospaced inline code.\nClaude’s own mark, turning while it works.\nNotices show under the composer, not in the sidebar.\nFixed: bold drew as regular, scroll momentum crossed panes, arrow keys stopped short of the composer’s ends."
-  },
-  {
-    "objectID": "releases.html#v0.1.1-29-september-2026",
-    "href": "releases.html#v0.1.1-29-september-2026",
-    "title": "Releases",
-    "section": "v0.1.1 · 29 September 2026",
-    "text": "v0.1.1 · 29 September 2026\nThe app stands alone. The Python command-line tool and web daemon are gone.\n\nEmaki updates itself, from Settings or a daily check.\nExplain: one plain sentence on what an opaque tool call does, on tool cards and permission cards.\nContext and rate limits under the composer.\nLong tool output scrolls inside its card.\nPasted pictures show their names.\nFixed: a crash on some Codex sessions, and ⌘↩︎ leaving a line break.\nNo hooks. If ~/.claude/settings.json still has entries naming emaki-hook, delete them."
-  },
-  {
-    "objectID": "releases.html#v0.1.0-29-september-2026",
-    "href": "releases.html#v0.1.0-29-september-2026",
-    "title": "Releases",
-    "section": "v0.1.0 · 29 September 2026",
-    "text": "v0.1.0 · 29 September 2026\nThe first release. Emaki keeps every coding-agent session on your machine and lets you read, search and continue them in one window.\n\nEvery Claude Code and Codex session is archived byte for byte, and stays after Claude Code deletes it.\nA board of live sessions: needs you, planning, working, your turn.\nFull-text search across every session (⌘K), and find inside one (⌘F).\nA conversation view laid out like the Claude app.\nReply from the window, with attachments, permission cards, and mode, model and effort pills.\nEvery session also renders to a markdown file.\nSettings for appearance, accent, font and text size.\n\nInstall: on macOS drag Emaki to Applications (signed and notarized). On Windows SmartScreen asks once: More info, then Run anyway. On Linux run the AppImage or install the .deb."
+    "text": "Keyboard\n⌘ on macOS, Ctrl elsewhere.\n\n\n\n\n\n\n\n⌘K\nsearch every session\n\n\n⌘F · ⌘G · ⌘⇧G\nfind in this conversation, next, previous\n\n\n⌘N\nnew session\n\n\n⌘T\nnew session in this project\n\n\n⌘O\nchoose a folder\n\n\n⌘L\nsessions\n\n\n⌘E\nagents\n\n\n⌘,\nsettings\n\n\n⌘B\nsidebar\n\n\n⌘⇧E\nfiles panel\n\n\n⌘⇧O\noutline\n\n\n⌘⇧S · ⌘⇧A\nthe terminal panel’s shell, the agent’s side\n\n\n⌘1 to ⌘9\ntabs\n\n\n⌘W · ⌘⇧T\nclose a tab, reopen the last\n\n\n⌘S\nsave the file\n\n\n⌘↩︎\nsend\n\n\n⌘⇧N\nnew branch\n\n\n⌘⇧D\ndictate\n\n\n⌘R\nrefresh\n\n\nEsc\nstop, or close what is open\n\n\n\nIn the terminal, ⌘T opens a tab, ⌘W closes it and ⌘K clears the screen."
   },
   {
     "objectID": "install.html",
     "href": "install.html",
     "title": "Install",
     "section": "",
-    "text": "Download the installer for your system. Each link takes the asset from the latest release.\nThe Mac downloads are disk images, Windows an installer, Linux an AppImage. A .deb is on the release page too.\nmacOS 14 or later. The Mac image is signed and notarized, so it opens without argument. Windows is unsigned, so SmartScreen asks once: More info, then Run anyway."
+    "text": "Emaki reads and drives the coding agents on your machine, so at least one has to be installed and signed in.\n\n\nClaude Code\nInstall it from Anthropic’s documentation, then run claude once to sign in.\n\n\nCodex\nInstall it from OpenAI’s documentation, then run codex once to sign in.\n\n\nNot sure what this machine has? Emaki’s Agents page (⌘E) says, and walks through installing an agent a numbered step at a time, with a shell beside the steps. Git is optional: with it, Emaki shows a project’s changes and branches and commits for you.\n\n\nmacOS Apple silicon macOS Intel Windows x64 installer Linux x64 AppImage\n\nEach link takes the latest release. The Mac image is signed and notarized and opens without argument; it needs macOS 14 or later. Windows is unsigned, so SmartScreen asks once: More info, then Run anyway. On Linux run the AppImage, or install the .deb from the release page.\n\nThe first launch copies every Claude Code transcript it finds into ~/.emaki/archive, and every later launch catches up, so nothing is lost while the app was closed. Pick a folder and type a message to start a session, or open one from the sidebar.\nFrom then on the app updates itself: from Settings, Updates, or on a daily check."
   },
   {
-    "objectID": "install.html#you-need-an-agent-first",
-    "href": "install.html#you-need-an-agent-first",
+    "objectID": "install.html#what-it-keeps",
+    "href": "install.html#what-it-keeps",
     "title": "Install",
-    "section": "You need an agent first",
-    "text": "You need an agent first\nEmaki reads and drives the coding agents already on your machine, so at least one of them has to be installed and signed in:\n\nClaude Code — fully supported: read, search, and continue a session from the window.\nCodex — read, search, start, continue and stop, with approvals, questions and plans on the same cards.\n\nThe Agents page in the app (⌘E) shows which are installed and which are signed in, and walks through installing git and each agent a numbered step at a time for your system, with a shell beside the instructions."
-  },
-  {
-    "objectID": "install.html#the-first-launch",
-    "href": "install.html#the-first-launch",
-    "title": "Install",
-    "section": "The first launch",
-    "text": "The first launch\nOpen the app. The first launch copies every transcript it finds into ~/.emaki/archive, and every later launch catches up. Capture does not depend on the app running: whenever you open it, it backfills every session you have ever run.\nEverything Emaki keeps is under ~/.emaki:\n\n\n\n\n\n\n\narchive/\nevery session, copied byte for byte, one folder per agent\n\n\nlogs/\neach session rendered as markdown\n\n\nsearch.db\nthe full-text index\n\n\nconfig.json\nyour settings\n\n\n\nOnly archive/ cannot be rebuilt from something else. That is the directory to back up."
+    "section": "What it keeps",
+    "text": "What it keeps\nEverything is under ~/.emaki:\n\n\n\n\n\n\n\narchive/\nevery Claude Code session, copied byte for byte, a folder an agent and a project\n\n\nlogs/\neach session rendered as markdown\n\n\nsearch.db\nthe full-text index\n\n\nmodels/\nthe dictation models you download\n\n\nconfig.json\nyour settings\n\n\n\nOnly archive/ cannot be rebuilt from something else. That is the folder to back up."
   },
   {
     "objectID": "install.html#the-one-thing-it-changes",
     "href": "install.html#the-one-thing-it-changes",
     "title": "Install",
     "section": "The one thing it changes",
-    "text": "The one thing it changes\nEmaki sets a single thing in Claude Code’s settings: its own status line, which feeds the context and rate-limit row shown under the composer. Nothing else is touched, and no hook is installed.\nTo put your old status line back:\nemaki-core statusline restore"
+    "text": "The one thing it changes\nEmaki sets a single thing in Claude Code’s settings: its own status line, which feeds the context and rate-limit row under the composer. Nothing else is touched, and no hook is installed. To put your old status line back:\nemaki-core statusline restore"
   },
   {
-    "objectID": "install.html#updating",
-    "href": "install.html#updating",
+    "objectID": "install.html#dictation",
+    "href": "install.html#dictation",
     "title": "Install",
-    "section": "Updating",
-    "text": "Updating\nThe app updates itself — from Settings, or on a daily check. Nothing to reinstall."
+    "section": "Dictation",
+    "text": "Dictation\nOn a Mac, Settings, Dictate downloads a speech model (Qwen3-ASR or Whisper) and, if you want it, a small language model that tidies what was said. Both run on this machine, and nothing you say leaves it. To dictate into other apps, allow Accessibility when Dictate asks. More on dictation."
   },
   {
     "objectID": "install.html#building-from-source",
     "href": "install.html#building-from-source",
     "title": "Install",
     "section": "Building from source",
-    "text": "Building from source\nRust, with GPUI:\ngit clone https://github.com/alkaline-software/emaki\ncd emaki\ncargo build -p emaki-app && ./target/debug/Emaki\nOn a Mac the build needs CMake (brew install cmake) for the dictation model runner."
+    "text": "Building from source\nRust, with GPUI. On a Mac the build needs CMake (brew install cmake) for the dictation model runner.\ngit clone https://github.com/alkaline-software/emaki\ncd emaki\ncargo build -p emaki-app && ./target/debug/Emaki"
   }
 ]

@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://emaki.lol/about.html</loc>
-    <lastmod>2026-10-15T13:09:25.297Z</lastmod>
+    <loc>https://emaki.lol/releases.html</loc>
+    <lastmod>2026-10-16T07:12:52.349Z</lastmod>
   </url>
   <url>
     <loc>https://emaki.lol/index.html</loc>
-    <lastmod>2026-10-15T13:09:25.299Z</lastmod>
+    <lastmod>2026-10-16T07:12:52.348Z</lastmod>
+  </url>
+  <url>
+    <loc>https://emaki.lol/about.html</loc>
+    <lastmod>2026-10-16T07:12:52.346Z</lastmod>
   </url>
   <url>
     <loc>https://emaki.lol/features.html</loc>
-    <lastmod>2026-10-15T13:09:25.299Z</lastmod>
-  </url>
-  <url>
-    <loc>https://emaki.lol/releases.html</loc>
-    <lastmod>2026-10-15T13:09:25.300Z</lastmod>
+    <lastmod>2026-10-16T07:12:52.348Z</lastmod>
   </url>
   <url>
     <loc>https://emaki.lol/install.html</loc>
-    <lastmod>2026-10-15T13:09:25.299Z</lastmod>
+    <lastmod>2026-10-16T07:12:52.348Z</lastmod>
   </url>
 </urlset>

@@ -93,6 +93,8 @@
       "</div>";
 
     function show(stats) {
+      var known = stats.stars !== undefined && stats.stars !== "?";
+      widget.classList.toggle("gh-unknown", !known);
       var map = {
         '.gh-count[data-stat="stars"]': stats.stars,
         '.gh-count[data-stat="forks"]': stats.forks,
@@ -112,6 +114,7 @@
 
     var key = "emaki-github-stats-" + owner + "-" + repo;
     var fresh = cacheGet(key, false);
+    widget.classList.add("gh-unknown");
     if (fresh) {
       show(fresh);
     } else {

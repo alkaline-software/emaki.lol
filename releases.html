@@ -45,10 +45,12 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a8ed1fdfbcec6579b90b7ee144169e0.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9f56d9517062daf1162fd6b1ea100ecb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-57274fccfcf8d7ae0570dbb9b1f319a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-3dac5a5dd82f6e4cac736f6507c8e5ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-3cacf9d9ed86fa4b71630d0a393ff628.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-3dac5a5dd82f6e4cac736f6507c8e5ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -83,14 +85,14 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Releases – Emaki">
-<meta property="og:description" content="Every coding-agent session on your machine, kept for good, in one window you can also talk to.">
+<meta property="og:description" content="Every release, newest first.">
 <meta property="og:image" content="https://emaki.lol/assets/emaki-icon.png">
 <meta property="og:site_name" content="Emaki">
 <meta property="og:image:height" content="512">
 <meta property="og:image:width" content="512">
 </head>
 
-<body class="nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -232,8 +234,11 @@ ul.task-list li input[type="checkbox"] {
         changeGiscusTheme();
       }
     };
-    const authorPrefersDark = true;
-    const darkModeDefault = authorPrefersDark;
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
     let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
     // Dark / light mode switch
     window.quartoToggleColorScheme = () => {
@@ -244,6 +249,14 @@ ul.task-list li input[type="checkbox"] {
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
     };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
     // Switch to dark mode if need be
     if (hasAlternateSentinel()) {
       toggleColorMode(true);
@@ -310,31 +323,8 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul class="collapse">
-  <li><a href="#v0.2.7-15-october-2026" id="toc-v0.2.7-15-october-2026" class="nav-link active" data-scroll-target="#v0.2.7-15-october-2026">v0.2.7 · 15 October 2026</a></li>
-  <li><a href="#v0.2.6-15-october-2026" id="toc-v0.2.6-15-october-2026" class="nav-link" data-scroll-target="#v0.2.6-15-october-2026">v0.2.6 · 15 October 2026</a></li>
-  <li><a href="#v0.2.5-14-october-2026" id="toc-v0.2.5-14-october-2026" class="nav-link" data-scroll-target="#v0.2.5-14-october-2026">v0.2.5 · 14 October 2026</a></li>
-  <li><a href="#v0.2.4-13-october-2026" id="toc-v0.2.4-13-october-2026" class="nav-link" data-scroll-target="#v0.2.4-13-october-2026">v0.2.4 · 13 October 2026</a></li>
-  <li><a href="#v0.2.3-13-october-2026" id="toc-v0.2.3-13-october-2026" class="nav-link" data-scroll-target="#v0.2.3-13-october-2026">v0.2.3 · 13 October 2026</a></li>
-  <li><a href="#v0.2.2-12-october-2026" id="toc-v0.2.2-12-october-2026" class="nav-link" data-scroll-target="#v0.2.2-12-october-2026">v0.2.2 · 12 October 2026</a></li>
-  <li><a href="#v0.2.1-11-october-2026" id="toc-v0.2.1-11-october-2026" class="nav-link" data-scroll-target="#v0.2.1-11-october-2026">v0.2.1 · 11 October 2026</a></li>
-  <li><a href="#v0.2.0-10-october-2026" id="toc-v0.2.0-10-october-2026" class="nav-link" data-scroll-target="#v0.2.0-10-october-2026">v0.2.0 · 10 October 2026</a></li>
-  <li><a href="#v0.1.9-9-october-2026" id="toc-v0.1.9-9-october-2026" class="nav-link" data-scroll-target="#v0.1.9-9-october-2026">v0.1.9 · 9 October 2026</a></li>
-  <li><a href="#v0.1.8-8-october-2026" id="toc-v0.1.8-8-october-2026" class="nav-link" data-scroll-target="#v0.1.8-8-october-2026">v0.1.8 · 8 October 2026</a></li>
-  <li><a href="#v0.1.7-7-october-2026" id="toc-v0.1.7-7-october-2026" class="nav-link" data-scroll-target="#v0.1.7-7-october-2026">v0.1.7 · 7 October 2026</a></li>
-  <li><a href="#v0.1.6-6-october-2026" id="toc-v0.1.6-6-october-2026" class="nav-link" data-scroll-target="#v0.1.6-6-october-2026">v0.1.6 · 6 October 2026</a></li>
-  <li><a href="#v0.1.5-4-october-2026" id="toc-v0.1.5-4-october-2026" class="nav-link" data-scroll-target="#v0.1.5-4-october-2026">v0.1.5 · 4 October 2026</a></li>
-  <li><a href="#v0.1.4-3-october-2026" id="toc-v0.1.4-3-october-2026" class="nav-link" data-scroll-target="#v0.1.4-3-october-2026">v0.1.4 · 3 October 2026</a></li>
-  <li><a href="#v0.1.3-2-october-2026" id="toc-v0.1.3-2-october-2026" class="nav-link" data-scroll-target="#v0.1.3-2-october-2026">v0.1.3 · 2 October 2026</a></li>
-  <li><a href="#v0.1.2-30-september-2026" id="toc-v0.1.2-30-september-2026" class="nav-link" data-scroll-target="#v0.1.2-30-september-2026">v0.1.2 · 30 September 2026</a></li>
-  <li><a href="#v0.1.1-29-september-2026" id="toc-v0.1.1-29-september-2026" class="nav-link" data-scroll-target="#v0.1.1-29-september-2026">v0.1.1 · 29 September 2026</a></li>
-  <li><a href="#v0.1.0-29-september-2026" id="toc-v0.1.0-29-september-2026" class="nav-link" data-scroll-target="#v0.1.0-29-september-2026">v0.1.0 · 29 September 2026</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -343,6 +333,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Releases</h1>
+<p class="subtitle lead">Every release, newest first.</p>
 </div>
 
 
@@ -359,9 +350,10 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Every release, newest first. The installers are on the <a href="https://github.com/alkaline-software/emaki/releases">releases page</a>; the app also updates itself from Settings.</p>
+<p>The installers are on the <a href="https://github.com/alkaline-software/emaki/releases">releases page</a>; the app also updates itself, from Settings, Updates, or on a daily check.</p>
+<div class="releases">
 <section id="v0.2.7-15-october-2026" class="level2">
-<h2 class="anchored" data-anchor-id="v0.2.7-15-october-2026">v0.2.7 · 15 October 2026</h2>
+<h2 class="anchored" data-anchor-id="v0.2.7-15-october-2026">v0.2.7 <span class="rel-date">15 October 2026</span></h2>
 <ul>
 <li>Dictation works in any app: the shortcut starts and stops it in WeChat, Obsidian, Notes and the rest, and the words are pasted where you type, your clipboard put back after. A pill at the top of the screen shows it listening. Allow Accessibility from Settings, Dictate.</li>
 <li>In Emaki, dictation writes into the field you are in, such as a file’s editor, not only the composer.</li>
@@ -374,7 +366,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="v0.2.6-15-october-2026" class="level2">
-<h2 class="anchored" data-anchor-id="v0.2.6-15-october-2026">v0.2.6 · 15 October 2026</h2>
+<h2 class="anchored" data-anchor-id="v0.2.6-15-october-2026">v0.2.6 <span class="rel-date">15 October 2026</span></h2>
 <ul>
 <li>Dictation post-processing: a small model downloaded to this Mac (Qwen3.5 4B, 2B or 0.8B) removes hesitations, applies corrections (“100, no, 200”), mends grammar and makes lists, in any language, without translating. Turn it on in Settings, Dictate.</li>
 <li>Settings, Dictate has two lists, Speech to Text and Post-processing, each showing the model in use and opening to the rest. Several models can download at once.</li>
@@ -386,7 +378,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="v0.2.5-14-october-2026" class="level2">
-<h2 class="anchored" data-anchor-id="v0.2.5-14-october-2026">v0.2.5 · 14 October 2026</h2>
+<h2 class="anchored" data-anchor-id="v0.2.5-14-october-2026">v0.2.5 <span class="rel-date">14 October 2026</span></h2>
 <ul>
 <li>Dictation: talk into the composer with the microphone button or ⌘⇧D. A model you download in Settings, Dictate (Qwen3-ASR or Whisper) writes it down on this Mac, Chinese and English mixed. Mac only for now.</li>
 <li>The Changes sheet commits the files you tick and has a History tab: browse commits, undo the last one or revert one. Push, Pull and Fetch sit where the counts are.</li>
@@ -399,7 +391,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="v0.2.4-13-october-2026" class="level2">
-<h2 class="anchored" data-anchor-id="v0.2.4-13-october-2026">v0.2.4 · 13 October 2026</h2>
+<h2 class="anchored" data-anchor-id="v0.2.4-13-october-2026">v0.2.4 <span class="rel-date">13 October 2026</span></h2>
 <ul>
 <li>Whatever an agent asks is shown: a question Emaki has no card for, such as Claude Code asking whether a new folder is trusted, comes up on the terminal card in the conversation and no longer waits unseen.</li>
 <li>Sessions in the sidebar are selected together with ⌘-click, ⇧-click or a dragged rectangle, across projects, and archived or deleted from their menu. A selection is projects or sessions, whichever was touched first.</li>
@@ -412,7 +404,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="v0.2.3-13-october-2026" class="level2">
-<h2 class="anchored" data-anchor-id="v0.2.3-13-october-2026">v0.2.3 · 13 October 2026</h2>
+<h2 class="anchored" data-anchor-id="v0.2.3-13-october-2026">v0.2.3 <span class="rel-date">13 October 2026</span></h2>
 <ul>
 <li>The sidebar lists every project and scrolls; pinned projects stay put above the rest, up to half the list.</li>
 <li>Projects in the sidebar are selected together with ⌘-click, ⇧-click, a dragged rectangle or ⌘A, then opened in Finder or hidden. Hidden projects and ones run in temporary folders sit under their own headings at the foot.</li>
@@ -426,7 +418,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="v0.2.2-12-october-2026" class="level2">
-<h2 class="anchored" data-anchor-id="v0.2.2-12-october-2026">v0.2.2 · 12 October 2026</h2>
+<h2 class="anchored" data-anchor-id="v0.2.2-12-october-2026">v0.2.2 <span class="rel-date">12 October 2026</span></h2>
 <ul>
 <li>Word documents open as pages and can be written in: type, select, style, format, undo and save with ⌘S, on WordCraft’s engine. Try it on a copy first: a save rewrites the file.</li>
 <li>PowerPoint slides are drawn as they look, Excel cells show their number formats, and PDF pages are sharp at any width.</li>
@@ -442,7 +434,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="v0.2.1-11-october-2026" class="level2">
-<h2 class="anchored" data-anchor-id="v0.2.1-11-october-2026">v0.2.1 · 11 October 2026</h2>
+<h2 class="anchored" data-anchor-id="v0.2.1-11-october-2026">v0.2.1 <span class="rel-date">11 October 2026</span></h2>
 <ul>
 <li>A new look: the sidebar and a thin frame around the content in graphite, the page near white, and in the dark appearance a darker page in a lighter frame.</li>
 <li>Settings, Fonts: eight chat fonts and four monospace fonts, all built into the app, and one font size for the conversation, the file editor and the terminal.</li>
@@ -459,7 +451,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="v0.2.0-10-october-2026" class="level2">
-<h2 class="anchored" data-anchor-id="v0.2.0-10-october-2026">v0.2.0 · 10 October 2026</h2>
+<h2 class="anchored" data-anchor-id="v0.2.0-10-october-2026">v0.2.0 <span class="rel-date">10 October 2026</span></h2>
 <ul>
 <li>Codex joins Claude Code: its sessions are kept, read and searched, and you can start, continue and stop one from the window, with its approvals, questions and plans on the same cards.</li>
 <li>Codex’s own terminal is on the terminal panel, joined to the same session, so a turn typed there shows in the conversation and the other way round.</li>
@@ -476,7 +468,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="v0.1.9-9-october-2026" class="level2">
-<h2 class="anchored" data-anchor-id="v0.1.9-9-october-2026">v0.1.9 · 9 October 2026</h2>
+<h2 class="anchored" data-anchor-id="v0.1.9-9-october-2026">v0.1.9 <span class="rel-date">9 October 2026</span></h2>
 <ul>
 <li>Edit files in the pane beside the conversation and save with ⌘S. Unsaved changes are never lost without asking, and git’s changes are marked in the margin, each with a card to see or revert it.</li>
 <li>A CSV opens as a grid with lettered columns and numbered rows; edit a cell in place, or edit the file as written, where each column has its own colour.</li>
@@ -493,7 +485,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="v0.1.8-8-october-2026" class="level2">
-<h2 class="anchored" data-anchor-id="v0.1.8-8-october-2026">v0.1.8 · 8 October 2026</h2>
+<h2 class="anchored" data-anchor-id="v0.1.8-8-october-2026">v0.1.8 <span class="rel-date">8 October 2026</span></h2>
 <ul>
 <li>Click a file in the files panel to read it in a pane beside the conversation; click it again, or press ⌘W, to close it.</li>
 <li>That pane shows code with line numbers and colours, markdown as it reads or as written, pictures, tables, and PDFs with search, selection, page previews and a table of contents.</li>
@@ -510,7 +502,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="v0.1.7-7-october-2026" class="level2">
-<h2 class="anchored" data-anchor-id="v0.1.7-7-october-2026">v0.1.7 · 7 October 2026</h2>
+<h2 class="anchored" data-anchor-id="v0.1.7-7-october-2026">v0.1.7 <span class="rel-date">7 October 2026</span></h2>
 <ul>
 <li>A terminal inside Emaki, at the conversation’s right: shells in tabs, and the session’s own agent as it runs. Nothing opens a terminal app any more.</li>
 <li>In it: select with the mouse (copied on release), click and scroll in programs that take the mouse, and the line keys of a Mac terminal (⌘←, ⌘→, ⌘⌫, ⇧↩︎, ⌘K).</li>
@@ -526,7 +518,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="v0.1.6-6-october-2026" class="level2">
-<h2 class="anchored" data-anchor-id="v0.1.6-6-october-2026">v0.1.6 · 6 October 2026</h2>
+<h2 class="anchored" data-anchor-id="v0.1.6-6-october-2026">v0.1.6 <span class="rel-date">6 October 2026</span></h2>
 <ul>
 <li>Sessions run in a hidden terminal of Emaki’s own; nothing done in Emaki touches a terminal of yours.</li>
 <li>⇧Tab or the mode pill changes the mode in place; the model and effort pills show Claude Code’s picker on a card.</li>
@@ -542,7 +534,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="v0.1.5-4-october-2026" class="level2">
-<h2 class="anchored" data-anchor-id="v0.1.5-4-october-2026">v0.1.5 · 4 October 2026</h2>
+<h2 class="anchored" data-anchor-id="v0.1.5-4-october-2026">v0.1.5 <span class="rel-date">4 October 2026</span></h2>
 <ul>
 <li>A new icon: the scroll on cream, with a conversation on its sheet.</li>
 <li>A question or approval waiting in a terminal shows as a card in the window; answer it and move between its questions there.</li>
@@ -559,7 +551,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="v0.1.4-3-october-2026" class="level2">
-<h2 class="anchored" data-anchor-id="v0.1.4-3-october-2026">v0.1.4 · 3 October 2026</h2>
+<h2 class="anchored" data-anchor-id="v0.1.4-3-october-2026">v0.1.4 <span class="rel-date">3 October 2026</span></h2>
 <ul>
 <li>A new icon: a handscroll on the terracotta plate.</li>
 <li>The home page shows recent folders as cards under a serif greeting.</li>
@@ -576,7 +568,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="v0.1.3-2-october-2026" class="level2">
-<h2 class="anchored" data-anchor-id="v0.1.3-2-october-2026">v0.1.3 · 2 October 2026</h2>
+<h2 class="anchored" data-anchor-id="v0.1.3-2-october-2026">v0.1.3 <span class="rel-date">2 October 2026</span></h2>
 <ul>
 <li>The terminal, project folder and transcript buttons sit together at the top right.</li>
 <li>The session’s folder path is under the tabs, in place of the long line of stats.</li>
@@ -588,7 +580,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="v0.1.2-30-september-2026" class="level2">
-<h2 class="anchored" data-anchor-id="v0.1.2-30-september-2026">v0.1.2 · 30 September 2026</h2>
+<h2 class="anchored" data-anchor-id="v0.1.2-30-september-2026">v0.1.2 <span class="rel-date">30 September 2026</span></h2>
 <ul>
 <li>The status line script ships with the app and feeds the limits row. <code>emaki-core statusline restore</code> puts the old setting back.</li>
 <li>Open in your terminal: continue a session with <code>claude --resume</code> in a terminal window.</li>
@@ -600,7 +592,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="v0.1.1-29-september-2026" class="level2">
-<h2 class="anchored" data-anchor-id="v0.1.1-29-september-2026">v0.1.1 · 29 September 2026</h2>
+<h2 class="anchored" data-anchor-id="v0.1.1-29-september-2026">v0.1.1 <span class="rel-date">29 September 2026</span></h2>
 <p>The app stands alone. The Python command-line tool and web daemon are gone.</p>
 <ul>
 <li>Emaki updates itself, from Settings or a daily check.</li>
@@ -613,7 +605,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="v0.1.0-29-september-2026" class="level2">
-<h2 class="anchored" data-anchor-id="v0.1.0-29-september-2026">v0.1.0 · 29 September 2026</h2>
+<h2 class="anchored" data-anchor-id="v0.1.0-29-september-2026">v0.1.0 <span class="rel-date">29 September 2026</span></h2>
 <p>The first release. Emaki keeps every coding-agent session on your machine and lets you read, search and continue them in one window.</p>
 <ul>
 <li>Every Claude Code and Codex session is archived byte for byte, and stays after Claude Code deletes it.</li>
@@ -625,9 +617,10 @@ ul.task-list li input[type="checkbox"] {
 <li>Settings for appearance, accent, font and text size.</li>
 </ul>
 <p>Install: on macOS drag Emaki to Applications (signed and notarized). On Windows SmartScreen asks once: <em>More info</em>, then <em>Run anyway</em>. On Linux run the AppImage or install the <code>.deb</code>.</p>
-
-
 </section>
+</div>
+
+
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1052,22 +1045,30 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      &nbsp;
-    </div>   
+<p>MIT · © 2026 John Paul Helveston, Pingfan Hu, and Alkaline Software</p>
+</div>   
     <div class="nav-footer-center">
+<p>Made with <a href="https://quarto.org/" target="_blank">Quarto</a></p>
+</div>
+    <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
- Site made with <i class="bi bi-heart-fill"></i> and <a href="https://quarto.org/" target="_blank">Quarto</a>
+    <a class="nav-link" href="https://github.com/alkaline-software/emaki">
+<p>Emaki on GitHub</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/alkaline-software/emaki.lol">
+<p>This site</p>
+</a>
   </li>  
 </ul>
-    </div>
-    <div class="nav-footer-right">
-      &nbsp;
     </div>
   </div>
 </footer>
 <script src="js/navbar-widgets.js"></script>
 <script src="js/hero-scroll.js"></script>
+<script src="js/page.js"></script>
 
 
 
