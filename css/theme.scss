@@ -1162,16 +1162,17 @@ body.quarto-dark .shift-ade svg {
 
 /* ---- Landing page ---- */
 
-// The hero: Emaki's window as it opens, the handscroll in it over the
-// composer, so the first screen shows the app; under it
-// the name with its own characters beside it, the one line, and the
-// download and Get Started, all centered in one column; under it all a
-// hairline across the whole page, as Kaku's site closes its head.
+// The hero: the handscroll alone, small, and only the name and the line
+// under it, with the download and Get Started, all centered; it keeps
+// what the app is for the shift below. Under it a hairline across the
+// whole page, as Kaku's site closes its head.
 .hero {
   max-width: var(--w-page);
   margin: 0 auto;
   padding: 1.5rem 0 0;
   text-align: center;
+
+  > .hero-fig { max-width: 30rem; margin: 0 auto 1.5rem; }
 
   h1 {
     font-family: var(--font-wordmark);
@@ -1181,29 +1182,6 @@ body.quarto-dark .shift-ade svg {
     line-height: 1;
     color: var(--accent);
     margin: 0 0 1rem;
-  }
-}
-
-// The window as it opens (_home.html, written by scripts/sketches/gen.py),
-// and the real handscroll (_hero.html) laid over the place the window
-// keeps for it, so it winds under the pointer as it does alone. The place
-// is HOME_SCROLL in the script, a share of the window's 360 by 168.
-.hero .home {
-  position: relative;
-  max-width: 42rem;
-  margin: 0 auto 2.25rem;
-
-  // Its window is 360 by 168, so its corners take 8 of those.
-  .sketch svg { border-radius: calc(8 / 360 * 100%) / calc(8 / 168 * 100%); }
-
-  > .sketch { max-width: none; margin: 0; }
-  > .hero-fig {
-    position: absolute;
-    left: calc(148.5 / 360 * 100%);
-    top: calc(37 / 168 * 100%);
-    width: calc(150 / 360 * 100%);
-    max-width: none;
-    margin: 0;
   }
 }
 

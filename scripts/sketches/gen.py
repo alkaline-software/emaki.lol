@@ -320,24 +320,21 @@ def controls(lit=None):
         else: out.append(square(x, kind))
     return out, own
 
-def write(name, home, still, label, caption, body, path=None, cls="sketch", size=(320, 220)):
-    lines = [f'<figure class="{cls}" data-home="{home}" data-still="{still}">',
-             f'  <svg viewBox="0 0 {size[0]} {size[1]}" role="img" aria-label="{label}">']
+def write(name, home, still, label, caption, body):
+    lines = [f'<figure class="sketch" data-home="{home}" data-still="{still}">',
+             f'  <svg viewBox="0 0 320 220" role="img" aria-label="{label}">']
     for b in body:
         for l in b.split("\n"):
             if not l.strip(): continue      # a blank line would end Pandoc's raw block
             lines.append(re.sub(r"^ {3,}", "  ", l))
     lines.append('  </svg>')
-    if caption:
-        lines.append(f'  <figcaption class="sketch-label">{caption}</figcaption>')
+    lines.append(f'  <figcaption class="sketch-label">{caption}</figcaption>')
     lines.append('</figure>')
     text = "\n".join(lines) + "\n"
     assert "\n\n" not in text
     for l in text.split("\n"):
         assert not l.startswith("    "), l
-    if path:                                 # a page at the site's root sees assets/ from there
-        text = text.replace('href="../assets/', 'href="assets/')
-    with open(path or os.path.join(OUT, name + ".html"), "w") as f:
+    with open(os.path.join(OUT, name + ".html"), "w") as f:
         f.write(text)
 
 # ---- Get Started: the whole window, the four buttons bringing their panels ----
@@ -351,55 +348,6 @@ body = chrome() + defs() + part("sidebar", True, sidebar()) + part("chat", True,
 write("index", "", "files",
       "Emaki's window: the sidebar with its projects and sessions, the chat with its composer in the middle, and four buttons on the strip, two at each end, each bringing a panel beside the chat: files or outline at the left, the shell or the agent's terminal at the right.",
       "The four buttons bring their panels beside the chat.", body)
-# ---- The landing page's hero: Emaki's window as it opens ----
-# Abstract, as the handscroll is: no words but the name. The sidebar's
-# rows are their glyphs and a line each; in the main area the handscroll's
-# place and, under it, the composer, its caret and a line
-# for the draft, the plus, two pills, the model and send, and the row of
-# the folder and the agent under it. The handscroll itself is the real one
-# (_hero.html), laid over its place by the sheet (.home), so it winds
-# under the pointer as it does on its own; HOME_SCROLL is that place, and
-# css/theme.scss (.home > .hero-fig) holds the same numbers.
-# The window is wider and shorter than the docs' (HOME_W by HOME_H), so the
-# first screen keeps room under it for the name and the buttons.
-HOME_W, HOME_H = 360, 168
-HOME_SCROLL = (148.5, 37, 150)          # x, y and width of the handscroll in the window
-cx0, cx1, C0 = 128, 319, 103            # the composer's left and right, and its top
-home_chrome = [
-  f'<g class="sk-frame"><rect class="sk-window" x="0" y="0" width="{HOME_W}" height="{HOME_H}" rx="8"/><path d="M1 22 H{HOME_W-1} M88 22 V{HOME_H-1}"/></g>',
-] + chrome()[1:]
-home_side = [
-  '<!-- The sidebar: new, all and agents, then the projects, the first open with its sessions. -->',
-  plus(14, 34), '<path class="sk-ink" d="M23 34 h34"/>',
-  '<path class="sk-frame" d="M11 44 h6 v6 h-6 Z M12.5 47 h3"/><path class="sk-frame" d="M23 47 h28"/>',
-  spark(14, 59) + '<path class="sk-frame" d="M23 59 h22"/>',
-  '<path class="sk-faint" d="M11 72 h18"/>',
-  folder(11, 79, "sk-ochre-line") + '<path class="sk-ink" d="M24 82 h26"/>',
-  '<path class="sk-faint" d="M14.5 89 V122"/>',
-  spark(24, 95) + '<path class="sk-frame" d="M31 95 h30"/><circle class="sk-sage" cx="73" cy="95" r="1.75"/>',
-  spark(24, 107) + '<path class="sk-frame" d="M31 107 h24"/>',
-  spark(24, 119) + '<path class="sk-frame" d="M31 119 h28"/>',
-  folder(11, 130) + '<path class="sk-frame" d="M24 133 h20"/>',
-  folder(11, 142) + '<path class="sk-frame" d="M24 145 h16"/>',
-  folder(11, 154) + '<path class="sk-frame" d="M24 157 h22"/>',
-]
-home_main = [
-  '<!-- The handscroll stands here, laid over by the page (.home > .hero-fig). -->',
-  '<!-- The composer, over the folder and the agent it starts in. -->',
-  f'<rect class="sk-plate" x="{cx0}" y="{C0+28}" width="{cx1-cx0}" height="20" rx="7"/>',
-  f'<rect class="sk-page-fill" x="{cx0}" y="{C0}" width="{cx1-cx0}" height="38" rx="7"/><rect class="sk-edge" x="{cx0}" y="{C0}" width="{cx1-cx0}" height="38" rx="7"/>',
-  f'<path class="sk-ink sk-caret" d="M{cx0+8} {C0+6.5} v8"/><path class="sk-faint" d="M{cx0+12} {C0+10.5} h46"/>',
-  plus(cx0 + 10, C0 + 29),
-  f'<rect class="sk-edge" x="{cx0+20}" y="{C0+23}" width="30" height="12" rx="6"/><path class="sk-ochre-line" d="M{cx0+25.5} {C0+26.5} l2.5 -1.25 l2.5 1.25 v3 a2.5 2.5 0 0 1 -2.5 2.25 a2.5 2.5 0 0 1 -2.5 -2.25 Z"/><path class="sk-ochre-line" d="M{cx0+33.5} {C0+29} h12"/>',
-  f'<rect class="sk-edge" x="{cx0+54}" y="{C0+23}" width="30" height="12" rx="6"/><circle class="sk-frame" cx="{cx0+61}" cy="{C0+29}" r="2"/><path class="sk-frame" d="M{cx0+66.5} {C0+29} h12"/>',
-  f'<rect class="sk-edge" x="{cx1-46}" y="{C0+23}" width="26" height="12" rx="6"/><path class="sk-frame" d="M{cx1-40} {C0+29} h14"/>',
-  send(cx1 - 9, C0 + 29),
-  folder(cx0 + 7, C0 + 40) + f'<path class="sk-frame" d="M{cx0+19} {C0+43} h40"/>',
-  f'<path class="sk-faint" d="M{cx1-44} {C0+39} v8"/>' + spark(cx1 - 36, C0 + 43, 2.5, "sk-claude-spark") + f'<path class="sk-frame" d="M{cx1-30} {C0+43} h22"/>',
-]
-write("home", "", "", "Emaki's window as it opens, drawn in lines: the sidebar with its projects and sessions, and in the main area the handscroll and the composer to start a session, over the folder and the agent it starts in.",
-      None, home_chrome + home_side + home_main, path="_home.html", cls="sketch home-window", size=(HOME_W, HOME_H))
-
 # ---- Projects: the sidebar ----
 conv, snd = chat(MAIN_L, MAIN_R)
 ctl, _ = controls()

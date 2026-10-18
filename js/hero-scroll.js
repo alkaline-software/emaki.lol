@@ -15,8 +15,13 @@
   var fig = document.getElementById("hero-fig");
   if (!fig) return;
 
-  // The drawing's box, a roll's two ends, the sheet's two edges.
-  var W = 300, TOP = 12, FOOT = 98, EDGE = 6, KNOB = 8, SW = 1.5;
+  // The drawing's box, a roll's two ends, the sheet's two edges. The box is
+  // the site's, not the app's: 400 wide for the app's 300, a longer sheet
+  // unrolled, so the figure is wide and short at the head of the page. 400
+  // is as long as the landscape's strip still covers the sheet at the
+  // farthest wind (its nearest layer is 640 and winds 150 to either side);
+  // the rest is the app's.
+  var W = 400, TOP = 12, FOOT = 98, EDGE = 6, KNOB = 8, SW = 1.5;
   // The landscape's strip, and how far its nearest layer winds to either side.
   var STRIP = 640, RANGE = 150;
 
@@ -103,7 +108,8 @@
     });
 
     // The sun rises and sinks a little with the pointer.
-    attrs(sun, { cx: 214 - wind * RANGE * 0.08, cy: SHEET_Y + 17 - lift * 5 });
+    // It stands where the app has it over the landscape: 214 in its 300.
+    attrs(sun, { cx: 214 + (W - 300) / 2 - wind * RANGE * 0.08, cy: SHEET_Y + 17 - lift * 5 });
 
     attrs(edgeTop, { x1: sheetX, x2: rightX, y1: SHEET_Y, y2: SHEET_Y });
     attrs(edgeBot, { x1: sheetX, x2: rightX, y1: SHEET_Y + SHEET_H, y2: SHEET_Y + SHEET_H });

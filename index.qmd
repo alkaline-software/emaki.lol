@@ -11,10 +11,7 @@ anchor-sections: false
 
 ::: {.hero}
 
-::: {.home}
-{{< include _home.html >}}
 {{< include _hero.html >}}
-:::
 
 # Emaki [絵巻]{.hero-kanji}
 

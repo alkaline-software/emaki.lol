@@ -147,16 +147,12 @@ small 0.875 rem for labels, captions and caps.
   `##` sections with an icon each, and it ends with the way to the page
   before and the page after.
   The landing page uses the full width and centers one column, Kaku's
-  1152 px (`--w-page`), for everything on it. The hero shows the app
-  in the first screen, before any scroll, in one column, centered:
-  Emaki's window as it opens (`_home.html`), wider and shorter than the docs' (360 by 168), at most 42 rem, abstract as
-  the handscroll is, no word in it but the name: the sidebar's rows as
-  their glyphs and a line each and, in the main area, the handscroll over
-  the composer with its pills and the folder
-  and agent under it, glyphs and lines too, the real
-  handscroll laid over the place the window keeps for it so it winds
-  under the pointer; then the name with its own characters beside it,
-  the one line, and the download and Get Started. Under it a
+  1152 px (`--w-page`), for everything on it. The hero is one column,
+  centered, and keeps what the app is for the shift under it: the
+  handscroll alone, wide and short (a sheet 400 long for the app's 300,
+  at most 30 rem, about 140 px tall), so it intrigues and takes little
+  room; then the name with its own characters
+  beside it, the one line, and the download and Get Started. Under it a
   hairline across the whole page, as Kaku's site closes its head, and
   the first band after 3.5 rem of air. From 992 wide a band of words is
   split as Kaku's sections are, the heading in the left part and the
