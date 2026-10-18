@@ -1,0 +1,57 @@
+---
+title: "Keys"
+subtitle: "Two kinds: ⌘⇧ and a letter shows a panel; ⌘ and a letter opens a page, or does one thing."
+---
+
+[⌘]{.kbd} on macOS, [Ctrl]{.kbd} elsewhere.
+
+## Panels {.i-app-window}
+
+Hold [⇧]{.kbd} with [⌘]{.kbd}, and the letter shows or hides a panel
+beside the chat. The letter is the panel's first.
+
+| | |
+|---|---|
+| [⌘⇧F]{.kbd} | [files](files.qmd) |
+| [⌘⇧O]{.kbd} | [outline](outline.qmd) |
+| [⌘⇧S]{.kbd} | [shell terminal](shell.qmd) |
+| [⌘⇧A]{.kbd} | [agent terminal](agent.qmd) |
+| [⌘⇧G]{.kbd} | git's [Changes](files.qmd#git) sheet |
+
+: {.table-keys tbl-colwidths="[38,62]"}
+
+## Pages {.i-keyboard}
+
+[⌘]{.kbd} and a letter opens a page or a sheet over the window.
+
+| | |
+|---|---|
+| [⌘K]{.kbd} | search every session |
+| [⌘N]{.kbd} | new session |
+| [⌘T]{.kbd} | new session in this project |
+| [⌘O]{.kbd} | choose a folder |
+| [⌘L]{.kbd} | All Sessions |
+| [⌘E]{.kbd} | Agents |
+| [⌘,]{.kbd} | Settings |
+
+: {.table-keys tbl-colwidths="[38,62]"}
+
+The rest of [⌘]{.kbd} each does one thing where you are.
+
+| | |
+|---|---|
+| [⌘F]{.kbd} · [⌘G]{.kbd} | find in this chat, and the next hit; [⌘⇧G]{.kbd} is the previous while the find bar is open |
+| [⌘↩]{.kbd} | send, or commit in the Changes sheet |
+| [⌘P]{.kbd} | push, in the Changes sheet |
+| [⌘S]{.kbd} | save the file |
+| [⌘B]{.kbd} | sidebar |
+| [⌘1]{.kbd} to [⌘9]{.kbd} | tabs |
+| [⌘W]{.kbd} · [⌘⇧T]{.kbd} | close a tab, reopen the last |
+| [⌘⇧N]{.kbd} | new branch |
+| [⌘R]{.kbd} | refresh |
+| [Esc]{.kbd} | stop, or close what is open |
+
+: {.table-keys tbl-colwidths="[38,62]"}
+
+In the terminal, [⌘T]{.kbd} opens a tab, [⌘W]{.kbd} closes it and
+[⌘K]{.kbd} clears the screen.

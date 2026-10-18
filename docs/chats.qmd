@@ -1,0 +1,58 @@
+---
+title: "Chats"
+subtitle: "The main panel: the transcript as it reads, and the composer under it."
+---
+
+{{< include _sk/chats.html >}}
+
+## The transcript {.i-book-open}
+
+Prompts, replies, tool calls, thoughts and subagents, laid out like the
+Claude app. Your prompts sit in a bubble with a tail, replies run the
+width, and code blocks are colored with a copy button. A tool call is a
+card, its badge colored by what it does, and three or more in a row fold
+into one line with a tally. **Explain** puts one plain sentence on an
+opaque call, asked of the agent's small model in a session of its own,
+so nothing of it enters yours.
+
+While the agent works, approvals, questions and plans arrive as cards at
+the end, and anything the window has no card for shows on its terminal
+card. [⌘F]{.kbd} finds in the chat; [⌘G]{.kbd} steps to the
+next hit.
+
+## The composer {.i-inbox}
+
+Type and send: [↩]{.kbd} or [⌘↩]{.kbd}, your choice, and [⇧↩]{.kbd} is a
+new line. A session running in a terminal gets the message through the
+agent's inbox; a finished one resumes under Emaki. Drafts survive
+quitting.
+
+- **Attach** by paste, drop or the **+** button. A picture shows as a
+  thumbnail, any other file as a chip with its name and size.
+- **`@`** picks a file or folder from the project, as the agent's own
+  prompt does.
+- **`/`** lists the slash commands and skills the agent knows. A command
+  that acts alone runs on [↩]{.kbd}; a skill goes into the message.
+- Spelling and grammar are checked as you type, with corrections on the
+  right-click menu.
+
+::: {.note}
+To talk instead of typing, in Emaki or any other app, there is
+[Kotoba](https://github.com/alkaline-software/kotoba), our dictation app
+for the Mac.
+:::
+
+## Mode, model and effort {.i-sparkles}
+
+Three pills under the composer, in the agent's own colors, each opening
+its list in place. [⇧Tab]{.kbd} steps the mode, as it does in the
+terminal. A new session starts with the defaults set in Settings, New
+sessions; the pills change them for this one.
+
+## The status bar {.i-gauge}
+
+The row under the composer says how much of the context window is used
+and where the five-hour and seven-day limits stand, colored at the
+thresholds the agent's own status line uses, for Claude Code and Codex
+alike. Notices land there too: what a command did, or why something
+could not be done.

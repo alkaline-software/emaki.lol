@@ -1,0 +1,55 @@
+---
+title: "Projects"
+subtitle: "The sidebar: every folder you work in, with every session in it, from both agents."
+---
+
+{{< include _sk/projects.html >}}
+
+## Projects {.i-folder}
+
+A project is a folder you have run an agent in. The sidebar lists them
+all, the newest first, pinned ones on top. Click a project to unfold its
+sessions. The plus on its row starts a new session there ([⌘T]{.kbd} in
+the project you are in, [⌘N]{.kbd} anywhere). A project with a live
+session wears the accent and opens by itself.
+
+Right-click a project to archive or delete its sessions, open it in
+Finder, or hide it. Hidden projects and the system's temporary folders
+sit under their own headings at the foot. Nothing in a project's own
+folder is ever touched.
+
+## Sessions {.i-scroll}
+
+Each session is a row under its project: the agent's mark, lit while it
+runs, a dot for where it stands, the title, and a bar at the left when it
+has a tab. Claude Code and Codex sessions sit side by side, each read
+from its own files.
+
+**All Sessions** ([⌘L]{.kbd}) lists every project and every session with
+the day it was last touched, archived ones under their own heading, and
+narrows to one agent. Select many at once ([⌘]{.kbd}-click,
+[⇧]{.kbd}-click, or drag a rectangle), then archive or delete them
+together.
+
+## Kept and archived {.i-archive}
+
+Claude Code deletes its transcripts after thirty days. Emaki copies every
+one into `~/.emaki/archive` the first time it sees it, so a session the
+agent has deleted is still listed, searchable and readable, marked
+*kept*. Codex deletes nothing by age, so its sessions are read in place.
+
+*Archive* a session and the agent leaves it alone until you unarchive it.
+*Delete* moves every copy to the Trash. Renaming a session renames it for
+the agent too.
+
+## Search {.i-search}
+
+[⌘K]{.kbd} searches every session on the machine. One hit per prompt,
+paragraph, thought or tool call, so a hit lands on the thing you
+remembered, in live and kept sessions alike.
+
+## Tabs {.i-copy}
+
+Every open session is a tab, grouped by project. [⌘1]{.kbd} to
+[⌘9]{.kbd} switch, [⌘W]{.kbd} closes, [⌘⇧T]{.kbd} brings back the last
+one closed, and a drag reorders them.

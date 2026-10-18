@@ -1,0 +1,30 @@
+---
+title: "Settings"
+subtitle: "⌘, opens eight sections, Appearance to About."
+---
+
+{{< include _sk/settings.html >}}
+
+## Appearance and Fonts {.i-palette}
+
+Appearance follows the system or pins light or dark, and the accent is
+one of seven: periwinkle, orchid, rose, amber, moss, jade or teal. Fonts
+has eight faces for the chat and four monospace faces for code
+and the terminal, all under the Open Font License, and one text size for
+all three.
+
+## New sessions {.i-sparkles}
+
+Each agent's mode, model and effort to begin with. The pills under the
+composer change them for one session.
+
+## Composer, Terminal, Files {.i-settings}
+
+Each one's own switches: which key sends and which languages are
+spell-checked; the terminal's scheme, its cursor, and whether a selection
+copies itself; format on save and its formatters.
+
+## Updates and About {.i-refresh}
+
+Updates checks daily, or now, and installs the new version itself. About
+says which version this is and who makes it.

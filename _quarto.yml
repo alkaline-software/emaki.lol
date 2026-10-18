@@ -4,9 +4,7 @@ project:
   # The pages alone: docs/ and the repository's own files are not the site.
   render:
     - "*.qmd"
-  # Writes _releases.md from the app's GitHub releases. Fails soft: the
-  # committed copy stands in if the API cannot be reached.
-  pre-render: scripts/fetch-releases.sh
+    - "docs/*.qmd"
   preview:
     port: 5680
     browser: true
@@ -16,7 +14,7 @@ project:
 
 website:
   title: Emaki
-  description: "Every coding-agent session on your machine, kept for good, in one window you can also talk to."
+  description: "An agentic development environment for Claude Code and Codex: talk to the agent in a project, with the files, git and a terminal at the chat's side."
   llms-txt: true
   site-url: https://emaki.lol
   repo-url: https://github.com/alkaline-software/emaki.lol
@@ -25,28 +23,34 @@ website:
   open-graph:
     site-name: emaki.lol
     image: assets/emaki-icon.png
+  # One line, fixed at the window's foot: who at the left, a link to the
+  # studio on GitHub, the icon and the name in the middle, the source at the
+  # right as a mark. The full credits are on the About page. Quarto does
+  # not rewrite the footer's paths for a page under docs/, so the icon is
+  # drawn by the stylesheet and the way home is the site's root.
   page-footer:
-    background: dark
-    left: "MIT · © 2026 John Paul Helveston, Pingfan Hu, and Alkaline Software"
-    center: "Made with <a href='https://quarto.org/' target='_blank'>Quarto</a>"
-    right:
-      - text: "Emaki on GitHub"
-        href: https://github.com/alkaline-software/emaki
-      - text: "This site"
-        href: https://github.com/alkaline-software/emaki.lol
+    left: "<a class='foot-org' href='https://github.com/alkaline-software'>©&nbsp;<span class='foot-year'>2026 </span>Alkaline Software</a>"
+    center: "<a class='foot-brand' href='/'>Emaki</a>"
+    right: "<a class='foot-github i-github' href='https://github.com/alkaline-software/emaki' aria-label='Emaki on GitHub'></a>"
+
+  # Four things, as Kaku's has them: the name, which is the way home; the
+  # version, which js/navbar-widgets.js reads from the app's latest release
+  # and which opens the releases on GitHub; Docs; About.
+  # The search takes ⌘F (Ctrl+F elsewhere), from js/navbar-widgets.js;
+  # Quarto's own letters are turned off, so no bare key does anything.
+  search:
+    location: navbar
+    type: overlay
+    keyboard-shortcut: []
 
   navbar:
     search: true
     logo: assets/emaki-icon.png
     left:
-      - text: "Home"
-        href: index.qmd
-      - text: "Install"
-        href: install.qmd
-      - text: "Features"
-        href: features.qmd
-      - text: "Releases"
-        href: releases.qmd
+      - text: "<span id='nav-version' class='nav-version'>Releases</span>"
+        href: https://github.com/alkaline-software/emaki/releases
+      - text: "Docs"
+        href: docs/index.qmd
       - text: "About"
         href: about.qmd
     right:
@@ -54,6 +58,50 @@ website:
       # reads the owner and repo from it: the app's, not this site's.
       - icon: github
         href: https://github.com/alkaline-software/emaki
+
+  # The docs are a section with a page a part of the app, as Kaku's are:
+  # Get Started is the section's first page and its address, and the rest
+  # follow in the landing page's order, the keys and the rules last. The
+  # sidebar shows on these pages alone, and each page ends with the way to
+  # the one before and the one after.
+  page-navigation: true
+  # A page in a group gets no breadcrumb over its title: the menu says
+  # where it is.
+  bread-crumbs: false
+  sidebar:
+    style: floating
+    collapse-level: 2
+    contents:
+      # Four groups with a line between: the way in; Main System, the two
+      # things always there, the sidebar and the chat; Panels, the
+      # four of them; and the rest, a size down. A section is a group's
+      # label and nothing else: the sheet hides its toggle and keeps it
+      # open.
+      - text: "Get Started"
+        href: docs/index.qmd
+      - text: "---"
+      - section: "Main System"
+        contents:
+          - text: "Projects"
+            href: docs/projects.qmd
+          - text: "Chats"
+            href: docs/chats.qmd
+      - text: "---"
+      - section: "Panels"
+        contents:
+          - text: "Files"
+            href: docs/files.qmd
+          - text: "Outline"
+            href: docs/outline.qmd
+          - text: "Shell Terminal"
+            href: docs/shell.qmd
+          - text: "Agent Terminal"
+            href: docs/agent.qmd
+      - text: "---"
+      - text: "Settings"
+        href: docs/settings.qmd
+      - text: "Keys"
+        href: docs/keys.qmd
 
 format:
   html:
@@ -63,11 +111,14 @@ format:
     # The appearance follows the system, as the app's does by default; the
     # toggle in the navbar pins one.
     respect-user-color-scheme: true
+    # Kaku's page width, 1280: the docs menu at the left, the words in
+    # the middle, the table of contents in a column of its own at the
+    # right, and 28 between them.
     grid:
       sidebar-width: 220px
-      body-width: 640px
-      margin-width: 240px
-      gutter-width: 2.5rem
+      body-width: 804px
+      margin-width: 200px
+      gutter-width: 28px
     anchor-sections: true
     smooth-scroll: true
     link-external-newwindow: true
@@ -84,9 +135,19 @@ format:
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
           <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:wght@400;500&family=Belleza&display=swap">
     include-after-body:
-      # Relative, so both resolve in a subdirectory preview as well as on the
-      # deployed domain.
+      # The scripts live at the site's root, and a page under docs/ is one
+      # level down, so each is loaded from the offset Quarto writes into
+      # every page (`quarto:offset`), in order.
       - text: |
-          <script src="js/navbar-widgets.js"></script>
-          <script src="js/hero-scroll.js"></script>
-          <script src="js/page.js"></script>
+          <script>
+          (function () {
+            var m = document.querySelector('meta[name="quarto:offset"]');
+            var root = m ? m.getAttribute("content") : "./";
+            ["js/navbar-widgets.js", "js/hero-scroll.js", "js/shift.js", "js/sketches.js", "js/page.js", "js/figures.js"].forEach(function (src) {
+              var s = document.createElement("script");
+              s.src = root + src;
+              s.async = false;
+              document.body.appendChild(s);
+            });
+          })();
+          </script>

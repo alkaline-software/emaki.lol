@@ -1,0 +1,23 @@
+---
+title: "Outline Panel"
+subtitle: "⌘⇧O: a label for every prompt, to see the shape of the work and jump back to any step."
+---
+
+{{< include _sk/outline.html >}}
+
+## Entries {.i-list-numbers}
+
+One entry per prompt, under a heading for each day: the time on a small
+plate, then three to five words for what you asked. A short prompt is
+shown as it is. A long one is labeled by the agent's small model, Haiku
+for Claude Code and Codex's light model for Codex, in a session of its
+own, so nothing enters yours. Labels are asked for the entries in view, a
+few at a time, and kept for good, so each prompt is asked about once.
+
+## Going back {.i-history}
+
+Click an entry and the chat glides to that round. As you scroll,
+the entry in view wears the accent, so the outline always says where you
+are. The panel shares the left side with the [files](files.qmd): one
+shows at a time, and one takes the other's place without moving the
+chat.

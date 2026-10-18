@@ -8,3 +8,9 @@ $body-bg: #1A1918 !default;
 $body-color: #F3F1EA !default;
 $link-color: #94A7ED !default;
 $primary: #94A7ED !default;
+// The navbar is the frame in both appearances, so its icons (the menu's
+// three lines, the search's glass) take the paper. Bootstrap picks them by
+// contrast with $navbar-bg, which would otherwise be the light accent here
+// and give dark icons on the dark frame.
+$navbar-bg: #30374D !default;
+$navbar-fg: #F3F1EA !default;

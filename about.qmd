@@ -1,4 +1,5 @@
 ---
+sidebar: false
 title: "About"
 subtitle: "The name, the reason, and how it is made."
 ---
@@ -7,13 +8,16 @@ subtitle: "The name, the reason, and how it is made."
 
 An *emaki* (絵巻) is a Japanese picture handscroll: a long painted scene held
 between two rolls, read by winding it from one to the other, a span at a
-time. It is a good name for a window whose job is a conversation too long to
+time. It is a good name for a window whose job is an agent chat too long to
 see at once.
 
-The app's icon is a handscroll seen from the front, with a conversation on
+The app's icon is a handscroll seen from the front, with an agent chat on
 its sheet: the agent on the left with its spark, your reply on the right.
-The drawing on the home page is the same scroll with a landscape on it, and
-it winds as you move across it.
+This one carries a landscape instead, and winds as you move across it.
+
+::: {.about-fig}
+{{< include _hero.html >}}
+:::
 
 ## Why it exists
 
@@ -61,13 +65,48 @@ agent of its own that appends to the same transcript.
 ## Where it is going
 
 Three stages. The first is a complete app for Claude Code: permanent
-history, organization by recency, project and agent, readable conversations,
+history, organization by recency, project and agent, readable chats,
 and an explanation on any step. The second is the public release and the
 feedback that comes with it. The third extends the same to Codex, Kimi and
 the other mainstream coding agents, so Emaki works across all of them.
 
-Codex arrived in v0.2.0, ahead of its stage; the [releases](releases.qmd)
+Codex arrived in v0.2.0, ahead of its stage; the [releases](https://github.com/alkaline-software/emaki/releases)
 are the honest record of where things stand.
+
+## Who makes it
+
+::: {.people}
+
+::: {.person .person-org}
+![](assets/team/alkaline.png)
+
+**[Alkaline Software](https://github.com/alkaline-software)**
+
+Two data scientists making basic software. *Alkaline* is the other word for
+basic, as a high pH is, and basic is what the software means to be: the
+things that should plainly exist. Emaki is one of them, a development
+environment for the agentic era that anyone who works with agents can use.
+:::
+
+::: {.person}
+![](assets/team/john-paul-helveston.png)
+
+**[Dr John Paul Helveston](https://www.jhelvy.com)**
+
+Associate Professor of Engineering Management and Systems Engineering at
+George Washington University.
+:::
+
+::: {.person}
+![](assets/team/pingfan-hu.png)
+
+**[Dr Pingfan Hu](https://pingfan.org)**
+
+Data scientist and developer at George Washington University, advised by
+John Paul.
+:::
+
+:::
 
 ## Credits
 
@@ -78,13 +117,13 @@ filled, no words, what is far is dimmer, and one bright mark.
 Icons are [Tabler](https://tabler.io/icons)'s outline set, drawn at a stroke
 of 1.75 where Tabler's own is 2, in the app and on this site. The file
 tree's icons are [Catppuccin](https://github.com/catppuccin/vscode-icons)'s.
-The code colours are [Rosé Pine](https://rosepinetheme.com)'s hues, retinted
+The code colors are [Rosé Pine](https://rosepinetheme.com)'s hues, retinted
 for contrast. The terminal keeps [Kaku](https://github.com/kakuapp)'s cream
 in the light appearance. Every face the app carries is under the SIL Open
 Font License, and so are this site's: Source Serif 4, JetBrains Mono and
-Belleza.
+Belleza. The site is made with [Quarto](https://quarto.org).
 
-## Licence
+## License
 
 MIT. © 2026 John Paul Helveston, Pingfan Hu, and Alkaline Software.
 

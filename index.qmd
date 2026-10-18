@@ -1,4 +1,5 @@
 ---
+sidebar: false
 # No `title`: the hero sets the name itself, and a title here would put
 # Quarto's title block above it saying the same word again. `pagetitle` is
 # what the browser tab and the search index get instead.
@@ -10,150 +11,173 @@ anchor-sections: false
 
 ::: {.hero}
 
+::: {.home}
+{{< include _home.html >}}
 {{< include _hero.html >}}
+:::
 
-# Emaki
+# Emaki [絵巻]{.hero-kanji}
 
 ::: {.hero-lede}
-Every coding-agent session on your machine, kept for good, in one window you
-can also talk to.
+The agentic development environment.
 :::
 
-::: {.hero-sub}
-A desktop app for Claude Code and Codex. It keeps every session byte for
-byte, renders and searches all of them, and lets you carry one on from the
-window.
-:::
-
-::: {.hero-cta}
-[Download](install.qmd){.pill .pill-accent .i-download} [What's in it](features.qmd){.pill .i-scroll} [Source](https://github.com/alkaline-software/emaki){.pill .i-github}
-:::
-
-::: {.hero-meta}
-For macOS, Windows and Linux. Open source, under the MIT licence.
-:::
+{{< include _download.html >}}
 
 :::
 
-::: {.band .rise}
-## The thirty-day problem
-
-Claude Code deletes its transcripts after thirty days, with no warning. Every
-other tool in this space reads `~/.claude/projects` and stops there, so they
-all inherit that expiry.
-
-Emaki copies first and renders second. A session is in its archive from the
-first time it is seen, so if anything else fails the bytes are already safe,
-and one Claude Code has since deleted is still listed, still searchable,
-marked *kept*.
+::: {.hero-rule}
 :::
 
-::: {.cards .rise}
+::: {.shift .rise}
+## From the IDE to the ADE
 
-::: {.card .i-archive}
-### Kept for good
-Every Claude Code session is copied byte for byte into `~/.emaki/archive`
-before anything else touches it, and stays after Claude Code deletes it.
-Codex keeps its own, so those are read in place.
+{{< include _shift-ide.html >}}
+
+::: {.shift-words}
+::: {.shift-label}
+**IDE** integrated development environment
 :::
 
-::: {.card .i-search}
-### Search everything
-[⌘K]{.kbd} searches every session you have ever run, a paragraph at a time,
-live and kept together. [⌘F]{.kbd} finds inside the one you are reading.
+An IDE is built for writing code by hand: many panels, a steep learning
+curve, and real effort to set up. With agents, you write less code and run
+fewer commands yourself, yet the editor still takes the middle of the
+screen and most of your attention. The agent chat and git sit at the
+edges, and there is no way to manage the agent's sessions at all.
 :::
 
-::: {.card .i-book-open}
-### Read what it did
-Prompts, replies, thoughts, tool calls and subagents, laid out like the
-Claude app. Ask for one plain sentence on any tool call you cannot read.
+{{< include _shift-ade.html >}}
+
+::: {.shift-words}
+::: {.shift-label}
+**ADE** agentic development environment
 :::
 
-::: {.card .i-inbox}
-### Carry on talking
-Type to reply. A session running in a terminal gets the message through its
-inbox; a finished one resumes under Emaki. Approvals, questions and plans
-come up as cards.
+Emaki, an agentic development environment, turns this around. The agent
+chat is the main panel, rendered with care, and four panels open beside it
+when you need them: files, outline, shell terminal and agent terminal.
+Sessions are listed under their projects, where you can manage them and
+keep them safe from automatic deletion.
 :::
 
 :::
 
 ::: {.band .rise}
-## Beside the conversation
+## Get started
 
-The window is built around the sessions, and what you reach for while
-reading one sits at its side.
+Download the app, install an agent, and you are ready. Git and the GitHub
+CLI are optional, for version control from the window.
+
+::: {.starts}
+
+::: {.start}
+### Download Emaki
+
+For macOS, Windows and Linux.
+
+{{< include _download-step.html >}}
 :::
 
-::: {.cards .rise}
+::: {.start}
+### Install the agents
 
-::: {.card .i-terminal}
-### A terminal
-A shell in the session's folder, or the agent's own screen as it runs,
-two-way. Shells open in tabs.
+Emaki works with Claude Code and Codex.
+
+::: {.start-links}
+[Claude Code](https://docs.claude.com/en/docs/claude-code){.pill .i-claude}
+[Codex](https://developers.openai.com/codex/cli){.pill .i-codex}
+:::
 :::
 
-::: {.card .i-tree-view}
-### The files
-The project as a tree with git's marks. Open a file beside the conversation:
-code, markdown, CSV, PDF, Word, slides, pictures. Edit it and save with
-[⌘S]{.kbd}.
+::: {.start}
+### Git (optional)
+
+Install Git and the GitHub CLI to commit, branch and push from Emaki.
+
+::: {.start-links}
+[Git](https://git-scm.com/downloads){.pill .i-git-branch .pill-git}
+[GitHub](https://cli.github.com){.pill .i-github .pill-github}
+:::
 :::
 
-::: {.card .i-git-branch}
-### Git
-Commit the files you tick, browse the history, switch and publish branches,
-push and pull, without leaving the window.
-:::
-
-::: {.card .i-microphone}
-### Dictation
-On a Mac, talk instead of typing. A model downloaded to the machine writes it
-down, Chinese and English mixed, and the shortcut works in any app.
-:::
-
-:::
-
-::: {.band .rise}
-## Nothing it will do to you
-
-::: {.checks}
-- **No hooks, ever.**
-- Nothing writes to a transcript. The JSONL file is the only source of truth, and Emaki reads it.
-- Nothing Emaki does enters a session's context window.
-- Nothing is typed into a terminal of yours, and no terminal app is asked for anything. Emaki runs its own, hidden.
-- No daemon and no browser. Everything lives in `~/.emaki`, and only `archive/` cannot be rebuilt: that is the one folder to back up.
 :::
 
 :::
 
 ::: {.band .rise}
-## Built on the agents you already use
+## Main system
 
-Emaki needs Claude Code or Codex installed and signed in. It adds three
-things on top: conversations that never expire, one place to organize them,
-and a readable view of what the agent did.
-
-::: {.agents}
-
-::: {.agent .agent-claude}
-**Claude Code**
-
-Read, search, keep and continue a session from the window, with its modes,
-models and effort levels.
+Sessions are listed and managed under their projects. The agent chat
+takes the main space, rendered in high quality.
 :::
 
-::: {.agent .agent-codex}
-**Codex**
+::: {.cards .cards-2 .rise}
 
-Read, search, start, continue and stop, with approvals, questions and plans
-on the same cards.
+::: {.card}
+::: {.fig data-figure="projects" aria-label="Emaki's sidebar lying flat: projects in rows, the open one with its sessions under it. The project under the pointer unfolds its sessions, and the rows below make room."}
+:::
+### [Projects](docs/projects.qmd)
+Every folder you work in is a project, its sessions under it, from Claude
+Code and Codex side by side. Each Claude Code session is copied before
+anything reads it, so one the agent has deleted is still here, and
+[⌘K]{.kbd} searches them all.
+:::
+
+::: {.card}
+::: {.fig data-figure="chats" aria-label="Emaki's chat lying flat: the transcript, and the composer under it. With the pointer on the composer, the draft rises as a bubble and lands at the transcript's end."}
+:::
+### [Chats](docs/chats.qmd)
+The transcript as it reads: prompts in bubbles, replies across, tool
+calls as cards. Under it the composer, with attachments, `@` for a file,
+`/` for a command, and the mode, model and effort a click away.
 :::
 
 :::
 
-::: {.hero-cta}
-[Install Emaki](install.qmd){.pill .pill-accent .i-download}
+::: {.band .rise}
+## Panels
+
+The panels are hidden by default: essential, but used less often than
+the chat. Files and outline open on the left, the two terminals on the
+right.
+:::
+
+::: {.cards .cards-2 .rise}
+
+::: {.card}
+::: {.fig data-figure="files" aria-label="The files panel lying flat: the tree, and the file's pane beside it. The file under the pointer opens in the pane, drawn as its kind."}
+:::
+### [Files](docs/files.qmd) [⌘⇧F]{.kbd}
+The project as a tree with git's marks, worked like a file manager.
+Click a file and it opens beside the chat, drawn as its kind:
+code, markdown, a table, a PDF, a picture. Commit, branch and push from
+the same panel.
+:::
+
+::: {.card}
+::: {.fig data-figure="outline" aria-label="The outline beside the chat, lying flat. The entry under the pointer scrolls the chat to its round."}
+:::
+### [Outline](docs/outline.qmd) [⌘⇧O]{.kbd}
+A label for every prompt, a few words each, under a heading for each
+day. Click one and the chat glides back to that round.
+:::
+
+::: {.card}
+::: {.fig data-figure="shell" aria-label="A terminal standing up with three tabs. The tab under the pointer comes up, and its screen types itself in."}
+:::
+### [Shell Terminal](docs/shell.qmd) [⌘⇧S]{.kbd}
+Your shell, opened in the project's folder, in tabs at the
+chat's right. Paste a picture and it lands as the path of a
+file.
+:::
+
+::: {.card}
+::: {.fig data-figure="agent" aria-label="The chat and the agent's own terminal standing side by side. The step under the pointer stands out of both."}
+:::
+### [Agent Terminal](docs/agent.qmd) [⌘⇧A]{.kbd}
+The session's own agent in its terminal, as it runs. Watch it work as
+in the CLI, and type into it when it asks something the window has no
+card for.
 :::
 
 :::

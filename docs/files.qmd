@@ -1,0 +1,54 @@
+---
+title: "Files Panel"
+subtitle: "⌘⇧F: the project's folder as a tree, a pane for any file, and git on top of it."
+---
+
+{{< include _sk/files.html >}}
+
+## The tree {.i-tree-view}
+
+The project's folder, with git's marks on it: a letter on a changed file,
+a dot on a folder with changes under it, ignored files dimmed. It works
+like a file manager: drag in from Finder, drag rows to move them, cut,
+copy, duplicate, remove ([⌘⌫]{.kbd}, to the Trash) and undo
+([⌘Z]{.kbd}). New File and New Folder are at the head, and a file the
+agent writes appears as it lands.
+
+## Open and edit {.i-file-text}
+
+Click a file and it opens in a pane between the tree and the
+chat; click it again to put it away. The enlarge button gives the
+pane the chat's room. [⌘S]{.kbd} saves, [⌘W]{.kbd} closes, and
+nothing unsaved is lost without asking. Format on save covers ten
+languages and is off until you turn it on.
+
+Code comes with line numbers, colors and a gutter mark per git change,
+with a card to see or revert it. Every kind of file is drawn for what it
+is:
+
+::: {.types}
+- [Code]{.i-file-code} every language, colored
+- [Markdown]{.i-file-text} as it reads, or as written
+- [CSV and TSV]{.i-file-table} a grid you can edit in place
+- [Parquet]{.i-file-table} a table with each column's type
+- [Word]{.i-file-text} pages you can type in and format
+- [Excel]{.i-file-table} cells with their number formats
+- [PowerPoint]{.i-file} slides as they look
+- [PDF]{.i-file} sharp at any width, with search and page previews
+- [HTML]{.i-file-code} in the system's web view
+- [Pictures]{.i-image} at their own size
+:::
+
+## Git {.i-git-branch}
+
+In a repository the branch is named at the tree's head. Click it to
+switch, make a branch ([⌘⇧N]{.kbd}) or publish one; Fetch and Pull sit
+at the list's foot. A switch with uncommitted changes asks whether to
+leave them or bring them along, and goes through only when every change
+lands where you asked.
+
+The **Changes** pill ([⌘⇧G]{.kbd}) opens the sheet: tick the files, write
+the message, commit ([⌘↩]{.kbd}), push ([⌘P]{.kbd}). **History** browses
+the commits: Undo takes back the newest while the remote does not have
+it, Revert takes back any one as a new commit. Nothing is committed,
+pushed or pulled without a click that says so.
