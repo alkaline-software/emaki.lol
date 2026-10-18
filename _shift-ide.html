@@ -1,0 +1,103 @@
+<!-- The shift's first row (index.qmd, From the IDE to the ADE): an
+     editor's window as one has it today, seen from the front, each pane a
+     box with its name in it: an activity bar, a file browser with the
+     outline and the timeline folded under it, an editor of code, a
+     terminal in the panel under the editor, and the agent chat squeezed
+     into a pane at the right edge, one dial among the dials. Its words
+     stand beside it, and the ADE's row under it (_shift-ade.html). The
+     structure in the muted ink and the two borders, everything else in
+     the shift's own set (css/theme.scss, --sk-*): ochre for the files,
+     slate for the code, sage for the terminal, the lights in rose, ochre
+     and sage, the accent on the agent chat. Its frame is heavier than the
+     lines inside it, with a faint gray halo. The box under the pointer
+     lights in place, its edge heavier and its name in the ink (css/theme.scss);
+     on a phone the light walks the boxes on its own (js/shift.js).
+     The strokes do not scale (css/theme.scss, The shift), so the hairline
+     holds at any width. No blank line belongs in this file, and nothing
+     under a div is indented four spaces: Pandoc reads what is between a
+     div's tags as Markdown, so one would end the block and the other would
+     make a code block of a line. -->
+<figure class="shift-pane shift-ide">
+    <svg id="shift-ide" viewBox="0 0 320 220" role="img" aria-label="An IDE window with its panes named: an activity bar, a file browser with an outline and a timeline under it, an editor of code, a terminal under the editor, and the agent chat squeezed into a pane at the right. The pane under the pointer lights.">
+      <g class="sk-frame">
+        <rect class="sk-window" x="0" y="0" width="320" height="220" rx="8"/>
+        <path d="M1 22 H319 M1 206 H319"/>
+      </g>
+      <g class="sk-lights"><circle class="sk-rose" cx="13" cy="11.5" r="3.5"/><circle class="sk-ochre" cx="24" cy="11.5" r="3.5"/><circle class="sk-sage" cx="35" cy="11.5" r="3.5"/></g>
+      <path class="sk-faint" d="M110 11.5 l-3 -3 M110 11.5 l-3 3 M116 11.5 l3 -3 M116 11.5 l3 3"/>
+      <rect class="sk-faint" x="124" y="6.5" width="92" height="10" rx="2"/>
+      <path class="sk-faint" d="M272 11.5 h5 M281 11.5 h5 M290 11.5 h5 M299 11.5 h5 M308 11.5 h5"/>
+      <!-- The activity bar. -->
+      <g class="sk-box sk-c-gray" data-pane="activity">
+        <rect x="4" y="25" width="20" height="178" rx="3"/>
+        <rect class="sk-accent" x="10.5" y="33" width="7" height="7" rx="1.5"/>
+        <path class="sk-faint" d="M10.5 50 h7 v7 h-7 Z M10.5 67 h7 v7 h-7 Z M10.5 84 h7 v7 h-7 Z M10.5 101 h7 v7 h-7 Z"/>
+        <circle class="sk-faint" cx="14" cy="178" r="3.5"/>
+        <circle class="sk-faint" cx="14" cy="192" r="3.5"/>
+        <text transform="rotate(-90 14 132)" x="14" y="132">Activity Bar</text>
+      </g>
+      <circle class="sk-rose" cx="19" cy="84" r="2"/>
+      <!-- The explorer, and the outline and the timeline folded under it. -->
+      <g class="sk-box sk-c-ochre" data-pane="files">
+        <rect x="27" y="25" width="62" height="146" rx="3"/>
+        <path class="sk-faint" d="M33 35 h20 M33 46 l3 2 l-3 2 M40 48 h22 M39 57 l3 2 l-3 2 M46 59 h20 M39 68 l3 2 l-3 2 M46 70 h16 M39 79 l3 2 l-3 2 M46 81 h22 M46 92 h18 M52 103 h24 M52 114 h20 M52 125 h26 M52 136 h18 M46 147 h22 M46 158 h26"/>
+        <text x="58" y="98">File Browser</text>
+      </g>
+      <circle class="sk-ochre" cx="84" cy="59" r="1.75"/>
+      <g class="sk-box sk-c-ochre" data-pane="outline">
+        <rect x="27" y="174" width="62" height="13" rx="3"/>
+        <path class="sk-faint" d="M32 178.5 l3 2 l-3 2"/>
+        <text class="sk-start sk-small" x="40" y="180.5">Outline</text>
+      </g>
+      <g class="sk-box sk-c-ochre" data-pane="timeline">
+        <rect x="27" y="190" width="62" height="13" rx="3"/>
+        <path class="sk-faint" d="M32 194.5 l3 2 l-3 2"/>
+        <text class="sk-start sk-small" x="40" y="196.5">Timeline</text>
+      </g>
+      <!-- The editor, under its tabs and its crumbs. -->
+      <g class="sk-box sk-c-slate" data-pane="code">
+        <rect x="92" y="25" width="148" height="118" rx="3"/>
+        <path class="sk-ink" d="M100 32 h22"/>
+        <path class="sk-faint" d="M127 30.5 l3 3 M130 30.5 l-3 3 M92 39 H240 M214 32 h5 M223 32 h5 M232 32 h5"/>
+        <path class="sk-accent" d="M94 38.75 h40"/>
+        <path class="sk-faint" d="M100 45 h10 M114 43.5 l1.5 1.5 l-1.5 1.5 M120 45 h14 M138 43.5 l1.5 1.5 l-1.5 1.5 M144 45 h18"/>
+        <path class="sk-faint" d="M98 56 h3 M98 66 h3 M98 76 h3 M98 86 h3 M98 96 h3 M98 106 h3 M98 116 h3 M98 126 h3 M98 136 h3"/>
+        <path class="sk-faint" d="M106 56 h24 M106 66 h44 M154 66 h30 M110 76 h36 M150 76 h16 M110 86 h24 M138 86 h40 M110 96 h18 M132 96 h22 M110 106 h40 M154 106 h22 M110 116 h28 M106 126 h14 M124 126 h36 M110 136 h30"/>
+        <path class="sk-faint" d="M228 45 V138 M231 50 h5 M231 55 h3 M231 60 h5 M231 65 h2 M231 70 h5 M231 75 h3 M231 80 h5 M231 85 h2 M231 90 h4 M231 95 h5 M231 100 h2 M231 105 h5 M231 110 h3 M231 115 h5 M231 120 h2 M231 125 h4 M231 130 h3"/>
+        <text x="162" y="91">Code</text>
+      </g>
+      <!-- The terminal, in the panel under the editor. -->
+      <g class="sk-box sk-c-sage" data-pane="terminal">
+        <rect x="92" y="146" width="148" height="57" rx="3"/>
+        <path class="sk-faint" d="M98 153 h14 M118 153 h14 M138 153 h20"/>
+        <path class="sk-ink" d="M164 153 h16"/>
+        <path class="sk-accent" d="M163 158.75 h18"/>
+        <path class="sk-faint" d="M186 153 h12 M92 160 H240 M214 153 h3 M221 153 h3 M228 153 h5"/>
+        <path class="sk-sage-line" d="M100 170 l3 3 l-3 3"/>
+        <path class="sk-frame" d="M109 173 h34"/>
+        <rect class="sk-accent-fill" x="147" y="170" width="4" height="6"/>
+        <path class="sk-faint" d="M100 184 h40 M100 192 h26"/>
+        <text x="196" y="181">Terminal</text>
+      </g>
+      <!-- The agent chat, in a pane at the right. -->
+      <g class="sk-box sk-c-accent" data-pane="agent">
+        <rect x="243" y="25" width="73" height="178" rx="3"/>
+        <path class="sk-spark" d="M251 29.5 v6 M248 32.5 h6 M249 30.5 l4 4 M253 30.5 l-4 4"/>
+        <path class="sk-faint" d="M243 39 H316 M296 32 h5 M305 32 h5"/>
+        <path class="sk-frame" d="M249 46 h26"/>
+        <path class="sk-faint" d="M262 80 h36 M268 88 h24"/>
+        <text x="279.5" y="118">Agent Chat</text>
+        <rect class="sk-edge" x="249" y="166" width="61" height="31" rx="4"/>
+        <path class="sk-faint" d="M254 174 h30 M254 189 h10 M268 189 h14"/>
+        <circle class="sk-accent-fill" cx="302" cy="189" r="4"/>
+        <path class="sk-page" d="M302 191 v-4 M300 189 l2 -2 l2 2"/>
+      </g>
+      <!-- The status bar. -->
+      <path class="sk-accent-fill" d="M2 207 H19 V218 H8.75 A6.75 6.75 0 0 1 2 211.25 Z"/>
+      <path class="sk-faint" d="M26 212.5 h14 M46 212.5 h10 M218 212.5 h14 M238 212.5 h10 M254 212.5 h16 M276 212.5 h12 M294 212.5 h16"/>
+      <circle class="sk-rose" cx="63" cy="212.5" r="1.75"/>
+      <path class="sk-faint" d="M68 212.5 h5"/>
+      <circle class="sk-ochre" cx="80" cy="212.5" r="1.75"/>
+      <path class="sk-faint" d="M85 212.5 h5"/>
+    </svg>
+</figure>

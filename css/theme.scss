@@ -3,7 +3,7 @@
 // The standard this sheet keeps to is docs/design.md: the palette, its
 // roles, the faces, the sizes and the elements are all written there. The
 // neutrals are the app's (emaki/crates/emaki-app/themes/emaki.json); the
-// colours are the icon's.
+// colors are the icon's.
 
 // Bootstrap's own knobs, so what Quarto draws itself (the table of
 // contents, the search, a form control) follows the accent and the page.
@@ -11,8 +11,12 @@
 // first, since Quarto lays a later sheet's defaults under an earlier one's.
 $primary: #5061B3 !default;
 $link-color: #4A5BAC !default;
-$body-bg: #FBFBFA !default;
+$body-bg: #F4F1EA !default;
 $body-color: #1F1E1D !default;
+// The navbar is the frame, so its icons take the paper (css/dark.scss
+// says the same for the dark appearance).
+$navbar-bg: #333950 !default;
+$navbar-fg: #F3F1EA !default;
 
 $font-family-sans-serif: "Source Serif 4", Georgia, "Times New Roman", serif !default;
 $font-family-monospace: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace !default;
@@ -28,14 +32,14 @@ $border-radius-sm: 5px !default;
 /* ---- Tokens ---- */
 
 :root {
-  --page: #FBFBFA;
+  --page: #F4F1EA;
   --ink: #1F1E1D;
   --muted: #77746B;
-  --panel: #F0EFED;
-  --panel-2: #EAE9E6;          // a shade past the panel: a hover, a cap
-  --border: #DFDFDC;
-  --border-2: #D4D3D0;         // the input's edge, a cap's
-  --frame: #3D3A36;
+  --panel: #ECE8DF;
+  --panel-2: #E3DED3;          // a shade past the panel: a hover, a cap
+  --border: #DED8CB;
+  --border-2: #C9C2B3;         // the input's edge, a cap's
+  --frame: #333950;            // the navbar and the footer: graphite given the accent's hue (OKLCH L 0.35, C 0.04, h 272), in both
   --paper: #F3F1EA;            // words on the frame
 
   --accent: #5061B3;
@@ -49,12 +53,15 @@ $border-radius-sm: 5px !default;
   --wash-edge: rgb(80 97 179 / 0.22);
   --mark: #D99A1F;
   --spark: #715CC7;
+  --seal: #A8665B;
   --claude: #D97757;
   --codex: #5F9E6E;
+  --git: #E8532F;
+  --github: #8250DF;
 
   // Popovers float over the page and take its appearance.
   --pop-bg: #FFFFFF;
-  --pop-border: #DFDFDC;
+  --pop-border: #DED8CB;
   --shadow-float: 0 12px 32px -8px rgb(31 30 29 / 0.12), 0 1px 3px rgb(31 30 29 / 0.06);
 
   // The code inks: Rosé Pine's hues retinted for contrast (look::INKS_LIGHT).
@@ -65,8 +72,17 @@ $border-radius-sm: 5px !default;
   --ink-teal: #357783;
   --ink-green: #4C7B58;
   --ink-red: #B0505F;
-  --ink-grey: #85818F;
+  --ink-gray: #85818F;
   --ink-plain: #1F1F1F;
+
+  // The shift's own set (docs/design.md, The palette): five hues at one
+  // lightness and chroma (OKLCH L 0.60, C 0.09 here; L 0.80, C 0.08 in
+  // the dark), so the two sketches are one family, warm and calm.
+  --sk-ochre: #9E793D;
+  --sk-slate: #4489AE;
+  --sk-sage: #578F63;
+  --sk-mauve: #986EA2;
+  --sk-rose: #AF6974;
 
   // gpui's ease_out_quint, which every motion in the window eases with.
   --ease: cubic-bezier(0.23, 1, 0.32, 1);
@@ -77,12 +93,11 @@ $border-radius-sm: 5px !default;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-wordmark: Optima, "Avenir Next", Avenir, Belleza, sans-serif;
 
-  // The columns.
-  --w-hero: 46rem;
-  --w-band: 40rem;
-  --w-grid: 48rem;
+  // The landing page's column: Kaku's, 1280 less 64 at each side, and
+  // in a narrower window the width less a margin that shrinks with it.
+  --w-page: min(1152px, 100% - clamp(1rem, 8vw, 5rem));
 
-  // The navbar's widgets sit on graphite in both appearances, so their
+  // The navbar's widgets sit on the frame in both appearances, so their
   // washes are light-on-dark throughout.
   --w-bg: rgb(255 255 255 / 0.08);
   --w-bg-hover: rgb(255 255 255 / 0.16);
@@ -98,7 +113,7 @@ body.quarto-dark {
   --panel-2: #2F2E2B;
   --border: #32312E;
   --border-2: #4A4945;
-  --frame: #3A3733;
+  --frame: #30374D;
 
   --accent: #94A7ED;
   --accent-hover: #A0B3FB;
@@ -110,7 +125,10 @@ body.quarto-dark {
   --wash-edge: rgb(148 167 237 / 0.3);
   --mark: #FFB83E;
   --spark: #B5ADF4;
+  --seal: #D49A90;
   --codex: #79B487;
+  --git: #F27D5F;
+  --github: #A782F0;
 
   --pop-bg: #343230;
   --pop-border: #3B3A37;
@@ -123,24 +141,33 @@ body.quarto-dark {
   --ink-teal: #9CCFD8;
   --ink-green: #A3CCA4;
   --ink-red: #EB8FA6;
-  --ink-grey: #8F8BA0;
+  --ink-gray: #8F8BA0;
   --ink-plain: #D4D4D4;
+
+  --sk-ochre: #DAB883;
+  --sk-slate: #8AC7EA;
+  --sk-sage: #99CDA3;
+  --sk-mauve: #D5ADDE;
+  --sk-rose: #ECA9B2;
 }
 
 /* ---- Icons ---- */
 
 // The app's own Tabler files, copied into assets/icons/ under the names it
-// uses, drawn through a mask so each takes the colour of its place. A path
+// uses, drawn through a mask so each takes the color of its place. A path
 // in `url()` is from the project's root: Quarto resolves it when it compiles
 // the sheet and carries the file over.
 $icons: download scroll github archive search book-open inbox terminal
   tree-view git-branch microphone keyboard bot settings shield check
   external-link arrow-right sparkles history info refresh hard-drive
-  file-text box eye circle-check palette typography list-numbers sun moon copy;
+  file-text box eye circle-check palette typography list-numbers sun moon copy
+  chevron-right app-window play folder at gauge asterisk file-code file-table
+  image file square-terminal claude;
 
 @each $i in $icons {
   .i-#{$i} { --icon: url("assets/icons/#{$i}.svg"); }
 }
+.i-codex { --icon: url("assets/icons/agents/codex.svg"); }
 
 @mixin glyph($size: 1.25rem) {
   content: "";
@@ -240,9 +267,12 @@ blockquote {
   color: var(--muted);
 }
 
-// Quarto's title block: the page's h1 and the one line under it.
-#title-block-header {
-  margin-bottom: 1.75rem;
+// Quarto's title block: the page's h1 and the one line under it. The gap
+// under it is set as a block margin from `body` with the class as well as
+// the id, as specific as Quarto's `body.nav-sidebar #title-block-header`,
+// which zeroes `margin-block-end` on the sidebar's pages below 992 wide.
+#title-block-header, body #title-block-header.quarto-title-block {
+  margin-block-end: 1.75rem;
 
   .title { margin: 0 0 0.5rem; }
   .subtitle {
@@ -272,18 +302,27 @@ blockquote {
 
 // Everything that is a control or a label rather than a sentence.
 .navbar, .pill, kbd, .kbd, .chip, th, .nav-footer, #TOC, nav[role="doc-toc"],
-.rel-date, .download span, .download::after, .hero-meta, .gh-widget-trigger,
-.gh-dropdown, .kb-overlay, .code-copy-button, .anchorjs-link, .steps li::before {
+.download span, .download::after, .gh-widget-trigger,
+.gh-dropdown, .code-copy-button, .anchorjs-link, .steps li::before {
   font-family: var(--font-ui);
 }
 
 /* ---- Navbar ---- */
 
+// The navbar's squares, all one size: the app's icon at the left, the
+// menu button beside it on a narrow window, and the tiles at the right
+// (the appearance, the source, the search). A glyph in a tile is 16.
+$tile: 30px;
+$tile-glyph: 16px;
+
+// The frame, graphite with the accent's hue in both appearances, and on it four things, as
+// Kaku's has them: the name in the wordmark face and the accent's dark
+// shade, the version in the code face, and Docs and About.
 .navbar {
   background-color: var(--frame) !important;
   border-bottom: none;
-  padding-top: 0.55rem;
-  padding-bottom: 0.55rem;
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
 
   .navbar-title, .navbar-nav .nav-link, .navbar-brand, .aa-DetachedSearchButton, .bi {
     color: var(--paper) !important;
@@ -292,7 +331,8 @@ blockquote {
   // The name, as the window sets it: the wordmark face, regular, in the accent.
   .navbar-title {
     font-family: var(--font-wordmark);
-    font-size: 1.35rem;
+    font-size: 1.6rem;
+    line-height: 1;
     font-weight: 400;
     letter-spacing: 0.01em;
     color: var(--accent-on-frame) !important;
@@ -310,14 +350,49 @@ blockquote {
     &:hover, &:focus, &.active { opacity: 1; }
   }
 
-  .navbar-logo {
-    max-height: 26px;
-    border-radius: 6px;
+  // The version: the app's latest, in the code face, a step smaller.
+  .nav-version {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
   }
 
+  // The icon's image leaves a margin round its drawing (432 of 512), so
+  // its box is a little larger than a tile, and the margin is given back,
+  // for the drawing itself to stand a tile's size without the bar growing.
+  .navbar-logo {
+    width: calc(#{$tile} * 512 / 432);
+    height: calc(#{$tile} * 512 / 432);
+    max-height: none;
+    padding: 0;
+    margin: calc(#{$tile} * -40 / 432) 0;
+    border-radius: 0;
+  }
+
+  // The menu button is a tile as the widgets at the right are, 34 square
+  // with the frame's soft fill, hairline and 8 px corners, so the bar's
+  // two ends match; its three lines a size down inside it.
+  // No `display` here: Bootstrap hides the button from 992 wide
+  // (`.navbar-expand-lg .navbar-toggler`), and a display set at every
+  // width would outrank that and show it on the desktop too; the narrow
+  // rules below lay it out.
   .navbar-toggler {
-    border-color: var(--w-border);
-    &:focus { box-shadow: 0 0 0 2px var(--w-border); }
+    align-items: center;
+    justify-content: center;
+    // Quarto gives it `flex-basis: content`, which sizes it in the bar's
+    // row by its icon whatever its width says; the flex size is set here.
+    flex: 0 0 $tile;
+    width: $tile;
+    height: $tile;
+    padding: 0;
+    background: var(--w-bg);
+    border: 1px solid var(--w-border);
+    border-radius: 8px;
+    transition: background 160ms var(--ease), border-color 160ms var(--ease);
+
+    &:hover { background: var(--w-bg-hover); border-color: var(--w-border-hover); }
+    &:focus { box-shadow: none; }
+    &:focus-visible { box-shadow: 0 0 0 2px var(--w-border); }
+    .navbar-toggler-icon { width: $tile-glyph; height: $tile-glyph; }
   }
 }
 
@@ -338,13 +413,12 @@ blockquote {
   order: 0;
 }
 
-#navbar-widgets .quarto-color-scheme-toggle,
-.kb-btn {
+#navbar-widgets .quarto-color-scheme-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: $tile;
+  height: $tile;
   padding: 0;
   margin: 0;
   background: var(--w-bg);
@@ -366,7 +440,7 @@ blockquote {
 // on the light page, the sun on the dark. Drawn with the app's own icons in
 // place of Bootstrap's switch.
 #navbar-widgets .quarto-color-scheme-toggle .bi::before {
-  @include glyph(18px);
+  @include glyph($tile-glyph);
   --icon: url("assets/icons/moon.svg");
   margin: 0;
 }
@@ -375,11 +449,12 @@ body.quarto-dark #navbar-widgets .quarto-color-scheme-toggle .bi::before {
 }
 
 // Narrow, one row: the menu button, the name, then the widgets at the
-// right; the links fold out under them. Quarto centres the name and puts
+// right; the links fold out under them. Quarto centers the name and puts
 // its tools on a second row, which read as two navbars.
 @media (max-width: 991.98px) {
-  .kb-btn { display: none; }
   #github-widget .gh-stats { display: none; }
+  // With its stars folded away the source is a square too.
+  .gh-widget-trigger { width: $tile; padding: 0; justify-content: center; }
 
   .navbar .navbar-container {
     display: flex;
@@ -387,7 +462,7 @@ body.quarto-dark #navbar-widgets .quarto-color-scheme-toggle .bi::before {
     align-items: center;
     justify-content: flex-start;
   }
-  .navbar .navbar-toggler { order: 0; margin-right: 0.5rem; }
+  .navbar .navbar-toggler { display: flex; order: 0; margin-right: 0.5rem; }
   .navbar .navbar-brand-container {
     order: 1;
     margin-left: 0 !important;
@@ -395,17 +470,42 @@ body.quarto-dark #navbar-widgets .quarto-color-scheme-toggle .bi::before {
   }
   .navbar .quarto-navbar-tools { order: 2; margin-left: auto; }
   .navbar .navbar-collapse { order: 3; flex-basis: 100%; }
+
+  // The links fold out flush left, under the menu button, each with its
+  // icon before it: the releases' history, the docs' open book, About's
+  // info, in the paper and a little quieter than the words.
+  .navbar .navbar-collapse .navbar-nav {
+    align-items: stretch;
+    text-align: left;
+    padding: 0.35rem 0 0.6rem;
+  }
+  .navbar .navbar-collapse .navbar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.4rem;
+
+    &::before {
+      @include glyph(18px);
+      opacity: 0.75;
+    }
+  }
+  .navbar .navbar-nav.me-auto > .nav-item:nth-child(1) .nav-link::before { --icon: url("assets/icons/history.svg"); }
+  .navbar .navbar-nav.me-auto > .nav-item:nth-child(2) .nav-link::before { --icon: url("assets/icons/book-open.svg"); }
+  .navbar .navbar-nav.me-auto > .nav-item:nth-child(3) .nav-link::before { --icon: url("assets/icons/info.svg"); }
 }
 
 /* ---- GitHub widget ---- */
 
 #github-widget { position: relative; }
 
+// The mark is a tile's glyph, as the moon and the glass are.
+.gh-widget-trigger .gh-icon { width: $tile-glyph; height: $tile-glyph; }
 .gh-widget-trigger {
   display: flex;
   align-items: center;
   gap: 6px;
-  height: 34px;
+  height: $tile;
   padding: 0 10px;
   background: var(--w-bg);
   border: 1px solid var(--w-border);
@@ -511,113 +611,6 @@ body.quarto-dark #navbar-widgets .quarto-color-scheme-toggle .bi::before {
   font-weight: 600;
 }
 
-/* ---- Keyboard shortcuts overlay ---- */
-
-.kb-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 1090;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgb(0 0 0 / 0.4);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 240ms var(--ease), visibility 0s linear 240ms;
-
-  &.kb-overlay-visible {
-    opacity: 1;
-    visibility: visible;
-    transition-delay: 0s;
-  }
-}
-
-.kb-overlay-inner {
-  width: 90%;
-  max-width: 480px;
-  max-height: 80vh;
-  overflow-y: auto;
-  background: var(--pop-bg);
-  color: var(--ink);
-  border: 1px solid var(--pop-border);
-  border-radius: 12px;
-  box-shadow: var(--shadow-float);
-  padding: 1.25rem 1.5rem 1.5rem;
-  transform: translateY(10px);
-  transition: transform 240ms var(--ease);
-
-  .kb-overlay-visible & { transform: translateY(0); }
-}
-
-.kb-overlay-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-
-  h2 {
-    margin: 0;
-    font-family: var(--font-words);
-    font-size: 1.1rem;
-  }
-}
-
-.kb-overlay-close {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  padding: 0;
-  border: none;
-  border-radius: 50%;
-  background: transparent;
-  color: var(--muted);
-  cursor: pointer;
-  transition: background 160ms var(--ease), color 160ms var(--ease);
-
-  &:hover { background: var(--panel-2); color: var(--ink); }
-}
-
-.kb-overlay-body {
-  display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
-}
-
-.kb-group {
-  h3 {
-    font-family: var(--font-ui);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    color: var(--muted);
-    margin: 0 0 0.4rem;
-  }
-  dl { margin: 0; }
-}
-
-.kb-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.4rem 0;
-  border-bottom: 1px solid var(--border);
-  font-size: 0.9rem;
-
-  &:last-child { border-bottom: none; }
-  dt {
-    display: flex;
-    align-items: center;
-    gap: 0.35rem;
-    font-weight: normal;
-    margin: 0;
-  }
-  dd { margin: 0; color: var(--muted); }
-}
-
-.kb-or { font-size: 0.75rem; color: var(--muted); }
-
 /* ---- Keys ---- */
 
 // A key is drawn as a key, as the window's `key_text` does, never as code.
@@ -646,7 +639,7 @@ kbd, .kbd {
 //
 // The selector is long on purpose. Quarto lays its own
 // `code:not(.sourceCode), li code:not(.sourceCode), td code:not(.sourceCode)`
-// down after this sheet, so anything shorter loses the background to its grey
+// down after this sheet, so anything shorter loses the background to its gray
 // whatever the order. `:not(pre) >` keeps the plate off code inside a block,
 // which Quarto sets to `initial` for good reason.
 html body :not(pre) > code:not(.sourceCode) {
@@ -687,7 +680,7 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
   .st, .ch, .vs, .ss       { color: var(--ink-gold); }
   .fu, .bu, .sc            { color: var(--ink-rose); }
   .dt, .ot                 { color: var(--ink-teal); }
-  .co, .cm, .do            { color: var(--ink-grey); font-style: italic; }
+  .co, .cm, .do            { color: var(--ink-gray); font-style: italic; }
   .va, .op                 { color: var(--ink-plain); }
   .er, .al                 { color: var(--ink-red); }
   .wa                      { color: var(--ink-gold); }
@@ -721,12 +714,463 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
 // The one bright mark.
 #hero-sun { stroke: var(--mark); }
 
+// The name in its own characters, written down the sheet's sky at its
+// head, in a Mincho face as a scroll's title is, heavy and in an old
+// seal's red, faded as cinnabar fades on paper: a soft warm color beside
+// the sun's amber, never a loud one.
+.hero-title {
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Yu Mincho", YuMincho, "Noto Serif JP", "Noto Serif CJK JP", serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  fill: var(--seal);
+  stroke: none;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+// The same figure among the words of the About page, at the column's width,
+// with air on both sides.
+.about-fig {
+  margin: 2rem 0 2.25rem;
+  .hero-fig { max-width: none; margin: 0; }
+}
+
+/* ---- Figures ---- */
+
+// Hairline's line figures (js/figures.js, built by scripts/figures/build.sh):
+// an isometric drawing that answers the pointer, in the handscroll's manner.
+// Its plate and four strokes are the page's tokens: the plate is the ground
+// it stands on, the bright stroke the accent, the silhouettes the muted ink,
+// the rest the two borders. The box is 5:4, as the engine draws it.
+.fig {
+  --hairline-plate: var(--page);
+  --hairline-hi: var(--accent);
+  --hairline-edge: var(--muted);
+  --hairline-mid: var(--border-2);
+  --hairline-lo: var(--border);
+  margin: 0;
+}
+
+// Each panel's figure is in the panel's own color, the one its button and
+// its box have in the docs' sketches: the files ochre, the outline mauve,
+// the shell sage, and the agent's terminal Claude's. The two parts of the
+// main system keep the accent.
+.fig[data-figure="files"] { --hairline-hi: var(--sk-ochre); }
+.fig[data-figure="outline"] { --hairline-hi: var(--sk-mauve); }
+.fig[data-figure="shell"] { --hairline-hi: var(--sk-sage); }
+.fig[data-figure="agent"] { --hairline-hi: var(--claude); }
+
+// The part standing out of the window (scripts/figures/emaki/window.js):
+// its face washed with its own color, and its shadow on the window under
+// it, the same color, blurred. Hairline's own rules have no weight
+// (`:where`), so these win.
+.fig svg .emk-wash { fill: color-mix(in oklab, var(--hairline-hi) 7%, var(--hairline-plate)); }
+.fig svg .emk-shade { fill: color-mix(in oklab, var(--hairline-hi) 22%, transparent); stroke: none; }
+
+/* ---- The shift ---- */
+
+// From the IDE to the ADE (index.qmd, _shift-ide.html, _shift-ade.html):
+// two rows under the heading, each a window seen from the front at the
+// left and its words at the right, and an arrow down the left column
+// from the one window to the other, centered on both. One column under
+// 992 wide: a window, its words, the arrow, the next window, its words.
+// The strokes do not scale, as the handscroll's do not.
+.shift {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 3.5rem;
+  align-items: center;
+  max-width: var(--w-page);
+  margin: 0 auto;
+
+  > h2:first-child { grid-column: 1 / -1; margin-top: 3.5rem; margin-bottom: 1.5rem; }
+  > .shift-words { grid-column: 2; }
+  > .shift-arrow { grid-column: 1; justify-self: center; }
+}
+
+// Quarto gives every <figure> its own `figure` class, and its
+// `figure.figure { display: block }` outranks a class alone, so the pane
+// is selected from its parent.
+.shift > .shift-pane {
+  grid-column: 1;
+  justify-self: center;
+  width: 100%;
+  max-width: 30rem;
+  margin: 0;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  svg * { vector-effect: non-scaling-stroke; }
+}
+
+@media (max-width: 991.98px) {
+  .shift {
+    grid-template-columns: minmax(0, 1fr);
+
+    > .shift-words, > .shift-arrow, > .shift-pane { grid-column: 1; }
+    > .shift-words { margin-top: 1.25rem; }
+  }
+}
+
+// Each window has a frame heavier than the lines inside it and a halo
+// under it, in its own color: the IDE's gray and faint, the ADE's the
+// accent, since that is the one that is Emaki and the one the page is
+// for. The box's corners take the window's own radius (8 of 320 by 220),
+// so the halo follows the drawn frame, and it is a box shadow, which
+// costs nothing while the window moves under the pointer. The frame is
+// drawn on the box's edge with the same radius (x 0, y 0, rx 8), so its
+// curve and the halo's are one at any width: a frame set in from the
+// edge, or rounded otherwise, leaves the page showing between them at
+// the corners. The box lets the stroke's outer half overflow onto the
+// halo, so the heavier stroke is never cut.
+.shift-pane svg {
+  overflow: visible;
+  border-radius: 2.5% / 3.6364%;
+}
+.shift-pane .sk-window { stroke-width: 2; }
+.shift-ide {
+  .sk-window { stroke: var(--muted); }
+  svg {
+    box-shadow:
+      0 0 0 6px color-mix(in oklab, var(--ink) 5%, transparent),
+      0 12px 40px -10px color-mix(in oklab, var(--ink) 16%, transparent);
+  }
+}
+.shift-ade {
+  .sk-window { stroke: var(--accent); }
+  svg {
+    box-shadow:
+      0 0 0 6px color-mix(in oklab, var(--accent) 16%, transparent),
+      0 12px 48px -8px color-mix(in oklab, var(--accent) 40%, transparent);
+  }
+}
+body.quarto-dark .shift-ide svg {
+  box-shadow:
+    0 0 0 6px color-mix(in oklab, var(--ink) 7%, transparent),
+    0 12px 40px -10px color-mix(in oklab, var(--ink) 18%, transparent);
+}
+body.quarto-dark .shift-ade svg {
+  box-shadow:
+    0 0 0 6px color-mix(in oklab, var(--accent) 22%, transparent),
+    0 12px 56px -8px color-mix(in oklab, var(--accent) 50%, transparent);
+}
+
+// A row's words: what it is called, small over them, then what it is.
+.shift-label {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  color: var(--muted);
+
+  > p { margin: 0; }
+
+  strong {
+    font-weight: 600;
+    color: var(--ink);
+    margin-right: 0.35em;
+  }
+}
+.shift-words > p:last-child { margin-bottom: 0; }
+
+// Down from the one window to the other, in the gap between their rows.
+.shift-arrow {
+  display: block;
+  width: 1.5rem;
+  height: 3.5rem;
+  margin: 1.75rem 0;
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+// The sketch's strokes: the structure in the muted ink and the two borders,
+// the words' stand-ins in the ink, the accent on what can be done, and the
+// rest in the shift's own set (--sk-*, The palette), five hues at one
+// lightness and chroma so the two windows are one family: ochre for the
+// files, slate for the code, sage for the terminal, mauve for the agent's
+// spark, and the lights and the dots in rose, ochre and sage. A box is a
+// pane with its name in it, in one color for the two; the names are in
+// the wordmark's face, as the name beside the icon is, in title case, and
+// each stands on a halo in the page's color, so it reads over the lines
+// it crosses. The docs pages' sketches (The sketches, below) draw with
+// the same set.
+.shift, .sketch {
+  .sk-frame { stroke: var(--muted); }
+  .sk-faint { stroke: var(--border-2); }
+  .sk-edge { stroke: var(--border-2); }
+  .sk-ink { stroke: var(--ink); }
+  .sk-page { stroke: var(--page); stroke-width: 1.4; }
+  .sk-accent { stroke: var(--accent); }
+  .sk-accent-fill { fill: var(--accent); stroke: none; }
+  .sk-wash { fill: var(--panel-2); stroke: none; }
+  .sk-spark { stroke: var(--sk-mauve); stroke-width: 1.25; }
+  .sk-lights circle { stroke: none; }
+  .sk-rose { fill: var(--sk-rose); stroke: none; }
+  .sk-ochre { fill: var(--sk-ochre); stroke: none; }
+  .sk-sage { fill: var(--sk-sage); stroke: none; }
+  .sk-sage-line { stroke: var(--sk-sage); }
+  .sk-ochre-line { stroke: var(--sk-ochre); }
+  // The name keeps the alphabetic baseline: the sketches set every other
+  // text's baseline central (The sketches), and the name on that sits
+  // low beside the icon.
+  .sk-name { font-family: var(--font-wordmark); font-size: 10px; fill: var(--accent); stroke: none; dominant-baseline: alphabetic; }
+
+  .sk-box { color: var(--muted); }
+  .sk-box > rect:first-child { stroke: currentColor; }
+  .sk-box text {
+    font-family: var(--font-wordmark);
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    fill: currentColor;
+    stroke: var(--page);
+    stroke-width: 3;
+    stroke-linejoin: round;
+    paint-order: stroke;
+    text-anchor: middle;
+    dominant-baseline: central;
+    transition: fill 240ms var(--ease);
+  }
+  // As specific as the rule above, or these lose to it.
+  .sk-box text.sk-big { font-size: 10px; }
+  .sk-box text.sk-small { font-size: 6.5px; }
+  .sk-box text.sk-start { text-anchor: start; }
+  .sk-c-gray { color: var(--muted); }
+  .sk-c-ochre { color: var(--sk-ochre); }
+  .sk-c-slate { color: var(--sk-slate); }
+  .sk-c-sage { color: var(--sk-sage); }
+  .sk-c-mauve { color: var(--sk-mauve); }
+  .sk-c-accent { color: var(--accent); }
+
+  // What answers the pointer: the box under it lights in place, its edge
+  // heavier and its name in the ink, over a hover's moment and with
+  // nothing travelling between boxes; on a phone the script lights them in
+  // turn (`.on`). The box's rect takes the pointer over its whole face,
+  // or an unfilled shape would answer only on its edge. The terminal's
+  // button lights while the terminal is out (js/shift.js).
+  .sk-box > rect:first-child {
+    pointer-events: all;
+    transition: stroke-width 160ms var(--ease), fill 160ms var(--ease);
+  }
+  .sk-box:hover > rect:first-child, .sk-box.on > rect:first-child {
+    stroke-width: 2.5;
+    fill: color-mix(in oklab, currentColor 7%, transparent);
+  }
+  .sk-box:hover text, .sk-box.on text { fill: var(--ink); }
+  // The two buttons of the chrome are the things in the window to do,
+  // each in its pane's color: the files' ochre, the terminal's sage. At
+  // rest each glows, its face washed
+  // in its color and a soft halo of the same under it, still, the only
+  // lit things in the chrome; while its pane is out it fills solid, the
+  // glyph in the page's color. The hit rect is unseen.
+  .sk-btn { --btn: var(--accent); stroke: var(--btn); cursor: pointer; }
+  .sk-btn-ochre { --btn: var(--sk-ochre); }
+  .sk-btn-sage { --btn: var(--sk-sage); }
+  // More of the set, for the panels these windows hold, in both the shift
+  // and the docs' sketches: the outline's mauve, the code's slate, and
+  // Claude's color (The palette) for the agent's terminal: its border, its
+  // prompts, its spark, and the button that brings it.
+  .sk-btn-mauve { --btn: var(--sk-mauve); }
+  .sk-btn-slate { --btn: var(--sk-slate); }
+  .sk-btn-claude { --btn: var(--claude); }
+  .sk-c-claude { color: var(--claude); }
+  .sk-claude-line { stroke: var(--claude); }
+  .sk-claude-spark { stroke: var(--claude); stroke-width: 1.25; }
+  .sk-btn .sk-face {
+    fill: color-mix(in oklab, var(--btn) 22%, transparent);
+    filter: drop-shadow(0 0 4px color-mix(in oklab, var(--btn) 85%, transparent));
+    transition: fill 160ms var(--ease), filter 160ms var(--ease);
+  }
+  // A button's glyph is drawn thin, under the window's stroke, as the
+  // app's icons are beside its text; the face and the frame keep theirs.
+  .sk-btn .sk-glyph { stroke-width: 1.1; transition: stroke 160ms var(--ease); }
+  .sk-btn.on .sk-face { fill: var(--btn); filter: none; }
+  .sk-btn.on .sk-glyph { stroke: var(--page); }
+  .sk-hit { fill: transparent; stroke: none; pointer-events: all; }
+  // The project's folder is a toggle of the same kind, open at rest and
+  // so filled, folded when outlined; it keeps its glow in both states,
+  // since it is the one thing in the list that answers.
+  .sk-fold.on .sk-face { filter: drop-shadow(0 0 4px color-mix(in oklab, var(--btn) 85%, transparent)); }
+}
+
+@keyframes sk-blink { 0%, 54% { opacity: 1; } 55%, 100% { opacity: 0; } }
+
+/* ---- The sketches ---- */
+
+// One on each docs page (docs/_sk/*.html): Emaki's window drawn as the
+// shift's ADE is, one base for every page, the sidebar, the chat
+// and the panels at its sides, with the page's own part in color and the
+// rest dimmed to gray (`.sk-dim`, a part at a time); the frame, the
+// lights, the name and the send button keep their colors on every page.
+// The things in it that can be done are drawn as the app has them, a
+// button, a row, a segment, each answering the pointer (js/sketches.js).
+// The words in them are small, in the wordmark's face, from the left,
+// and what the stylesheet fades is the script's to name.
+.sketch {
+  // A part that is not the page's: gray and quiet, and nothing in it
+  // answers (its boxes do not light, its rows take no pointer).
+  .sk-dim { filter: grayscale(1); opacity: 0.5; }
+  .sk-dim .sk-box > rect:first-child, .sk-dim .sk-row { pointer-events: none; }
+
+  max-width: 32rem;
+  margin: 2rem auto 2.75rem;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    overflow: visible;
+    border-radius: 2.5% / 3.6364%;
+    box-shadow:
+      0 0 0 6px color-mix(in oklab, var(--accent) 16%, transparent),
+      0 12px 48px -8px color-mix(in oklab, var(--accent) 40%, transparent);
+  }
+  svg * { vector-effect: non-scaling-stroke; }
+  .sk-window { stroke: var(--accent); stroke-width: 2; }
+
+
+  text, .sk-box text {
+    font-family: var(--font-wordmark);
+    font-size: 6.5px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    fill: var(--muted);
+    stroke: var(--page);
+    stroke-width: 2.5;
+    stroke-linejoin: round;
+    paint-order: stroke;
+    text-anchor: start;
+    dominant-baseline: central;
+  }
+  text.sk-lit { fill: var(--ink); }
+  text.sk-accent-text { fill: var(--accent); }
+  text.sk-sage-text { fill: var(--sk-sage); }
+  text.sk-ochre-text { fill: var(--sk-ochre); }
+  text.sk-page-text { fill: var(--page); stroke: none; }
+  text.sk-aa { font-family: var(--font-words); font-size: 9px; font-weight: 400; fill: var(--ink); }
+  text.sk-aa-mono { font-family: var(--font-code); font-size: 8px; font-weight: 400; fill: var(--ink); }
+  .sk-btn.on text { fill: var(--page); stroke: none; }
+
+  // The composer's caret blinks, as the app's does with the focus in the
+  // box, so the sketch says where the typing goes; still with motion off.
+  .sk-caret { animation: sk-blink 1.1s steps(1) infinite; }
+  .sk-codex { stroke: var(--sk-sage); }
+  .sk-mauve { fill: var(--sk-mauve); stroke: none; }
+  .sk-slate { fill: var(--sk-slate); stroke: none; }
+  .sk-slate-line { stroke: var(--sk-slate); }
+  .sk-mauve-line { stroke: var(--sk-mauve); }
+  .sk-rose-line { stroke: var(--sk-rose); }
+  .sk-added { stroke: var(--sk-sage); }
+  .sk-removed { stroke: var(--sk-rose); }
+  .sk-tick { stroke: var(--sk-sage); stroke-width: 1.25; }
+  .sk-tick-fill { fill: var(--sk-sage); stroke: none; }
+  .sk-tickbox { fill: var(--accent); stroke: none; }
+  .sk-badge { fill: var(--accent); stroke: none; opacity: 0.55; }
+  .sk-mark { fill: var(--mark); stroke: none; opacity: 0.45; }
+  .sk-dash { stroke: var(--border-2); stroke-dasharray: 2 2; }
+  .sk-plate { fill: var(--panel-2); stroke: none; }
+  .sk-plate-line { stroke: var(--panel-2); stroke-width: 2.5; }
+  .sk-page-fill { fill: var(--page); stroke: none; }
+  .sk-field { fill: var(--page); stroke: var(--border-2); }
+  .sk-pop { fill: var(--pop-bg); stroke: var(--pop-border); }
+  .sk-scrim { fill: color-mix(in oklab, var(--ink) 9%, transparent); stroke: none; }
+  .sk-slate-wash { fill: color-mix(in oklab, var(--sk-slate) 12%, transparent); stroke: none; }
+  .sk-ochre-wash { fill: color-mix(in oklab, var(--sk-ochre) 12%, transparent); stroke: none; }
+  .sk-sage-wash { fill: color-mix(in oklab, var(--sk-sage) 12%, transparent); stroke: none; }
+  .sk-mauve-wash { fill: color-mix(in oklab, var(--sk-mauve) 12%, transparent); stroke: none; }
+  .sk-rose-wash { fill: color-mix(in oklab, var(--sk-rose) 12%, transparent); stroke: none; }
+  .sk-arrow { stroke: var(--ink); stroke-width: 2; }
+
+  // A row that answers: washed under the pointer and while its thing is
+  // on, as the app's rows are.
+  .sk-row {
+    fill: transparent;
+    stroke: none;
+    pointer-events: all;
+    cursor: pointer;
+    transition: fill 160ms var(--ease);
+  }
+  .sk-row:hover, .sk-row.on { fill: color-mix(in oklab, var(--ink) 7%, transparent); }
+
+  // What the script names: fading in, fading out, and out of the
+  // pointer's reach while it is not there.
+  [data-show] { opacity: 0; transition: opacity 240ms var(--ease); }
+  [data-show].is-on { opacity: 1; }
+  [data-hide] { transition: opacity 240ms var(--ease); }
+  [data-hide].is-off { opacity: 0; }
+  .is-off, .is-off *, [data-show]:not(.is-on), [data-show]:not(.is-on) * { pointer-events: none; }
+}
+
+.sketch-label {
+  margin: 0.75rem 0 0;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+// A card with a figure over its words: the figure on the panel, a little
+// narrower than the card so the drawing has air.
+.card .fig {
+  --hairline-plate: var(--panel);
+  width: 86%;
+  margin: -0.25rem auto 0.5rem;
+}
+// A card of one of the app's parts is washed, faintly, in the part's own
+// color, the one its figure is drawn in: the main system's two in the
+// accent, each panel in its own. The figure's plate takes the same ground,
+// so its filled plates sit on the card without a seam.
+.cards-2 .card {
+  --card-tint: var(--accent);
+  --card-bg: color-mix(in oklab, var(--card-tint) 6%, var(--panel));
+  background: var(--card-bg);
+  border-color: color-mix(in oklab, var(--card-tint) 16%, var(--border));
+  .fig { --hairline-plate: var(--card-bg); }
+
+  // The part's name is the way to its page, and so is its figure
+  // (js/page.js): the name in a deep shade of the part's color, the color
+  // mixed into the ink (darker on the paper, lighter on the dark), nearer
+  // the color itself under the pointer, on the name or on the figure, and
+  // deepest while pressed. A visited page keeps the same shade.
+  h3 a, h3 a:visited { color: color-mix(in oklab, var(--card-tint) 62%, var(--ink)); }
+  h3 a:hover, &:has(.fig-link:hover) h3 a { color: color-mix(in oklab, var(--card-tint) 85%, var(--ink)); }
+  h3 a:active { color: color-mix(in oklab, var(--card-tint) 45%, var(--ink)); }
+}
+.fig.fig-link { cursor: pointer; }
+.cards-2 .card:has(.fig[data-figure="files"]) { --card-tint: var(--sk-ochre); }
+.cards-2 .card:has(.fig[data-figure="outline"]) { --card-tint: var(--sk-mauve); }
+.cards-2 .card:has(.fig[data-figure="shell"]) { --card-tint: var(--sk-sage); }
+.cards-2 .card:has(.fig[data-figure="agent"]) { --card-tint: var(--claude); }
+
+// Two to a row, the cards are wide: the figure keeps to a width the
+// window reads at, and comes up into the card's head, where its drawing
+// has air of its own.
+.cards-2 .card .fig { width: min(88%, 25rem); margin: -1rem auto -0.5rem; }
+
 /* ---- Landing page ---- */
 
+// The hero: Emaki's window as it opens, the handscroll in it over the
+// composer, so the first screen shows the app; under it
+// the name with its own characters beside it, the one line, and the
+// download and Get Started, all centered in one column; under it all a
+// hairline across the whole page, as Kaku's site closes its head.
 .hero {
-  max-width: var(--w-hero);
+  max-width: var(--w-page);
   margin: 0 auto;
-  padding: 1.5rem 0 1rem;
+  padding: 1.5rem 0 0;
   text-align: center;
 
   h1 {
@@ -740,19 +1184,46 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
   }
 }
 
+// The window as it opens (_home.html, written by scripts/sketches/gen.py),
+// and the real handscroll (_hero.html) laid over the place the window
+// keeps for it, so it winds under the pointer as it does alone. The place
+// is HOME_SCROLL in the script, a share of the window's 360 by 168.
+.hero .home {
+  position: relative;
+  max-width: 42rem;
+  margin: 0 auto 2.25rem;
+
+  // Its window is 360 by 168, so its corners take 8 of those.
+  .sketch svg { border-radius: calc(8 / 360 * 100%) / calc(8 / 168 * 100%); }
+
+  > .sketch { max-width: none; margin: 0; }
+  > .hero-fig {
+    position: absolute;
+    left: calc(148.5 / 360 * 100%);
+    top: calc(37 / 168 * 100%);
+    width: calc(150 / 360 * 100%);
+    max-width: none;
+    margin: 0;
+  }
+}
+
+// The name's own characters beside it, in a Mincho face as the scroll
+// carries them, a little under the Latin's height, in the same accent.
+.hero-kanji {
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Yu Mincho", YuMincho, "Noto Serif JP", "Noto Serif CJK JP", serif;
+  font-size: 0.78em;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  margin-left: 0.18em;
+  vertical-align: 0.06em;
+}
+
 .hero-lede {
-  max-width: 34rem;
+  max-width: 36rem;
   margin: 0 auto;
   font-size: 1.3rem;
   line-height: 1.45;
   color: var(--ink);
-  text-wrap: balance;
-}
-
-.hero-sub {
-  max-width: 36rem;
-  margin: 1rem auto 0;
-  color: var(--muted);
   text-wrap: balance;
 }
 
@@ -768,19 +1239,140 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
   > p { display: contents; }
 }
 
-.hero-meta {
-  margin: 1.25rem 0 0;
-  font-size: 0.85rem;
-  color: var(--muted);
-  p { margin: 0; }
+// The download as one control (_download.html): one accent pill in two
+// parts, the installer for this computer and, past a light seam and in a
+// lighter tint of the accent, a chevron that opens the other systems;
+// under the pointer it takes the accent itself, as the left part has it. The menu floats as a menu does,
+// white on the paper, this computer's row marked with a check. The parts
+// are named with the pill, so their shape outranks the pill's own.
+.dl {
+  position: relative;
+  display: inline-flex;
+  align-items: stretch;
+}
+.pill.dl-main {
+  border: 0;
+  border-radius: 999px 0 0 999px;
+  padding-right: 1.1rem;
+}
+.dl-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0 999px 999px 0;
+  background: color-mix(in oklab, var(--accent) 78%, white);
+  color: var(--on-accent);
+  box-shadow: inset 1px 0 0 color-mix(in oklab, var(--on-accent) 55%, transparent);
+  cursor: pointer;
+  transition: background 160ms var(--ease);
+
+  &::before {
+    @include glyph(0.9rem);
+    --icon: url("assets/icons/chevron-right.svg");
+    transform: rotate(90deg);
+    transition: transform 240ms var(--ease);
+  }
+  &:hover { background: var(--accent); }
+  &:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .dl-open &::before { transform: rotate(-90deg); }
+}
+.dl-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 13.5rem;
+  padding: 5px;
+  background: var(--pop-bg);
+  border: 1px solid var(--pop-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-float);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 240ms var(--ease), transform 240ms var(--ease), visibility 0s linear 240ms;
+  z-index: 1000;
+  text-align: left;
+
+  .dl-open & {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition-delay: 0s;
+  }
+
+  a {
+    display: grid;
+    grid-template-columns: 1.25rem auto 1fr auto;
+    align-items: center;
+    column-gap: 0.65rem;
+    padding: 0.5rem 0.7rem;
+    border-radius: 8px;
+    color: var(--ink) !important;
+    text-decoration: none !important;
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    transition: background 160ms var(--ease);
+
+    &::before { @include glyph(1.25rem); color: var(--muted); }
+    &[data-os="mac"]::before { --icon: url("assets/icons/os/mac.svg"); }
+    &[data-os="windows"]::before { --icon: url("assets/icons/os/windows.svg"); }
+    &[data-os="linux"]::before { --icon: url("assets/icons/os/linux.svg"); }
+
+    strong { font-weight: 500; }
+    span { color: var(--muted); font-size: 0.8rem; }
+    &:hover { background: var(--panel); }
+
+    &.dl-here::after {
+      @include glyph(1rem);
+      --icon: url("assets/icons/check.svg");
+      color: var(--accent);
+    }
+  }
 }
 
-// A band of words on the landing page: the words' column, centred.
+// The hairline under the hero, across the whole page, with air on both
+// sides of it: the rule is the viewport's width, pulled out of its
+// column, and the body clips what a classic scrollbar would leave past
+// the edge, so nothing scrolls sideways.
+.hero-rule {
+  height: 1px;
+  width: 100vw;
+  margin: 3.5rem 0 3rem calc(50% - 50vw);
+  background: var(--border);
+}
+body { overflow-x: clip; }
+
+// A band of words on the landing page: the page's column, and from 992
+// wide a split as Kaku's sections are, the heading in the left part and
+// the words in the right, so the words keep a reading measure across the
+// wide page; what has no heading (the agents, the way to Get Started)
+// takes the whole width.
 .band {
-  max-width: var(--w-band);
+  max-width: var(--w-page);
   margin: 0 auto;
 
   > h2:first-child { margin-top: 3.5rem; }
+}
+@media (min-width: 991.98px) {
+  .band {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    column-gap: 3.5rem;
+    align-items: start;
+
+    > h2:first-child { grid-column: 1; }
+    > :not(h2) { grid-column: 2; }
+    > h2:first-child + * { margin-top: 3.85rem; }
+    // Bootstrap's Sass writes `:not(h2)` above as `:not(h2):not(.h2)`,
+    // a class's weight more, so this names the element too to outrank it.
+    > div.starts { grid-column: 1 / -1; }
+  }
+  .agents { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 /* ---- Pills ---- */
@@ -820,13 +1412,24 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
 
 /* ---- Cards ---- */
 
-// Two by two: four cards in three columns left one alone on its row.
+// Three to a row across the page's column, six cards in two rows; two
+// to a row under 992, one under 600.
 .cards {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
-  max-width: var(--w-grid);
+  max-width: var(--w-page);
   margin: 2rem auto 0;
+}
+@media (max-width: 991.98px) {
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+// Two to a row for a group of the app's parts, as the docs' menu groups
+// them (Main system, Panels), from 640 wide.
+.cards.cards-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 639.98px) {
+  .cards.cards-2 { grid-template-columns: minmax(0, 1fr); }
 }
 
 .card {
@@ -841,9 +1444,18 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
     margin-bottom: 0.9rem;
   }
 
+  // A part's name is the way to its page, in the ink until the pointer
+  // finds it, and its key, where it has one, at the far end.
   h3 {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
     margin: 0 0 0.4rem;
     font-size: 1.125rem;
+
+    a { color: var(--ink); font-weight: inherit; text-decoration: none; transition: color 160ms var(--ease); }
+    a:hover { color: var(--accent); }
   }
 
   p {
@@ -853,33 +1465,9 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
   }
 }
 
-/* ---- Checks ---- */
-
-// What holds, a check before each.
-.checks ul {
-  list-style: none;
-  margin: 1rem 0 0;
-  padding: 0;
-
-  li {
-    position: relative;
-    padding-left: 2rem;
-    margin: 0 0 0.6rem;
-
-    &::before {
-      @include glyph(1.1rem);
-      --icon: url("assets/icons/check.svg");
-      position: absolute;
-      left: 0.1rem;
-      top: 0.3em;
-      color: var(--accent);
-    }
-  }
-}
-
 /* ---- Agents ---- */
 
-// An agent is its mark in its colour beside its name, and never the accent.
+// An agent is its mark in its color beside its name, and never the accent.
 .agents {
   display: grid;
   gap: 0.75rem;
@@ -894,6 +1482,11 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
   padding: 1rem 1.15rem;
   border: 1px solid var(--border);
   border-radius: $border-radius-lg;
+
+  // The rows keep to their content: a card stretched to its neighbor's
+  // height would otherwise share the room out among them, and its words
+  // would start lower than the neighbor's.
+  align-content: start;
 
   &::before {
     @include glyph(1.4rem);
@@ -957,6 +1550,75 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
     > p:last-child { margin-bottom: 0; }
   }
 }
+
+// The steps across, on the landing page: three to a row from 768 wide,
+// each a card with its numbered disc, an h3, a line and its controls; one
+// under the other below. The band's grid gives them the whole width. A
+// step's buttons share its row in equal widths, side by side where two
+// fit and one under the other where they do not, so a pair never ends up
+// split in two widths; the download stretches the row the same.
+.starts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 0;
+  counter-reset: step;
+}
+@media (max-width: 767.98px) {
+  .starts { grid-template-columns: minmax(0, 1fr); }
+}
+.start {
+  counter-increment: step;
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 1.35rem 1.4rem;
+  border: 1px solid var(--border);
+  border-radius: $border-radius-lg;
+  background: var(--panel);
+
+  &::before {
+    content: counter(step);
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 0.9rem;
+    border-radius: 50%;
+    border: 1px solid var(--border-2);
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  > h3 { margin: 0 0 0.4rem; font-size: 1.125rem; }
+  > p { margin: 0 0 1rem; font-size: 0.95rem; line-height: 1.55; }
+
+  // The controls sit at the card's foot, so the three rows line up.
+  > .start-links, > .dl { margin-top: auto; }
+  .pill { height: 2.25rem; padding: 0 0.75rem; font-size: 0.9rem; gap: 0.4rem; justify-content: center; }
+}
+.start-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7.25rem, 1fr));
+  gap: 0.5rem;
+  > p { display: contents; }
+  // Equal columns, two to a row where both fit and one where not; the
+  // words stay on one line, a little closer to the pill's edge than a
+  // pill's own, so "Claude Code" fits its column whole.
+  .pill { white-space: nowrap; padding: 0 0.6rem; }
+}
+// The compact download fills its row as the pairs do, its pill taking
+// what the segment leaves.
+.start > .dl {
+  display: flex;
+  .dl-main { flex: 1; }
+  .dl-more { height: 2.25rem; width: 2.4rem; }
+}
+.pill.i-claude::before { color: var(--claude); }
+.pill.i-codex::before { color: var(--codex); }
+.pill.pill-git::before { color: var(--git); }
+.pill.pill-github::before { color: var(--github); }
 
 // Quarto takes the top margin off the first section's heading, taking it
 // to follow the title; after the steps it follows them, and keeps its air.
@@ -1060,6 +1722,83 @@ main.content > div.steps + section.level2 > h2:first-child { margin-top: 3rem; }
 // A table whose first column is keys or names stays on one line there.
 .table-keys td:first-child { white-space: nowrap; width: 1%; }
 
+/* ---- People ---- */
+
+// Who makes it: a picture, a name that is a link, and a line or two. The
+// studio's mark is a rounded square, a person's picture a circle.
+.people {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.person {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  column-gap: 1.1rem;
+  align-items: start;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--border);
+  border-radius: $border-radius-lg;
+
+  > p { margin: 0; grid-column: 2; }
+  > p:first-child {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    margin-top: 0.1rem;
+  }
+  img {
+    display: block;
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+  }
+  &.person-org img { border-radius: $border-radius; }
+
+  > p:nth-child(2) { margin-bottom: 0.1rem; }
+  > p:nth-child(2) a { text-decoration: none; }
+  > p:nth-child(2) a:hover { text-decoration: underline; }
+  > p:nth-child(n + 3) { font-size: 0.95rem; line-height: 1.55; }
+}
+
+/* ---- Page navigation ---- */
+
+// The way on at a docs page's foot: the page before at the left, the one
+// after at the right, under a hairline, each a quiet word with the arrow
+// drawn from the app's own icon in place of Bootstrap's.
+.page-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+
+  .nav-page { margin: 0; }
+  .nav-page-next { margin-left: auto; }
+  .bi { display: none; }
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 160ms var(--ease);
+
+    &:hover { color: var(--ink); }
+    &::before, &::after {
+      @include glyph(1rem);
+      --icon: url("assets/icons/arrow-right.svg");
+    }
+    &::before { transform: rotate(180deg); }
+  }
+  .nav-page-previous a::after, .nav-page-next a::before { display: none; }
+}
+
 /* ---- Note ---- */
 
 .note {
@@ -1072,30 +1811,117 @@ main.content > div.steps + section.level2 > h2:first-child { margin-top: 3rem; }
   p { margin: 0; }
 }
 
-/* ---- Releases ---- */
+// The kinds of file the pane opens (Files Panel): a tile a kind, two to
+// a row, its icon at the left, its name in the ink and one line under it.
+.types ul {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem 0.75rem;
+}
+.types li {
+  position: relative;
+  padding: 0.55rem 0.75rem 0.6rem 2.35rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.4;
 
-.releases {
-  h2 {
-    display: flex;
-    align-items: baseline;
-    gap: 0.75rem;
-    font-size: 1.25rem;
-    margin-top: 2.75rem;
-  }
-  .rel-date {
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--muted);
+  > span[class*="i-"] {
+    display: block;
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 0.92rem;
+    &::before {
+      @include glyph(1.05rem);
+      position: absolute;
+      left: 0.75rem;
+      top: 0.7rem;
+      color: var(--accent);
+    }
   }
 }
+@media (max-width: 599.98px) {
+  .types ul { grid-template-columns: minmax(0, 1fr); }
+}
 
-// The table of contents says the version alone.
-nav[role="doc-toc"] .rel-date { display: none; }
+/* ---- The docs menu ---- */
+
+// Kaku's docs menu, with Emaki's own mark on the page showing: the pages
+// in the words' serif, as Kaku's are, a hairline between the groups, and
+// a short rounded bar in the accent at the left of the current page's
+// row, as the app's sidebar marks the session showing (window.md, The
+// sidebar). The table of contents is in its own column at the right.
+#quarto-sidebar {
+  .sidebar-item { margin: 0; }
+  .sidebar-item-container { position: relative; }
+  .sidebar-link, .sidebar-item-text {
+    display: block;
+    position: relative;
+    font-family: var(--font-words);
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--muted);
+    padding: 0.4rem 0 0.4rem 0.9rem;
+    text-decoration: none;
+    transition: color 160ms var(--ease);
+
+    &:hover { color: var(--ink); }
+    &.active { color: var(--accent); }
+    &.active::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3px;
+      height: 56%;
+      border-radius: 2px;
+      background: var(--accent);
+    }
+  }
+  .sidebar-divider {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 0.6rem 0;
+    opacity: 1;
+  }
+  // A group's label (a `section` in _quarto.yml): small capitals in the
+  // UI face, spaced wide and lighter than the pages under them, the usual
+  // sign of a heading and not a link. Nothing on it answers the pointer:
+  // the arrow stays an arrow (Quarto gives the section's row a pointer),
+  // and the words cannot be selected; its toggle is hidden and its pages
+  // stand where the others do.
+  .sidebar-item-section {
+    > .sidebar-item-container { cursor: default; }
+    > .sidebar-item-container > .sidebar-item-text {
+      font-family: var(--font-ui);
+      font-size: 0.66rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: color-mix(in oklab, var(--muted) 72%, var(--page));
+      padding: 0.35rem 0 0.25rem 0.9rem;
+      pointer-events: none;
+      user-select: none;
+    }
+    > .sidebar-item-container > .sidebar-item-toggle { display: none; }
+    > ul.sidebar-section { padding-left: 0; margin: 0; }
+  }
+  // The pages after the groups, Settings and Keys, a size down.
+  .sidebar-item-section ~ .sidebar-item:not(.sidebar-item-section) .sidebar-link { font-size: 0.85rem; }
+}
 
 /* ---- Table of contents ---- */
 
 .sidebar nav[role="doc-toc"] {
-  font-size: 0.85rem;
+  font-family: var(--font-words);
+  font-size: 0.9rem;
 
   > h2#toc-title {
     font-family: var(--font-ui);
@@ -1122,12 +1948,6 @@ nav[role="doc-toc"] .rel-date { display: none; }
   }
 }
 
-// Past about fifteen entries Quarto marks the table of contents `collapse`,
-// which Bootstrap then hides outright, leaving an "On this page" heading with
-// nothing under it (the Releases page, with one entry a version). The version
-// list is exactly what that sidebar is for, so keep it open.
-#TOC > ul.collapse { display: block; }
-
 .anchorjs-link {
   color: var(--muted) !important;
   text-decoration: none !important;
@@ -1151,11 +1971,21 @@ nav[role="doc-toc"] .rel-date { display: none; }
 /* ---- Search ---- */
 
 .aa-DetachedSearchButton {
+  // A tile as the others are, its glass a tile's glyph.
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: $tile !important;
+  height: $tile !important;
+  padding: 0 !important;
   background: var(--w-bg) !important;
   border: 1px solid var(--w-border) !important;
   border-radius: 8px !important;
   color: var(--paper) !important;
   &:hover { background: var(--w-bg-hover) !important; }
+  .aa-DetachedSearchButtonIcon { display: block; width: $tile-glyph !important; height: $tile-glyph !important; margin: 0 !important; }
+  // Quarto's search sheet sizes the glass itself, more specifically.
+  .aa-DetachedSearchButtonIcon svg { display: block; width: $tile-glyph !important; height: $tile-glyph !important; }
 }
 
 // The search is a control, so its panel is in the chrome's face.
@@ -1163,30 +1993,96 @@ nav[role="doc-toc"] .rel-date { display: none; }
 
 /* ---- Footer ---- */
 
+// The footer is fixed at the window's foot on every page, as the navbar is
+// at its head, so it is always in view. The page leaves its height free
+// under the words, and the back-to-top button rises above it.
+$footer-h: 2.25rem;
+
+body { padding-bottom: $footer-h; }
+#quarto-back-to-top { bottom: calc(#{$footer-h} + 1rem) !important; }
+
+// One line in the frame, three parts of equal width: who and under what
+// license at the left, the icon and the name in the middle as the navbar
+// sets them, the source at the right as a mark.
 .nav-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  height: $footer-h;
   background-color: var(--frame) !important;
   border-top: none;
   color: var(--paper);
-  font-size: 0.85rem;
-  padding: 1.25rem 0;
+  font-size: 0.8rem;
+  line-height: 1;
+  padding-top: 0;
+  padding-bottom: 0;
+  min-height: 0;
 
-  a {
-    color: var(--paper);
-    text-decoration-color: rgb(243 241 234 / 0.4);
-    &:hover { color: var(--paper); text-decoration-color: currentColor; }
-  }
+  // A grid of three, the two ends of one width, so the middle is the
+  // window's middle at every width. (Bootstrap would stack and reorder the
+  // three under 992.)
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
 
-  .nav-footer-left, .nav-footer-center, .nav-footer-right { opacity: 0.85; }
-  .nav-footer-center { opacity: 0.6; }
-
-  p { margin: 0; }
-  .footer-items {
+  .nav-footer-left, .nav-footer-center, .nav-footer-right {
+    order: 0;
+    min-height: 0;
+    margin: 0;
+    font-size: inherit;
     display: flex;
     align-items: center;
-    gap: 0.25rem;
-    margin: 0;
   }
-  .nav-link { padding: 0 0.4rem; }
+  // The copyright in the body's face, as words are; the rest of the
+  // footer is the chrome's.
+  .nav-footer-left { justify-content: flex-start; opacity: 0.75; white-space: nowrap; font-family: var(--font-words); }
+  .foot-org:hover { opacity: 1; text-decoration: underline; text-underline-offset: 0.2em; }
+  .nav-footer-center { justify-content: center; }
+  .nav-footer-right { justify-content: flex-end; }
+
+  p { margin: 0; display: contents; }
+  a { color: var(--paper); text-decoration: none; }
+}
+
+// The name, as the navbar has it, with the icon before it.
+.foot-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-wordmark);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: var(--accent-on-frame) !important;
+  transition: opacity 160ms var(--ease);
+
+  // The icon, from the sheet, which Quarto resolves for every page's depth.
+  &::before {
+    content: "";
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 4px;
+    background: url("assets/emaki-icon.png") center / contain no-repeat;
+  }
+  &:hover { opacity: 0.85; }
+}
+
+// The source, as a mark alone.
+.foot-github {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 6px;
+  opacity: 0.75;
+  transition: opacity 160ms var(--ease), background 160ms var(--ease);
+
+  &::before { @include glyph(1.1rem); }
+  &:hover { opacity: 1; background: var(--w-bg); }
 }
 
 /* ---- Motion ---- */
@@ -1224,6 +2120,7 @@ html.js-rise .cards.rise.in > .card {
     transition-duration: 0.01ms !important;
   }
   html.js-rise .rise, html.js-rise .cards.rise > .card { opacity: 1; transform: none; }
+  .sketch .sk-caret { animation: none; }
 }
 
 /* ---- Narrow ---- */
@@ -1238,4 +2135,10 @@ html.js-rise .cards.rise.in > .card {
   .steps > ol > li:not(:last-child)::after { left: calc(1rem - 0.5px); }
   .hero { padding-top: 0.75rem; }
   .hero-lede { font-size: 1.15rem; }
+  .person { grid-template-columns: 2.75rem 1fr; column-gap: 0.85rem; }
+  // The year goes and the words shrink a step, so the left end fits its
+  // third from 360 wide and the name stays in the middle.
+  .foot-year { display: none; }
+  footer.footer .nav-footer { font-size: 0.75rem; padding-left: 0.75rem; padding-right: 0.75rem; }
+  .person img { width: 2.75rem; height: 2.75rem; }
 }

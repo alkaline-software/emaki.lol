@@ -1,0 +1,20 @@
+---
+title: "Agent Terminal Panel"
+subtitle: "⌘⇧A: the session's own agent as it runs, in its terminal, two-way."
+---
+
+{{< include _sk/agent.html >}}
+
+## The agent's own screen {.i-asterisk}
+
+Every session Emaki runs has a terminal behind it: Claude Code's hidden
+one, or Codex's joined to its driver. This panel draws it whole, at the
+chat's right, so you can watch the agent work as you would in the
+CLI, and type into it when you want to. It is the same terminal the
+window reads and types into, so nothing is doubled.
+
+Open it with nothing running and it starts the agent (Claude Code); where
+one cannot start, a turn running in a terminal of your own, or an
+archived session, it says why. Whatever the agent asks that the window
+has no card for can be answered here. It shares the right side with the
+[shell terminal](shell.qmd): one shows at a time.
