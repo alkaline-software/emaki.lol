@@ -155,32 +155,42 @@
 
   // ── The version ────────────────────────────────────────────────────
   //
-  // The navbar's second word is the app's latest version, read from the
-  // releases API and kept for a few hours, as the stars are. Its link is
-  // the releases page, whose owner and repo it reads. Until it is known,
-  // or when it cannot be, the word is the one written in _quarto.yml.
+  // The navbar's second word is the app's latest version, kept for a few
+  // hours, as the stars are. It is asked of GitHub's latest release first;
+  // GitHub answers 60 requests an hour to a network that is not signed in,
+  // so when it refuses, jsDelivr is asked for the repository's latest tag,
+  // which it serves to anyone without a limit; then the last version this
+  // browser saw. Only when none can be had is the word the one written in
+  // _quarto.yml. Its link is the releases page, whose owner and repo it
+  // reads.
 
   function initVersion() {
     var el = document.getElementById("nav-version");
     var link = el && el.closest("a");
     var m = link && link.href.match(/github\.com\/([^/]+)\/([^/#?]+)/);
     if (!m) return;
-    var key = "emaki-latest-version-" + m[1] + "-" + m[2];
+    var owner = m[1], repo = m[2];
+    var key = "emaki-latest-version-" + owner + "-" + repo;
     function show(v) { if (v && v.tag) el.textContent = v.tag; }
+    function keep(tag) {
+      var v = { tag: /^v/.test(tag) ? tag : "v" + tag, timestamp: Date.now() };
+      cacheSet(key, v);
+      show(v);
+    }
+    function json(url, headers) {
+      return fetch(url, headers ? { headers: headers } : undefined).then(function (r) {
+        if (!r.ok) throw new Error(url + " " + r.status);
+        return r.json();
+      });
+    }
     var fresh = cacheGet(key, false);
     if (fresh) { show(fresh); return; }
     var stale = cacheGet(key, true);
-    fetch("https://api.github.com/repos/" + m[1] + "/" + m[2] + "/releases/latest", {
-      headers: { Accept: "application/vnd.github+json" },
-    })
-      .then(function (r) {
-        if (!r.ok) throw new Error("GitHub API " + r.status);
-        return r.json();
-      })
-      .then(function (d) {
-        var v = { tag: d.tag_name, timestamp: Date.now() };
-        cacheSet(key, v);
-        show(v);
+    json("https://api.github.com/repos/" + owner + "/" + repo + "/releases/latest", { Accept: "application/vnd.github+json" })
+      .then(function (d) { keep(d.tag_name); })
+      .catch(function () {
+        return json("https://data.jsdelivr.com/v1/packages/gh/" + owner + "/" + repo + "/resolved?specifier=latest")
+          .then(function (d) { if (!d.version) throw new Error("no version"); keep(d.version); });
       })
       .catch(function () { show(stale); });
   }

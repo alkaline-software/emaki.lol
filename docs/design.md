@@ -126,7 +126,7 @@ small 0.875 rem for labels, captions and caps.
   round it), their glyphs 16, and the name beside the icon is set to it
   (1.6 rem, set solid). The bar is thin: 0.45 rem above and below. Below 992 wide the menu button is a tile of the same kind at
   the left, and the links fold out under it flush left, each with its
-  icon: the version's history, Docs' open book, About's info. Its icons
+  icon: the latest release's box, Docs' open book, About's info. Its icons
   and the search's are the paper in both appearances (`$navbar-bg` and
   `$navbar-fg` in both sheets, or Bootstrap picks them by contrast with
   the accent).

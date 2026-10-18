@@ -118,8 +118,14 @@ render here.
 - **The version in the navbar is the browser's to read.** `_quarto.yml`
   writes the word "Releases" with the id `nav-version` and the link to the
   releases on GitHub; `js/navbar-widgets.js` swaps the word for the latest
-  tag, cached for a few hours, and leaves it when the API cannot be
-  reached. No version is ever written into a page.
+  tag, cached for a few hours: from GitHub's latest release, then, when
+  GitHub refuses (60 requests an hour to a network not signed in),
+  jsDelivr's latest tag of the repo, then the last one the browser kept.
+  The word shows only when none can be had. No version is ever written
+  into a page. Testing the site in fresh browsers spends that hour's 60
+  in a few dozen loads, and the person's own browser on the same network
+  then sees the fallback; the jsDelivr step is why it still shows a
+  version.
 - **Only `*.qmd` files render** (`project.render`: the root's and
   `docs/`). A markdown file anywhere (`docs/design.md`, this file) is not
   a page, and Quarto would make one of it without that list. A new docs

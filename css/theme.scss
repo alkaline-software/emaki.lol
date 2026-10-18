@@ -472,7 +472,7 @@ body.quarto-dark #navbar-widgets .quarto-color-scheme-toggle .bi::before {
   .navbar .navbar-collapse { order: 3; flex-basis: 100%; }
 
   // The links fold out flush left, under the menu button, each with its
-  // icon before it: the releases' history, the docs' open book, About's
+  // icon before it: the latest release's box, the docs' open book, About's
   // info, in the paper and a little quieter than the words.
   .navbar .navbar-collapse .navbar-nav {
     align-items: stretch;
@@ -490,7 +490,7 @@ body.quarto-dark #navbar-widgets .quarto-color-scheme-toggle .bi::before {
       opacity: 0.75;
     }
   }
-  .navbar .navbar-nav.me-auto > .nav-item:nth-child(1) .nav-link::before { --icon: url("assets/icons/history.svg"); }
+  .navbar .navbar-nav.me-auto > .nav-item:nth-child(1) .nav-link::before { --icon: url("assets/icons/box.svg"); }
   .navbar .navbar-nav.me-auto > .nav-item:nth-child(2) .nav-link::before { --icon: url("assets/icons/book-open.svg"); }
   .navbar .navbar-nav.me-auto > .nav-item:nth-child(3) .nav-link::before { --icon: url("assets/icons/info.svg"); }
 }
