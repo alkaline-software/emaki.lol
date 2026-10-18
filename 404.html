@@ -47,9 +47,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="/site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="/site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="/site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="/site_libs/bootstrap/bootstrap-3dac5a5dd82f6e4cac736f6507c8e5ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="/site_libs/bootstrap/bootstrap-dark-3cacf9d9ed86fa4b71630d0a393ff628.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="/site_libs/bootstrap/bootstrap-3dac5a5dd82f6e4cac736f6507c8e5ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="/site_libs/bootstrap/bootstrap-f5c1ce40736740ad50b251d9a2986413.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="/site_libs/bootstrap/bootstrap-dark-e8eccd3af203ef711c81d9cb41fe3116.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="/site_libs/bootstrap/bootstrap-f5c1ce40736740ad50b251d9a2986413.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -57,12 +57,7 @@ ul.task-list li input[type="checkbox"] {
   "panel-placement": "end",
   "type": "overlay",
   "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "keyboard-shortcut": [],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -84,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Not here – Emaki">
-<meta property="og:description" content="Every coding-agent session on your machine, kept for good, in one window you can also talk to.">
+<meta property="og:description" content="An agentic development environment for Claude Code and Codex: talk to the agent in a project, with the files, git and a terminal at the chat’s side.">
 <meta property="og:image" content="https://emaki.lol/assets/emaki-icon.png">
 <meta property="og:site_name" content="Emaki">
 <meta property="og:image:height" content="512">
@@ -284,20 +279,12 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="/index.html"> 
-<span class="menu-text">Home</span></a>
+    <a class="nav-link" href="https://github.com/alkaline-software/emaki/releases"> 
+<span class="menu-text"><span id="nav-version" class="nav-version">Releases</span></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="/install.html"> 
-<span class="menu-text">Install</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="/features.html"> 
-<span class="menu-text">Features</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="/releases.html"> 
-<span class="menu-text">Releases</span></a>
+    <a class="nav-link" href="/docs/index.html"> 
+<span class="menu-text">Docs</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="/about.html"> 
@@ -769,30 +756,28 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>MIT · © 2026 John Paul Helveston, Pingfan Hu, and Alkaline Software</p>
+<p><a class="foot-org" href="https://github.com/alkaline-software">©&nbsp;<span class="foot-year">2026 </span>Alkaline Software</a></p>
 </div>   
     <div class="nav-footer-center">
-<p>Made with <a href="https://quarto.org/" target="_blank">Quarto</a></p>
+<p><a class="foot-brand" href="/">Emaki</a></p>
 </div>
     <div class="nav-footer-right">
-      <ul class="footer-items list-unstyled">
-    <li class="nav-item">
-    <a class="nav-link" href="https://github.com/alkaline-software/emaki">
-<p>Emaki on GitHub</p>
-</a>
-  </li>  
-    <li class="nav-item">
-    <a class="nav-link" href="https://github.com/alkaline-software/emaki.lol">
-<p>This site</p>
-</a>
-  </li>  
-</ul>
-    </div>
+<p><a class="foot-github i-github" href="https://github.com/alkaline-software/emaki" aria-label="Emaki on GitHub"></a></p>
+</div>
   </div>
 </footer>
-<script src="/js/navbar-widgets.js"></script>
-<script src="/js/hero-scroll.js"></script>
-<script src="/js/page.js"></script>
+<script>
+(function () {
+  var m = document.querySelector('meta[name="quarto:offset"]');
+  var root = m ? m.getAttribute("content") : "./";
+  ["js/navbar-widgets.js", "js/hero-scroll.js", "js/shift.js", "js/sketches.js", "js/page.js", "js/figures.js"].forEach(function (src) {
+    var s = document.createElement("script");
+    s.src = root + src;
+    s.async = false;
+    document.body.appendChild(s);
+  });
+})();
+</script>
 
 
 

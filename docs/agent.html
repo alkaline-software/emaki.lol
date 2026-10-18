@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Features – Emaki</title>
+<title>Agent Terminal Panel – Emaki</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -29,28 +29,29 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./assets/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a8ed1fdfbcec6579b90b7ee144169e0.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3dac5a5dd82f6e4cac736f6507c8e5ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-3cacf9d9ed86fa4b71630d0a393ff628.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-3dac5a5dd82f6e4cac736f6507c8e5ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../docs/shell.html" rel="prev">
+<link href="../assets/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a8ed1fdfbcec6579b90b7ee144169e0.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-f5c1ce40736740ad50b251d9a2986413.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-e8eccd3af203ef711c81d9cb41fe3116.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-f5c1ce40736740ad50b251d9a2986413.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -58,12 +59,7 @@ ul.task-list li input[type="checkbox"] {
   "panel-placement": "end",
   "type": "overlay",
   "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "keyboard-shortcut": [],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -84,15 +80,13 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;family=Belleza&amp;display=swap">
 
 
-<meta property="og:title" content="Features – Emaki">
-<meta property="og:description" content="Most of Emaki explains itself once it is open. This is the tour; the shortcuts are at the foot.">
-<meta property="og:image" content="https://emaki.lol/assets/emaki-icon.png">
+<meta property="og:title" content="Agent Terminal Panel – Emaki">
+<meta property="og:description" content="⌘⇧A: the session’s own agent as it runs, in its terminal, two-way.">
+<meta property="og:image" content="https://emaki.lol/docs/assets/emaki-icon.png">
 <meta property="og:site_name" content="Emaki">
-<meta property="og:image:height" content="512">
-<meta property="og:image:width" content="512">
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -270,11 +264,11 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./assets/emaki-icon.png" alt="" class="navbar-logo light-content">
-    <img src="./assets/emaki-icon.png" alt="" class="navbar-logo dark-content">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/emaki-icon.png" alt="" class="navbar-logo light-content">
+    <img src="../assets/emaki-icon.png" alt="" class="navbar-logo dark-content">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Emaki</span>
     </a>
   </div>
@@ -285,23 +279,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
+    <a class="nav-link" href="https://github.com/alkaline-software/emaki/releases"> 
+<span class="menu-text"><span id="nav-version" class="nav-version">Releases</span></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./install.html"> 
-<span class="menu-text">Install</span></a>
+    <a class="nav-link active" href="../docs/index.html" aria-current="page"> 
+<span class="menu-text">Docs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./features.html" aria-current="page"> 
-<span class="menu-text">Features</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./releases.html"> 
-<span class="menu-text">Releases</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -318,29 +304,113 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">Agent Terminal Panel</h1>
+        </a>     
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../docs/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Get Started</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Main System</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../docs/projects.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Projects</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../docs/chats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chats</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Panels</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../docs/files.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../docs/outline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Outline</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../docs/shell.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Shell Terminal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../docs/agent.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Agent Terminal</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../docs/settings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Settings</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../docs/keys.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Keys</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#sessions-and-projects" id="toc-sessions-and-projects" class="nav-link active" data-scroll-target="#sessions-and-projects">Sessions and projects</a></li>
-  <li><a href="#search" id="toc-search" class="nav-link" data-scroll-target="#search">Search</a></li>
-  <li><a href="#conversation" id="toc-conversation" class="nav-link" data-scroll-target="#conversation">Conversation</a></li>
-  <li><a href="#composer" id="toc-composer" class="nav-link" data-scroll-target="#composer">Composer</a></li>
-  <li><a href="#dictation" id="toc-dictation" class="nav-link" data-scroll-target="#dictation">Dictation</a></li>
-  <li><a href="#agent-control" id="toc-agent-control" class="nav-link" data-scroll-target="#agent-control">Agent control</a></li>
-  <li><a href="#terminal" id="toc-terminal" class="nav-link" data-scroll-target="#terminal">Terminal</a></li>
-  <li><a href="#files-and-editing" id="toc-files-and-editing" class="nav-link" data-scroll-target="#files-and-editing">Files and editing</a></li>
-  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">Git</a></li>
-  <li><a href="#agents" id="toc-agents" class="nav-link" data-scroll-target="#agents">Agents</a></li>
-  <li><a href="#settings" id="toc-settings" class="nav-link" data-scroll-target="#settings">Settings</a></li>
-  <li><a href="#what-it-will-not-do" id="toc-what-it-will-not-do" class="nav-link" data-scroll-target="#what-it-will-not-do">What it will not do</a></li>
-  <li><a href="#keyboard" id="toc-keyboard" class="nav-link" data-scroll-target="#keyboard">Keyboard</a></li>
+  <li><a href="#the-agents-own-screen" id="toc-the-agents-own-screen" class="nav-link active" data-scroll-target="#the-agents-own-screen">The agent’s own screen</a></li>
   </ul>
 </nav>
     </div>
@@ -350,8 +420,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Features</h1>
-<p class="subtitle lead">Most of Emaki explains itself once it is open. This is the tour; the shortcuts are at the foot.</p>
+<h1 class="title d-none d-lg-block">Agent Terminal Panel</h1>
+<p class="subtitle lead">⌘⇧A: the session’s own agent as it runs, in its terminal, two-way.</p>
 </div>
 
 
@@ -368,216 +438,18 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="sessions-and-projects" class="level2 i-scroll">
-<h2 class="i-scroll anchored" data-anchor-id="sessions-and-projects">Sessions and projects</h2>
-<p>The sidebar lists every project, pinned ones above the rest, with headings at the foot for hidden projects and temporary folders. <strong>All Sessions</strong> unfolds each project in place, every session dated and ordered by when it last did something, archived projects in their own section.</p>
-<p>Select sessions or projects together (<kbd>⌘</kbd>-click, <kbd>⇧</kbd>-click, a dragged rectangle or <kbd>⌘A</kbd>), then archive them now, delete them, or open them in Finder. Archive checks Emaki’s own copy first; Delete moves every copy to the Trash. Nothing in a project’s own folder is touched.</p>
-<p>A session Claude Code has deleted stays listed, marked <em>kept</em>. Renaming a session renames it for Claude Code too, and each one keeps its own draft. Tabs group into per-project pills, drag to reorder, and answer to <kbd>⌘1</kbd> to <kbd>⌘9</kbd>.</p>
-</section>
-<section id="search" class="level2 i-search">
-<h2 class="i-search anchored" data-anchor-id="search">Search</h2>
-<p><kbd>⌘K</kbd> searches every session on the machine. The index holds one entry per <em>item</em>, a prompt, a reply’s paragraph, a thought, a tool call, so a hit lands on the thing you remembered rather than the file it was in. Live and kept sessions are searched together.</p>
-<p><kbd>⌘F</kbd> finds inside the conversation you are reading; <kbd>⌘G</kbd> and <kbd>⌘⇧G</kbd> step through the hits.</p>
-</section>
-<section id="conversation" class="level2 i-book-open">
-<h2 class="i-book-open anchored" data-anchor-id="conversation">Conversation</h2>
-<p>Prompts, replies, tool calls, thoughts and subagents, laid out like the Claude app. Prompts sit in a bubble with a tail, tool badges are coloured by kind, and tool calls, thoughts and rows open and close in motion. Code blocks are coloured, carry a copy button and scroll sideways instead of wrapping.</p>
-<p><strong>Explain</strong> puts one plain sentence on an opaque tool call, asked of the session’s own agent: Haiku for Claude Code, Codex’s light model for Codex. The <strong>outline</strong> (<kbd>⌘⇧O</kbd>) is a short label per prompt; click one to jump there. An agent’s progress notes show as part of the reply, as in the terminal, and a running command says what it is for.</p>
-</section>
-<section id="composer" class="level2 i-inbox">
-<h2 class="i-inbox anchored" data-anchor-id="composer">Composer</h2>
-<p>Type to reply. A session running in a terminal gets the message through Claude Code’s inbox; a finished one resumes under Emaki.</p>
-<ul>
-<li>Attach files by paste, drop or the <strong>+</strong> button.</li>
-<li><code>@</code> picks a file or folder from the project; a path that exists takes the accent colour. <code>/</code> lists the folder’s slash commands.</li>
-<li>Spelling and grammar are checked as you type (English US and UK; Spanish, French and German spelling on a Mac), with corrections, <em>Learn Spelling</em> and <em>Ignore</em> on the right-click menu.</li>
-<li>Send with <kbd>⌘↩︎</kbd> or <kbd>↩︎</kbd>, your choice; <kbd>⇧↩︎</kbd> is always a new line. Drafts survive quitting.</li>
-</ul>
-</section>
-<section id="dictation" class="level2 i-microphone">
-<h2 class="i-microphone anchored" data-anchor-id="dictation">Dictation</h2>
-<p>On a Mac, press <kbd>⌘⇧D</kbd> or the microphone button and talk. A model you download once in Settings, Dictate (Qwen3-ASR or Whisper) writes it down on this machine, Chinese and English mixed in one sentence, and the words go in at the caret. Nothing you say leaves the Mac. <kbd>Esc</kbd> cancels while it listens.</p>
-<ul>
-<li><strong>Post-processing</strong>, when it is on, hands the words to a small language model (Qwen3.5, in three sizes) that removes hesitations, applies corrections (“100, no, 200”), mends grammar and makes lists, in any language, without translating. What it writes is taken only when it keeps to what was said.</li>
-<li><strong>Preferences</strong> are your own instructions to that model, in plain words, which it follows over its own rules. <strong>Terms</strong> are names and words written exactly as you save them, capitals and all.</li>
-<li>The shortcut works in any app: the words are pasted where you type, your clipboard put back after, and a pill at the top of the screen shows it listening. Allow Accessibility from Settings, Dictate.</li>
-<li>Dictation can also start and stop on a modifier tapped alone, such as Right ⌘ or Fn. A history of what was said is kept on this Mac for as long as you choose, with a window to look back and copy.</li>
-</ul>
-</section>
-<section id="agent-control" class="level2 i-sparkles">
-<h2 class="i-sparkles anchored" data-anchor-id="agent-control">Agent control</h2>
-<p>Mode, model and effort are pills under the composer, each in the agent’s own colours, each opening a list in place. <kbd>⇧Tab</kbd> steps the mode as it does in the terminal. Approvals, questions and plans arrive as cards at the conversation’s end, and whatever else the agent asks that Emaki has no card for comes up on the terminal card, so nothing waits unseen. A plan is shown on its approval card and kept in the conversation.</p>
-<p>Stop a turn from the window; the stopped message comes back to the composer if the agent had not started on it. A Claude Code left running after its terminal closed is named as such, with a button to stop it and continue here. The row under the composer shows context left and rate limits, for both agents.</p>
-</section>
-<section id="terminal" class="level2 i-terminal">
-<h2 class="i-terminal anchored" data-anchor-id="terminal">Terminal</h2>
-<p>The button at the top right opens a terminal beside the conversation: a shell in the session’s folder, or the session’s own agent as it runs, drawn whole and two-way. Shells open in tabs. Mouse selection copies on release, mouse-aware programs take clicks and scrolls, and the Mac’s terminal line keys work (<kbd>⌘←</kbd>, <kbd>⌘→</kbd>, <kbd>⌘⌫</kbd>, <kbd>⇧↩︎</kbd>, <kbd>⌘K</kbd>). <kbd>⌘⇧S</kbd> and <kbd>⌘⇧A</kbd> show and hide the panel’s two sides.</p>
-</section>
-<section id="files-and-editing" class="level2 i-tree-view">
-<h2 class="i-tree-view anchored" data-anchor-id="files-and-editing">Files and editing</h2>
-<p>The files panel (<kbd>⌘⇧E</kbd>) is a tree of the project with git’s marks on it, and it works like a file manager: drag in from Finder, drag rows to move, cut, copy, duplicate, remove with <kbd>⌘⌫</kbd>, undo with <kbd>⌘Z</kbd>. Click a file to open it in a pane beside the conversation:</p>
-<table class="table-keys caption-top table">
-<colgroup>
-<col style="width: 26%">
-<col style="width: 74%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>Code</td>
-<td>line numbers, colours, a gutter mark per git change with a card to see or revert it</td>
-</tr>
-<tr class="even">
-<td>Markdown</td>
-<td>as it reads or as written; a YAML header shows as a table of its fields</td>
-</tr>
-<tr class="odd">
-<td>CSV</td>
-<td>a grid with lettered columns, editable in place, each column its own colour</td>
-</tr>
-<tr class="even">
-<td>Parquet</td>
-<td>a table with each column’s type and the row count</td>
-</tr>
-<tr class="odd">
-<td>Word</td>
-<td>pages you can type in, style and format, saved with <kbd>⌘S</kbd></td>
-</tr>
-<tr class="even">
-<td>PowerPoint, Excel</td>
-<td>slides drawn as they look, cells with their number formats</td>
-</tr>
-<tr class="odd">
-<td>PDF</td>
-<td>sharp at any width, with search, selection, page previews and a table of contents</td>
-</tr>
-<tr class="even">
-<td>HTML</td>
-<td>in the system’s web view, scripts and all</td>
-</tr>
-<tr class="odd">
-<td>Pictures</td>
-<td>shown</td>
-</tr>
-</tbody>
-</table>
-<p>Unsaved changes are never lost without asking. Format on save covers ten languages (R, Python, Rust, Go, C and C++, TypeScript, JavaScript, JSON, Markdown, TOML) and is off until you turn it on.</p>
-</section>
-<section id="git" class="level2 i-git-branch">
-<h2 class="i-git-branch anchored" data-anchor-id="git">Git</h2>
-<p>The <strong>Changes</strong> sheet commits the files you tick, discards several at once, and has a History tab: browse commits, undo the last one, revert one. Push, Pull and Fetch sit where the counts are. Branches are listed, created (<kbd>⌘⇧N</kbd>), switched, carrying your changes along or leaving them behind, and published. When the remote refuses, a sheet says how to sign in.</p>
-</section>
-<section id="agents" class="level2 i-bot">
-<h2 class="i-bot anchored" data-anchor-id="agents">Agents</h2>
-<p>The Agents page (<kbd>⌘E</kbd>) says which agents are installed and signed in, and walks through installing one, a numbered step at a time for this machine, with a shell beside the steps. GitHub is there too: install git, sign in, and tell git who your commits are by.</p>
-</section>
-<section id="settings" class="level2 i-settings">
-<h2 class="i-settings anchored" data-anchor-id="settings">Settings</h2>
-<p><kbd>⌘,</kbd> opens nine pages: Appearance, Fonts, Composer, Dictate, New sessions, Terminal, Files, Updates and About. Appearance follows the system or pins light or dark, and the accent is one of six: terracotta, blue, green, violet, teal or graphite. Eight chat faces and four monospace faces ship with the app, all under the Open Font License, with one text size across the conversation, the file editor and the terminal. New sessions sets each agent’s mode, model and effort to begin with.</p>
-</section>
-<section id="what-it-will-not-do" class="level2 i-shield">
-<h2 class="i-shield anchored" data-anchor-id="what-it-will-not-do">What it will not do</h2>
-<div class="checks">
-<ul>
-<li><strong>No hooks, ever.</strong></li>
-<li>Nothing writes to a transcript. The JSONL file is the only source of truth, and Emaki reads it.</li>
-<li>Nothing Emaki does enters a session’s context window.</li>
-<li>Nothing is typed into a terminal of yours, and no terminal app is asked for anything. Emaki runs its own, hidden.</li>
-<li>Copy first, render second. If rendering fails, the bytes are already safe.</li>
-</ul>
-</div>
-</section>
-<section id="keyboard" class="level2 i-keyboard">
-<h2 class="i-keyboard anchored" data-anchor-id="keyboard">Keyboard</h2>
-<p><kbd>⌘</kbd> on macOS, <kbd>Ctrl</kbd> elsewhere.</p>
-<table class="table-keys caption-top table">
-<colgroup>
-<col style="width: 38%">
-<col style="width: 62%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><kbd>⌘K</kbd></td>
-<td>search every session</td>
-</tr>
-<tr class="even">
-<td><kbd>⌘F</kbd> · <kbd>⌘G</kbd> · <kbd>⌘⇧G</kbd></td>
-<td>find in this conversation, next, previous</td>
-</tr>
-<tr class="odd">
-<td><kbd>⌘N</kbd></td>
-<td>new session</td>
-</tr>
-<tr class="even">
-<td><kbd>⌘T</kbd></td>
-<td>new session in this project</td>
-</tr>
-<tr class="odd">
-<td><kbd>⌘O</kbd></td>
-<td>choose a folder</td>
-</tr>
-<tr class="even">
-<td><kbd>⌘L</kbd></td>
-<td>sessions</td>
-</tr>
-<tr class="odd">
-<td><kbd>⌘E</kbd></td>
-<td>agents</td>
-</tr>
-<tr class="even">
-<td><kbd>⌘,</kbd></td>
-<td>settings</td>
-</tr>
-<tr class="odd">
-<td><kbd>⌘B</kbd></td>
-<td>sidebar</td>
-</tr>
-<tr class="even">
-<td><kbd>⌘⇧E</kbd></td>
-<td>files panel</td>
-</tr>
-<tr class="odd">
-<td><kbd>⌘⇧O</kbd></td>
-<td>outline</td>
-</tr>
-<tr class="even">
-<td><kbd>⌘⇧S</kbd> · <kbd>⌘⇧A</kbd></td>
-<td>the terminal panel’s shell, the agent’s side</td>
-</tr>
-<tr class="odd">
-<td><kbd>⌘1</kbd> to <kbd>⌘9</kbd></td>
-<td>tabs</td>
-</tr>
-<tr class="even">
-<td><kbd>⌘W</kbd> · <kbd>⌘⇧T</kbd></td>
-<td>close a tab, reopen the last</td>
-</tr>
-<tr class="odd">
-<td><kbd>⌘S</kbd></td>
-<td>save the file</td>
-</tr>
-<tr class="even">
-<td><kbd>⌘↩︎</kbd></td>
-<td>send</td>
-</tr>
-<tr class="odd">
-<td><kbd>⌘⇧N</kbd></td>
-<td>new branch</td>
-</tr>
-<tr class="even">
-<td><kbd>⌘⇧D</kbd></td>
-<td>dictate</td>
-</tr>
-<tr class="odd">
-<td><kbd>⌘R</kbd></td>
-<td>refresh</td>
-</tr>
-<tr class="even">
-<td><kbd>Esc</kbd></td>
-<td>stop, or close what is open</td>
-</tr>
-</tbody>
-</table>
-<p>In the terminal, <kbd>⌘T</kbd> opens a tab, <kbd>⌘W</kbd> closes it and <kbd>⌘K</kbd> clears the screen.</p>
+<figure class="sketch figure" data-home="" data-still="type">
+<svg viewbox="0 0 320 220" role="img" aria-label="Emaki's agent terminal in color at the chat's right, the rest gray, its border in Claude's color: the agent's own screen drawn whole, with its prompt at the foot. The prompt under the pointer takes typing, and the agent button puts the panel away.">
+<g class="sk-frame"><rect class="sk-window" x="0" y="0" width="320" height="220" rx="8"></rect><path d="M1 22 H319 M88 22 V219"></path></g> <g class="sk-lights"><circle class="sk-rose" cx="13" cy="11.5" r="3.5"></circle><circle class="sk-ochre" cx="24" cy="11.5" r="3.5"></circle><circle class="sk-sage" cx="35" cy="11.5" r="3.5"></circle></g> <image href="../assets/emaki-icon.png" x="46" y="5" width="13" height="13"></image> <text class="sk-name" x="62" y="15">Emaki</text> <defs><clippath id="sk-main"><rect x="89" y="23" width="229" height="195"></rect></clippath><clippath id="sk-tx"><rect x="89" y="23" width="229" height="118"></rect></clippath></defs> <g class="sk-part sk-dim" data-part="sidebar"> <!-- The sidebar: New Session, All Sessions and Agents, then the projects, the first open with its sessions under it, and the sections at the foot. --> <circle class="sk-frame" cx="14" cy="34" r="4.5"></circle><path class="sk-frame" d="M14 32 v4 M12 34 h4"></path> <text class="sk-lit" x="23" y="34.5">New Session</text> <path class="sk-frame" d="M11 44 h6 v6 h-6 Z M12.5 47 h3"></path><text x="23" y="47.5">All Sessions</text> <path class="sk-spark" d="M14 56.5 v5.0 M11.5 59 h5.0 M12.25 57.25 l3.5 3.5 M15.75 57.25 l-3.5 3.5"></path><text x="23" y="59.5">Agents</text> <text class="sk-small" x="11" y="72">Projects</text> <path class="sk-ochre-line" d="M11 79 h3 l1.5 1.5 H19 V85 H11 Z"></path><text class="sk-lit" x="24" y="82.5">emaki</text><path class="sk-faint" d="M62 80 l4 4 M64.5 79.5 l-1 1 M63.5 83.5 l1 -1"></path><text class="sk-small" x="72" y="82.5">31</text> <g data-hide="fold"> <path class="sk-faint" d="M14.5 89 V134"></path> <path class="sk-spark" d="M24 92.5 v5.0 M21.5 95 h5.0 M22.25 93.25 l3.5 3.5 M25.75 93.25 l-3.5 3.5"></path><path class="sk-frame" d="M31 95 h30"></path> <path class="sk-spark" d="M24 104.5 v5.0 M21.5 107 h5.0 M22.25 105.25 l3.5 3.5 M25.75 105.25 l-3.5 3.5"></path><path class="sk-frame" d="M31 107 h24"></path> <rect class="sk-accent-fill" data-show="open" x="5" y="114" width="1.5" height="10" rx="0.75"></rect> <path class="sk-spark" d="M24 116.5 v5.0 M21.5 119 h5.0 M22.25 117.25 l3.5 3.5 M25.75 117.25 l-3.5 3.5"></path><path class="sk-frame" d="M31 119 h28"></path><circle class="sk-sage" cx="73" cy="119" r="1.75"></circle> <path class="sk-faint" d="M31 131 h12"></path> </g> <g data-when="fold" data-on="0 -48"> <path class="sk-frame" d="M11 142 h3 l1.5 1.5 H19 V148 H11 Z"></path><path class="sk-frame" d="M24 145 h20"></path><text class="sk-small" x="74" y="145.5">4</text> <path class="sk-frame" d="M11 154 h3 l1.5 1.5 H19 V160 H11 Z"></path><path class="sk-frame" d="M24 157 h16"></path><text class="sk-small" x="74" y="157.5">2</text> <text class="sk-small" x="11" y="172">Temporary</text><text class="sk-small" x="72" y="172">10</text> </g> </g> <g class="sk-part sk-dim" data-part="chat"> <!-- The chat: the tab on the strip, a prompt in its bubble, the agent's name and reply with a tool call on a card, the composer with its row of pills, and the status row under it. --> <rect class="sk-edge" x="165" y="5.5" width="76" height="12" rx="6"></rect><path class="sk-spark" d="M174 9.0 v5.0 M171.5 11.5 h5.0 M172.25 9.75 l3.5 3.5 M175.75 9.75 l-3.5 3.5"></path><path class="sk-frame" d="M180 11.5 h30"></path> <g clip-path="url(#sk-tx)"> <g data-when="away" data-on="74 0"><path class="sk-edge" d="M184 40 H220 a8 8 0 0 1 8 8 V54 a8 8 0 0 1 -8 8 H184 a8 8 0 0 1 -8 -8 V48 a8 8 0 0 1 0 -4 l-4 -4 Z"></path><path class="sk-frame" d="M184 51 h36"></path></g> <g data-when="away" data-on="0 0"> <path class="sk-spark" d="M110 69.5 v9.0 M105.5 74 h9.0 M106.85 70.85 l6.3 6.3 M113.15 70.85 l-6.3 6.3"></path><path class="sk-ink" d="M118 74 h18"></path><text class="sk-small" x="140" y="74.5">Fable 5.1</text> <path class="sk-frame" d="M104 86 h89 M104 96 h62"></path> <rect class="sk-edge" x="104" y="104" width="106" height="14" rx="3"></rect><path class="sk-faint" d="M110 109 l2 2 l-2 2"></path><rect class="sk-badge" x="116" y="107.5" width="16" height="7" rx="2"></rect><path class="sk-frame" d="M136 111 h36"></path><text class="sk-small sk-accent-text" x="182" y="111.5">Explain</text> <path class="sk-frame" d="M104 124 h78 M104 132 h44"></path> </g> </g> <g clip-path="url(#sk-main)"> <rect class="sk-edge" x="104" y="144" width="124" height="52" rx="7" data-when="away" data-on="0 0" data-grow="74"></rect> <rect class="sk-plate" x="131" y="204.5" width="92" height="4" rx="2" data-when="away" data-on="0 0" data-grow="0"></rect> <g data-when="away" data-on="0 0"> <path class="sk-ink" d="M112 152 v9"></path><path class="sk-frame" d="M116 156.5 h49"></path> <circle class="sk-frame" cx="114" cy="185" r="4.5"></circle><path class="sk-frame" d="M114 182.75 v4.5 M111.75 185 h4.5"></path> <rect class="sk-edge" x="126" y="179" width="26" height="12" rx="6"></rect><circle class="sk-frame" cx="132" cy="185" r="1.25"></circle><path class="sk-frame" d="M136 185 h11"></path> <text class="sk-small" x="104" y="207">Context</text><rect class="sk-accent-fill" x="131" y="204.5" width="8" height="4" rx="2"></rect> </g> </g> </g> <g class="sk-part sk-dim" data-part="controls"> <rect class="sk-edge" x="92" y="5" width="25" height="13" rx="3"></rect> <rect class="sk-edge" x="290" y="5" width="25" height="13" rx="3"></rect> <rect class="sk-faint" x="93" y="6" width="11" height="11" rx="2"></rect><path class="sk-faint" d="M95.5 9.25 h2.25 l1.1 1.1 H101.5 V13.75 H95.5 Z"></path> <rect class="sk-faint" x="105" y="6" width="11" height="11" rx="2"></rect><path class="sk-faint" d="M107.5 9.5 h6 M107.5 11.5 h4 M107.5 13.5 h5"></path> <rect class="sk-faint" x="291" y="6" width="11" height="11" rx="2"></rect><path class="sk-faint" d="M293.5 9.5 l2 2 l-2 2 M297.0 13.5 h2.5"></path> </g> <g class="sk-part" data-part="agent"> <g class="sk-btn sk-btn-claude" data-go="away" data-off=""><rect class="sk-hit" x="302" y="1" width="13" height="21"></rect><rect class="sk-face" x="303" y="6" width="11" height="11" rx="2"></rect><path class="sk-glyph" d="M308.5 9.25 v4.5 M306.25 11.5 h4.5 M306.925 9.925 l3.15 3.15 M310.075 9.925 l-3.15 3.15"></path></g> <g clip-path="url(#sk-main)"> <g data-when="away" data-on="86 0"> <g class="sk-box sk-c-claude"><rect x="248" y="26" width="64" height="186" rx="3"></rect> <!-- The agent's side, in Claude's color: the agent as it runs in its own terminal, drawn whole and two-way. --> <path class="sk-claude-spark" d="M258 31 v6 M255 34 h6 M255.9 31.9 l4.199999999999999 4.199999999999999 M260.1 31.9 l-4.199999999999999 4.199999999999999"></path><text class="sk-small sk-lit" x="264" y="34.5">Claude Code</text><path class="sk-faint" d="M248 40 H312"></path> <rect class="sk-edge" x="253" y="46" width="54" height="30" rx="2"></rect><path class="sk-frame" d="M258 53 h40 M258 60 h30 M258 67 h36"></path> <path class="sk-claude-line" d="M254 86 l3 3 l-3 3"></path><path class="sk-frame" d="M263 89 h30"></path><path class="sk-faint" d="M254 99 h46 M254 105 h30"></path> <rect class="sk-edge" x="253" y="112" width="54" height="14" rx="2"></rect><path class="sk-claude-line" d="M258 117 l2 2 l-2 2"></path> <path class="sk-ink" data-show="type" d="M264 119 h26"></path> <rect class="sk-accent-fill" x="264" y="116" width="4" height="6" data-when="type" data-on="28 0"></rect> <rect class="sk-row" data-go="type" x="253" y="112" width="54" height="14" rx="2"></rect> </g> </g> </g> </g> <g data-when="away" data-on="74 0"><circle class="sk-accent-fill" cx="217" cy="185" r="6.5"></circle><path class="sk-page" d="M217 188.25 v-6.5 M213.75 185 l3.25 -3.25 l3.25 3.25"></path></g>
+</svg>
+<figcaption class="sketch-label">
+The prompt and the agent button answer the pointer.
+</figcaption>
+</figure>
+<section id="the-agents-own-screen" class="level2 i-asterisk">
+<h2 class="i-asterisk anchored" data-anchor-id="the-agents-own-screen">The agent’s own screen</h2>
+<p>Every session Emaki runs has a terminal behind it: Claude Code’s hidden one, or Codex’s joined to its driver. This panel draws it whole, at the chat’s right, so you can watch the agent work as you would in the CLI, and type into it when you want to. It is the same terminal the window reads and types into, so nothing is doubled.</p>
+<p>Open it with nothing running and it starts the agent (Claude Code); where one cannot start, a turn running in a terminal of your own, or an archived session, it says why. Whatever the agent asks that the window has no card for can be answered here. It shares the right side with the <a href="../docs/shell.html">shell terminal</a>: one shows at a time.</p>
 
 
 </section>
@@ -1001,37 +873,44 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../docs/shell.html" class="pagination-link" aria-label="Shell Terminal">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Shell Terminal</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>MIT · © 2026 John Paul Helveston, Pingfan Hu, and Alkaline Software</p>
+<p><a class="foot-org" href="https://github.com/alkaline-software">©&nbsp;<span class="foot-year">2026 </span>Alkaline Software</a></p>
 </div>   
     <div class="nav-footer-center">
-<p>Made with <a href="https://quarto.org/" target="_blank">Quarto</a></p>
+<p><a class="foot-brand" href="../">Emaki</a></p>
 </div>
     <div class="nav-footer-right">
-      <ul class="footer-items list-unstyled">
-    <li class="nav-item">
-    <a class="nav-link" href="https://github.com/alkaline-software/emaki">
-<p>Emaki on GitHub</p>
-</a>
-  </li>  
-    <li class="nav-item">
-    <a class="nav-link" href="https://github.com/alkaline-software/emaki.lol">
-<p>This site</p>
-</a>
-  </li>  
-</ul>
-    </div>
+<p><a class="foot-github i-github" href="https://github.com/alkaline-software/emaki" aria-label="Emaki on GitHub"></a></p>
+</div>
   </div>
 </footer>
-<script src="js/navbar-widgets.js"></script>
-<script src="js/hero-scroll.js"></script>
-<script src="js/page.js"></script>
+<script>
+(function () {
+  var m = document.querySelector('meta[name="quarto:offset"]');
+  var root = m ? m.getAttribute("content") : "./";
+  ["js/navbar-widgets.js", "js/hero-scroll.js", "js/shift.js", "js/sketches.js", "js/page.js", "js/figures.js"].forEach(function (src) {
+    var s = document.createElement("script");
+    s.src = root + src;
+    s.async = false;
+    document.body.appendChild(s);
+  });
+})();
+</script>
 
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

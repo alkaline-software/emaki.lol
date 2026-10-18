@@ -47,9 +47,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3dac5a5dd82f6e4cac736f6507c8e5ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-3cacf9d9ed86fa4b71630d0a393ff628.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-3dac5a5dd82f6e4cac736f6507c8e5ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f5c1ce40736740ad50b251d9a2986413.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-e8eccd3af203ef711c81d9cb41fe3116.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-f5c1ce40736740ad50b251d9a2986413.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -57,12 +57,7 @@ ul.task-list li input[type="checkbox"] {
   "panel-placement": "end",
   "type": "overlay",
   "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "keyboard-shortcut": [],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -84,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Emaki">
-<meta property="og:description" content="Every coding-agent session on your machine, kept for good, in one window you can also talk to.">
+<meta property="og:description" content="An agentic development environment for Claude Code and Codex: talk to the agent in a project, with the files, git and a terminal at the chat’s side.">
 <meta property="og:image" content="https://emaki.lol/assets/emaki-icon.png">
 <meta property="og:site_name" content="Emaki">
 <meta property="og:image:height" content="512">
@@ -284,20 +279,12 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
-<span class="menu-text">Home</span></a>
+    <a class="nav-link" href="https://github.com/alkaline-software/emaki/releases"> 
+<span class="menu-text"><span id="nav-version" class="nav-version">Releases</span></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./install.html"> 
-<span class="menu-text">Install</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./features.html"> 
-<span class="menu-text">Features</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./releases.html"> 
-<span class="menu-text">Releases</span></a>
+    <a class="nav-link" href="./docs/index.html"> 
+<span class="menu-text">Docs</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
@@ -331,9 +318,16 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div class="hero">
+<div class="home">
+<figure class="sketch home-window figure" data-home="" data-still="">
+<svg viewbox="0 0 360 168" role="img" aria-label="Emaki's window as it opens, drawn in lines: the sidebar with its projects and sessions, and in the main area the handscroll and the composer to start a session, over the folder and the agent it starts in.">
+<g class="sk-frame"><rect class="sk-window" x="0" y="0" width="360" height="168" rx="8"></rect><path d="M1 22 H359 M88 22 V167"></path></g> <g class="sk-lights"><circle class="sk-rose" cx="13" cy="11.5" r="3.5"></circle><circle class="sk-ochre" cx="24" cy="11.5" r="3.5"></circle><circle class="sk-sage" cx="35" cy="11.5" r="3.5"></circle></g> <image href="assets/emaki-icon.png" x="46" y="5" width="13" height="13"></image> <text class="sk-name" x="62" y="15">Emaki</text> <!-- The sidebar: new, all and agents, then the projects, the first open with its sessions. --> <circle class="sk-frame" cx="14" cy="34" r="4.5"></circle><path class="sk-frame" d="M14 31.75 v4.5 M11.75 34 h4.5"></path> <path class="sk-ink" d="M23 34 h34"></path> <path class="sk-frame" d="M11 44 h6 v6 h-6 Z M12.5 47 h3"></path><path class="sk-frame" d="M23 47 h28"></path> <path class="sk-spark" d="M14 56.5 v5.0 M11.5 59 h5.0 M12.25 57.25 l3.5 3.5 M15.75 57.25 l-3.5 3.5"></path><path class="sk-frame" d="M23 59 h22"></path> <path class="sk-faint" d="M11 72 h18"></path> <path class="sk-ochre-line" d="M11 79 h3 l1.5 1.5 H19 V85 H11 Z"></path><path class="sk-ink" d="M24 82 h26"></path> <path class="sk-faint" d="M14.5 89 V122"></path> <path class="sk-spark" d="M24 92.5 v5.0 M21.5 95 h5.0 M22.25 93.25 l3.5 3.5 M25.75 93.25 l-3.5 3.5"></path><path class="sk-frame" d="M31 95 h30"></path><circle class="sk-sage" cx="73" cy="95" r="1.75"></circle> <path class="sk-spark" d="M24 104.5 v5.0 M21.5 107 h5.0 M22.25 105.25 l3.5 3.5 M25.75 105.25 l-3.5 3.5"></path><path class="sk-frame" d="M31 107 h24"></path> <path class="sk-spark" d="M24 116.5 v5.0 M21.5 119 h5.0 M22.25 117.25 l3.5 3.5 M25.75 117.25 l-3.5 3.5"></path><path class="sk-frame" d="M31 119 h28"></path> <path class="sk-frame" d="M11 130 h3 l1.5 1.5 H19 V136 H11 Z"></path><path class="sk-frame" d="M24 133 h20"></path> <path class="sk-frame" d="M11 142 h3 l1.5 1.5 H19 V148 H11 Z"></path><path class="sk-frame" d="M24 145 h16"></path> <path class="sk-frame" d="M11 154 h3 l1.5 1.5 H19 V160 H11 Z"></path><path class="sk-frame" d="M24 157 h22"></path> <!-- The handscroll stands here, laid over by the page (.home > .hero-fig). --> <!-- The composer, over the folder and the agent it starts in. --> <rect class="sk-plate" x="128" y="131" width="191" height="20" rx="7"></rect> <rect class="sk-page-fill" x="128" y="103" width="191" height="38" rx="7"></rect><rect class="sk-edge" x="128" y="103" width="191" height="38" rx="7"></rect> <path class="sk-ink sk-caret" d="M136 109.5 v8"></path><path class="sk-faint" d="M140 113.5 h46"></path> <circle class="sk-frame" cx="138" cy="132" r="4.5"></circle><path class="sk-frame" d="M138 129.75 v4.5 M135.75 132 h4.5"></path> <rect class="sk-edge" x="148" y="126" width="30" height="12" rx="6"></rect><path class="sk-ochre-line" d="M153.5 129.5 l2.5 -1.25 l2.5 1.25 v3 a2.5 2.5 0 0 1 -2.5 2.25 a2.5 2.5 0 0 1 -2.5 -2.25 Z"></path><path class="sk-ochre-line" d="M161.5 132 h12"></path> <rect class="sk-edge" x="182" y="126" width="30" height="12" rx="6"></rect><circle class="sk-frame" cx="189" cy="132" r="2"></circle><path class="sk-frame" d="M194.5 132 h12"></path> <rect class="sk-edge" x="273" y="126" width="26" height="12" rx="6"></rect><path class="sk-frame" d="M279 132 h14"></path> <circle class="sk-accent-fill" cx="310" cy="132" r="6.5"></circle><path class="sk-page" d="M310 135.25 v-6.5 M306.75 132 l3.25 -3.25 l3.25 3.25"></path> <path class="sk-frame" d="M135 143 h3 l1.5 1.5 H143 V149 H135 Z"></path><path class="sk-frame" d="M147 146 h40"></path> <path class="sk-faint" d="M275 142 v8"></path><path class="sk-claude-spark" d="M283 143.5 v5.0 M280.5 146 h5.0 M281.25 144.25 l3.5 3.5 M284.75 144.25 l-3.5 3.5"></path><path class="sk-frame" d="M289 146 h22"></path>
+</svg>
+</figure>
 <!-- The handscroll over the greeting, ported from the app's own figure
      (`Workbench::home_scroll` in crates/emaki-app/src/workbench.rs). Lines
-     only: nothing is filled, there are no words, what is far is dimmer, and
+     only: nothing is filled, the one word is the name in its own two
+     characters down the sky at the sheet's head, what is far is dimmer, and
      one mark, the sun, is bright, in the accent. The pointer moved across
      winds it, which is what a handscroll does. js/hero-scroll.js runs the
      spring; the geometry below is the figure at rest. The four landscape
@@ -341,99 +335,212 @@ ul.task-list li input[type="checkbox"] {
      inlined here so they inherit currentColor -- do not hand-edit their
      paths, re-copy them if the figure changes. No blank line belongs in
      this file: one would end Pandoc's raw HTML block. -->
-<div id="hero-fig" class="hero-fig" role="img" aria-label="A Japanese handscroll, unrolled between two paper rolls, with a line-drawn landscape of mountains, pines, a bridge and a sailboat on its sheet.">
-<p><svg viewbox="0 0 300 110" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"> <defs> <clippath id="hero-sheet-clip"> <rect id="hero-clip" x="26" y="18" width="258" height="74"></rect> </clippath> </defs> <!-- The sheet's picture, cut to the sheet. --> <g clip-path="url(#hero-sheet-clip)"> <g id="hero-sky" class="hero-layer" data-depth="0.15" stroke-opacity="0.22" transform="translate(-170 18)"><path d="M54 12 L88 12"></path><path d="M70 17 L92 17"></path><path d="M196 9 L222 9"></path><path d="M300 14 L340 14"></path><path d="M322 19 L342 19"></path><path d="M452 10 L482 10"></path><path d="M560 15 L596 15"></path><path d="M578 20 L596 20"></path><path d="M150 16 L153 18 L156 16"></path><path d="M160 12 L163 14 L166 12"></path><path d="M410 20 L413 22 L416 20"></path><path d="M421 15 L424 17 L427 15"></path><path d="M512 12 L515 14 L518 12"></path></g> <circle id="hero-sun" cx="214" cy="35" r="6.25"></circle> <g id="hero-far" class="hero-layer" data-depth="0.35" stroke-opacity="0.26" transform="translate(-170 18)"><path d="M0.0 44.0 L2.43 43.47 L5.6 42.72 L9.38 41.81 L13.6 40.8 L18.12 39.75 L22.8 38.72 L27.48 37.77 L32.0 36.96 L36.23 36.35 L40.0 36.0 L43.36 36.0 L46.48 36.35 L49.42 36.95 L52.24 37.7 L55.0 38.5 L57.76 39.26 L60.58 39.89 L63.52 40.29 L66.64 40.36 L70.0 40.0 L73.59 39.07 L77.36 37.6 L81.27 35.73 L85.28 33.6 L89.38 31.38 L93.52 29.2 L97.69 27.22 L101.84 25.6 L105.95 24.48 L110.0 24.0 L114.02 24.28 L118.08 25.23 L122.16 26.69 L126.24 28.5 L130.31 30.5 L134.36 32.54 L138.37 34.47 L142.32 36.13 L146.2 37.36 L150.0 38.0 L153.66 38.0 L157.16 37.49 L160.55 36.59 L163.88 35.42 L167.19 34.12 L170.52 32.82 L173.92 31.62 L177.44 30.67 L181.12 30.09 L185.0 30.0 L189.12 30.48 L193.44 31.44 L197.92 32.76 L202.52 34.32 L207.19 36.0 L211.88 37.68 L216.55 39.24 L221.16 40.56 L225.66 41.52 L230.0 42.0 L234.25 41.95 L238.48 41.46 L242.68 40.63 L246.84 39.57 L250.94 38.38 L254.96 37.15 L258.89 36.0 L262.72 35.02 L266.43 34.32 L270.0 34.0 L273.31 34.15 L276.32 34.72 L279.1 35.59 L281.76 36.64 L284.38 37.75 L287.04 38.8 L289.84 39.67 L292.88 40.24 L296.24 40.39 L300.0 40.0 L304.21 38.89 L308.8 37.09 L313.69 34.78 L318.8 32.14 L324.06 29.38 L329.4 26.66 L334.74 24.17 L340.0 22.11 L345.11 20.66 L350.0 20.0 L354.75 20.24 L359.48 21.25 L364.18 22.85 L368.84 24.86 L373.44 27.12 L377.96 29.46 L382.39 31.68 L386.72 33.63 L390.93 35.13 L395.0 36.0 L398.88 36.22 L402.56 35.95 L406.08 35.31 L409.48 34.42 L412.81 33.38 L416.12 32.3 L419.45 31.32 L422.84 30.53 L426.34 30.05 L430.0 30.0 L433.75 30.46 L437.52 31.36 L441.32 32.58 L445.16 34.0 L449.06 35.5 L453.04 36.96 L457.11 38.26 L461.28 39.28 L465.57 39.9 L470.0 40.0 L474.64 39.45 L479.52 38.32 L484.58 36.74 L489.76 34.88 L495.0 32.88 L500.24 30.88 L505.42 29.05 L510.48 27.52 L515.36 26.45 L520.0 26.0 L524.4 26.23 L528.64 27.02 L532.74 28.26 L536.72 29.79 L540.62 31.5 L544.48 33.25 L548.32 34.9 L552.16 36.34 L556.04 37.41 L560.0 38.0 L564.0 38.06 L568.0 37.7 L572.0 37.02 L576.0 36.13 L580.0 35.12 L584.0 34.11 L588.0 33.19 L592.0 32.46 L596.0 32.03 L600.0 32.0 L604.18 32.4 L608.64 33.14 L613.26 34.14 L617.92 35.33 L622.5 36.62 L626.88 37.95 L630.94 39.23 L634.56 40.38 L637.62 41.33 L640 42"></path><path d="M111 29 L115 34"></path><path d="M107 30 L104 35"></path><path d="M351 25 L355 30"></path><path d="M347 26 L344 31"></path><path d="M521 31 L525 36"></path><path d="M517 32 L514 37"></path></g> <g id="hero-mid" class="hero-layer" data-depth="0.65" stroke-opacity="0.5" transform="translate(-170 18)"><path d="M0.0 54.0 L3.02 53.46 L6.96 52.69 L11.64 51.75 L16.88 50.7 L22.5 49.62 L28.32 48.58 L34.16 47.62 L39.84 46.83 L45.18 46.27 L50.0 46.0 L54.36 46.11 L58.48 46.59 L62.42 47.34 L66.24 48.26 L70.0 49.25 L73.76 50.22 L77.58 51.08 L81.52 51.73 L85.64 52.07 L90.0 52.0 L94.66 51.43 L99.6 50.4 L104.74 49.03 L110.0 47.44 L115.31 45.75 L120.6 44.08 L125.79 42.55 L130.8 41.28 L135.56 40.39 L140.0 40.0 L144.08 40.18 L147.88 40.85 L151.45 41.89 L154.84 43.18 L158.12 44.62 L161.36 46.1 L164.61 47.48 L167.92 48.67 L171.36 49.55 L175.0 50.0 L178.78 49.98 L182.6 49.57 L186.47 48.87 L190.4 47.98 L194.38 47.0 L198.4 46.02 L202.47 45.13 L206.6 44.43 L210.78 44.02 L215.0 44.0 L219.5 44.4 L224.4 45.14 L229.55 46.14 L234.8 47.33 L240.0 48.62 L245.0 49.95 L249.65 51.23 L253.8 52.38 L257.3 53.33 L260 54"></path><path d="M282.0 54.0 L283.57 53.59 L285.46 52.99 L287.65 52.26 L290.13 51.46 L292.88 50.62 L295.87 49.82 L299.1 49.11 L302.54 48.53 L306.18 48.14 L310.0 48.0 L314.11 48.2 L318.59 48.72 L323.38 49.48 L328.42 50.4 L333.62 51.38 L338.94 52.32 L344.31 53.15 L349.65 53.76 L354.9 54.08 L360.0 54.0 L365.05 53.43 L370.16 52.4 L375.31 51.03 L380.48 49.44 L385.62 47.75 L390.72 46.08 L395.74 44.55 L400.64 43.28 L405.41 42.39 L410.0 42.0 L414.36 42.18 L418.48 42.85 L422.42 43.89 L426.24 45.18 L430.0 46.62 L433.76 48.1 L437.58 49.48 L441.52 50.67 L445.64 51.55 L450.0 52.0 L454.62 51.99 L459.44 51.6 L464.42 50.94 L469.52 50.08 L474.69 49.12 L479.88 48.16 L485.05 47.27 L490.16 46.56 L495.16 46.11 L500.0 46.0 L504.66 46.3 L509.16 46.93 L513.55 47.81 L517.88 48.86 L522.19 50.0 L526.52 51.14 L530.92 52.19 L535.44 53.07 L540.12 53.7 L545.0 54.0 L550.16 53.91 L555.6 53.5 L561.24 52.85 L567.0 52.03 L572.81 51.12 L578.6 50.21 L584.29 49.36 L589.8 48.66 L595.06 48.18 L600.0 48.0 L604.79 48.14 L609.6 48.53 L614.36 49.11 L619.0 49.82 L623.44 50.62 L627.6 51.46 L631.41 52.26 L634.8 52.99 L637.69 53.59 L640 54"></path><path d="M132 42 L132 33"></path><path d="M128 40 L132 35 L136 40"></path><path d="M129 36 L132 32 L135 36"></path><path d="M140 40 L140 28"></path><path d="M136 35 L140 30 L144 35"></path><path d="M137 31 L140 27 L143 31"></path><path d="M149 43 L149 34"></path><path d="M145 41 L149 36 L153 41"></path><path d="M146 37 L149 33 L152 37"></path><path d="M404 43 L404 34"></path><path d="M400 41 L404 36 L408 41"></path><path d="M401 37 L404 33 L407 37"></path><path d="M412 42 L412 30"></path><path d="M408 37 L412 32 L416 37"></path><path d="M409 33 L412 29 L415 33"></path><path d="M500 46 L500 36"></path><path d="M496 43 L500 38 L504 43"></path><path d="M497 39 L500 35 L503 39"></path><path d="M56 46 L56 37"></path><path d="M52 44 L56 39 L60 44"></path><path d="M53 40 L56 36 L59 40"></path><path d="M258 54 Q270 45 284 54"></path><path d="M264 50 L264 55"></path><path d="M278 50 L278 55"></path><path d="M316 48 L316 41"></path><path d="M330 48 L330 41"></path><path d="M311 42 Q323 35 335 42"></path><path d="M319 37 L319 33"></path><path d="M327 37 L327 33"></path><path d="M315 34 Q323 28 331 34"></path><path d="M323 29 L323 26"></path></g> <g id="hero-water" class="hero-layer" data-depth="1.0" stroke-opacity="0.3" transform="translate(-170 18)"><path d="M10 60 L40 60"></path><path d="M56 60 L74 60"></path><path d="M120 60 L164 60"></path><path d="M196 60 L210 60"></path><path d="M240 60 L276 60"></path><path d="M372 60 L398 60"></path><path d="M430 60 L470 60"></path><path d="M500 60 L516 60"></path><path d="M548 60 L598 60"></path><path d="M30 65 L52 65"></path><path d="M88 65 L128 65"></path><path d="M160 65 L176 65"></path><path d="M216 65 L246 65"></path><path d="M300 65 L312 65"></path><path d="M356 65 L400 65"></path><path d="M452 65 L472 65"></path><path d="M520 65 L554 65"></path><path d="M590 65 L616 65"></path><path d="M6 70 L24 70"></path><path d="M70 70 L82 70"></path><path d="M130 70 L160 70"></path><path d="M250 70 L270 70"></path><path d="M330 70 L364 70"></path><path d="M410 70 L424 70"></path><path d="M470 70 L510 70"></path><path d="M566 70 L588 70"></path><path d="M434 60 Q446 67 458 60"></path><path d="M446 61 L446 49"></path><path d="M446 50 L455 59 L446 59"></path><path d="M14 58 L16 50"></path><path d="M20 58 L22 50"></path><path d="M26 58 L28 50"></path><path d="M604 58 L606 50"></path><path d="M611 58 L613 50"></path><path d="M618 58 L620 50"></path></g> </g> <!-- The scroll itself: the sheet's two edges, the rolls, their axles. --> <g class="hero-frame" stroke-opacity="0.72"> <line id="hero-edge-top" x1="26" y1="18" x2="284" y2="18"></line> <line id="hero-edge-bot" x1="26" y1="92" x2="284" y2="92"></line> <rect id="hero-roll-l" x="4.75" y="12.75" width="20.5" height="84.5" rx="7.25"></rect> <rect id="hero-roll-r" x="284.75" y="12.75" width="10.5" height="84.5" rx="4.25"></rect> <path id="hero-knob-lt" d="M12.75 13.5 L12.75 7.5 Q12.75 6.25 14 6.25 L16 6.25 Q17.25 6.25 17.25 7.5 L17.25 13.5"></path> <path id="hero-knob-lb" d="M12.75 96.5 L12.75 102.5 Q12.75 103.75 14 103.75 L16 103.75 Q17.25 103.75 17.25 102.5 L17.25 96.5"></path> <path id="hero-knob-rt" d="M287.75 13.5 L287.75 7.5 Q287.75 6.25 289 6.25 L291 6.25 Q292.25 6.25 292.25 7.5 L292.25 13.5"></path> <path id="hero-knob-rb" d="M287.75 96.5 L287.75 102.5 Q287.75 103.75 289 103.75 L291 103.75 Q292.25 103.75 292.25 102.5 L292.25 96.5"></path> </g> <!-- The paper wound on each roll, seen as its turns. Drawn by the script. --> <g id="hero-turns"></g> </svg></p>
+<div id="hero-fig" class="hero-fig" role="img" aria-label="A Japanese handscroll, unrolled between two paper rolls, with a line-drawn landscape of mountains, pines, a bridge and a sailboat on its sheet, and the name, 絵巻, written down its sky at the left.">
+<p><svg viewbox="0 0 300 110" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"> <defs> <clippath id="hero-sheet-clip"> <rect id="hero-clip" x="26" y="18" width="258" height="74"></rect> </clippath> </defs> <!-- The sheet's picture, cut to the sheet. --> <g clip-path="url(#hero-sheet-clip)"> <g id="hero-sky" class="hero-layer" data-depth="0.15" stroke-opacity="0.22" transform="translate(-170 18)"><path d="M54 12 L88 12"></path><path d="M70 17 L92 17"></path><path d="M196 9 L222 9"></path><path d="M300 14 L340 14"></path><path d="M322 19 L342 19"></path><path d="M452 10 L482 10"></path><path d="M560 15 L596 15"></path><path d="M578 20 L596 20"></path><path d="M150 16 L153 18 L156 16"></path><path d="M160 12 L163 14 L166 12"></path><path d="M410 20 L413 22 L416 20"></path><path d="M421 15 L424 17 L427 15"></path><path d="M512 12 L515 14 L518 12"></path></g> <circle id="hero-sun" cx="214" cy="35" r="6.25"></circle> <g id="hero-far" class="hero-layer" data-depth="0.35" stroke-opacity="0.26" transform="translate(-170 18)"><path d="M0.0 44.0 L2.43 43.47 L5.6 42.72 L9.38 41.81 L13.6 40.8 L18.12 39.75 L22.8 38.72 L27.48 37.77 L32.0 36.96 L36.23 36.35 L40.0 36.0 L43.36 36.0 L46.48 36.35 L49.42 36.95 L52.24 37.7 L55.0 38.5 L57.76 39.26 L60.58 39.89 L63.52 40.29 L66.64 40.36 L70.0 40.0 L73.59 39.07 L77.36 37.6 L81.27 35.73 L85.28 33.6 L89.38 31.38 L93.52 29.2 L97.69 27.22 L101.84 25.6 L105.95 24.48 L110.0 24.0 L114.02 24.28 L118.08 25.23 L122.16 26.69 L126.24 28.5 L130.31 30.5 L134.36 32.54 L138.37 34.47 L142.32 36.13 L146.2 37.36 L150.0 38.0 L153.66 38.0 L157.16 37.49 L160.55 36.59 L163.88 35.42 L167.19 34.12 L170.52 32.82 L173.92 31.62 L177.44 30.67 L181.12 30.09 L185.0 30.0 L189.12 30.48 L193.44 31.44 L197.92 32.76 L202.52 34.32 L207.19 36.0 L211.88 37.68 L216.55 39.24 L221.16 40.56 L225.66 41.52 L230.0 42.0 L234.25 41.95 L238.48 41.46 L242.68 40.63 L246.84 39.57 L250.94 38.38 L254.96 37.15 L258.89 36.0 L262.72 35.02 L266.43 34.32 L270.0 34.0 L273.31 34.15 L276.32 34.72 L279.1 35.59 L281.76 36.64 L284.38 37.75 L287.04 38.8 L289.84 39.67 L292.88 40.24 L296.24 40.39 L300.0 40.0 L304.21 38.89 L308.8 37.09 L313.69 34.78 L318.8 32.14 L324.06 29.38 L329.4 26.66 L334.74 24.17 L340.0 22.11 L345.11 20.66 L350.0 20.0 L354.75 20.24 L359.48 21.25 L364.18 22.85 L368.84 24.86 L373.44 27.12 L377.96 29.46 L382.39 31.68 L386.72 33.63 L390.93 35.13 L395.0 36.0 L398.88 36.22 L402.56 35.95 L406.08 35.31 L409.48 34.42 L412.81 33.38 L416.12 32.3 L419.45 31.32 L422.84 30.53 L426.34 30.05 L430.0 30.0 L433.75 30.46 L437.52 31.36 L441.32 32.58 L445.16 34.0 L449.06 35.5 L453.04 36.96 L457.11 38.26 L461.28 39.28 L465.57 39.9 L470.0 40.0 L474.64 39.45 L479.52 38.32 L484.58 36.74 L489.76 34.88 L495.0 32.88 L500.24 30.88 L505.42 29.05 L510.48 27.52 L515.36 26.45 L520.0 26.0 L524.4 26.23 L528.64 27.02 L532.74 28.26 L536.72 29.79 L540.62 31.5 L544.48 33.25 L548.32 34.9 L552.16 36.34 L556.04 37.41 L560.0 38.0 L564.0 38.06 L568.0 37.7 L572.0 37.02 L576.0 36.13 L580.0 35.12 L584.0 34.11 L588.0 33.19 L592.0 32.46 L596.0 32.03 L600.0 32.0 L604.18 32.4 L608.64 33.14 L613.26 34.14 L617.92 35.33 L622.5 36.62 L626.88 37.95 L630.94 39.23 L634.56 40.38 L637.62 41.33 L640 42"></path><path d="M111 29 L115 34"></path><path d="M107 30 L104 35"></path><path d="M351 25 L355 30"></path><path d="M347 26 L344 31"></path><path d="M521 31 L525 36"></path><path d="M517 32 L514 37"></path></g> <g id="hero-mid" class="hero-layer" data-depth="0.65" stroke-opacity="0.5" transform="translate(-170 18)"><path d="M0.0 54.0 L3.02 53.46 L6.96 52.69 L11.64 51.75 L16.88 50.7 L22.5 49.62 L28.32 48.58 L34.16 47.62 L39.84 46.83 L45.18 46.27 L50.0 46.0 L54.36 46.11 L58.48 46.59 L62.42 47.34 L66.24 48.26 L70.0 49.25 L73.76 50.22 L77.58 51.08 L81.52 51.73 L85.64 52.07 L90.0 52.0 L94.66 51.43 L99.6 50.4 L104.74 49.03 L110.0 47.44 L115.31 45.75 L120.6 44.08 L125.79 42.55 L130.8 41.28 L135.56 40.39 L140.0 40.0 L144.08 40.18 L147.88 40.85 L151.45 41.89 L154.84 43.18 L158.12 44.62 L161.36 46.1 L164.61 47.48 L167.92 48.67 L171.36 49.55 L175.0 50.0 L178.78 49.98 L182.6 49.57 L186.47 48.87 L190.4 47.98 L194.38 47.0 L198.4 46.02 L202.47 45.13 L206.6 44.43 L210.78 44.02 L215.0 44.0 L219.5 44.4 L224.4 45.14 L229.55 46.14 L234.8 47.33 L240.0 48.62 L245.0 49.95 L249.65 51.23 L253.8 52.38 L257.3 53.33 L260 54"></path><path d="M282.0 54.0 L283.57 53.59 L285.46 52.99 L287.65 52.26 L290.13 51.46 L292.88 50.62 L295.87 49.82 L299.1 49.11 L302.54 48.53 L306.18 48.14 L310.0 48.0 L314.11 48.2 L318.59 48.72 L323.38 49.48 L328.42 50.4 L333.62 51.38 L338.94 52.32 L344.31 53.15 L349.65 53.76 L354.9 54.08 L360.0 54.0 L365.05 53.43 L370.16 52.4 L375.31 51.03 L380.48 49.44 L385.62 47.75 L390.72 46.08 L395.74 44.55 L400.64 43.28 L405.41 42.39 L410.0 42.0 L414.36 42.18 L418.48 42.85 L422.42 43.89 L426.24 45.18 L430.0 46.62 L433.76 48.1 L437.58 49.48 L441.52 50.67 L445.64 51.55 L450.0 52.0 L454.62 51.99 L459.44 51.6 L464.42 50.94 L469.52 50.08 L474.69 49.12 L479.88 48.16 L485.05 47.27 L490.16 46.56 L495.16 46.11 L500.0 46.0 L504.66 46.3 L509.16 46.93 L513.55 47.81 L517.88 48.86 L522.19 50.0 L526.52 51.14 L530.92 52.19 L535.44 53.07 L540.12 53.7 L545.0 54.0 L550.16 53.91 L555.6 53.5 L561.24 52.85 L567.0 52.03 L572.81 51.12 L578.6 50.21 L584.29 49.36 L589.8 48.66 L595.06 48.18 L600.0 48.0 L604.79 48.14 L609.6 48.53 L614.36 49.11 L619.0 49.82 L623.44 50.62 L627.6 51.46 L631.41 52.26 L634.8 52.99 L637.69 53.59 L640 54"></path><path d="M132 42 L132 33"></path><path d="M128 40 L132 35 L136 40"></path><path d="M129 36 L132 32 L135 36"></path><path d="M140 40 L140 28"></path><path d="M136 35 L140 30 L144 35"></path><path d="M137 31 L140 27 L143 31"></path><path d="M149 43 L149 34"></path><path d="M145 41 L149 36 L153 41"></path><path d="M146 37 L149 33 L152 37"></path><path d="M404 43 L404 34"></path><path d="M400 41 L404 36 L408 41"></path><path d="M401 37 L404 33 L407 37"></path><path d="M412 42 L412 30"></path><path d="M408 37 L412 32 L416 37"></path><path d="M409 33 L412 29 L415 33"></path><path d="M500 46 L500 36"></path><path d="M496 43 L500 38 L504 43"></path><path d="M497 39 L500 35 L503 39"></path><path d="M56 46 L56 37"></path><path d="M52 44 L56 39 L60 44"></path><path d="M53 40 L56 36 L59 40"></path><path d="M258 54 Q270 45 284 54"></path><path d="M264 50 L264 55"></path><path d="M278 50 L278 55"></path><path d="M316 48 L316 41"></path><path d="M330 48 L330 41"></path><path d="M311 42 Q323 35 335 42"></path><path d="M319 37 L319 33"></path><path d="M327 37 L327 33"></path><path d="M315 34 Q323 28 331 34"></path><path d="M323 29 L323 26"></path></g> <g id="hero-water" class="hero-layer" data-depth="1.0" stroke-opacity="0.3" transform="translate(-170 18)"><path d="M10 60 L40 60"></path><path d="M56 60 L74 60"></path><path d="M120 60 L164 60"></path><path d="M196 60 L210 60"></path><path d="M240 60 L276 60"></path><path d="M372 60 L398 60"></path><path d="M430 60 L470 60"></path><path d="M500 60 L516 60"></path><path d="M548 60 L598 60"></path><path d="M30 65 L52 65"></path><path d="M88 65 L128 65"></path><path d="M160 65 L176 65"></path><path d="M216 65 L246 65"></path><path d="M300 65 L312 65"></path><path d="M356 65 L400 65"></path><path d="M452 65 L472 65"></path><path d="M520 65 L554 65"></path><path d="M590 65 L616 65"></path><path d="M6 70 L24 70"></path><path d="M70 70 L82 70"></path><path d="M130 70 L160 70"></path><path d="M250 70 L270 70"></path><path d="M330 70 L364 70"></path><path d="M410 70 L424 70"></path><path d="M470 70 L510 70"></path><path d="M566 70 L588 70"></path><path d="M434 60 Q446 67 458 60"></path><path d="M446 61 L446 49"></path><path d="M446 50 L455 59 L446 59"></path><path d="M14 58 L16 50"></path><path d="M20 58 L22 50"></path><path d="M26 58 L28 50"></path><path d="M604 58 L606 50"></path><path d="M611 58 L613 50"></path><path d="M618 58 L620 50"></path></g> <!-- The title, the name in its own characters, written down the sheet's sky at its head as a handscroll carries one; it stays while the picture winds, and the sheet's clip keeps it off the roll. --> <text class="hero-title" x="46" y="30">絵</text> <text class="hero-title" x="46" y="43">巻</text> </g> <!-- The scroll itself: the sheet's two edges, the rolls, their axles. --> <g class="hero-frame" stroke-opacity="0.72"> <line id="hero-edge-top" x1="26" y1="18" x2="284" y2="18"></line> <line id="hero-edge-bot" x1="26" y1="92" x2="284" y2="92"></line> <rect id="hero-roll-l" x="4.75" y="12.75" width="20.5" height="84.5" rx="7.25"></rect> <rect id="hero-roll-r" x="284.75" y="12.75" width="10.5" height="84.5" rx="4.25"></rect> <path id="hero-knob-lt" d="M12.75 13.5 L12.75 7.5 Q12.75 6.25 14 6.25 L16 6.25 Q17.25 6.25 17.25 7.5 L17.25 13.5"></path> <path id="hero-knob-lb" d="M12.75 96.5 L12.75 102.5 Q12.75 103.75 14 103.75 L16 103.75 Q17.25 103.75 17.25 102.5 L17.25 96.5"></path> <path id="hero-knob-rt" d="M287.75 13.5 L287.75 7.5 Q287.75 6.25 289 6.25 L291 6.25 Q292.25 6.25 292.25 7.5 L292.25 13.5"></path> <path id="hero-knob-rb" d="M287.75 96.5 L287.75 102.5 Q287.75 103.75 289 103.75 L291 103.75 Q292.25 103.75 292.25 102.5 L292.25 96.5"></path> </g> <!-- The paper wound on each roll, seen as its turns. Drawn by the script. --> <g id="hero-turns"></g> </svg></p>
 </div>
-<section id="emaki" class="level1">
-<h1>Emaki</h1>
+</div>
+<section id="emaki-絵巻" class="level1">
+<h1>Emaki <span class="hero-kanji">絵巻</span></h1>
 <div class="hero-lede">
-<p>Every coding-agent session on your machine, kept for good, in one window you can also talk to.</p>
+<p>The agentic development environment.</p>
 </div>
-<div class="hero-sub">
-<p>A desktop app for Claude Code and Codex. It keeps every session byte for byte, renders and searches all of them, and lets you carry one on from the window.</p>
-</div>
+<!-- The download, as one control, and beside it the way into the docs: the pill takes the installer for this
+     computer, which js/page.js names from the browser, and the segment at
+     its right opens the other systems. Without the script the pill takes
+     the latest release and the menu is a list of four links. No blank line
+     belongs in this file, and nothing under a div is indented four spaces:
+     Pandoc reads what stands between a div's tags as Markdown, so every
+     line inside is indented two, whatever its depth. -->
 <div class="hero-cta">
-<p><a href="./install.html" class="pill pill-accent i-download">Download</a> <a href="./features.html" class="pill i-scroll">What’s in it</a> <a href="https://github.com/alkaline-software/emaki" class="pill i-github">Source</a></p>
-</div>
-<div class="hero-meta">
-<p>For macOS, Windows and Linux. Open source, under the MIT licence.</p>
-</div>
-</section>
-</div>
-<section id="the-thirty-day-problem" class="level2 band rise">
-<h2 data-anchor-id="the-thirty-day-problem">The thirty-day problem</h2>
-<p>Claude Code deletes its transcripts after thirty days, with no warning. Every other tool in this space reads <code>~/.claude/projects</code> and stops there, so they all inherit that expiry.</p>
-<p>Emaki copies first and renders second. A session is in its archive from the first time it is seen, so if anything else fails the bytes are already safe, and one Claude Code has since deleted is still listed, still searchable, marked <em>kept</em>.</p>
-</section>
-<div class="cards rise">
-<section id="kept-for-good" class="level3 card i-archive">
-<h3 data-anchor-id="kept-for-good">Kept for good</h3>
-<p>Every Claude Code session is copied byte for byte into <code>~/.emaki/archive</code> before anything else touches it, and stays after Claude Code deletes it. Codex keeps its own, so those are read in place.</p>
-</section>
-<section id="search-everything" class="level3 card i-search">
-<h3 data-anchor-id="search-everything">Search everything</h3>
-<p><kbd>⌘K</kbd> searches every session you have ever run, a paragraph at a time, live and kept together. <kbd>⌘F</kbd> finds inside the one you are reading.</p>
-</section>
-<section id="read-what-it-did" class="level3 card i-book-open">
-<h3 data-anchor-id="read-what-it-did">Read what it did</h3>
-<p>Prompts, replies, thoughts, tool calls and subagents, laid out like the Claude app. Ask for one plain sentence on any tool call you cannot read.</p>
-</section>
-<section id="carry-on-talking" class="level3 card i-inbox">
-<h3 data-anchor-id="carry-on-talking">Carry on talking</h3>
-<p>Type to reply. A session running in a terminal gets the message through its inbox; a finished one resumes under Emaki. Approvals, questions and plans come up as cards.</p>
-</section>
-</div>
-<section id="beside-the-conversation" class="level2 band rise">
-<h2 data-anchor-id="beside-the-conversation">Beside the conversation</h2>
-<p>The window is built around the sessions, and what you reach for while reading one sits at its side.</p>
-</section>
-<div class="cards rise">
-<section id="a-terminal" class="level3 card i-terminal">
-<h3 data-anchor-id="a-terminal">A terminal</h3>
-<p>A shell in the session’s folder, or the agent’s own screen as it runs, two-way. Shells open in tabs.</p>
-</section>
-<section id="the-files" class="level3 card i-tree-view">
-<h3 data-anchor-id="the-files">The files</h3>
-<p>The project as a tree with git’s marks. Open a file beside the conversation: code, markdown, CSV, PDF, Word, slides, pictures. Edit it and save with <kbd>⌘S</kbd>.</p>
-</section>
-<section id="git" class="level3 card i-git-branch">
-<h3 data-anchor-id="git">Git</h3>
-<p>Commit the files you tick, browse the history, switch and publish branches, push and pull, without leaving the window.</p>
-</section>
-<section id="dictation" class="level3 card i-microphone">
-<h3 data-anchor-id="dictation">Dictation</h3>
-<p>On a Mac, talk instead of typing. A model downloaded to the machine writes it down, Chinese and English mixed, and the shortcut works in any app.</p>
-</section>
-</div>
-<section id="nothing-it-will-do-to-you" class="level2 band rise">
-<h2 data-anchor-id="nothing-it-will-do-to-you">Nothing it will do to you</h2>
-<div class="checks">
-<ul>
-<li><strong>No hooks, ever.</strong></li>
-<li>Nothing writes to a transcript. The JSONL file is the only source of truth, and Emaki reads it.</li>
-<li>Nothing Emaki does enters a session’s context window.</li>
-<li>Nothing is typed into a terminal of yours, and no terminal app is asked for anything. Emaki runs its own, hidden.</li>
-<li>No daemon and no browser. Everything lives in <code>~/.emaki</code>, and only <code>archive/</code> cannot be rebuilt: that is the one folder to back up.</li>
-</ul>
-</div>
-</section>
-<section id="built-on-the-agents-you-already-use" class="level2 band rise">
-<h2 data-anchor-id="built-on-the-agents-you-already-use">Built on the agents you already use</h2>
-<p>Emaki needs Claude Code or Codex installed and signed in. It adds three things on top: conversations that never expire, one place to organize them, and a readable view of what the agent did.</p>
-<div class="agents">
-<div class="agent agent-claude">
-<p><strong>Claude Code</strong></p>
-<p>Read, search, keep and continue a session from the window, with its modes, models and effort levels.</p>
-</div>
-<div class="agent agent-codex">
-<p><strong>Codex</strong></p>
-<p>Read, search, start, continue and stop, with approvals, questions and plans on the same cards.</p>
+<div id="dl" class="dl">
+<a class="pill pill-accent i-download dl-main" id="dl-main" href="https://github.com/alkaline-software/emaki/releases/latest">Download</a> <button class="dl-more" id="dl-more" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="dl-menu" aria-label="Download for another system"></button>
+<div id="dl-menu" class="dl-menu" role="menu" aria-label="Downloads">
+<a role="menuitem" data-os="mac" data-chip="arm64" data-name="macOS" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-arm64.dmg"><strong>macOS</strong> <span>Apple silicon</span></a> <a role="menuitem" data-os="mac" data-chip="x64" data-name="macOS" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-x64.dmg"><strong>macOS</strong> <span>Intel</span></a> <a role="menuitem" data-os="windows" data-name="Windows" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-windows-x64-setup.exe"><strong>Windows</strong> <span>x64 installer</span></a> <a role="menuitem" data-os="linux" data-name="Linux" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-x64.AppImage"><strong>Linux</strong> <span>x64 AppImage</span></a>
 </div>
 </div>
-<div class="hero-cta">
-<p><a href="./install.html" class="pill pill-accent i-download">Install Emaki</a></p>
+<p><a class="pill i-play" href="docs/">Get Started</a></p>
 </div>
 </section>
+</div>
+<div class="hero-rule">
+
+</div>
+<section id="from-the-ide-to-the-ade" class="level2 shift rise">
+<h2 data-anchor-id="from-the-ide-to-the-ade">From the IDE to the ADE</h2>
+<!-- The shift's first row (index.qmd, From the IDE to the ADE): an
+     editor's window as one has it today, seen from the front, each pane a
+     box with its name in it: an activity bar, a file browser with the
+     outline and the timeline folded under it, an editor of code, a
+     terminal in the panel under the editor, and the agent chat squeezed
+     into a pane at the right edge, one dial among the dials. Its words
+     stand beside it, and the ADE's row under it (_shift-ade.html). The
+     structure in the muted ink and the two borders, everything else in
+     the shift's own set (css/theme.scss, --sk-*): ochre for the files,
+     slate for the code, sage for the terminal, the lights in rose, ochre
+     and sage, the accent on the agent chat. Its frame is heavier than the
+     lines inside it, with a faint gray halo. The box under the pointer
+     lights in place, its edge heavier and its name in the ink (css/theme.scss);
+     on a phone the light walks the boxes on its own (js/shift.js).
+     The strokes do not scale (css/theme.scss, The shift), so the hairline
+     holds at any width. No blank line belongs in this file, and nothing
+     under a div is indented four spaces: Pandoc reads what is between a
+     div's tags as Markdown, so one would end the block and the other would
+     make a code block of a line. -->
+<figure class="shift-pane shift-ide figure">
+<svg id="shift-ide" viewbox="0 0 320 220" role="img" aria-label="An IDE window with its panes named: an activity bar, a file browser with an outline and a timeline under it, an editor of code, a terminal under the editor, and the agent chat squeezed into a pane at the right. The pane under the pointer lights.">
+<g class="sk-frame"> <rect class="sk-window" x="0" y="0" width="320" height="220" rx="8"></rect> <path d="M1 22 H319 M1 206 H319"></path> </g> <g class="sk-lights"><circle class="sk-rose" cx="13" cy="11.5" r="3.5"></circle><circle class="sk-ochre" cx="24" cy="11.5" r="3.5"></circle><circle class="sk-sage" cx="35" cy="11.5" r="3.5"></circle></g> <path class="sk-faint" d="M110 11.5 l-3 -3 M110 11.5 l-3 3 M116 11.5 l3 -3 M116 11.5 l3 3"></path> <rect class="sk-faint" x="124" y="6.5" width="92" height="10" rx="2"></rect> <path class="sk-faint" d="M272 11.5 h5 M281 11.5 h5 M290 11.5 h5 M299 11.5 h5 M308 11.5 h5"></path> <!-- The activity bar. --> <g class="sk-box sk-c-gray" data-pane="activity"> <rect x="4" y="25" width="20" height="178" rx="3"></rect> <rect class="sk-accent" x="10.5" y="33" width="7" height="7" rx="1.5"></rect> <path class="sk-faint" d="M10.5 50 h7 v7 h-7 Z M10.5 67 h7 v7 h-7 Z M10.5 84 h7 v7 h-7 Z M10.5 101 h7 v7 h-7 Z"></path> <circle class="sk-faint" cx="14" cy="178" r="3.5"></circle> <circle class="sk-faint" cx="14" cy="192" r="3.5"></circle> <text transform="rotate(-90 14 132)" x="14" y="132">Activity Bar</text> </g> <circle class="sk-rose" cx="19" cy="84" r="2"></circle> <!-- The explorer, and the outline and the timeline folded under it. --> <g class="sk-box sk-c-ochre" data-pane="files"> <rect x="27" y="25" width="62" height="146" rx="3"></rect> <path class="sk-faint" d="M33 35 h20 M33 46 l3 2 l-3 2 M40 48 h22 M39 57 l3 2 l-3 2 M46 59 h20 M39 68 l3 2 l-3 2 M46 70 h16 M39 79 l3 2 l-3 2 M46 81 h22 M46 92 h18 M52 103 h24 M52 114 h20 M52 125 h26 M52 136 h18 M46 147 h22 M46 158 h26"></path> <text x="58" y="98">File Browser</text> </g> <circle class="sk-ochre" cx="84" cy="59" r="1.75"></circle> <g class="sk-box sk-c-ochre" data-pane="outline"> <rect x="27" y="174" width="62" height="13" rx="3"></rect> <path class="sk-faint" d="M32 178.5 l3 2 l-3 2"></path> <text class="sk-start sk-small" x="40" y="180.5">Outline</text> </g> <g class="sk-box sk-c-ochre" data-pane="timeline"> <rect x="27" y="190" width="62" height="13" rx="3"></rect> <path class="sk-faint" d="M32 194.5 l3 2 l-3 2"></path> <text class="sk-start sk-small" x="40" y="196.5">Timeline</text> </g> <!-- The editor, under its tabs and its crumbs. --> <g class="sk-box sk-c-slate" data-pane="code"> <rect x="92" y="25" width="148" height="118" rx="3"></rect> <path class="sk-ink" d="M100 32 h22"></path> <path class="sk-faint" d="M127 30.5 l3 3 M130 30.5 l-3 3 M92 39 H240 M214 32 h5 M223 32 h5 M232 32 h5"></path> <path class="sk-accent" d="M94 38.75 h40"></path> <path class="sk-faint" d="M100 45 h10 M114 43.5 l1.5 1.5 l-1.5 1.5 M120 45 h14 M138 43.5 l1.5 1.5 l-1.5 1.5 M144 45 h18"></path> <path class="sk-faint" d="M98 56 h3 M98 66 h3 M98 76 h3 M98 86 h3 M98 96 h3 M98 106 h3 M98 116 h3 M98 126 h3 M98 136 h3"></path> <path class="sk-faint" d="M106 56 h24 M106 66 h44 M154 66 h30 M110 76 h36 M150 76 h16 M110 86 h24 M138 86 h40 M110 96 h18 M132 96 h22 M110 106 h40 M154 106 h22 M110 116 h28 M106 126 h14 M124 126 h36 M110 136 h30"></path> <path class="sk-faint" d="M228 45 V138 M231 50 h5 M231 55 h3 M231 60 h5 M231 65 h2 M231 70 h5 M231 75 h3 M231 80 h5 M231 85 h2 M231 90 h4 M231 95 h5 M231 100 h2 M231 105 h5 M231 110 h3 M231 115 h5 M231 120 h2 M231 125 h4 M231 130 h3"></path> <text x="162" y="91">Code</text> </g> <!-- The terminal, in the panel under the editor. --> <g class="sk-box sk-c-sage" data-pane="terminal"> <rect x="92" y="146" width="148" height="57" rx="3"></rect> <path class="sk-faint" d="M98 153 h14 M118 153 h14 M138 153 h20"></path> <path class="sk-ink" d="M164 153 h16"></path> <path class="sk-accent" d="M163 158.75 h18"></path> <path class="sk-faint" d="M186 153 h12 M92 160 H240 M214 153 h3 M221 153 h3 M228 153 h5"></path> <path class="sk-sage-line" d="M100 170 l3 3 l-3 3"></path> <path class="sk-frame" d="M109 173 h34"></path> <rect class="sk-accent-fill" x="147" y="170" width="4" height="6"></rect> <path class="sk-faint" d="M100 184 h40 M100 192 h26"></path> <text x="196" y="181">Terminal</text> </g> <!-- The agent chat, in a pane at the right. --> <g class="sk-box sk-c-accent" data-pane="agent"> <rect x="243" y="25" width="73" height="178" rx="3"></rect> <path class="sk-spark" d="M251 29.5 v6 M248 32.5 h6 M249 30.5 l4 4 M253 30.5 l-4 4"></path> <path class="sk-faint" d="M243 39 H316 M296 32 h5 M305 32 h5"></path> <path class="sk-frame" d="M249 46 h26"></path> <path class="sk-faint" d="M262 80 h36 M268 88 h24"></path> <text x="279.5" y="118">Agent Chat</text> <rect class="sk-edge" x="249" y="166" width="61" height="31" rx="4"></rect> <path class="sk-faint" d="M254 174 h30 M254 189 h10 M268 189 h14"></path> <circle class="sk-accent-fill" cx="302" cy="189" r="4"></circle> <path class="sk-page" d="M302 191 v-4 M300 189 l2 -2 l2 2"></path> </g> <!-- The status bar. --> <path class="sk-accent-fill" d="M2 207 H19 V218 H8.75 A6.75 6.75 0 0 1 2 211.25 Z"></path> <path class="sk-faint" d="M26 212.5 h14 M46 212.5 h10 M218 212.5 h14 M238 212.5 h10 M254 212.5 h16 M276 212.5 h12 M294 212.5 h16"></path> <circle class="sk-rose" cx="63" cy="212.5" r="1.75"></circle> <path class="sk-faint" d="M68 212.5 h5"></path> <circle class="sk-ochre" cx="80" cy="212.5" r="1.75"></circle> <path class="sk-faint" d="M85 212.5 h5"></path>
+</svg>
+</figure>
+<div class="shift-words">
+<div class="shift-label">
+<p><strong>IDE</strong> integrated development environment</p>
+</div>
+<p>An IDE is built for writing code by hand: many panels, a steep learning curve, and real effort to set up. With agents, you write less code and run fewer commands yourself, yet the editor still takes the middle of the screen and most of your attention. The agent chat and git sit at the edges, and there is no way to manage the agent’s sessions at all.</p>
+</div>
+<!-- The shift's second row (index.qmd, From the IDE to the ADE): the
+     arrow down from the IDE's window above, centered on both windows, and
+     Emaki's window, as the app draws it, seen from the front, each pane a
+     box with its name in it: new chat and the chats in the sidebar, a
+     project a folder with its chats stepped in under it along a guide line
+     and one of them live, the folder a toggle that folds them up and out
+     again, agent chat in the middle, and the four panels nowhere until
+     the pointer finds their buttons in the chrome, files and outline at
+     the main area's left end and the shell terminal and the agent terminal
+     at the right, when each slides in from its side and the chat makes
+     room, as the app's do; the two of a side share it, so one coming puts
+     the other away; the next pass over a button sends its panel away
+     again, and off the window everything goes. The buttons glow at rest,
+     each in its panel's own color, as the panels are colored everywhere
+     on the site: the files ochre, the outline mauve, the shell sage, the
+     agent's terminal Claude's terracotta. The terminal is sage and the
+     agent chat the accent, as in the IDE above, so the eye finds each in
+     each: the one small at the edge, the other in the middle.
+     The window carries the name, with the app's icon beside it, as its
+     sidebar has them, and its frame and halo are the accent. The panes
+     and the fold move by js/shift.js.
+     The strokes do not scale (css/theme.scss, The shift), so the hairline
+     holds at any width. No blank line belongs in this file, and nothing
+     under a div is indented four spaces: Pandoc reads what is between a
+     div's tags as Markdown, so one would end the block and the other would
+     make a code block of a line. -->
+<svg class="shift-arrow" viewbox="0 0 24 56" aria-hidden="true">
+<path d="M12 4 V50 M3 40 l9 10 l9 -10"></path>
+</svg>
+<figure class="shift-pane shift-ade figure">
+<svg id="shift-ade" viewbox="0 0 320 220" role="img" aria-label="Emaki's window with its panes named: new chat and the chats in the sidebar, a project with its chats under it and one of them live, agent chat in the middle, and four panels that slide in from the sides when the pointer finds their buttons in the chrome, as in the app: files or outline at the left, the shell terminal or the agent terminal at the right.">
+<g class="sk-frame"> <rect class="sk-window" x="0" y="0" width="320" height="220" rx="8"></rect> <path d="M1 22 H319 M88 22 V219"></path> </g> <g class="sk-lights"><circle class="sk-rose" cx="13" cy="11.5" r="3.5"></circle><circle class="sk-ochre" cx="24" cy="11.5" r="3.5"></circle><circle class="sk-sage" cx="35" cy="11.5" r="3.5"></circle></g> <!-- The name: the app's icon and its wordmark, as its sidebar has them. --> <image href="assets/emaki-icon.png" x="46" y="5" width="13" height="13"></image> <text class="sk-name" x="62" y="15">Emaki</text> <!-- The four buttons of the chrome, as the app has them: files and outline at the main area's left end, the shell terminal and the agent terminal at the right, each pair in a frame. Each pass of the pointer over one turns its pane, in then out, and takes the other pane of its side away, as the two of a side share it; a button fills while its pane is out. At rest each glows in its pane's color, the panels' own: ochre, mauve, sage and Claude's terracotta. Each is a square, as the app's icon buttons are; the hit rects give the pointer more than the buttons to find. --> <rect class="sk-edge" x="100" y="5" width="25" height="13" rx="3"></rect> <rect class="sk-edge" x="288" y="5" width="25" height="13" rx="3"></rect> <g id="ade-files-btn" class="sk-btn sk-btn-ochre"> <rect class="sk-hit" x="92" y="1" width="20" height="21"></rect> <rect class="sk-face" x="101" y="6" width="11" height="11" rx="2"></rect> <path class="sk-glyph" d="M103.5 9.25 h2.25 l1.1 1.1 H109.5 V13.75 H103.5 Z"></path> </g> <g id="ade-outline-btn" class="sk-btn sk-btn-mauve"> <rect class="sk-hit" x="112" y="1" width="18" height="21"></rect> <rect class="sk-face" x="113" y="6" width="11" height="11" rx="2"></rect> <path class="sk-glyph" d="M115.5 9.5 h6 M115.5 11.5 h4 M115.5 13.5 h5"></path> </g> <g id="ade-shell-btn" class="sk-btn sk-btn-sage"> <rect class="sk-hit" x="283" y="1" width="18" height="21"></rect> <rect class="sk-face" x="289" y="6" width="11" height="11" rx="2"></rect> <path class="sk-glyph" d="M291.5 9.5 l2 2 l-2 2 M295 13.5 h2.5"></path> </g> <g id="ade-agent-btn" class="sk-btn sk-btn-claude"> <rect class="sk-hit" x="301" y="1" width="18" height="21"></rect> <rect class="sk-face" x="301" y="6" width="11" height="11" rx="2"></rect> <path class="sk-glyph" d="M306.5 9.25 v4.5 M304.25 11.5 h4.5 M304.9 9.9 l3.2 3.2 M308.1 9.9 l-3.2 3.2"></path> </g> <!-- The sidebar: new chat, then the prior chats, each project with its sessions under it. --> <g class="sk-box sk-c-gray" data-pane="new"> <rect x="5" y="27" width="78" height="14" rx="3"></rect> <circle class="sk-accent-fill" cx="14" cy="34" r="4.5"></circle> <path class="sk-page" d="M14 31.5 v5 M11.5 34 h5"></path> <text class="sk-start" x="23" y="34.5">New Chat</text> </g> <!-- The chats: a project with its chats stepped in under it and one of them live, two more projects folded under. The first project's folder is a toggle like the two buttons: a pass of the pointer folds its chats up into it and the next unfolds them (js/shift.js). --> <g class="sk-box sk-c-gray" data-pane="chats"> <rect x="5" y="46" width="78" height="150" rx="3"></rect> <text class="sk-start sk-small" x="11" y="56">Projects</text> <g id="ade-fold-btn" class="sk-btn sk-btn-ochre sk-fold"> <path class="sk-face" d="M11 63 h3 l1.5 1.5 H19 V69 H11 Z"></path> <path class="sk-ink" d="M24 66 h18"></path><path class="sk-faint" d="M64 64 l4 4 M66.5 63.5 l-1 1 M65.5 67.5 l1 -1 M72 66 h6"></path> <rect class="sk-hit" x="5" y="59" width="78" height="14"></rect> </g> <g id="ade-chats"> <path class="sk-faint" d="M14.5 72 V116"></path> <path class="sk-spark" d="M24 75.5 v5 M21.5 78 h5 M22.2 76.2 l3.6 3.6 M25.8 76.2 l-3.6 3.6"></path><path class="sk-frame" d="M31 78 h34"></path> <path class="sk-spark" d="M24 87.5 v5 M21.5 90 h5 M22.2 88.2 l3.6 3.6 M25.8 88.2 l-3.6 3.6"></path><path class="sk-frame" d="M31 90 h28"></path> <rect class="sk-wash" x="17" y="96" width="62" height="12" rx="3"></rect> <rect class="sk-accent-fill" x="5" y="97" width="1.5" height="10" rx="0.75"></rect> <path class="sk-spark" d="M24 99.5 v5 M21.5 102 h5 M22.2 100.2 l3.6 3.6 M25.8 100.2 l-3.6 3.6"></path><path class="sk-ink" d="M31 102 h30"></path> <circle class="sk-sage" cx="73" cy="102" r="1.75"></circle> <path class="sk-faint" d="M31 114 h12"></path> </g> <g id="ade-below"> <path class="sk-frame" d="M11 123 h3 l1.5 1.5 H19 V129 H11 Z"></path><path class="sk-frame" d="M24 126 h22"></path><path class="sk-faint" d="M72 126 h6"></path> <path class="sk-frame" d="M11 135 h3 l1.5 1.5 H19 V141 H11 Z"></path><path class="sk-frame" d="M24 138 h20"></path><path class="sk-faint" d="M72 138 h6"></path> </g> <text x="44" y="170">Chats</text> </g> <!-- The agent chat: a message of yours, the agent's reply, and the message box. It makes room for each panel that comes: what hangs from its left edge moves with the left panel, what hangs from its right edge with the right one, and what spans it shortens (js/shift.js). --> <g class="sk-box sk-c-accent" data-pane="chat"> <rect id="ade-chat" x="96" y="30" width="216" height="178" rx="3"></rect> <rect id="ade-bubble" class="sk-edge" x="220" y="44" width="84" height="16" rx="8"></rect> <path id="ade-bubble-line" class="sk-faint" d="M230 52 h64"></path> <text id="ade-chat-label" class="sk-big" x="204" y="128">Agent Chat</text> <rect id="ade-composer" class="sk-edge" x="104" y="156" width="200" height="44" rx="7"></rect> <g id="ade-left"> <path class="sk-spark" d="M110 71.5 v9 M105.5 76 h9 M106.8 72.8 l6.4 6.4 M113.2 72.8 l-6.4 6.4"></path> <path id="ade-reply" class="sk-frame" d="M118 76 h14 M104 88 h88 M104 98 h62"></path> <path class="sk-ink" d="M112 164 v9"></path> <path id="ade-hint" class="sk-faint" d="M116 168.5 h30"></path> <circle class="sk-frame" cx="114" cy="190" r="4.5"></circle> <path class="sk-frame" d="M114 187.75 v4.5 M111.75 190 h4.5"></path> <g id="ade-pill"> <rect class="sk-edge" x="124" y="184" width="26" height="12" rx="6"></rect> <circle class="sk-frame" cx="130" cy="190" r="1.25"></circle><path class="sk-frame" d="M134 190 h11"></path> </g> </g> <g id="ade-send"> <circle class="sk-accent-fill" cx="293" cy="190" r="6.5"></circle> <path class="sk-page" d="M293 193.25 v-6.5 M289.75 190 l3.25 -3.25 l3.25 3.25"></path> </g> </g> <!-- The four panes, which rest beyond the main area's edges, the files and the outline behind the sidebar and the two terminals beyond the window, and slide in. --> <defs> <clippath id="ade-main"><rect x="89" y="23" width="229" height="195"></rect></clippath> </defs> <g clip-path="url(#ade-main)"> <g id="ade-files" transform="translate(-74 0)"> <g class="sk-box sk-c-ochre" data-pane="files"> <rect x="96" y="30" width="64" height="178" rx="3"></rect> <path class="sk-faint" d="M102 38 h16 M142 38 h12 M96 44 H160"></path> <path class="sk-frame" d="M102 51 h3 l1.5 1.5 H110 V57 H102 Z"></path><path class="sk-ink" d="M114 54 h22"></path> <path class="sk-faint" d="M104 63.5 l2 2 l-2 2 M110 65.5 h22 M104 73.5 l2 2 l-2 2 M110 75.5 h18 M104 83.5 l2 2 l-2 2 M110 85.5 h24 M110 95.5 h20 M110 105.5 h26 M110 115.5 h16 M110 125.5 h22"></path> <circle class="sk-ochre" cx="153" cy="65.5" r="1.5"></circle> <circle class="sk-ochre" cx="153" cy="85.5" r="1.5"></circle> <text x="128" y="150">Files</text> </g> </g> <g id="ade-outline" transform="translate(-74 0)"> <g class="sk-box sk-c-mauve" data-pane="outline"> <rect x="96" y="30" width="64" height="178" rx="3"></rect> <path class="sk-faint" d="M102 38 h22 M96 44 H160 M102 51 h12"></path> <rect class="sk-edge" x="102" y="57" width="9" height="6" rx="1.5"></rect><path class="sk-frame" d="M115 60 h26"></path> <rect class="sk-edge" x="102" y="69" width="9" height="6" rx="1.5"></rect><path class="sk-frame" d="M115 72 h20"></path> <rect class="sk-wash" x="99" y="79" width="58" height="12" rx="3"></rect> <rect class="sk-edge" x="102" y="82" width="9" height="6" rx="1.5"></rect><path class="sk-ink" d="M115 85 h30"></path> <rect class="sk-edge" x="102" y="95" width="9" height="6" rx="1.5"></rect><path class="sk-frame" d="M115 98 h24"></path> <rect class="sk-edge" x="102" y="107" width="9" height="6" rx="1.5"></rect><path class="sk-frame" d="M115 110 h18"></path> <text x="128" y="150">Outline</text> </g> </g> <g id="ade-shell" transform="translate(86 0)"> <g class="sk-box sk-c-sage" data-pane="shell"> <rect x="248" y="30" width="64" height="178" rx="3"></rect> <path class="sk-ink" d="M254 38 h14"></path> <path class="sk-faint" d="M278 35.5 v5 M275.5 38 h5 M248 44 H312"></path> <path class="sk-sage-line" d="M254 53 l3 3 l-3 3 M254 75 l3 3 l-3 3 M254 97 l3 3 l-3 3"></path> <path class="sk-frame" d="M263 56 h36 M263 78 h26"></path> <path class="sk-faint" d="M254 66 h46 M254 88 h40 M254 94 h32"></path> <rect class="sk-accent-fill" x="263" y="97" width="4" height="6"></rect> <text x="280" y="145">Shell</text> <text x="280" y="156">Terminal</text> </g> </g> <g id="ade-agent" transform="translate(86 0)"> <g class="sk-box sk-c-claude" data-pane="agent"> <rect x="248" y="30" width="64" height="178" rx="3"></rect> <path class="sk-claude-spark" d="M257 35 v6 M254 38 h6 M254.9 35.9 l4.2 4.2 M259.1 35.9 l-4.2 4.2"></path><path class="sk-ink" d="M264 38 h20"></path> <path class="sk-faint" d="M248 44 H312"></path> <path class="sk-claude-line" d="M254 53 l3 3 l-3 3"></path><path class="sk-frame" d="M263 56 h32"></path> <circle class="sk-frame" cx="255.5" cy="68" r="1.5"></circle><path class="sk-faint" d="M261 68 h40 M261 74 h28"></path> <circle class="sk-frame" cx="255.5" cy="86" r="1.5"></circle><path class="sk-faint" d="M261 86 h30"></path> <rect class="sk-edge" x="253" y="96" width="54" height="14" rx="2"></rect><path class="sk-claude-line" d="M258 101 l2 2 l-2 2"></path> <text x="280" y="145">Agent</text> <text x="280" y="156">Terminal</text> </g> </g> </g>
+</svg>
+</figure>
+<div class="shift-words">
+<div class="shift-label">
+<p><strong>ADE</strong> agentic development environment</p>
+</div>
+<p>Emaki, an agentic development environment, turns this around. The agent chat is the main panel, rendered with care, and four panels open beside it when you need them: files, outline, shell terminal and agent terminal. Sessions are listed under their projects, where you can manage them and keep them safe from automatic deletion.</p>
+</div>
+</section>
+<section id="get-started" class="level2 band rise">
+<h2 data-anchor-id="get-started">Get started</h2>
+<p>Download the app, install an agent, and you are ready. Git and the GitHub CLI are optional, for version control from the window.</p>
+<div class="starts">
+<section id="download-emaki" class="level3 start">
+<h3 data-anchor-id="download-emaki">Download Emaki</h3>
+<p>For macOS, Windows and Linux.</p>
+<!-- The download in Get started's first step: the hero's control
+     (_download.html) made compact, the pill saying only Download, as the
+     card is narrow, and taking this computer's installer all the same;
+     the segment at its right opens the other systems. js/page.js runs
+     every `.dl` alike; `data-short` keeps the word short. No blank line
+     belongs in this file, and nothing under a div is indented four
+     spaces. -->
+<div class="dl dl-step" data-short="">
+<a class="pill pill-accent i-download dl-main" href="https://github.com/alkaline-software/emaki/releases/latest">Download</a> <button class="dl-more" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="dl-step-menu" aria-label="Download for another system"></button>
+<div id="dl-step-menu" class="dl-menu" role="menu" aria-label="Downloads">
+<a role="menuitem" data-os="mac" data-chip="arm64" data-name="macOS" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-arm64.dmg"><strong>macOS</strong> <span>Apple silicon</span></a> <a role="menuitem" data-os="mac" data-chip="x64" data-name="macOS" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-x64.dmg"><strong>macOS</strong> <span>Intel</span></a> <a role="menuitem" data-os="windows" data-name="Windows" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-windows-x64-setup.exe"><strong>Windows</strong> <span>x64 installer</span></a> <a role="menuitem" data-os="linux" data-name="Linux" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-x64.AppImage"><strong>Linux</strong> <span>x64 AppImage</span></a>
+</div>
+</div>
+</section>
+<section id="install-the-agents" class="level3 start">
+<h3 data-anchor-id="install-the-agents">Install the agents</h3>
+<p>Emaki works with Claude Code and Codex.</p>
+<div class="start-links">
+<p><a href="https://docs.claude.com/en/docs/claude-code" class="pill i-claude">Claude Code</a> <a href="https://developers.openai.com/codex/cli" class="pill i-codex">Codex</a></p>
+</div>
+</section>
+<section id="git-optional" class="level3 start">
+<h3 data-anchor-id="git-optional">Git (optional)</h3>
+<p>Install Git and the GitHub CLI to commit, branch and push from Emaki.</p>
+<div class="start-links">
+<p><a href="https://git-scm.com/downloads" class="pill i-git-branch pill-git">Git</a> <a href="https://cli.github.com" class="pill i-github pill-github">GitHub</a></p>
+</div>
+</section>
+</div>
+</section>
+<section id="main-system" class="level2 band rise">
+<h2 data-anchor-id="main-system">Main system</h2>
+<p>Sessions are listed and managed under their projects. The agent chat takes the main space, rendered in high quality.</p>
+</section>
+<div class="cards cards-2 rise">
+<div class="card">
+<div class="fig" data-figure="projects" aria-label="Emaki's sidebar lying flat: projects in rows, the open one with its sessions under it. The project under the pointer unfolds its sessions, and the rows below make room.">
+
+</div>
+<section id="projects" class="level3">
+<h3 data-anchor-id="projects"><a href="./docs/projects.html">Projects</a></h3>
+<p>Every folder you work in is a project, its sessions under it, from Claude Code and Codex side by side. Each Claude Code session is copied before anything reads it, so one the agent has deleted is still here, and <kbd>⌘K</kbd> searches them all.</p>
+</section>
+</div>
+<div class="card">
+<div class="fig" data-figure="chats" aria-label="Emaki's chat lying flat: the transcript, and the composer under it. With the pointer on the composer, the draft rises as a bubble and lands at the transcript's end.">
+
+</div>
+<section id="chats" class="level3">
+<h3 data-anchor-id="chats"><a href="./docs/chats.html">Chats</a></h3>
+<p>The transcript as it reads: prompts in bubbles, replies across, tool calls as cards. Under it the composer, with attachments, <code>@</code> for a file, <code>/</code> for a command, and the mode, model and effort a click away.</p>
+</section>
+</div>
+</div>
+<section id="panels" class="level2 band rise">
+<h2 data-anchor-id="panels">Panels</h2>
+<p>The panels are hidden by default: essential, but used less often than the chat. Files and outline open on the left, the two terminals on the right.</p>
+</section>
+<div class="cards cards-2 rise">
+<div class="card">
+<div class="fig" data-figure="files" aria-label="The files panel lying flat: the tree, and the file's pane beside it. The file under the pointer opens in the pane, drawn as its kind.">
+
+</div>
+<section id="files-f" class="level3">
+<h3 data-anchor-id="files-f"><a href="./docs/files.html">Files</a> <kbd>⌘⇧F</kbd></h3>
+<p>The project as a tree with git’s marks, worked like a file manager. Click a file and it opens beside the chat, drawn as its kind: code, markdown, a table, a PDF, a picture. Commit, branch and push from the same panel.</p>
+</section>
+</div>
+<div class="card">
+<div class="fig" data-figure="outline" aria-label="The outline beside the chat, lying flat. The entry under the pointer scrolls the chat to its round.">
+
+</div>
+<section id="outline-o" class="level3">
+<h3 data-anchor-id="outline-o"><a href="./docs/outline.html">Outline</a> <kbd>⌘⇧O</kbd></h3>
+<p>A label for every prompt, a few words each, under a heading for each day. Click one and the chat glides back to that round.</p>
+</section>
+</div>
+<div class="card">
+<div class="fig" data-figure="shell" aria-label="A terminal standing up with three tabs. The tab under the pointer comes up, and its screen types itself in.">
+
+</div>
+<section id="shell-terminal-s" class="level3">
+<h3 data-anchor-id="shell-terminal-s"><a href="./docs/shell.html">Shell Terminal</a> <kbd>⌘⇧S</kbd></h3>
+<p>Your shell, opened in the project’s folder, in tabs at the chat’s right. Paste a picture and it lands as the path of a file.</p>
+</section>
+</div>
+<div class="card">
+<div class="fig" data-figure="agent" aria-label="The chat and the agent's own terminal standing side by side. The step under the pointer stands out of both.">
+
+</div>
+<section id="agent-terminal-a" class="level3">
+<h3 data-anchor-id="agent-terminal-a"><a href="./docs/agent.html">Agent Terminal</a> <kbd>⌘⇧A</kbd></h3>
+<p>The session’s own agent in its terminal, as it runs. Watch it work as in the CLI, and type into it when it asks something the window has no card for.</p>
+</section>
+</div>
+</div>
 
 
 
@@ -853,30 +960,28 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>MIT · © 2026 John Paul Helveston, Pingfan Hu, and Alkaline Software</p>
+<p><a class="foot-org" href="https://github.com/alkaline-software">©&nbsp;<span class="foot-year">2026 </span>Alkaline Software</a></p>
 </div>   
     <div class="nav-footer-center">
-<p>Made with <a href="https://quarto.org/" target="_blank">Quarto</a></p>
+<p><a class="foot-brand" href="./">Emaki</a></p>
 </div>
     <div class="nav-footer-right">
-      <ul class="footer-items list-unstyled">
-    <li class="nav-item">
-    <a class="nav-link" href="https://github.com/alkaline-software/emaki">
-<p>Emaki on GitHub</p>
-</a>
-  </li>  
-    <li class="nav-item">
-    <a class="nav-link" href="https://github.com/alkaline-software/emaki.lol">
-<p>This site</p>
-</a>
-  </li>  
-</ul>
-    </div>
+<p><a class="foot-github i-github" href="https://github.com/alkaline-software/emaki" aria-label="Emaki on GitHub"></a></p>
+</div>
   </div>
 </footer>
-<script src="js/navbar-widgets.js"></script>
-<script src="js/hero-scroll.js"></script>
-<script src="js/page.js"></script>
+<script>
+(function () {
+  var m = document.querySelector('meta[name="quarto:offset"]');
+  var root = m ? m.getAttribute("content") : "./";
+  ["js/navbar-widgets.js", "js/hero-scroll.js", "js/shift.js", "js/sketches.js", "js/page.js", "js/figures.js"].forEach(function (src) {
+    var s = document.createElement("script");
+    s.src = root + src;
+    s.async = false;
+    document.body.appendChild(s);
+  });
+})();
+</script>
 
 
 

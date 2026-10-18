@@ -1,11 +1,17 @@
 # Emaki
 
-> Every coding-agent session on your machine, kept for good, in one window you can also talk to.
+> An agentic development environment for Claude Code and Codex: talk to the agent in a project, with the files, git and a terminal at the chat’s side.
 
 ## Pages
 
-- [Releases](https://emaki.lol/releases.llms.md)
 - [index](https://emaki.lol/index.llms.md)
+- [Settings](https://emaki.lol/docs/settings.llms.md)
+- [Outline Panel](https://emaki.lol/docs/outline.llms.md)
+- [Get Started](https://emaki.lol/docs/index.llms.md)
+- [Chats](https://emaki.lol/docs/chats.llms.md)
 - [About](https://emaki.lol/about.llms.md)
-- [Features](https://emaki.lol/features.llms.md)
-- [Install](https://emaki.lol/install.llms.md)
+- [Agent Terminal Panel](https://emaki.lol/docs/agent.llms.md)
+- [Files Panel](https://emaki.lol/docs/files.llms.md)
+- [Keys](https://emaki.lol/docs/keys.llms.md)
+- [Projects](https://emaki.lol/docs/projects.llms.md)
+- [Shell Terminal Panel](https://emaki.lol/docs/shell.llms.md)
