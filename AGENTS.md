@@ -80,8 +80,8 @@ about.qmd                 the name and the handscroll, why, how, who makes it, c
 404.qmd
 _hero.html                the handscroll figure, inline SVG
 _download.html            the download as one control: the pill for this computer, a menu for the rest
-_shift-ide.html           the shift's first row, an IDE window, inline SVG
-_shift-ade.html           the shift's second row, the arrow down and Emaki's window, inline SVG
+_shift-ide.html           the shift's first window, an IDE's, inline SVG
+_shift-ade.html           the shift's second window, the arrow and Emaki's window, inline SVG
 css/theme.scss            the tokens, both appearances, and every element
 css/dark.scss             the dark appearance's Bootstrap knobs (Sass defaults only)
 js/navbar-widgets.js      the version in the navbar, appearance toggle, GitHub stars/forks, ⌘F to the search
@@ -240,9 +240,10 @@ render here.
   color by its name (`.fig[data-figure]`, css/theme.scss). The names are the keys of `FIGURES`
   in `entry.js`.
 - **The shift is drawn by hand, from the front, its panes named.**
-  `_shift-ide.html` and `_shift-ade.html` are its two rows, each a window
-  at the left with its words beside it in `index.qmd`, and an arrow down
-  between the windows, centered on both, in the handscroll's manner,
+  `_shift-ide.html` and `_shift-ade.html` are its two windows, side by
+  side from 992 wide with an arrow across between them and each one's
+  words under it in `index.qmd`, one under the other below with the
+  arrow turned down, centered on both, in the handscroll's manner,
   the strokes not scaling, and each pane a box (`.sk-box[data-pane]`, its
   rect first, its name a `<text>`) with its name in it: the names are the
   only words in the drawing besides Emaki's. The ADE window is Emaki's

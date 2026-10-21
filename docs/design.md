@@ -154,20 +154,26 @@ small 0.875 rem for labels, captions and caps.
   room; then the name with its own characters
   beside it, the one line, and the download and Get Started. Under it a
   hairline across the whole page, as Kaku's site closes its head, and
-  the first band after 3.5 rem of air. From 992 wide a band of words is
+  the first band after 3.5 rem of air. Between the sections below it a
+  softer line (`.rule`), the column's width, the hairline's color fading
+  out at both ends, with 3.5 rem of air over it and the next heading's
+  under it. From 992 wide a band of words is
   split as Kaku's sections are, the heading in the left part and the
   words in the right, so the words keep a reading measure; Get started's
   three steps (`.starts`) take the whole width, three to a row from 768
   wide, each a card with its numbered disc, its words and its links; the
-  shift is two rows, each a window at the left, at most 30 rem and
-  centered in its half, and its words at the right, with an arrow down
-  the left half from the one window to the other; the cards of a group
+  shift is its two windows side by side, each as wide as its half, an
+  arrow across between them, centered on both, and each one's words
+  under it, so the two halves are one shape and the words keep a reading
+  measure; the cards of a group
   of the app's parts (`.cards-2`) are two to a row, as the docs' menu
   groups them. Below 992 everything stacks in one column, the shift a
-  window, its words, the arrow, and the next; the cards two to a row and
+  window at most 30 rem, its words, the arrow turned down, and the next; the cards two to a row and
   one under 640.
 - A section begins with its h2 and 3 rem of air above it. There is no rule
-  under a heading; the air and the table of contents do that work.
+  under a heading; the air and the table of contents do that work. The
+  landing page's sections are parted by the soft line above (`.rule`),
+  never by a rule under their headings.
 - Radii: 8 px for a tile, a block of code and a cap; 12 px for a card;
   a full round for a pill. A shadow only on what floats (a menu, the
   search).
@@ -268,9 +274,10 @@ small 0.875 rem for labels, captions and caps.
   stands over the name; on the About page, under The name, at the
   column's width (`.about-fig`). One to a page: the script finds it by id.
 - **The shift** (`_shift-ide.html`, `_shift-ade.html`): under "From the
-  IDE to the ADE", two rows, each a window seen from the front with its
-  words beside it, the words headed by the window's name, small, and an
-  arrow down from the one window to the other, centered on both; each
+  IDE to the ADE", two windows seen from the front, side by side with an
+  arrow across from the one to the other, centered on both, and each
+  one's words under it, headed by the window's name, small; one under the
+  other below 992, the arrow turned down; each
   pane in each window a box with its name in it, as Positron's
   own diagram of its window names its regions, drawn in the handscroll's
   manner. The left is an editor's window as one has it today, its panes

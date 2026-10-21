@@ -770,29 +770,28 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
 /* ---- The shift ---- */
 
 // From the IDE to the ADE (index.qmd, _shift-ide.html, _shift-ade.html):
-// two rows under the heading, each a window seen from the front at the
-// left and its words at the right, and an arrow down the left column
-// from the one window to the other, centered on both. One column under
-// 992 wide: a window, its words, the arrow, the next window, its words.
-// The strokes do not scale, as the handscroll's do not.
+// from 992 wide the two windows side by side under the heading, each seen
+// from the front and as wide as its column, an arrow across from the one
+// to the other, centered on both, and each window's words under it, so
+// the two columns are one shape and the words keep a reading measure. One
+// column under 992 wide: a window, its words, the arrow turned down, the
+// next window, its words. The strokes do not scale, as the handscroll's
+// do not.
 .shift {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  column-gap: 3.5rem;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr);
   max-width: var(--w-page);
   margin: 0 auto;
 
-  > h2:first-child { grid-column: 1 / -1; margin-top: 3.5rem; margin-bottom: 1.5rem; }
-  > .shift-words { grid-column: 2; }
-  > .shift-arrow { grid-column: 1; justify-self: center; }
+  > h2:first-child { margin-top: 3.5rem; margin-bottom: 1.5rem; }
+  > .shift-words { margin-top: 1.25rem; }
+  > .shift-arrow { justify-self: center; }
 }
 
 // Quarto gives every <figure> its own `figure` class, and its
 // `figure.figure { display: block }` outranks a class alone, so the pane
 // is selected from its parent.
 .shift > .shift-pane {
-  grid-column: 1;
   justify-self: center;
   width: 100%;
   max-width: 30rem;
@@ -810,12 +809,18 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
   svg * { vector-effect: non-scaling-stroke; }
 }
 
-@media (max-width: 991.98px) {
+@media (min-width: 992px) {
   .shift {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) 3.5rem minmax(0, 1fr);
+    column-gap: 2rem;
 
-    > .shift-words, > .shift-arrow, > .shift-pane { grid-column: 1; }
-    > .shift-words { margin-top: 1.25rem; }
+    > h2:first-child { grid-column: 1 / -1; }
+    > .shift-pane { grid-row: 2; max-width: none; }
+    > .shift-ide { grid-column: 1; }
+    > .shift-ade { grid-column: 3; }
+    > .shift-ide + .shift-words { grid-area: 3 / 1; margin-top: 2rem; }
+    > .shift-ade + .shift-words { grid-area: 3 / 3; margin-top: 2rem; }
+    > .shift-arrow { grid-area: 2 / 2; align-self: center; margin: 0; transform: rotate(-90deg); }
   }
 }
 
@@ -879,7 +884,8 @@ body.quarto-dark .shift-ade svg {
 }
 .shift-words > p:last-child { margin-bottom: 0; }
 
-// Down from the one window to the other, in the gap between their rows.
+// From the one window to the other: across, between them, from 992 wide;
+// down, between the two, under it.
 .shift-arrow {
   display: block;
   width: 1.5rem;
@@ -1322,6 +1328,16 @@ body.quarto-dark .shift-ade svg {
   width: 100vw;
   margin: 3.5rem 0 3rem calc(50% - 50vw);
   background: var(--border);
+}
+
+// Between the sections below the hero, a softer line: the page's column
+// wide, the hairline's color fading out at both ends, and the next
+// heading's own air under it.
+.rule {
+  height: 1px;
+  max-width: var(--w-page);
+  margin: 3.5rem auto 0;
+  background: linear-gradient(90deg, transparent, var(--border) 20%, var(--border) 80%, transparent);
 }
 body { overflow-x: clip; }
 
