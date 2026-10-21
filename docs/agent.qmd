@@ -1,20 +1,25 @@
 ---
 title: "Agent Terminal Panel"
-subtitle: "⌘⇧A: the session's own agent as it runs, in its terminal, two-way."
+subtitle: "⌘⇧A: the session's own agent in its terminal, as it runs."
 ---
 
-{{< include _sk/agent.html >}}
+::: {.layout .layout-page}
+::: {.fig data-figure="layout-agent" aria-label="Emaki's window with the agent terminal shown in color at the chat's right: the agent's own screen. The rest is gray. The panel stands forward under the pointer, and its button in the chrome puts it away."}
+:::
+:::
 
-## The agent's own screen {.i-asterisk}
+## The agent's own screen {.i-sparkles}
 
-Every session Emaki runs has a terminal behind it: Claude Code's hidden
-one, or Codex's joined to its driver. This panel draws it whole, at the
-chat's right, so you can watch the agent work as you would in the
-CLI, and type into it when you want to. It is the same terminal the
-window reads and types into, so nothing is doubled.
+If you want your agent's original CLI, this is the panel. Every session
+Emaki runs has a terminal behind it: Claude Code's hidden one, or the
+one Codex's driver joins. This panel shows it whole, at the chat's
+right, so you can watch the agent work as in the CLI and type into it.
+It is the same terminal the chat reads from and types into, so
+answering here is the same as answering in the chat, and nothing is
+doubled. Pasted screenshots reach the agent as they would in the CLI.
 
-Open it with nothing running and it starts the agent (Claude Code); where
-one cannot start, a turn running in a terminal of your own, or an
-archived session, it says why. Whatever the agent asks that the window
-has no card for can be answered here. It shares the right side with the
-[shell terminal](shell.qmd): one shows at a time.
+Open it with nothing running and it starts the agent (Claude Code).
+Where it cannot start one, while a turn runs in a terminal of your own
+or in an archived session, it says why. Anything the agent asks that the
+chat has no card for can be answered here. It shares the right side
+with the [shell terminal](shell.qmd): one shows at a time.

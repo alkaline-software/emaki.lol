@@ -11,14 +11,15 @@ radii are the app's, and what differs here is written here.
 - **Calm.** One accent, indigo (`--accent`), for what can be done: a link,
   the one pill a page is for, the entry you are on, the focus ring. The
   supportive colors each have one job (The palette) and never decorate. A
-  page with many of the same action (four downloads) draws them quiet.
+  page with many of the same action (two agents, Git and GitHub) draws
+  them quiet.
 - **Readable.** Words are set in the app's chat face, 17 px on a line of
   1.6, in a column of 60 to 75 characters. There are six sizes of type and
   nothing is set in a seventh. Bold is 600, never 700.
-- **Easy to follow.** Anything a person does is numbered steps on a rail,
-  one action each, in the order they happen, its words first and its
-  command under them, as the app's Agents page has it. Nothing to decide
-  inside a step: a choice stands before the steps.
+- **Easy to follow.** Anything a person does is numbered steps
+  (`.starts`), one action each, in the order they happen, its words first
+  and its controls under them. Nothing to decide inside a step: a choice
+  stands before the steps.
 - **Nothing jumps.** What appears, changes, opens or moves does so over a
   moment with the app's own easing (`--ease`), and not at all for someone
   who asked the system for less motion. A page fades in; the figure winds
@@ -35,7 +36,7 @@ radii are the app's, and what differs here is written here.
   setting is code. An agent is its mark in its color beside its name. A
   new element is a new pattern for every page, or it is not made.
 - **Things line up.** One column for the words, and what is wider (a grid
-  of cards, the downloads) is centered on it. Every pill, tile and cap in a
+  of cards) is centered on it. Every pill, tile and cap in a
   row is one height. Every edge is a hairline in the border's color, and
   nothing casts a shadow at rest, save the two windows of the shift on
   the landing page, each on a halo in its own color, and the two buttons
@@ -75,7 +76,7 @@ icon's.
 | `--spark` | the agent's spark: a glyph, never a ground | `#715CC7` | `#B5ADF4` |
 | `--seal` | the handscroll's title, 絵巻, in an old seal's faded red, and nothing else | `#A8665B` | `#D49A90` |
 | `--claude`, `--codex` | an agent's mark beside its name, and nothing else | `#D97757`, `#5F9E6E` | `#D97757`, `#79B487` |
-| `--sk-ochre`, `--sk-slate`, `--sk-sage`, `--sk-mauve`, `--sk-rose` | the sketches' own set, and nothing else: the files, the code, the terminal, the agent's spark, and the lights and dots (The shift); a panel's own color in its button, its docs sketch and its figure, the files ochre, the outline mauve, the shell sage (the agent's terminal is Claude's) | `#9E793D`, `#4489AE`, `#578F63`, `#986EA2`, `#AF6974` | `#DAB883`, `#8AC7EA`, `#99CDA3`, `#D5ADDE`, `#ECA9B2` |
+| `--sk-ochre`, `--sk-slate`, `--sk-sage`, `--sk-mauve`, `--sk-rose` | the drawings' own set, and nothing else: the files, the code, the terminal, the agent's spark, and the lights and dots (The shift); a value's color in the composer's close-ups; a panel's own color in its button, its docs page's window and its figure, the files ochre, the outline mauve, the shell sage (the agent's terminal is Claude's) | `#9E793D`, `#4489AE`, `#578F63`, `#986EA2`, `#AF6974` | `#DAB883`, `#8AC7EA`, `#99CDA3`, `#D5ADDE`, `#ECA9B2` |
 
 Where they come from: the light page and its panels and hairlines are a
 warm paper, as Kaku's site has it, with the app's ink and muted ink on it;
@@ -84,14 +85,14 @@ navy (`#2B2556`) lifted to read on either page (OKLCH hue 272, chroma 0.13
 light and 0.105 dark); the mark is its amber bar and the spark its violet;
 the agents' colors are the app's own for them (`look::ACCENTS`).
 Terracotta, the app's default accent, is Claude's color here, beside
-its name and on the agent's side of the terminal in its sketch, and never
+its name and in the agent's terminal, and never
 the page's. Amber is never text. The frame is graphite given the
 accent's hue (OKLCH L 0.35, C 0.04, h 272, a step darker in the dark
 appearance), so the navbar and the footer belong to the accent without
 being it; on it the accent is its dark shade in both appearances. The shift's set is five hues at one lightness and chroma (OKLCH L
 0.60, C 0.09 on the light page; L 0.80, C 0.08 on the dark), so a drawing
 of many panes reads as one calm, warm family and not as colors picked one
-by one; it is the sketch's alone. A color that is not a token is a
+by one; it is the drawings' alone. A color that is not a token is a
 mistake.
 
 ## The type
@@ -160,8 +161,8 @@ small 0.875 rem for labels, captions and caps.
   under it. From 992 wide a band of words is
   split as Kaku's sections are, the heading in the left part and the
   words in the right, so the words keep a reading measure; Get started's
-  three steps (`.starts`) take the whole width, three to a row from 768
-  wide, each a card with its numbered disc, its words and its links; the
+  three steps (`.starts`) take the whole width, three to a row where
+  their column is 640 wide, each a card with its numbered disc, its words and its links; the
   shift is its two windows side by side, each as wide as its half, an
   arrow across between them, centered on both, and each one's words
   under it, so the two halves are one shape and the words keep a reading
@@ -173,7 +174,8 @@ small 0.875 rem for labels, captions and caps.
 - A section begins with its h2 and 3 rem of air above it. There is no rule
   under a heading; the air and the table of contents do that work. The
   landing page's sections are parted by the soft line above (`.rule`),
-  never by a rule under their headings.
+  and a docs page's sections by the same line, drawn by the sheet in the
+  air over each h2 after the first; never by a rule under a heading.
 - Radii: 8 px for a tile, a block of code and a cap; 12 px for a card;
   a full round for a pill. A shadow only on what floats (a menu, the
   search).
@@ -201,14 +203,40 @@ small 0.875 rem for labels, captions and caps.
   figure both go to the part's page; the name is in a deep shade of the
   part's color (62% of it in the ink), nearer the color under the
   pointer (85%), deepest pressed (45%), the same once visited.
-- **Steps** (`.steps`): an ordered list. Each item is a numbered disc on a
-  rail, an h3, its words, and any command in a code block under them.
-- **Downloads** (`.downloads > .download`): four tiles, each the
-  system's mark (the app's own `os/` icons), its name and a chip. The
-  visitor's own system is marked by `js/page.js`, which tells a Mac's
-  chip by its graphics renderer and marks both Mac tiles when it cannot.
-- **Agents** (`.agents > .agent`): the agent's mark in its color, its
-  name in bold, and what Emaki does with it.
+- **Steps** (`.starts > .start`): a card a step, on the landing page
+  and on Get Started alike: a numbered disc, an h3, a line or two, and
+  its controls at the card's foot (the compact download,
+  `_download-step.html`, or a pair of pills in equal widths), so the
+  three rows line up. Three to a row where the column is 640 wide, one
+  under the other in less.
+- **The layout** (`.layout`, Get Started): Emaki's window on Hairline as
+  the app opens it, the sidebar and the chat, and the six parts named
+  around it: the four panels over it, Files, Outline, Shell Terminal and
+  Agent Terminal, each its name over its key, with a leader to its
+  button in the chrome; Projects and Chats under it, with leaders to the
+  projects' box in the sidebar (not the sidebar whole: New Session, All
+  Sessions and Agents are over it) and to the chat. A few of the app's
+  own words say it is Emaki's window, small, in the wordmark's face and
+  the muted ink: the icon and the name in the accent in the chrome, the
+  sidebar's three rows with their icons, the projects' heading and the
+  open project's name; the chat and the panels stay lines. Each part is in its
+  own color: its frame and faint wash, its leader, its button and its
+  name in the shade a part's card gives it. The panels are hidden until
+  the pointer finds a panel's button or its name: then it slides in
+  from its side while the chat makes room, its button fills, and its
+  leader runs on to its head: the middle of it for the outline and the
+  shell, the outer corner for the files and the agent's terminal, so no
+  leader crosses a button, the name or a panel. A lit part stands forward as a part does
+  in the six figures, and its name nears its color. Where the box is
+  under 720 wide the names are tiles under the window, two to a row and
+  one under 480, washed as a part's card is, the key at the far end, and
+  the box keeps room under the window for a part standing forward.
+  The same window opens each part's docs page (`.layout-page`, under the
+  title, centered and at most 36 rem wide): no names, only that part in
+  its color, the rest in the window's gray at half strength, so the six
+  pages read as one window looked at six ways. A panel's page has its
+  panel in from the start, its button filled; the pointer on the button
+  puts it away and on the part brings it forward.
 - **People** (`.people > .person`): who makes it, on the About page. A
   picture from `assets/team/`, a name in bold that is a link, and a line
   or two. A person's picture is a circle; the studio's mark
@@ -228,22 +256,31 @@ small 0.875 rem for labels, captions and caps.
   the page after at the right, each a quiet word in the chrome's face
   with the app's arrow beside it, the ink under the pointer. The way
   runs through the whole menu, across the groups (`js/page.js`).
-- **The sketches** (`.sketch`, `docs/_sk/*.html`, one under each docs
-  page's title): Emaki's window drawn as the shift's ADE is, with the
-  ADE's frame and halo. One base for every page, the sidebar, the
-  chat with its composer, and the panels at its sides; on each
-  page its own part is in color and the rest is gray at half strength
-  (`.sk-dim`), the frame, the lights, the name and the send button
-  keeping their colors, so the eight read as one window looked at
-  eight ways. The things in it that can be done are drawn as the app
-  has them, a button with the shift's glow, a row that washes, a
-  segment, and only the page's own part has any. Each answers the
-  pointer as the app would: a pass turns its thing, the next turns it
-  back, and off the figure everything returns to rest (`js/sketches.js`);
-  what fades does so over a moment and what moves runs on the
-  handscroll's spring. A line under it, in the chrome's face, says what
-  answers. The words in it are small, in the wordmark's face, from the
-  left, and name only what the app names.
+- **The settings sheet** (Settings, `layout-settings`): the layout's
+  window, gray at half strength, and the sheet standing forward over its
+  main area with its shadow under it: the rail of the eight sections at
+  the left, the one showing washed, and its name over its groups at the
+  right, each group a card of rows, a name at the left and the control
+  at the right as the app lays them: Appearance's look and seven accents
+  (the chosen one ringed), Fonts' two faces and text size, New
+  sessions' agent and its three, Updates' switch and button. The
+  pointer on a section in the rail shows it.
+- **The composer's foot** (Chats, `composer-pills` and
+  `composer-status`, composer.js): the chat's face close up as a slab,
+  the composer on it and the status line under it, in the layout's
+  strokes and the app's own words. On Mode, model and effort the pills
+  are the figure's own and the status line gray; a pill under the
+  pointer opens its list over it, standing forward with its shadow,
+  the current row washed and ticked, and a row under the pointer puts
+  its value on the pill, which grows to fit it and moves the next. On
+  Status line the box is cut to the composer's last row and the line,
+  the composer gray; a part under the pointer stands forward on a plate
+  in the accent and shows a higher number. Each mode, level and number
+  is in the agent's color in the nearest of the set: the muted ink for
+  manual, mauve for accept edits and extra high, slate for plan, ochre
+  for auto and low, sage for medium, the accent for high, max in three
+  through its letters; the context sage, ochre from 70% and rose from
+  85%; a limit slate, mauve from 70% and rose from 90%.
 - **The kinds of file** (`.types`, on the Files Panel page): a tile a
   kind, two to a row and one under 600 wide, the icon in the accent at
   the left, the name in the ink and one line under it in the muted ink.

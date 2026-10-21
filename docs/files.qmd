@@ -1,28 +1,31 @@
 ---
 title: "Files Panel"
-subtitle: "⌘⇧F: the project's folder as a tree, a pane for any file, and git on top of it."
+subtitle: "⌘⇧F: the project as a tree, a pane to read and edit any file, and git."
 ---
 
-{{< include _sk/files.html >}}
+::: {.layout .layout-page}
+::: {.fig data-figure="layout-files" aria-label="Emaki's window with the files panel shown in color at the chat's left: the tree with git's marks. The rest is gray. The panel stands forward under the pointer, and its button in the chrome puts it away."}
+:::
+:::
 
 ## The tree {.i-tree-view}
 
-The project's folder, with git's marks on it: a letter on a changed file,
-a dot on a folder with changes under it, ignored files dimmed. It works
-like a file manager: drag in from Finder, drag rows to move them, cut,
-copy, duplicate, remove ([⌘⌫]{.kbd}, to the Trash) and undo
-([⌘Z]{.kbd}). New File and New Folder are at the head, and a file the
-agent writes appears as it lands.
+The project's folder as a tree, with Catppuccin's file icons and git's
+marks: a letter on a changed file, a dot on a folder with changes
+inside, and ignored files dimmed. It works like a file manager: drag
+files in from Finder, drag rows to move them, cut, copy, duplicate, move
+to the Trash ([⌘⌫]{.kbd}) and undo ([⌘Z]{.kbd}). New File and New Folder
+are at the top, and a file the agent writes appears as soon as it lands.
 
 ## Open and edit {.i-file-text}
 
-Click a file and it opens in a pane between the tree and the
-chat; click it again to put it away. The enlarge button gives the
-pane the chat's room. [⌘S]{.kbd} saves, [⌘W]{.kbd} closes, and
-nothing unsaved is lost without asking. Format on save covers ten
-languages and is off until you turn it on.
+Click a file to open it in a pane between the tree and the chat; click
+it again to close it. The enlarge button gives the pane the chat's
+room. [⌘S]{.kbd} saves, [⌘W]{.kbd} closes, and Emaki asks before
+anything unsaved is lost. Format on save covers ten languages and is off
+until you turn it on.
 
-Code comes with line numbers, colors and a gutter mark per git change,
+Code has line numbers, colors, and a gutter mark for each git change,
 with a card to see or revert it. Every kind of file is drawn for what it
 is:
 
@@ -41,14 +44,15 @@ is:
 
 ## Git {.i-git-branch}
 
-In a repository the branch is named at the tree's head. Click it to
-switch, make a branch ([⌘⇧N]{.kbd}) or publish one; Fetch and Pull sit
-at the list's foot. A switch with uncommitted changes asks whether to
-leave them or bring them along, and goes through only when every change
-lands where you asked.
+In a repository, the branch's name sits at the top of the tree. Click it
+to switch branches, make one ([⌘⇧N]{.kbd}) or publish one; Fetch and
+Pull are at the bottom of the list. If you switch with uncommitted
+changes, Emaki asks whether to leave them or bring them along, and
+switches only when every change can go where you asked.
 
-The **Changes** pill ([⌘⇧G]{.kbd}) opens the sheet: tick the files, write
-the message, commit ([⌘↩]{.kbd}), push ([⌘P]{.kbd}). **History** browses
+The **Changes** pill ([⌘⇧G]{.kbd}) opens the Changes sheet: tick the
+files, write the message, commit ([⌘↩]{.kbd}) and push ([⌘P]{.kbd}). A
+changed picture shows before and after, side by side. **History** lists
 the commits: Undo takes back the newest while the remote does not have
-it, Revert takes back any one as a new commit. Nothing is committed,
-pushed or pulled without a click that says so.
+it, and Revert takes back any one as a new commit. Nothing is committed,
+pushed or pulled until you click to do it.

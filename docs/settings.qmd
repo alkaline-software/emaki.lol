@@ -1,30 +1,33 @@
 ---
 title: "Settings"
-subtitle: "⌘, opens eight sections, Appearance to About."
+subtitle: "⌘, opens eight sections, from Appearance to About."
 ---
 
-{{< include _sk/settings.html >}}
+::: {.layout .layout-page}
+::: {.fig data-figure="layout-settings" aria-label="Emaki's settings sheet standing forward over the window, which is gray behind it: the rail of its eight sections at the left, and at the right the section showing, Appearance with the look and the seven accents. Fonts, New sessions and Updates in the rail show their sections."}
+:::
+:::
 
 ## Appearance and Fonts {.i-palette}
 
-Appearance follows the system or pins light or dark, and the accent is
-one of seven: periwinkle, orchid, rose, amber, moss, jade or teal. Fonts
-has eight faces for the chat and four monospace faces for code
-and the terminal, all under the Open Font License, and one text size for
-all three.
+Appearance follows the system, or stays light or dark. The accent is one
+of seven colors: periwinkle, orchid, rose, amber, moss, jade or teal.
+Fonts offers eight faces for the chat and four monospace faces for code
+and the terminal, all under the Open Font License, with one text size
+for all three.
 
 ## New sessions {.i-sparkles}
 
-Each agent's mode, model and effort to begin with. The pills under the
+Each agent's mode, model and effort to start with. The pills under the
 composer change them for one session.
 
 ## Composer, Terminal, Files {.i-settings}
 
-Each one's own switches: which key sends and which languages are
-spell-checked; the terminal's scheme, its cursor, and whether a selection
-copies itself; format on save and its formatters.
+Each has its own switches: which key sends and which languages are
+spell-checked; the terminal's color scheme, its cursor, and whether a
+selection copies itself; format on save and its formatters.
 
 ## Updates and About {.i-refresh}
 
-Updates checks daily, or now, and installs the new version itself. About
-says which version this is and who makes it.
+Updates checks daily, or when you ask, and installs the new version
+itself. About shows which version this is and who makes it.

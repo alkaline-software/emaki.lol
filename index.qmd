@@ -157,7 +157,7 @@ In agent sessions, going through the history is a pain. Emaki's outline panel us
 ::: {.fig data-figure="shell" aria-label="A terminal standing up with three tabs. The tab under the pointer comes up, and its screen types itself in."}
 :::
 ### [Shell Terminal](docs/shell.qmd) [⌘⇧S]{.kbd}
-Opening a terminal and `cd`-ing to the correct location is trivial, but repeatedly doing it is a pain. Emaki's shell terminal panel does it for you. It also supports multiple tabs. The terminal UI is inspired by [Kaku](https://kaku.fun).
+Opening a terminal and `cd`-ing to the correct location is trivial, but repeatedly doing it is a pain. Emaki's shell terminal panel does it for you. It also supports multiple tabs. The terminal UI is based on [Kaku](https://kaku.fun), a terminal made by [tw93](https://github.com/tw93).
 :::
 
 ::: {.card}

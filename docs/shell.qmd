@@ -3,21 +3,25 @@ title: "Shell Terminal Panel"
 subtitle: "⌘⇧S: a shell in the project's folder, in tabs beside the chat."
 ---
 
-{{< include _sk/shell.html >}}
+::: {.layout .layout-page}
+::: {.fig data-figure="layout-shell" aria-label="Emaki's window with the shell terminal shown in color at the chat's right: its tabs, prompts and output. The rest is gray. The panel stands forward under the pointer, and its button in the chrome puts it away."}
+:::
+:::
 
 ## A shell where the work is {.i-terminal}
 
-Your login shell, opened in the session's folder, at the chat's
-right. Shells are tabs: the **+** or [⌘T]{.kbd} opens one, [⌘W]{.kbd}
-closes it, [⌘K]{.kbd} clears the screen, and a drag reorders them. They
-stay open until you close them or quit.
+Opening a terminal and `cd`-ing to the project is easy, but doing it
+again and again is a pain. The shell terminal opens your login shell in
+the session's folder, at the chat's right. Shells are tabs: the **+** or
+[⌘T]{.kbd} opens one, [⌘W]{.kbd} closes it, [⌘K]{.kbd} clears the
+screen, and you can drag tabs to reorder them. They stay open until you
+close them or quit.
 
 Paste a picture and it lands as the path of a file. A selection can copy
-itself when you let go (Settings, Terminal). Mouse-aware programs take
-clicks and scrolls, and the Mac's line keys work ([⌘←]{.kbd},
-[⌘→]{.kbd}, [⌘⌫]{.kbd}). The look is
-[Kaku](https://github.com/tw93/kaku)'s, in the window's own colors and
-face.
+itself when you let go (Settings, Terminal). Programs that use the mouse
+get its clicks and scrolls, and the Mac's line keys work ([⌘←]{.kbd},
+[⌘→]{.kbd}, [⌘⌫]{.kbd}). The look is inspired by
+[Kaku](https://kaku.fun), in the window's own colors and font.
 
 The same shell opens beside the install steps on the Agents page, for
 the commands they give. It shares the right side with the
