@@ -16,7 +16,7 @@ The agentic development environment.
 
 **IDE** integrated development environment
 
-An IDE is built for writing code by hand: many panels, a steep learning curve, and real effort to set up. With agents, you write less code and run fewer commands yourself, yet the editor still takes the middle of the screen and most of your attention. The agent chat and git sit at the edges, and there is no way to manage the agent’s sessions at all.
+An IDE is the traditional way to work on code: built for writing it by hand, with many panels and a steep learning curve. With agents, the chat does most of the work, yet the editor still takes the middle of the screen and the chat gets a narrow pane at the edge.
 
 ![](data:image/svg+xml;base64,PHN2ZyBjbGFzcz0ic2hpZnQtYXJyb3ciIHZpZXdib3g9IjAgMCAyNCA1NiIgYXJpYS1oaWRkZW49InRydWUiPgo8cGF0aCBkPSJNMTIgNCBWNTAgTTMgNDAgbDkgMTAgbDkgLTEwIiAvPgo8L3N2Zz4=)
 
@@ -24,11 +24,11 @@ An IDE is built for writing code by hand: many panels, a steep learning curve, a
 
 **ADE** agentic development environment
 
-Emaki, an agentic development environment, turns this around. The agent chat is the main panel, rendered with care, and four panels open beside it when you need them: files, outline, shell terminal and agent terminal. Sessions are listed under their projects, where you can manage them and keep them safe from automatic deletion.
+Emaki turns this around. The agent chat takes the main space, and the sidebar groups your sessions under their projects. The supporting panels (files, outline and the two terminals) stay hidden until you need them.
 
 ## Get started
 
-Download the app, install an agent, and you are ready. Git and the GitHub CLI are optional, for version control from the window.
+Download the app and install an agent to get started. You can also install Git and the GitHub CLI for version control.
 
 ### Download Emaki
 
@@ -56,30 +56,30 @@ Sessions are listed and managed under their projects. The agent chat takes the m
 
 ### [Projects](docs/projects.llms.md)
 
-Every folder you work in is a project, its sessions under it, from Claude Code and Codex side by side. Each Claude Code session is copied before anything reads it, so one the agent has deleted is still here, and ⌘K searches them all.
+All sessions on Emaki are project-based. Toggle on a project from your sidebar to see its agent sessions. The leading logo tells you which agent it belongs to. You can quickly create, resume, archive, or delete your session(s).
 
 ### [Chats](docs/chats.llms.md)
 
-The transcript as it reads: prompts in bubbles, replies across, tool calls as cards. Under it the composer, with attachments, `@` for a file, `/` for a command, and the mode, model and effort a click away.
+Agent responses are nicely rendered. The artifacts, subagents, Q&A sessions, and background tasks are all taken care of with a smooth UI. The composer supports grammar check, `@` and `/` commands, and instant toggling among your available models, modes, and efforts.
 
 ## Panels
 
-The panels are hidden by default: essential, but used less often than the chat. Files and outline open on the left, the two terminals on the right.
+Emaki provides 4 panels, hidden by default, since they are essential but used less often than the chat.
 
 ### [Files](docs/files.llms.md) ⌘⇧F
 
-The project as a tree with git’s marks, worked like a file manager. Click a file and it opens beside the chat, drawn as its kind: code, markdown, a table, a PDF, a picture. Commit, branch and push from the same panel.
+The files panel provides a file tree with Catppuccin icons. You can live-render, preview, and edit your files. Most major file types are supported. With the git system, you can view git changes on the file tree and trigger git commands with an intuitive UI.
 
 ### [Outline](docs/outline.llms.md) ⌘⇧O
 
-A label for every prompt, a few words each, under a heading for each day. Click one and the chat glides back to that round.
+In agent sessions, going through the history is a pain. Emaki’s outline panel uses your basic AI model to summarize past conversations so you can quickly go through and locate them.
 
 ### [Shell Terminal](docs/shell.llms.md) ⌘⇧S
 
-Your shell, opened in the project’s folder, in tabs at the chat’s right. Paste a picture and it lands as the path of a file.
+Opening a terminal and `cd`-ing to the correct location is trivial, but repeatedly doing it is a pain. Emaki’s shell terminal panel does it for you. It also supports multiple tabs. The terminal UI is based on [Kaku](https://kaku.fun), a terminal made by [tw93](https://github.com/tw93).
 
 ### [Agent Terminal](docs/agent.llms.md) ⌘⇧A
 
-The session’s own agent in its terminal, as it runs. Watch it work as in the CLI, and type into it when it asks something the window has no card for.
+If you need the original CLI layout of your agent session, this is the right panel. It supports keyboard commands and mouse scrolling. Responding in this CLI is equivalent to responding in the chat interface.
 
 Back to top

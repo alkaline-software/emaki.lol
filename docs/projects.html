@@ -49,9 +49,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-3cbebbafb7976db68484b0045fe85eea.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-63f69ceff001a5642f0e314a0e43fc75.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-3cbebbafb7976db68484b0045fe85eea.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c5a6d65f510d84b30fc222a72c3b7625.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-b81d9d8d27f4f0e1ce7aa51a5e070d09.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-c5a6d65f510d84b30fc222a72c3b7625.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Projects – Emaki">
-<meta property="og:description" content="The sidebar: every folder you work in, with every session in it, from both agents.">
+<meta property="og:description" content="The sidebar lists your sessions grouped under their projects.">
 <meta property="og:image" content="https://emaki.lol/docs/assets/emaki-icon.png">
 <meta property="og:site_name" content="Emaki">
 </head>
@@ -411,9 +411,12 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#projects" id="toc-projects" class="nav-link active" data-scroll-target="#projects">Projects</a></li>
-  <li><a href="#sessions" id="toc-sessions" class="nav-link" data-scroll-target="#sessions">Sessions</a></li>
-  <li><a href="#kept-and-archived" id="toc-kept-and-archived" class="nav-link" data-scroll-target="#kept-and-archived">Kept and archived</a></li>
-  <li><a href="#search" id="toc-search" class="nav-link" data-scroll-target="#search">Search</a></li>
+  <li><a href="#sessions" id="toc-sessions" class="nav-link" data-scroll-target="#sessions">Sessions</a>
+  <ul class="collapse">
+  <li><a href="#in-the-sidebar" id="toc-in-the-sidebar" class="nav-link" data-scroll-target="#in-the-sidebar">In the sidebar</a></li>
+  <li><a href="#all-sessions" id="toc-all-sessions" class="nav-link" data-scroll-target="#all-sessions">All Sessions</a></li>
+  </ul></li>
+  <li><a href="#archiving" id="toc-archiving" class="nav-link" data-scroll-target="#archiving">Archiving</a></li>
   <li><a href="#tabs" id="toc-tabs" class="nav-link" data-scroll-target="#tabs">Tabs</a></li>
   </ul>
 </nav>
@@ -425,7 +428,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title d-none d-lg-block">Projects</h1>
-<p class="subtitle lead">The sidebar: every folder you work in, with every session in it, from both agents.</p>
+<p class="subtitle lead">The sidebar lists your sessions grouped under their projects.</p>
 </div>
 
 
@@ -442,36 +445,34 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<figure class="sketch figure" data-home="" data-still="open">
-<svg viewbox="0 0 320 220" role="img" aria-label="Emaki's sidebar in color, the rest of the window gray: New Session, All Sessions and Agents, then the projects, the first open with its sessions under it. The folder folds them, a session lights, and New Session brings the message box over a folder.">
-<g class="sk-frame"><rect class="sk-window" x="0" y="0" width="320" height="220" rx="8"></rect><path d="M1 22 H319 M88 22 V219"></path></g> <g class="sk-lights"><circle class="sk-rose" cx="13" cy="11.5" r="3.5"></circle><circle class="sk-ochre" cx="24" cy="11.5" r="3.5"></circle><circle class="sk-sage" cx="35" cy="11.5" r="3.5"></circle></g> <image href="../assets/emaki-icon.png" x="46" y="5" width="13" height="13"></image> <text class="sk-name" x="62" y="15">Emaki</text> <defs><clippath id="sk-main"><rect x="89" y="23" width="229" height="195"></rect></clippath><clippath id="sk-tx"><rect x="89" y="23" width="229" height="118"></rect></clippath></defs> <g class="sk-part" data-part="sidebar"> <!-- The sidebar: New Session, All Sessions and Agents, then the projects, the first open with its sessions under it, and the sections at the foot. --> <g class="sk-btn" data-go="new"><rect class="sk-hit" x="4" y="26" width="80" height="16"></rect><circle class="sk-face" cx="14" cy="34" r="4.5"></circle><path class="sk-glyph" d="M14 32 v4 M12 34 h4"></path></g> <text class="sk-lit" x="23" y="34.5">New Session</text> <path class="sk-frame" d="M11 44 h6 v6 h-6 Z M12.5 47 h3"></path><text x="23" y="47.5">All Sessions</text> <path class="sk-spark" d="M14 56.5 v5.0 M11.5 59 h5.0 M12.25 57.25 l3.5 3.5 M15.75 57.25 l-3.5 3.5"></path><text x="23" y="59.5">Agents</text> <text class="sk-small" x="11" y="72">Projects</text> <g class="sk-btn sk-btn-ochre sk-fold" data-go="fold"><path class="sk-face" d="M11 79 h3 l1.5 1.5 H19 V85 H11 Z"></path><text class="sk-lit" x="24" y="82.5">emaki</text><path class="sk-faint" d="M62 80 l4 4 M64.5 79.5 l-1 1 M63.5 83.5 l1 -1"></path><text class="sk-small" x="72" y="82.5">31</text><rect class="sk-hit" x="5" y="75" width="78" height="14"></rect></g> <g data-hide="fold"> <path class="sk-faint" d="M14.5 89 V134"></path> <path class="sk-spark" d="M24 92.5 v5.0 M21.5 95 h5.0 M22.25 93.25 l3.5 3.5 M25.75 93.25 l-3.5 3.5"></path><path class="sk-frame" d="M31 95 h30"></path> <path class="sk-spark" d="M24 104.5 v5.0 M21.5 107 h5.0 M22.25 105.25 l3.5 3.5 M25.75 105.25 l-3.5 3.5"></path><path class="sk-frame" d="M31 107 h24"></path> <rect class="sk-accent-fill" data-show="open" x="5" y="114" width="1.5" height="10" rx="0.75"></rect> <path class="sk-spark" d="M24 116.5 v5.0 M21.5 119 h5.0 M22.25 117.25 l3.5 3.5 M25.75 117.25 l-3.5 3.5"></path><path class="sk-frame" d="M31 119 h28"></path><circle class="sk-sage" cx="73" cy="119" r="1.75"></circle> <rect class="sk-row" data-go="open" x="17" y="113" width="62" height="12" rx="3"></rect> <path class="sk-faint" d="M31 131 h12"></path> </g> <g data-when="fold" data-on="0 -48"> <path class="sk-frame" d="M11 142 h3 l1.5 1.5 H19 V148 H11 Z"></path><path class="sk-frame" d="M24 145 h20"></path><text class="sk-small" x="74" y="145.5">4</text> <path class="sk-frame" d="M11 154 h3 l1.5 1.5 H19 V160 H11 Z"></path><path class="sk-frame" d="M24 157 h16"></path><text class="sk-small" x="74" y="157.5">2</text> <text class="sk-small" x="11" y="172">Temporary</text><text class="sk-small" x="72" y="172">10</text> </g> </g> <g class="sk-part sk-dim" data-part="chat"> <g data-hide="new"> <!-- The chat: the tab on the strip, a prompt in its bubble, the agent's name and reply with a tool call on a card, the composer with its row of pills, and the status row under it. --> <rect class="sk-edge" x="165" y="5.5" width="76" height="12" rx="6"></rect><path class="sk-spark" d="M174 9.0 v5.0 M171.5 11.5 h5.0 M172.25 9.75 l3.5 3.5 M175.75 9.75 l-3.5 3.5"></path><path class="sk-frame" d="M180 11.5 h30"></path> <g clip-path="url(#sk-tx)"> <g><path class="sk-edge" d="M227 40 H294 a8 8 0 0 1 8 8 V54 a8 8 0 0 1 -8 8 H227 a8 8 0 0 1 -8 -8 V48 a8 8 0 0 1 0 -4 l-4 -4 Z"></path><path class="sk-frame" d="M227 51 h67"></path></g> <g> <path class="sk-spark" d="M110 69.5 v9.0 M105.5 74 h9.0 M106.85 70.85 l6.3 6.3 M113.15 70.85 l-6.3 6.3"></path><path class="sk-ink" d="M118 74 h18"></path><text class="sk-small" x="140" y="74.5">Fable 5.1</text> <path class="sk-frame" d="M104 86 h142 M104 96 h99"></path> <rect class="sk-edge" x="104" y="104" width="120" height="14" rx="3"></rect><path class="sk-faint" d="M110 109 l2 2 l-2 2"></path><rect class="sk-badge" x="116" y="107.5" width="16" height="7" rx="2"></rect><path class="sk-frame" d="M136 111 h50"></path><text class="sk-small sk-accent-text" x="196" y="111.5">Explain</text> <path class="sk-frame" d="M104 124 h124 M104 132 h71"></path> </g> </g> <g clip-path="url(#sk-main)"> <rect class="sk-edge" x="104" y="144" width="198" height="52" rx="7"></rect> <rect class="sk-plate" x="131" y="204.5" width="40" height="4" rx="2"></rect> <g> <path class="sk-ink" d="M112 152 v9"></path><path class="sk-frame" d="M116 156.5 h79"></path> <circle class="sk-frame" cx="114" cy="185" r="4.5"></circle><path class="sk-frame" d="M114 182.75 v4.5 M111.75 185 h4.5"></path> <rect class="sk-edge" x="126" y="179" width="26" height="12" rx="6"></rect><circle class="sk-frame" cx="132" cy="185" r="1.25"></circle><path class="sk-frame" d="M136 185 h11"></path> <rect class="sk-edge" x="156" y="179" width="22" height="12" rx="6"></rect><circle class="sk-frame" cx="162" cy="185" r="1.25"></circle><path class="sk-frame" d="M166 185 h8"></path> <text class="sk-small" x="104" y="207">Context</text><rect class="sk-accent-fill" x="131" y="204.5" width="8" height="4" rx="2"></rect> <path class="sk-faint" d="M177 203 v7"></path><text class="sk-small" x="183" y="207">5h · 49%</text> <path class="sk-faint" d="M219 203 v7"></path><text class="sk-small" x="225" y="207">7d · 56%</text> </g> </g> </g> </g> <g class="sk-part sk-dim" data-part="controls"> <rect class="sk-edge" x="92" y="5" width="25" height="13" rx="3"></rect> <rect class="sk-edge" x="290" y="5" width="25" height="13" rx="3"></rect> <rect class="sk-faint" x="93" y="6" width="11" height="11" rx="2"></rect><path class="sk-faint" d="M95.5 9.25 h2.25 l1.1 1.1 H101.5 V13.75 H95.5 Z"></path> <rect class="sk-faint" x="105" y="6" width="11" height="11" rx="2"></rect><path class="sk-faint" d="M107.5 9.5 h6 M107.5 11.5 h4 M107.5 13.5 h5"></path> <rect class="sk-faint" x="291" y="6" width="11" height="11" rx="2"></rect><path class="sk-faint" d="M293.5 9.5 l2 2 l-2 2 M297.0 13.5 h2.5"></path> <rect class="sk-faint" x="303" y="6" width="11" height="11" rx="2"></rect><path class="sk-faint" d="M308.5 9.25 v4.5 M306.25 11.5 h4.5 M306.925 9.925 l3.15 3.15 M310.075 9.925 l-3.15 3.15"></path> </g> <g class="sk-part" data-part="new"> <!-- New Session: the message box over the folder it starts in, in the chat's place. --> <g data-show="new"> <rect class="sk-edge" x="124" y="92" width="160" height="44" rx="7"></rect> <path class="sk-ink" d="M132 100 v9"></path><path class="sk-faint" d="M136 104.5 h40"></path> <circle class="sk-frame" cx="134" cy="126" r="4.5"></circle><path class="sk-frame" d="M134 123.75 v4.5 M131.75 126 h4.5"></path><rect class="sk-edge" x="144" y="120" width="26" height="12" rx="6"></rect><circle class="sk-frame" cx="150" cy="126" r="1.25"></circle><path class="sk-frame" d="M154 126 h11"></path> <circle class="sk-accent-fill" cx="273" cy="126" r="6.5"></circle><path class="sk-page" d="M273 129.25 v-6.5 M269.75 126 l3.25 -3.25 l3.25 3.25"></path> <rect class="sk-plate" x="124" y="142" width="90" height="12" rx="6"></rect><path class="sk-frame" d="M131 145 h3 l1.5 1.5 H139 V151 H131 Z"></path><path class="sk-frame" d="M143 148 h40"></path><path class="sk-frame" d="M207 146 l2 2 l-2 2"></path> </g> </g> <g data-hide="new"><g><circle class="sk-accent-fill" cx="291" cy="185" r="6.5"></circle><path class="sk-page" d="M291 188.25 v-6.5 M287.75 185 l3.25 -3.25 l3.25 3.25"></path></g></g>
-</svg>
-<figcaption class="sketch-label">
-The folder, a session and New Session answer the pointer.
-</figcaption>
-</figure>
+<div class="layout layout-page">
+<div class="fig" data-figure="layout-projects" aria-label="Emaki's window as it opens, with the projects box in the sidebar in color: the heading, the open project with its sessions, and the other projects. The rest of the window is gray. The box stands forward under the pointer.">
+
+</div>
+</div>
 <section id="projects" class="level2 i-folder">
 <h2 class="i-folder anchored" data-anchor-id="projects">Projects</h2>
-<p>A project is a folder you have run an agent in. The sidebar lists them all, the newest first, pinned ones on top. Click a project to unfold its sessions. The plus on its row starts a new session there (<kbd>⌘T</kbd> in the project you are in, <kbd>⌘N</kbd> anywhere). A project with a live session wears the accent and opens by itself.</p>
-<p>Right-click a project to archive or delete its sessions, open it in Finder, or hide it. Hidden projects and the system’s temporary folders sit under their own headings at the foot. Nothing in a project’s own folder is ever touched.</p>
+<p>All sessions in Emaki are project-based, all listed in the sidebar. You can pin your selected projects and show or hide sessions. To start a new session, you can either click the <kbd>+</kbd> button on an existing project or press <kbd>⌘T</kbd> in the project you are in. With <kbd>⌘N</kbd>, you can start one anywhere (the same as going to your landing page).</p>
 </section>
 <section id="sessions" class="level2 i-scroll">
 <h2 class="i-scroll anchored" data-anchor-id="sessions">Sessions</h2>
-<p>Each session is a row under its project: the agent’s mark, lit while it runs, a dot for where it stands, the title, and a bar at the left when it has a tab. Claude Code and Codex sessions sit side by side, each read from its own files.</p>
-<p><strong>All Sessions</strong> (<kbd>⌘L</kbd>) lists every project and every session with the day it was last touched, archived ones under their own heading, and narrows to one agent. Select many at once (<kbd>⌘</kbd>-click, <kbd>⇧</kbd>-click, or drag a rectangle), then archive or delete them together.</p>
+<section id="in-the-sidebar" class="level3">
+<h3 class="anchored" data-anchor-id="in-the-sidebar">In the sidebar</h3>
+<p>Sessions are managed under their projects. A session’s leading logo tells you which agent it belongs to and lights up while the agent runs. A dot shows where the session stands, and a bar at the left marks one that is open in a tab. Claude Code and Codex sessions sit side by side, each read from the agent’s own files.</p>
 </section>
-<section id="kept-and-archived" class="level2 i-archive">
-<h2 class="i-archive anchored" data-anchor-id="kept-and-archived">Kept and archived</h2>
-<p>Claude Code deletes its transcripts after thirty days. Emaki copies every one into <code>~/.emaki/archive</code> the first time it sees it, so a session the agent has deleted is still listed, searchable and readable, marked <em>kept</em>. Codex deletes nothing by age, so its sessions are read in place.</p>
-<p><em>Archive</em> a session and the agent leaves it alone until you unarchive it. <em>Delete</em> moves every copy to the Trash. Renaming a session renames it for the agent too.</p>
+<section id="all-sessions" class="level3">
+<h3 class="anchored" data-anchor-id="all-sessions">All Sessions</h3>
+<p>All Sessions (<kbd>⌘L</kbd>) lists every project and session with the day it was last used. This page provides plenty of ways of easily managing your existing sessions.</p>
 </section>
-<section id="search" class="level2 i-search">
-<h2 class="i-search anchored" data-anchor-id="search">Search</h2>
-<p><kbd>⌘K</kbd> searches every session on the machine. One hit per prompt, paragraph, thought or tool call, so a hit lands on the thing you remembered, in live and kept sessions alike.</p>
+</section>
+<section id="archiving" class="level2 i-archive">
+<h2 class="i-archive anchored" data-anchor-id="archiving">Archiving</h2>
+<p>Claude Code deletes its transcripts after 30 days. Emaki copies each one into <code>~/.emaki/archive</code>. Codex never deletes sessions by age, so Emaki reads them in place.</p>
+<p>Archived sessions cannot be interacted. You can actively archive/unarchive your sessions. When you unarchive a Claude Code session, it will be treated as if it were created by the time you unarchive it.</p>
 </section>
 <section id="tabs" class="level2 i-copy">
 <h2 class="i-copy anchored" data-anchor-id="tabs">Tabs</h2>
-<p>Every open session is a tab, grouped by project. <kbd>⌘1</kbd> to <kbd>⌘9</kbd> switch, <kbd>⌘W</kbd> closes, <kbd>⌘⇧T</kbd> brings back the last one closed, and a drag reorders them.</p>
+<p>Each open session is a tab, grouped by project. <kbd>⌘1</kbd> to <kbd>⌘9</kbd> switch tabs, <kbd>⌘W</kbd> closes one, <kbd>⌘⇧T</kbd> reopens the last one closed, and you can drag tabs to reorder them.</p>
 
 
 </section>
@@ -922,7 +923,7 @@ The folder, a session and New Session answer the pointer.
 (function () {
   var m = document.querySelector('meta[name="quarto:offset"]');
   var root = m ? m.getAttribute("content") : "./";
-  ["js/navbar-widgets.js", "js/hero-scroll.js", "js/shift.js", "js/sketches.js", "js/page.js", "js/figures.js"].forEach(function (src) {
+  ["js/navbar-widgets.js", "js/hero-scroll.js", "js/shift.js", "js/page.js", "js/figures.js"].forEach(function (src) {
     var s = document.createElement("script");
     s.src = root + src;
     s.async = false;

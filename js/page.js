@@ -1,6 +1,5 @@
 // What a page does once it is drawn: names this computer's installer on
-// the landing page's download and marks it among the Get Started page's
-// tiles, makes the figure of a part's card a way to the part's page,
+// each download, the landing page's and Get Started's, makes the figure of a part's card a way to the part's page,
 // lets the landing page's bands rise into view, and carries the
 // docs pages' way to the page before and after across the menu's groups.
 // Everything here is an addition over a page that reads whole without it.
@@ -41,17 +40,7 @@
     return list.querySelectorAll(sel);
   }
 
-  // The Get Started page's tiles: the one for this computer takes the accent's
-  // edge and a word (`.download-here`, css/theme.scss).
-  function markDownloads() {
-    var grid = document.querySelector(".downloads");
-    var h = here();
-    if (!grid || !h) return;
-    var tiles = links(grid, h);
-    for (var i = 0; i < tiles.length; i++) tiles[i].classList.add("download-here");
-  }
-
-  // The landing page's downloads, the hero's and Get started's alike: the
+  // The downloads, the hero's and the steps' alike: the
   // pill takes this computer's installer and says which (the short one
   // only Download), the menu marks it, and the segment at the pill's
   // right opens and closes the menu. A Mac whose chip cannot be read gets
@@ -164,7 +153,6 @@
   }
 
   function init() {
-    markDownloads();
     download();
     cardLinks();
     rise();

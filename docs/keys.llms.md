@@ -1,6 +1,6 @@
 # Keys
 
-Two kinds: ⌘⇧ and a letter shows a panel; ⌘ and a letter opens a page, or does one thing.
+Two kinds: ⌘⇧ and a letter shows or hides a panel; ⌘ and a letter opens a page or does one thing.
 
 ⌘ on macOS, Ctrl elsewhere.
 

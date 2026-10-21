@@ -47,9 +47,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3cbebbafb7976db68484b0045fe85eea.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-63f69ceff001a5642f0e314a0e43fc75.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-3cbebbafb7976db68484b0045fe85eea.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-c5a6d65f510d84b30fc222a72c3b7625.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-b81d9d8d27f4f0e1ce7aa51a5e070d09.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-c5a6d65f510d84b30fc222a72c3b7625.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -360,13 +360,13 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="from-the-ide-to-the-ade" class="level2 shift rise">
 <h2 data-anchor-id="from-the-ide-to-the-ade">From the IDE to the ADE</h2>
-<!-- The shift's first row (index.qmd, From the IDE to the ADE): an
+<!-- The shift's first window (index.qmd, From the IDE to the ADE): an
      editor's window as one has it today, seen from the front, each pane a
      box with its name in it: an activity bar, a file browser with the
      outline and the timeline folded under it, an editor of code, a
      terminal in the panel under the editor, and the agent chat squeezed
      into a pane at the right edge, one dial among the dials. Its words
-     stand beside it, and the ADE's row under it (_shift-ade.html). The
+     stand under it, and the ADE's window beside it (_shift-ade.html). The
      structure in the muted ink and the two borders, everything else in
      the shift's own set (css/theme.scss, --sk-*): ochre for the files,
      slate for the code, sage for the terminal, the lights in rose, ochre
@@ -388,10 +388,11 @@ ul.task-list li input[type="checkbox"] {
 <div class="shift-label">
 <p><strong>IDE</strong> integrated development environment</p>
 </div>
-<p>An IDE is built for writing code by hand: many panels, a steep learning curve, and real effort to set up. With agents, you write less code and run fewer commands yourself, yet the editor still takes the middle of the screen and most of your attention. The agent chat and git sit at the edges, and there is no way to manage the agent’s sessions at all.</p>
+<p>An IDE is the traditional way to work on code: built for writing it by hand, with many panels and a steep learning curve. With agents, the chat does most of the work, yet the editor still takes the middle of the screen and the chat gets a narrow pane at the edge.</p>
 </div>
-<!-- The shift's second row (index.qmd, From the IDE to the ADE): the
-     arrow down from the IDE's window above, centered on both windows, and
+<!-- The shift's second window (index.qmd, From the IDE to the ADE): the
+     arrow from the IDE's window, across from 992 wide and down under it,
+     centered on both windows, and
      Emaki's window, as the app draws it, seen from the front, each pane a
      box with its name in it: new chat and the chats in the sidebar, a
      project a folder with its chats stepped in under it along a guide line
@@ -428,12 +429,15 @@ ul.task-list li input[type="checkbox"] {
 <div class="shift-label">
 <p><strong>ADE</strong> agentic development environment</p>
 </div>
-<p>Emaki, an agentic development environment, turns this around. The agent chat is the main panel, rendered with care, and four panels open beside it when you need them: files, outline, shell terminal and agent terminal. Sessions are listed under their projects, where you can manage them and keep them safe from automatic deletion.</p>
+<p>Emaki turns this around. The agent chat takes the main space, and the sidebar groups your sessions under their projects. The supporting panels (files, outline and the two terminals) stay hidden until you need them.</p>
 </div>
 </section>
+<div class="rule">
+
+</div>
 <section id="get-started" class="level2 band rise">
 <h2 data-anchor-id="get-started">Get started</h2>
-<p>Download the app, install an agent, and you are ready. Git and the GitHub CLI are optional, for version control from the window.</p>
+<p>Download the app and install an agent to get started. You can also install Git and the GitHub CLI for version control.</p>
 <div class="starts">
 <section id="download-emaki" class="level3 start">
 <h3 data-anchor-id="download-emaki">Download Emaki</h3>
@@ -468,6 +472,9 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </div>
 </section>
+<div class="rule">
+
+</div>
 <section id="main-system" class="level2 band rise">
 <h2 data-anchor-id="main-system">Main system</h2>
 <p>Sessions are listed and managed under their projects. The agent chat takes the main space, rendered in high quality.</p>
@@ -479,7 +486,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="projects" class="level3">
 <h3 data-anchor-id="projects"><a href="./docs/projects.html">Projects</a></h3>
-<p>Every folder you work in is a project, its sessions under it, from Claude Code and Codex side by side. Each Claude Code session is copied before anything reads it, so one the agent has deleted is still here, and <kbd>⌘K</kbd> searches them all.</p>
+<p>All sessions on Emaki are project-based. Toggle on a project from your sidebar to see its agent sessions. The leading logo tells you which agent it belongs to. You can quickly create, resume, archive, or delete your session(s).</p>
 </section>
 </div>
 <div class="card">
@@ -488,13 +495,16 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="chats" class="level3">
 <h3 data-anchor-id="chats"><a href="./docs/chats.html">Chats</a></h3>
-<p>The transcript as it reads: prompts in bubbles, replies across, tool calls as cards. Under it the composer, with attachments, <code>@</code> for a file, <code>/</code> for a command, and the mode, model and effort a click away.</p>
+<p>Agent responses are nicely rendered. The artifacts, subagents, Q&amp;A sessions, and background tasks are all taken care of with a smooth UI. The composer supports grammar check, <code>@</code> and <code>/</code> commands, and instant toggling among your available models, modes, and efforts.</p>
 </section>
 </div>
 </div>
+<div class="rule">
+
+</div>
 <section id="panels" class="level2 band rise">
 <h2 data-anchor-id="panels">Panels</h2>
-<p>The panels are hidden by default: essential, but used less often than the chat. Files and outline open on the left, the two terminals on the right.</p>
+<p>Emaki provides 4 panels, hidden by default, since they are essential but used less often than the chat.</p>
 </section>
 <div class="cards cards-2 rise">
 <div class="card">
@@ -503,7 +513,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="files-f" class="level3">
 <h3 data-anchor-id="files-f"><a href="./docs/files.html">Files</a> <kbd>⌘⇧F</kbd></h3>
-<p>The project as a tree with git’s marks, worked like a file manager. Click a file and it opens beside the chat, drawn as its kind: code, markdown, a table, a PDF, a picture. Commit, branch and push from the same panel.</p>
+<p>The files panel provides a file tree with Catppuccin icons. You can live-render, preview, and edit your files. Most major file types are supported. With the git system, you can view git changes on the file tree and trigger git commands with an intuitive UI.</p>
 </section>
 </div>
 <div class="card">
@@ -512,7 +522,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="outline-o" class="level3">
 <h3 data-anchor-id="outline-o"><a href="./docs/outline.html">Outline</a> <kbd>⌘⇧O</kbd></h3>
-<p>A label for every prompt, a few words each, under a heading for each day. Click one and the chat glides back to that round.</p>
+<p>In agent sessions, going through the history is a pain. Emaki’s outline panel uses your basic AI model to summarize past conversations so you can quickly go through and locate them.</p>
 </section>
 </div>
 <div class="card">
@@ -521,7 +531,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="shell-terminal-s" class="level3">
 <h3 data-anchor-id="shell-terminal-s"><a href="./docs/shell.html">Shell Terminal</a> <kbd>⌘⇧S</kbd></h3>
-<p>Your shell, opened in the project’s folder, in tabs at the chat’s right. Paste a picture and it lands as the path of a file.</p>
+<p>Opening a terminal and <code>cd</code>-ing to the correct location is trivial, but repeatedly doing it is a pain. Emaki’s shell terminal panel does it for you. It also supports multiple tabs. The terminal UI is based on <a href="https://kaku.fun">Kaku</a>, a terminal made by <a href="https://github.com/tw93">tw93</a>.</p>
 </section>
 </div>
 <div class="card">
@@ -530,7 +540,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="agent-terminal-a" class="level3">
 <h3 data-anchor-id="agent-terminal-a"><a href="./docs/agent.html">Agent Terminal</a> <kbd>⌘⇧A</kbd></h3>
-<p>The session’s own agent in its terminal, as it runs. Watch it work as in the CLI, and type into it when it asks something the window has no card for.</p>
+<p>If you need the original CLI layout of your agent session, this is the right panel. It supports keyboard commands and mouse scrolling. Responding in this CLI is equivalent to responding in the chat interface.</p>
 </section>
 </div>
 </div>
@@ -967,7 +977,7 @@ ul.task-list li input[type="checkbox"] {
 (function () {
   var m = document.querySelector('meta[name="quarto:offset"]');
   var root = m ? m.getAttribute("content") : "./";
-  ["js/navbar-widgets.js", "js/hero-scroll.js", "js/shift.js", "js/sketches.js", "js/page.js", "js/figures.js"].forEach(function (src) {
+  ["js/navbar-widgets.js", "js/hero-scroll.js", "js/shift.js", "js/page.js", "js/figures.js"].forEach(function (src) {
     var s = document.createElement("script");
     s.src = root + src;
     s.async = false;

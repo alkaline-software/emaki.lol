@@ -11,14 +11,14 @@
     "href": "index.html#from-the-ide-to-the-ade",
     "title": "Emaki 絵巻",
     "section": "From the IDE to the ADE",
-    "text": "From the IDE to the ADE\n\n\n\n               Activity Bar       File Browser      Outline     Timeline            Code             Terminal         Agent Chat            \n\n\n\n\nIDE integrated development environment\n\nAn IDE is built for writing code by hand: many panels, a steep learning curve, and real effort to set up. With agents, you write less code and run fewer commands yourself, yet the editor still takes the middle of the screen and most of your attention. The agent chat and git sit at the edges, and there is no way to manage the agent’s sessions at all.\n\n\n\n\n\n\n\n       Emaki                             New Chat     Projects                    Chats       Agent Chat                                Files             Outline            Shell Terminal            Agent Terminal   \n\n\n\n\nADE agentic development environment\n\nEmaki, an agentic development environment, turns this around. The agent chat is the main panel, rendered with care, and four panels open beside it when you need them: files, outline, shell terminal and agent terminal. Sessions are listed under their projects, where you can manage them and keep them safe from automatic deletion."
+    "text": "From the IDE to the ADE\n\n\n\n               Activity Bar       File Browser      Outline     Timeline            Code             Terminal         Agent Chat            \n\n\n\n\nIDE integrated development environment\n\nAn IDE is the traditional way to work on code: built for writing it by hand, with many panels and a steep learning curve. With agents, the chat does most of the work, yet the editor still takes the middle of the screen and the chat gets a narrow pane at the edge.\n\n\n\n\n\n\n\n       Emaki                             New Chat     Projects                    Chats       Agent Chat                                Files             Outline            Shell Terminal            Agent Terminal   \n\n\n\n\nADE agentic development environment\n\nEmaki turns this around. The agent chat takes the main space, and the sidebar groups your sessions under their projects. The supporting panels (files, outline and the two terminals) stay hidden until you need them."
   },
   {
     "objectID": "index.html#get-started",
     "href": "index.html#get-started",
     "title": "Emaki 絵巻",
     "section": "Get started",
-    "text": "Get started\nDownload the app, install an agent, and you are ready. Git and the GitHub CLI are optional, for version control from the window.\n\n\nDownload Emaki\nFor macOS, Windows and Linux.\n\n\nDownload \n\nmacOS Apple silicon macOS Intel Windows x64 installer Linux x64 AppImage\n\n\n\n\nInstall the agents\nEmaki works with Claude Code and Codex.\n\nClaude Code Codex\n\n\n\nGit (optional)\nInstall Git and the GitHub CLI to commit, branch and push from Emaki.\n\nGit GitHub"
+    "text": "Get started\nDownload the app and install an agent to get started. You can also install Git and the GitHub CLI for version control.\n\n\nDownload Emaki\nFor macOS, Windows and Linux.\n\n\nDownload \n\nmacOS Apple silicon macOS Intel Windows x64 installer Linux x64 AppImage\n\n\n\n\nInstall the agents\nEmaki works with Claude Code and Codex.\n\nClaude Code Codex\n\n\n\nGit (optional)\nInstall Git and the GitHub CLI to commit, branch and push from Emaki.\n\nGit GitHub"
   },
   {
     "objectID": "index.html#main-system",
@@ -32,25 +32,14 @@
     "href": "index.html#panels",
     "title": "Emaki 絵巻",
     "section": "Panels",
-    "text": "Panels\nThe panels are hidden by default: essential, but used less often than the chat. Files and outline open on the left, the two terminals on the right."
-  },
-  {
-    "objectID": "docs/settings.html",
-    "href": "docs/settings.html",
-    "title": "Settings",
-    "section": "",
-    "text": "Emaki     New Session All Sessions Agents Projects emaki31          4 2 Temporary10         Fable 5.1  Explain            Context 5h · 49% 7d · 56%                 Appearance Fonts Composer New sessions Terminal Files Updates About  Appearance  AppearanceAuto  AccentPeriwinkle    Fonts  ChatAa  CodeAa  Text size   New sessions  Claude Code  Mode Model Effort   Updates  Check daily  Up to datev0.2.8Check now \n\n\nAppearance, Fonts, New sessions and Updates answer the pointer.",
-    "crumbs": [
-      "<span id='nav-version' class='nav-version'>Releases</span>",
-      "Settings"
-    ]
+    "text": "Panels\nEmaki provides 4 panels, hidden by default, since they are essential but used less often than the chat."
   },
   {
     "objectID": "docs/settings.html#appearance-and-fonts",
     "href": "docs/settings.html#appearance-and-fonts",
     "title": "Settings",
     "section": "Appearance and Fonts",
-    "text": "Appearance and Fonts\nAppearance follows the system or pins light or dark, and the accent is one of seven: periwinkle, orchid, rose, amber, moss, jade or teal. Fonts has eight faces for the chat and four monospace faces for code and the terminal, all under the Open Font License, and one text size for all three.",
+    "text": "Appearance and Fonts\nAppearance follows the system, or stays light or dark. The accent is one of seven colors: periwinkle, orchid, rose, amber, moss, jade or teal. Fonts offers eight faces for the chat and four monospace faces for code and the terminal, all under the Open Font License, with one text size for all three.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Settings"
@@ -61,7 +50,7 @@
     "href": "docs/settings.html#new-sessions",
     "title": "Settings",
     "section": "New sessions",
-    "text": "New sessions\nEach agent’s mode, model and effort to begin with. The pills under the composer change them for one session.",
+    "text": "New sessions\nEach agent’s mode, model and effort to start with. The pills under the composer change them for one session.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Settings"
@@ -72,7 +61,7 @@
     "href": "docs/settings.html#composer-terminal-files",
     "title": "Settings",
     "section": "Composer, Terminal, Files",
-    "text": "Composer, Terminal, Files\nEach one’s own switches: which key sends and which languages are spell-checked; the terminal’s scheme, its cursor, and whether a selection copies itself; format on save and its formatters.",
+    "text": "Composer, Terminal, Files\nEach has its own switches: which key sends and which languages are spell-checked; the terminal’s color scheme, its cursor, and whether a selection copies itself; format on save and its formatters.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Settings"
@@ -83,22 +72,10 @@
     "href": "docs/settings.html#updates-and-about",
     "title": "Settings",
     "section": "Updates and About",
-    "text": "Updates and About\nUpdates checks daily, or now, and installs the new version itself. About says which version this is and who makes it.",
+    "text": "Updates and About\nUpdates checks daily, or when you ask, and installs the new version itself. About shows which version this is and who makes it.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Settings"
-    ]
-  },
-  {
-    "objectID": "docs/outline.html",
-    "href": "docs/outline.html",
-    "title": "Outline Panel",
-    "section": "",
-    "text": "Emaki     New Session All Sessions Agents Projects emaki31          4 2 Temporary10         Fable 5.1  Explain            Context               Outline Today               \n\n\nAn entry and the outline button answer the pointer.",
-    "crumbs": [
-      "<span id='nav-version' class='nav-version'>Releases</span>",
-      "Panels",
-      "Outline"
     ]
   },
   {
@@ -106,7 +83,7 @@
     "href": "docs/outline.html#entries",
     "title": "Outline Panel",
     "section": "Entries",
-    "text": "Entries\nOne entry per prompt, under a heading for each day: the time on a small plate, then three to five words for what you asked. A short prompt is shown as it is. A long one is labeled by the agent’s small model, Haiku for Claude Code and Codex’s light model for Codex, in a session of its own, so nothing enters yours. Labels are asked for the entries in view, a few at a time, and kept for good, so each prompt is asked about once.",
+    "text": "Entries\nGoing back through a long session is a pain. The outline gives each prompt one entry, under a heading for each day: the time, then three to five words for what you asked. A short prompt is shown as it is. A long one is labeled by the agent’s small model, Haiku for Claude Code and Codex’s light model for Codex, in a separate session, so nothing enters yours. Labels are made for the entries in view, a few at a time, and kept, so each prompt is labeled once.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Panels",
@@ -118,7 +95,7 @@
     "href": "docs/outline.html#going-back",
     "title": "Outline Panel",
     "section": "Going back",
-    "text": "Going back\nClick an entry and the chat glides to that round. As you scroll, the entry in view wears the accent, so the outline always says where you are. The panel shares the left side with the files: one shows at a time, and one takes the other’s place without moving the chat.",
+    "text": "Going back\nClick an entry and the chat glides back to that round. As you scroll, the entry in view is highlighted, so the outline always shows where you are. It shares the left side with the files: one shows at a time, and switching does not move the chat.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Panels",
@@ -130,7 +107,18 @@
     "href": "docs/index.html",
     "title": "Get Started",
     "section": "",
-    "text": "Emaki     New Session All Sessions Agents Projects emaki31          4 2 Temporary10         Fable 5.1  Explain            Context 5h · 49%              Files main2      M M U      Outline Today            zsh 1         Claude Code        \n\n\nThe four buttons bring their panels beside the chat.",
+    "text": "For macOS, Windows and Linux.\n\n\nDownload \n\nmacOS Apple silicon macOS Intel Windows x64 installer Linux x64 AppImage\n\n\n\n\n\nEmaki works with Claude Code and Codex.\n\nClaude Code Codex\n\n\n\n\nInstall Git and the GitHub CLI to commit, branch and push from Emaki.\n\nGit GitHub\n\n\n\nThe Agents page (⌘E) checks whether your agents and Git are installed and walks you through installing them.",
+    "crumbs": [
+      "<span id='nav-version' class='nav-version'>Releases</span>",
+      "Get Started"
+    ]
+  },
+  {
+    "objectID": "docs/index.html#install",
+    "href": "docs/index.html#install",
+    "title": "Get Started",
+    "section": "",
+    "text": "For macOS, Windows and Linux.\n\n\nDownload \n\nmacOS Apple silicon macOS Intel Windows x64 installer Linux x64 AppImage\n\n\n\n\n\nEmaki works with Claude Code and Codex.\n\nClaude Code Codex\n\n\n\n\nInstall Git and the GitHub CLI to commit, branch and push from Emaki.\n\nGit GitHub\n\n\n\nThe Agents page (⌘E) checks whether your agents and Git are installed and walks you through installing them.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Get Started"
@@ -141,40 +129,40 @@
     "href": "docs/index.html#open-a-project",
     "title": "Get Started",
     "section": "Open a project",
-    "text": "Open a project\nPick a folder, choose the agent, and type. That is a session, in that folder, and its tab and its row in the sidebar appear at once. Or pick up one the agent already has: every session on the machine is listed under its project, from both agents. The first launch copies every Claude Code transcript into ~/.emaki/archive, and each later launch catches up, so a session the agent has deleted is still here. See Projects.",
+    "text": "Open a project\nChoose a folder, pick an agent, and type your first prompt. That starts a session in the folder, with a tab and a row in the sidebar. To pick up an older one, find it in the sidebar: every session on this computer is listed under its project, from both agents.\nOn the first launch, Emaki copies every Claude Code session into ~/.emaki/archive, and each later launch catches up, so a session Claude Code has deleted is still here. See Projects.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Get Started"
     ]
   },
   {
-    "objectID": "docs/index.html#the-window",
-    "href": "docs/index.html#the-window",
+    "objectID": "docs/index.html#layout",
+    "href": "docs/index.html#layout",
     "title": "Get Started",
-    "section": "The window",
-    "text": "The window\nThe chat is the main panel. Four panels stand beside it, a button and a key each, there when you want them and gone when you do not.\n\n\n\n\n\n\n\n\nFiles\n⌘⇧F\nthe project’s folder as a tree, a pane for any file, and git\n\n\nOutline\n⌘⇧O\na label for every prompt, to jump back to any step\n\n\nShell Terminal\n⌘⇧S\na shell in the project’s folder\n\n\nAgent Terminal\n⌘⇧A\nthe session’s own agent as it runs\n\n\n\nFiles and outline share the left side, one at a time; the two terminals share the right.",
+    "section": "Layout",
+    "text": "Layout\nThe sidebar and the chat are always there. The four panels are hidden by default: files or outline opens on the left of the chat, the shell or agent terminal on its right.\n\n\n\n\n\nProjects\n\n\nChats\n\n\nFiles ⌘⇧F\n\n\nOutline ⌘⇧O\n\n\nShell Terminal ⌘⇧S\n\n\nAgent Terminal ⌘⇧A",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Get Started"
     ]
   },
   {
-    "objectID": "docs/index.html#what-it-keeps",
-    "href": "docs/index.html#what-it-keeps",
+    "objectID": "docs/index.html#what-emaki-keeps",
+    "href": "docs/index.html#what-emaki-keeps",
     "title": "Get Started",
-    "section": "What it keeps",
-    "text": "What it keeps\nEverything is under ~/.emaki:\n\n\n\n\n\n\n\narchive/\nevery Claude Code session, copied byte for byte\n\n\nlogs/\neach session rendered as markdown\n\n\nsearch.db\nthe full-text index\n\n\nconfig.json\nyour settings\n\n\n\nOnly archive/ cannot be rebuilt. That is the folder to back up.\nEmaki sets one thing in Claude Code’s settings: its status line, which feeds the status bar under the composer. emaki-core statusline restore puts yours back.",
+    "section": "What Emaki keeps",
+    "text": "What Emaki keeps\nEverything Emaki keeps is in ~/.emaki:\n\n\n\n\n\n\n\narchive/\nevery Claude Code session, copied byte for byte\n\n\nlogs/\neach session rendered as markdown\n\n\nsearch.db\nthe full-text index\n\n\nconfig.json\nyour settings\n\n\n\nCodex has its own archiving system, so archive/ only stores Claude Code sessions.\nEmaki changes one setting in Claude Code: its status line, which feeds Emaki’s own status line under the composer. To put yours back, run emaki-core statusline restore.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Get Started"
     ]
   },
   {
-    "objectID": "docs/chats.html",
-    "href": "docs/chats.html",
+    "objectID": "docs/chats.html#transcript",
+    "href": "docs/chats.html#transcript",
     "title": "Chats",
-    "section": "",
-    "text": "Emaki     New Session All Sessions Agents Projects emaki31          4 2 Temporary10         Fable 5.1  Explain                   Context 5h · 49% 7d · 56%            \n\n\nThe tool call, the plus, the mode and the effort answer the pointer.",
+    "section": "Transcript",
+    "text": "Transcript\nChat transcripts are well-rendered with high-quality interface. Agent tool calls are stacked to release reading pressure. You can expand them and even get summaries of each tool call to understand what happened. Artifacts, background jobs, subagents, Q&A sessions are all properly taken care of with smooth UI.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Main System",
@@ -182,23 +170,11 @@
     ]
   },
   {
-    "objectID": "docs/chats.html#the-transcript",
-    "href": "docs/chats.html#the-transcript",
+    "objectID": "docs/chats.html#composer",
+    "href": "docs/chats.html#composer",
     "title": "Chats",
-    "section": "The transcript",
-    "text": "The transcript\nPrompts, replies, tool calls, thoughts and subagents, laid out like the Claude app. Your prompts sit in a bubble with a tail, replies run the width, and code blocks are colored with a copy button. A tool call is a card, its badge colored by what it does, and three or more in a row fold into one line with a tally. Explain puts one plain sentence on an opaque call, asked of the agent’s small model in a session of its own, so nothing of it enters yours.\nWhile the agent works, approvals, questions and plans arrive as cards at the end, and anything the window has no card for shows on its terminal card. ⌘F finds in the chat; ⌘G steps to the next hit.",
-    "crumbs": [
-      "<span id='nav-version' class='nav-version'>Releases</span>",
-      "Main System",
-      "Chats"
-    ]
-  },
-  {
-    "objectID": "docs/chats.html#the-composer",
-    "href": "docs/chats.html#the-composer",
-    "title": "Chats",
-    "section": "The composer",
-    "text": "The composer\nType and send: ↩︎ or ⌘↩︎, your choice, and ⇧↩︎ is a new line. A session running in a terminal gets the message through the agent’s inbox; a finished one resumes under Emaki. Drafts survive quitting.\n\nAttach by paste, drop or the + button. A picture shows as a thumbnail, any other file as a chip with its name and size.\n@ picks a file or folder from the project, as the agent’s own prompt does.\n/ lists the slash commands and skills the agent knows. A command that acts alone runs on ↩︎; a skill goes into the message.\nSpelling and grammar are checked as you type, with corrections on the right-click menu.\n\n\nTo talk instead of typing, in Emaki or any other app, there is Kotoba, our dictation app for the Mac.",
+    "section": "Composer",
+    "text": "Composer\nAttach files by pasting, dropping, or the + button. @ picks a file or folder from the project, and / lists the agent’s slash commands and skills. Spelling and grammar are checked as you type.\n\nWe proudly recommend using Kotoba as your dictation app on Emaki or any other composer on your machine. It supports light-weighted models for voice-to-text dictation and post-processing.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Main System",
@@ -210,7 +186,7 @@
     "href": "docs/chats.html#mode-model-and-effort",
     "title": "Chats",
     "section": "Mode, model and effort",
-    "text": "Mode, model and effort\nThree pills under the composer, in the agent’s own colors, each opening its list in place. ⇧Tab steps the mode, as it does in the terminal. A new session starts with the defaults set in Settings, New sessions; the pills change them for this one.",
+    "text": "Mode, model and effort\nBy providing three pills under the composer, Emaki made it easy to toggle among different modes, models, and efforts without needing to trigger keyboard commands or / commands (though they are also supported).",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Main System",
@@ -218,11 +194,11 @@
     ]
   },
   {
-    "objectID": "docs/chats.html#the-status-bar",
-    "href": "docs/chats.html#the-status-bar",
+    "objectID": "docs/chats.html#status-line",
+    "href": "docs/chats.html#status-line",
     "title": "Chats",
-    "section": "The status bar",
-    "text": "The status bar\nThe row under the composer says how much of the context window is used and where the five-hour and seven-day limits stand, colored at the thresholds the agent’s own status line uses, for Claude Code and Codex alike. Notices land there too: what a command did, or why something could not be done.",
+    "section": "Status line",
+    "text": "Status line\nThe row under the composer shows how much of the context window is used and where the 5-hour and 7-day limits stand. Its colors change according to the thresholds. The status line logic is from the Waza plugin by tw93.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Main System",
@@ -286,39 +262,15 @@
     "text": "License\nMIT. © 2026 John Paul Helveston, Pingfan Hu, and Alkaline Software.\nThe source is at github.com/alkaline-software/emaki, and this site’s at github.com/alkaline-software/emaki.lol."
   },
   {
-    "objectID": "docs/agent.html",
-    "href": "docs/agent.html",
-    "title": "Agent Terminal Panel",
-    "section": "",
-    "text": "Emaki     New Session All Sessions Agents Projects emaki31          4 2 Temporary10         Fable 5.1  Explain           Context                 Claude Code           \n\n\nThe prompt and the agent button answer the pointer.",
-    "crumbs": [
-      "<span id='nav-version' class='nav-version'>Releases</span>",
-      "Panels",
-      "Agent Terminal"
-    ]
-  },
-  {
     "objectID": "docs/agent.html#the-agents-own-screen",
     "href": "docs/agent.html#the-agents-own-screen",
     "title": "Agent Terminal Panel",
     "section": "The agent’s own screen",
-    "text": "The agent’s own screen\nEvery session Emaki runs has a terminal behind it: Claude Code’s hidden one, or Codex’s joined to its driver. This panel draws it whole, at the chat’s right, so you can watch the agent work as you would in the CLI, and type into it when you want to. It is the same terminal the window reads and types into, so nothing is doubled.\nOpen it with nothing running and it starts the agent (Claude Code); where one cannot start, a turn running in a terminal of your own, or an archived session, it says why. Whatever the agent asks that the window has no card for can be answered here. It shares the right side with the shell terminal: one shows at a time.",
+    "text": "The agent’s own screen\nIf you want your agent’s original CLI, this is the panel. Every session Emaki runs has a terminal behind it: Claude Code’s hidden one, or the one Codex’s driver joins. This panel shows it whole, at the chat’s right, so you can watch the agent work as in the CLI and type into it. It is the same terminal the chat reads from and types into, so answering here is the same as answering in the chat, and nothing is doubled. Pasted screenshots reach the agent as they would in the CLI.\nOpen it with nothing running and it starts the agent (Claude Code). Where it cannot start one, while a turn runs in a terminal of your own or in an archived session, it says why. Anything the agent asks that the chat has no card for can be answered here. It shares the right side with the shell terminal: one shows at a time.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Panels",
       "Agent Terminal"
-    ]
-  },
-  {
-    "objectID": "docs/files.html",
-    "href": "docs/files.html",
-    "title": "Files Panel",
-    "section": "",
-    "text": "Emaki     New Session All Sessions Agents Projects emaki31          4 2 Temporary10         Fable 5.1  Explain           Context                Files main 2      M M  U       main.rs       New branch     ChangesHistory mainPush1  M U M  *  Commit 2 files notes.md     \n\n\nA file, the branch, the Changes count and the files button answer the pointer.",
-    "crumbs": [
-      "<span id='nav-version' class='nav-version'>Releases</span>",
-      "Panels",
-      "Files"
     ]
   },
   {
@@ -326,7 +278,7 @@
     "href": "docs/files.html#the-tree",
     "title": "Files Panel",
     "section": "The tree",
-    "text": "The tree\nThe project’s folder, with git’s marks on it: a letter on a changed file, a dot on a folder with changes under it, ignored files dimmed. It works like a file manager: drag in from Finder, drag rows to move them, cut, copy, duplicate, remove (⌘⌫, to the Trash) and undo (⌘Z). New File and New Folder are at the head, and a file the agent writes appears as it lands.",
+    "text": "The tree\nThe project’s folder as a tree, with Catppuccin’s file icons and git’s marks: a letter on a changed file, a dot on a folder with changes inside, and ignored files dimmed. It works like a file manager: drag files in from Finder, drag rows to move them, cut, copy, duplicate, move to the Trash (⌘⌫) and undo (⌘Z). New File and New Folder are at the top, and a file the agent writes appears as soon as it lands.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Panels",
@@ -338,7 +290,7 @@
     "href": "docs/files.html#open-and-edit",
     "title": "Files Panel",
     "section": "Open and edit",
-    "text": "Open and edit\nClick a file and it opens in a pane between the tree and the chat; click it again to put it away. The enlarge button gives the pane the chat’s room. ⌘S saves, ⌘W closes, and nothing unsaved is lost without asking. Format on save covers ten languages and is off until you turn it on.\nCode comes with line numbers, colors and a gutter mark per git change, with a card to see or revert it. Every kind of file is drawn for what it is:\n\n\nCode every language, colored\nMarkdown as it reads, or as written\nCSV and TSV a grid you can edit in place\nParquet a table with each column’s type\nWord pages you can type in and format\nExcel cells with their number formats\nPowerPoint slides as they look\nPDF sharp at any width, with search and page previews\nHTML in the system’s web view\nPictures at their own size",
+    "text": "Open and edit\nClick a file to open it in a pane between the tree and the chat; click it again to close it. The enlarge button gives the pane the chat’s room. ⌘S saves, ⌘W closes, and Emaki asks before anything unsaved is lost. Format on save covers ten languages and is off until you turn it on.\nCode has line numbers, colors, and a gutter mark for each git change, with a card to see or revert it. Every kind of file is drawn for what it is:\n\n\nCode every language, colored\nMarkdown as it reads, or as written\nCSV and TSV a grid you can edit in place\nParquet a table with each column’s type\nWord pages you can type in and format\nExcel cells with their number formats\nPowerPoint slides as they look\nPDF sharp at any width, with search and page previews\nHTML in the system’s web view\nPictures at their own size",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Panels",
@@ -350,7 +302,7 @@
     "href": "docs/files.html#git",
     "title": "Files Panel",
     "section": "Git",
-    "text": "Git\nIn a repository the branch is named at the tree’s head. Click it to switch, make a branch (⌘⇧N) or publish one; Fetch and Pull sit at the list’s foot. A switch with uncommitted changes asks whether to leave them or bring them along, and goes through only when every change lands where you asked.\nThe Changes pill (⌘⇧G) opens the sheet: tick the files, write the message, commit (⌘↩︎), push (⌘P). History browses the commits: Undo takes back the newest while the remote does not have it, Revert takes back any one as a new commit. Nothing is committed, pushed or pulled without a click that says so.",
+    "text": "Git\nIn a repository, the branch’s name sits at the top of the tree. Click it to switch branches, make one (⌘⇧N) or publish one; Fetch and Pull are at the bottom of the list. If you switch with uncommitted changes, Emaki asks whether to leave them or bring them along, and switches only when every change can go where you asked.\nThe Changes pill (⌘⇧G) opens the Changes sheet: tick the files, write the message, commit (⌘↩︎) and push (⌘P). A changed picture shows before and after, side by side. History lists the commits: Undo takes back the newest while the remote does not have it, and Revert takes back any one as a new commit. Nothing is committed, pushed or pulled until you click to do it.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Panels",
@@ -391,23 +343,11 @@
     ]
   },
   {
-    "objectID": "docs/projects.html",
-    "href": "docs/projects.html",
-    "title": "Projects",
-    "section": "",
-    "text": "Emaki     New Session All Sessions Agents Projects emaki31           4 2 Temporary10          Fable 5.1  Explain            Context 5h · 49% 7d · 56%                       \n\n\nThe folder, a session and New Session answer the pointer.",
-    "crumbs": [
-      "<span id='nav-version' class='nav-version'>Releases</span>",
-      "Main System",
-      "Projects"
-    ]
-  },
-  {
     "objectID": "docs/projects.html#projects",
     "href": "docs/projects.html#projects",
     "title": "Projects",
     "section": "Projects",
-    "text": "Projects\nA project is a folder you have run an agent in. The sidebar lists them all, the newest first, pinned ones on top. Click a project to unfold its sessions. The plus on its row starts a new session there (⌘T in the project you are in, ⌘N anywhere). A project with a live session wears the accent and opens by itself.\nRight-click a project to archive or delete its sessions, open it in Finder, or hide it. Hidden projects and the system’s temporary folders sit under their own headings at the foot. Nothing in a project’s own folder is ever touched.",
+    "text": "Projects\nAll sessions in Emaki are project-based, all listed in the sidebar. You can pin your selected projects and show or hide sessions. To start a new session, you can either click the + button on an existing project or press ⌘T in the project you are in. With ⌘N, you can start one anywhere (the same as going to your landing page).",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Main System",
@@ -419,7 +359,7 @@
     "href": "docs/projects.html#sessions",
     "title": "Projects",
     "section": "Sessions",
-    "text": "Sessions\nEach session is a row under its project: the agent’s mark, lit while it runs, a dot for where it stands, the title, and a bar at the left when it has a tab. Claude Code and Codex sessions sit side by side, each read from its own files.\nAll Sessions (⌘L) lists every project and every session with the day it was last touched, archived ones under their own heading, and narrows to one agent. Select many at once (⌘-click, ⇧-click, or drag a rectangle), then archive or delete them together.",
+    "text": "Sessions\n\nIn the sidebar\nSessions are managed under their projects. A session’s leading logo tells you which agent it belongs to and lights up while the agent runs. A dot shows where the session stands, and a bar at the left marks one that is open in a tab. Claude Code and Codex sessions sit side by side, each read from the agent’s own files.\n\n\nAll Sessions\nAll Sessions (⌘L) lists every project and session with the day it was last used. This page provides plenty of ways of easily managing your existing sessions.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Main System",
@@ -427,23 +367,11 @@
     ]
   },
   {
-    "objectID": "docs/projects.html#kept-and-archived",
-    "href": "docs/projects.html#kept-and-archived",
+    "objectID": "docs/projects.html#archiving",
+    "href": "docs/projects.html#archiving",
     "title": "Projects",
-    "section": "Kept and archived",
-    "text": "Kept and archived\nClaude Code deletes its transcripts after thirty days. Emaki copies every one into ~/.emaki/archive the first time it sees it, so a session the agent has deleted is still listed, searchable and readable, marked kept. Codex deletes nothing by age, so its sessions are read in place.\nArchive a session and the agent leaves it alone until you unarchive it. Delete moves every copy to the Trash. Renaming a session renames it for the agent too.",
-    "crumbs": [
-      "<span id='nav-version' class='nav-version'>Releases</span>",
-      "Main System",
-      "Projects"
-    ]
-  },
-  {
-    "objectID": "docs/projects.html#search",
-    "href": "docs/projects.html#search",
-    "title": "Projects",
-    "section": "Search",
-    "text": "Search\n⌘K searches every session on the machine. One hit per prompt, paragraph, thought or tool call, so a hit lands on the thing you remembered, in live and kept sessions alike.",
+    "section": "Archiving",
+    "text": "Archiving\nClaude Code deletes its transcripts after 30 days. Emaki copies each one into ~/.emaki/archive. Codex never deletes sessions by age, so Emaki reads them in place.\nArchived sessions cannot be interacted. You can actively archive/unarchive your sessions. When you unarchive a Claude Code session, it will be treated as if it were created by the time you unarchive it.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Main System",
@@ -455,7 +383,7 @@
     "href": "docs/projects.html#tabs",
     "title": "Projects",
     "section": "Tabs",
-    "text": "Tabs\nEvery open session is a tab, grouped by project. ⌘1 to ⌘9 switch, ⌘W closes, ⌘⇧T brings back the last one closed, and a drag reorders them.",
+    "text": "Tabs\nEach open session is a tab, grouped by project. ⌘1 to ⌘9 switch tabs, ⌘W closes one, ⌘⇧T reopens the last one closed, and you can drag tabs to reorder them.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Main System",
@@ -463,23 +391,11 @@
     ]
   },
   {
-    "objectID": "docs/shell.html",
-    "href": "docs/shell.html",
-    "title": "Shell Terminal Panel",
-    "section": "",
-    "text": "Emaki     New Session All Sessions Agents Projects emaki31          4 2 Temporary10         Fable 5.1  Explain           Context                 zsh 1 zsh 2         \n\n\nThe plus and the shell button answer the pointer.",
-    "crumbs": [
-      "<span id='nav-version' class='nav-version'>Releases</span>",
-      "Panels",
-      "Shell Terminal"
-    ]
-  },
-  {
     "objectID": "docs/shell.html#a-shell-where-the-work-is",
     "href": "docs/shell.html#a-shell-where-the-work-is",
     "title": "Shell Terminal Panel",
     "section": "A shell where the work is",
-    "text": "A shell where the work is\nYour login shell, opened in the session’s folder, at the chat’s right. Shells are tabs: the + or ⌘T opens one, ⌘W closes it, ⌘K clears the screen, and a drag reorders them. They stay open until you close them or quit.\nPaste a picture and it lands as the path of a file. A selection can copy itself when you let go (Settings, Terminal). Mouse-aware programs take clicks and scrolls, and the Mac’s line keys work (⌘←, ⌘→, ⌘⌫). The look is Kaku’s, in the window’s own colors and face.\nThe same shell opens beside the install steps on the Agents page, for the commands they give. It shares the right side with the agent terminal: one shows at a time.",
+    "text": "A shell where the work is\nOpening a terminal and cd-ing to the project is easy, but doing it again and again is a pain. The shell terminal opens your login shell in the session’s folder, at the chat’s right. Shells are tabs: the + or ⌘T opens one, ⌘W closes it, ⌘K clears the screen, and you can drag tabs to reorder them. They stay open until you close them or quit.\nPaste a picture and it lands as the path of a file. A selection can copy itself when you let go (Settings, Terminal). Programs that use the mouse get its clicks and scrolls, and the Mac’s line keys work (⌘←, ⌘→, ⌘⌫). The look is inspired by Kaku, in the window’s own colors and font.\nThe same shell opens beside the install steps on the Agents page, for the commands they give. It shares the right side with the agent terminal: one shows at a time.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Panels",
