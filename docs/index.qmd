@@ -1,92 +1,97 @@
 ---
 title: "Get Started"
-subtitle: "Download Emaki, install an agent, and open a project."
+subtitle: "Download the app and install an agent to get started."
 ---
 
-{{< include _sk/index.html >}}
+## Install {.i-download}
 
-::: {.steps}
+::: {.starts}
 
-1.  ### Download Emaki
+::: {.start}
+### Download Emaki
 
-    ::: {.downloads}
-    <a class="download" data-os="mac" data-chip="arm64" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-arm64.dmg"><strong>macOS</strong> <span>Apple silicon</span></a>
-    <a class="download" data-os="mac" data-chip="x64" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-x64.dmg"><strong>macOS</strong> <span>Intel</span></a>
-    <a class="download" data-os="windows" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-windows-x64-setup.exe"><strong>Windows</strong> <span>x64 installer</span></a>
-    <a class="download" data-os="linux" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-x64.AppImage"><strong>Linux</strong> <span>x64 AppImage</span></a>
-    :::
+For macOS, Windows and Linux.
 
-    The Mac image is signed and notarized and needs macOS 14 or later.
-    Windows is unsigned, so SmartScreen asks once: *More info*, then *Run
-    anyway*. On Linux run the AppImage, or install the `.deb` from the
-    [release page](https://github.com/alkaline-software/emaki/releases/latest).
-    From then on the app updates itself.
+{{< include ../_download-step.html >}}
+:::
 
-2.  ### Install an agent
+::: {.start}
+### Install the agents
 
-    Emaki works with Claude Code and Codex. Install one or both, and sign in.
+Emaki works with Claude Code and Codex.
 
-    ::: {.agents}
+::: {.start-links}
+[Claude Code](https://docs.claude.com/en/docs/claude-code){.pill .i-claude}
+[Codex](https://developers.openai.com/codex/cli){.pill .i-codex}
+:::
+:::
 
-    ::: {.agent .agent-claude}
-    **Claude Code**
+::: {.start}
+### Git (optional)
 
-    [Install it](https://docs.claude.com/en/docs/claude-code), then run
-    `claude` once to sign in.
-    :::
+Install Git and the GitHub CLI to commit, branch and push from Emaki.
 
-    ::: {.agent .agent-codex}
-    **Codex**
-
-    [Install it](https://developers.openai.com/codex/cli), then run `codex`
-    once to sign in.
-    :::
-
-    :::
-
-    Not sure what this machine has? The Agents page ([⌘E]{.kbd}) checks,
-    and walks you through installing one, a step at a time, with a shell
-    beside the steps.
-
-3.  ### GitHub, if you want it
-
-    Git is optional. With it, Emaki shows a project's changes and branches
-    and commits for you; signed in to GitHub, it fetches, pulls and pushes
-    too. The Agents page has the steps: install git, sign in with `gh`,
-    and tell git who your commits are by.
+::: {.start-links}
+[Git](https://git-scm.com/downloads){.pill .i-git-branch .pill-git}
+[GitHub](https://cli.github.com){.pill .i-github .pill-github}
+:::
+:::
 
 :::
 
+The Agents page ([⌘E]{.kbd}) checks whether your agents and Git are installed and walks you through installing them.
+
 ## Open a project {.i-folder}
 
-Pick a folder, choose the agent, and type. That is a session, in that
-folder, and its tab and its row in the sidebar appear at once. Or pick up
-one the agent already has: every session on the machine is listed under
-its project, from both agents. The first launch copies every Claude Code
-transcript into `~/.emaki/archive`, and each later launch catches up, so
-a session the agent has deleted is still here. See
-[Projects](projects.qmd).
+Choose a folder, pick an agent, and type your first prompt. That starts
+a session in the folder, with a tab and a row in the sidebar. To pick up
+an older one, find it in the sidebar: every session on this computer is
+listed under its project, from both agents.
 
-## The window {.i-app-window}
+On the first launch, Emaki copies every Claude Code session into
+`~/.emaki/archive`, and each later launch catches up, so a session
+Claude Code has deleted is still here. See [Projects](projects.qmd).
 
-The chat is the main panel. Four panels stand beside it, a button
-and a key each, there when you want them and gone when you do not.
+## Layout {.i-app-window}
 
-| | | |
-|---|---|---|
-| [Files](files.qmd) | [⌘⇧F]{.kbd} | the project's folder as a tree, a pane for any file, and git |
-| [Outline](outline.qmd) | [⌘⇧O]{.kbd} | a label for every prompt, to jump back to any step |
-| [Shell Terminal](shell.qmd) | [⌘⇧S]{.kbd} | a shell in the project's folder |
-| [Agent Terminal](agent.qmd) | [⌘⇧A]{.kbd} | the session's own agent as it runs |
+The sidebar and the chat are always there. The four panels are hidden by
+default: files or outline opens on the left of the chat, the shell or
+agent terminal on its right.
 
-: {.table-keys tbl-colwidths="[30,14,56]"}
+::: {.layout}
 
-Files and outline share the left side, one at a time; the two terminals
-share the right.
+::: {.fig data-figure="layout" aria-label="Emaki's window as it opens: the sidebar with the projects, and the chat. The four panels are named over it, Files, Outline, Shell Terminal and Agent Terminal, each with a line to its button; Projects and Chats are named under it. A panel's name or button brings the panel in beside the chat, and a part under the pointer stands forward of the window."}
+:::
 
-## What it keeps {.i-hard-drive}
+::: {.layout-part .i-folder data-part="projects"}
+[Projects](projects.qmd)
+:::
 
-Everything is under `~/.emaki`:
+::: {.layout-part .i-book-open data-part="chats"}
+[Chats](chats.qmd)
+:::
+
+::: {.layout-part .i-tree-view data-part="files"}
+[Files](files.qmd) [⌘⇧F]{.kbd}
+:::
+
+::: {.layout-part .i-list-numbers data-part="outline"}
+[Outline](outline.qmd) [⌘⇧O]{.kbd}
+:::
+
+::: {.layout-part .i-terminal data-part="shell"}
+[Shell Terminal](shell.qmd) [⌘⇧S]{.kbd}
+:::
+
+::: {.layout-part .i-sparkles data-part="agent"}
+[Agent Terminal](agent.qmd) [⌘⇧A]{.kbd}
+:::
+
+:::
+
+## What Emaki keeps {.i-hard-drive}
+
+Everything Emaki keeps is in `~/.emaki`:
 
 | | |
 |---|---|
@@ -97,8 +102,8 @@ Everything is under `~/.emaki`:
 
 : {.table-keys tbl-colwidths="[24,76]"}
 
-Only `archive/` cannot be rebuilt. That is the folder to back up.
+Codex has its own archiving system, so `archive/` only stores Claude Code sessions.
 
-Emaki sets one thing in Claude Code's settings: its status line, which
-feeds the [status bar](chats.qmd#the-status-bar) under the
-composer. `emaki-core statusline restore` puts yours back.
+Emaki changes one setting in Claude Code: its status line, which feeds
+Emaki's own [status line](chats.qmd#status-line) under the composer. To put
+yours back, run `emaki-core statusline restore`.

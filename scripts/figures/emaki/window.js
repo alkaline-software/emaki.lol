@@ -45,7 +45,7 @@ let shades = 0;
 /* ---------- what is drawn: primitives in the window's frame ---------- */
 
 /** A pen that collects a region's drawing: lines, outlines, raised tiles and dots, each at a height w over its layer. */
-function pen() {
+export function pen() {
   const out = [];
   return {
     out,
@@ -54,12 +54,15 @@ function pen() {
     ring: (u0, v0, u1, v1, r, cls = "nf", w = 0) => out.push({ t: "ring", r: [u0, v0, u1, v1], rad: r, cls, w }),
     tile: (u0, v0, u1, v1, r, h, cls = "", w = 0) => out.push({ t: "tile", r: [u0, v0, u1, v1], rad: r, h, cls, w }),
     dot: (u, v, rr, cls = "dot m", w = 0) => out.push({ t: "dot", u, v, rr, cls, w }),
+    // A word, `s` units high, from (u, v) on its middle line; a picture, `s` units square, centered there.
+    text: (u, v, str, s, cls = "emk-text", w = 0) => out.push({ t: "text", u, v, str, s, cls, w }),
+    image: (u, v, href, s, w = 0) => out.push({ t: "image", u, v, href, s, w }),
   };
 }
-const chev = (p, u, v, w, cls = "nf") => p.line([[u, v + 1.6], [u + 2, v], [u, v - 1.6]], cls, w);
+export const chev = (p, u, v, w, cls = "nf") => p.line([[u, v + 1.6], [u + 2, v], [u, v - 1.6]], cls, w);
 
 /** The regions, each drawn in full; the window's faint copy of a region is the same drawing, flattened. */
-const REGIONS = {
+export const REGIONS = {
   side(p, [a, , c, d]) {
     const wd = c - a;
     p.tile(a + 3, d - 10, c - 3, d - 3, 3, 1.4);
@@ -187,7 +190,43 @@ const flatten = (prims) => prims.map((q) =>
   : { ...q, cls: "nf lo", w: 0 });
 
 /** The full drawing, in the darker ink: what is drawn in the middle stroke takes the silhouettes'. */
-const strengthen = (prims) => prims.map((q) => (q.cls === "nf" ? { ...q, cls: "nf sil" } : q));
+export const strengthen = (prims) => prims.map((q) => (q.cls === "nf" ? { ...q, cls: "nf sil" } : q));
+
+/* ---------- drawing a primitive ---------- */
+
+/** The element for a primitive, made once in `parent`: a tile is a silhouette and its crease, the rest one path. */
+export function element(q, parent) {
+  if (q.t === "text") {
+    q.el = mk("text", { class: q.cls, "dominant-baseline": "central" }, parent);
+    q.el.textContent = q.str;
+  } else if (q.t === "image") q.el = mk("image", { href: q.href }, parent);
+  else if (q.t === "tile") {
+    const gg = mk("g", {}, parent);
+    q.el = mk("path", { class: "sil" + (q.cls ? " " + q.cls : "") }, gg);
+    q.cr = mk("path", { class: "nf lo" }, gg);
+  } else q.el = mk("path", { class: q.cls }, parent);
+  return q;
+}
+
+export const circle = (P2, u, v, r, w) => poly(Array.from({ length: 12 }, (_, i) => { const t = (i / 12) * Math.PI * 2; return P2(u + r * Math.cos(t), v + r * Math.sin(t), w); }));
+
+/** Writes a primitive's paths for the projector P2, `off` over the window's face; `front` says which way a tile's sides face. */
+export function draw(q, off, front, P2) {
+  const w = off + q.w;
+  if (q.t === "tile") {
+    const [u0, v0, u1, v1] = q.r, bv = Math.min(1.2, (u1 - u0) / 4, (v1 - v0) / 4);
+    const [ring, inner] = rings(u0, v0, u1, v1, q.rad, bv), s = prism(P2, front, ring, inner, w, w + q.h);
+    q.el.setAttribute("d", s.sil); q.cr.setAttribute("d", s.crease);
+  } else if (q.t === "ring") q.el.setAttribute("d", poly(rrect(...q.r, q.rad, 3).map((s) => P2(s.u, s.v, w))));
+  else if (q.t === "line") q.el.setAttribute("d", open(q.pts.map(([u, v]) => P2(u, v, w))));
+  else if (q.t === "dot") q.el.setAttribute("d", circle(P2, q.u, q.v, q.rr, w));
+  else {
+    // A word or a picture stays upright: placed at its point, sized by how far a unit across reaches there.
+    const [x, y] = P2(q.u, q.v, w), [x1, y1] = P2(q.u + 1, q.v, w), k = Math.hypot(x1 - x, y1 - y) * q.s;
+    if (q.t === "text") { q.el.setAttribute("x", x.toFixed(2)); q.el.setAttribute("y", y.toFixed(2)); q.el.setAttribute("font-size", k.toFixed(2)); }
+    else { q.el.setAttribute("x", (x - k / 2).toFixed(2)); q.el.setAttribute("y", (y - k / 2).toFixed(2)); q.el.setAttribute("width", k.toFixed(2)); q.el.setAttribute("height", k.toFixed(2)); }
+  }
+}
 
 /* ---------- the figure ---------- */
 
@@ -234,13 +273,7 @@ export function figure({ layout, focus, region, button }) {
     const PN = (u, v, w) => { const k = near(); return P2(cu + (u - cu) * k, cv + (v - cv) * k, w); };
 
     // An element for each primitive, made once, in paint order: the window, the guides, the part.
-    const make = (q) => {
-      if (q.t === "tile") {
-        const gg = mk("g", {}, g);
-        q.el = mk("path", { class: "sil" + (q.cls ? " " + q.cls : "") }, gg);
-        q.cr = mk("path", { class: "nf lo" }, gg);
-      } else q.el = mk("path", { class: q.cls }, g);
-    };
+    const make = (q) => element(q, g);
     base.forEach(make);
     // The shadow: the part's outline on the window, blurred.
     const fid = "emk-shade-" + ++shades, defs = mk("defs", {}, svg);
@@ -248,18 +281,6 @@ export function figure({ layout, focus, region, button }) {
     mk("feGaussianBlur", { stdDeviation: 5 }, fl);
     const shade = mk("path", { class: "emk-shade", filter: `url(#${fid})` }, g);
     make(guides); part.forEach(make);
-
-    const circle = (P2, u, v, r, w) => poly(Array.from({ length: 12 }, (_, i) => { const t = (i / 12) * Math.PI * 2; return P2(u + r * Math.cos(t), v + r * Math.sin(t), w); }));
-    function draw(q, off, front, P2) {
-      const w = off + q.w;
-      if (q.t === "tile") {
-        const [u0, v0, u1, v1] = q.r, bv = Math.min(1.2, (u1 - u0) / 4, (v1 - v0) / 4);
-        const [ring, inner] = rings(u0, v0, u1, v1, q.rad, bv), s = prism(P2, front, ring, inner, w, w + q.h);
-        q.el.setAttribute("d", s.sil); q.cr.setAttribute("d", s.crease);
-      } else if (q.t === "ring") q.el.setAttribute("d", poly(rrect(...q.r, q.rad, 3).map((s) => P2(s.u, s.v, w))));
-      else if (q.t === "line") q.el.setAttribute("d", open(q.pts.map(([u, v]) => P2(u, v, w))));
-      else if (q.t === "dot") q.el.setAttribute("d", circle(P2, q.u, q.v, q.rr, w));
-    }
 
     function frame() {
       C.az = rad(az.x); C.k = kk.x;

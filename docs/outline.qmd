@@ -1,23 +1,26 @@
 ---
 title: "Outline Panel"
-subtitle: "⌘⇧O: a label for every prompt, to see the shape of the work and jump back to any step."
+subtitle: "⌘⇧O: a short label for every prompt, to find your way back through a long session."
 ---
 
-{{< include _sk/outline.html >}}
+::: {.layout .layout-page}
+::: {.fig data-figure="layout-outline" aria-label="Emaki's window with the outline shown in color at the chat's left: an entry for every prompt. The rest is gray. The panel stands forward under the pointer, and its button in the chrome puts it away."}
+:::
+:::
 
 ## Entries {.i-list-numbers}
 
-One entry per prompt, under a heading for each day: the time on a small
-plate, then three to five words for what you asked. A short prompt is
-shown as it is. A long one is labeled by the agent's small model, Haiku
-for Claude Code and Codex's light model for Codex, in a session of its
-own, so nothing enters yours. Labels are asked for the entries in view, a
-few at a time, and kept for good, so each prompt is asked about once.
+Going back through a long session is a pain. The outline gives each
+prompt one entry, under a heading for each day: the time, then three to
+five words for what you asked. A short prompt is shown as it is. A long
+one is labeled by the agent's small model, Haiku for Claude Code and
+Codex's light model for Codex, in a separate session, so nothing enters
+yours. Labels are made for the entries in view, a few at a time, and
+kept, so each prompt is labeled once.
 
 ## Going back {.i-history}
 
-Click an entry and the chat glides to that round. As you scroll,
-the entry in view wears the accent, so the outline always says where you
-are. The panel shares the left side with the [files](files.qmd): one
-shows at a time, and one takes the other's place without moving the
-chat.
+Click an entry and the chat glides back to that round. As you scroll,
+the entry in view is highlighted, so the outline always shows where you
+are. It shares the left side with the [files](files.qmd): one shows at
+a time, and switching does not move the chat.

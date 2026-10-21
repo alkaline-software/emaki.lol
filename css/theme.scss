@@ -161,7 +161,7 @@ $icons: download scroll github archive search book-open inbox terminal
   tree-view git-branch microphone keyboard bot settings shield check
   external-link arrow-right sparkles history info refresh hard-drive
   file-text box eye circle-check palette typography list-numbers sun moon copy
-  chevron-right app-window play folder at gauge asterisk file-code file-table
+  chevron-right app-window play folder at gauge file-code file-table
   image file square-terminal claude;
 
 @each $i in $icons {
@@ -181,6 +181,25 @@ $icons: download scroll github archive search book-open inbox terminal
 }
 
 /* ---- The page ---- */
+
+// The soft line between sections (`.rule` on the landing page, and
+// between a docs page's sections below): the hairline's color, fading out
+// at both ends.
+$rule-soft: linear-gradient(90deg, transparent, var(--border) 20%, var(--border) 80%, transparent);
+
+// A docs page's sections are parted as the landing page's are: the soft
+// line in the air over each heading after the first, a little nearer
+// the words before it than the heading after.
+body.nav-sidebar main.content > section.level2 + section.level2 {
+  &::before {
+    content: "";
+    display: block;
+    height: 1px;
+    margin-top: 2.5rem;
+    background: $rule-soft;
+  }
+  > h2:first-child { margin-top: 2.75rem; }
+}
 
 @media (max-width: 599.98px) {
   :root { font-size: 16px; }
@@ -302,8 +321,8 @@ blockquote {
 
 // Everything that is a control or a label rather than a sentence.
 .navbar, .pill, kbd, .kbd, .chip, th, .nav-footer, #TOC, nav[role="doc-toc"],
-.download span, .download::after, .gh-widget-trigger,
-.gh-dropdown, .code-copy-button, .anchorjs-link, .steps li::before {
+.gh-widget-trigger,
+.gh-dropdown, .code-copy-button, .anchorjs-link {
   font-family: var(--font-ui);
 }
 
@@ -752,7 +771,7 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
 }
 
 // Each panel's figure is in the panel's own color, the one its button and
-// its box have in the docs' sketches: the files ochre, the outline mauve,
+// its window have at the head of its docs page: the files ochre, the outline mauve,
 // the shell sage, and the agent's terminal Claude's. The two parts of the
 // main system keep the accent.
 .fig[data-figure="files"] { --hairline-hi: var(--sk-ochre); }
@@ -767,32 +786,198 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
 .fig svg .emk-wash { fill: color-mix(in oklab, var(--hairline-hi) 7%, var(--hairline-plate)); }
 .fig svg .emk-shade { fill: color-mix(in oklab, var(--hairline-hi) 22%, transparent); stroke: none; }
 
+/* ---- The layout ---- */
+
+// Get Started, Layout (scripts/figures/emaki/layout.js): Emaki's window on
+// Hairline with the six parts named around it, the four panels over it,
+// their leaders to their buttons, and the main system's two under it.
+// Every part is in its own color, its region's frame and wash, its leader,
+// its button in the chrome and its name: the main system's two the
+// accent, each panel its own. The engine sets `data-wide` where the figure
+// has room for the names (720 px), and puts each name at its leader's
+// end; with less, or before the script, the names are a grid of tiles
+// under the window.
+.layout [class*="emk-p-"], .layout-part { --part: var(--accent); }
+.layout .emk-p-files, .layout-part[data-part="files"] { --part: var(--sk-ochre); }
+.layout .emk-p-outline, .layout-part[data-part="outline"] { --part: var(--sk-mauve); }
+.layout .emk-p-shell, .layout-part[data-part="shell"] { --part: var(--sk-sage); }
+.layout .emk-p-agent, .layout-part[data-part="agent"] { --part: var(--claude); }
+// At the head of a part's docs page only that part keeps its color; the
+// others take the window's gray at half strength (layout.js, `focus`), as
+// a part's page is about that part alone.
+.layout .emk-mute { --part: var(--hairline-mid); opacity: 0.5; }
+// Hairline reads its bright stroke from the host; a part's group takes
+// its own, so its frame, accents and dots are in its color.
+.layout [class*="emk-p-"] { --hl-hi: var(--part); --hairline-hi: var(--part); }
+
+.layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: 1.5rem 0 0;
+
+  > .fig { grid-column: 1 / -1; aspect-ratio: 328 / 192; margin-bottom: 0.5rem; }
+}
+// At a docs page's head: the window alone, centered, as wide as reads
+// beside the words, and air under it before the first section.
+.layout.layout-page {
+  display: block;
+  max-width: 36rem;
+  margin: 1.75rem auto 2.25rem;
+
+  > .fig { margin: 0; }
+}
+.layout[data-wide] {
+  display: block;
+  position: relative;
+  aspect-ratio: 400 / 268;
+
+  > .fig { position: absolute; inset: 0; aspect-ratio: auto; margin: 0; }
+}
+
+// The drawing: the lit part's lines in the silhouettes' darker ink, its
+// guides and shadow in its color, a panel's button filled while its panel
+// shows, and the leaders in the part's color, full while it is lit.
+.layout svg {
+  .emk-on .nf:not(.hi):not(.lo):not(.dash):not(.emk-lead) { stroke: var(--hl-edge); }
+  .emk-guide { stroke: color-mix(in oklab, var(--part) 60%, transparent); }
+  .emk-btn { transition: fill 160ms var(--ease); }
+  .emk-on .emk-btn { fill: color-mix(in oklab, var(--part) 35%, var(--hl-plate)); }
+  .emk-lead { stroke: color-mix(in oklab, var(--part) 50%, transparent); transition: stroke 160ms var(--ease); }
+  .emk-on .emk-lead { stroke: var(--part); }
+  .emk-lead-dot { fill: var(--part); }
+
+  // The app's own words, in the wordmark's face:
+  // the muted ink, the row that acts and the open project in the ink, the
+  // heading a shade lighter, the name in the accent beside the icon.
+  .emk-text { fill: var(--muted); stroke: none; font-family: var(--font-wordmark); font-weight: 500; }
+  .emk-lit { fill: var(--ink); font-weight: 600; }
+  .emk-small { fill: color-mix(in oklab, var(--muted) 75%, var(--page)); font-weight: 600; letter-spacing: 0.02em; }
+  .emk-name { fill: var(--accent); font-weight: 400; }
+}
+.layout:not([data-wide]) .emk-leads { display: none; }
+
+// The close-ups and the settings sheet on the same window (composer.js,
+// layout.js `settings`): a value in the agent's own color, semibold as
+// the app sets it, in the nearest of the set; a pill's gray face,
+// darker while its list is open; the current row's wash and its tick in
+// the accent; a plate under a part of the status line that stands
+// forward; a segment's plate; the swatches and the switch, filled.
+.layout svg {
+  .emk-v { font-weight: 700; }
+  .emk-tail { fill: var(--muted); font-weight: 500; }
+  .emk-v-muted { fill: var(--muted); }
+  .emk-v-accent { fill: var(--accent); }
+  .emk-v-ochre { fill: var(--sk-ochre); }
+  .emk-v-sage { fill: var(--sk-sage); }
+  .emk-v-slate { fill: var(--sk-slate); }
+  .emk-v-mauve { fill: var(--sk-mauve); }
+  .emk-v-rose { fill: var(--sk-rose); }
+  .emk-ico { stroke: var(--hl-edge); }
+  .emk-pill { fill: color-mix(in oklab, var(--hl-edge) 14%, var(--hl-plate)); transition: fill 160ms var(--ease); }
+  .emk-open .emk-pill { fill: color-mix(in oklab, var(--hl-edge) 30%, var(--hl-plate)); }
+  .emk-cur { fill: color-mix(in oklab, var(--ink) 8%, transparent); stroke: none; transition: opacity 160ms var(--ease); }
+  .emk-tick { stroke: var(--accent); }
+  .emk-on-hi { stroke: var(--hl-plate); }
+  .emk-send { fill: var(--hl-hi); stroke: none; }
+  .emk-plate { fill: color-mix(in oklab, var(--part) 10%, var(--hl-plate)); stroke: color-mix(in oklab, var(--part) 50%, transparent); }
+  .emk-seg { fill: color-mix(in oklab, var(--ink) 10%, transparent); stroke: none; }
+  .emk-acc { stroke: var(--accent); }
+  .emk-claude { stroke: var(--claude); }
+  .emk-fill-accent { fill: var(--accent); stroke: none; }
+  .emk-fill-mauve { fill: var(--sk-mauve); }
+  .emk-fill-rose { fill: var(--sk-rose); }
+  .emk-fill-ochre { fill: var(--sk-ochre); }
+  .emk-fill-sage { fill: var(--sk-sage); }
+  .emk-fill-teal { fill: var(--ink-teal); }
+  .emk-fill-slate { fill: var(--sk-slate); }
+  .emk-fill-codex { fill: var(--codex); }
+  .emk-fill-plate { fill: var(--hl-plate); }
+  .emk-aa { font-family: var(--font-words); font-weight: 400; fill: var(--ink); }
+  .emk-aa-mono { font-family: var(--font-mono); font-weight: 400; fill: var(--ink); }
+}
+
+// A part's name: its icon and its name in a deep shade of its color, as a
+// part's card names it on the landing page, and its key. Lit, the name
+// nears the color itself.
+.layout-part {
+  font-size: 1rem;
+  white-space: nowrap;
+
+  > p {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin: 0;
+  }
+  // The icon is the div's (`.i-<name>` sets `--icon`), drawn before the name.
+  > p::before {
+    @include glyph(1.05rem);
+    color: color-mix(in oklab, var(--part) 62%, var(--ink));
+  }
+  a, a:visited {
+    color: color-mix(in oklab, var(--part) 62%, var(--ink));
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 160ms var(--ease);
+  }
+  a:hover, &[data-on] a { color: color-mix(in oklab, var(--part) 85%, var(--ink)); }
+  a:active { color: color-mix(in oklab, var(--part) 45%, var(--ink)); }
+}
+
+// Around the window: centered on its leader's end, over it or under it.
+// Over it, four to a row, a name's key goes under the name, so the four
+// fit side by side.
+.layout[data-wide] > .layout-part {
+  position: absolute;
+  width: max-content;
+  transform: translate(-50%, 0.3rem);
+
+  &[data-top] { transform: translate(-50%, calc(-100% - 0.3rem)); }
+  > p { flex-wrap: wrap; justify-content: center; row-gap: 0.3rem; }
+  > p::after { content: ""; flex-basis: 100%; order: 1; }
+  kbd, .kbd { order: 2; }
+}
+
+// Under it: a tile a part, washed in its color as a part's card is, the
+// key at the far end.
+.layout:not([data-wide]) > .layout-part {
+  padding: 0.55rem 0.75rem;
+  border: 1px solid color-mix(in oklab, var(--part) 16%, var(--border));
+  border-radius: 8px;
+  background: color-mix(in oklab, var(--part) 6%, var(--panel));
+
+  kbd, .kbd { margin-left: auto; }
+}
+@media (max-width: 479.98px) {
+  .layout { grid-template-columns: minmax(0, 1fr); }
+}
+
 /* ---- The shift ---- */
 
 // From the IDE to the ADE (index.qmd, _shift-ide.html, _shift-ade.html):
-// two rows under the heading, each a window seen from the front at the
-// left and its words at the right, and an arrow down the left column
-// from the one window to the other, centered on both. One column under
-// 992 wide: a window, its words, the arrow, the next window, its words.
-// The strokes do not scale, as the handscroll's do not.
+// from 992 wide the two windows side by side under the heading, each seen
+// from the front and as wide as its column, an arrow across from the one
+// to the other, centered on both, and each window's words under it, so
+// the two columns are one shape and the words keep a reading measure. One
+// column under 992 wide: a window, its words, the arrow turned down, the
+// next window, its words. The strokes do not scale, as the handscroll's
+// do not.
 .shift {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  column-gap: 3.5rem;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr);
   max-width: var(--w-page);
   margin: 0 auto;
 
-  > h2:first-child { grid-column: 1 / -1; margin-top: 3.5rem; margin-bottom: 1.5rem; }
-  > .shift-words { grid-column: 2; }
-  > .shift-arrow { grid-column: 1; justify-self: center; }
+  > h2:first-child { margin-top: 3.5rem; margin-bottom: 1.5rem; }
+  > .shift-words { margin-top: 1.25rem; }
+  > .shift-arrow { justify-self: center; }
 }
 
 // Quarto gives every <figure> its own `figure` class, and its
 // `figure.figure { display: block }` outranks a class alone, so the pane
 // is selected from its parent.
 .shift > .shift-pane {
-  grid-column: 1;
   justify-self: center;
   width: 100%;
   max-width: 30rem;
@@ -810,12 +995,18 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
   svg * { vector-effect: non-scaling-stroke; }
 }
 
-@media (max-width: 991.98px) {
+@media (min-width: 992px) {
   .shift {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) 3.5rem minmax(0, 1fr);
+    column-gap: 2rem;
 
-    > .shift-words, > .shift-arrow, > .shift-pane { grid-column: 1; }
-    > .shift-words { margin-top: 1.25rem; }
+    > h2:first-child { grid-column: 1 / -1; }
+    > .shift-pane { grid-row: 2; max-width: none; }
+    > .shift-ide { grid-column: 1; }
+    > .shift-ade { grid-column: 3; }
+    > .shift-ide + .shift-words { grid-area: 3 / 1; margin-top: 2rem; }
+    > .shift-ade + .shift-words { grid-area: 3 / 3; margin-top: 2rem; }
+    > .shift-arrow { grid-area: 2 / 2; align-self: center; margin: 0; transform: rotate(-90deg); }
   }
 }
 
@@ -879,7 +1070,8 @@ body.quarto-dark .shift-ade svg {
 }
 .shift-words > p:last-child { margin-bottom: 0; }
 
-// Down from the one window to the other, in the gap between their rows.
+// From the one window to the other: across, between them, from 992 wide;
+// down, between the two, under it.
 .shift-arrow {
   display: block;
   width: 1.5rem;
@@ -901,9 +1093,8 @@ body.quarto-dark .shift-ade svg {
 // pane with its name in it, in one color for the two; the names are in
 // the wordmark's face, as the name beside the icon is, in title case, and
 // each stands on a halo in the page's color, so it reads over the lines
-// it crosses. The docs pages' sketches (The sketches, below) draw with
-// the same set.
-.shift, .sketch {
+// it crosses.
+.shift {
   .sk-frame { stroke: var(--muted); }
   .sk-faint { stroke: var(--border-2); }
   .sk-edge { stroke: var(--border-2); }
@@ -918,10 +1109,7 @@ body.quarto-dark .shift-ade svg {
   .sk-ochre { fill: var(--sk-ochre); stroke: none; }
   .sk-sage { fill: var(--sk-sage); stroke: none; }
   .sk-sage-line { stroke: var(--sk-sage); }
-  .sk-ochre-line { stroke: var(--sk-ochre); }
-  // The name keeps the alphabetic baseline: the sketches set every other
-  // text's baseline central (The sketches), and the name on that sits
-  // low beside the icon.
+  // The name keeps the alphabetic baseline beside the icon.
   .sk-name { font-family: var(--font-wordmark); font-size: 10px; fill: var(--accent); stroke: none; dominant-baseline: alphabetic; }
 
   .sk-box { color: var(--muted); }
@@ -975,12 +1163,10 @@ body.quarto-dark .shift-ade svg {
   .sk-btn { --btn: var(--accent); stroke: var(--btn); cursor: pointer; }
   .sk-btn-ochre { --btn: var(--sk-ochre); }
   .sk-btn-sage { --btn: var(--sk-sage); }
-  // More of the set, for the panels these windows hold, in both the shift
-  // and the docs' sketches: the outline's mauve, the code's slate, and
-  // Claude's color (The palette) for the agent's terminal: its border, its
-  // prompts, its spark, and the button that brings it.
+  // More of the set, for the panels the ADE window holds: the outline's
+  // mauve, and Claude's color (The palette) for the agent's terminal: its
+  // border, its prompts, its spark, and the button that brings it.
   .sk-btn-mauve { --btn: var(--sk-mauve); }
-  .sk-btn-slate { --btn: var(--sk-slate); }
   .sk-btn-claude { --btn: var(--claude); }
   .sk-c-claude { color: var(--claude); }
   .sk-claude-line { stroke: var(--claude); }
@@ -1000,126 +1186,6 @@ body.quarto-dark .shift-ade svg {
   // so filled, folded when outlined; it keeps its glow in both states,
   // since it is the one thing in the list that answers.
   .sk-fold.on .sk-face { filter: drop-shadow(0 0 4px color-mix(in oklab, var(--btn) 85%, transparent)); }
-}
-
-@keyframes sk-blink { 0%, 54% { opacity: 1; } 55%, 100% { opacity: 0; } }
-
-/* ---- The sketches ---- */
-
-// One on each docs page (docs/_sk/*.html): Emaki's window drawn as the
-// shift's ADE is, one base for every page, the sidebar, the chat
-// and the panels at its sides, with the page's own part in color and the
-// rest dimmed to gray (`.sk-dim`, a part at a time); the frame, the
-// lights, the name and the send button keep their colors on every page.
-// The things in it that can be done are drawn as the app has them, a
-// button, a row, a segment, each answering the pointer (js/sketches.js).
-// The words in them are small, in the wordmark's face, from the left,
-// and what the stylesheet fades is the script's to name.
-.sketch {
-  // A part that is not the page's: gray and quiet, and nothing in it
-  // answers (its boxes do not light, its rows take no pointer).
-  .sk-dim { filter: grayscale(1); opacity: 0.5; }
-  .sk-dim .sk-box > rect:first-child, .sk-dim .sk-row { pointer-events: none; }
-
-  max-width: 32rem;
-  margin: 2rem auto 2.75rem;
-
-  svg {
-    display: block;
-    width: 100%;
-    height: auto;
-    fill: none;
-    stroke-width: 1.5;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    overflow: visible;
-    border-radius: 2.5% / 3.6364%;
-    box-shadow:
-      0 0 0 6px color-mix(in oklab, var(--accent) 16%, transparent),
-      0 12px 48px -8px color-mix(in oklab, var(--accent) 40%, transparent);
-  }
-  svg * { vector-effect: non-scaling-stroke; }
-  .sk-window { stroke: var(--accent); stroke-width: 2; }
-
-
-  text, .sk-box text {
-    font-family: var(--font-wordmark);
-    font-size: 6.5px;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    fill: var(--muted);
-    stroke: var(--page);
-    stroke-width: 2.5;
-    stroke-linejoin: round;
-    paint-order: stroke;
-    text-anchor: start;
-    dominant-baseline: central;
-  }
-  text.sk-lit { fill: var(--ink); }
-  text.sk-accent-text { fill: var(--accent); }
-  text.sk-sage-text { fill: var(--sk-sage); }
-  text.sk-ochre-text { fill: var(--sk-ochre); }
-  text.sk-page-text { fill: var(--page); stroke: none; }
-  text.sk-aa { font-family: var(--font-words); font-size: 9px; font-weight: 400; fill: var(--ink); }
-  text.sk-aa-mono { font-family: var(--font-code); font-size: 8px; font-weight: 400; fill: var(--ink); }
-  .sk-btn.on text { fill: var(--page); stroke: none; }
-
-  // The composer's caret blinks, as the app's does with the focus in the
-  // box, so the sketch says where the typing goes; still with motion off.
-  .sk-caret { animation: sk-blink 1.1s steps(1) infinite; }
-  .sk-codex { stroke: var(--sk-sage); }
-  .sk-mauve { fill: var(--sk-mauve); stroke: none; }
-  .sk-slate { fill: var(--sk-slate); stroke: none; }
-  .sk-slate-line { stroke: var(--sk-slate); }
-  .sk-mauve-line { stroke: var(--sk-mauve); }
-  .sk-rose-line { stroke: var(--sk-rose); }
-  .sk-added { stroke: var(--sk-sage); }
-  .sk-removed { stroke: var(--sk-rose); }
-  .sk-tick { stroke: var(--sk-sage); stroke-width: 1.25; }
-  .sk-tick-fill { fill: var(--sk-sage); stroke: none; }
-  .sk-tickbox { fill: var(--accent); stroke: none; }
-  .sk-badge { fill: var(--accent); stroke: none; opacity: 0.55; }
-  .sk-mark { fill: var(--mark); stroke: none; opacity: 0.45; }
-  .sk-dash { stroke: var(--border-2); stroke-dasharray: 2 2; }
-  .sk-plate { fill: var(--panel-2); stroke: none; }
-  .sk-plate-line { stroke: var(--panel-2); stroke-width: 2.5; }
-  .sk-page-fill { fill: var(--page); stroke: none; }
-  .sk-field { fill: var(--page); stroke: var(--border-2); }
-  .sk-pop { fill: var(--pop-bg); stroke: var(--pop-border); }
-  .sk-scrim { fill: color-mix(in oklab, var(--ink) 9%, transparent); stroke: none; }
-  .sk-slate-wash { fill: color-mix(in oklab, var(--sk-slate) 12%, transparent); stroke: none; }
-  .sk-ochre-wash { fill: color-mix(in oklab, var(--sk-ochre) 12%, transparent); stroke: none; }
-  .sk-sage-wash { fill: color-mix(in oklab, var(--sk-sage) 12%, transparent); stroke: none; }
-  .sk-mauve-wash { fill: color-mix(in oklab, var(--sk-mauve) 12%, transparent); stroke: none; }
-  .sk-rose-wash { fill: color-mix(in oklab, var(--sk-rose) 12%, transparent); stroke: none; }
-  .sk-arrow { stroke: var(--ink); stroke-width: 2; }
-
-  // A row that answers: washed under the pointer and while its thing is
-  // on, as the app's rows are.
-  .sk-row {
-    fill: transparent;
-    stroke: none;
-    pointer-events: all;
-    cursor: pointer;
-    transition: fill 160ms var(--ease);
-  }
-  .sk-row:hover, .sk-row.on { fill: color-mix(in oklab, var(--ink) 7%, transparent); }
-
-  // What the script names: fading in, fading out, and out of the
-  // pointer's reach while it is not there.
-  [data-show] { opacity: 0; transition: opacity 240ms var(--ease); }
-  [data-show].is-on { opacity: 1; }
-  [data-hide] { transition: opacity 240ms var(--ease); }
-  [data-hide].is-off { opacity: 0; }
-  .is-off, .is-off *, [data-show]:not(.is-on), [data-show]:not(.is-on) * { pointer-events: none; }
-}
-
-.sketch-label {
-  margin: 0.75rem 0 0;
-  font-family: var(--font-ui);
-  font-size: 0.8rem;
-  color: var(--muted);
-  text-align: center;
 }
 
 // A card with a figure over its words: the figure on the panel, a little
@@ -1154,6 +1220,9 @@ body.quarto-dark .shift-ade svg {
 .cards-2 .card:has(.fig[data-figure="outline"]) { --card-tint: var(--sk-mauve); }
 .cards-2 .card:has(.fig[data-figure="shell"]) { --card-tint: var(--sk-sage); }
 .cards-2 .card:has(.fig[data-figure="agent"]) { --card-tint: var(--claude); }
+// A step's heading, on Get Started, is no place to link to: Quarto's
+// anchor beside it would stand in the card's words.
+.start h3 .anchorjs-link { display: none; }
 
 // Two to a row, the cards are wide: the figure keeps to a width the
 // window reads at, and comes up into the card's head, where its drawing
@@ -1323,6 +1392,17 @@ body.quarto-dark .shift-ade svg {
   margin: 3.5rem 0 3rem calc(50% - 50vw);
   background: var(--border);
 }
+
+// Between the sections below the hero, a softer line: the page's column
+// wide, the hairline's color fading out at both ends, and the next
+// heading's own air under it. A docs page draws the same between its
+// sections (The page).
+.rule {
+  height: 1px;
+  max-width: var(--w-page);
+  margin: 3.5rem auto 0;
+  background: $rule-soft;
+}
 body { overflow-x: clip; }
 
 // A band of words on the landing page: the page's column, and from 992
@@ -1350,7 +1430,6 @@ body { overflow-x: clip; }
     // a class's weight more, so this names the element too to outrank it.
     > div.starts { grid-column: 1 / -1; }
   }
-  .agents { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 /* ---- Pills ---- */
@@ -1443,95 +1522,14 @@ body { overflow-x: clip; }
   }
 }
 
-/* ---- Agents ---- */
-
-// An agent is its mark in its color beside its name, and never the accent.
-.agents {
-  display: grid;
-  gap: 0.75rem;
-  margin: 1.25rem 0;
-}
-
-.agent {
-  display: grid;
-  grid-template-columns: 1.6rem 1fr;
-  column-gap: 0.9rem;
-  align-items: start;
-  padding: 1rem 1.15rem;
-  border: 1px solid var(--border);
-  border-radius: $border-radius-lg;
-
-  // The rows keep to their content: a card stretched to its neighbor's
-  // height would otherwise share the room out among them, and its words
-  // would start lower than the neighbor's.
-  align-content: start;
-
-  &::before {
-    @include glyph(1.4rem);
-    grid-row: 1 / span 4;
-    margin-top: 0.15rem;
-  }
-  &.agent-claude::before { --icon: url("assets/icons/claude.svg"); color: var(--claude); }
-  &.agent-codex::before { --icon: url("assets/icons/agents/codex.svg"); color: var(--codex); }
-
-  p { margin: 0; grid-column: 2; }
-  > p:first-child { margin-bottom: 0.1rem; }
-  > p + p { font-size: 0.95rem; line-height: 1.55; }
-}
-
 /* ---- Steps ---- */
 
-// A procedure: numbered discs on a rail, an h3 a step, its words, and any
-// command under them, as the app's Agents page draws its steps.
-.steps > ol {
-  list-style: none;
-  margin: 1.5rem 0 0;
-  padding: 0;
-  counter-reset: step;
-
-  > li {
-    position: relative;
-    padding: 0 0 2.25rem 3.25rem;
-    margin: 0;
-    counter-increment: step;
-
-    &::before {
-      content: counter(step);
-      position: absolute;
-      left: 0;
-      top: -0.2rem;
-      width: 2.25rem;
-      height: 2.25rem;
-      border-radius: 50%;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      display: grid;
-      place-items: center;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--ink);
-    }
-
-    &:not(:last-child)::after {
-      content: "";
-      position: absolute;
-      left: calc(1.125rem - 0.5px);
-      top: 2.3rem;
-      bottom: 0.3rem;
-      width: 1px;
-      background: var(--border);
-    }
-
-    &:last-child { padding-bottom: 0.5rem; }
-
-    > h3 { margin: 0 0 0.6rem; }
-    > p:last-child { margin-bottom: 0; }
-  }
-}
-
-// The steps across, on the landing page: three to a row from 768 wide,
-// each a card with its numbered disc, an h3, a line and its controls; one
-// under the other below. The band's grid gives them the whole width. A
+// The steps across, on the landing page and Get Started: three to a row
+// where their column is 640 wide, each a card with its numbered disc, an
+// h3, a line and its controls; one under the other in less. The column
+// is asked, not the window, since the docs' column is narrower than the
+// landing page's at the same width. The band's grid gives them the whole
+// width. A
 // step's buttons share its row in equal widths, side by side where two
 // fit and one under the other where they do not, so a pair never ends up
 // split in two widths; the download stretches the row the same.
@@ -1542,9 +1540,12 @@ body { overflow-x: clip; }
   margin: 1.5rem 0 0;
   counter-reset: step;
 }
-@media (max-width: 767.98px) {
+:has(> .starts) { container-type: inline-size; }
+@container (max-width: 39.99rem) {
   .starts { grid-template-columns: minmax(0, 1fr); }
 }
+// Words after the steps, on Get Started, keep a step's gap of air.
+.starts + * { margin-top: 1.5rem; }
 .start {
   counter-increment: step;
   display: flex;
@@ -1597,80 +1598,6 @@ body { overflow-x: clip; }
 .pill.i-codex::before { color: var(--codex); }
 .pill.pill-git::before { color: var(--git); }
 .pill.pill-github::before { color: var(--github); }
-
-// Quarto takes the top margin off the first section's heading, taking it
-// to follow the title; after the steps it follows them, and keeps its air.
-main.content > div.steps + section.level2 > h2:first-child { margin-top: 3rem; }
-
-/* ---- Downloads ---- */
-
-// Four tiles, each the system's mark, its name and a chip. Quiet, all four:
-// the visitor's own system is marked by js/page.js and gets the accent's
-// edge and a word.
-.downloads {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
-  margin: 1.1rem 0 1.25rem;
-
-  // Pandoc wraps the run of links in a paragraph; `contents` drops it so
-  // the four tiles are the grid's items.
-  > p { display: contents; }
-}
-
-.download {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1.5rem 1fr;
-  grid-template-rows: auto auto;
-  column-gap: 0.85rem;
-  align-items: center;
-  padding: 0.8rem 1rem;
-  border: 1px solid var(--border);
-  border-radius: $border-radius;
-  background: var(--panel);
-  color: var(--ink) !important;
-  text-decoration: none !important;
-  transition: border-color 160ms var(--ease), background 160ms var(--ease);
-
-  &::before {
-    @include glyph(1.5rem);
-    grid-row: 1 / span 2;
-    color: var(--muted);
-  }
-  &[data-os="mac"]::before { --icon: url("assets/icons/os/mac.svg"); }
-  &[data-os="windows"]::before { --icon: url("assets/icons/os/windows.svg"); }
-  &[data-os="linux"]::before { --icon: url("assets/icons/os/linux.svg"); }
-
-  strong {
-    font-size: 1rem;
-    line-height: 1.2;
-  }
-
-  span {
-    color: var(--muted);
-    font-size: 0.8rem;
-    line-height: 1.3;
-    white-space: nowrap;
-  }
-
-  &:hover { border-color: var(--muted); background: var(--panel-2); }
-
-  &.download-here {
-    border-color: var(--accent);
-
-    &::after {
-      content: "This computer";
-      position: absolute;
-      top: 0.55rem;
-      right: 0.75rem;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-      color: var(--link);
-    }
-  }
-}
 
 /* ---- Tables ---- */
 
@@ -1799,6 +1726,9 @@ main.content > div.steps + section.level2 > h2:first-child { margin-top: 3rem; }
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.5rem 0.75rem;
 }
+// The grid's gap is the air between tiles: the words' gap between a
+// list's items would lower every tile but the first.
+main.content .types li + li { margin-top: 0; }
 .types li {
   position: relative;
   padding: 0.55rem 0.75rem 0.6rem 2.35rem;
@@ -2098,19 +2028,15 @@ html.js-rise .cards.rise.in > .card {
     transition-duration: 0.01ms !important;
   }
   html.js-rise .rise, html.js-rise .cards.rise > .card { opacity: 1; transform: none; }
-  .sketch .sk-caret { animation: none; }
 }
 
 /* ---- Narrow ---- */
 
 @media (max-width: 599.98px) {
-  .downloads, .cards { grid-template-columns: minmax(0, 1fr); }
+  .cards { grid-template-columns: minmax(0, 1fr); }
   // The GitHub widget's icon alone, so the navbar stays one row.
   #github-widget .gh-dropdown-arrow { display: none; }
   .gh-widget-trigger { padding: 0 7px; }
-  .steps > ol > li { padding-left: 2.9rem; }
-  .steps > ol > li::before { width: 2rem; height: 2rem; font-size: 0.85rem; }
-  .steps > ol > li:not(:last-child)::after { left: calc(1rem - 0.5px); }
   .hero { padding-top: 0.75rem; }
   .hero-lede { font-size: 1.15rem; }
   .person { grid-template-columns: 2.75rem 1fr; column-gap: 0.85rem; }

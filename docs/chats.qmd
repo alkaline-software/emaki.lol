@@ -1,58 +1,41 @@
 ---
 title: "Chats"
-subtitle: "The main panel: the transcript as it reads, and the composer under it."
+subtitle: "Main panel of Emaki, with high-quality rendering and smooth UX."
 ---
 
-{{< include _sk/chats.html >}}
+::: {.layout .layout-page}
+::: {.fig data-figure="layout-chats" aria-label="Emaki's window as it opens, with the chat in color: the transcript and the composer under it. The rest of the window is gray. The chat stands forward under the pointer."}
+:::
+:::
 
-## The transcript {.i-book-open}
+## Transcript {.i-book-open}
 
-Prompts, replies, tool calls, thoughts and subagents, laid out like the
-Claude app. Your prompts sit in a bubble with a tail, replies run the
-width, and code blocks are colored with a copy button. A tool call is a
-card, its badge colored by what it does, and three or more in a row fold
-into one line with a tally. **Explain** puts one plain sentence on an
-opaque call, asked of the agent's small model in a session of its own,
-so nothing of it enters yours.
+Chat transcripts are well-rendered with high-quality interface. Agent tool calls are stacked to release reading pressure. You can expand them and even get summaries of each tool call to understand what happened. Artifacts, background jobs, subagents, Q&A sessions are all properly taken care of with smooth UI.
 
-While the agent works, approvals, questions and plans arrive as cards at
-the end, and anything the window has no card for shows on its terminal
-card. [⌘F]{.kbd} finds in the chat; [⌘G]{.kbd} steps to the
-next hit.
+## Composer {.i-inbox}
 
-## The composer {.i-inbox}
-
-Type and send: [↩]{.kbd} or [⌘↩]{.kbd}, your choice, and [⇧↩]{.kbd} is a
-new line. A session running in a terminal gets the message through the
-agent's inbox; a finished one resumes under Emaki. Drafts survive
-quitting.
-
-- **Attach** by paste, drop or the **+** button. A picture shows as a
-  thumbnail, any other file as a chip with its name and size.
-- **`@`** picks a file or folder from the project, as the agent's own
-  prompt does.
-- **`/`** lists the slash commands and skills the agent knows. A command
-  that acts alone runs on [↩]{.kbd}; a skill goes into the message.
-- Spelling and grammar are checked as you type, with corrections on the
-  right-click menu.
+Attach files by pasting, dropping, or the [+]{.kbd} button. **`@`** picks a file or folder from the project, and **`/`** lists the agent's slash commands and skills. Spelling and grammar are checked as you type.
 
 ::: {.note}
-To talk instead of typing, in Emaki or any other app, there is
-[Kotoba](https://github.com/alkaline-software/kotoba), our dictation app
-for the Mac.
+We proudly recommend using [Kotoba](https://github.com/alkaline-software/kotoba) as your dictation app on Emaki or any other composer on your machine. It supports light-weighted models for voice-to-text dictation and post-processing.
 :::
 
 ## Mode, model and effort {.i-sparkles}
 
-Three pills under the composer, in the agent's own colors, each opening
-its list in place. [⇧Tab]{.kbd} steps the mode, as it does in the
-terminal. A new session starts with the defaults set in Settings, New
-sessions; the pills change them for this one.
+By providing three pills under the composer, Emaki made it easy to toggle among different modes, models, and efforts without needing to trigger keyboard commands or **`/`** commands (though they are also supported).
 
-## The status bar {.i-gauge}
+::: {.layout .layout-page}
+::: {.fig data-figure="composer-pills" aria-label="The foot of Emaki's composer, close up: the plus, the mode pill reading Auto mode in amber, the effort pill reading High effort in the accent, the model pill reading Opus 5.5, and send. A pill under the pointer opens its list over it, each choice in its color with a line on what it does and the current one ticked, and a row under the pointer puts its value on the pill."}
+:::
+:::
 
-The row under the composer says how much of the context window is used
-and where the five-hour and seven-day limits stand, colored at the
-thresholds the agent's own status line uses, for Claude Code and Codex
-alike. Notices land there too: what a command did, or why something
-could not be done.
+## Status line {.i-gauge}
+
+The row under the composer shows how much of the context window is used
+and where the 5-hour and 7-day limits stand. Its colors change according to
+the thresholds. The status line logic is from the [Waza](https://github.com/tw93/waza) plugin by [tw93](https://github.com/tw93).
+
+::: {.layout .layout-page}
+::: {.fig data-figure="composer-status" aria-label="The status line under Emaki's composer, close up: Context 38% in green, 5h: 34% with 2h41m left in blue, 7d: 12% with 5d1h left in blue. A part under the pointer stands forward and shows a higher number in the color it takes there."}
+:::
+:::
