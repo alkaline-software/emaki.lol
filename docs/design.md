@@ -231,6 +231,8 @@ small 0.875 rem for labels, captions and caps.
   under 720 wide the names are tiles under the window, two to a row and
   one under 480, washed as a part's card is, the key at the far end, and
   the box keeps room under the window for a part standing forward.
+  The window stays still under the pointer, as every figure on the docs
+  pages does: only the parts answer, so the places to point at stay put.
   The same window opens each part's docs page (`.layout-page`, under the
   title, centered and at most 36 rem wide): no names, only that part in
   its color, the rest in the window's gray at half strength, so the six

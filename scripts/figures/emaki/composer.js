@@ -1,4 +1,4 @@
-import { Cam, clamp, fit, lerp, poly, proj, rad, rrect } from "hairline/core/iso.ts";
+import { Cam, clamp, fit, poly, proj, rad, rrect } from "hairline/core/iso.ts";
 import { spring, stepS } from "hairline/core/motion.ts";
 import { disposer, mk, pointer, register } from "hairline/core/stage.ts";
 import { draw, element, pen } from "./window.js";
@@ -26,8 +26,7 @@ import { draw, element, pen } from "./window.js";
  *
  * Its frame is the flat sketch's (260 across, v up): the words are set at
  * widths measured in the wordmark's face (Optima, F), the pills' at 7 high
- * and the rest at 6.5. The pointer's x turns the slab a little and its y
- * tips it.
+ * and the rest at 6.5. The slab stays still, as the layout's window does.
  */
 
 const W = 260, H = 152, SLAB = 4, S = 1.46;
@@ -35,7 +34,7 @@ const W = 260, H = 152, SLAB = 4, S = 1.46;
 const PV = 38, SV = 12, PH = 13, PS = 7, TS = 6.5;
 /** A list: its width, a row's height, how far it stands forward, and the gap to its pill. */
 const LW = 96, RH = 16, LIFT = 12, GAP = 4;
-const REST_AZ = 0, AZ = 10, REST_K = 0.05, K0 = 0.08, K1 = 0.18, NEAR = 0.006;
+const REST_AZ = 0, REST_K = 0.05, NEAR = 0.006;
 /** Widths in the wordmark's face, per unit of size (measured at 100 in Optima). */
 const F = {
   Manual: 3.399, "Accept edits": 5.63, Plan: 1.97, Auto: 2.174, mode: 2.525,
@@ -88,7 +87,6 @@ export function composer({ focus = "pills" } = {}) {
     const C = Cam(REST_AZ, REST_K, S);
     let P = proj(C);
     const P2 = (u, v, w) => P(u, w, v);
-    const az = spring(REST_AZ, { k: 60, c: 14, eps: 0.01 }), kk = spring(REST_K, { k: 60, c: 14, eps: 0.0005 });
     const g = mk("g", {}, svg);
     const defs = mk("defs", {}, svg), fid = "emk-cmp-" + ++shades;
     mk("feGaussianBlur", { stdDeviation: 5 }, mk("filter", { id: fid, x: "-30%", y: "-30%", width: "160%", height: "160%" }, defs));
@@ -198,7 +196,7 @@ export function composer({ focus = "pills" } = {}) {
     let open = null, lit = null;
 
     function frame() {
-      C.az = rad(az.x); C.k = kk.x;
+      C.az = rad(REST_AZ); C.k = REST_K;
       const W3 = (u, v, w) => [u, w, v];
       fit(C, [W3(0, 0, -SLAB), W3(W, 0, -SLAB), W3(0, H, -SLAB), W3(W, H, -SLAB), W3(0, 0, 0), W3(W, H, 0)], 200, 160);
       P = proj(C);
@@ -262,7 +260,7 @@ export function composer({ focus = "pills" } = {}) {
     }
 
     const B = register(stage, (dt) => {
-      const m = [stepS(az, dt), stepS(kk, dt), ...Object.values(pills).map((p) => stepS(p.w, dt)), ...Object.values(lists).map((l) => stepS(l.amt, dt)), ...Object.values(stat).map((s) => stepS(s.amt, dt))].some(Boolean);
+      const m = [...Object.values(pills).map((p) => stepS(p.w, dt)), ...Object.values(lists).map((l) => stepS(l.amt, dt)), ...Object.values(stat).map((s) => stepS(s.amt, dt))].some(Boolean);
       frame();
       return m;
     });
@@ -323,7 +321,6 @@ export function composer({ focus = "pills" } = {}) {
       }
     }
     function rest() {
-      az.t = REST_AZ; kk.t = REST_K;
       open = null; lit = null;
       for (const k in LISTS) { picks[k] = LISTS[k].cur; pills[k].w.t = pillW(k, LISTS[k].rows.find((r) => r[0] === picks[k])[1]); }
       for (const k in lists) lists[k].amt.t = 0;
@@ -334,8 +331,6 @@ export function composer({ focus = "pills" } = {}) {
     bag.add(pointer(stage, {
       move: (p) => {
         const x = vb[0] + (p[0] / 400) * vb[2], y = vb[1] + (p[1] / 320) * vb[3];
-        az.t = lerp(AZ, -AZ, clamp((x - vb[0]) / vb[2], 0, 1));
-        kk.t = lerp(K0, K1, clamp((y - vb[1]) / vb[3], 0, 1));
         move([x, y]);
         B.wake();
       },

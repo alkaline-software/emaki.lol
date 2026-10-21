@@ -21,7 +21,8 @@ import { REGIONS, circle, draw, element, pen } from "./window.js";
  * (window.js), its shadow under it and dashed guides back to its place,
  * and its name nears its color. The projects are the box in the sidebar,
  * under New Session, All Sessions and Agents, not the sidebar whole. The
- * pointer's x turns the window a little and its y tips it.
+ * window itself stays still: there are many places to point at, and a
+ * window that turned under the pointer moved them all.
  *
  * A few of the app's own words, small and in the muted ink, say it is
  * Emaki's window: the name and icon in the chrome, the sidebar's three
@@ -38,8 +39,7 @@ import { REGIONS, circle, draw, element, pen } from "./window.js";
  * color, the rest in the window's gray (`emk-mute`). A panel's page shows
  * its panel from the start, its button filled and the chat making room;
  * the pointer on the button puts the panel away, as the button does in
- * the app, and on the part brings it forward. The pointer still turns the
- * window.
+ * the app, and on the part brings it forward.
  *
  * With `focus: "settings"`, the settings sheet stands forward over the
  * main area, the window gray behind it: the rail of its eight sections at
@@ -89,8 +89,8 @@ const NAMES = {
  * pointer arrives in Hairline's 400 × 320 units.
  */
 const BOX_WIDE = [0, -18, 400, 268], BOX_NARROW = [36, 38, 328, 192], WIDE = 720;
-/** At rest the window faces the eye from a hair above; the pointer turns it as far as AZ and tips it from K0 to K1. */
-const REST_AZ = 0, AZ = 12, REST_K = 0.05, K0 = 0.08, K1 = 0.2;
+/** The window faces the eye from a hair above, and stays so. */
+const REST_AZ = 0, REST_K = 0.05;
 /** How much larger a part is drawn for each unit it stands forward, how far down its shadow falls, and how far a panel slides in. */
 const NEAR = 0.006, FALL = 0.22, SLIDE = 14;
 let shades = 0;
@@ -195,7 +195,6 @@ export function layout({ focus = null } = {}) {
     const C = Cam(REST_AZ, REST_K, S);
     let P = proj(C);
     const P2 = (u, v, w) => P(u, w, v);
-    const az = spring(REST_AZ, { k: 60, c: 14, eps: 0.01 }), kk = spring(REST_K, { k: 60, c: 14, eps: 0.0005 });
 
     // The window: its slab, the chrome's rule, lights and name, the sidebar's edge, its three rows and its foot.
     const g = mk("g", {}, svg);
@@ -317,7 +316,7 @@ export function layout({ focus = null } = {}) {
     };
 
     function frame() {
-      C.az = rad(az.x); C.k = kk.x;
+      C.az = rad(REST_AZ); C.k = REST_K;
       const W3 = (u, v, w) => [u, w, v];
       fit(C, [W3(0, 0, -SLAB), W3(W, 0, -SLAB), W3(0, H, -SLAB), W3(W, H, -SLAB), W3(0, 0, 0), W3(W, H, 0)], 200, 125);
       P = proj(C);
@@ -368,7 +367,7 @@ export function layout({ focus = null } = {}) {
     }
 
     const B = register(stage, (dt) => {
-      const m = [stepS(az, dt), stepS(kk, dt), ...Object.values(parts).flatMap((pt) => [stepS(pt.amt, dt), stepS(pt.vis, dt)])].some(Boolean);
+      const m = [...Object.values(parts).flatMap((pt) => [stepS(pt.amt, dt), stepS(pt.vis, dt)])].some(Boolean);
       frame();
       return m;
     });
@@ -426,13 +425,11 @@ export function layout({ focus = null } = {}) {
       }
       return null;
     }
-    const rest = () => { az.t = REST_AZ; kk.t = REST_K; light(null); };
+    const rest = () => light(null);
     if (focus) light(null);
     bag.add(pointer(stage, {
       move: (pt) => {
         const x = vb[0] + (pt[0] / 400) * vb[2], y = vb[1] + (pt[1] / 320) * vb[3];
-        az.t = lerp(AZ, -AZ, clamp((x - vb[0]) / vb[2], 0, 1));
-        kk.t = lerp(K0, K1, clamp((y - vb[1]) / vb[3], 0, 1));
         const id = under([x, y]);
         if (id !== on) light(id); else B.wake();
       },

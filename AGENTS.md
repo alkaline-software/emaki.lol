@@ -248,7 +248,10 @@ render here.
   around it: the names are the page's links
   (`.layout > .layout-part[data-part]`, siblings of its `.fig`), and the
   engine puts each at its leader's end (`NAMES`) where the box is 720 wide,
-  a grid of tiles under the window where it is not. Given a `focus`,
+  a grid of tiles under the window where it is not. The window does not
+  turn under the pointer, here or in any figure on the docs pages
+  (composer.js too): there are many places to point at, and a window that
+  turned moved them all. The landing page's six figures still turn. Given a `focus`,
   the same engine heads that part's docs page (below). The names are
   the keys of `FIGURES` in `entry.js`.
 - **The shift is drawn by hand, from the front, its panes named.**
