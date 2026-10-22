@@ -1,32 +1,34 @@
-# Files Panel
+# Files Panel ⌘⇧F
 
-⌘⇧F: the project as a tree, a pane to read and edit any file, and git.
+The file tree, file preview and editing, and git.
 
-## The tree
+## File tree
 
-The project’s folder as a tree, with Catppuccin’s file icons and git’s marks: a letter on a changed file, a dot on a folder with changes inside, and ignored files dimmed. It works like a file manager: drag files in from Finder, drag rows to move them, cut, copy, duplicate, move to the Trash (⌘⌫) and undo (⌘Z). New File and New Folder are at the top, and a file the agent writes appears as soon as it lands.
+When you open the Files Panel, the file tree is shown with its root folder expanded. Folders and files are drawn with [Catppuccin’s file icons](https://catppuccin.com). If the project is a git repository, its changes are shown on the folders and files. The file tree supports mouse dragging and common keyboard shortcuts.
 
-## Open and edit
+## File preview & editing
 
-Click a file to open it in a pane between the tree and the chat; click it again to close it. The enlarge button gives the pane the chat’s room. ⌘S saves, ⌘W closes, and Emaki asks before anything unsaved is lost. Format on save covers ten languages and is off until you turn it on.
+Click a file to open it in a pane between the tree and the chat; click it again to close it. The enlarge button gives the pane the chat’s room. You can use common keyboard shortcuts to undo, redo, save, and close.
 
-Code has line numbers, colors, and a gutter mark for each git change, with a card to see or revert it. Every kind of file is drawn for what it is:
+Emaki supports format on save for common languages. It is off by default and can be turned on in [Settings](../docs/settings.llms.md): tick all the languages, or only the ones you want.
 
-- Code every language, colored
-- Markdown as it reads, or as written
-- CSV and TSV a grid you can edit in place
-- Parquet a table with each column’s type
-- Word pages you can type in and format
-- Excel cells with their number formats
-- PowerPoint slides as they look
-- PDF sharp at any width, with search and page previews
-- HTML in the system’s web view
-- Pictures at their own size
+Supported file types:
+
+- Code
+- Markdown
+- CSV and TSV
+- Parquet
+- Word
+- Excel
+- PowerPoint
+- PDF
+- HTML
+- Pictures
 
 ## Git
 
-In a repository, the branch’s name sits at the top of the tree. Click it to switch branches, make one (⌘⇧N) or publish one; Fetch and Pull are at the bottom of the list. If you switch with uncommitted changes, Emaki asks whether to leave them or bring them along, and switches only when every change can go where you asked.
+If the project is a git repository, the git buttons appear in the Files Panel’s header. Click the branch name to switch branches or create a new one (⌘⇧N). You can also fetch, pull, and publish from there.
 
-The **Changes** pill (⌘⇧G) opens the Changes sheet: tick the files, write the message, commit (⌘↩︎) and push (⌘P). A changed picture shows before and after, side by side. **History** lists the commits: Undo takes back the newest while the remote does not have it, and Revert takes back any one as a new commit. Nothing is committed, pushed or pulled until you click to do it.
+The **Changes** pill (⌘⇧G) opens the Changes sheet. There you can review your changes, write a commit message, commit (⌘↩︎), and push (⌘P). The sheet’s **History** side lists your past commits.
 
 Back to top

@@ -1,21 +1,33 @@
-# Settings
+# Settings ⌘,
 
-⌘, opens eight sections, from Appearance to About.
+Nine sections in a window of their own, from Appearance to About.
 
-## Appearance and Fonts
+## Appearance
 
-Appearance follows the system, or stays light or dark. The accent is one of seven colors: periwinkle, orchid, rose, amber, moss, jade or teal. Fonts offers eight faces for the chat and four monospace faces for code and the terminal, all under the Open Font License, with one text size for all three.
+Your avatar and name, the window’s theme, and its accent: Periwinkle, Orchid, Rose, Amber, Moss, Jade or Teal.
+
+## Fonts
+
+Eight faces for the chat, four serif and four sans serif, and four monospace faces for code and the terminals.
+
+## Text Size
+
+Small, Medium and Large set every place at once. Custom is your own set: each place’s size, stepped a point at a time or typed.
+
+## Composer
+
+The key that sends, auto-capitalization, and spelling and grammar checked as you type, in US or UK English, Spanish, French or German. Spanish, French and German are checked on a Mac only.
 
 ## New sessions
 
-Each agent’s mode, model and effort to start with. The pills under the composer change them for one session.
+Each agent’s permission mode, model and effort for a new session. The pills under the composer change them for one session ([Chats](../docs/chats.llms.md#mode-model-and-effort)).
 
-## Composer, Terminal, Files
+## Terminal
 
-Each has its own switches: which key sends and which languages are spell-checked; the terminal’s color scheme, its cursor, and whether a selection copies itself; format on save and its formatters.
+The terminal’s theme, its cursor, ligatures and copy on select. Its face is set in Fonts and its size in Text Size.
 
-## Updates and About
+## Files
 
-Updates checks daily, or when you ask, and installs the new version itself. About shows which version this is and who makes it.
+Format on save, and the languages it covers, each with its own formatter.
 
 Back to top

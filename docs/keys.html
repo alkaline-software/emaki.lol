@@ -49,9 +49,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c5a6d65f510d84b30fc222a72c3b7625.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-b81d9d8d27f4f0e1ce7aa51a5e070d09.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-c5a6d65f510d84b30fc222a72c3b7625.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-bd1a3a127efe7ee9406177e4d2310c90.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-cc5b0834691c3299992104f9db94f040.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-bd1a3a127efe7ee9406177e4d2310c90.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Keys – Emaki">
-<meta property="og:description" content="Two kinds: ⌘⇧ and a letter shows or hides a panel; ⌘ and a letter opens a page or does one thing.">
+<meta property="og:description" content="A collection of all keyboard commands on Emaki.">
 <meta property="og:image" content="https://emaki.lol/docs/assets/emaki-icon.png">
 <meta property="og:site_name" content="Emaki">
 </head>
@@ -375,14 +375,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../docs/shell.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Shell Terminal</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../docs/agent.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Agent Terminal</span></a>
+  <a href="../docs/terminals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Terminals</span></a>
   </div>
 </li>
       </ul>
@@ -422,7 +416,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title d-none d-lg-block">Keys</h1>
-<p class="subtitle lead">Two kinds: ⌘⇧ and a letter shows or hides a panel; ⌘ and a letter opens a page or does one thing.</p>
+<p class="subtitle lead">A collection of all keyboard commands on Emaki.</p>
 </div>
 
 
@@ -442,7 +436,7 @@ ul.task-list li input[type="checkbox"] {
 <p><kbd>⌘</kbd> on macOS, <kbd>Ctrl</kbd> elsewhere.</p>
 <section id="panels" class="level2 i-app-window">
 <h2 class="i-app-window anchored" data-anchor-id="panels">Panels</h2>
-<p>Hold <kbd>⇧</kbd> with <kbd>⌘</kbd>, and the letter shows or hides a panel beside the chat. The letter is the panel’s first.</p>
+<p>Hold <kbd>⇧</kbd> with <kbd>⌘</kbd>, and the letter shows or hides a panel beside the chat. The letter is the panel’s first, and B is the sidebar’s.</p>
 <table class="table-keys caption-top table">
 <colgroup>
 <col style="width: 38%">
@@ -450,22 +444,26 @@ ul.task-list li input[type="checkbox"] {
 </colgroup>
 <tbody>
 <tr class="odd">
+<td><kbd>⌘⇧B</kbd></td>
+<td>the sidebar, with your <a href="../docs/projects.html">projects</a> and their sessions; <kbd>⌘B</kbd> too</td>
+</tr>
+<tr class="even">
 <td><kbd>⌘⇧F</kbd></td>
-<td><a href="../docs/files.html">files</a></td>
+<td><a href="../docs/files.html">Files Panel</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><kbd>⌘⇧O</kbd></td>
-<td><a href="../docs/outline.html">outline</a></td>
-</tr>
-<tr class="odd">
-<td><kbd>⌘⇧S</kbd></td>
-<td><a href="../docs/shell.html">shell terminal</a></td>
+<td><a href="../docs/outline.html">Outline Panel</a></td>
 </tr>
 <tr class="even">
-<td><kbd>⌘⇧A</kbd></td>
-<td><a href="../docs/agent.html">agent terminal</a></td>
+<td><kbd>⌘⇧S</kbd></td>
+<td><a href="../docs/terminals.html#shell">Shell Terminal Panel</a></td>
 </tr>
 <tr class="odd">
+<td><kbd>⌘⇧A</kbd></td>
+<td><a href="../docs/terminals.html#agent">Agent Terminal Panel</a></td>
+</tr>
+<tr class="even">
 <td><kbd>⌘⇧G</kbd></td>
 <td>git’s <a href="../docs/files.html#git">Changes</a> sheet</td>
 </tr>
@@ -535,26 +533,22 @@ ul.task-list li input[type="checkbox"] {
 <td>save the file</td>
 </tr>
 <tr class="odd">
-<td><kbd>⌘B</kbd></td>
-<td>sidebar</td>
-</tr>
-<tr class="even">
 <td><kbd>⌘1</kbd> to <kbd>⌘9</kbd></td>
 <td>tabs</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><kbd>⌘W</kbd> · <kbd>⌘⇧T</kbd></td>
 <td>close a tab, reopen the last</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><kbd>⌘⇧N</kbd></td>
 <td>new branch</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><kbd>⌘R</kbd></td>
 <td>refresh</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><kbd>Esc</kbd></td>
 <td>stop, or close what is open</td>
 </tr>
@@ -1011,7 +1005,7 @@ ul.task-list li input[type="checkbox"] {
 (function () {
   var m = document.querySelector('meta[name="quarto:offset"]');
   var root = m ? m.getAttribute("content") : "./";
-  ["js/navbar-widgets.js", "js/hero-scroll.js", "js/shift.js", "js/page.js", "js/figures.js"].forEach(function (src) {
+  ["js/navbar-widgets.js", "js/hero-scroll.js", "js/page.js", "js/figures.js"].forEach(function (src) {
     var s = document.createElement("script");
     s.src = root + src;
     s.async = false;

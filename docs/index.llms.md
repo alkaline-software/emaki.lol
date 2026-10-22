@@ -34,7 +34,7 @@ On the first launch, Emaki copies every Claude Code session into `~/.emaki/archi
 
 ## Layout
 
-The sidebar and the chat are always there. The four panels are hidden by default: files or outline opens on the left of the chat, the shell or agent terminal on its right.
+The sidebar and the chat are always there. The four panels are hidden by default: the Files Panel or the Outline Panel opens on the left of the chat, the Shell Terminal Panel or the Agent Terminal Panel on its right.
 
 [Projects](../docs/projects.llms.md)
 
@@ -44,9 +44,9 @@ The sidebar and the chat are always there. The four panels are hidden by default
 
 [Outline](../docs/outline.llms.md) ⌘⇧O
 
-[Shell Terminal](../docs/shell.llms.md) ⌘⇧S
+[Shell Terminal](../docs/terminals.llms.md#shell) ⌘⇧S
 
-[Agent Terminal](../docs/agent.llms.md) ⌘⇧A
+[Agent Terminal](../docs/terminals.llms.md#agent) ⌘⇧A
 
 ## What Emaki keeps
 

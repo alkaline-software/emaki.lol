@@ -48,9 +48,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c5a6d65f510d84b30fc222a72c3b7625.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-b81d9d8d27f4f0e1ce7aa51a5e070d09.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-c5a6d65f510d84b30fc222a72c3b7625.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-bd1a3a127efe7ee9406177e4d2310c90.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-cc5b0834691c3299992104f9db94f040.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-bd1a3a127efe7ee9406177e4d2310c90.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -374,14 +374,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../docs/shell.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Shell Terminal</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../docs/agent.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Agent Terminal</span></a>
+  <a href="../docs/terminals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Terminals</span></a>
   </div>
 </li>
       </ul>
@@ -484,7 +478,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="layout" class="level2 i-app-window">
 <h2 class="i-app-window anchored" data-anchor-id="layout">Layout</h2>
-<p>The sidebar and the chat are always there. The four panels are hidden by default: files or outline opens on the left of the chat, the shell or agent terminal on its right.</p>
+<p>The sidebar and the chat are always there. The four panels are hidden by default: the Files Panel or the Outline Panel opens on the left of the chat, the Shell Terminal Panel or the Agent Terminal Panel on its right.</p>
 <div class="layout">
 <div class="fig" data-figure="layout" aria-label="Emaki's window as it opens: the sidebar with the projects, and the chat. The four panels are named over it, Files, Outline, Shell Terminal and Agent Terminal, each with a line to its button; Projects and Chats are named under it. A panel's name or button brings the panel in beside the chat, and a part under the pointer stands forward of the window.">
 
@@ -502,10 +496,10 @@ ul.task-list li input[type="checkbox"] {
 <p><a href="../docs/outline.html">Outline</a> <kbd>⌘⇧O</kbd></p>
 </div>
 <div class="layout-part i-terminal" data-part="shell">
-<p><a href="../docs/shell.html">Shell Terminal</a> <kbd>⌘⇧S</kbd></p>
+<p><a href="../docs/terminals.html#shell">Shell Terminal</a> <kbd>⌘⇧S</kbd></p>
 </div>
 <div class="layout-part i-sparkles" data-part="agent">
-<p><a href="../docs/agent.html">Agent Terminal</a> <kbd>⌘⇧A</kbd></p>
+<p><a href="../docs/terminals.html#agent">Agent Terminal</a> <kbd>⌘⇧A</kbd></p>
 </div>
 </div>
 </section>
@@ -979,7 +973,7 @@ ul.task-list li input[type="checkbox"] {
 (function () {
   var m = document.querySelector('meta[name="quarto:offset"]');
   var root = m ? m.getAttribute("content") : "./";
-  ["js/navbar-widgets.js", "js/hero-scroll.js", "js/shift.js", "js/page.js", "js/figures.js"].forEach(function (src) {
+  ["js/navbar-widgets.js", "js/hero-scroll.js", "js/page.js", "js/figures.js"].forEach(function (src) {
     var s = document.createElement("script");
     s.src = root + src;
     s.async = false;

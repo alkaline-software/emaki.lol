@@ -49,9 +49,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c5a6d65f510d84b30fc222a72c3b7625.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-b81d9d8d27f4f0e1ce7aa51a5e070d09.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-c5a6d65f510d84b30fc222a72c3b7625.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-bd1a3a127efe7ee9406177e4d2310c90.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-cc5b0834691c3299992104f9db94f040.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-bd1a3a127efe7ee9406177e4d2310c90.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -80,8 +80,8 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;family=Belleza&amp;display=swap">
 
 
-<meta property="og:title" content="Files Panel – Emaki">
-<meta property="og:description" content="⌘⇧F: the project as a tree, a pane to read and edit any file, and git.">
+<meta property="og:title" content="Files Panel">
+<meta property="og:description" content="The file tree, file preview and editing, and git.">
 <meta property="og:image" content="https://emaki.lol/docs/assets/emaki-icon.png">
 <meta property="og:site_name" content="Emaki">
 </head>
@@ -310,7 +310,7 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Files Panel</h1>
+          <h1 class="quarto-secondary-nav-title">Files Panel <kbd>⌘⇧F</kbd></h1>
         </a>     
     </div>
   </nav>
@@ -375,14 +375,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../docs/shell.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Shell Terminal</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../docs/agent.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Agent Terminal</span></a>
+  <a href="../docs/terminals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Terminals</span></a>
   </div>
 </li>
       </ul>
@@ -410,8 +404,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-tree" id="toc-the-tree" class="nav-link active" data-scroll-target="#the-tree">The tree</a></li>
-  <li><a href="#open-and-edit" id="toc-open-and-edit" class="nav-link" data-scroll-target="#open-and-edit">Open and edit</a></li>
+  <li><a href="#file-tree" id="toc-file-tree" class="nav-link active" data-scroll-target="#file-tree">File tree</a></li>
+  <li><a href="#file-preview-editing" id="toc-file-preview-editing" class="nav-link" data-scroll-target="#file-preview-editing">File preview &amp; editing</a></li>
   <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">Git</a></li>
   </ul>
 </nav>
@@ -422,8 +416,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Files Panel</h1>
-<p class="subtitle lead">⌘⇧F: the project as a tree, a pane to read and edit any file, and git.</p>
+<h1 class="title d-none d-lg-block">Files Panel <kbd>⌘⇧F</kbd></h1>
+<p class="subtitle lead">The file tree, file preview and editing, and git.</p>
 </div>
 
 
@@ -441,37 +435,38 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div class="layout layout-page">
-<div class="fig" data-figure="layout-files" aria-label="Emaki's window with the files panel shown in color at the chat's left: the tree with git's marks. The rest is gray. The panel stands forward under the pointer, and its button in the chrome puts it away.">
+<div class="fig" data-figure="layout-files" aria-label="Emaki's window with the Files Panel shown in color at the chat's left: the tree with git's marks. The rest is gray. The panel stands forward under the pointer, and its button in the chrome puts it away.">
 
 </div>
 </div>
-<section id="the-tree" class="level2 i-tree-view">
-<h2 class="i-tree-view anchored" data-anchor-id="the-tree">The tree</h2>
-<p>The project’s folder as a tree, with Catppuccin’s file icons and git’s marks: a letter on a changed file, a dot on a folder with changes inside, and ignored files dimmed. It works like a file manager: drag files in from Finder, drag rows to move them, cut, copy, duplicate, move to the Trash (<kbd>⌘⌫</kbd>) and undo (<kbd>⌘Z</kbd>). New File and New Folder are at the top, and a file the agent writes appears as soon as it lands.</p>
+<section id="file-tree" class="level2 i-tree-view">
+<h2 class="i-tree-view anchored" data-anchor-id="file-tree">File tree</h2>
+<p>When you open the Files Panel, the file tree is shown with its root folder expanded. Folders and files are drawn with <a href="https://catppuccin.com">Catppuccin’s file icons</a>. If the project is a git repository, its changes are shown on the folders and files. The file tree supports mouse dragging and common keyboard shortcuts.</p>
 </section>
-<section id="open-and-edit" class="level2 i-file-text">
-<h2 class="i-file-text anchored" data-anchor-id="open-and-edit">Open and edit</h2>
-<p>Click a file to open it in a pane between the tree and the chat; click it again to close it. The enlarge button gives the pane the chat’s room. <kbd>⌘S</kbd> saves, <kbd>⌘W</kbd> closes, and Emaki asks before anything unsaved is lost. Format on save covers ten languages and is off until you turn it on.</p>
-<p>Code has line numbers, colors, and a gutter mark for each git change, with a card to see or revert it. Every kind of file is drawn for what it is:</p>
+<section id="file-preview-editing" class="level2 i-file-text">
+<h2 class="i-file-text anchored" data-anchor-id="file-preview-editing">File preview &amp; editing</h2>
+<p>Click a file to open it in a pane between the tree and the chat; click it again to close it. The enlarge button gives the pane the chat’s room. You can use common keyboard shortcuts to undo, redo, save, and close.</p>
+<p>Emaki supports format on save for common languages. It is off by default and can be turned on in <a href="../docs/settings.html">Settings</a>: tick all the languages, or only the ones you want.</p>
+<p>Supported file types:</p>
 <div class="types">
 <ul>
-<li><span class="i-file-code">Code</span> every language, colored</li>
-<li><span class="i-file-text">Markdown</span> as it reads, or as written</li>
-<li><span class="i-file-table">CSV and TSV</span> a grid you can edit in place</li>
-<li><span class="i-file-table">Parquet</span> a table with each column’s type</li>
-<li><span class="i-file-text">Word</span> pages you can type in and format</li>
-<li><span class="i-file-table">Excel</span> cells with their number formats</li>
-<li><span class="i-file">PowerPoint</span> slides as they look</li>
-<li><span class="i-file">PDF</span> sharp at any width, with search and page previews</li>
-<li><span class="i-file-code">HTML</span> in the system’s web view</li>
-<li><span class="i-image">Pictures</span> at their own size</li>
+<li><span class="t-code">Code</span></li>
+<li><span class="t-markdown">Markdown</span></li>
+<li><span class="t-csv">CSV and TSV</span></li>
+<li><span class="t-parquet">Parquet</span></li>
+<li><span class="t-word">Word</span></li>
+<li><span class="t-excel">Excel</span></li>
+<li><span class="t-powerpoint">PowerPoint</span></li>
+<li><span class="t-pdf">PDF</span></li>
+<li><span class="t-html">HTML</span></li>
+<li><span class="t-pictures">Pictures</span></li>
 </ul>
 </div>
 </section>
 <section id="git" class="level2 i-git-branch">
 <h2 class="i-git-branch anchored" data-anchor-id="git">Git</h2>
-<p>In a repository, the branch’s name sits at the top of the tree. Click it to switch branches, make one (<kbd>⌘⇧N</kbd>) or publish one; Fetch and Pull are at the bottom of the list. If you switch with uncommitted changes, Emaki asks whether to leave them or bring them along, and switches only when every change can go where you asked.</p>
-<p>The <strong>Changes</strong> pill (<kbd>⌘⇧G</kbd>) opens the Changes sheet: tick the files, write the message, commit (<kbd>⌘↩︎</kbd>) and push (<kbd>⌘P</kbd>). A changed picture shows before and after, side by side. <strong>History</strong> lists the commits: Undo takes back the newest while the remote does not have it, and Revert takes back any one as a new commit. Nothing is committed, pushed or pulled until you click to do it.</p>
+<p>If the project is a git repository, the git buttons appear in the Files Panel’s header. Click the branch name to switch branches or create a new one (<kbd>⌘⇧N</kbd>). You can also fetch, pull, and publish from there.</p>
+<p>The <strong>Changes</strong> pill (<kbd>⌘⇧G</kbd>) opens the Changes sheet. There you can review your changes, write a commit message, commit (<kbd>⌘↩︎</kbd>), and push (<kbd>⌘P</kbd>). The sheet’s <strong>History</strong> side lists your past commits.</p>
 
 
 </section>
@@ -922,7 +917,7 @@ ul.task-list li input[type="checkbox"] {
 (function () {
   var m = document.querySelector('meta[name="quarto:offset"]');
   var root = m ? m.getAttribute("content") : "./";
-  ["js/navbar-widgets.js", "js/hero-scroll.js", "js/shift.js", "js/page.js", "js/figures.js"].forEach(function (src) {
+  ["js/navbar-widgets.js", "js/hero-scroll.js", "js/page.js", "js/figures.js"].forEach(function (src) {
     var s = document.createElement("script");
     s.src = root + src;
     s.async = false;

@@ -36,7 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../docs/shell.html" rel="next">
+<link href="../docs/terminals.html" rel="next">
 <link href="../docs/files.html" rel="prev">
 <link href="../assets/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -50,9 +50,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c5a6d65f510d84b30fc222a72c3b7625.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-b81d9d8d27f4f0e1ce7aa51a5e070d09.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-c5a6d65f510d84b30fc222a72c3b7625.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-bd1a3a127efe7ee9406177e4d2310c90.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-cc5b0834691c3299992104f9db94f040.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-bd1a3a127efe7ee9406177e4d2310c90.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -81,8 +81,8 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;family=Belleza&amp;display=swap">
 
 
-<meta property="og:title" content="Outline Panel – Emaki">
-<meta property="og:description" content="⌘⇧O: a short label for every prompt, to find your way back through a long session.">
+<meta property="og:title" content="Outline Panel">
+<meta property="og:description" content="Summaries of your past prompts.">
 <meta property="og:image" content="https://emaki.lol/docs/assets/emaki-icon.png">
 <meta property="og:site_name" content="Emaki">
 </head>
@@ -311,7 +311,7 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Outline Panel</h1>
+          <h1 class="quarto-secondary-nav-title">Outline Panel <kbd>⌘⇧O</kbd></h1>
         </a>     
     </div>
   </nav>
@@ -376,14 +376,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../docs/shell.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Shell Terminal</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../docs/agent.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Agent Terminal</span></a>
+  <a href="../docs/terminals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Terminals</span></a>
   </div>
 </li>
       </ul>
@@ -406,15 +400,8 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#entries" id="toc-entries" class="nav-link active" data-scroll-target="#entries">Entries</a></li>
-  <li><a href="#going-back" id="toc-going-back" class="nav-link" data-scroll-target="#going-back">Going back</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -422,8 +409,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Outline Panel</h1>
-<p class="subtitle lead">⌘⇧O: a short label for every prompt, to find your way back through a long session.</p>
+<h1 class="title d-none d-lg-block">Outline Panel <kbd>⌘⇧O</kbd></h1>
+<p class="subtitle lead">Summaries of your past prompts.</p>
 </div>
 
 
@@ -441,20 +428,14 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div class="layout layout-page">
-<div class="fig" data-figure="layout-outline" aria-label="Emaki's window with the outline shown in color at the chat's left: an entry for every prompt. The rest is gray. The panel stands forward under the pointer, and its button in the chrome puts it away.">
+<div class="fig" data-figure="layout-outline" aria-label="Emaki's window with the Outline Panel shown in color at the chat's left: an entry for every prompt. The rest is gray. The panel stands forward under the pointer, and its button in the chrome puts it away.">
 
 </div>
 </div>
-<section id="entries" class="level2 i-list-numbers">
-<h2 class="i-list-numbers anchored" data-anchor-id="entries">Entries</h2>
-<p>Going back through a long session is a pain. The outline gives each prompt one entry, under a heading for each day: the time, then three to five words for what you asked. A short prompt is shown as it is. A long one is labeled by the agent’s small model, Haiku for Claude Code and Codex’s light model for Codex, in a separate session, so nothing enters yours. Labels are made for the entries in view, a few at a time, and kept, so each prompt is labeled once.</p>
-</section>
-<section id="going-back" class="level2 i-history">
-<h2 class="i-history anchored" data-anchor-id="going-back">Going back</h2>
-<p>Click an entry and the chat glides back to that round. As you scroll, the entry in view is highlighted, so the outline always shows where you are. It shares the left side with the <a href="../docs/files.html">files</a>: one shows at a time, and switching does not move the chat.</p>
+<p>Going back through a long session is a pain. The Outline Panel lists a summary of each of your past prompts, with its time in front. As with the plain-word explanations of the agent’s tool calls, the summaries are written by the lightest model your session’s agent has.</p>
+<p>Click an entry to scroll back to its prompt.</p>
 
 
-</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -882,8 +863,8 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../docs/shell.html" class="pagination-link" aria-label="Shell Terminal">
-        <span class="nav-page-text">Shell Terminal</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../docs/terminals.html" class="pagination-link" aria-label="Terminals">
+        <span class="nav-page-text">Terminals</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -905,7 +886,7 @@ ul.task-list li input[type="checkbox"] {
 (function () {
   var m = document.querySelector('meta[name="quarto:offset"]');
   var root = m ? m.getAttribute("content") : "./";
-  ["js/navbar-widgets.js", "js/hero-scroll.js", "js/shift.js", "js/page.js", "js/figures.js"].forEach(function (src) {
+  ["js/navbar-widgets.js", "js/hero-scroll.js", "js/page.js", "js/figures.js"].forEach(function (src) {
     var s = document.createElement("script");
     s.src = root + src;
     s.async = false;

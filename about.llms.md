@@ -1,73 +1,51 @@
 # About
 
-The name, the reason, and how it is made.
-
-## The name
-
-An *emaki* (絵巻) is a Japanese picture handscroll: a long painted scene held between two rolls, read by winding it from one to the other, a span at a time. It is a good name for a window whose job is an agent chat too long to see at once.
-
-The app’s icon is a handscroll seen from the front, with an agent chat on its sheet: the agent on the left with its spark, your reply on the right. This one carries a landscape instead, and winds as you move across it.
+The story of Emaki and Alkaline Software.
 
 ![](data:image/svg+xml;base64,PHN2ZyB2aWV3Ym94PSIwIDAgNDAwIDExMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPiA8ZGVmcz4gPGNsaXBwYXRoIGlkPSJoZXJvLXNoZWV0LWNsaXAiPiA8cmVjdCBpZD0iaGVyby1jbGlwIiB4PSIyNiIgeT0iMTgiIHdpZHRoPSIzNTgiIGhlaWdodD0iNzQiIC8+IDwvY2xpcHBhdGg+IDwvZGVmcz4gPCEtLSBUaGUgc2hlZXQncyBwaWN0dXJlLCBjdXQgdG8gdGhlIHNoZWV0LiAtLT4gPGcgY2xpcC1wYXRoPSJ1cmwoI2hlcm8tc2hlZXQtY2xpcCkiPiA8ZyBpZD0iaGVyby1za3kiIGNsYXNzPSJoZXJvLWxheWVyIiBkYXRhLWRlcHRoPSIwLjE1IiBzdHJva2Utb3BhY2l0eT0iMC4yMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMCAxOCkiPjxwYXRoIGQ9Ik01NCAxMiBMODggMTIiIC8+PHBhdGggZD0iTTcwIDE3IEw5MiAxNyIgLz48cGF0aCBkPSJNMTk2IDkgTDIyMiA5IiAvPjxwYXRoIGQ9Ik0zMDAgMTQgTDM0MCAxNCIgLz48cGF0aCBkPSJNMzIyIDE5IEwzNDIgMTkiIC8+PHBhdGggZD0iTTQ1MiAxMCBMNDgyIDEwIiAvPjxwYXRoIGQ9Ik01NjAgMTUgTDU5NiAxNSIgLz48cGF0aCBkPSJNNTc4IDIwIEw1OTYgMjAiIC8+PHBhdGggZD0iTTE1MCAxNiBMMTUzIDE4IEwxNTYgMTYiIC8+PHBhdGggZD0iTTE2MCAxMiBMMTYzIDE0IEwxNjYgMTIiIC8+PHBhdGggZD0iTTQxMCAyMCBMNDEzIDIyIEw0MTYgMjAiIC8+PHBhdGggZD0iTTQyMSAxNSBMNDI0IDE3IEw0MjcgMTUiIC8+PHBhdGggZD0iTTUxMiAxMiBMNTE1IDE0IEw1MTggMTIiIC8+PC9nPiA8Y2lyY2xlIGlkPSJoZXJvLXN1biIgY3g9IjI2NCIgY3k9IjM1IiByPSI2LjI1Ij48L2NpcmNsZT4gPGcgaWQ9Imhlcm8tZmFyIiBjbGFzcz0iaGVyby1sYXllciIgZGF0YS1kZXB0aD0iMC4zNSIgc3Ryb2tlLW9wYWNpdHk9IjAuMjYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMjAgMTgpIj48cGF0aCBkPSJNMC4wIDQ0LjAgTDIuNDMgNDMuNDcgTDUuNiA0Mi43MiBMOS4zOCA0MS44MSBMMTMuNiA0MC44IEwxOC4xMiAzOS43NSBMMjIuOCAzOC43MiBMMjcuNDggMzcuNzcgTDMyLjAgMzYuOTYgTDM2LjIzIDM2LjM1IEw0MC4wIDM2LjAgTDQzLjM2IDM2LjAgTDQ2LjQ4IDM2LjM1IEw0OS40MiAzNi45NSBMNTIuMjQgMzcuNyBMNTUuMCAzOC41IEw1Ny43NiAzOS4yNiBMNjAuNTggMzkuODkgTDYzLjUyIDQwLjI5IEw2Ni42NCA0MC4zNiBMNzAuMCA0MC4wIEw3My41OSAzOS4wNyBMNzcuMzYgMzcuNiBMODEuMjcgMzUuNzMgTDg1LjI4IDMzLjYgTDg5LjM4IDMxLjM4IEw5My41MiAyOS4yIEw5Ny42OSAyNy4yMiBMMTAxLjg0IDI1LjYgTDEwNS45NSAyNC40OCBMMTEwLjAgMjQuMCBMMTE0LjAyIDI0LjI4IEwxMTguMDggMjUuMjMgTDEyMi4xNiAyNi42OSBMMTI2LjI0IDI4LjUgTDEzMC4zMSAzMC41IEwxMzQuMzYgMzIuNTQgTDEzOC4zNyAzNC40NyBMMTQyLjMyIDM2LjEzIEwxNDYuMiAzNy4zNiBMMTUwLjAgMzguMCBMMTUzLjY2IDM4LjAgTDE1Ny4xNiAzNy40OSBMMTYwLjU1IDM2LjU5IEwxNjMuODggMzUuNDIgTDE2Ny4xOSAzNC4xMiBMMTcwLjUyIDMyLjgyIEwxNzMuOTIgMzEuNjIgTDE3Ny40NCAzMC42NyBMMTgxLjEyIDMwLjA5IEwxODUuMCAzMC4wIEwxODkuMTIgMzAuNDggTDE5My40NCAzMS40NCBMMTk3LjkyIDMyLjc2IEwyMDIuNTIgMzQuMzIgTDIwNy4xOSAzNi4wIEwyMTEuODggMzcuNjggTDIxNi41NSAzOS4yNCBMMjIxLjE2IDQwLjU2IEwyMjUuNjYgNDEuNTIgTDIzMC4wIDQyLjAgTDIzNC4yNSA0MS45NSBMMjM4LjQ4IDQxLjQ2IEwyNDIuNjggNDAuNjMgTDI0Ni44NCAzOS41NyBMMjUwLjk0IDM4LjM4IEwyNTQuOTYgMzcuMTUgTDI1OC44OSAzNi4wIEwyNjIuNzIgMzUuMDIgTDI2Ni40MyAzNC4zMiBMMjcwLjAgMzQuMCBMMjczLjMxIDM0LjE1IEwyNzYuMzIgMzQuNzIgTDI3OS4xIDM1LjU5IEwyODEuNzYgMzYuNjQgTDI4NC4zOCAzNy43NSBMMjg3LjA0IDM4LjggTDI4OS44NCAzOS42NyBMMjkyLjg4IDQwLjI0IEwyOTYuMjQgNDAuMzkgTDMwMC4wIDQwLjAgTDMwNC4yMSAzOC44OSBMMzA4LjggMzcuMDkgTDMxMy42OSAzNC43OCBMMzE4LjggMzIuMTQgTDMyNC4wNiAyOS4zOCBMMzI5LjQgMjYuNjYgTDMzNC43NCAyNC4xNyBMMzQwLjAgMjIuMTEgTDM0NS4xMSAyMC42NiBMMzUwLjAgMjAuMCBMMzU0Ljc1IDIwLjI0IEwzNTkuNDggMjEuMjUgTDM2NC4xOCAyMi44NSBMMzY4Ljg0IDI0Ljg2IEwzNzMuNDQgMjcuMTIgTDM3Ny45NiAyOS40NiBMMzgyLjM5IDMxLjY4IEwzODYuNzIgMzMuNjMgTDM5MC45MyAzNS4xMyBMMzk1LjAgMzYuMCBMMzk4Ljg4IDM2LjIyIEw0MDIuNTYgMzUuOTUgTDQwNi4wOCAzNS4zMSBMNDA5LjQ4IDM0LjQyIEw0MTIuODEgMzMuMzggTDQxNi4xMiAzMi4zIEw0MTkuNDUgMzEuMzIgTDQyMi44NCAzMC41MyBMNDI2LjM0IDMwLjA1IEw0MzAuMCAzMC4wIEw0MzMuNzUgMzAuNDYgTDQzNy41MiAzMS4zNiBMNDQxLjMyIDMyLjU4IEw0NDUuMTYgMzQuMCBMNDQ5LjA2IDM1LjUgTDQ1My4wNCAzNi45NiBMNDU3LjExIDM4LjI2IEw0NjEuMjggMzkuMjggTDQ2NS41NyAzOS45IEw0NzAuMCA0MC4wIEw0NzQuNjQgMzkuNDUgTDQ3OS41MiAzOC4zMiBMNDg0LjU4IDM2Ljc0IEw0ODkuNzYgMzQuODggTDQ5NS4wIDMyLjg4IEw1MDAuMjQgMzAuODggTDUwNS40MiAyOS4wNSBMNTEwLjQ4IDI3LjUyIEw1MTUuMzYgMjYuNDUgTDUyMC4wIDI2LjAgTDUyNC40IDI2LjIzIEw1MjguNjQgMjcuMDIgTDUzMi43NCAyOC4yNiBMNTM2LjcyIDI5Ljc5IEw1NDAuNjIgMzEuNSBMNTQ0LjQ4IDMzLjI1IEw1NDguMzIgMzQuOSBMNTUyLjE2IDM2LjM0IEw1NTYuMDQgMzcuNDEgTDU2MC4wIDM4LjAgTDU2NC4wIDM4LjA2IEw1NjguMCAzNy43IEw1NzIuMCAzNy4wMiBMNTc2LjAgMzYuMTMgTDU4MC4wIDM1LjEyIEw1ODQuMCAzNC4xMSBMNTg4LjAgMzMuMTkgTDU5Mi4wIDMyLjQ2IEw1OTYuMCAzMi4wMyBMNjAwLjAgMzIuMCBMNjA0LjE4IDMyLjQgTDYwOC42NCAzMy4xNCBMNjEzLjI2IDM0LjE0IEw2MTcuOTIgMzUuMzMgTDYyMi41IDM2LjYyIEw2MjYuODggMzcuOTUgTDYzMC45NCAzOS4yMyBMNjM0LjU2IDQwLjM4IEw2MzcuNjIgNDEuMzMgTDY0MCA0MiIgLz48cGF0aCBkPSJNMTExIDI5IEwxMTUgMzQiIC8+PHBhdGggZD0iTTEwNyAzMCBMMTA0IDM1IiAvPjxwYXRoIGQ9Ik0zNTEgMjUgTDM1NSAzMCIgLz48cGF0aCBkPSJNMzQ3IDI2IEwzNDQgMzEiIC8+PHBhdGggZD0iTTUyMSAzMSBMNTI1IDM2IiAvPjxwYXRoIGQ9Ik01MTcgMzIgTDUxNCAzNyIgLz48L2c+IDxnIGlkPSJoZXJvLW1pZCIgY2xhc3M9Imhlcm8tbGF5ZXIiIGRhdGEtZGVwdGg9IjAuNjUiIHN0cm9rZS1vcGFjaXR5PSIwLjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMjAgMTgpIj48cGF0aCBkPSJNMC4wIDU0LjAgTDMuMDIgNTMuNDYgTDYuOTYgNTIuNjkgTDExLjY0IDUxLjc1IEwxNi44OCA1MC43IEwyMi41IDQ5LjYyIEwyOC4zMiA0OC41OCBMMzQuMTYgNDcuNjIgTDM5Ljg0IDQ2LjgzIEw0NS4xOCA0Ni4yNyBMNTAuMCA0Ni4wIEw1NC4zNiA0Ni4xMSBMNTguNDggNDYuNTkgTDYyLjQyIDQ3LjM0IEw2Ni4yNCA0OC4yNiBMNzAuMCA0OS4yNSBMNzMuNzYgNTAuMjIgTDc3LjU4IDUxLjA4IEw4MS41MiA1MS43MyBMODUuNjQgNTIuMDcgTDkwLjAgNTIuMCBMOTQuNjYgNTEuNDMgTDk5LjYgNTAuNCBMMTA0Ljc0IDQ5LjAzIEwxMTAuMCA0Ny40NCBMMTE1LjMxIDQ1Ljc1IEwxMjAuNiA0NC4wOCBMMTI1Ljc5IDQyLjU1IEwxMzAuOCA0MS4yOCBMMTM1LjU2IDQwLjM5IEwxNDAuMCA0MC4wIEwxNDQuMDggNDAuMTggTDE0Ny44OCA0MC44NSBMMTUxLjQ1IDQxLjg5IEwxNTQuODQgNDMuMTggTDE1OC4xMiA0NC42MiBMMTYxLjM2IDQ2LjEgTDE2NC42MSA0Ny40OCBMMTY3LjkyIDQ4LjY3IEwxNzEuMzYgNDkuNTUgTDE3NS4wIDUwLjAgTDE3OC43OCA0OS45OCBMMTgyLjYgNDkuNTcgTDE4Ni40NyA0OC44NyBMMTkwLjQgNDcuOTggTDE5NC4zOCA0Ny4wIEwxOTguNCA0Ni4wMiBMMjAyLjQ3IDQ1LjEzIEwyMDYuNiA0NC40MyBMMjEwLjc4IDQ0LjAyIEwyMTUuMCA0NC4wIEwyMTkuNSA0NC40IEwyMjQuNCA0NS4xNCBMMjI5LjU1IDQ2LjE0IEwyMzQuOCA0Ny4zMyBMMjQwLjAgNDguNjIgTDI0NS4wIDQ5Ljk1IEwyNDkuNjUgNTEuMjMgTDI1My44IDUyLjM4IEwyNTcuMyA1My4zMyBMMjYwIDU0IiAvPjxwYXRoIGQ9Ik0yODIuMCA1NC4wIEwyODMuNTcgNTMuNTkgTDI4NS40NiA1Mi45OSBMMjg3LjY1IDUyLjI2IEwyOTAuMTMgNTEuNDYgTDI5Mi44OCA1MC42MiBMMjk1Ljg3IDQ5LjgyIEwyOTkuMSA0OS4xMSBMMzAyLjU0IDQ4LjUzIEwzMDYuMTggNDguMTQgTDMxMC4wIDQ4LjAgTDMxNC4xMSA0OC4yIEwzMTguNTkgNDguNzIgTDMyMy4zOCA0OS40OCBMMzI4LjQyIDUwLjQgTDMzMy42MiA1MS4zOCBMMzM4Ljk0IDUyLjMyIEwzNDQuMzEgNTMuMTUgTDM0OS42NSA1My43NiBMMzU0LjkgNTQuMDggTDM2MC4wIDU0LjAgTDM2NS4wNSA1My40MyBMMzcwLjE2IDUyLjQgTDM3NS4zMSA1MS4wMyBMMzgwLjQ4IDQ5LjQ0IEwzODUuNjIgNDcuNzUgTDM5MC43MiA0Ni4wOCBMMzk1Ljc0IDQ0LjU1IEw0MDAuNjQgNDMuMjggTDQwNS40MSA0Mi4zOSBMNDEwLjAgNDIuMCBMNDE0LjM2IDQyLjE4IEw0MTguNDggNDIuODUgTDQyMi40MiA0My44OSBMNDI2LjI0IDQ1LjE4IEw0MzAuMCA0Ni42MiBMNDMzLjc2IDQ4LjEgTDQzNy41OCA0OS40OCBMNDQxLjUyIDUwLjY3IEw0NDUuNjQgNTEuNTUgTDQ1MC4wIDUyLjAgTDQ1NC42MiA1MS45OSBMNDU5LjQ0IDUxLjYgTDQ2NC40MiA1MC45NCBMNDY5LjUyIDUwLjA4IEw0NzQuNjkgNDkuMTIgTDQ3OS44OCA0OC4xNiBMNDg1LjA1IDQ3LjI3IEw0OTAuMTYgNDYuNTYgTDQ5NS4xNiA0Ni4xMSBMNTAwLjAgNDYuMCBMNTA0LjY2IDQ2LjMgTDUwOS4xNiA0Ni45MyBMNTEzLjU1IDQ3LjgxIEw1MTcuODggNDguODYgTDUyMi4xOSA1MC4wIEw1MjYuNTIgNTEuMTQgTDUzMC45MiA1Mi4xOSBMNTM1LjQ0IDUzLjA3IEw1NDAuMTIgNTMuNyBMNTQ1LjAgNTQuMCBMNTUwLjE2IDUzLjkxIEw1NTUuNiA1My41IEw1NjEuMjQgNTIuODUgTDU2Ny4wIDUyLjAzIEw1NzIuODEgNTEuMTIgTDU3OC42IDUwLjIxIEw1ODQuMjkgNDkuMzYgTDU4OS44IDQ4LjY2IEw1OTUuMDYgNDguMTggTDYwMC4wIDQ4LjAgTDYwNC43OSA0OC4xNCBMNjA5LjYgNDguNTMgTDYxNC4zNiA0OS4xMSBMNjE5LjAgNDkuODIgTDYyMy40NCA1MC42MiBMNjI3LjYgNTEuNDYgTDYzMS40MSA1Mi4yNiBMNjM0LjggNTIuOTkgTDYzNy42OSA1My41OSBMNjQwIDU0IiAvPjxwYXRoIGQ9Ik0xMzIgNDIgTDEzMiAzMyIgLz48cGF0aCBkPSJNMTI4IDQwIEwxMzIgMzUgTDEzNiA0MCIgLz48cGF0aCBkPSJNMTI5IDM2IEwxMzIgMzIgTDEzNSAzNiIgLz48cGF0aCBkPSJNMTQwIDQwIEwxNDAgMjgiIC8+PHBhdGggZD0iTTEzNiAzNSBMMTQwIDMwIEwxNDQgMzUiIC8+PHBhdGggZD0iTTEzNyAzMSBMMTQwIDI3IEwxNDMgMzEiIC8+PHBhdGggZD0iTTE0OSA0MyBMMTQ5IDM0IiAvPjxwYXRoIGQ9Ik0xNDUgNDEgTDE0OSAzNiBMMTUzIDQxIiAvPjxwYXRoIGQ9Ik0xNDYgMzcgTDE0OSAzMyBMMTUyIDM3IiAvPjxwYXRoIGQ9Ik00MDQgNDMgTDQwNCAzNCIgLz48cGF0aCBkPSJNNDAwIDQxIEw0MDQgMzYgTDQwOCA0MSIgLz48cGF0aCBkPSJNNDAxIDM3IEw0MDQgMzMgTDQwNyAzNyIgLz48cGF0aCBkPSJNNDEyIDQyIEw0MTIgMzAiIC8+PHBhdGggZD0iTTQwOCAzNyBMNDEyIDMyIEw0MTYgMzciIC8+PHBhdGggZD0iTTQwOSAzMyBMNDEyIDI5IEw0MTUgMzMiIC8+PHBhdGggZD0iTTUwMCA0NiBMNTAwIDM2IiAvPjxwYXRoIGQ9Ik00OTYgNDMgTDUwMCAzOCBMNTA0IDQzIiAvPjxwYXRoIGQ9Ik00OTcgMzkgTDUwMCAzNSBMNTAzIDM5IiAvPjxwYXRoIGQ9Ik01NiA0NiBMNTYgMzciIC8+PHBhdGggZD0iTTUyIDQ0IEw1NiAzOSBMNjAgNDQiIC8+PHBhdGggZD0iTTUzIDQwIEw1NiAzNiBMNTkgNDAiIC8+PHBhdGggZD0iTTI1OCA1NCBRMjcwIDQ1IDI4NCA1NCIgLz48cGF0aCBkPSJNMjY0IDUwIEwyNjQgNTUiIC8+PHBhdGggZD0iTTI3OCA1MCBMMjc4IDU1IiAvPjxwYXRoIGQ9Ik0zMTYgNDggTDMxNiA0MSIgLz48cGF0aCBkPSJNMzMwIDQ4IEwzMzAgNDEiIC8+PHBhdGggZD0iTTMxMSA0MiBRMzIzIDM1IDMzNSA0MiIgLz48cGF0aCBkPSJNMzE5IDM3IEwzMTkgMzMiIC8+PHBhdGggZD0iTTMyNyAzNyBMMzI3IDMzIiAvPjxwYXRoIGQ9Ik0zMTUgMzQgUTMyMyAyOCAzMzEgMzQiIC8+PHBhdGggZD0iTTMyMyAyOSBMMzIzIDI2IiAvPjwvZz4gPGcgaWQ9Imhlcm8td2F0ZXIiIGNsYXNzPSJoZXJvLWxheWVyIiBkYXRhLWRlcHRoPSIxLjAiIHN0cm9rZS1vcGFjaXR5PSIwLjMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMjAgMTgpIj48cGF0aCBkPSJNMTAgNjAgTDQwIDYwIiAvPjxwYXRoIGQ9Ik01NiA2MCBMNzQgNjAiIC8+PHBhdGggZD0iTTEyMCA2MCBMMTY0IDYwIiAvPjxwYXRoIGQ9Ik0xOTYgNjAgTDIxMCA2MCIgLz48cGF0aCBkPSJNMjQwIDYwIEwyNzYgNjAiIC8+PHBhdGggZD0iTTM3MiA2MCBMMzk4IDYwIiAvPjxwYXRoIGQ9Ik00MzAgNjAgTDQ3MCA2MCIgLz48cGF0aCBkPSJNNTAwIDYwIEw1MTYgNjAiIC8+PHBhdGggZD0iTTU0OCA2MCBMNTk4IDYwIiAvPjxwYXRoIGQ9Ik0zMCA2NSBMNTIgNjUiIC8+PHBhdGggZD0iTTg4IDY1IEwxMjggNjUiIC8+PHBhdGggZD0iTTE2MCA2NSBMMTc2IDY1IiAvPjxwYXRoIGQ9Ik0yMTYgNjUgTDI0NiA2NSIgLz48cGF0aCBkPSJNMzAwIDY1IEwzMTIgNjUiIC8+PHBhdGggZD0iTTM1NiA2NSBMNDAwIDY1IiAvPjxwYXRoIGQ9Ik00NTIgNjUgTDQ3MiA2NSIgLz48cGF0aCBkPSJNNTIwIDY1IEw1NTQgNjUiIC8+PHBhdGggZD0iTTU5MCA2NSBMNjE2IDY1IiAvPjxwYXRoIGQ9Ik02IDcwIEwyNCA3MCIgLz48cGF0aCBkPSJNNzAgNzAgTDgyIDcwIiAvPjxwYXRoIGQ9Ik0xMzAgNzAgTDE2MCA3MCIgLz48cGF0aCBkPSJNMjUwIDcwIEwyNzAgNzAiIC8+PHBhdGggZD0iTTMzMCA3MCBMMzY0IDcwIiAvPjxwYXRoIGQ9Ik00MTAgNzAgTDQyNCA3MCIgLz48cGF0aCBkPSJNNDcwIDcwIEw1MTAgNzAiIC8+PHBhdGggZD0iTTU2NiA3MCBMNTg4IDcwIiAvPjxwYXRoIGQ9Ik00MzQgNjAgUTQ0NiA2NyA0NTggNjAiIC8+PHBhdGggZD0iTTQ0NiA2MSBMNDQ2IDQ5IiAvPjxwYXRoIGQ9Ik00NDYgNTAgTDQ1NSA1OSBMNDQ2IDU5IiAvPjxwYXRoIGQ9Ik0xNCA1OCBMMTYgNTAiIC8+PHBhdGggZD0iTTIwIDU4IEwyMiA1MCIgLz48cGF0aCBkPSJNMjYgNTggTDI4IDUwIiAvPjxwYXRoIGQ9Ik02MDQgNTggTDYwNiA1MCIgLz48cGF0aCBkPSJNNjExIDU4IEw2MTMgNTAiIC8+PHBhdGggZD0iTTYxOCA1OCBMNjIwIDUwIiAvPjwvZz4gPCEtLSBUaGUgdGl0bGUsIHRoZSBuYW1lIGluIGl0cyBvd24gY2hhcmFjdGVycywgd3JpdHRlbiBkb3duIHRoZSBzaGVldCdzIHNreSBhdCBpdHMgaGVhZCBhcyBhIGhhbmRzY3JvbGwgY2FycmllcyBvbmU7IGl0IHN0YXlzIHdoaWxlIHRoZSBwaWN0dXJlIHdpbmRzLCBhbmQgdGhlIHNoZWV0J3MgY2xpcCBrZWVwcyBpdCBvZmYgdGhlIHJvbGwuIC0tPiA8dGV4dCBjbGFzcz0iaGVyby10aXRsZSIgeD0iNDYiIHk9IjMwIj7ntbU8L3RleHQ+IDx0ZXh0IGNsYXNzPSJoZXJvLXRpdGxlIiB4PSI0NiIgeT0iNDMiPuW3uzwvdGV4dD4gPC9nPiA8IS0tIFRoZSBzY3JvbGwgaXRzZWxmOiB0aGUgc2hlZXQncyB0d28gZWRnZXMsIHRoZSByb2xscywgdGhlaXIgYXhsZXMuIC0tPiA8ZyBjbGFzcz0iaGVyby1mcmFtZSIgc3Ryb2tlLW9wYWNpdHk9IjAuNzIiPiA8bGluZSBpZD0iaGVyby1lZGdlLXRvcCIgeDE9IjI2IiB5MT0iMTgiIHgyPSIzODQiIHkyPSIxOCI+PC9saW5lPiA8bGluZSBpZD0iaGVyby1lZGdlLWJvdCIgeDE9IjI2IiB5MT0iOTIiIHgyPSIzODQiIHkyPSI5MiI+PC9saW5lPiA8cmVjdCBpZD0iaGVyby1yb2xsLWwiIHg9IjQuNzUiIHk9IjEyLjc1IiB3aWR0aD0iMjAuNSIgaGVpZ2h0PSI4NC41IiByeD0iNy4yNSIgLz4gPHJlY3QgaWQ9Imhlcm8tcm9sbC1yIiB4PSIzODQuNzUiIHk9IjEyLjc1IiB3aWR0aD0iMTAuNSIgaGVpZ2h0PSI4NC41IiByeD0iNC4yNSIgLz4gPHBhdGggaWQ9Imhlcm8ta25vYi1sdCIgZD0iTTEyLjc1IDEzLjUgTDEyLjc1IDcuNSBRMTIuNzUgNi4yNSAxNCA2LjI1IEwxNiA2LjI1IFExNy4yNSA2LjI1IDE3LjI1IDcuNSBMMTcuMjUgMTMuNSIgLz4gPHBhdGggaWQ9Imhlcm8ta25vYi1sYiIgZD0iTTEyLjc1IDk2LjUgTDEyLjc1IDEwMi41IFExMi43NSAxMDMuNzUgMTQgMTAzLjc1IEwxNiAxMDMuNzUgUTE3LjI1IDEwMy43NSAxNy4yNSAxMDIuNSBMMTcuMjUgOTYuNSIgLz4gPHBhdGggaWQ9Imhlcm8ta25vYi1ydCIgZD0iTTM4Ny43NSAxMy41IEwzODcuNzUgNy41IFEzODcuNzUgNi4yNSAzODkgNi4yNSBMMzkxIDYuMjUgUTM5Mi4yNSA2LjI1IDM5Mi4yNSA3LjUgTDM5Mi4yNSAxMy41IiAvPiA8cGF0aCBpZD0iaGVyby1rbm9iLXJiIiBkPSJNMzg3Ljc1IDk2LjUgTDM4Ny43NSAxMDIuNSBRMzg3Ljc1IDEwMy43NSAzODkgMTAzLjc1IEwzOTEgMTAzLjc1IFEzOTIuMjUgMTAzLjc1IDM5Mi4yNSAxMDIuNSBMMzkyLjI1IDk2LjUiIC8+IDwvZz4gPCEtLSBUaGUgcGFwZXIgd291bmQgb24gZWFjaCByb2xsLCBzZWVuIGFzIGl0cyB0dXJucy4gRHJhd24gYnkgdGhlIHNjcmlwdC4gLS0+IDxnIGlkPSJoZXJvLXR1cm5zIj48L2c+IDwvc3ZnPg==)
 
-## Why it exists
-
-Claude Code deletes its transcripts after `cleanupPeriodDays`, thirty by default, with no warning. Every other tool in this space reads `~/.claude/projects` and stops there, so they all inherit that expiry.
-
-So Emaki copies first and renders second. The archive sweep runs before anything else touches a session, for exactly this reason: if rendering fails, the bytes are already safe. The archive is not a backup but a peer source: live and kept transcripts are read together, so a session Claude Code has deleted stays listed, searchable and readable, marked *kept*.
-
-Compaction, for what it is worth, was never the threat: it appends a boundary and keeps writing to the same file, leaving the earlier rows intact.
-
-## How it is built
-
-Rust, with [GPUI](https://www.gpui.rs), the Zed editor’s UI framework, and [gpui-component](https://github.com/longbridge/gpui-component) for the window. There is no daemon, no browser and no hook.
-
-    crates/emaki-core   everything without a window, and the CLI
-    crates/emaki-app    the window
-    vendor/             gpui-component, with a few changes of ours
-    scripts/            packaging, the icon, the status line
-
-The core works in this order:
-
-1.  **Adapters**, one per agent, find each agent’s sessions on disk.
-2.  **Archive** copies Claude Code’s byte for byte, before anything else touches them.
-3.  **Build** parses the JSONL transcript into a model of rounds, items and tool calls. The transcript is the only source of truth.
-4.  **Render** writes that model as markdown under `~/.emaki/logs`.
-5.  **Search** indexes every item in SQLite FTS5.
-
-The app reads the same model and draws it. A file watcher says when to look again. To reply, it writes to a terminal session’s inbox, or runs a headless agent of its own that appends to the same transcript.
-
-## Where it is going
-
-Three stages. The first is a complete app for Claude Code: permanent history, organization by recency, project and agent, readable chats, and an explanation on any step. The second is the public release and the feedback that comes with it. The third extends the same to Codex, Kimi and the other mainstream coding agents, so Emaki works across all of them.
-
-Codex arrived in v0.2.0, ahead of its stage; the [releases](https://github.com/alkaline-software/emaki/releases) are the honest record of where things stand.
-
-## Who makes it
+## Meet the team
 
 ![](assets/team/alkaline.png)
 
 **[Alkaline Software](https://github.com/alkaline-software)**
 
-Two data scientists making basic software. *Alkaline* is the other word for basic, as a high pH is, and basic is what the software means to be: the things that should plainly exist. Emaki is one of them, a development environment for the agentic era that anyone who works with agents can use.
+Alkaline Software is a development team of two engineers and data scientists, [John Paul Helveston](https://www.jhelvy.com) and [Pingfan Hu](https://pingfan.org), who enjoy building “basic” software. *Alkaline* means “basic” (a high pH), and basic is what our software is meant to be: things that should plainly exist. Emaki is one of them, a development environment for the agentic era that anyone who works with agents can use.
 
-![](assets/team/john-paul-helveston.png)
+## The name
 
-**[Dr John Paul Helveston](https://www.jhelvy.com)**
+An *emaki* (絵巻) is a Japanese picture handscroll: a long painted scene held between two rolls, read by winding it from one to the other. It is colorful, enchanting, and easy to handle.
 
-Associate Professor of Engineering Management and Systems Engineering at George Washington University.
+Our aim with Emaki is to give you the same experience: a colorful, enchanting, and easy-to-use studio for your agent sessions, with clear guidance, supportive panels, and small, versatile features for a smooth development experience.
 
-![](assets/team/pingfan-hu.png)
+## Our motivation
 
-**[Dr Pingfan Hu](https://pingfan.org)**
+Emaki started with the pain of managing numerous agent sessions.
 
-Data scientist and developer at George Washington University, advised by John Paul.
+Working with agents has become the way many of us develop software. But as sessions pile up, managing them becomes a pain, especially with several agents, each storing its sessions its own way on your computer. Emaki helps you manage them: you can create, continue, archive, and delete sessions in one place.
+
+Claude Code silently deletes its sessions after 30 days. Emaki archives them automatically, and you can continue one by unarchiving it.
+
+From there, we made Emaki much more versatile. It has grown into an ADE, an agentic development environment, because we believe it is a better way to work with agents than the traditional IDE.
+
+## App structure
+
+Emaki is written in Rust, with [GPUI](https://www.gpui.rs), the Zed editor’s UI framework, and [gpui-component](https://github.com/longbridge/gpui-component) for the window.
+
+    crates/emaki-core   core logic
+    crates/emaki-app    the window
+    vendor/             gpui, modified to meet our needs
+    scripts/            miscellaneous
 
 ## Credits
 
-The home page’s figure follows the line-drawing manner of [hairline](https://github.com/lucasmarkes/hairline)’s figures: nothing filled, no words, what is far is dimmer, and one bright mark.
-
-Icons are [Tabler](https://tabler.io/icons)’s outline set, drawn at a stroke of 1.75 where Tabler’s own is 2, in the app and on this site. The file tree’s icons are [Catppuccin](https://github.com/catppuccin/vscode-icons)’s. The code colors are [Rosé Pine](https://rosepinetheme.com)’s hues, retinted for contrast. The terminal keeps [Kaku](https://github.com/kakuapp)’s cream in the light appearance. Every face the app carries is under the SIL Open Font License, and so are this site’s: Source Serif 4, JetBrains Mono and Belleza. The site is made with [Quarto](https://quarto.org).
+- Figures are based on the line-drawing manner of [hairline](https://github.com/lucasmarkes/hairline)’s figures, with our own modifications.
+- In-app icons are taken from [Tabler](https://tabler.io/icons)’s outline set, with our own modifications.
+- The file tree’s icons are from [Catppuccin](https://github.com/catppuccin/vscode-icons).
+- The code colors are [Rosé Pine](https://rosepinetheme.com)’s hues, retinted for contrast.
+- The terminal keeps [Kaku](https://github.com/kakuapp)’s cream in the light appearance.
+- Every face the app carries is under the SIL Open Font License, and so are this site’s: Source Serif 4, JetBrains Mono and Belleza.
+- The site is made with [Quarto](https://quarto.org).
 
 ## License
 
