@@ -40,6 +40,17 @@ const LAYOUTS = {
 const REST_AZ = 0, AZ = 30, REST_K = 0.05, K0 = 0.1, K1 = 0.34, MORE = 8;
 /** How much larger the part is drawn for each unit it stands forward, and how far down its shadow falls for each. */
 const NEAR = 0.006, FALL = 0.22;
+/**
+ * The docs' figures turn less: a few degrees to either side and a small
+ * tip about where they rest, so the layers still part as the eye moves
+ * while what is pointed at stays where it was.
+ */
+export const SLIGHT = { AZ: 6, K0: 0.03, K1: 0.09 };
+/** Sends a figure's turn and tip springs where the pointer at (x, y) in the box `vb` asks, within SLIGHT. */
+export const aim = (az, kk, x, y, vb) => {
+  az.t = lerp(SLIGHT.AZ, -SLIGHT.AZ, clamp((x - vb[0]) / vb[2], 0, 1));
+  kk.t = lerp(SLIGHT.K0, SLIGHT.K1, clamp((y - vb[1]) / vb[3], 0, 1));
+};
 let shades = 0;
 
 /* ---------- what is drawn: primitives in the window's frame ---------- */
@@ -54,14 +65,19 @@ export function pen() {
     ring: (u0, v0, u1, v1, r, cls = "nf", w = 0) => out.push({ t: "ring", r: [u0, v0, u1, v1], rad: r, cls, w }),
     tile: (u0, v0, u1, v1, r, h, cls = "", w = 0) => out.push({ t: "tile", r: [u0, v0, u1, v1], rad: r, h, cls, w }),
     dot: (u, v, rr, cls = "dot m", w = 0) => out.push({ t: "dot", u, v, rr, cls, w }),
-    // A word, `s` units high, from (u, v) on its middle line; a picture, `s` units square, centered there.
-    text: (u, v, str, s, cls = "emk-text", w = 0) => out.push({ t: "text", u, v, str, s, cls, w }),
+    // A word, `s` units high, from (u, v) on its middle line, turned `rot` degrees about it; a picture, `s` units square, centered there.
+    text: (u, v, str, s, cls = "emk-text", w = 0, rot = 0) => out.push({ t: "text", u, v, str, s, cls, w, rot }),
     image: (u, v, href, s, w = 0) => out.push({ t: "image", u, v, href, s, w }),
   };
 }
 export const chev = (p, u, v, w, cls = "nf") => p.line([[u, v + 1.6], [u + 2, v], [u, v - 1.6]], cls, w);
 
-/** The regions, each drawn in full; the window's faint copy of a region is the same drawing, flattened. */
+/**
+ * The regions, each drawn in full; the window's faint copy of a region is
+ * the same drawing, flattened. A list (the tree, the outline, the shell)
+ * keeps its rows `foot` over the region's foot, leaving that room clear;
+ * the shell still ends on its prompt.
+ */
 export const REGIONS = {
   side(p, [a, , c, d]) {
     const wd = c - a;
@@ -109,7 +125,7 @@ export const REGIONS = {
     p.h(a + 5, a + 20, b + 3.5, "nf lo");
     p.h(a + 24, a + 36, b + 3.5, "nf lo");
   },
-  tree(p, [a, , c, d]) {
+  tree(p, [a, b, c, d], foot = 0) {
     const wd = c - a;
     p.tile(a + 3, d - 10, a + wd * 0.66, d - 3, 3, 1.2);
     p.dot(a + 7, d - 6.5, 1, "dot m", 1.2);
@@ -118,6 +134,7 @@ export const REGIONS = {
       [0, "f", 0.36, 1], [0, "f", 0.3, 0], [0, "f", 0.38, 0], [0, "f", 0.26, 0], [0, "f", 0.33, 0]];
     rows.forEach(([dep, kind, len, git], i) => {
       const v = d - 17 - i * 7.5, x = a + 4 + dep * 4, sel = i === 1, w = sel ? 1 : 0;
+      if (v - 2 < b + foot) return;
       if (sel) p.tile(a + 2, v - 3.4, c - 2, v + 3.4, 2, 1, "hi");
       if (kind === "dir") p.line([[x, v + 1], [x + 1.6, v - 0.8], [x + 3.2, v + 1]], "nf", w);
       else if (kind === "dirc") chev(p, x + 0.6, v, w);
@@ -126,18 +143,19 @@ export const REGIONS = {
       if (git) p.dot(c - 5, v, git === 1 ? 1 : 0.8, git === 1 ? "dot m" : "dot off", w);
     });
   },
-  outline(p, [a, , c, d]) {
+  outline(p, [a, b, c, d], foot = 0) {
     const wd = c - a;
     p.h(a + 4, a + 18, d - 6, "nf sil");
     [0.6, 0.45, 0.7, 0.5, 0.62, null, 0.4, 0.66, 0.52, 0.58].forEach((len, i) => {
       const v = d - 15 - i * 9;
+      if (v - 2.5 < b + foot) return;
       if (len === null) { p.h(a + 4, a + 16, v, "nf sil"); return; }
       const on = i === 3;
       p.tile(a + 3, v - 2.5, a + 11, v + 2.5, 1.2, on ? 1.6 : 1, on ? "hi" : "");
       p.h(a + 14, a + 14 + len * (wd - 17), v, on ? "nf hi" : "nf");
     });
   },
-  shell(p, [a, , c, d]) {
+  shell(p, [a, b, c, d], foot = 0) {
     const wd = c - a;
     p.tile(a + 2, d - 11, c - 2, d - 2, 3, 0.8);
     p.tile(a + 4, d - 9.5, a + 4 + wd * 0.34, d - 3.5, 2.4, 1.4, "hi", 0.8);
@@ -147,6 +165,9 @@ export const REGIONS = {
     p.ring(c - 10, d - 9.5, c - 4, d - 3.5, 3, "nf", 0.8);
     const rows = [[">", 0.3], [[0, 0.2], [0.3, 0.24], [0.62, 0.18]], [[0, 0.26], [0.3, 0.16], [0.62, 0.22]], [[0, 0.18], [0.3, 0.28]],
       [">", 0.42], [[0, 0.74]], [[0.06, 0.56]], [[0.06, 0.66]], [[0.06, 0.48]], [[0, 0.38]], [">", 0.24], [[0, 0.5]], [">", 0]];
+    // As many rows as fit over the foot, the last of them the prompt.
+    const fit = rows.filter((_, i) => d - 18 - i * 7 - 2.6 >= b + foot).length;
+    rows.splice(fit - 1, rows.length, [">", 0]);
     let cur = null;
     rows.forEach((row, i) => {
       const v = d - 18 - i * 7;
@@ -223,7 +244,10 @@ export function draw(q, off, front, P2) {
   else {
     // A word or a picture stays upright: placed at its point, sized by how far a unit across reaches there.
     const [x, y] = P2(q.u, q.v, w), [x1, y1] = P2(q.u + 1, q.v, w), k = Math.hypot(x1 - x, y1 - y) * q.s;
-    if (q.t === "text") { q.el.setAttribute("x", x.toFixed(2)); q.el.setAttribute("y", y.toFixed(2)); q.el.setAttribute("font-size", k.toFixed(2)); }
+    if (q.t === "text") {
+      q.el.setAttribute("x", x.toFixed(2)); q.el.setAttribute("y", y.toFixed(2)); q.el.setAttribute("font-size", k.toFixed(2));
+      if (q.rot) q.el.setAttribute("transform", `rotate(${q.rot} ${x.toFixed(2)} ${y.toFixed(2)})`);
+    }
     else { q.el.setAttribute("x", (x - k / 2).toFixed(2)); q.el.setAttribute("y", (y - k / 2).toFixed(2)); q.el.setAttribute("width", k.toFixed(2)); q.el.setAttribute("height", k.toFixed(2)); }
   }
 }

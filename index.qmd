@@ -29,7 +29,8 @@ The agentic development environment.
 ::: {.shift .rise}
 ## From the IDE to the ADE
 
-{{< include _shift-ide.html >}}
+::: {.fig .shift-pane .shift-ide data-figure="shift-ide" aria-label="An IDE's window with its panes named: an activity bar, a file browser with an outline and a timeline under it, an editor of code, a terminal under the editor, and the agent chat squeezed into a pane at the right. The pane under the pointer stands forward."}
+:::
 
 ::: {.shift-words}
 ::: {.shift-label}
@@ -42,7 +43,12 @@ does most of the work, yet the editor still takes the middle of the
 screen and the chat gets a narrow pane at the edge.
 :::
 
-{{< include _shift-ade.html >}}
+```{=html}
+<svg class="shift-arrow" viewBox="0 0 24 56" aria-hidden="true"><path d="M12 4 V50 M3 40 l9 10 l9 -10"/></svg>
+```
+
+::: {.fig .shift-pane .shift-ade data-figure="shift-ade" aria-label="Emaki's window with its panes named: the sidebar with its sessions under their projects, and the agent chat in the middle. Four panels slide in beside the chat when the pointer finds their buttons in the chrome, files or outline at the left, the shell terminal or the agent terminal at the right, and the pane under the pointer stands forward."}
+:::
 
 ::: {.shift-words}
 ::: {.shift-label}

@@ -1,7 +1,7 @@
 import { Cam, clamp, fit, poly, proj, rad, rrect } from "hairline/core/iso.ts";
 import { spring, stepS } from "hairline/core/motion.ts";
 import { disposer, mk, pointer, register } from "hairline/core/stage.ts";
-import { draw, element, pen } from "./window.js";
+import { aim, draw, element, pen } from "./window.js";
 
 /**
  * The foot of Emaki's composer, close up (Chats: Mode, model and effort,
@@ -26,7 +26,8 @@ import { draw, element, pen } from "./window.js";
  *
  * Its frame is the flat sketch's (260 across, v up): the words are set at
  * widths measured in the wordmark's face (Optima, F), the pills' at 7 high
- * and the rest at 6.5. The slab stays still, as the layout's window does.
+ * and the rest at 6.5. The pointer turns the slab a little and tips it,
+ * as the layout's window (window.js, SLIGHT).
  */
 
 const W = 260, H = 152, SLAB = 4, S = 1.46;
@@ -87,6 +88,7 @@ export function composer({ focus = "pills" } = {}) {
     const C = Cam(REST_AZ, REST_K, S);
     let P = proj(C);
     const P2 = (u, v, w) => P(u, w, v);
+    const az = spring(REST_AZ, { k: 60, c: 14, eps: 0.01 }), kk = spring(REST_K, { k: 60, c: 14, eps: 0.0005 });
     const g = mk("g", {}, svg);
     const defs = mk("defs", {}, svg), fid = "emk-cmp-" + ++shades;
     mk("feGaussianBlur", { stdDeviation: 5 }, mk("filter", { id: fid, x: "-30%", y: "-30%", width: "160%", height: "160%" }, defs));
@@ -196,7 +198,7 @@ export function composer({ focus = "pills" } = {}) {
     let open = null, lit = null;
 
     function frame() {
-      C.az = rad(REST_AZ); C.k = REST_K;
+      C.az = rad(az.x); C.k = kk.x;
       const W3 = (u, v, w) => [u, w, v];
       fit(C, [W3(0, 0, -SLAB), W3(W, 0, -SLAB), W3(0, H, -SLAB), W3(W, H, -SLAB), W3(0, 0, 0), W3(W, H, 0)], 200, 160);
       P = proj(C);
@@ -260,7 +262,7 @@ export function composer({ focus = "pills" } = {}) {
     }
 
     const B = register(stage, (dt) => {
-      const m = [...Object.values(pills).map((p) => stepS(p.w, dt)), ...Object.values(lists).map((l) => stepS(l.amt, dt)), ...Object.values(stat).map((s) => stepS(s.amt, dt))].some(Boolean);
+      const m = [stepS(az, dt), stepS(kk, dt), ...Object.values(pills).map((p) => stepS(p.w, dt)), ...Object.values(lists).map((l) => stepS(l.amt, dt)), ...Object.values(stat).map((s) => stepS(s.amt, dt))].some(Boolean);
       frame();
       return m;
     });
@@ -321,6 +323,7 @@ export function composer({ focus = "pills" } = {}) {
       }
     }
     function rest() {
+      az.t = REST_AZ; kk.t = REST_K;
       open = null; lit = null;
       for (const k in LISTS) { picks[k] = LISTS[k].cur; pills[k].w.t = pillW(k, LISTS[k].rows.find((r) => r[0] === picks[k])[1]); }
       for (const k in lists) lists[k].amt.t = 0;
@@ -331,6 +334,7 @@ export function composer({ focus = "pills" } = {}) {
     bag.add(pointer(stage, {
       move: (p) => {
         const x = vb[0] + (p[0] / 400) * vb[2], y = vb[1] + (p[1] / 320) * vb[3];
+        aim(az, kk, x, y, vb);
         move([x, y]);
         B.wake();
       },

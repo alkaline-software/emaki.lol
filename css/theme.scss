@@ -797,18 +797,18 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
 // has room for the names (720 px), and puts each name at its leader's
 // end; with less, or before the script, the names are a grid of tiles
 // under the window.
-.layout [class*="emk-p-"], .layout-part { --part: var(--accent); }
-.layout .emk-p-files, .layout-part[data-part="files"] { --part: var(--sk-ochre); }
-.layout .emk-p-outline, .layout-part[data-part="outline"] { --part: var(--sk-mauve); }
-.layout .emk-p-shell, .layout-part[data-part="shell"] { --part: var(--sk-sage); }
-.layout .emk-p-agent, .layout-part[data-part="agent"] { --part: var(--claude); }
+.fig [class*="emk-p-"], .layout-part { --part: var(--accent); }
+.fig .emk-p-files, .layout-part[data-part="files"] { --part: var(--sk-ochre); }
+.fig .emk-p-outline, .layout-part[data-part="outline"] { --part: var(--sk-mauve); }
+.fig .emk-p-shell, .layout-part[data-part="shell"] { --part: var(--sk-sage); }
+.fig .emk-p-agent, .layout-part[data-part="agent"] { --part: var(--claude); }
 // At the head of a part's docs page only that part keeps its color; the
 // others take the window's gray at half strength (layout.js, `focus`), as
 // a part's page is about that part alone.
-.layout .emk-mute { --part: var(--hairline-mid); opacity: 0.5; }
+.fig .emk-mute { --part: var(--hairline-mid); opacity: 0.5; }
 // Hairline reads its bright stroke from the host; a part's group takes
 // its own, so its frame, accents and dots are in its color.
-.layout [class*="emk-p-"] { --hl-hi: var(--part); --hairline-hi: var(--part); }
+.fig [class*="emk-p-"] { --hl-hi: var(--part); --hairline-hi: var(--part); }
 
 .layout {
   display: grid;
@@ -838,7 +838,7 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
 // The drawing: the lit part's lines in the silhouettes' darker ink, its
 // guides and shadow in its color, a panel's button filled while its panel
 // shows, and the leaders in the part's color, full while it is lit.
-.layout svg {
+.fig svg {
   .emk-on .nf:not(.hi):not(.lo):not(.dash):not(.emk-lead) { stroke: var(--hl-edge); }
   .emk-guide { stroke: color-mix(in oklab, var(--part) 60%, transparent); }
   .emk-btn { transition: fill 160ms var(--ease); }
@@ -863,7 +863,7 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
 // darker while its list is open; the current row's wash and its tick in
 // the accent; a plate under a part of the status line that stands
 // forward; a segment's plate; the swatches and the switch, filled.
-.layout svg {
+.fig svg {
   .emk-v { font-weight: 700; }
   .emk-tail { fill: var(--muted); font-weight: 500; }
   .emk-v-muted { fill: var(--muted); }
@@ -921,22 +921,40 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
     text-decoration: none;
     transition: color 160ms var(--ease);
   }
-  a:hover, &[data-on] a { color: color-mix(in oklab, var(--part) 85%, var(--ink)); }
+  // Lit, under the pointer or by its part in the window (`data-on`), the
+  // whole name answers, not its link alone: its words and icon near the
+  // color, and its ground takes a wash of it (below).
+  border-radius: 8px;
+  transition: background-color 160ms var(--ease), border-color 160ms var(--ease);
+  &:hover a, &[data-on] a, &:hover > p::before, &[data-on] > p::before { color: color-mix(in oklab, var(--part) 85%, var(--ink)); }
+  // The name is the link, and says so on its own: underlined in its color
+  // under the pointer, apart from the wash that says its part is lit.
+  a:hover {
+    text-decoration: underline;
+    text-decoration-color: color-mix(in oklab, var(--part) 70%, transparent);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 0.22em;
+  }
   a:active { color: color-mix(in oklab, var(--part) 45%, var(--ink)); }
 }
 
 // Around the window: centered on its leader's end, over it or under it.
 // Over it, four to a row, a name's key goes under the name, so the four
-// fit side by side.
+// fit side by side: a grid of two columns, the icon and the name, the key
+// across both under them, so the box is as wide as the name and no wider,
+// and a name with no key has no second row. Lit, a name stands on a wash
+// of its color, as tight as its padding, the padding the room the leader
+// left, so the words do not move.
 .layout[data-wide] > .layout-part {
   position: absolute;
   width: max-content;
-  transform: translate(-50%, 0.3rem);
+  padding: 0.3rem 0.6rem;
+  transform: translate(-50%, 0);
 
-  &[data-top] { transform: translate(-50%, calc(-100% - 0.3rem)); }
-  > p { flex-wrap: wrap; justify-content: center; row-gap: 0.3rem; }
-  > p::after { content: ""; flex-basis: 100%; order: 1; }
-  kbd, .kbd { order: 2; }
+  &[data-top] { transform: translate(-50%, -100%); }
+  &:hover, &[data-on] { background: color-mix(in oklab, var(--part) 12%, transparent); }
+  > p { display: grid; grid-template-columns: auto auto; align-items: center; justify-content: center; row-gap: 0.3rem; }
+  kbd, .kbd { grid-column: 1 / -1; justify-self: center; }
 }
 
 // Under it: a tile a part, washed in its color as a part's card is, the
@@ -948,6 +966,11 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
   background: color-mix(in oklab, var(--part) 6%, var(--panel));
 
   kbd, .kbd { margin-left: auto; }
+  // Lit: a deeper wash, and the edge in its color.
+  &:hover, &[data-on] {
+    border-color: color-mix(in oklab, var(--part) 45%, var(--border));
+    background: color-mix(in oklab, var(--part) 14%, var(--panel));
+  }
 }
 @media (max-width: 479.98px) {
   .layout { grid-template-columns: minmax(0, 1fr); }
@@ -955,14 +978,17 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
 
 /* ---- The shift ---- */
 
-// From the IDE to the ADE (index.qmd, _shift-ide.html, _shift-ade.html):
-// from 992 wide the two windows side by side under the heading, each seen
-// from the front and as wide as its column, an arrow across from the one
-// to the other, centered on both, and each window's words under it, so
-// the two columns are one shape and the words keep a reading measure. One
-// column under 992 wide: a window, its words, the arrow turned down, the
-// next window, its words. The strokes do not scale, as the handscroll's
-// do not.
+// From the IDE to the ADE (index.qmd): from 992 wide the two windows side
+// by side under the heading, each as wide as its column, an arrow across
+// from the one to the other, centered on both, and each window's words
+// under it, so the two columns are one shape and the words keep a reading
+// measure. One column under 992 wide: a window, its words, the arrow
+// turned down, the next window, its words. The windows are figures on
+// Hairline (scripts/figures/emaki/ide.js, and layout.js `named`), each in
+// the shift's box (SHIFT_BOX, layout.js), which the engine also sets on
+// the figure: the window with as much air over it as under it, so the
+// arrow meets its middle. A part standing forward casts its shadow past
+// the box.
 .shift {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -973,26 +999,14 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
   > .shift-words { margin-top: 1.25rem; }
   > .shift-arrow { justify-self: center; }
 }
-
-// Quarto gives every <figure> its own `figure` class, and its
-// `figure.figure { display: block }` outranks a class alone, so the pane
-// is selected from its parent.
 .shift > .shift-pane {
   justify-self: center;
   width: 100%;
   max-width: 30rem;
+  aspect-ratio: 308 / 183.55;
   margin: 0;
 
-  svg {
-    display: block;
-    width: 100%;
-    height: auto;
-    fill: none;
-    stroke-width: 1.5;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-  svg * { vector-effect: non-scaling-stroke; }
+  svg { overflow: visible; }
 }
 
 @media (min-width: 992px) {
@@ -1008,49 +1022,6 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
     > .shift-ade + .shift-words { grid-area: 3 / 3; margin-top: 2rem; }
     > .shift-arrow { grid-area: 2 / 2; align-self: center; margin: 0; transform: rotate(-90deg); }
   }
-}
-
-// Each window has a frame heavier than the lines inside it and a halo
-// under it, in its own color: the IDE's gray and faint, the ADE's the
-// accent, since that is the one that is Emaki and the one the page is
-// for. The box's corners take the window's own radius (8 of 320 by 220),
-// so the halo follows the drawn frame, and it is a box shadow, which
-// costs nothing while the window moves under the pointer. The frame is
-// drawn on the box's edge with the same radius (x 0, y 0, rx 8), so its
-// curve and the halo's are one at any width: a frame set in from the
-// edge, or rounded otherwise, leaves the page showing between them at
-// the corners. The box lets the stroke's outer half overflow onto the
-// halo, so the heavier stroke is never cut.
-.shift-pane svg {
-  overflow: visible;
-  border-radius: 2.5% / 3.6364%;
-}
-.shift-pane .sk-window { stroke-width: 2; }
-.shift-ide {
-  .sk-window { stroke: var(--muted); }
-  svg {
-    box-shadow:
-      0 0 0 6px color-mix(in oklab, var(--ink) 5%, transparent),
-      0 12px 40px -10px color-mix(in oklab, var(--ink) 16%, transparent);
-  }
-}
-.shift-ade {
-  .sk-window { stroke: var(--accent); }
-  svg {
-    box-shadow:
-      0 0 0 6px color-mix(in oklab, var(--accent) 16%, transparent),
-      0 12px 48px -8px color-mix(in oklab, var(--accent) 40%, transparent);
-  }
-}
-body.quarto-dark .shift-ide svg {
-  box-shadow:
-    0 0 0 6px color-mix(in oklab, var(--ink) 7%, transparent),
-    0 12px 40px -10px color-mix(in oklab, var(--ink) 18%, transparent);
-}
-body.quarto-dark .shift-ade svg {
-  box-shadow:
-    0 0 0 6px color-mix(in oklab, var(--accent) 22%, transparent),
-    0 12px 56px -8px color-mix(in oklab, var(--accent) 50%, transparent);
 }
 
 // A row's words: what it is called, small over them, then what it is.
@@ -1084,108 +1055,34 @@ body.quarto-dark .shift-ade svg {
   stroke-linejoin: round;
 }
 
-// The sketch's strokes: the structure in the muted ink and the two borders,
-// the words' stand-ins in the ink, the accent on what can be done, and the
-// rest in the shift's own set (--sk-*, The palette), five hues at one
-// lightness and chroma so the two windows are one family: ochre for the
-// files, slate for the code, sage for the terminal, mauve for the agent's
-// spark, and the lights and the dots in rose, ochre and sage. A box is a
-// pane with its name in it, in one color for the two; the names are in
-// the wordmark's face, as the name beside the icon is, in title case, and
-// each stands on a halo in the page's color, so it reads over the lines
-// it crosses.
-.shift {
-  .sk-frame { stroke: var(--muted); }
-  .sk-faint { stroke: var(--border-2); }
-  .sk-edge { stroke: var(--border-2); }
-  .sk-ink { stroke: var(--ink); }
-  .sk-page { stroke: var(--page); stroke-width: 1.4; }
-  .sk-accent { stroke: var(--accent); }
-  .sk-accent-fill { fill: var(--accent); stroke: none; }
-  .sk-wash { fill: var(--panel-2); stroke: none; }
-  .sk-spark { stroke: var(--sk-mauve); stroke-width: 1.25; }
-  .sk-lights circle { stroke: none; }
-  .sk-rose { fill: var(--sk-rose); stroke: none; }
-  .sk-ochre { fill: var(--sk-ochre); stroke: none; }
-  .sk-sage { fill: var(--sk-sage); stroke: none; }
-  .sk-sage-line { stroke: var(--sk-sage); }
-  // The name keeps the alphabetic baseline beside the icon.
-  .sk-name { font-family: var(--font-wordmark); font-size: 10px; fill: var(--accent); stroke: none; dominant-baseline: alphabetic; }
-
-  .sk-box { color: var(--muted); }
-  .sk-box > rect:first-child { stroke: currentColor; }
-  .sk-box text {
+// The IDE's panes, each in the shift's own set (--sk-*, The palette), five
+// hues at one lightness and chroma so the two windows are one family: the
+// activity bar the muted ink, the files ochre with the outline and the
+// timeline folded under them, the code slate, the terminal sage; its agent
+// chat keeps the accent, as Emaki's chat does beside it. The chat's spark
+// is mauve.
+.fig .emk-p-ide-activity { --part: var(--muted); }
+.fig :is(.emk-p-ide-files, .emk-p-ide-outline, .emk-p-ide-timeline) { --part: var(--sk-ochre); }
+.fig .emk-p-ide-code { --part: var(--sk-slate); }
+.fig .emk-p-ide-terminal { --part: var(--sk-sage); }
+// A pane's name, in its pane, in its color: in the wordmark's face, in
+// title case, each on a halo of its pane's wash, so it reads over the
+// lines it crosses. It keeps its color while its pane stands forward: the
+// pane coming forward is the answer.
+.fig svg {
+  .emk-name-in {
     font-family: var(--font-wordmark);
-    font-size: 8px;
     font-weight: 600;
     letter-spacing: 0.02em;
-    fill: currentColor;
-    stroke: var(--page);
-    stroke-width: 3;
+    fill: var(--part);
+    stroke: color-mix(in oklab, var(--hairline-hi) 7%, var(--hairline-plate));
+    stroke-width: 2.4;
     stroke-linejoin: round;
     paint-order: stroke;
     text-anchor: middle;
-    dominant-baseline: central;
-    transition: fill 240ms var(--ease);
   }
-  // As specific as the rule above, or these lose to it.
-  .sk-box text.sk-big { font-size: 10px; }
-  .sk-box text.sk-small { font-size: 6.5px; }
-  .sk-box text.sk-start { text-anchor: start; }
-  .sk-c-gray { color: var(--muted); }
-  .sk-c-ochre { color: var(--sk-ochre); }
-  .sk-c-slate { color: var(--sk-slate); }
-  .sk-c-sage { color: var(--sk-sage); }
-  .sk-c-mauve { color: var(--sk-mauve); }
-  .sk-c-accent { color: var(--accent); }
-
-  // What answers the pointer: the box under it lights in place, its edge
-  // heavier and its name in the ink, over a hover's moment and with
-  // nothing travelling between boxes; on a phone the script lights them in
-  // turn (`.on`). The box's rect takes the pointer over its whole face,
-  // or an unfilled shape would answer only on its edge. The terminal's
-  // button lights while the terminal is out (js/shift.js).
-  .sk-box > rect:first-child {
-    pointer-events: all;
-    transition: stroke-width 160ms var(--ease), fill 160ms var(--ease);
-  }
-  .sk-box:hover > rect:first-child, .sk-box.on > rect:first-child {
-    stroke-width: 2.5;
-    fill: color-mix(in oklab, currentColor 7%, transparent);
-  }
-  .sk-box:hover text, .sk-box.on text { fill: var(--ink); }
-  // The two buttons of the chrome are the things in the window to do,
-  // each in its pane's color: the files' ochre, the terminal's sage. At
-  // rest each glows, its face washed
-  // in its color and a soft halo of the same under it, still, the only
-  // lit things in the chrome; while its pane is out it fills solid, the
-  // glyph in the page's color. The hit rect is unseen.
-  .sk-btn { --btn: var(--accent); stroke: var(--btn); cursor: pointer; }
-  .sk-btn-ochre { --btn: var(--sk-ochre); }
-  .sk-btn-sage { --btn: var(--sk-sage); }
-  // More of the set, for the panels the ADE window holds: the outline's
-  // mauve, and Claude's color (The palette) for the agent's terminal: its
-  // border, its prompts, its spark, and the button that brings it.
-  .sk-btn-mauve { --btn: var(--sk-mauve); }
-  .sk-btn-claude { --btn: var(--claude); }
-  .sk-c-claude { color: var(--claude); }
-  .sk-claude-line { stroke: var(--claude); }
-  .sk-claude-spark { stroke: var(--claude); stroke-width: 1.25; }
-  .sk-btn .sk-face {
-    fill: color-mix(in oklab, var(--btn) 22%, transparent);
-    filter: drop-shadow(0 0 4px color-mix(in oklab, var(--btn) 85%, transparent));
-    transition: fill 160ms var(--ease), filter 160ms var(--ease);
-  }
-  // A button's glyph is drawn thin, under the window's stroke, as the
-  // app's icons are beside its text; the face and the frame keep theirs.
-  .sk-btn .sk-glyph { stroke-width: 1.1; transition: stroke 160ms var(--ease); }
-  .sk-btn.on .sk-face { fill: var(--btn); filter: none; }
-  .sk-btn.on .sk-glyph { stroke: var(--page); }
-  .sk-hit { fill: transparent; stroke: none; pointer-events: all; }
-  // The project's folder is a toggle of the same kind, open at rest and
-  // so filled, folded when outlined; it keeps its glow in both states,
-  // since it is the one thing in the list that answers.
-  .sk-fold.on .sk-face { filter: drop-shadow(0 0 4px color-mix(in oklab, var(--btn) 85%, transparent)); }
+  .emk-name-start { text-anchor: start; }
+  .emk-spark { stroke: var(--sk-mauve); }
 }
 
 // A card with a figure over its words: the figure on the panel, a little
