@@ -245,13 +245,6 @@
     "text": "絵 巻"
   },
   {
-    "objectID": "about.html#meet-the-team",
-    "href": "about.html#meet-the-team",
-    "title": "About",
-    "section": "Meet the team",
-    "text": "Meet the team\n\n\n\nAlkaline Software\nAlkaline Software is a development team of two engineers and data scientists, John Paul Helveston and Pingfan Hu, who enjoy building “basic” software. Alkaline means “basic” (a high pH), and basic is what our software is meant to be: things that should plainly exist. Emaki is one of them, a development environment for the agentic era that anyone who works with agents can use."
-  },
-  {
     "objectID": "about.html#the-name",
     "href": "about.html#the-name",
     "title": "About",
@@ -271,6 +264,13 @@
     "title": "About",
     "section": "App structure",
     "text": "App structure\nEmaki is written in Rust, with GPUI, the Zed editor’s UI framework, and gpui-component for the window.\ncrates/emaki-core   core logic\ncrates/emaki-app    the window\nvendor/             gpui, modified to meet our needs\nscripts/            miscellaneous"
+  },
+  {
+    "objectID": "about.html#meet-the-team",
+    "href": "about.html#meet-the-team",
+    "title": "About",
+    "section": "Meet the team",
+    "text": "Meet the team\n\n\n\nAlkaline Software\nAlkaline Software is a development team of two engineers and data scientists, John Paul Helveston and Pingfan Hu, who enjoy building “basic” software. Alkaline means “basic” (a high pH), and basic is what our software is meant to be: things that should plainly exist. Emaki is one of them, a development environment for the agentic era that anyone who works with agents can use."
   },
   {
     "objectID": "about.html#credits",
