@@ -1,6 +1,6 @@
 ---
 title: "Keys"
-subtitle: "Two kinds: ⌘⇧ and a letter shows or hides a panel; ⌘ and a letter opens a page or does one thing."
+subtitle: "A collection of all keyboard commands on Emaki."
 ---
 
 [⌘]{.kbd} on macOS, [Ctrl]{.kbd} elsewhere.
@@ -8,14 +8,15 @@ subtitle: "Two kinds: ⌘⇧ and a letter shows or hides a panel; ⌘ and a lett
 ## Panels {.i-app-window}
 
 Hold [⇧]{.kbd} with [⌘]{.kbd}, and the letter shows or hides a panel
-beside the chat. The letter is the panel's first.
+beside the chat. The letter is the panel's first, and B is the sidebar's.
 
 | | |
 |---|---|
-| [⌘⇧F]{.kbd} | [files](files.qmd) |
-| [⌘⇧O]{.kbd} | [outline](outline.qmd) |
-| [⌘⇧S]{.kbd} | [shell terminal](shell.qmd) |
-| [⌘⇧A]{.kbd} | [agent terminal](agent.qmd) |
+| [⌘⇧B]{.kbd} | the sidebar, with your [projects](projects.qmd) and their sessions; [⌘B]{.kbd} too |
+| [⌘⇧F]{.kbd} | [Files Panel](files.qmd) |
+| [⌘⇧O]{.kbd} | [Outline Panel](outline.qmd) |
+| [⌘⇧S]{.kbd} | [Shell Terminal Panel](terminals.qmd#shell) |
+| [⌘⇧A]{.kbd} | [Agent Terminal Panel](terminals.qmd#agent) |
 | [⌘⇧G]{.kbd} | git's [Changes](files.qmd#git) sheet |
 
 : {.table-keys tbl-colwidths="[38,62]"}
@@ -44,7 +45,6 @@ The rest of [⌘]{.kbd} each does one thing where you are.
 | [⌘↩]{.kbd} | send, or commit in the Changes sheet |
 | [⌘P]{.kbd} | push, in the Changes sheet |
 | [⌘S]{.kbd} | save the file |
-| [⌘B]{.kbd} | sidebar |
 | [⌘1]{.kbd} to [⌘9]{.kbd} | tabs |
 | [⌘W]{.kbd} · [⌘⇧T]{.kbd} | close a tab, reopen the last |
 | [⌘⇧N]{.kbd} | new branch |

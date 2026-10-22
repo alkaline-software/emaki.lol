@@ -93,10 +93,8 @@ website:
             href: docs/files.qmd
           - text: "Outline"
             href: docs/outline.qmd
-          - text: "Shell Terminal"
-            href: docs/shell.qmd
-          - text: "Agent Terminal"
-            href: docs/agent.qmd
+          - text: "Terminals"
+            href: docs/terminals.qmd
       - text: "---"
       - text: "Settings"
         href: docs/settings.qmd
@@ -143,7 +141,7 @@ format:
           (function () {
             var m = document.querySelector('meta[name="quarto:offset"]');
             var root = m ? m.getAttribute("content") : "./";
-            ["js/navbar-widgets.js", "js/hero-scroll.js", "js/shift.js", "js/page.js", "js/figures.js"].forEach(function (src) {
+            ["js/navbar-widgets.js", "js/hero-scroll.js", "js/page.js", "js/figures.js"].forEach(function (src) {
               var s = document.createElement("script");
               s.src = root + src;
               s.async = false;

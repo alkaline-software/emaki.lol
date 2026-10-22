@@ -38,10 +38,8 @@ radii are the app's, and what differs here is written here.
 - **Things line up.** One column for the words, and what is wider (a grid
   of cards) is centered on it. Every pill, tile and cap in a
   row is one height. Every edge is a hairline in the border's color, and
-  nothing casts a shadow at rest, save the two windows of the shift on
-  the landing page, each on a halo in its own color, and the two buttons
-  in the ADE's chrome, which glow to ask for the pointer (The elements,
-  The shift).
+  nothing casts a shadow at rest: only a part standing forward of a
+  figure's window casts one, soft, on the window under it (Figures).
 - **Every width.** From 360 to 1600 wide nothing scrolls sideways, the
   gutter is 16 px at a phone's width, and a grid folds to one column
   before its cells squeeze their words.
@@ -76,7 +74,7 @@ icon's.
 | `--spark` | the agent's spark: a glyph, never a ground | `#715CC7` | `#B5ADF4` |
 | `--seal` | the handscroll's title, 絵巻, in an old seal's faded red, and nothing else | `#A8665B` | `#D49A90` |
 | `--claude`, `--codex` | an agent's mark beside its name, and nothing else | `#D97757`, `#5F9E6E` | `#D97757`, `#79B487` |
-| `--sk-ochre`, `--sk-slate`, `--sk-sage`, `--sk-mauve`, `--sk-rose` | the drawings' own set, and nothing else: the files, the code, the terminal, the agent's spark, and the lights and dots (The shift); a value's color in the composer's close-ups; a panel's own color in its button, its docs page's window and its figure, the files ochre, the outline mauve, the shell sage (the agent's terminal is Claude's) | `#9E793D`, `#4489AE`, `#578F63`, `#986EA2`, `#AF6974` | `#DAB883`, `#8AC7EA`, `#99CDA3`, `#D5ADDE`, `#ECA9B2` |
+| `--sk-ochre`, `--sk-slate`, `--sk-sage`, `--sk-mauve`, `--sk-rose` | the drawings' own set, and nothing else: the IDE's panes, its chat's spark and its status bar's dots (The shift); a value's color in the composer's close-ups; a panel's own color in its button, its docs page's window and its figure, the files ochre, the outline mauve, the shell sage (the agent's terminal is Claude's); a kind of file's tile on the Files Panel page | `#9E793D`, `#4489AE`, `#578F63`, `#986EA2`, `#AF6974` | `#DAB883`, `#8AC7EA`, `#99CDA3`, `#D5ADDE`, `#ECA9B2` |
 
 Where they come from: the light page and its panels and hairlines are a
 warm paper, as Kaku's site has it, with the app's ink and muted ink on it;
@@ -144,8 +142,10 @@ small 0.875 rem for labels, captions and caps.
   showing, and its name in the accent. About has the words and the table
   of contents without the menu; the landing page has neither. Below 992
   the menu folds into the navbar's toggle and the table of contents goes
-  above the words. A docs page is a title, one line under it, and
-  `##` sections with an icon each, and it ends with the way to the page
+  above the words. A docs page is a title (a panel's with its key beside
+  it, a key at the words' size, on the name's middle), one line under it, and
+  `##` sections with an icon each (Terminals, the two terminals' page,
+  a section each, the key beside each section's name), and it ends with the way to the page
   before and the page after.
   The landing page uses the full width and centers one column, Kaku's
   1152 px (`--w-page`), for everything on it. The hero is one column,
@@ -227,22 +227,32 @@ small 0.875 rem for labels, captions and caps.
   leader runs on to its head: the middle of it for the outline and the
   shell, the outer corner for the files and the agent's terminal, so no
   leader crosses a button, the name or a panel. A lit part stands forward as a part does
-  in the six figures, and its name nears its color. Where the box is
+  in the six figures, and its name answers with it: its words near its
+  color on a wash of it, or, as a tile, the wash deepens and the edge
+  takes the color. The name lights its part as the part lights the name,
+  so either is a way to the other. The wash says the part is lit; the
+  name's word, a link to its page, underlines in its color under the
+  pointer, so the one is told from the other. Where the box is
   under 720 wide the names are tiles under the window, two to a row and
   one under 480, washed as a part's card is, the key at the far end, and
   the box keeps room under the window for a part standing forward.
-  The window stays still under the pointer, as every figure on the docs
-  pages does: only the parts answer, so the places to point at stay put.
+  The pointer turns the window only a little, a few degrees to either
+  side and a small tip (`SLIGHT`, window.js), as every figure on the docs
+  pages does: the layers part as the eye moves, and the places to point
+  at stay where they were.
   The same window opens each part's docs page (`.layout-page`, under the
-  title, centered and at most 36 rem wide): no names, only that part in
+  title, or on Terminals under each section's head, centered and at most 36 rem wide): no names, only that part in
   its color, the rest in the window's gray at half strength, so the six
   pages read as one window looked at six ways. A panel's page has its
   panel in from the start, its button filled; the pointer on the button
   puts it away and on the part brings it forward.
-- **People** (`.people > .person`): who makes it, on the About page. A
-  picture from `assets/team/`, a name in bold that is a link, and a line
-  or two. A person's picture is a circle; the studio's mark
-  (`.person-org`) a rounded square.
+- **People** (`.people > .person`): who makes it, the first section on
+  the About page, under the handscroll. The studio's card
+  (`.person-org`): its mark from `assets/team/`, a rounded square, its
+  name in bold that is a link, and a few lines naming its two makers,
+  each a link. It stands out on the accent's plate, 12% of the
+  accent over the page, its edge 32%, in both appearances. A person's own card, a picture in a circle, is the same
+  element without `.person-org`.
 - **The docs menu** (`#quarto-sidebar`): the pages in the words' serif
   at 0.95 rem, in the muted ink, the ink under the pointer; the page
   showing in the accent with a 3 px bar, 56% of the row's height and
@@ -258,15 +268,19 @@ small 0.875 rem for labels, captions and caps.
   the page after at the right, each a quiet word in the chrome's face
   with the app's arrow beside it, the ink under the pointer. The way
   runs through the whole menu, across the groups (`js/page.js`).
-- **The settings sheet** (Settings, `layout-settings`): the layout's
-  window, gray at half strength, and the sheet standing forward over its
-  main area with its shadow under it: the rail of the eight sections at
-  the left, the one showing washed, and its name over its groups at the
-  right, each group a card of rows, a name at the left and the control
-  at the right as the app lays them: Appearance's look and seven accents
-  (the chosen one ringed), Fonts' two faces and text size, New
-  sessions' agent and its three, Updates' switch and button. The
-  pointer on a section in the rail shows it.
+- **The settings** (Settings, `settings-<section>`, settings.js): a
+  figure a section, Appearance to Files, at the head of its own `##`
+  section, at most 38 rem wide: the section's groups on the pane's
+  ground and nothing round them, no window and no rail. Each group is a
+  card of rows, a name at the left and the control at the right, as the
+  app lays them out, in its words. A click or a tap works a control as
+  the app's does and changes nothing else: a switch's knob slides and
+  its track fills with the accent, a choice's plate slides, an accent's
+  ring and name move, a face's tile is chosen, a tick comes and goes, a
+  size steps (under Custom only), a dropdown turns to its next value, a
+  button flashes. A control under the pointer darkens; the choices that
+  hang on a switch dim while it is off. What was set stays when the
+  pointer leaves.
 - **The composer's foot** (Chats, `composer-pills` and
   `composer-status`, composer.js): the chat's face close up as a slab,
   the composer on it and the status line under it, in the layout's
@@ -284,8 +298,15 @@ small 0.875 rem for labels, captions and caps.
   through its letters; the context sage, ochre from 70% and rose from
   85%; a limit slate, mauve from 70% and rose from 90%.
 - **The kinds of file** (`.types`, on the Files Panel page): a tile a
-  kind, two to a row and one under 600 wide, the icon in the accent at
-  the left, the name in the ink and one line under it in the muted ink.
+  kind, its icon and its name and nothing more, five to a row, standing
+  upright, the icon over the name. The icon is the one the app's tree
+  gives that kind, from Catppuccin (`assets/catppuccin/`), drawn through
+  a mask in a hue of the drawings' set by what the kind holds: tables
+  sage, written words slate, slides and pages ochre, code and pictures
+  mauve, the PDF rose; the tile is washed in it. Where the row is narrow
+  (under 600 of it, between 600 and 1100 wide) the names and icons are a
+  step smaller; under 600 wide, two to a row, each a short tile, its icon
+  beside its name.
 - **The download** (`.dl`, `_download.html`): one control on the landing
   page. The accent pill takes the installer for this computer, which
   `js/page.js` names from the browser ("Download for macOS"), and the
@@ -299,6 +320,9 @@ small 0.875 rem for labels, captions and caps.
   Get Started, with the play glyph, into the docs.
 - **Keys**: `[⌘K]{.kbd}`, a cap in the chrome's face. Named as the Mac
   has them; the keyboard table says once that ⌘ is Ctrl elsewhere.
+- **Lists**: a bullet is a hairline, never a dot: a short rule in the
+  muted ink at the first line's middle, the wrapped lines under the
+  words.
 - **Tables**: hairline rows, the head in the muted ink, no vertical lines,
   no zebra.
 - **Code**: a block on the panel's ground with a hairline; inline, the
@@ -312,65 +336,44 @@ small 0.875 rem for labels, captions and caps.
   and the sheet's clip keeps them off the roll. On the landing page it
   stands over the name; on the About page, under The name, at the
   column's width (`.about-fig`). One to a page: the script finds it by id.
-- **The shift** (`_shift-ide.html`, `_shift-ade.html`): under "From the
-  IDE to the ADE", two windows seen from the front, side by side with an
-  arrow across from the one to the other, centered on both, and each
-  one's words under it, headed by the window's name, small; one under the
-  other below 992, the arrow turned down; each
-  pane in each window a box with its name in it, as Positron's
-  own diagram of its window names its regions, drawn in the handscroll's
-  manner. The left is an editor's window as one has it today, its panes
-  named: Activity Bar, File Browser with Outline and Timeline folded under
-  it, Code, a Terminal under the code, and the Agent Chat squeezed into a
-  pane at the right edge, one dial among the dials. The right is Emaki's:
-  New Chat and Chats in the sidebar, a project a folder with its chats
-  stepped in under it along a guide line and one of them live, two more
-  projects folded under, Agent Chat in the middle, and the four panels,
-  Files, Outline, Shell Terminal and Agent Terminal, nowhere until the
-  pointer finds their buttons. The structure in the muted ink and the
-  two borders, the words' stand-ins in the ink, and everything else in
-  the shift's own set (The palette), each box in one color with its name
-  in the same: ochre for the files, mauve for the outline, slate for the
-  code, sage for the terminal, Claude's terracotta for the agent's
-  terminal, mauve for the agent's spark, the lights and the dots in rose,
-  ochre and sage, and the accent on the agent chat and on what can be
-  done. The terminal is sage in both windows and the agent chat the
-  accent in both, so the eye finds each in each, the one small at the
-  edge, the other in the middle. The
-  names are in the wordmark's face, as the name beside the icon is, in
-  title case, 8 of 320 units (the chat's 10, the folded panes' 6.5), on
-  a halo in the page's color so they read over the lines they cross. Each window has a frame heavier than the lines inside it and
-  a halo under it, in its own color: the IDE's gray and faint, the ADE's
-  the accent. The ADE carries the name, in the wordmark face beside the
-  app's icon, as its sidebar has them: of the two it is the one that is
-  Emaki, and the one the page is for.
-  One over the other, each beside its words, the arrow down between the
-  windows; one column below 992 wide.
-  Both answer the pointer as a hover: the box under it lights in place
-  over 160 ms, its edge heavier, its face washed a little in its color
-  and its name in the ink, and nothing travels between boxes. The ADE
-  has four buttons in its chrome, as the app has them, two at each end in
-  a frame: the files' and the outline's at the main area's left end, the
-  shell terminal's and the agent terminal's at the right, each in its
-  panel's own color. At rest each glows, its face
-  washed in its color on a soft halo of the same, still, the only lit
-  things in the chrome, to ask for the pointer. When the pointer finds
-  one its pane slides in from its side and the chat makes room
-  (`js/shift.js`), as the app does when the button is pressed: files or
-  outline between the sidebar and the chat, a terminal at the right, the
-  two of a side sharing it, so one coming puts the other away, and a
-  side each at once if both are asked. The button fills solid while its pane is
-  out. The pane stays until the pointer passes over the button again,
-  which sends it away, and the next pass brings it back. The first
-  project's folder in the sidebar is a toggle of the same kind, in the
-  files' ochre and glowing in both its states: a pass over its row folds
-  the chats up into it and the projects under them close up, as a click
-  on the row does in the app, and the next pass opens it again. Off the
-  sketch altogether everything returns to rest: the panes away, the
-  project open. On a phone the light walks the
-  boxes on its own while the figure is in view, and each panel comes out, and the project folds,
-  at its turn. Under reduced motion the whole picture stands at rest,
-  the files and the shell out and the project open.
+- **The shift** (`shift-ide`, `shift-ade`): under "From the IDE to the
+  ADE", two windows seen from the front, side by side with an arrow
+  across from the one to the other, centered on both, and each one's
+  words under it, headed by the window's name, small; one under the
+  other below 992, the arrow turned down. Each is a figure on Hairline,
+  drawn as the layout's window is (The layout), in its proportions as
+  every figure's window is, filling its column, with as much air over it
+  as under it, so the arrow meets its middle; the two are one size, and each pane in each is a part with its name in it,
+  as Positron's own diagram of its window names its regions. The left is
+  an editor's window as one has it today (`ide.js`), its panes named:
+  Activity Bar, File Browser with Outline and Timeline folded under it,
+  Code, a Terminal under the code, and the Agent Chat squeezed into a
+  pane at the right edge, one dial among the dials, a status bar along
+  its foot. The right is Emaki's, the layout's window given `named`: New
+  Session, All Sessions and Agents in the sidebar in the app's own words,
+  Sessions in the projects' box, Agent Chat in the middle, and the four
+  panels, Files, Outline, Shell Terminal and Agent Terminal, hidden until
+  the pointer finds their buttons in the chrome, when each comes in from
+  its side and the chat makes room, as on Get Started. Each pane is in
+  its color: the IDE's in the shift's own set (The palette), the activity
+  bar the muted ink, the files with the outline and the timeline ochre,
+  the code slate, the terminal sage, the agent chat the accent; the
+  ADE's in its parts' own, the sidebar and the chat the accent, each
+  panel its own. The terminal is sage in both windows and the agent chat
+  the accent in both, so the eye finds each in each, the one small at
+  the edge, the other in the middle. The names are in the wordmark's
+  face, in title case and the pane's color, on a halo of its wash, each
+  where its pane leaves room, crossing nothing: File Browser at the head
+  of its pane, away from Outline and Timeline under it; Code and
+  Terminal at their panes' right; the ADE's panels and Sessions at one
+  height, low in the pane but clear of its foot, the lists over them
+  drawing as many rows as leave it room; Activity Bar runs up
+  its bar. The pane under the pointer stands forward as a part of the
+  layout does, and its name keeps its color: the pane coming forward is
+  the answer. Neither window turns: the two are compared as
+  they stand. On a screen with no pointer to hover, each walks its panes
+  on its own while it is in view (Hairline's tour), Emaki's bringing in
+  the files and then the shell.
 - **Figures** (`.fig[data-figure]`): isometric line drawings on
   Hairline's engine, which answer the pointer, in the handscroll's
   manner. One shows what a card is about: for each of the app's parts
@@ -382,7 +385,8 @@ small 0.875 rem for labels, captions and caps.
   soft shadow on the window under it, and dashed guides back to the
   empty place it left, so it reads as forward straight on. The
   pointer turns the window to either side, so the layers part and close,
-  and on the part brings it further forward. A
+  and on the part brings it further forward; on the docs pages it turns
+  only a little (The layout), and the shift's windows not at all. A
   figure sets no color of its own: its plate is the ground it stands on,
   its bright stroke the accent, or on a panel's the panel's own color
   (The palette), its silhouettes the muted ink, the rest the two
@@ -399,11 +403,9 @@ small 0.875 rem for labels, captions and caps.
   grid a beat apart. Not on the documentation pages, where a jump to a
   heading would catch it mid-motion.
 - A figure answers the pointer on Hairline's own clocks, a spring for
-  where and a 700 ms ease for which, and sleeps when nothing moves. The
-  shift's boxes light as a hover, 160 ms in place, and its terminal
-  slides on the handscroll's spring.
-- Under `prefers-reduced-motion`, none of it, and the figures and the
-  shift at rest, the shift with a panel out on each side.
+  where and a 700 ms ease for which, and sleeps when nothing moves.
+- Under `prefers-reduced-motion`, none of it, and the figures, the
+  shift's among them, at rest.
 
 ## Checking
 

@@ -1,7 +1,7 @@
 import { Cam, clamp, fit, lerp, open, poly, proj, rad, rrect } from "hairline/core/iso.ts";
 import { spring, stepS } from "hairline/core/motion.ts";
 import { disposer, mk, pointer, register } from "hairline/core/stage.ts";
-import { REGIONS, circle, draw, element, pen } from "./window.js";
+import { REGIONS, aim, circle, draw, element, pen } from "./window.js";
 
 /**
  * Emaki's layout (Get Started, Layout): the window seen from the front as
@@ -21,8 +21,9 @@ import { REGIONS, circle, draw, element, pen } from "./window.js";
  * (window.js), its shadow under it and dashed guides back to its place,
  * and its name nears its color. The projects are the box in the sidebar,
  * under New Session, All Sessions and Agents, not the sidebar whole. The
- * window itself stays still: there are many places to point at, and a
- * window that turned under the pointer moved them all.
+ * pointer turns the window a few degrees and tips it a little (SLIGHT,
+ * window.js): there are many places to point at, and a window that turned
+ * further moved them all.
  *
  * A few of the app's own words, small and in the muted ink, say it is
  * Emaki's window: the name and icon in the chrome, the sidebar's three
@@ -41,14 +42,13 @@ import { REGIONS, circle, draw, element, pen } from "./window.js";
  * the pointer on the button puts the panel away, as the button does in
  * the app, and on the part brings it forward.
  *
- * With `focus: "settings"`, the settings sheet stands forward over the
- * main area, the window gray behind it: the rail of its eight sections at
- * the left (`SETTINGS_SECTIONS` in the app), the section's name and its
- * groups at the right. Appearance shows at rest; the pointer on Fonts,
- * New sessions or Updates in the rail shows that section.
+ * With `named`, the window is the shift's second (index.qmd, From the IDE
+ * to the ADE), beside the IDE's (ide.js): each part's name in it, in its
+ * color, as the IDE's panes have theirs, no leaders, the box narrow, and
+ * the window still, as the IDE's is, so the two compare as they stand.
  */
 
-const W = 240, H = 128, SLAB = 4, TOP = H - 15, PART = 3, S = 1.25;
+export const W = 240, H = 128, SLAB = 4, TOP = H - 15, PART = 3, S = 1.25;
 /** The sidebar's edge, and where the main area runs. */
 const EDGE = 54, M0 = 57, M1 = W - 4;
 /** A panel's width, and the gap it leaves the chat. */
@@ -88,12 +88,47 @@ const NAMES = {
  * room under it for a part standing forward, which grows downward. The
  * pointer arrives in Hairline's 400 × 320 units.
  */
-const BOX_WIDE = [0, -18, 400, 268], BOX_NARROW = [36, 38, 328, 192], WIDE = 720;
-/** The window faces the eye from a hair above, and stays so. */
-const REST_AZ = 0, REST_K = 0.05;
+export const BOX_WIDE = [0, -18, 400, 268], BOX_NARROW = [36, 38, 328, 192], WIDE = 720;
+/** The window faces the eye from a hair above; the pointer turns it within SLIGHT (window.js). */
+export const REST_AZ = 0, REST_K = 0.05;
 /** How much larger a part is drawn for each unit it stands forward, how far down its shadow falls, and how far a panel slides in. */
-const NEAR = 0.006, FALL = 0.22, SLIDE = 14;
+export const NEAR = 0.006, FALL = 0.22, SLIDE = 14;
 let shades = 0;
+/** Whether a point is inside the quad a projector makes of a rectangle at height w. */
+export function inside(pt, Pq, [u0, v0, u1, v1], w) {
+  const q = [[u0, v0], [u1, v0], [u1, v1], [u0, v1]].map(([u, v]) => Pq(u, v, w));
+  let hit = false;
+  for (let i = 0, j = 3; i < 4; j = i++) {
+    const [xi, yi] = q[i], [xj, yj] = q[j];
+    if ((yi > pt[1]) !== (yj > pt[1]) && pt[0] < ((xj - xi) * (pt[1] - yi)) / (yj - yi) + xi) hit = !hit;
+  }
+  return hit;
+}
+/** The camera on the window at rest, fitted as frame() fits it, so (u, v, w) projects where the figure draws it. */
+export function restCam() {
+  const C = Cam(REST_AZ, REST_K, S), W3 = (u, v, w) => [u, w, v];
+  fit(C, [W3(0, 0, -SLAB), W3(W, 0, -SLAB), W3(0, H, -SLAB), W3(W, H, -SLAB), W3(0, 0, 0), W3(W, H, 0)], 200, 125);
+  return C;
+}
+/**
+ * The shift's box: its window at rest, a hair of air at the sides, and as
+ * much over it as under it, where a part standing forward grows, so the
+ * window fills its column, is the box's middle, and the arrow between the
+ * two meets it there.
+ */
+export const SHIFT_BOX = (() => {
+  const P = proj(restCam()), pts = [[0, 0, -SLAB], [W, 0, -SLAB], [0, H, 0], [W, H, 0]].map(([u, v, w]) => P(u, w, v));
+  const xs = pts.map((q) => q[0]), ys = pts.map((q) => q[1]), side = 4, air = 12;
+  const x0 = Math.min(...xs), y0 = Math.min(...ys);
+  return [x0 - side, y0 - air, Math.max(...xs) - x0 + 2 * side, Math.max(...ys) - y0 + 2 * air];
+})();
+/** Where a point of a shift's window at rest is in the pointer's 400 × 320: a stop for a tour. */
+export function shiftAt(u, v) {
+  const P = proj(restCam()), [x, y] = P(u, 0, v), [bx, by, bw, bh] = SHIFT_BOX;
+  return [((x - bx) / bw) * 400, ((y - by) / bh) * 320];
+}
+/** The shift's tour on a phone (`named`): the files' button, then its panel, the shell's, then its, the projects, the chat, then off. */
+export const ADE_TOUR = [[PANELS.files.btn + 3, H - 6.5], [M0 + PW / 2, 60], [PANELS.shell.btn + 3, H - 6.5], [M1 - PW / 2, 60], [27, 50], [146, 60]].map(([u, v]) => shiftAt(u, v)).concat([null]);
 /** The app's icon, from the site's root, which a page's offset names (`quarto:offset`). */
 const ICON = (document.querySelector('meta[name="quarto:offset"]')?.getAttribute("content") ?? "./") + "assets/emaki-icon.png";
 /** A four-pointed star around (u, v), r its reach: the sparkles' shape, closed. */
@@ -103,12 +138,12 @@ const star = (u, v, r) => {
   return [...pts, pts[0]];
 };
 
-/** The projects: a heading, then the folders, the first open with its sessions along a guide line. */
-function projectsDrawn(p, [a, , c, d]) {
+/** The projects: a heading, then the folders, the first open with its sessions along a guide line; `rows` folders in all. */
+function projectsDrawn(p, [a, , c, d], rows = 4) {
   const wd = c - a;
   p.text(a + 3.5, d - 5, "Projects", 4, "emk-text emk-small");
   let v = d - 12;
-  [[0.5, [0.52, 0.38, 0.58]], [0.36], [0.46], [0.3]].forEach(([len, sessions], k) => {
+  [[0.5, [0.52, 0.38, 0.58]], [0.36], [0.46], [0.3]].slice(0, rows).forEach(([len, sessions], k) => {
     if (k === 0) p.ring(a + 1.5, v - 3.4, c - 1.5, v + 3.4, 2.2, "nf hi");
     p.ring(a + 4, v - 2, a + 9, v + 2, 0.8);
     if (k === 0) p.text(a + 12, v, "emaki", 4.4, "emk-text emk-lit");
@@ -126,65 +161,27 @@ function projectsDrawn(p, [a, , c, d]) {
   });
 }
 
-/** The settings sheet over the main area, its rail's width, and the sections the rail answers with. */
-const SHEET = [M0 + 8, 12, M1 - 8, TOP - 6], RAIL = SHEET[0] + 38;
-const SECTIONS = [["appearance", "Appearance"], ["fonts", "Fonts"], ["composer", "Composer"], ["sessions", "New sessions"], ["terminal", "Terminal"], ["files", "Files"], ["updates", "Updates"], ["about", "About"]];
-const DRAWN_SECTIONS = ["appearance", "fonts", "sessions", "updates"];
-const railV = (i) => SHEET[3] - 8 - i * 9;
-/** A dropdown at the row's right: its box, a line for its choice, the chevron. */
-const drop = (p, v) => { const R = SHEET[2] - 6; p.ring(R - 34, v - 3.6, R - 4, v + 3.6, 1.6, "nf", 1.2); p.h(R - 31, R - 16, v, "nf lo", 1.2); p.line([[R - 10.5, v + 1], [R - 9, v - 0.5], [R - 7.5, v + 1]], "nf", 1.2); };
-/** Claude's mark, an asterisk of three strokes around (u, v), as the agent's terminal draws it (window.js). */
-const asterisk = (p, u, v, r, w) => [0, 60, 120].forEach((a) => { const dx = Math.cos((a * Math.PI) / 180) * r, dy = Math.sin((a * Math.PI) / 180) * r; p.line([[u - dx, v - dy], [u + dx, v + dy]], "nf emk-claude", w); });
-/** The sheet: its card, the rail's words and the rule beside them; each section's name and groups apart. */
-function settingsDrawn() {
-  const [a, , c, d] = SHEET, R = c - 6, base = pen(), sections = {};
-  base.line([[RAIL, SHEET[1] + 2], [RAIL, d - 2]], "nf lo");
-  SECTIONS.forEach(([, word], i) => base.text(a + 5, railV(i), word, 3.8, "emk-text", 0.6));
-  const head = (p, word) => { p.text(RAIL + 6, d - 8, word, 4.8, "emk-text emk-lit", 0.6); p.h(RAIL, c - 1, d - 14, "nf lo", 0.6); };
-  const card = (p, v0) => p.ring(RAIL + 6, v0, R, d - 20, 2.4, "nf", 0.8);
-  const rule = (p, v) => p.h(RAIL + 6, R, v, "nf lo", 0.8);
-  const label = (p, v, word) => p.text(RAIL + 10, v, word, 3.6, "emk-text", 1.2);
-  // Appearance: the look, a segmented control with Auto on its plate; the accent, seven discs, the chosen one ringed.
-  let p = (sections.appearance = pen());
-  head(p, "Appearance"); card(p, d - 54);
-  label(p, d - 26.5, "Appearance");
-  p.ring(R - 44, d - 30, R - 4, d - 23, 2, "nf", 1.2);
-  p.ring(R - 43, d - 29.2, R - 30, d - 23.8, 1.6, "emk-seg", 1.2);
-  p.text(R - 41, d - 26.5, "Auto", 3, "emk-text emk-lit", 1.4);
-  p.h(R - 26, R - 18, d - 26.5, "nf lo", 1.2); p.h(R - 14, R - 7, d - 26.5, "nf lo", 1.2);
-  rule(p, d - 35);
-  label(p, d - 41, "Accent"); p.text(RAIL + 10, d - 47, "Periwinkle", 3, "emk-text emk-small", 1.2);
-  ["accent", "mauve", "rose", "ochre", "sage", "teal", "slate"].forEach((t, i) => p.dot(R - 44 + i * 6.6, d - 44, 2.4, "dot emk-fill-" + t, 1.2));
-  p.dot(R - 44, d - 44, 1.1, "dot emk-fill-plate", 1.3);
-  // Fonts: the chat's face and the code's, each a dropdown, and one text size.
-  p = sections.fonts = pen();
-  head(p, "Fonts"); card(p, d - 68);
-  label(p, d - 26.5, "Chat"); p.text(170, d - 26.5, "Aa", 4.6, "emk-text emk-aa", 1.2); drop(p, d - 26.5);
-  rule(p, d - 35);
-  label(p, d - 43.5, "Code"); p.text(170, d - 43.5, "Aa", 4, "emk-text emk-aa-mono", 1.2); drop(p, d - 43.5);
-  rule(p, d - 52);
-  label(p, d - 60, "Text size"); p.h(170, R - 4, d - 60, "nf lo", 1.2); p.h(170, 194, d - 60, "nf emk-acc", 1.2); p.dot(194, d - 60, 2, "dot emk-fill-accent", 1.3);
-  // New sessions: one agent's three at a time, its mark and name at the head, the agents a small segmented control.
-  p = sections.sessions = pen();
-  head(p, "New sessions"); card(p, d - 86);
-  asterisk(p, RAIL + 12, d - 26.5, 2.4, 1.2);
-  p.text(RAIL + 17, d - 26.5, "Claude Code", 3.6, "emk-text emk-lit", 1.2);
-  p.ring(R - 18, d - 30, R - 4, d - 23, 2, "nf", 1.2); p.ring(R - 17.3, d - 29.3, R - 11, d - 23.7, 1.6, "emk-seg", 1.2);
-  asterisk(p, R - 14.2, d - 26.5, 1.8, 1.4); p.dot(R - 7.5, d - 26.5, 1.4, "dot emk-fill-codex", 1.2);
-  rule(p, d - 35);
-  [["Mode", d - 43.5], ["Model", d - 58], ["Effort", d - 72.5]].forEach(([w, v]) => { label(p, v, w); drop(p, v); });
-  // Updates: a daily check, a switch, on; up to date, and a button to check now.
-  p = sections.updates = pen();
-  head(p, "Updates"); card(p, d - 54);
-  label(p, d - 26.5, "Check daily");
-  p.ring(R - 14, d - 29.5, R - 4, d - 23.5, 3, "emk-fill-accent", 1.2); p.dot(R - 7, d - 26.5, 2, "dot emk-fill-plate", 1.3);
-  rule(p, d - 35);
-  label(p, d - 41.5, "Up to date"); p.h(RAIL + 10, RAIL + 26, d - 47.5, "nf lo", 1.2);
-  p.ring(R - 30, d - 48, R - 4, d - 40, 2.4, "nf", 1.2); p.text(R - 26.5, d - 44, "Check now", 3, "emk-text emk-lit", 1.4);
-  return { base: base.out, sections: Object.fromEntries(Object.entries(sections).map(([k, q]) => [k, q.out])) };
-}
+/**
+ * Each part's name inside it, for the shift (`named`): its words, one to a
+ * line, centered on the part. The panels' and the projects' stand at one
+ * height (NAME_V, their middle), low in the pane but clear of its foot:
+ * the projects draw three folders, and the files, the outline and the
+ * shell keep their rows over FOOT, so nothing runs under a name; the
+ * agent's prompt stays at its foot, under its name. The chat's stands at
+ * the middle of its own room, between the reply and the composer.
+ */
+const NAMED = {
+  projects: { words: ["Sessions"] },
+  chats: { words: ["Agent Chat"], v: 44, s: 7.5 },
+  files: { words: ["Files"] },
+  outline: { words: ["Outline"] },
+  shell: { words: ["Shell", "Terminal"] },
+  agent: { words: ["Agent", "Terminal"] },
+};
+/** A name's size, the room between its lines, where the panels' stand, and the room their rows leave over a panel's foot for it. */
+const NAME_S = 6.5, NAME_LH = 7.5, NAME_V = 24, FOOT = 30;
 
-export function layout({ focus = null } = {}) {
+export function layout({ focus = null, named = false } = {}) {
   return ({ stage, svg, read }, value) => {
     const bag = disposer();
     let LIFT = value;
@@ -195,6 +192,7 @@ export function layout({ focus = null } = {}) {
     const C = Cam(REST_AZ, REST_K, S);
     let P = proj(C);
     const P2 = (u, v, w) => P(u, w, v);
+    const az = spring(REST_AZ, { k: 60, c: 14, eps: 0.01 }), kk = spring(REST_K, { k: 60, c: 14, eps: 0.0005 });
 
     // The window: its slab, the chrome's rule, lights and name, the sidebar's edge, its three rows and its foot.
     const g = mk("g", {}, svg);
@@ -221,7 +219,8 @@ export function layout({ focus = null } = {}) {
     base.forEach((q) => element(q, g));
 
     // Each part in a group of its own: its shadow, its guides, its slab and its drawing; its leader over everything.
-    const lead = mk("g", { class: "emk-leads" }, svg);
+    // Named, the window has no names around it, so its leaders are drawn nowhere.
+    const lead = mk("g", { class: "emk-leads" }, named ? null : svg);
     const fid = ++shades, defs = mk("defs", {}, svg);
     const fl = mk("filter", { id: "emk-lay-" + fid, x: "-30%", y: "-30%", width: "160%", height: "160%" }, defs);
     mk("feGaussianBlur", { stdDeviation: 5 }, fl);
@@ -235,8 +234,14 @@ export function layout({ focus = null } = {}) {
       const r = rectOf[id].slice();
       const prims = [{ t: "tile", r, rad: 3, h: PART, cls: "hi emk-wash", w: -PART }];
       const p = pen();
-      if (id === "projects") projectsDrawn(p, r); else REGIONS[DRAWN[id]](p, r);
+      if (id === "projects") projectsDrawn(p, r, named ? 3 : 4); else REGIONS[DRAWN[id]](p, r, named ? FOOT : 0);
       prims.push(...p.out);
+      // The part's name, last, so the chat's drawing keeps its order when it is drawn again for its width.
+      if (named) {
+        const n = NAMED[id], s = n.s ?? NAME_S, np = pen(), v0 = (n.v ?? NAME_V) + ((n.words.length - 1) * NAME_LH) / 2;
+        n.words.forEach((word, i) => np.text((r[0] + r[2]) / 2, v0 - i * NAME_LH, word, s, "emk-name-in"));
+        prims.push(...np.out);
+      }
       prims.forEach((q) => element(q, pg));
       const lg = mk("g", { class: "emk-p-" + id }, lead);
       if (focus) pg.classList.toggle("emk-mute", id !== focus);
@@ -255,25 +260,6 @@ export function layout({ focus = null } = {}) {
       parts[k].btn = element({ t: "ring", r: [u, H - 9.5, u + 6, H - 3.5], rad: 1.4, cls: "nf hi emk-btn", w: 0 }, bg);
     }
 
-    // The settings sheet: forward over the main area, its rail's rows washed where they answer, a section showing.
-    let sheet = null, section = "appearance";
-    if (focus === "settings") {
-      const sg = mk("g", { class: "emk-sheet" }, g);
-      const shade = mk("path", { class: "emk-shade", filter: `url(#emk-lay-${fid})` }, sg);
-      const card = { t: "tile", r: SHEET, rad: 4, h: 1.4, cls: "emk-card", w: -0.8 };
-      element(card, sg);
-      const washes = {};
-      for (const k of DRAWN_SECTIONS) {
-        const i = SECTIONS.findIndex(([key]) => key === k), v = railV(i);
-        washes[k] = element({ t: "ring", r: [SHEET[0] + 2, v - 3.8, RAIL - 2, v + 3.8], rad: 2, cls: "emk-cur", w: 0.6 }, sg);
-      }
-      const { base: bp, sections } = settingsDrawn();
-      bp.forEach((q) => element(q, sg));
-      const groups = {};
-      for (const k in sections) { const sub = mk("g", {}, sg); sections[k].forEach((q) => element(q, sub)); groups[k] = { g: sub, prims: sections[k] }; }
-      sheet = { g: sg, shade, prims: [card, ...Object.values(washes), ...bp], washes, groups };
-    }
-
     let on = null, wide = null, vb = BOX_WIDE;
 
     /**
@@ -284,11 +270,7 @@ export function layout({ focus = null } = {}) {
      */
     function light(id) {
       on = id;
-      if (sheet) {
-        section = id ?? "appearance";
-        for (const k in sheet.groups) sheet.groups[k].g.style.display = k === section ? "" : "none";
-        for (const k in sheet.washes) sheet.washes[k].el.style.opacity = k === section ? 1 : 0;
-      } else if (focus) {
+      if (focus) {
         const pt = parts[focus];
         pt.amt.t = id === focus ? 1 : 0;
         if (PANELS[focus]) pt.vis.t = id === "away" ? 0 : 1;
@@ -316,7 +298,7 @@ export function layout({ focus = null } = {}) {
     };
 
     function frame() {
-      C.az = rad(REST_AZ); C.k = REST_K;
+      C.az = rad(az.x); C.k = kk.x;
       const W3 = (u, v, w) => [u, w, v];
       fit(C, [W3(0, 0, -SLAB), W3(W, 0, -SLAB), W3(0, H, -SLAB), W3(W, H, -SLAB), W3(0, 0, 0), W3(W, H, 0)], 200, 125);
       P = proj(C);
@@ -333,6 +315,8 @@ export function layout({ focus = null } = {}) {
 
       for (const id in parts) {
         const pt = parts[id], a = pt.amt.x, z = LIFT * a, panel = PANELS[id], vis = pt.vis.x;
+        // A name stands at its part's middle, which the chat's moves as it makes room.
+        if (named) for (const q of pt.prims) if (q.cls === "emk-name-in") q.u = (pt.r[0] + pt.r[2]) / 2;
         const dx = panel ? panel.side * SLIDE * (1 - vis) : 0, Pn = PN(pt.r, z, dx);
         const [u0, v0, u1, v1] = pt.r, k = 1 + NEAR * z, cu = (u0 + u1) / 2, fall = FALL * z;
         const shown = panel ? vis > 0.002 : true;
@@ -358,16 +342,10 @@ export function layout({ focus = null } = {}) {
         pt.line.setAttribute("d", open([[n.x, n.y], q]));
         pt.end.setAttribute("d", circle((u, v) => [u, v], q[0], q[1], 1.4));
       }
-      if (sheet) {
-        const z = LIFT, Pn = PN(SHEET, z, 0), [u0, v0, u1, v1] = SHEET, k = 1 + NEAR * z, cu = (u0 + u1) / 2, fall = FALL * z;
-        sheet.shade.setAttribute("d", poly(rrect(cu + (u0 - cu) * k + fall * 0.4, v1 + (v0 - v1) * k - fall, cu + (u1 - cu) * k + fall * 0.4, v1 - fall, 4, 3).map((q) => P2(q.u, q.v, 0))));
-        sheet.prims.forEach((q) => draw(q, z + 0.8, front, Pn));
-        sheet.groups[section].prims.forEach((q) => draw(q, z + 0.8, front, Pn));
-      }
     }
 
     const B = register(stage, (dt) => {
-      const m = [...Object.values(parts).flatMap((pt) => [stepS(pt.amt, dt), stepS(pt.vis, dt)])].some(Boolean);
+      const m = [stepS(az, dt), stepS(kk, dt), ...Object.values(parts).flatMap((pt) => [stepS(pt.amt, dt), stepS(pt.vis, dt)])].some(Boolean);
       frame();
       return m;
     });
@@ -375,10 +353,10 @@ export function layout({ focus = null } = {}) {
 
     // Wide or narrow, by the room the figure has: the box, and where the names go.
     function size() {
-      const next = !focus && box.clientWidth >= WIDE;
+      const next = !focus && !named && box.clientWidth >= WIDE;
       if (next === wide) return;
       wide = next;
-      vb = wide ? BOX_WIDE : BOX_NARROW;
+      vb = named ? SHIFT_BOX : wide ? BOX_WIDE : BOX_NARROW;
       svg.setAttribute("viewBox", vb.join(" "));
       box.toggleAttribute("data-wide", wide);
       for (const id in labels) {
@@ -388,27 +366,14 @@ export function layout({ focus = null } = {}) {
         el.toggleAttribute("data-top", n.top);
       }
     }
+    if (named) stage.style.aspectRatio = SHIFT_BOX[2] + " / " + SHIFT_BOX[3];
     const ro = new ResizeObserver(size);
     ro.observe(box);
     bag.add(() => ro.disconnect());
     size();
 
-    /** Whether a point is inside the quad a projector makes of a rectangle at height w. */
-    const inside = (pt, Pq, [u0, v0, u1, v1], w) => {
-      const q = [[u0, v0], [u1, v0], [u1, v1], [u0, v1]].map(([u, v]) => Pq(u, v, w));
-      let hit = false;
-      for (let i = 0, j = 3; i < 4; j = i++) {
-        const [xi, yi] = q[i], [xj, yj] = q[j];
-        if ((yi > pt[1]) !== (yj > pt[1]) && pt[0] < ((xj - xi) * (pt[1] - yi)) / (yj - yi) + xi) hit = !hit;
-      }
-      return hit;
-    };
     /** The part under a point of the box: a panel's button, a panel that shows, the projects, the chat. */
     function under(pt) {
-      if (sheet) {
-        const Pn = PN(SHEET, LIFT, 0);
-        return DRAWN_SECTIONS.find((k) => { const v = railV(SECTIONS.findIndex(([key]) => key === k)); return inside(pt, Pn, [SHEET[0] + 2, v - 4.5, RAIL - 2, v + 4.5], LIFT + 1.4); }) ?? null;
-      }
       if (focus) {
         const p = PANELS[focus], f = parts[focus], z = LIFT * f.amt.x;
         if (p && inside(pt, P2, [p.btn - 1, TOP + 2, p.btn + 7, H - 1], 0)) return "away";
@@ -425,15 +390,17 @@ export function layout({ focus = null } = {}) {
       }
       return null;
     }
-    const rest = () => light(null);
+    const rest = () => { az.t = REST_AZ; kk.t = REST_K; light(null); };
     if (focus) light(null);
     bag.add(pointer(stage, {
       move: (pt) => {
         const x = vb[0] + (pt[0] / 400) * vb[2], y = vb[1] + (pt[1] / 320) * vb[3];
+        if (!named) aim(az, kk, x, y, vb);
         const id = under([x, y]);
         if (id !== on) light(id); else B.wake();
       },
-      leave: rest,
+      // Hairline hears a leave a moment late: off the figure onto a name, the name has lit its part by then, and keeps it.
+      leave: () => { if (!Object.values(labels).some((el) => el.matches(":hover, :focus-within"))) rest(); },
     }));
     // A name lights its part under the pointer and under the keyboard's focus.
     for (const id in labels) {

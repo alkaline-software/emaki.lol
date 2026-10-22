@@ -1,33 +1,54 @@
 ---
-title: "Settings"
-subtitle: "⌘, opens eight sections, from Appearance to About."
+title: "Settings [⌘,]{.kbd}"
+pagetitle: "Settings"
+subtitle: "Nine sections in a window of their own, from Appearance to About."
 ---
 
-::: {.layout .layout-page}
-::: {.fig data-figure="layout-settings" aria-label="Emaki's settings sheet standing forward over the window, which is gray behind it: the rail of its eight sections at the left, and at the right the section showing, Appearance with the look and the seven accents. Fonts, New sessions and Updates in the rail show their sections."}
+## Appearance {.i-palette}
+
+::: {.fig .settings-fig data-figure="settings-appearance" aria-label="The Appearance section of Emaki's settings: under You, the avatar with Choose and Remove, and the name; under Window, the theme, System, Light or Dark, and the seven accents, the chosen one ringed and named. A click picks a theme or an accent."}
 :::
+
+Your avatar and name, the window's theme, and its accent: Periwinkle, Orchid, Rose, Amber, Moss, Jade or Teal.
+
+## Fonts {.i-typography}
+
+::: {.fig .settings-fig data-figure="settings-fonts" aria-label="The Fonts section of Emaki's settings: the chat's font, four serif faces and four sans serif faces, each a tile with its name, and the monospace font, four faces. A click on a tile chooses it."}
 :::
 
-## Appearance and Fonts {.i-palette}
+Eight faces for the chat, four serif and four sans serif, and four monospace faces for code and the terminals.
 
-Appearance follows the system, or stays light or dark. The accent is one
-of seven colors: periwinkle, orchid, rose, amber, moss, jade or teal.
-Fonts offers eight faces for the chat and four monospace faces for code
-and the terminal, all under the Open Font License, with one text size
-for all three.
+## Text Size {.i-a-large-small}
 
-## New sessions {.i-sparkles}
+::: {.fig .settings-fig data-figure="settings-text" aria-label="The Text Size section of Emaki's settings: Small, Medium, Large or Custom, and under it the size of the conversation, the composer, the file preview, the file editor and the terminal, each with a step down and a step up. A click picks a preset; under Custom the steps change a size."}
+:::
 
-Each agent's mode, model and effort to start with. The pills under the
-composer change them for one session.
+Small, Medium and Large set every place at once. Custom is your own set: each place's size, stepped a point at a time or typed.
 
-## Composer, Terminal, Files {.i-settings}
+## Composer {.i-keyboard}
 
-Each has its own switches: which key sends and which languages are
-spell-checked; the terminal's color scheme, its cursor, and whether a
-selection copies itself; format on save and its formatters.
+::: {.fig .settings-fig data-figure="settings-composer" aria-label="The Composer section of Emaki's settings: the key that sends, ⌘↩ or ↩, auto-capitalization, and spelling and grammar checked as you type in one of five languages. A click flips a switch or picks a choice; with the check off, the languages are dimmed."}
+:::
 
-## Updates and About {.i-refresh}
+The key that sends, auto-capitalization, and spelling and grammar checked as you type, in US or UK English, Spanish, French or German. Spanish, French and German are checked on a Mac only.
 
-Updates checks daily, or when you ask, and installs the new version
-itself. About shows which version this is and who makes it.
+## New sessions {.i-square-terminal}
+
+::: {.fig .settings-fig data-figure="settings-sessions" aria-label="The New sessions section of Emaki's settings: Claude Code's permission mode, model and effort for a new session, and the two agents' marks at the right of its head. A click on a mark shows that agent's three; a click on a field turns it to the next choice."}
+:::
+
+Each agent's permission mode, model and effort for a new session. The pills under the composer change them for one session ([Chats](chats.qmd#mode-model-and-effort)).
+
+## Terminal {.i-terminal}
+
+::: {.fig .settings-fig data-figure="settings-terminal" aria-label="The Terminal section of Emaki's settings: under Look, the theme, the cursor, whether it blinks, the font and the size; under Behavior, ligatures and copy on select. A click flips a switch or picks a choice."}
+:::
+
+The terminal's theme, its cursor, ligatures and copy on select. Its face is set in Fonts and its size in Text Size.
+
+## Files {.i-tree-view}
+
+::: {.fig .settings-fig data-figure="settings-files" aria-label="The Files section of Emaki's settings: format on save, and the languages it covers, each ticked, with its formatter. A click ticks a language; with format on save off, the languages are dimmed."}
+:::
+
+Format on save, and the languages it covers, each with its own formatter.

@@ -9,7 +9,8 @@ the shift under it, then the shift and the figures; a Docs section with a sideba
 Kaku's docs are laid out, in four groups with a line between: Get
 Started (`docs/index.qmd`, the section's address); Main System, the two
 things always in the window, the sidebar (Projects) and the
-Chats; Panels, Files, Outline, Shell Terminal and Agent Terminal;
+Chats; Panels, Files, Outline and Terminals (the Shell Terminal and the
+Agent Terminal on one page);
 then Settings and Keys, a size down; and About. The navbar is
 four things, as Kaku's is: the name, the app's latest version, Docs and
 About; the releases live on GitHub.
@@ -18,8 +19,8 @@ environment, against the IDE, then how to start in three steps (the app,
 the two agents, GitHub if wanted), and
 then what is in it, in the docs' groups: Main system, its two parts, and
 Panels, its four, a card and a figure a part, each card's name the way to
-its page; the docs pages say how each part works, one page a part, in
-the same order.
+its page; the docs pages say how each part works, one page a part (the
+two terminals share one, a section each), in the same order.
 
 The app's own repo is checked out beside this one, at
 `/Users/pingfan/Documents/GitHub/software/emaki` (`../emaki` from here). Its
@@ -52,9 +53,10 @@ does not have.
 | The dark neutrals and the inks in `css/theme.scss` | `../emaki/crates/emaki-app/themes/emaki.json` |
 | The accent and the supportive colors | `docs/design.md`, The palette: the icon's own colors, lifted |
 | The icons in `assets/icons/` | copied from `../emaki/crates/emaki-app/assets/icons/`, under the same names |
+| The file kinds' icons in `assets/catppuccin/` | copied from `../emaki/crates/emaki-app/assets/catppuccin/latte/`, under the same names, the ones its tree gives those kinds (`theme.json`) |
 | `_hero.html`, `js/hero-scroll.js` | `Workbench::home_scroll` in `../emaki/crates/emaki-app/src/workbench.rs`, `scripts/home-scroll.py` |
-| `_shift-ade.html`, the ADE window | the app's window, as `../emaki/docs/window.md` and `docs/panels.md` draw it, with its panes named |
-| The settings sheet and the composer's close-ups (`layout.js`, `composer.js`) | the app's sheet and composer, as its docs draw them: `window.md` (the settings panel), `composer.md`, `modes.md` (the pills, their lists and colors), `SETTINGS_SECTIONS` in `workbench.rs` |
+| The shift's ADE window (`layout.js`, `named`) | the app's window, as `../emaki/docs/window.md` and `docs/panels.md` draw it, with its panes named |
+| The settings' sections and the composer's close-ups (`settings.js`, `composer.js`) | the app's settings window and composer, as its docs and code draw them: `window.md` (The settings window), `workbench/settings.rs` (each section's rows, words and choices), `composer.md`, `modes.md` (the pills, their lists and colors), `SETTINGS_SECTIONS` in `workbench.rs` |
 | `js/figures.js` | `@lucasmarkes/hairline` at the tag in `scripts/figures/build.sh`; Emaki's own figures (`scripts/figures/emaki/`) from the app's parts, as the docs pages describe them |
 | The version in the navbar | the app's latest GitHub release, read by `js/navbar-widgets.js` when the page opens |
 
@@ -65,35 +67,32 @@ pass. The version in the navbar follows the releases by itself; the pages do not
 
 ```
 _quarto.yml               site config, navbar, footer, fonts
-index.qmd                 landing page, full width; includes _hero.html, _download.html, _shift-ide.html and _shift-ade.html; the figures on its bands and cards
+index.qmd                 landing page, full width; includes _hero.html and _download.html; the shift's two windows and the figures on its bands and cards
 docs/index.qmd            Get Started, the Docs section's first page: the three steps as the landing page has them; open a project; the layout, the window with its six parts named around it; what it keeps
 docs/projects.qmd         the sidebar: projects, sessions, kept and archived, search, tabs
 docs/chats.qmd            the main panel: the transcript, the composer, mode, model and effort, the status line
-docs/files.qmd            the files panel: the tree, open and edit, the kinds of file (.types), git
-docs/outline.qmd          the outline panel: entries, going back
-docs/shell.qmd            the shell terminal panel
-docs/agent.qmd            the agent terminal panel
-docs/settings.qmd         the eight sections
+docs/files.qmd            the Files Panel: the tree, preview and editing, the kinds of file (.types), git
+docs/outline.qmd          the Outline Panel: the summaries, going back
+docs/terminals.qmd        the Shell Terminal Panel (#shell) and the Agent Terminal Panel (#agent), a section and a window each; the old shell.html and agent.html come here (aliases)
+docs/settings.qmd         the settings window: Appearance to Files, a section and a figure each
 docs/keys.qmd             the keys in two groups: ⌘⇧ a panel, ⌘ a page or one thing
-about.qmd                 the name and the handscroll, why, how, who makes it, credits, license
+about.qmd                 the handscroll, then the team first (the studio's card, its two makers named and linked in it), the name, why, how, credits as a list, license
 404.qmd
 _hero.html                the handscroll figure, inline SVG
 _download.html            the download as one control: the pill for this computer, a menu for the rest
 _download-step.html       the same, compact, in the first step on the landing page and Get Started
-_shift-ide.html           the shift's first window, an IDE's, inline SVG
-_shift-ade.html           the shift's second window, the arrow and Emaki's window, inline SVG
 css/theme.scss            the tokens, both appearances, and every element
 css/dark.scss             the dark appearance's Bootstrap knobs (Sass defaults only)
 js/navbar-widgets.js      the version in the navbar, appearance toggle, GitHub stars/forks, ⌘F to the search
 js/hero-scroll.js         the spring that winds the handscroll under the pointer
-js/shift.js               the ADE's panes sliding in and its project folding under the pointer; the boxes light by CSS
 js/page.js                names this computer's installer on each download; the rise; the docs foot's way across the menu's groups
-js/figures.js             Hairline's engine, Emaki's six parts, the layout (also at the head of each part's docs page and under the settings sheet) and the composer's close-ups drawn on it, built by scripts/figures/build.sh
+js/figures.js             Hairline's engine, Emaki's six parts, the layout (also at the head of each part's docs page and as the shift's ADE), the settings' sections, the shift's IDE and the composer's close-ups drawn on it, built by scripts/figures/build.sh
 assets/icons/             the app's Tabler icons, drawn through CSS masks
+assets/catppuccin/        the app's Catppuccin icons for the kinds of file on the Files Panel page, and their license
 assets/team/              the studio's mark and the makers' pictures, for the About page
 assets/                   the app icon and favicon
 docs/design.md            the standard; not a page of the site (only `*.qmd` under docs/ render)
-scripts/figures/          entry.js names the figures; emaki/ draws the app's six parts (window.js), the layout and the settings sheet (layout.js) and the composer's foot (composer.js) on Hairline's core; build.sh writes js/figures.js
+scripts/figures/          entry.js names the figures; emaki/ draws the app's six parts (window.js), the layout (layout.js), the settings' sections (settings.js), the composer's foot (composer.js) and the shift's IDE (ide.js) on Hairline's core; build.sh writes js/figures.js
 .github/workflows/publish.yml  render on every push and PR; publish from main
 ```
 
@@ -137,23 +136,33 @@ render here.
   is Kaku's width (`grid`: 220 for the menu, 804 for the words, 200 for
   the table of contents at the right, 28 between).
 - **A panel's key is ⌘⇧ and its name's first letter**: F for the files,
-  O, S and A for the outline and the two terminals. Files is ⌘⇧F on the
+  O, S and A for the outline and the two terminals. The sidebar's is
+  ⌘⇧B (and ⌘B), as the app binds it, at the head of the Keys page's
+  panels, named for what it shows: the projects and their sessions. Files is ⌘⇧F on the
   site by the person's decision while the app still binds ⌘⇧E; the app
   follows in its next release. Do not change the site back to ⌘⇧E.
 - **A docs page is one part of the app**, named as the app names it, with
   a title and one line under it, and `##` sections with an icon each
-  (`{.i-<name>}`). What belongs to another part is a link to that page,
+  (`{.i-<name>}`). The two terminals are the one exception: Terminals
+  is a page of two, a section a terminal (`#shell`, `#agent`), each
+  opening on its own window. A panel's title carries its key beside it
+  (`title: "Files Panel [⌘⇧F]{.kbd}"`, with `pagetitle` the name alone
+  for the tab), or on Terminals each section's head does, and the line
+  under it does not repeat the key; the table of contents names the
+  section alone. In the words a panel is named in full, each word
+  capitalized: the Files Panel, the Outline Panel, the Shell Terminal
+  Panel, the Agent Terminal Panel. What belongs to another part is a link to that page,
   not a second telling. The keys are on `docs/keys.qmd` alone, in two
   groups as the app binds them: `⌘⇧` and a letter shows or hides a panel,
   `⌘` and a letter opens a page or does one thing.
-- **`_hero.html`, `_download.html`, `_download-step.html`, `_shift-ide.html` and `_shift-ade.html`
+- **`_hero.html`, `_download.html` and `_download-step.html`
   have no blank line, not even one of spaces alone, and
   nothing under a div indented four spaces, however deep it nests.** Pandoc reads what stands between a div's
   tags as Markdown: a blank line ends the block, and a line indented four
   spaces becomes a code block. An svg's inside is left alone.
 - **A `<figure>` gets Quarto's `figure` class**, and `figure.figure {
   display: block }` outranks a rule with one class. A figure whose display
-  the sheet sets is selected from its parent (`.shift > .shift-pane`), or
+  the sheet sets is selected from its parent (`.parent > figure`), or
   the rule silently loses.
 - **Do not hand-edit the handscroll's layer paths.** They are generated by
   `scripts/home-scroll.py` in the app repo; re-copy them when the figure
@@ -183,7 +192,8 @@ render here.
   (`--seal`) and nothing else is; terracotta is Claude's color, beside its name and in the
   agent's terminal, and never the page's; the
   shift has a set of its own (`--sk-*`), used in the shift and the
-  figures of the app's parts and nowhere else. Each panel has one color
+  figures of the app's parts, and the kinds of file on the Files Panel
+  page, and nowhere else. Each panel has one color
   of its own, the same in its button, its docs page's window and its figure:
   the files ochre, the outline mauve, the shell sage, the agent's
   terminal Claude's; the sidebar and the chat keep the accent.
@@ -248,36 +258,50 @@ render here.
   around it: the names are the page's links
   (`.layout > .layout-part[data-part]`, siblings of its `.fig`), and the
   engine puts each at its leader's end (`NAMES`) where the box is 720 wide,
-  a grid of tiles under the window where it is not. The window does not
-  turn under the pointer, here or in any figure on the docs pages
-  (composer.js too): there are many places to point at, and a window that
-  turned moved them all. The landing page's six figures still turn. Given a `focus`,
+  a grid of tiles under the window where it is not. A name and its part
+  answer as one, both ways: the pointer on a name or tile lights its part,
+  and the pointer on a part lights its name (`data-on`), a wash of its
+  color behind the name, as tight as the name (its key under it), a
+  deeper wash and a colored edge on a tile. The name's link says it is
+  one on its own: underlined in its color under the pointer. The window turns
+  only a little under the pointer, here and in every figure on the docs
+  pages (composer.js too): a few degrees and a small tip (`SLIGHT` in
+  window.js), so the layers part while the many places to point at stay
+  put. The landing page's six figures turn further, the shift's two
+  windows not at all. Given a `focus`,
   the same engine heads that part's docs page (below). The names are
   the keys of `FIGURES` in `entry.js`.
-- **The shift is drawn by hand, from the front, its panes named.**
-  `_shift-ide.html` and `_shift-ade.html` are its two windows, side by
-  side from 992 wide with an arrow across between them and each one's
-  words under it in `index.qmd`, one under the other below with the
-  arrow turned down, centered on both, in the handscroll's manner,
-  the strokes not scaling, and each pane a box (`.sk-box[data-pane]`, its
-  rect first, its name a `<text>`) with its name in it: the names are the
-  only words in the drawing besides Emaki's. The ADE window is Emaki's
-  own, drawn from the app, so when the app's window changes, the sketch
-  changes with it; its four panels rest beyond the main area's edges and
-  slide in when the pointer finds their buttons, as the app's buttons
-  toggle them, files and outline sharing the left, the two terminals the
-  right, each in the panel's own color. Its colors are
-  classes in `css/theme.scss` (The shift), each a token in its job; a
-  color written into the svg is a mistake. A box lights under the
-  pointer by CSS alone (`.sk-box:hover`), in place: nothing travels
-  between boxes. `js/shift.js` moves only the four panels and the fold of the
-  first project's chats, by its constants (`FILES_OUT`, `TERM_OUT`,
-  `ROOM`, `CHATS_TOP`, `CHATS_H`) and the ids of what moves, so a box
-  moved in the svg needs nothing in the script, and a pane or the chats
-  moved needs the constants moved with them.
+- **The shift is drawn on Hairline, from the front, its panes named.**
+  Its two windows are figures (`shift-ide`, `shift-ade`), side by side
+  from 992 wide with an arrow across between them and each one's words
+  under it in `index.qmd`, one under the other below with the arrow
+  turned down, centered on both. The IDE's is
+  `scripts/figures/emaki/ide.js`, on the layout's frame (the constants
+  layout.js exports), so the two windows are one size; the ADE's is the
+  layout's window given `named`: each part's name in it (`NAMED`), no
+  leaders. Both have the layout's proportions, as every figure's window
+  does, and stand in `SHIFT_BOX`: the window filling its column, with as
+  much air over it as under it, so the arrow meets their middles. Each pane is a part with its name in it, in its
+  color, the IDE's in the shift's set (`.emk-p-ide-*`, css/theme.scss,
+  The shift) and the ADE's its parts' own. A name stands where its
+  pane's drawing leaves room and crosses nothing: the file browser's at
+  its head, away from the outline and the timeline folded under it; the
+  code's and the terminal's at their right; the ADE's panels' and the
+  sessions' at one height, low in the pane but not at its foot, the
+  tree, the outline and the shell keeping their rows over it (`FOOT`,
+  the regions' `foot` in window.js). The pane
+  under the pointer stands forward as the layout's parts do, its name
+  keeping its color. The ADE's four panels are hidden until the
+  pointer finds their buttons in the chrome, when each comes in from its
+  side and the chat makes room, as the app's buttons toggle them. Neither
+  window turns: the two are compared as they stand. Where there is no
+  pointer to hover, each walks its panes on its own (its `tour` in
+  entry.js). The ADE window is Emaki's own, drawn from the app, so when
+  the app's window changes, the layout changes and the shift with it.
 - **A part's docs page opens on the layout's window with that part
-  alone in color.** Projects, Chats and the four panels' pages each
-  open, under the title, on the layout's window (`::: {.layout
+  alone in color.** Projects, Chats, Files and Outline each open,
+  under the title, on the layout's window, and Terminals under each
+  section's head, one window a terminal (`::: {.layout
   .layout-page}` around a `.fig` named `layout-<part>`), the engine
   given that part as its `focus` (`entry.js`): no names around it, the
   window's box only, that part in its color and the rest in the
@@ -285,14 +309,18 @@ render here.
   panel from the start, its button filled and the chat making room; the
   pointer on the button puts it away, as the button does in the app, and
   on the part brings it forward. Get Started has the layout itself,
-  Settings the sheet over it (below), and Keys none.
+  Settings its sections (below), and Keys none.
 - **Settings and the Chats page's close-ups are on Hairline too.**
-  Settings opens on the layout's window given `focus: "settings"`
-  (`layout-settings`): the window gray, the settings sheet standing
-  forward over the main area with the rail of its eight sections, as
-  `SETTINGS_SECTIONS` names them in the app, and Appearance showing; the
-  pointer on Fonts, New sessions or Updates in the rail shows that
-  section (`settingsDrawn` in layout.js draws each). The Chats page's
+  Settings has a `##` section for each of the app's settings sections
+  from Appearance to Files (`SETTINGS_SECTIONS`; Updates and About have
+  none), each opening on its figure (`settings-<section>`,
+  `scripts/figures/emaki/settings.js`): that section's groups alone, no
+  window round them, its rows, words and choices as
+  `workbench/settings.rs` has them. A click or a tap works a control as
+  the app's does, a switch, a choice, a swatch, a face, a tick, a size's
+  steps, a dropdown, a button, and nothing else moves; what was set stays
+  when the pointer leaves. When a section changes in the app, its
+  drawing changes with it. The Chats page's
   Mode, model and effort and its Status line have the composer's foot
   close up (`scripts/figures/emaki/composer.js`, `composer-pills` and
   `composer-status`), in the same strokes: on the first, a pill under
@@ -305,10 +333,6 @@ render here.
   app's, at widths measured in the wordmark's face (`F` in
   composer.js). Every drawing on the docs pages is one of these; there
   are no drawings by hand there.
-- **A rule on `.sk-box text` outranks a class alone.** A name's own size
-  or anchor is set as `.sk-box text.sk-big`, as specific as the rule it
-  overrides, or it silently loses.
-
 ## Writing
 
 Write as the app's own docs do: plain statements, few words, nothing the reader

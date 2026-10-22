@@ -29,29 +29,30 @@ The agentic development environment.
 ::: {.shift .rise}
 ## From the IDE to the ADE
 
-{{< include _shift-ide.html >}}
+::: {.fig .shift-pane .shift-ide data-figure="shift-ide" aria-label="An IDE's window with its panes named: an activity bar, a file browser with an outline and a timeline under it, an editor of code, a terminal under the editor, and the agent chat squeezed into a pane at the right. The pane under the pointer stands forward."}
+:::
 
 ::: {.shift-words}
 ::: {.shift-label}
 **IDE** integrated development environment
 :::
 
-An IDE is the traditional way to work on code: built for writing it by
-hand, with many panels and a steep learning curve. With agents, the chat
-does most of the work, yet the editor still takes the middle of the
-screen and the chat gets a narrow pane at the edge.
+IDEs are made for hand crafting, with numerous panels and a steep learning curve. In agentic workflows, the chat does most of the work, yet the editor still takes the middle of the screen and the chat gets a narrow pane at the edge.
 :::
 
-{{< include _shift-ade.html >}}
+```{=html}
+<svg class="shift-arrow" viewBox="0 0 24 56" aria-hidden="true"><path d="M12 4 V50 M3 40 l9 10 l9 -10"/></svg>
+```
+
+::: {.fig .shift-pane .shift-ade data-figure="shift-ade" aria-label="Emaki's window with its panes named: the sidebar with its sessions under their projects, and the agent chat in the middle. Four panels slide in beside the chat when the pointer finds their buttons in the chrome, files or outline at the left, the shell terminal or the agent terminal at the right, and the pane under the pointer stands forward."}
+:::
 
 ::: {.shift-words}
 ::: {.shift-label}
 **ADE** agentic development environment
 :::
 
-Emaki turns this around. The agent chat takes the main space, and the
-sidebar groups your sessions under their projects. The supporting panels
-(files, outline and the two terminals) stay hidden until you need them.
+Emaki turns this around, and we call it ADE. The agent chat takes the main space, and the sidebar groups your sessions under their projects. The supporting panels (files, outline and the two terminals) stay hidden until you need them.
 :::
 
 :::
@@ -143,27 +144,27 @@ Emaki provides 4 panels, hidden by default, since they are essential but used le
 ::: {.fig data-figure="files" aria-label="The files panel lying flat: the tree, and the file's pane beside it. The file under the pointer opens in the pane, drawn as its kind."}
 :::
 ### [Files](docs/files.qmd) [⌘⇧F]{.kbd}
-The files panel provides a file tree with Catppuccin icons. You can live-render, preview, and edit your files. Most major file types are supported. With the git system, you can view git changes on the file tree and trigger git commands with an intuitive UI.
+The Files Panel provides a file tree with Catppuccin icons. You can live-render, preview, and edit your files. Most major file types are supported. With the git system, you can view git changes on the file tree and trigger git commands with an intuitive UI.
 :::
 
 ::: {.card}
 ::: {.fig data-figure="outline" aria-label="The outline beside the chat, lying flat. The entry under the pointer scrolls the chat to its round."}
 :::
 ### [Outline](docs/outline.qmd) [⌘⇧O]{.kbd}
-In agent sessions, going through the history is a pain. Emaki's outline panel uses your basic AI model to summarize past conversations so you can quickly go through and locate them.
+In agent sessions, going through the history is a pain. Emaki's Outline Panel uses your basic AI model to summarize past conversations so you can quickly go through and locate them.
 :::
 
 ::: {.card}
 ::: {.fig data-figure="shell" aria-label="A terminal standing up with three tabs. The tab under the pointer comes up, and its screen types itself in."}
 :::
-### [Shell Terminal](docs/shell.qmd) [⌘⇧S]{.kbd}
-Opening a terminal and `cd`-ing to the correct location is trivial, but repeatedly doing it is a pain. Emaki's shell terminal panel does it for you. It also supports multiple tabs. The terminal UI is based on [Kaku](https://kaku.fun), a terminal made by [tw93](https://github.com/tw93).
+### [Shell Terminal](docs/terminals.qmd#shell) [⌘⇧S]{.kbd}
+Opening a terminal and `cd`-ing to the correct location is trivial, but repeatedly doing it is a pain. Emaki's Shell Terminal Panel does it for you. It also supports multiple tabs. The terminal UI is based on [Kaku](https://kaku.fun), a terminal made by [tw93](https://github.com/tw93).
 :::
 
 ::: {.card}
 ::: {.fig data-figure="agent" aria-label="The chat and the agent's own terminal standing side by side. The step under the pointer stands out of both."}
 :::
-### [Agent Terminal](docs/agent.qmd) [⌘⇧A]{.kbd}
+### [Agent Terminal](docs/terminals.qmd#agent) [⌘⇧A]{.kbd}
 If you need the original CLI layout of your agent session, this is the right panel. It supports keyboard commands and mouse scrolling. Responding in this CLI is equivalent to responding in the chat interface.
 :::
 
