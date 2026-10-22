@@ -8,26 +8,6 @@ subtitle: "The story of Emaki and Alkaline Software."
 {{< include _hero.html >}}
 :::
 
-## Meet the team
-
-::: {.people}
-
-::: {.person .person-org}
-![](assets/team/alkaline.png)
-
-**[Alkaline Software](https://github.com/alkaline-software)**
-
-Alkaline Software is a development team of two engineers and data
-scientists, [John Paul Helveston](https://www.jhelvy.com) and
-[Pingfan Hu](https://pingfan.org), who enjoy building "basic" software.
-*Alkaline* means "basic" (a high pH), and basic is what our software is
-meant to be: things that should plainly exist. Emaki is one of them, a
-development environment for the agentic era that anyone who works with
-agents can use.
-:::
-
-:::
-
 ## The name
 
 An *emaki* (絵巻) is a Japanese picture handscroll: a long painted scene held between two rolls, read by winding it from one to the other. It is colorful, enchanting, and easy to handle.
@@ -57,6 +37,26 @@ crates/emaki-app    the window
 vendor/             gpui, modified to meet our needs
 scripts/            miscellaneous
 ```
+
+## Meet the team
+
+::: {.people}
+
+::: {.person .person-org}
+![](assets/team/alkaline.png)
+
+**[Alkaline Software](https://github.com/alkaline-software)**
+
+Alkaline Software is a development team of two engineers and data
+scientists, [John Paul Helveston](https://www.jhelvy.com) and
+[Pingfan Hu](https://pingfan.org), who enjoy building "basic" software.
+*Alkaline* means "basic" (a high pH), and basic is what our software is
+meant to be: things that should plainly exist. Emaki is one of them, a
+development environment for the agentic era that anyone who works with
+agents can use.
+:::
+
+:::
 
 ## Credits
 
