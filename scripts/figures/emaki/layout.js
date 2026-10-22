@@ -42,12 +42,6 @@ import { REGIONS, aim, circle, draw, element, pen } from "./window.js";
  * the pointer on the button puts the panel away, as the button does in
  * the app, and on the part brings it forward.
  *
- * With `focus: "settings"`, the settings sheet stands forward over the
- * main area, the window gray behind it: the rail of its eight sections at
- * the left (`SETTINGS_SECTIONS` in the app), the section's name and its
- * groups at the right. Appearance shows at rest; the pointer on Fonts,
- * New sessions or Updates in the rail shows that section.
- *
  * With `named`, the window is the shift's second (index.qmd, From the IDE
  * to the ADE), beside the IDE's (ide.js): each part's name in it, in its
  * color, as the IDE's panes have theirs, no leaders, the box narrow, and
@@ -167,64 +161,6 @@ function projectsDrawn(p, [a, , c, d], rows = 4) {
   });
 }
 
-/** The settings sheet over the main area, its rail's width, and the sections the rail answers with. */
-const SHEET = [M0 + 8, 12, M1 - 8, TOP - 6], RAIL = SHEET[0] + 38;
-const SECTIONS = [["appearance", "Appearance"], ["fonts", "Fonts"], ["composer", "Composer"], ["sessions", "New sessions"], ["terminal", "Terminal"], ["files", "Files"], ["updates", "Updates"], ["about", "About"]];
-const DRAWN_SECTIONS = ["appearance", "fonts", "sessions", "updates"];
-const railV = (i) => SHEET[3] - 8 - i * 9;
-/** A dropdown at the row's right: its box, a line for its choice, the chevron. */
-const drop = (p, v) => { const R = SHEET[2] - 6; p.ring(R - 34, v - 3.6, R - 4, v + 3.6, 1.6, "nf", 1.2); p.h(R - 31, R - 16, v, "nf lo", 1.2); p.line([[R - 10.5, v + 1], [R - 9, v - 0.5], [R - 7.5, v + 1]], "nf", 1.2); };
-/** Claude's mark, an asterisk of three strokes around (u, v), as the agent's terminal draws it (window.js). */
-const asterisk = (p, u, v, r, w) => [0, 60, 120].forEach((a) => { const dx = Math.cos((a * Math.PI) / 180) * r, dy = Math.sin((a * Math.PI) / 180) * r; p.line([[u - dx, v - dy], [u + dx, v + dy]], "nf emk-claude", w); });
-/** The sheet: its card, the rail's words and the rule beside them; each section's name and groups apart. */
-function settingsDrawn() {
-  const [a, , c, d] = SHEET, R = c - 6, base = pen(), sections = {};
-  base.line([[RAIL, SHEET[1] + 2], [RAIL, d - 2]], "nf lo");
-  SECTIONS.forEach(([, word], i) => base.text(a + 5, railV(i), word, 3.8, "emk-text", 0.6));
-  const head = (p, word) => { p.text(RAIL + 6, d - 8, word, 4.8, "emk-text emk-lit", 0.6); p.h(RAIL, c - 1, d - 14, "nf lo", 0.6); };
-  const card = (p, v0) => p.ring(RAIL + 6, v0, R, d - 20, 2.4, "nf", 0.8);
-  const rule = (p, v) => p.h(RAIL + 6, R, v, "nf lo", 0.8);
-  const label = (p, v, word) => p.text(RAIL + 10, v, word, 3.6, "emk-text", 1.2);
-  // Appearance: the look, a segmented control with Auto on its plate; the accent, seven discs, the chosen one ringed.
-  let p = (sections.appearance = pen());
-  head(p, "Appearance"); card(p, d - 54);
-  label(p, d - 26.5, "Appearance");
-  p.ring(R - 44, d - 30, R - 4, d - 23, 2, "nf", 1.2);
-  p.ring(R - 43, d - 29.2, R - 30, d - 23.8, 1.6, "emk-seg", 1.2);
-  p.text(R - 41, d - 26.5, "Auto", 3, "emk-text emk-lit", 1.4);
-  p.h(R - 26, R - 18, d - 26.5, "nf lo", 1.2); p.h(R - 14, R - 7, d - 26.5, "nf lo", 1.2);
-  rule(p, d - 35);
-  label(p, d - 41, "Accent"); p.text(RAIL + 10, d - 47, "Periwinkle", 3, "emk-text emk-small", 1.2);
-  ["accent", "mauve", "rose", "ochre", "sage", "teal", "slate"].forEach((t, i) => p.dot(R - 44 + i * 6.6, d - 44, 2.4, "dot emk-fill-" + t, 1.2));
-  p.dot(R - 44, d - 44, 1.1, "dot emk-fill-plate", 1.3);
-  // Fonts: the chat's face and the code's, each a dropdown, and one text size.
-  p = sections.fonts = pen();
-  head(p, "Fonts"); card(p, d - 68);
-  label(p, d - 26.5, "Chat"); p.text(170, d - 26.5, "Aa", 4.6, "emk-text emk-aa", 1.2); drop(p, d - 26.5);
-  rule(p, d - 35);
-  label(p, d - 43.5, "Code"); p.text(170, d - 43.5, "Aa", 4, "emk-text emk-aa-mono", 1.2); drop(p, d - 43.5);
-  rule(p, d - 52);
-  label(p, d - 60, "Text size"); p.h(170, R - 4, d - 60, "nf lo", 1.2); p.h(170, 194, d - 60, "nf emk-acc", 1.2); p.dot(194, d - 60, 2, "dot emk-fill-accent", 1.3);
-  // New sessions: one agent's three at a time, its mark and name at the head, the agents a small segmented control.
-  p = sections.sessions = pen();
-  head(p, "New sessions"); card(p, d - 86);
-  asterisk(p, RAIL + 12, d - 26.5, 2.4, 1.2);
-  p.text(RAIL + 17, d - 26.5, "Claude Code", 3.6, "emk-text emk-lit", 1.2);
-  p.ring(R - 18, d - 30, R - 4, d - 23, 2, "nf", 1.2); p.ring(R - 17.3, d - 29.3, R - 11, d - 23.7, 1.6, "emk-seg", 1.2);
-  asterisk(p, R - 14.2, d - 26.5, 1.8, 1.4); p.dot(R - 7.5, d - 26.5, 1.4, "dot emk-fill-codex", 1.2);
-  rule(p, d - 35);
-  [["Mode", d - 43.5], ["Model", d - 58], ["Effort", d - 72.5]].forEach(([w, v]) => { label(p, v, w); drop(p, v); });
-  // Updates: a daily check, a switch, on; up to date, and a button to check now.
-  p = sections.updates = pen();
-  head(p, "Updates"); card(p, d - 54);
-  label(p, d - 26.5, "Check daily");
-  p.ring(R - 14, d - 29.5, R - 4, d - 23.5, 3, "emk-fill-accent", 1.2); p.dot(R - 7, d - 26.5, 2, "dot emk-fill-plate", 1.3);
-  rule(p, d - 35);
-  label(p, d - 41.5, "Up to date"); p.h(RAIL + 10, RAIL + 26, d - 47.5, "nf lo", 1.2);
-  p.ring(R - 30, d - 48, R - 4, d - 40, 2.4, "nf", 1.2); p.text(R - 26.5, d - 44, "Check now", 3, "emk-text emk-lit", 1.4);
-  return { base: base.out, sections: Object.fromEntries(Object.entries(sections).map(([k, q]) => [k, q.out])) };
-}
-
 /**
  * Each part's name inside it, for the shift (`named`): its words, one to a
  * line, centered on the part. The panels' and the projects' stand at one
@@ -324,25 +260,6 @@ export function layout({ focus = null, named = false } = {}) {
       parts[k].btn = element({ t: "ring", r: [u, H - 9.5, u + 6, H - 3.5], rad: 1.4, cls: "nf hi emk-btn", w: 0 }, bg);
     }
 
-    // The settings sheet: forward over the main area, its rail's rows washed where they answer, a section showing.
-    let sheet = null, section = "appearance";
-    if (focus === "settings") {
-      const sg = mk("g", { class: "emk-sheet" }, g);
-      const shade = mk("path", { class: "emk-shade", filter: `url(#emk-lay-${fid})` }, sg);
-      const card = { t: "tile", r: SHEET, rad: 4, h: 1.4, cls: "emk-card", w: -0.8 };
-      element(card, sg);
-      const washes = {};
-      for (const k of DRAWN_SECTIONS) {
-        const i = SECTIONS.findIndex(([key]) => key === k), v = railV(i);
-        washes[k] = element({ t: "ring", r: [SHEET[0] + 2, v - 3.8, RAIL - 2, v + 3.8], rad: 2, cls: "emk-cur", w: 0.6 }, sg);
-      }
-      const { base: bp, sections } = settingsDrawn();
-      bp.forEach((q) => element(q, sg));
-      const groups = {};
-      for (const k in sections) { const sub = mk("g", {}, sg); sections[k].forEach((q) => element(q, sub)); groups[k] = { g: sub, prims: sections[k] }; }
-      sheet = { g: sg, shade, prims: [card, ...Object.values(washes), ...bp], washes, groups };
-    }
-
     let on = null, wide = null, vb = BOX_WIDE;
 
     /**
@@ -353,11 +270,7 @@ export function layout({ focus = null, named = false } = {}) {
      */
     function light(id) {
       on = id;
-      if (sheet) {
-        section = id ?? "appearance";
-        for (const k in sheet.groups) sheet.groups[k].g.style.display = k === section ? "" : "none";
-        for (const k in sheet.washes) sheet.washes[k].el.style.opacity = k === section ? 1 : 0;
-      } else if (focus) {
+      if (focus) {
         const pt = parts[focus];
         pt.amt.t = id === focus ? 1 : 0;
         if (PANELS[focus]) pt.vis.t = id === "away" ? 0 : 1;
@@ -429,12 +342,6 @@ export function layout({ focus = null, named = false } = {}) {
         pt.line.setAttribute("d", open([[n.x, n.y], q]));
         pt.end.setAttribute("d", circle((u, v) => [u, v], q[0], q[1], 1.4));
       }
-      if (sheet) {
-        const z = LIFT, Pn = PN(SHEET, z, 0), [u0, v0, u1, v1] = SHEET, k = 1 + NEAR * z, cu = (u0 + u1) / 2, fall = FALL * z;
-        sheet.shade.setAttribute("d", poly(rrect(cu + (u0 - cu) * k + fall * 0.4, v1 + (v0 - v1) * k - fall, cu + (u1 - cu) * k + fall * 0.4, v1 - fall, 4, 3).map((q) => P2(q.u, q.v, 0))));
-        sheet.prims.forEach((q) => draw(q, z + 0.8, front, Pn));
-        sheet.groups[section].prims.forEach((q) => draw(q, z + 0.8, front, Pn));
-      }
     }
 
     const B = register(stage, (dt) => {
@@ -467,10 +374,6 @@ export function layout({ focus = null, named = false } = {}) {
 
     /** The part under a point of the box: a panel's button, a panel that shows, the projects, the chat. */
     function under(pt) {
-      if (sheet) {
-        const Pn = PN(SHEET, LIFT, 0);
-        return DRAWN_SECTIONS.find((k) => { const v = railV(SECTIONS.findIndex(([key]) => key === k)); return inside(pt, Pn, [SHEET[0] + 2, v - 4.5, RAIL - 2, v + 4.5], LIFT + 1.4); }) ?? null;
-      }
       if (focus) {
         const p = PANELS[focus], f = parts[focus], z = LIFT * f.amt.x;
         if (p && inside(pt, P2, [p.btn - 1, TOP + 2, p.btn + 7, H - 1], 0)) return "away";

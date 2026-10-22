@@ -2,8 +2,8 @@
 // six of Emaki's own parts on the landing page, the layout, the whole
 // window with the six named around it, on Get Started, and the same window
 // at the head of each part's docs page, that part alone in color, the
-// settings sheet over it on Settings, the composer's foot close up on
-// Chats (composer.js), and the shift's two windows on the landing page,
+// settings' sections one by one on Settings (settings.js), the composer's
+// foot close up on Chats (composer.js), and the shift's two windows on the landing page,
 // the IDE's (ide.js) and Emaki's, each pane named in it.
 // scripts/figures/build.sh bundles this file into js/figures.js, which the
 // pages load.
@@ -19,6 +19,7 @@ import { figure } from "./emaki/window.js";
 import { ADE_TOUR, layout } from "./emaki/layout.js";
 import { IDE_TOUR, ide } from "./emaki/ide.js";
 import { composer } from "./emaki/composer.js";
+import { settings } from "./emaki/settings.js";
 
 // Emaki's figures, each with the one number its engine takes at intensity
 // 0, 0.5 and 1, put into Hairline's table so its wrapper reads them as its
@@ -38,8 +39,14 @@ const OWN = {
   "layout-outline": { engine: layout({ focus: "outline" }), label: "Emaki's window with the outline shown in color at the chat's left, the rest gray.", lift: [8, 12, 16] },
   "layout-shell": { engine: layout({ focus: "shell" }), label: "Emaki's window with the shell terminal shown in color at the chat's right, the rest gray.", lift: [8, 12, 16] },
   "layout-agent": { engine: layout({ focus: "agent" }), label: "Emaki's window with the agent terminal shown in color at the chat's right, the rest gray.", lift: [8, 12, 16] },
-  // Settings: the sheet forward over the window, gray behind it.
-  "layout-settings": { engine: layout({ focus: "settings" }), label: "Emaki's settings sheet standing forward over the window, which is gray behind it.", lift: [8, 12, 16] },
+  // Settings: each section's groups on their own, their controls worked by a click.
+  "settings-appearance": { engine: settings({ section: "appearance" }), label: "The Appearance section of Emaki's settings." },
+  "settings-fonts": { engine: settings({ section: "fonts" }), label: "The Fonts section of Emaki's settings." },
+  "settings-text": { engine: settings({ section: "text" }), label: "The Text Size section of Emaki's settings." },
+  "settings-composer": { engine: settings({ section: "composer" }), label: "The Composer section of Emaki's settings." },
+  "settings-sessions": { engine: settings({ section: "sessions" }), label: "The New sessions section of Emaki's settings." },
+  "settings-terminal": { engine: settings({ section: "terminal" }), label: "The Terminal section of Emaki's settings." },
+  "settings-files": { engine: settings({ section: "files" }), label: "The Files section of Emaki's settings." },
   // Chats: the composer's foot close up, the pills or the status line its own.
   "composer-pills": { engine: composer({ focus: "pills" }), label: "The foot of Emaki's composer, close up, with its mode, effort and model pills." },
   "composer-status": { engine: composer({ focus: "status" }), label: "The status line under Emaki's composer, close up." },

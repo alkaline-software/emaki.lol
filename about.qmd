@@ -1,79 +1,14 @@
 ---
 sidebar: false
 title: "About"
-subtitle: "The name, the reason, and how it is made."
+subtitle: "The story of Emaki and Alkaline Software."
 ---
-
-## The name
-
-An *emaki* (絵巻) is a Japanese picture handscroll: a long painted scene held
-between two rolls, read by winding it from one to the other, a span at a
-time. It is a good name for a window whose job is an agent chat too long to
-see at once.
-
-The app's icon is a handscroll seen from the front, with an agent chat on
-its sheet: the agent on the left with its spark, your reply on the right.
-This one carries a landscape instead, and winds as you move across it.
 
 ::: {.about-fig}
 {{< include _hero.html >}}
 :::
 
-## Why it exists
-
-Claude Code deletes its transcripts after `cleanupPeriodDays`, thirty by
-default, with no warning. Every other tool in this space reads
-`~/.claude/projects` and stops there, so they all inherit that expiry.
-
-So Emaki copies first and renders second. The archive sweep runs before
-anything else touches a session, for exactly this reason: if rendering
-fails, the bytes are already safe. The archive is not a backup but a peer
-source: live and kept transcripts are read together, so a session Claude
-Code has deleted stays listed, searchable and readable, marked *kept*.
-
-Compaction, for what it is worth, was never the threat: it appends a
-boundary and keeps writing to the same file, leaving the earlier rows
-intact.
-
-## How it is built
-
-Rust, with [GPUI](https://www.gpui.rs), the Zed editor's UI framework, and
-[gpui-component](https://github.com/longbridge/gpui-component) for the
-window. There is no daemon, no browser and no hook.
-
-```
-crates/emaki-core   everything without a window, and the CLI
-crates/emaki-app    the window
-vendor/             gpui-component, with a few changes of ours
-scripts/            packaging, the icon, the status line
-```
-
-The core works in this order:
-
-1. **Adapters**, one per agent, find each agent's sessions on disk.
-2. **Archive** copies Claude Code's byte for byte, before anything else
-   touches them.
-3. **Build** parses the JSONL transcript into a model of rounds, items and
-   tool calls. The transcript is the only source of truth.
-4. **Render** writes that model as markdown under `~/.emaki/logs`.
-5. **Search** indexes every item in SQLite FTS5.
-
-The app reads the same model and draws it. A file watcher says when to look
-again. To reply, it writes to a terminal session's inbox, or runs a headless
-agent of its own that appends to the same transcript.
-
-## Where it is going
-
-Three stages. The first is a complete app for Claude Code: permanent
-history, organization by recency, project and agent, readable chats,
-and an explanation on any step. The second is the public release and the
-feedback that comes with it. The third extends the same to Codex, Kimi and
-the other mainstream coding agents, so Emaki works across all of them.
-
-Codex arrived in v0.2.0, ahead of its stage; the [releases](https://github.com/alkaline-software/emaki/releases)
-are the honest record of where things stand.
-
-## Who makes it
+## Meet the team
 
 ::: {.people}
 
@@ -82,46 +17,56 @@ are the honest record of where things stand.
 
 **[Alkaline Software](https://github.com/alkaline-software)**
 
-Two data scientists making basic software. *Alkaline* is the other word for
-basic, as a high pH is, and basic is what the software means to be: the
-things that should plainly exist. Emaki is one of them, a development
-environment for the agentic era that anyone who works with agents can use.
-:::
-
-::: {.person}
-![](assets/team/john-paul-helveston.png)
-
-**[Dr John Paul Helveston](https://www.jhelvy.com)**
-
-Associate Professor of Engineering Management and Systems Engineering at
-George Washington University.
-:::
-
-::: {.person}
-![](assets/team/pingfan-hu.png)
-
-**[Dr Pingfan Hu](https://pingfan.org)**
-
-Data scientist and developer at George Washington University, advised by
-John Paul.
+Alkaline Software is a development team of two engineers and data
+scientists, [John Paul Helveston](https://www.jhelvy.com) and
+[Pingfan Hu](https://pingfan.org), who enjoy building "basic" software.
+*Alkaline* means "basic" (a high pH), and basic is what our software is
+meant to be: things that should plainly exist. Emaki is one of them, a
+development environment for the agentic era that anyone who works with
+agents can use.
 :::
 
 :::
+
+## The name
+
+An *emaki* (絵巻) is a Japanese picture handscroll: a long painted scene held between two rolls, read by winding it from one to the other. It is colorful, enchanting, and easy to handle.
+
+Our aim with Emaki is to give you the same experience: a colorful, enchanting, and easy-to-use studio for your agent sessions, with clear guidance, supportive panels, and small, versatile features for a smooth development experience.
+
+## Our motivation
+
+Emaki started with the pain of managing numerous agent sessions.
+
+Working with agents has become the way many of us develop software. But as sessions pile up, managing them becomes a pain, especially with several agents, each storing its sessions its own way on your computer. Emaki helps you manage them: you can create, continue, archive, and delete sessions in one place.
+
+Claude Code silently deletes its sessions after 30 days. Emaki archives them automatically, and you can continue one by unarchiving it.
+
+From there, we made Emaki much more versatile. It has grown into an ADE, an agentic development environment, because we believe it is a better way to work with agents than the traditional IDE.
+
+## App structure
+
+Emaki is written in Rust, with [GPUI](https://www.gpui.rs), the Zed
+editor's UI framework, and
+[gpui-component](https://github.com/longbridge/gpui-component) for the
+window.
+
+```
+crates/emaki-core   core logic
+crates/emaki-app    the window
+vendor/             gpui, modified to meet our needs
+scripts/            miscellaneous
+```
 
 ## Credits
 
-The home page's figure follows the line-drawing manner of
-[hairline](https://github.com/lucasmarkes/hairline)'s figures: nothing
-filled, no words, what is far is dimmer, and one bright mark.
-
-Icons are [Tabler](https://tabler.io/icons)'s outline set, drawn at a stroke
-of 1.75 where Tabler's own is 2, in the app and on this site. The file
-tree's icons are [Catppuccin](https://github.com/catppuccin/vscode-icons)'s.
-The code colors are [Rosé Pine](https://rosepinetheme.com)'s hues, retinted
-for contrast. The terminal keeps [Kaku](https://github.com/kakuapp)'s cream
-in the light appearance. Every face the app carries is under the SIL Open
-Font License, and so are this site's: Source Serif 4, JetBrains Mono and
-Belleza. The site is made with [Quarto](https://quarto.org).
+- Figures are based on the line-drawing manner of [hairline](https://github.com/lucasmarkes/hairline)'s figures, with our own modifications.
+- In-app icons are taken from [Tabler](https://tabler.io/icons)'s outline set, with our own modifications.
+- The file tree's icons are from [Catppuccin](https://github.com/catppuccin/vscode-icons).
+- The code colors are [Rosé Pine](https://rosepinetheme.com)'s hues, retinted for contrast.
+- The terminal keeps [Kaku](https://github.com/kakuapp)'s cream in the light appearance.
+- Every face the app carries is under the SIL Open Font License, and so are this site's: Source Serif 4, JetBrains Mono and Belleza.
+- The site is made with [Quarto](https://quarto.org).
 
 ## License
 

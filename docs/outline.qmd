@@ -1,26 +1,14 @@
 ---
-title: "Outline Panel"
-subtitle: "⌘⇧O: a short label for every prompt, to find your way back through a long session."
+title: "Outline Panel [⌘⇧O]{.kbd}"
+pagetitle: "Outline Panel"
+subtitle: "Summaries of your past prompts."
 ---
 
 ::: {.layout .layout-page}
-::: {.fig data-figure="layout-outline" aria-label="Emaki's window with the outline shown in color at the chat's left: an entry for every prompt. The rest is gray. The panel stands forward under the pointer, and its button in the chrome puts it away."}
+::: {.fig data-figure="layout-outline" aria-label="Emaki's window with the Outline Panel shown in color at the chat's left: an entry for every prompt. The rest is gray. The panel stands forward under the pointer, and its button in the chrome puts it away."}
 :::
 :::
 
-## Entries {.i-list-numbers}
+Going back through a long session is a pain. The Outline Panel lists a summary of each of your past prompts, with its time in front. As with the plain-word explanations of the agent's tool calls, the summaries are written by the lightest model your session's agent has.
 
-Going back through a long session is a pain. The outline gives each
-prompt one entry, under a heading for each day: the time, then three to
-five words for what you asked. A short prompt is shown as it is. A long
-one is labeled by the agent's small model, Haiku for Claude Code and
-Codex's light model for Codex, in a separate session, so nothing enters
-yours. Labels are made for the entries in view, a few at a time, and
-kept, so each prompt is labeled once.
-
-## Going back {.i-history}
-
-Click an entry and the chat glides back to that round. As you scroll,
-the entry in view is highlighted, so the outline always shows where you
-are. It shares the left side with the [files](files.qmd): one shows at
-a time, and switching does not move the chat.
+Click an entry to scroll back to its prompt.

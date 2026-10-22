@@ -55,8 +55,8 @@ Claude Code has deleted is still here. See [Projects](projects.qmd).
 ## Layout {.i-app-window}
 
 The sidebar and the chat are always there. The four panels are hidden by
-default: files or outline opens on the left of the chat, the shell or
-agent terminal on its right.
+default: the Files Panel or the Outline Panel opens on the left of the
+chat, the Shell Terminal Panel or the Agent Terminal Panel on its right.
 
 ::: {.layout}
 
@@ -80,11 +80,11 @@ agent terminal on its right.
 :::
 
 ::: {.layout-part .i-terminal data-part="shell"}
-[Shell Terminal](shell.qmd) [⌘⇧S]{.kbd}
+[Shell Terminal](terminals.qmd#shell) [⌘⇧S]{.kbd}
 :::
 
 ::: {.layout-part .i-sparkles data-part="agent"}
-[Agent Terminal](agent.qmd) [⌘⇧A]{.kbd}
+[Agent Terminal](terminals.qmd#agent) [⌘⇧A]{.kbd}
 :::
 
 :::

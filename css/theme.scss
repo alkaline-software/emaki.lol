@@ -161,8 +161,8 @@ $icons: download scroll github archive search book-open inbox terminal
   tree-view git-branch microphone keyboard bot settings shield check
   external-link arrow-right sparkles history info refresh hard-drive
   file-text box eye circle-check palette typography list-numbers sun moon copy
-  chevron-right app-window play folder at gauge file-code file-table
-  image file square-terminal claude;
+  chevron-right app-window play folder at gauge square-terminal claude
+  a-large-small;
 
 @each $i in $icons {
   .i-#{$i} { --icon: url("assets/icons/#{$i}.svg"); }
@@ -260,6 +260,25 @@ p, ul, ol, table { margin-bottom: 1rem; }
 // footer's items are lists too.
 main.content li + li { margin-top: 0.25rem; }
 
+// A bullet is a hairline, not a dot: a short rule in the muted ink at the
+// first line's middle (half the body's 1.6 line). The kinds of file are
+// tiles, not a list to read, and keep none.
+main.content ul:not(.types > ul) {
+  list-style: none;
+  padding-left: 1.5rem;
+
+  > li { position: relative; }
+  > li::before {
+    content: "";
+    position: absolute;
+    left: -1.15rem;
+    top: 0.8em;
+    width: 0.65rem;
+    height: 1px;
+    background: var(--muted);
+  }
+}
+
 a {
   color: var(--link);
   text-decoration: underline;
@@ -302,6 +321,24 @@ blockquote {
   }
   .quarto-title-meta { display: none; }
 }
+
+// A panel's key stands beside its name, a key's size in the words' scale
+// rather than the title's, on the name's middle: in the title, in the bar
+// that carries the title below 992 wide, and in a section's head where a
+// page holds two panels (Terminals). The table of contents names the
+// section alone.
+:is(#title-block-header .title, .quarto-secondary-nav-title, main h2) :is(kbd, .kbd) {
+  font-size: 1rem;
+  height: 1.75em;
+  min-width: 2.1em;
+  padding: 0 0.55em;
+  margin-left: 0.6rem;
+  vertical-align: 0.4em;
+  color: var(--muted);
+}
+
+main h2 :is(kbd, .kbd) { vertical-align: 0.2em; }
+#TOC :is(kbd, .kbd) { display: none; }
 
 // The landing page sets its own name in the hero, so it carries no `title`
 // and Quarto leaves an empty title block behind. Take its room back.
@@ -786,6 +823,40 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
 .fig svg .emk-wash { fill: color-mix(in oklab, var(--hairline-hi) 7%, var(--hairline-plate)); }
 .fig svg .emk-shade { fill: color-mix(in oklab, var(--hairline-hi) 22%, transparent); stroke: none; }
 
+/* ---- Settings ---- */
+
+// Settings (scripts/figures/emaki/settings.js): each section's groups on
+// their own, the pane's ground and its cards, the controls as the app
+// draws them: a muted track, the choice on a raised plate, a switch that
+// fills with the accent, the chosen face washed. A control under the
+// pointer darkens; one that takes no click now (a switch is off) is dimmed.
+.fig.settings-fig { max-width: 38rem; margin: 1.25rem auto 2rem; }
+.fig svg {
+  .emk-cardg { fill: color-mix(in oklab, var(--ink) 3%, var(--hl-plate)); }
+  .emk-head { font-weight: 600; }
+  .emk-mid { text-anchor: middle; }
+  .emk-text { transition: fill 160ms var(--ease); }
+  .emk-track, .emk-field { fill: color-mix(in oklab, var(--ink) 8%, transparent); stroke: none; transition: fill 160ms var(--ease); }
+  .emk-segplate { fill: var(--pop-bg); stroke: color-mix(in oklab, var(--ink) 12%, transparent); }
+  .dot.emk-knob { fill: var(--paper); stroke: color-mix(in oklab, var(--ink) 14%, transparent); }
+  .emk-press { fill: color-mix(in oklab, var(--ink) 14%, transparent); stroke: none; opacity: 0; }
+  .emk-btnline, .emk-boxline, .emk-tileline { transition: stroke 160ms var(--ease); }
+  .emk-danger { stroke: color-mix(in oklab, var(--sk-rose) 60%, transparent); }
+  .emk-danger-t, .emk-danger-t.emk-lit { fill: var(--sk-rose); }
+  .emk-step { stroke: var(--ink); transition: opacity 160ms var(--ease); }
+  .emk-quiet { opacity: 0.35; }
+  .emk-swring { stroke: var(--hl-plate); }
+  .emk-tilewash { fill: color-mix(in oklab, var(--accent) 9%, transparent); stroke: none; }
+  .emk-text.emk-row { fill: var(--ink); }
+  .emk-text.emk-aa-sans { font-family: var(--font-ui); font-weight: 400; fill: var(--ink); }
+  .emk-codex { stroke: var(--codex); }
+  .dot.emk-avatar { fill: color-mix(in oklab, var(--accent) 35%, var(--hl-plate)); stroke: none; }
+  .emk-ctl { transition: opacity 200ms var(--ease); }
+  .emk-off { opacity: 0.4; }
+  .emk-hov :is(.emk-track, .emk-field) { fill: color-mix(in oklab, var(--ink) 14%, transparent); }
+  .emk-hov :is(.emk-btnline, .emk-boxline, .emk-tileline) { stroke: var(--hl-edge); }
+}
+
 /* ---- The layout ---- */
 
 // Get Started, Layout (scripts/figures/emaki/layout.js): Emaki's window on
@@ -857,12 +928,11 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
 }
 .layout:not([data-wide]) .emk-leads { display: none; }
 
-// The close-ups and the settings sheet on the same window (composer.js,
-// layout.js `settings`): a value in the agent's own color, semibold as
-// the app sets it, in the nearest of the set; a pill's gray face,
-// darker while its list is open; the current row's wash and its tick in
-// the accent; a plate under a part of the status line that stands
-// forward; a segment's plate; the swatches and the switch, filled.
+// The close-ups and the settings (composer.js, settings.js): a value in
+// the agent's own color, semibold as the app sets it, in the nearest of
+// the set; a pill's gray face, darker while its list is open; the current
+// row's wash and its tick in the accent; a plate under a part of the
+// status line that stands forward; the swatches and the switch, filled.
 .fig svg {
   .emk-v { font-weight: 700; }
   .emk-tail { fill: var(--muted); font-weight: 500; }
@@ -881,7 +951,6 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
   .emk-on-hi { stroke: var(--hl-plate); }
   .emk-send { fill: var(--hl-hi); stroke: none; }
   .emk-plate { fill: color-mix(in oklab, var(--part) 10%, var(--hl-plate)); stroke: color-mix(in oklab, var(--part) 50%, transparent); }
-  .emk-seg { fill: color-mix(in oklab, var(--ink) 10%, transparent); stroke: none; }
   .emk-acc { stroke: var(--accent); }
   .emk-claude { stroke: var(--claude); }
   .emk-fill-accent { fill: var(--accent); stroke: none; }
@@ -891,7 +960,6 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
   .emk-fill-sage { fill: var(--sk-sage); }
   .emk-fill-teal { fill: var(--ink-teal); }
   .emk-fill-slate { fill: var(--sk-slate); }
-  .emk-fill-codex { fill: var(--codex); }
   .emk-fill-plate { fill: var(--hl-plate); }
   .emk-aa { font-family: var(--font-words); font-weight: 400; fill: var(--ink); }
   .emk-aa-mono { font-family: var(--font-mono); font-weight: 400; fill: var(--ink); }
@@ -1558,6 +1626,12 @@ body { overflow-x: clip; }
     border: 1px solid var(--border);
   }
   &.person-org img { border-radius: $border-radius; }
+  // The studio's card stands out: on the accent's plate, its edge in the
+  // accent, as the page's one invitation to meet who makes it.
+  &.person-org {
+    background: color-mix(in oklab, var(--accent) 12%, var(--page));
+    border-color: color-mix(in oklab, var(--accent) 32%, var(--page));
+  }
 
   > p:nth-child(2) { margin-bottom: 0.1rem; }
   > p:nth-child(2) a { text-decoration: none; }
@@ -1613,45 +1687,81 @@ body { overflow-x: clip; }
   p { margin: 0; }
 }
 
-// The kinds of file the pane opens (Files Panel): a tile a kind, two to
-// a row, its icon at the left, its name in the ink and one line under it.
+// The kinds of file the pane opens (Files Panel): a tile a kind, five to
+// a row, standing upright, the icon the tree gives that kind (the app's
+// Catppuccin files, in assets/catppuccin/) over its name. Each kind takes
+// a hue of the drawings' set by what it holds: tables sage, written words
+// slate, slides and pages ochre, code and pictures mauve, the PDF rose.
+// Under 600 wide, two to a row, each a short tile, its icon beside its
+// name.
+$types: (
+  code: (xml, mauve), markdown: (markdown, slate), csv: (csv, sage),
+  parquet: (database, sage), word: (ms-word, slate), excel: (ms-excel, sage),
+  powerpoint: (ms-powerpoint, ochre), pdf: (pdf, rose), html: (html, ochre),
+  pictures: (image, mauve),
+);
+@each $kind, $v in $types {
+  .t-#{$kind} {
+    --icon: url("assets/catppuccin/#{nth($v, 1)}.svg");
+    --kind: var(--sk-#{nth($v, 2)});
+  }
+}
 .types ul {
   list-style: none;
   margin: 1rem 0 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.5rem 0.75rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.75rem;
 }
 // The grid's gap is the air between tiles: the words' gap between a
 // list's items would lower every tile but the first.
 main.content .types li + li { margin-top: 0; }
-.types li {
-  position: relative;
-  padding: 0.55rem 0.75rem 0.6rem 2.35rem;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--panel);
-  color: var(--muted);
+.types li > span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.9rem;
+  aspect-ratio: 5 / 6;
+  padding: 0.75rem 0.25rem 0.9rem;
+  border: 1px solid color-mix(in oklab, var(--kind) 22%, var(--border));
+  border-radius: 10px;
+  background: color-mix(in oklab, var(--kind) 7%, var(--panel));
+  font-family: var(--font-ui);
   font-size: 0.88rem;
-  line-height: 1.4;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+  color: var(--ink);
 
-  > span[class*="i-"] {
-    display: block;
-    color: var(--ink);
-    font-weight: 600;
-    font-size: 0.92rem;
-    &::before {
-      @include glyph(1.05rem);
-      position: absolute;
-      left: 0.75rem;
-      top: 0.7rem;
-      color: var(--accent);
-    }
+  // The icon takes the room over the name, centered in it.
+  &::before {
+    @include glyph(2.75rem);
+    margin: auto 0;
+    color: var(--kind);
   }
 }
+// The row is narrow between 600 and 1100 wide, the menu and the table of
+// contents at its sides: the names and icons a step smaller, so the
+// longest name keeps its air.
+.types ul { container-type: inline-size; }
+@container (max-width: 600px) {
+  .types li > span { font-size: 0.8rem; &::before { @include glyph(2.4rem); margin: auto 0; } }
+}
 @media (max-width: 599.98px) {
-  .types ul { grid-template-columns: minmax(0, 1fr); }
+  .types ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; }
+  .types li > span {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 0.65rem;
+    aspect-ratio: auto;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.88rem;
+    text-align: left;
+    &::before { @include glyph(1.5rem); margin: 0; }
+  }
 }
 
 /* ---- The docs menu ---- */

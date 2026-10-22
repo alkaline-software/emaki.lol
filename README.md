@@ -33,7 +33,7 @@ lets the landing page's bands rise into view.
 under "From the IDE to the ADE", an IDE's and Emaki's with their panes
 named, and the six of the app's parts; in the docs, the layout on Get
 Started, the same window at the head of each part's page with that part
-in color and the rest gray, the settings sheet, and the composer's
+in color and the rest gray, the settings' sections one by one, and the composer's
 close-ups on Chats. `scripts/figures/build.sh` builds it from Hairline's
 repository at a pinned tag; the output is committed, so a render needs no
 Node.

@@ -74,7 +74,7 @@ icon's.
 | `--spark` | the agent's spark: a glyph, never a ground | `#715CC7` | `#B5ADF4` |
 | `--seal` | the handscroll's title, 絵巻, in an old seal's faded red, and nothing else | `#A8665B` | `#D49A90` |
 | `--claude`, `--codex` | an agent's mark beside its name, and nothing else | `#D97757`, `#5F9E6E` | `#D97757`, `#79B487` |
-| `--sk-ochre`, `--sk-slate`, `--sk-sage`, `--sk-mauve`, `--sk-rose` | the drawings' own set, and nothing else: the IDE's panes, its chat's spark and its status bar's dots (The shift); a value's color in the composer's close-ups; a panel's own color in its button, its docs page's window and its figure, the files ochre, the outline mauve, the shell sage (the agent's terminal is Claude's) | `#9E793D`, `#4489AE`, `#578F63`, `#986EA2`, `#AF6974` | `#DAB883`, `#8AC7EA`, `#99CDA3`, `#D5ADDE`, `#ECA9B2` |
+| `--sk-ochre`, `--sk-slate`, `--sk-sage`, `--sk-mauve`, `--sk-rose` | the drawings' own set, and nothing else: the IDE's panes, its chat's spark and its status bar's dots (The shift); a value's color in the composer's close-ups; a panel's own color in its button, its docs page's window and its figure, the files ochre, the outline mauve, the shell sage (the agent's terminal is Claude's); a kind of file's tile on the Files Panel page | `#9E793D`, `#4489AE`, `#578F63`, `#986EA2`, `#AF6974` | `#DAB883`, `#8AC7EA`, `#99CDA3`, `#D5ADDE`, `#ECA9B2` |
 
 Where they come from: the light page and its panels and hairlines are a
 warm paper, as Kaku's site has it, with the app's ink and muted ink on it;
@@ -142,8 +142,10 @@ small 0.875 rem for labels, captions and caps.
   showing, and its name in the accent. About has the words and the table
   of contents without the menu; the landing page has neither. Below 992
   the menu folds into the navbar's toggle and the table of contents goes
-  above the words. A docs page is a title, one line under it, and
-  `##` sections with an icon each, and it ends with the way to the page
+  above the words. A docs page is a title (a panel's with its key beside
+  it, a key at the words' size, on the name's middle), one line under it, and
+  `##` sections with an icon each (Terminals, the two terminals' page,
+  a section each, the key beside each section's name), and it ends with the way to the page
   before and the page after.
   The landing page uses the full width and centers one column, Kaku's
   1152 px (`--w-page`), for everything on it. The hero is one column,
@@ -239,15 +241,18 @@ small 0.875 rem for labels, captions and caps.
   pages does: the layers part as the eye moves, and the places to point
   at stay where they were.
   The same window opens each part's docs page (`.layout-page`, under the
-  title, centered and at most 36 rem wide): no names, only that part in
+  title, or on Terminals under each section's head, centered and at most 36 rem wide): no names, only that part in
   its color, the rest in the window's gray at half strength, so the six
   pages read as one window looked at six ways. A panel's page has its
   panel in from the start, its button filled; the pointer on the button
   puts it away and on the part brings it forward.
-- **People** (`.people > .person`): who makes it, on the About page. A
-  picture from `assets/team/`, a name in bold that is a link, and a line
-  or two. A person's picture is a circle; the studio's mark
-  (`.person-org`) a rounded square.
+- **People** (`.people > .person`): who makes it, the first section on
+  the About page, under the handscroll. The studio's card
+  (`.person-org`): its mark from `assets/team/`, a rounded square, its
+  name in bold that is a link, and a few lines naming its two makers,
+  each a link. It stands out on the accent's plate, 12% of the
+  accent over the page, its edge 32%, in both appearances. A person's own card, a picture in a circle, is the same
+  element without `.person-org`.
 - **The docs menu** (`#quarto-sidebar`): the pages in the words' serif
   at 0.95 rem, in the muted ink, the ink under the pointer; the page
   showing in the accent with a 3 px bar, 56% of the row's height and
@@ -263,15 +268,19 @@ small 0.875 rem for labels, captions and caps.
   the page after at the right, each a quiet word in the chrome's face
   with the app's arrow beside it, the ink under the pointer. The way
   runs through the whole menu, across the groups (`js/page.js`).
-- **The settings sheet** (Settings, `layout-settings`): the layout's
-  window, gray at half strength, and the sheet standing forward over its
-  main area with its shadow under it: the rail of the eight sections at
-  the left, the one showing washed, and its name over its groups at the
-  right, each group a card of rows, a name at the left and the control
-  at the right as the app lays them: Appearance's look and seven accents
-  (the chosen one ringed), Fonts' two faces and text size, New
-  sessions' agent and its three, Updates' switch and button. The
-  pointer on a section in the rail shows it.
+- **The settings** (Settings, `settings-<section>`, settings.js): a
+  figure a section, Appearance to Files, at the head of its own `##`
+  section, at most 38 rem wide: the section's groups on the pane's
+  ground and nothing round them, no window and no rail. Each group is a
+  card of rows, a name at the left and the control at the right, as the
+  app lays them out, in its words. A click or a tap works a control as
+  the app's does and changes nothing else: a switch's knob slides and
+  its track fills with the accent, a choice's plate slides, an accent's
+  ring and name move, a face's tile is chosen, a tick comes and goes, a
+  size steps (under Custom only), a dropdown turns to its next value, a
+  button flashes. A control under the pointer darkens; the choices that
+  hang on a switch dim while it is off. What was set stays when the
+  pointer leaves.
 - **The composer's foot** (Chats, `composer-pills` and
   `composer-status`, composer.js): the chat's face close up as a slab,
   the composer on it and the status line under it, in the layout's
@@ -289,8 +298,15 @@ small 0.875 rem for labels, captions and caps.
   through its letters; the context sage, ochre from 70% and rose from
   85%; a limit slate, mauve from 70% and rose from 90%.
 - **The kinds of file** (`.types`, on the Files Panel page): a tile a
-  kind, two to a row and one under 600 wide, the icon in the accent at
-  the left, the name in the ink and one line under it in the muted ink.
+  kind, its icon and its name and nothing more, five to a row, standing
+  upright, the icon over the name. The icon is the one the app's tree
+  gives that kind, from Catppuccin (`assets/catppuccin/`), drawn through
+  a mask in a hue of the drawings' set by what the kind holds: tables
+  sage, written words slate, slides and pages ochre, code and pictures
+  mauve, the PDF rose; the tile is washed in it. Where the row is narrow
+  (under 600 of it, between 600 and 1100 wide) the names and icons are a
+  step smaller; under 600 wide, two to a row, each a short tile, its icon
+  beside its name.
 - **The download** (`.dl`, `_download.html`): one control on the landing
   page. The accent pill takes the installer for this computer, which
   `js/page.js` names from the browser ("Download for macOS"), and the
@@ -304,6 +320,9 @@ small 0.875 rem for labels, captions and caps.
   Get Started, with the play glyph, into the docs.
 - **Keys**: `[⌘K]{.kbd}`, a cap in the chrome's face. Named as the Mac
   has them; the keyboard table says once that ⌘ is Ctrl elsewhere.
+- **Lists**: a bullet is a hairline, never a dot: a short rule in the
+  muted ink at the first line's middle, the wrapped lines under the
+  words.
 - **Tables**: hairline rows, the head in the muted ink, no vertical lines,
   no zebra.
 - **Code**: a block on the panel's ground with a hairline; inline, the

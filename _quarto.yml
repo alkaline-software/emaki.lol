@@ -93,10 +93,8 @@ website:
             href: docs/files.qmd
           - text: "Outline"
             href: docs/outline.qmd
-          - text: "Shell Terminal"
-            href: docs/shell.qmd
-          - text: "Agent Terminal"
-            href: docs/agent.qmd
+          - text: "Terminals"
+            href: docs/terminals.qmd
       - text: "---"
       - text: "Settings"
         href: docs/settings.qmd

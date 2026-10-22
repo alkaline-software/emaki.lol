@@ -62,7 +62,7 @@ const PARTS = [
 let shades = 0;
 
 /** A value in its color: Max in three through its letters, as Claude Code's rainbow, still. */
-function value(p, u, v, word, tint, s, w = 0) {
+export function value(p, u, v, word, tint, s, w = 0) {
   if (tint === "max") {
     p.text(u, v, "M", s, "emk-text emk-v emk-v-rose", w);
     p.text(u + wd("M", s), v, "a", s, "emk-text emk-v emk-v-ochre", w);
@@ -70,7 +70,7 @@ function value(p, u, v, word, tint, s, w = 0) {
   } else p.text(u, v, word, s, "emk-text emk-v" + (tint ? " emk-v-" + tint : ""), w);
 }
 /** A pill's icon at (u, v): the mode's shield, the effort's gauge, the model's cube. */
-function icon(p, k, u, v) {
+export function icon(p, k, u, v) {
   if (k === "mode") p.line([[u - 2.75, v + 2.5], [u, v + 3.9], [u + 2.75, v + 2.5], [u + 2.75, v - 0.5], [u, v - 3.1], [u - 2.75, v - 0.5], [u - 2.75, v + 2.5]], "nf emk-ico", 2.4);
   else if (k === "effort") {
     p.ring(u - 3, v - 3, u + 3, v + 3, 3, "nf emk-ico", 2.4);
