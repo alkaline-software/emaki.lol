@@ -1,7 +1,6 @@
 ---
 sidebar: false
 title: "About"
-subtitle: "The story of Emaki and Alkaline Software."
 ---
 
 ::: {.about-fig}
