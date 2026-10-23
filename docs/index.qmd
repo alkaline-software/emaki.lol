@@ -21,8 +21,7 @@ For macOS, Windows and Linux.
 Emaki works with Claude Code and Codex.
 
 ::: {.start-links}
-[Claude Code](https://docs.claude.com/en/docs/claude-code){.pill .i-claude}
-[Codex](https://developers.openai.com/codex/cli){.pill .i-codex}
+[Claude Code](https://docs.claude.com/en/docs/claude-code){.pill .i-claude} [Codex](https://developers.openai.com/codex/cli){.pill .i-codex}
 :::
 :::
 
@@ -32,8 +31,7 @@ Emaki works with Claude Code and Codex.
 Install Git and the GitHub CLI to commit, branch and push from Emaki.
 
 ::: {.start-links}
-[Git](https://git-scm.com/downloads){.pill .i-git-branch .pill-git}
-[GitHub](https://cli.github.com){.pill .i-github .pill-github}
+[Git](https://git-scm.com/downloads){.pill .i-git-branch .pill-git} [GitHub](https://cli.github.com){.pill .i-github .pill-github}
 :::
 :::
 
@@ -43,20 +41,13 @@ The Agents page ([⌘E]{.kbd}) checks whether your agents and Git are installed 
 
 ## Open a project {.i-folder}
 
-Choose a folder, pick an agent, and type your first prompt. That starts
-a session in the folder, with a tab and a row in the sidebar. To pick up
-an older one, find it in the sidebar: every session on this computer is
-listed under its project, from both agents.
+Choose a folder, pick an agent, and type your first prompt. That starts a session in the folder, with a tab and a row in the sidebar. To pick up an older one, find it in the sidebar: every session on this computer is listed under its project, from both agents.
 
-On the first launch, Emaki copies every Claude Code session into
-`~/.emaki/archive`, and each later launch catches up, so a session
-Claude Code has deleted is still here. See [Projects](projects.qmd).
+On the first launch, Emaki copies every Claude Code session into `~/.emaki/archive`, and each later launch catches up, so a session Claude Code has deleted is still here. See [Projects](projects.qmd).
 
 ## Layout {.i-app-window}
 
-The sidebar and the chat are always there. The four panels are hidden by
-default: the Files Panel or the Outline Panel opens on the left of the
-chat, the Shell Terminal Panel or the Agent Terminal Panel on its right.
+The sidebar and the chat are always there. The four panels are hidden by default: the Files Panel or the Outline Panel opens on the left of the chat, the Shell Terminal Panel or the Agent Terminal Panel on its right.
 
 ::: {.layout}
 
@@ -104,6 +95,4 @@ Everything Emaki keeps is in `~/.emaki`:
 
 Codex has its own archiving system, so `archive/` only stores Claude Code sessions.
 
-Emaki changes one setting in Claude Code: its status line, which feeds
-Emaki's own [status line](chats.qmd#status-line) under the composer. To put
-yours back, run `emaki-core statusline restore`.
+Emaki changes one setting in Claude Code: its status line, which feeds Emaki's own [status line](chats.qmd#status-line) under the composer. To put yours back, run `emaki-core statusline restore`.

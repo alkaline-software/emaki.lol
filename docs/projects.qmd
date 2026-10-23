@@ -16,16 +16,11 @@ All sessions in Emaki are project-based, all listed in the sidebar. You can pin 
 
 ### In the sidebar
 
-Sessions are managed under their projects. A session's leading logo tells you
-which agent it belongs to and lights up while the agent runs. A dot
-shows where the session stands, and a bar at the left marks one that is
-open in a tab. Claude Code and Codex sessions sit side by side, each
-read from the agent's own files.
+Sessions are managed under their projects. A session's leading logo tells you which agent it belongs to and lights up while the agent runs. A dot shows where the session stands, and a bar at the left marks one that is open in a tab. Claude Code and Codex sessions sit side by side, each read from the agent's own files.
 
 ### All Sessions
 
-All Sessions ([⌘L]{.kbd}) lists every project and session with the
-day it was last used. This page provides plenty of ways of easily managing your existing sessions.
+All Sessions ([⌘L]{.kbd}) lists every project and session with the day it was last used. This page provides plenty of ways of easily managing your existing sessions.
 
 ## Archiving {.i-archive}
 
@@ -35,6 +30,4 @@ Archived sessions cannot be interacted. You can actively archive/unarchive your 
 
 ## Tabs {.i-copy}
 
-Each open session is a tab, grouped by project. [⌘1]{.kbd} to
-[⌘9]{.kbd} switch tabs, [⌘W]{.kbd} closes one, [⌘⇧T]{.kbd} reopens the
-last one closed, and you can drag tabs to reorder them.
+Each open session is a tab, grouped by project. [⌘1]{.kbd} to [⌘9]{.kbd} switch tabs, [⌘W]{.kbd} closes one, [⌘⇧T]{.kbd} reopens the last one closed, and you can drag tabs to reorder them.

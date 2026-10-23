@@ -25,10 +25,7 @@ From there, we made Emaki much more versatile. It has grown into an ADE, an agen
 
 ## App structure
 
-Emaki is written in Rust, with [GPUI](https://www.gpui.rs), the Zed
-editor's UI framework, and
-[gpui-component](https://github.com/longbridge/gpui-component) for the
-window.
+Emaki is written in Rust, with [GPUI](https://www.gpui.rs), the Zed editor's UI framework, and [gpui-component](https://github.com/longbridge/gpui-component) for the window.
 
 ```
 crates/emaki-core   core logic
@@ -46,13 +43,7 @@ scripts/            miscellaneous
 
 **[Alkaline Software](https://github.com/alkaline-software)**
 
-Alkaline Software is a development team of two engineers and data
-scientists, [John Paul Helveston](https://www.jhelvy.com) and
-[Pingfan Hu](https://pingfan.org), who enjoy building "basic" software.
-*Alkaline* means "basic" (a high pH), and basic is what our software is
-meant to be: things that should plainly exist. Emaki is one of them, a
-development environment for the agentic era that anyone who works with
-agents can use.
+Alkaline Software is a development team of two engineers and data scientists, [John Paul Helveston](https://www.jhelvy.com) and [Pingfan Hu](https://pingfan.org), who enjoy building "basic" software. *Alkaline* means "basic" (a high pH), and basic is what our software is meant to be: things that should plainly exist. Emaki is one of them, a development environment for the agentic era that anyone who works with agents can use.
 :::
 
 :::
@@ -71,7 +62,4 @@ agents can use.
 
 MIT. © 2026 John Paul Helveston, Pingfan Hu, and Alkaline Software.
 
-The source is at
-[github.com/alkaline-software/emaki](https://github.com/alkaline-software/emaki),
-and this site's at
-[github.com/alkaline-software/emaki.lol](https://github.com/alkaline-software/emaki.lol).
+The source is at [github.com/alkaline-software/emaki](https://github.com/alkaline-software/emaki), and this site's at [github.com/alkaline-software/emaki.lol](https://github.com/alkaline-software/emaki.lol).

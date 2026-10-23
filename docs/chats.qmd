@@ -31,9 +31,7 @@ By providing three pills under the composer, Emaki made it easy to toggle among 
 
 ## Status line {.i-gauge}
 
-The row under the composer shows how much of the context window is used
-and where the 5-hour and 7-day limits stand. Its colors change according to
-the thresholds. The status line logic is from the [Waza](https://github.com/tw93/waza) plugin by [tw93](https://github.com/tw93).
+The row under the composer shows how much of the context window is used and where the 5-hour and 7-day limits stand. Its colors change according to the thresholds. The status line logic is from the [Waza](https://github.com/tw93/waza) plugin by [tw93](https://github.com/tw93).
 
 ::: {.layout .layout-page}
 ::: {.fig data-figure="composer-status" aria-label="The status line under Emaki's composer, close up: Context 38% in green, 5h: 34% with 2h41m left in blue, 7d: 12% with 5d1h left in blue. A part under the pointer stands forward and shows a higher number in the color it takes there."}

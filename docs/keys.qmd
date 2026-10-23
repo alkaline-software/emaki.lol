@@ -7,8 +7,7 @@ subtitle: "A collection of all keyboard commands on Emaki."
 
 ## Panels {.i-app-window}
 
-Hold [⇧]{.kbd} with [⌘]{.kbd}, and the letter shows or hides a panel
-beside the chat. The letter is the panel's first, and B is the sidebar's.
+Hold [⇧]{.kbd} with [⌘]{.kbd}, and the letter shows or hides a panel beside the chat. The letter is the panel's first, and B is the sidebar's.
 
 | | |
 |---|---|
@@ -53,5 +52,4 @@ The rest of [⌘]{.kbd} each does one thing where you are.
 
 : {.table-keys tbl-colwidths="[38,62]"}
 
-In the terminal, [⌘T]{.kbd} opens a tab, [⌘W]{.kbd} closes it and
-[⌘K]{.kbd} clears the screen.
+In the terminal, [⌘T]{.kbd} opens a tab, [⌘W]{.kbd} closes it and [⌘K]{.kbd} clears the screen.

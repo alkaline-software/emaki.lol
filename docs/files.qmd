@@ -15,9 +15,7 @@ When you open the Files Panel, the file tree is shown with its root folder expan
 
 ## File preview & editing {.i-file-text}
 
-Click a file to open it in a pane between the tree and the chat; click
-it again to close it. The enlarge button gives the pane the chat's
-room. You can use common keyboard shortcuts to undo, redo, save, and close.
+Click a file to open it in a pane between the tree and the chat; click it again to close it. The enlarge button gives the pane the chat's room. You can use common keyboard shortcuts to undo, redo, save, and close.
 
 Emaki supports format on save for common languages. It is off by default and can be turned on in [Settings](settings.qmd): tick all the languages, or only the ones you want.
 

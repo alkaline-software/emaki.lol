@@ -81,8 +81,7 @@ For macOS, Windows and Linux.
 Emaki works with Claude Code and Codex.
 
 ::: {.start-links}
-[Claude Code](https://docs.claude.com/en/docs/claude-code){.pill .i-claude}
-[Codex](https://developers.openai.com/codex/cli){.pill .i-codex}
+[Claude Code](https://docs.claude.com/en/docs/claude-code){.pill .i-claude} [Codex](https://developers.openai.com/codex/cli){.pill .i-codex}
 :::
 :::
 
@@ -92,8 +91,7 @@ Emaki works with Claude Code and Codex.
 Install Git and the GitHub CLI to commit, branch and push from Emaki.
 
 ::: {.start-links}
-[Git](https://git-scm.com/downloads){.pill .i-git-branch .pill-git}
-[GitHub](https://cli.github.com){.pill .i-github .pill-github}
+[Git](https://git-scm.com/downloads){.pill .i-git-branch .pill-git} [GitHub](https://cli.github.com){.pill .i-github .pill-github}
 :::
 :::
 
@@ -107,8 +105,7 @@ Install Git and the GitHub CLI to commit, branch and push from Emaki.
 ::: {.band .rise}
 ## Main system
 
-Sessions are listed and managed under their projects. The agent chat
-takes the main space, rendered in high quality.
+Sessions are listed and managed under their projects. The agent chat takes the main space, rendered in high quality.
 :::
 
 ::: {.cards .cards-2 .rise}
