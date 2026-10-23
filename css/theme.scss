@@ -1255,15 +1255,29 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
 }
 
 .hero-cta {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
   gap: 0.75rem;
   justify-content: center;
   margin: 2rem 0 0;
 
   // Pandoc puts the run of links in a paragraph of its own; `contents`
-  // drops it from the box tree so the pills are the flex items.
+  // drops it from the box tree so the pills are the grid's items.
   > p { display: contents; }
+}
+// On a phone the two stack, as the step's pair of pills do: one column
+// as wide as the wider control, and both fill it, the download's pill
+// taking what its segment leaves.
+@media (max-width: 599.98px) {
+  .hero-cta {
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    grid-template-columns: max-content;
+
+    > .dl { display: flex; .dl-main { flex: 1; } }
+    > p > .pill { justify-content: center; }
+  }
 }
 
 // The download as one control (_download.html): one accent pill in two
