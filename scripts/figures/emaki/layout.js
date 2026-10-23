@@ -35,6 +35,13 @@ import { REGIONS, aim, circle, draw, element, pen } from "./window.js";
  * the box is WIDE, and marks the one that is lit. Narrower, the names are
  * a grid of tiles under the window and the leaders go.
  *
+ * A finger has no hover, so a tap holds: on a part of the window, its
+ * button, or its name's tile beside the link, the part comes forward and
+ * stays, and a tap on it again, in either place, lets it go; a tap on
+ * another part moves to it, and one on the bare window rests it. The
+ * window turns a hair toward the tap and settles back once the finger
+ * is gone, the part still forward. A mouse arriving takes over.
+ *
  * With `focus`, the same window heads a part's own docs page, about that
  * part alone: no names, the window's box only, and only that part in its
  * color, the rest in the window's gray (`emk-mute`). A panel's page shows
@@ -390,23 +397,49 @@ export function layout({ focus = null, named = false } = {}) {
       }
       return null;
     }
-    const rest = () => { az.t = REST_AZ; kk.t = REST_K; light(null); };
+    /** The window back to rest; and rest, the window back with no part lit. */
+    const settle = () => { az.t = REST_AZ; kk.t = REST_K; B.wake(); };
+    const rest = () => { settle(); light(null); };
+    /** The part a tap holds lit, if any: a finger has no hover, so a tap on a part or its tile pins it, and a tap on it again lets it go. */
+    let pinned = null;
+    const touch = (e) => e.pointerType === "touch";
+    const tap = (id) => { pinned = id && id !== pinned ? id : null; if (pinned) light(pinned); else rest(); };
+    /** The box's point under Hairline's 400 × 320. */
+    const at = (pt) => [vb[0] + (pt[0] / 400) * vb[2], vb[1] + (pt[1] / 320) * vb[3]];
+    /** A mouse, a pen or the tour: the window turns toward it, and what is under it is lit. */
+    const hover = (pt) => {
+      pinned = null;
+      const [x, y] = at(pt);
+      if (!named) aim(az, kk, x, y, vb);
+      const id = under([x, y]);
+      if (id !== on) light(id); else B.wake();
+    };
     if (focus) light(null);
     bag.add(pointer(stage, {
-      move: (pt) => {
-        const x = vb[0] + (pt[0] / 400) * vb[2], y = vb[1] + (pt[1] / 320) * vb[3];
+      // A finger's moves are not a hover, and the tour's ghost waits while a tap holds a part.
+      move: (pt, e) => { if (!touch(e) && !(pinned && e.pointerType === "ghost")) hover(pt); },
+      down: (pt, e) => {
+        if (!touch(e)) return hover(pt);
+        const [x, y] = at(pt);
         if (!named) aim(az, kk, x, y, vb);
-        const id = under([x, y]);
-        if (id !== on) light(id); else B.wake();
+        tap(under([x, y]));
       },
       // Hairline hears a leave a moment late: off the figure onto a name, the name has lit its part by then, and keeps it.
-      leave: () => { if (!Object.values(labels).some((el) => el.matches(":hover, :focus-within"))) rest(); },
+      // A finger gone leaves the part it pinned where it is, and the window settles.
+      leave: () => {
+        if (pinned) settle();
+        else if (!Object.values(labels).some((el) => el.matches(":hover, :focus-within"))) rest();
+      },
     }));
-    // A name lights its part under the pointer and under the keyboard's focus.
+    // A name lights its part under the pointer and under the keyboard's focus. A finger's tap on it, beside
+    // the link, pins the part, and a tap again lets it go; the link itself goes to the part's page.
     for (const id in labels) {
       const el = labels[id];
-      bag.on(el, "pointerenter", () => light(id));
-      bag.on(el, "pointerleave", rest);
+      let by = "mouse";
+      bag.on(el, "pointerdown", (e) => { by = e.pointerType; });
+      bag.on(el, "pointerenter", (e) => { if (!touch(e)) { pinned = null; light(id); } });
+      bag.on(el, "pointerleave", (e) => { if (!touch(e)) rest(); });
+      bag.on(el, "click", (e) => { if (by === "touch" && !e.target.closest("a")) tap(id); });
       bag.on(el, "focusin", () => light(id));
       bag.on(el, "focusout", rest);
     }

@@ -991,17 +991,25 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
   }
   // Lit, under the pointer or by its part in the window (`data-on`), the
   // whole name answers, not its link alone: its words and icon near the
-  // color, and its ground takes a wash of it (below).
+  // color, and its ground takes a wash of it (below). A finger has no
+  // hover, and a touch screen keeps a tapped name hovered until the next
+  // tap, so the pointer's styles are kept to screens that hover: there a
+  // tap pins the part, which lights the name through `data-on`, and a tap
+  // again lets it go (layout.js).
   border-radius: 8px;
+  touch-action: manipulation;
   transition: background-color 160ms var(--ease), border-color 160ms var(--ease);
-  &:hover a, &[data-on] a, &:hover > p::before, &[data-on] > p::before { color: color-mix(in oklab, var(--part) 85%, var(--ink)); }
-  // The name is the link, and says so on its own: underlined in its color
-  // under the pointer, apart from the wash that says its part is lit.
-  a:hover {
-    text-decoration: underline;
-    text-decoration-color: color-mix(in oklab, var(--part) 70%, transparent);
-    text-decoration-thickness: 1.5px;
-    text-underline-offset: 0.22em;
+  &[data-on] a, &[data-on] > p::before { color: color-mix(in oklab, var(--part) 85%, var(--ink)); }
+  @media (hover: hover) {
+    &:hover a, &:hover > p::before { color: color-mix(in oklab, var(--part) 85%, var(--ink)); }
+    // The name is the link, and says so on its own: underlined in its color
+    // under the pointer, apart from the wash that says its part is lit.
+    a:hover {
+      text-decoration: underline;
+      text-decoration-color: color-mix(in oklab, var(--part) 70%, transparent);
+      text-decoration-thickness: 1.5px;
+      text-underline-offset: 0.22em;
+    }
   }
   a:active { color: color-mix(in oklab, var(--part) 45%, var(--ink)); }
 }
@@ -1020,7 +1028,8 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
   transform: translate(-50%, 0);
 
   &[data-top] { transform: translate(-50%, -100%); }
-  &:hover, &[data-on] { background: color-mix(in oklab, var(--part) 12%, transparent); }
+  &[data-on] { background: color-mix(in oklab, var(--part) 12%, transparent); }
+  @media (hover: hover) { &:hover { background: color-mix(in oklab, var(--part) 12%, transparent); } }
   > p { display: grid; grid-template-columns: auto auto; align-items: center; justify-content: center; row-gap: 0.3rem; }
   kbd, .kbd { grid-column: 1 / -1; justify-self: center; }
 }
@@ -1035,9 +1044,15 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
 
   kbd, .kbd { margin-left: auto; }
   // Lit: a deeper wash, and the edge in its color.
-  &:hover, &[data-on] {
+  &[data-on] {
     border-color: color-mix(in oklab, var(--part) 45%, var(--border));
     background: color-mix(in oklab, var(--part) 14%, var(--panel));
+  }
+  @media (hover: hover) {
+    &:hover {
+      border-color: color-mix(in oklab, var(--part) 45%, var(--border));
+      background: color-mix(in oklab, var(--part) 14%, var(--panel));
+    }
   }
 }
 @media (max-width: 479.98px) {
