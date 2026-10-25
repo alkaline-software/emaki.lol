@@ -49,7 +49,7 @@ docs/keys.qmd             the keys in two groups: ⌘⇧ a panel, ⌘ a page or 
 about.qmd                 the handscroll, then the team first (the studio's card, its two makers named and linked in it), the name, why, how, credits as a list, license
 404.qmd
 _hero.html                the handscroll figure, inline SVG
-_download.html            the download as one control: the pill for this computer, a menu for the rest
+_download.html            the download as one control: the pill for this computer, a menu of its system's installers; on Linux the pill is the menu
 _download-step.html       the same, compact, in the first step on the landing page and Get Started
 css/theme.scss            the tokens, both appearances, and every element
 css/dark.scss             the dark appearance's Bootstrap knobs (Sass defaults only)

@@ -1322,6 +1322,19 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
   &:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   .dl-open &::before { transform: rotate(-90deg); }
 }
+// On Linux the pill is the menu (js/page.js): one round pill, its chevron after the word, at the far end where the pill fills a row, and no segment.
+.dl-ask {
+  .dl-more { display: none; }
+  .pill.dl-main { border-radius: 999px; }
+  .dl-main::after {
+    @include glyph(0.9rem);
+    --icon: url("assets/icons/chevron-right.svg");
+    margin-left: auto;
+    transform: rotate(90deg);
+    transition: transform 240ms var(--ease);
+  }
+  &.dl-open .dl-main::after { transform: rotate(-90deg); }
+}
 .dl-menu {
   position: absolute;
   top: calc(100% + 8px);
@@ -1372,6 +1385,25 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
       @include glyph(1rem);
       --icon: url("assets/icons/check.svg");
       color: var(--accent);
+    }
+    &[hidden] { display: none; }
+
+    // The last row, under a hairline: the release page, for another system's installer.
+    &.dl-all {
+      position: relative;
+      margin-top: 9px;
+      &::before { --icon: url("assets/icons/external-link.svg"); }
+      strong { color: var(--muted); font-weight: 400; }
+      &:hover strong { color: var(--ink); }
+      &::after {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: 0.7rem;
+        right: 0.7rem;
+        height: 1px;
+        background: var(--pop-border);
+      }
     }
   }
 }

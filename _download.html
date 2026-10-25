@@ -1,19 +1,18 @@
-<!-- The download, as one control, and beside it the way into the docs: the pill takes the installer for this
-     computer, which js/page.js names from the browser, and the segment at
-     its right opens the other systems. Without the script the pill takes
-     the latest release and the menu is a list of four links. No blank line
-     belongs in this file, and nothing under a div is indented four spaces:
-     Pandoc reads what stands between a div's tags as Markdown, so every
-     line inside is indented two, whatever its depth. -->
+<!-- The download, as one control, and beside it the way into the docs. js/page.js names this computer's system from the browser and keeps that system's installers alone in the menu, with a last row to the release page for another's. On a Mac or a PC the pill takes this computer's installer and the segment at its right opens the menu; on Linux the pill is the menu. Without a system to go by the pill takes the latest release and the menu is a list of the eight installers. No blank line belongs in this file, and nothing under a div is indented four spaces: Pandoc reads what stands between a div's tags as Markdown, so every line inside is indented two, whatever its depth. -->
 <div class="hero-cta">
   <div class="dl" id="dl">
   <a class="pill pill-accent i-download dl-main" id="dl-main" href="https://github.com/alkaline-software/emaki/releases/latest">Download</a>
-  <button class="dl-more" id="dl-more" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="dl-menu" aria-label="Download for another system"></button>
+  <button class="dl-more" id="dl-more" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="dl-menu" aria-label="More downloads"></button>
   <div class="dl-menu" id="dl-menu" role="menu" aria-label="Downloads">
   <a role="menuitem" data-os="mac" data-chip="arm64" data-name="macOS" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-arm64.dmg"><strong>macOS</strong> <span>Apple silicon</span></a>
   <a role="menuitem" data-os="mac" data-chip="x64" data-name="macOS" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-x64.dmg"><strong>macOS</strong> <span>Intel</span></a>
-  <a role="menuitem" data-os="windows" data-name="Windows" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-windows-x64-setup.exe"><strong>Windows</strong> <span>x64 installer</span></a>
-  <a role="menuitem" data-os="linux" data-name="Linux" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-x64.AppImage"><strong>Linux</strong> <span>x64 AppImage</span></a>
+  <a role="menuitem" data-os="windows" data-chip="x64" data-name="Windows" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-windows-x64-setup.exe"><strong>Windows</strong> <span>x64</span></a>
+  <a role="menuitem" data-os="windows" data-chip="arm64" data-name="Windows" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-windows-arm64-setup.exe"><strong>Windows</strong> <span>ARM</span></a>
+  <a role="menuitem" data-os="linux" data-chip="x64" data-name="Linux" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-x64.deb"><strong>Linux</strong> <span>x64 .deb</span></a>
+  <a role="menuitem" data-os="linux" data-chip="arm64" data-name="Linux" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-arm64.deb"><strong>Linux</strong> <span>ARM .deb</span></a>
+  <a role="menuitem" data-os="linux" data-kind="appimage" data-chip="x64" data-name="Linux" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-x64.AppImage"><strong>Linux</strong> <span>x64 AppImage</span></a>
+  <a role="menuitem" data-os="linux" data-kind="appimage" data-chip="arm64" data-name="Linux" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-arm64.AppImage"><strong>Linux</strong> <span>ARM AppImage</span></a>
+  <a role="menuitem" class="dl-all" hidden href="https://github.com/alkaline-software/emaki/releases/latest"><strong>Other systems</strong></a>
   </div>
   </div>
   <a class="pill i-play" href="docs/">Get Started</a>

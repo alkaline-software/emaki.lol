@@ -24,28 +24,36 @@
     return null;
   }
 
+  // A PC's chip, from what the browser says of it. Chrome and Edge say "x64" everywhere and tell the truth only when asked (`architecture`, in `chipAsked`); Firefox cannot be asked. Null when it cannot be read: Windows then takes the x64 build, which Windows on ARM runs too.
+  function pcChip() {
+    var said = navigator.userAgent + " " + (navigator.platform || "");
+    if (/aarch64|arm64|armv8/i.test(said)) return "arm64";
+    return null;
+  }
+  function chipAsked() {
+    var data = navigator.userAgentData;
+    if (!data || !data.getHighEntropyValues) return Promise.resolve(null);
+    return data.getHighEntropyValues(["architecture"]).then(function (v) {
+      return v.architecture === "arm" ? "arm64" : v.architecture === "x86" ? "x64" : null;
+    }, function () { return null; });
+  }
+
   function here() {
     var ua = navigator.userAgent;
     var platform = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || "";
     if (/Mac/i.test(platform) && !/iPhone|iPad/i.test(ua)) return { os: "mac", chip: macChip() };
-    if (/Win/i.test(platform)) return { os: "windows", chip: null };
+    if (/Win/i.test(platform)) return { os: "windows", chip: pcChip() };
     if (/Linux/i.test(platform) && !/Android/i.test(ua)) return { os: "linux", chip: null };
     return null;
   }
 
-  // The links for a system among a list: both Mac links when the chip is
-  // not known, the one otherwise.
+  // The links for a system among a list: every chip's when the chip is not known, the one's otherwise.
   function links(list, h) {
     var sel = '[data-os="' + h.os + '"]' + (h.chip ? '[data-chip="' + h.chip + '"]' : "");
     return list.querySelectorAll(sel);
   }
 
-  // The downloads, the hero's and the steps' alike: the
-  // pill takes this computer's installer and says which (the short one
-  // only Download), the menu marks it, and the segment at the pill's
-  // right opens and closes the menu. A Mac whose chip cannot be read gets
-  // the Apple silicon build, which most Macs now are, and the menu offers
-  // the other.
+  // The downloads, the hero's and the steps' alike. The menu keeps this computer's system alone, its installers and a last row to the release page for another system's. On a Mac or a PC the pill takes this computer's installer and says which system (the short one only Download), the menu marks it, and the segment at the pill's right opens the menu. A Mac whose chip cannot be read gets the Apple silicon build, which most Macs now are, and the menu offers the Intel one.
   function download() {
     var boxes = document.querySelectorAll(".dl");
     for (var i = 0; i < boxes.length; i++) control(boxes[i]);
@@ -55,19 +63,56 @@
     var more = box.querySelector(".dl-more");
     var menu = box.querySelector(".dl-menu");
     var h = here();
+    // On Linux the pill is the menu, and the person picks: the browser often cannot tell x64 from ARM, and a .deb or an AppImage is theirs to choose by their distribution.
+    var ask = !!h && h.os === "linux";
+    function take(h) {
+      var pick = links(menu, h)[0];
+      if (!pick) return;
+      var was = menu.querySelector(".dl-here");
+      if (was) was.classList.remove("dl-here");
+      main.href = pick.href;
+      pick.classList.add("dl-here");
+    }
     if (h) {
-      var found = links(menu, h);
-      var pick = found[0];
-      if (pick) {
-        main.href = pick.href;
-        if (!box.hasAttribute("data-short")) main.textContent = "Download for " + pick.getAttribute("data-name");
-        pick.classList.add("dl-here");
+      var items = menu.querySelectorAll("[data-os]"), name = null;
+      for (var i = 0; i < items.length; i++) {
+        var mine = items[i].getAttribute("data-os") === h.os;
+        items[i].hidden = !mine;
+        if (mine && !name) name = items[i].getAttribute("data-name");
+      }
+      menu.querySelector(".dl-all").hidden = false;
+      if (name && !box.hasAttribute("data-short")) main.textContent = "Download for " + name;
+      if (ask) {
+        box.classList.add("dl-ask");
+        main.setAttribute("role", "button");
+        main.setAttribute("aria-haspopup", "menu");
+        main.setAttribute("aria-expanded", "false");
+        main.setAttribute("aria-controls", menu.id);
+      } else {
+        take(h);
+        if (h.os === "windows" && !h.chip) {
+          chipAsked().then(function (chip) {
+            if (chip) take({ os: h.os, chip: chip });
+          });
+        }
       }
     }
     function setOpen(open) {
       box.classList.toggle("dl-open", open);
-      more.setAttribute("aria-expanded", String(open));
+      (ask ? main : more).setAttribute("aria-expanded", String(open));
     }
+    main.addEventListener("click", function (e) {
+      if (!ask) return;
+      e.preventDefault();
+      e.stopPropagation();
+      setOpen(!box.classList.contains("dl-open"));
+    });
+    // A link answers Enter by itself; as a button the pill answers Space too.
+    main.addEventListener("keydown", function (e) {
+      if (!ask || e.key !== " ") return;
+      e.preventDefault();
+      setOpen(!box.classList.contains("dl-open"));
+    });
     more.addEventListener("click", function (e) {
       e.stopPropagation();
       setOpen(!box.classList.contains("dl-open"));

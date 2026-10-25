@@ -1,17 +1,16 @@
-<!-- The download in Get started's first step: the hero's control
-     (_download.html) made compact, the pill saying only Download, as the
-     card is narrow, and taking this computer's installer all the same;
-     the segment at its right opens the other systems. js/page.js runs
-     every `.dl` alike; `data-short` keeps the word short. No blank line
-     belongs in this file, and nothing under a div is indented four
-     spaces. -->
+<!-- The download in Get started's first step: the hero's control (_download.html) made compact, the pill saying only Download, as the card is narrow, and working as the hero's does: on a Mac or a PC it takes this computer's installer and the segment at its right opens this system's others; on Linux the pill is the menu. js/page.js runs every `.dl` alike; `data-short` keeps the word short. No blank line belongs in this file, and nothing under a div is indented four spaces. -->
 <div class="dl dl-step" data-short>
   <a class="pill pill-accent i-download dl-main" href="https://github.com/alkaline-software/emaki/releases/latest">Download</a>
-  <button class="dl-more" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="dl-step-menu" aria-label="Download for another system"></button>
+  <button class="dl-more" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="dl-step-menu" aria-label="More downloads"></button>
   <div class="dl-menu" id="dl-step-menu" role="menu" aria-label="Downloads">
   <a role="menuitem" data-os="mac" data-chip="arm64" data-name="macOS" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-arm64.dmg"><strong>macOS</strong> <span>Apple silicon</span></a>
   <a role="menuitem" data-os="mac" data-chip="x64" data-name="macOS" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-x64.dmg"><strong>macOS</strong> <span>Intel</span></a>
-  <a role="menuitem" data-os="windows" data-name="Windows" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-windows-x64-setup.exe"><strong>Windows</strong> <span>x64 installer</span></a>
-  <a role="menuitem" data-os="linux" data-name="Linux" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-x64.AppImage"><strong>Linux</strong> <span>x64 AppImage</span></a>
+  <a role="menuitem" data-os="windows" data-chip="x64" data-name="Windows" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-windows-x64-setup.exe"><strong>Windows</strong> <span>x64</span></a>
+  <a role="menuitem" data-os="windows" data-chip="arm64" data-name="Windows" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-windows-arm64-setup.exe"><strong>Windows</strong> <span>ARM</span></a>
+  <a role="menuitem" data-os="linux" data-chip="x64" data-name="Linux" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-x64.deb"><strong>Linux</strong> <span>x64 .deb</span></a>
+  <a role="menuitem" data-os="linux" data-chip="arm64" data-name="Linux" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-arm64.deb"><strong>Linux</strong> <span>ARM .deb</span></a>
+  <a role="menuitem" data-os="linux" data-kind="appimage" data-chip="x64" data-name="Linux" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-x64.AppImage"><strong>Linux</strong> <span>x64 AppImage</span></a>
+  <a role="menuitem" data-os="linux" data-kind="appimage" data-chip="arm64" data-name="Linux" href="https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-arm64.AppImage"><strong>Linux</strong> <span>ARM AppImage</span></a>
+  <a role="menuitem" class="dl-all" hidden href="https://github.com/alkaline-software/emaki/releases/latest"><strong>Other systems</strong></a>
   </div>
 </div>
