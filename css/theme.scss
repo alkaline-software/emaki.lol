@@ -370,6 +370,7 @@ main h2 :is(kbd, .kbd) { vertical-align: 0.2em; }
 // (the appearance, the source, the search). A glyph in a tile is 16.
 $tile: 30px;
 $tile-glyph: 16px;
+$nav-h: 60px;
 
 // The frame, graphite with the accent's hue in both appearances, and on it four things, as
 // Kaku's has them: the name in the wordmark face and the accent's dark
@@ -377,8 +378,15 @@ $tile-glyph: 16px;
 .navbar {
   background-color: var(--frame) !important;
   border-bottom: none;
-  padding-top: 0.45rem;
-  padding-bottom: 0.45rem;
+  // One height at every width, in pixels: the root steps from 17 to 16 under 576 (`$font-size-root`), and a bar padded in rem stepped with it. The brand's box is the row's height, so the bar is the same closed or open, the links folding out under it.
+  padding-top: 0;
+  padding-bottom: 0;
+  .navbar-brand-container {
+    display: flex;
+    align-items: center;
+    height: $nav-h;
+  }
+  .navbar-brand { padding-top: 0; padding-bottom: 0; }
 
   .navbar-title, .navbar-nav .nav-link, .navbar-brand, .aa-DetachedSearchButton, .bi {
     color: var(--paper) !important;
