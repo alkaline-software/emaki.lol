@@ -6,7 +6,7 @@ The agentic development environment.
 
 [Download](https://github.com/alkaline-software/emaki/releases/latest)
 
-[**macOS** Apple silicon](https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-arm64.dmg) [**macOS** Intel](https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-x64.dmg) [**Windows** x64 installer](https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-windows-x64-setup.exe) [**Linux** x64 AppImage](https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-x64.AppImage)
+[**macOS** Apple silicon](https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-arm64.dmg) [**macOS** Intel](https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-x64.dmg) [**Windows** x64](https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-windows-x64-setup.exe) [**Windows** ARM](https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-windows-arm64-setup.exe) [**Linux** x64 .deb](https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-x64.deb) [**Linux** ARM .deb](https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-arm64.deb) [**Linux** x64 AppImage](https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-x64.AppImage) [**Linux** ARM AppImage](https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-arm64.AppImage) [**Other systems**](https://github.com/alkaline-software/emaki/releases/latest)
 
 [Get Started](docs/)
 
@@ -32,7 +32,7 @@ For macOS, Windows and Linux.
 
 [Download](https://github.com/alkaline-software/emaki/releases/latest)
 
-[**macOS** Apple silicon](https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-arm64.dmg) [**macOS** Intel](https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-x64.dmg) [**Windows** x64 installer](https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-windows-x64-setup.exe) [**Linux** x64 AppImage](https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-x64.AppImage)
+[**macOS** Apple silicon](https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-arm64.dmg) [**macOS** Intel](https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-mac-x64.dmg) [**Windows** x64](https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-windows-x64-setup.exe) [**Windows** ARM](https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-windows-arm64-setup.exe) [**Linux** x64 .deb](https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-x64.deb) [**Linux** ARM .deb](https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-arm64.deb) [**Linux** x64 AppImage](https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-x64.AppImage) [**Linux** ARM AppImage](https://github.com/alkaline-software/emaki/releases/latest/download/Emaki-linux-arm64.AppImage) [**Other systems**](https://github.com/alkaline-software/emaki/releases/latest)
 
 ### Install the agents
 

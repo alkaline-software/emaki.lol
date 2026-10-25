@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Emaki 絵巻",
     "section": "",
-    "text": "絵 巻               \n\n\n\n\nThe agentic development environment.\n\n\n\n\nDownload \n\nmacOS Apple silicon macOS Intel Windows x64 installer Linux x64 AppImage\n\n\nGet Started"
+    "text": "絵 巻               \n\n\n\n\nThe agentic development environment.\n\n\n\n\nDownload \n\nmacOS Apple silicon macOS Intel Windows x64 Windows ARM Linux x64 .deb Linux ARM .deb Linux x64 AppImage Linux ARM AppImage Other systems\n\n\nGet Started"
   },
   {
     "objectID": "index.html#from-the-ide-to-the-ade",
@@ -18,7 +18,7 @@
     "href": "index.html#get-started",
     "title": "Emaki 絵巻",
     "section": "Get started",
-    "text": "Get started\nDownload the app and install an agent to get started. You can also install Git and the GitHub CLI for version control.\n\n\nDownload Emaki\nFor macOS, Windows and Linux.\n\n\nDownload \n\nmacOS Apple silicon macOS Intel Windows x64 installer Linux x64 AppImage\n\n\n\n\nInstall the agents\nEmaki works with Claude Code and Codex.\n\nClaude Code Codex\n\n\n\nGit (optional)\nInstall Git and the GitHub CLI to commit, branch and push from Emaki.\n\nGit GitHub"
+    "text": "Get started\nDownload the app and install an agent to get started. You can also install Git and the GitHub CLI for version control.\n\n\nDownload Emaki\nFor macOS, Windows and Linux.\n\n\nDownload \n\nmacOS Apple silicon macOS Intel Windows x64 Windows ARM Linux x64 .deb Linux ARM .deb Linux x64 AppImage Linux ARM AppImage Other systems\n\n\n\n\nInstall the agents\nEmaki works with Claude Code and Codex.\n\nClaude Code Codex\n\n\n\nGit (optional)\nInstall Git and the GitHub CLI to commit, branch and push from Emaki.\n\nGit GitHub"
   },
   {
     "objectID": "index.html#main-system",
@@ -139,7 +139,7 @@
     "href": "docs/index.html",
     "title": "Get Started",
     "section": "",
-    "text": "For macOS, Windows and Linux.\n\n\nDownload \n\nmacOS Apple silicon macOS Intel Windows x64 installer Linux x64 AppImage\n\n\n\n\n\nEmaki works with Claude Code and Codex.\n\nClaude Code Codex\n\n\n\n\nInstall Git and the GitHub CLI to commit, branch and push from Emaki.\n\nGit GitHub\n\n\n\nThe Agents page (⌘E) checks whether your agents and Git are installed and walks you through installing them.",
+    "text": "For macOS, Windows and Linux.\n\n\nDownload \n\nmacOS Apple silicon macOS Intel Windows x64 Windows ARM Linux x64 .deb Linux ARM .deb Linux x64 AppImage Linux ARM AppImage Other systems\n\n\n\n\n\nEmaki works with Claude Code and Codex.\n\nClaude Code Codex\n\n\n\n\nInstall Git and the GitHub CLI to commit, branch and push from Emaki.\n\nGit GitHub\n\n\n\nThe Agents page (⌘E) checks whether your agents and Git are installed and walks you through installing them.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Get Started"
@@ -150,7 +150,7 @@
     "href": "docs/index.html#install",
     "title": "Get Started",
     "section": "",
-    "text": "For macOS, Windows and Linux.\n\n\nDownload \n\nmacOS Apple silicon macOS Intel Windows x64 installer Linux x64 AppImage\n\n\n\n\n\nEmaki works with Claude Code and Codex.\n\nClaude Code Codex\n\n\n\n\nInstall Git and the GitHub CLI to commit, branch and push from Emaki.\n\nGit GitHub\n\n\n\nThe Agents page (⌘E) checks whether your agents and Git are installed and walks you through installing them.",
+    "text": "For macOS, Windows and Linux.\n\n\nDownload \n\nmacOS Apple silicon macOS Intel Windows x64 Windows ARM Linux x64 .deb Linux ARM .deb Linux x64 AppImage Linux ARM AppImage Other systems\n\n\n\n\n\nEmaki works with Claude Code and Codex.\n\nClaude Code Codex\n\n\n\n\nInstall Git and the GitHub CLI to commit, branch and push from Emaki.\n\nGit GitHub\n\n\n\nThe Agents page (⌘E) checks whether your agents and Git are installed and walks you through installing them.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Get Started"
@@ -408,7 +408,7 @@
     "href": "docs/terminals.html",
     "title": "Terminals",
     "section": "",
-    "text": "Opening a terminal and cd-ing to the project is easy, but doing it again and again is a pain. Emaki solves it for you! The Shell Terminal Panel gives you terminal tabs that open in the project’s folder. Use the + button or ⌘T to open a new tab, and ⌘W to close one. Inside the terminal, you can use your mouse, scrolling, and keyboard shortcuts.\nIts look is inspired by Kaku, in the window’s own colors and font.",
+    "text": "Opening a terminal and cd-ing to the project is easy, but doing it again and again is a pain. Emaki solves it for you! The Shell Terminal Panel gives you terminal tabs that open in the project’s folder. Use the + button or ⌘T to open a new tab, and ⌘W to close one. Inside the terminal, you can use your mouse, scrolling, and keyboard shortcuts. On Windows and Linux the keys are your system terminal’s: Ctrl with a letter goes to the shell, and the panel’s own keys add Shift (Ctrl⇧T, Ctrl⇧W, Ctrl⇧C, Ctrl⇧V).\nIts look is inspired by Kaku, in the window’s own colors and font.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Panels",
@@ -420,7 +420,7 @@
     "href": "docs/terminals.html#shell",
     "title": "Terminals",
     "section": "",
-    "text": "Opening a terminal and cd-ing to the project is easy, but doing it again and again is a pain. Emaki solves it for you! The Shell Terminal Panel gives you terminal tabs that open in the project’s folder. Use the + button or ⌘T to open a new tab, and ⌘W to close one. Inside the terminal, you can use your mouse, scrolling, and keyboard shortcuts.\nIts look is inspired by Kaku, in the window’s own colors and font.",
+    "text": "Opening a terminal and cd-ing to the project is easy, but doing it again and again is a pain. Emaki solves it for you! The Shell Terminal Panel gives you terminal tabs that open in the project’s folder. Use the + button or ⌘T to open a new tab, and ⌘W to close one. Inside the terminal, you can use your mouse, scrolling, and keyboard shortcuts. On Windows and Linux the keys are your system terminal’s: Ctrl with a letter goes to the shell, and the panel’s own keys add Shift (Ctrl⇧T, Ctrl⇧W, Ctrl⇧C, Ctrl⇧V).\nIts look is inspired by Kaku, in the window’s own colors and font.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Panels",
