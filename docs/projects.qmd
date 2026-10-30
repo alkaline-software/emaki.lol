@@ -28,7 +28,7 @@ All Sessions ([⌘L]{.kbd}) lists every project and session with the day it was 
 
 Claude Code deletes its transcripts after 30 days. Emaki copies each one into `~/.emaki/archive`. Codex never deletes sessions by age, so Emaki reads them in place.
 
-Archived sessions cannot be interacted. You can actively archive/unarchive your sessions. When you unarchive a Claude Code session, it will be treated as if it were created by the time you unarchive it.
+An archived session is kept but not continued until you unarchive it. You can archive and unarchive sessions yourself. An unarchived Claude Code session goes back to Claude Code dated now, so its thirty days start again.
 
 ## Tabs {.i-copy}
 

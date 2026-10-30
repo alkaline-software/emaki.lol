@@ -156,7 +156,7 @@ Opening a terminal and `cd`-ing to the correct location is trivial, but repeated
 ::: {.band .rise}
 ## Margins
 
-Two more things live in the chat's margins, each behind a seam, a line down the margin with a knob halfway: the outline, a drawer at the chat's left, and your agent's own CLI, which takes the chat's place from the right.
+On each side of the agent chat, you can hover and toggle 2 more panels. The left margin gives you the outline panel with quick jumping and summarizing; the right margin lets you switch between the rendered UI and the original CLI.
 :::
 
 ::: {.cards .cards-2 .rise}

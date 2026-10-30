@@ -9,7 +9,7 @@ subtitle: "A drawer at the chat's left: every round, labeled by what came of it.
 :::
 :::
 
-Going back through a long session is a pain. The Outline lists every round of the chat under its day, each with its time and a short label of what came of it, written by the lightest model your session's agent has. Click an entry to scroll back to its round.
+Going back through a long session is a pain. The Outline lists every round of the chat under its day, each with its time and a short label of what came of it, written by a small model of your agent's, the one [Settings, Model calls](settings.qmd#model-calls) names for it. Click an entry to scroll back to its round.
 
 ## The drawer {.i-list-bullets}
 
@@ -17,6 +17,6 @@ The Outline lives in the chat's left margin. Move the pointer there and a seam a
 
 ## Summaries {.i-sparkles}
 
-**Summarize session**, under the entries, writes a summary of the session in bullets and heads the entries with sections. **Update** brings it up to date from the new rounds alone, and **Hide** puts it away.
+**Summarize session**, under the entries, writes a summary of the session in bullets and heads the entries with sections. **Update** brings it up to date from the new rounds alone, and **Hide** puts it away. The Outline summaries switch in [Settings, Model calls](settings.qmd#model-calls) turns the labels and summaries off while keeping the Outline.
 
 Each label and summary is a call to a small model of your agent's, on your account. [Settings](settings.qmd#model-calls) turns them off, which keeps the Outline without them, and chooses the model for each agent. Settings, Conversation, turns the Outline itself off.

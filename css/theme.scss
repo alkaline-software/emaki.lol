@@ -1775,7 +1775,7 @@ body { overflow-x: clip; }
   p { margin: 0; }
 }
 
-// The kinds of file the pane opens (Files Panel): a tile a kind, five to
+// The kinds of file the pane opens (Files Panel): a tile a kind, six to
 // a row, standing upright, the icon the tree gives that kind (the app's
 // Catppuccin files, in assets/catppuccin/) over its name. Each kind takes
 // a hue of the drawings' set by what it holds: tables sage, written words
@@ -1783,8 +1783,8 @@ body { overflow-x: clip; }
 // Under 600 wide, two to a row, each a short tile, its icon beside its
 // name.
 $types: (
-  code: (xml, mauve), markdown: (markdown, slate), csv: (csv, sage),
-  parquet: (database, sage), word: (ms-word, slate), excel: (ms-excel, sage),
+  code: (xml, mauve), markdown: (markdown, slate), latex: (latex, slate),
+  typst: (typst, slate), csv: (csv, sage), parquet: (database, sage), word: (ms-word, slate), excel: (ms-excel, sage),
   powerpoint: (ms-powerpoint, ochre), pdf: (pdf, rose), html: (html, ochre),
   pictures: (image, mauve),
 );
@@ -1799,7 +1799,7 @@ $types: (
   margin: 1rem 0 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 0.75rem;
 }
 // The grid's gap is the air between tiles: the words' gap between a

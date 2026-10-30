@@ -15,7 +15,7 @@ The Files Panel opens from the button at the left end of the strip over the chat
 
 ## File preview & editing {.i-file-text}
 
-Click a file to open it in a pane between the tree and the chat; click it again to close it. The enlarge button gives the pane the chat's room. You can use common keyboard shortcuts to undo, redo, save, and close.
+Click a file to open it in a pane between the tree and the chat; click it again to close it. Markdown, Quarto, LaTeX and Typst documents open rendered, and [⌘⇧V]{.kbd} switches a file between its rendered and raw views. The enlarge button gives the pane the chat's room. You can use common keyboard shortcuts to undo, redo, save, and close.
 
 Emaki supports format on save for common languages. It is off by default and can be turned on in [Settings](settings.qmd): tick all the languages, or only the ones you want.
 
@@ -24,6 +24,8 @@ Supported file types:
 ::: {.types}
 - [Code]{.t-code}
 - [Markdown]{.t-markdown}
+- [LaTeX]{.t-latex}
+- [Typst]{.t-typst}
 - [CSV and TSV]{.t-csv}
 - [Parquet]{.t-parquet}
 - [Word]{.t-word}
