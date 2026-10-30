@@ -12,11 +12,13 @@ subtitle: "The sidebar lists your sessions grouped under their projects."
 
 All sessions in Emaki are project-based, all listed in the sidebar. You can pin your selected projects and show or hide sessions. To start a new session, you can either click the [+]{.kbd} button on an existing project or press [⌘T]{.kbd} in the project you are in. With [⌘N]{.kbd}, you can start one anywhere (the same as going to your landing page).
 
+Put away ([⌘⇧B]{.kbd}), the sidebar folds to a rail of icons: search, New Session, All Sessions, Agents, and Projects, which opens your projects beside the rail until you choose one.
+
 ## Sessions {.i-scroll}
 
 ### In the sidebar
 
-Sessions are managed under their projects. A session's leading logo tells you which agent it belongs to and lights up while the agent runs. A dot shows where the session stands, and a bar at the left marks one that is open in a tab. Claude Code and Codex sessions sit side by side, each read from the agent's own files.
+Sessions are managed under their projects. A session's leading logo tells you which agent it belongs to and lights up while the agent runs. A dot shows where the session stands: orange while a question waits for you, blue while the agent works or something it started still runs, green for half an hour after it finishes. A bar at the left marks a session that is open in a tab. Claude Code and Codex sessions sit side by side, each read from the agent's own files.
 
 ### All Sessions
 

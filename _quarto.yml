@@ -72,11 +72,11 @@ website:
     style: floating
     collapse-level: 2
     contents:
-      # Four groups with a line between: the way in; Main System, the two
-      # things always there, the sidebar and the chat; Panels, the
-      # four of them; and the rest, a size down. A section is a group's
-      # label and nothing else: the sheet hides its toggle and keeps it
-      # open.
+      # Five groups with a line between: the way in; Main System, the two
+      # things always there, the sidebar and the chat; Panels, the two at
+      # the chat's sides; Margins, the two in the chat's margins; and the
+      # rest, a size down. A section is a group's label and nothing else:
+      # the sheet hides its toggle and keeps it open.
       - text: "Get Started"
         href: docs/index.qmd
       - text: "---"
@@ -91,10 +91,15 @@ website:
         contents:
           - text: "Files"
             href: docs/files.qmd
+          - text: "Terminal"
+            href: docs/terminal.qmd
+      - text: "---"
+      - section: "Margins"
+        contents:
           - text: "Outline"
             href: docs/outline.qmd
-          - text: "Terminals"
-            href: docs/terminals.qmd
+          - text: "Agent CLI"
+            href: docs/agent-cli.qmd
       - text: "---"
       - text: "Settings"
         href: docs/settings.qmd

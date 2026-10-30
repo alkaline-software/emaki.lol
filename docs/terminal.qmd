@@ -1,0 +1,18 @@
+---
+title: "Terminal Panel [⌘⇧S]{.kbd}"
+pagetitle: "Terminal"
+subtitle: "A shell that opens in the project's folder, in tabs."
+# The panel was Shell, then a section of Terminals; both addresses come here.
+aliases:
+  - shell.html
+  - terminals.html
+---
+
+::: {.layout .layout-page}
+::: {.fig data-figure="layout-shell" aria-label="Emaki's window with the Terminal Panel shown in color at the chat's right: its tabs, prompts and output. The rest is gray. The panel stands forward under the pointer, and its button in the chrome puts it away."}
+:::
+:::
+
+Opening a terminal and `cd`-ing to the project is easy, but doing it again and again is a pain. Emaki solves it for you! The Terminal Panel gives you terminal tabs that open in the project's folder, from the button at the right end of the strip over the chat. Use the **+** button or [⌘T]{.kbd} to open a new tab, and [⌘W]{.kbd} to close one. Inside the terminal, you can use your mouse, scrolling, and keyboard shortcuts. On Windows and Linux the keys are your system terminal's: Ctrl with a letter goes to the shell, and the panel's own keys add Shift ([Ctrl⇧T]{.kbd}, [Ctrl⇧W]{.kbd}, [Ctrl⇧C]{.kbd}, [Ctrl⇧V]{.kbd}).
+
+Its look is inspired by [Kaku](https://kaku.fun), in the window's own colors and font.

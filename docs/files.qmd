@@ -11,7 +11,7 @@ subtitle: "The file tree, file preview and editing, and git."
 
 ## File tree {.i-tree-view}
 
-When you open the Files Panel, the file tree is shown with its root folder expanded. Folders and files are drawn with [Catppuccin's file icons](https://catppuccin.com). If the project is a git repository, its changes are shown on the folders and files. The file tree supports mouse dragging and common keyboard shortcuts.
+The Files Panel opens from the button at the left end of the strip over the chat, and stays open or closed across launches. The file tree is shown with its root folder expanded. Folders and files are drawn with [Catppuccin's file icons](https://catppuccin.com). If the project is a git repository, its changes are shown on the folders and files. The file tree supports mouse dragging and common keyboard shortcuts.
 
 ## File preview & editing {.i-file-text}
 
@@ -36,6 +36,6 @@ Supported file types:
 
 ## Git {.i-git-branch}
 
-If the project is a git repository, the git buttons appear in the Files Panel's header. Click the branch name to switch branches or create a new one ([⌘⇧N]{.kbd}). You can also fetch, pull, and publish from there.
+If the project is a git repository, the git buttons appear in the Files Panel's header. Click the branch name to switch branches or create a new one ([⌘⇧N]{.kbd}). You can also fetch, pull, and push from there.
 
 The **Changes** pill ([⌘⇧G]{.kbd}) opens the Changes sheet. There you can review your changes, write a commit message, commit ([⌘↩]{.kbd}), and push ([⌘P]{.kbd}). The sheet's **History** side lists your past commits.

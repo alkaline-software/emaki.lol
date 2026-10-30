@@ -162,7 +162,7 @@ $icons: download scroll github archive search book-open inbox terminal
   external-link arrow-right sparkles history info refresh hard-drive
   file-text box eye circle-check palette typography list-numbers sun moon copy
   chevron-right app-window play folder at gauge square-terminal claude
-  a-large-small;
+  a-large-small list-bullets layout-dashboard;
 
 @each $i in $icons {
   .i-#{$i} { --icon: url("assets/icons/#{$i}.svg"); }
@@ -323,10 +323,8 @@ blockquote {
 }
 
 // A panel's key stands beside its name, a key's size in the words' scale
-// rather than the title's, on the name's middle: in the title, in the bar
-// that carries the title below 992 wide, and in a section's head where a
-// page holds two panels (Terminals). The table of contents names the
-// section alone.
+// rather than the title's, on the name's middle: in the title, and in the
+// bar that carries the title below 992 wide.
 :is(#title-block-header .title, .quarto-secondary-nav-title, main h2) :is(kbd, .kbd) {
   font-size: 1rem;
   height: 1.75em;
@@ -857,18 +855,30 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
   .emk-tilewash { fill: color-mix(in oklab, var(--accent) 9%, transparent); stroke: none; }
   .emk-text.emk-row { fill: var(--ink); }
   .emk-text.emk-aa-sans { font-family: var(--font-ui); font-weight: 400; fill: var(--ink); }
-  .emk-codex { stroke: var(--codex); }
   .dot.emk-avatar { fill: color-mix(in oklab, var(--accent) 35%, var(--hl-plate)); stroke: none; }
   .emk-ctl { transition: opacity 200ms var(--ease); }
   .emk-off { opacity: 0.4; }
   .emk-hov :is(.emk-track, .emk-field) { fill: color-mix(in oklab, var(--ink) 14%, transparent); }
   .emk-hov :is(.emk-btnline, .emk-boxline, .emk-tileline) { stroke: var(--hl-edge); }
+  // Shortcuts: a key on its cap, in the chrome's face as the page's own caps are, and the field a command
+  // waits in for new keys, in the accent.
+  .emk-cap { fill: var(--panel-2); stroke: var(--border-2); }
+  .emk-text.emk-cap-t { font-family: var(--font-ui); font-weight: 500; fill: var(--ink); }
+  .emk-wait { fill: color-mix(in oklab, var(--accent) 8%, transparent); stroke: var(--accent); }
+  .emk-text.emk-wait-t { fill: var(--accent); }
+  // Panels: the app's picture of the window, on the page's ground, its two side panels' grounds, the
+  // conversation's bars, and the seams' knobs on the page's ground so the line does not run through them.
+  .emk-pic { fill: var(--hl-plate); stroke: var(--hl-lo); }
+  .emk-pic-side { fill: color-mix(in oklab, var(--ink) 4%, var(--hl-plate)); stroke: none; }
+  .emk-pic-term { fill: color-mix(in oklab, var(--ink) 9%, var(--hl-plate)); stroke: none; }
+  .emk-bar { fill: color-mix(in oklab, var(--muted) 30%, transparent); stroke: none; }
+  .emk-knob { fill: var(--hl-plate); }
 }
 
 /* ---- The layout ---- */
 
 // Get Started, Layout (scripts/figures/emaki/layout.js): Emaki's window on
-// Hairline with the six parts named around it, the four panels over it,
+// Hairline with the six parts named around it, the four that come and go over it,
 // their leaders to their buttons, and the main system's two under it.
 // Every part is in its own color, its region's frame and wash, its leader,
 // its button in the chrome and its name: the main system's two the
@@ -920,8 +930,10 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
 .fig svg {
   .emk-on .nf:not(.hi):not(.lo):not(.dash):not(.emk-lead) { stroke: var(--hl-edge); }
   .emk-guide { stroke: color-mix(in oklab, var(--part) 60%, transparent); }
-  .emk-btn { transition: fill 160ms var(--ease); }
-  .emk-on .emk-btn { fill: color-mix(in oklab, var(--part) 35%, var(--hl-plate)); }
+  // A button or a seam's knob is a plate: filled with the ground, so it hides what it rides over (a seam's knob
+  // sits on the edge of the drawer or the terminal while that shows), and tinted while its part shows.
+  .emk-btn { fill: var(--hl-plate); transition: fill 160ms var(--ease); }
+  .emk-on .emk-btn, .emk-btn.emk-in { fill: color-mix(in oklab, var(--part, var(--hairline-hi)) 35%, var(--hl-plate)); }
   .emk-lead { stroke: color-mix(in oklab, var(--part) 50%, transparent); transition: stroke 160ms var(--ease); }
   .emk-on .emk-lead { stroke: var(--part); }
   .emk-lead-dot { fill: var(--part); }
@@ -960,7 +972,14 @@ pre, pre code, pre code.sourceCode { color: var(--ink-plain); }
   .emk-send { fill: var(--hl-hi); stroke: none; }
   .emk-plate { fill: color-mix(in oklab, var(--part) 10%, var(--hl-plate)); stroke: color-mix(in oklab, var(--part) 50%, transparent); }
   .emk-acc { stroke: var(--accent); }
-  .emk-claude { stroke: var(--claude); }
+  // The agents' marks, the app's own icons, filled in each agent's color; faint on the window's copy, gray in a muted part.
+  .emk-mark { stroke: none; }
+  // One of the app's stroked icons drawn as a mark: its stroke at the lines' weight whatever its size, its ends and corners round as Tabler draws them.
+  .emk-icon { fill: none; stroke-width: 1.2px; vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round; }
+  .emk-claude { fill: var(--claude); }
+  .emk-codex { fill: var(--codex); }
+  .emk-mark.lo { fill: var(--hl-lo); }
+  .emk-mute .emk-mark { fill: var(--hl-mid); }
   .emk-fill-accent { fill: var(--accent); stroke: none; }
   .emk-fill-mauve { fill: var(--sk-mauve); }
   .emk-fill-rose { fill: var(--sk-rose); }

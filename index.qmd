@@ -44,7 +44,7 @@ IDEs are made for hand crafting, with numerous panels and a steep learning curve
 <svg class="shift-arrow" viewBox="0 0 24 56" aria-hidden="true"><path d="M12 4 V50 M3 40 l9 10 l9 -10"/></svg>
 ```
 
-::: {.fig .shift-pane .shift-ade data-figure="shift-ade" aria-label="Emaki's window with its panes named: the sidebar with its sessions under their projects, and the agent chat in the middle. Four panels slide in beside the chat when the pointer finds their buttons in the chrome, files or outline at the left, the shell terminal or the agent terminal at the right, and the pane under the pointer stands forward."}
+::: {.fig .shift-pane .shift-ade data-figure="shift-ade" aria-label="Emaki's window with its panes named: the sidebar with its sessions under their projects, and the agent chat in the middle. The files panel and the terminal slide in beside the chat when the pointer finds their buttons in the chrome, the outline slides out into the chat's left margin as a drawer from the seam there, and the agent CLI takes the chat's place from the seam in its right margin; the pane under the pointer stands forward."}
 :::
 
 ::: {.shift-words}
@@ -52,7 +52,7 @@ IDEs are made for hand crafting, with numerous panels and a steep learning curve
 **ADE** agentic development environment
 :::
 
-Emaki turns this around, and we call it ADE. The agent chat takes the main space, and the sidebar groups your sessions under their projects. The supporting panels (files, outline and the two terminals) stay hidden until you need them.
+Emaki turns this around, and we call it ADE. The agent chat takes the main space, and the sidebar groups your sessions under their projects. The rest stays hidden until you need it: the files and a terminal in panels at the chat's sides, and in its margins the outline and your agent's own CLI.
 :::
 
 :::
@@ -111,14 +111,14 @@ Sessions are listed and managed under their projects. The agent chat takes the m
 ::: {.cards .cards-2 .rise}
 
 ::: {.card}
-::: {.fig data-figure="projects" aria-label="Emaki's sidebar lying flat: projects in rows, the open one with its sessions under it. The project under the pointer unfolds its sessions, and the rows below make room."}
+::: {.fig data-figure="projects" aria-label="Emaki's window with the sidebar standing forward of it: projects in rows, the open one with its sessions under it. The pointer turns the window and brings the sidebar further forward."}
 :::
 ### [Projects](docs/projects.qmd)
 All sessions on Emaki are project-based. Toggle on a project from your sidebar to see its agent sessions. The leading logo tells you which agent it belongs to. You can quickly create, resume, archive, or delete your session(s).
 :::
 
 ::: {.card}
-::: {.fig data-figure="chats" aria-label="Emaki's chat lying flat: the transcript, and the composer under it. With the pointer on the composer, the draft rises as a bubble and lands at the transcript's end."}
+::: {.fig data-figure="chats" aria-label="Emaki's window with the chat standing forward of it: the transcript, and the composer under it. The pointer turns the window and brings the chat further forward."}
 :::
 ### [Chats](docs/chats.qmd)
 Agent responses are nicely rendered. The artifacts, subagents, Q&A sessions, and background tasks are all taken care of with a smooth UI. The composer supports grammar check, `@` and `/` commands, and instant toggling among your available models, modes, and efforts.
@@ -132,37 +132,47 @@ Agent responses are nicely rendered. The artifacts, subagents, Q&A sessions, and
 ::: {.band .rise}
 ## Panels
 
-Emaki provides 4 panels, hidden by default, since they are essential but used less often than the chat.
+Two panels stand at the chat's sides, hidden until you need them, since they are essential but used less often than the chat: the files at the left and a terminal at the right, each from a button at an end of the strip over the chat.
 :::
 
 ::: {.cards .cards-2 .rise}
 
 ::: {.card}
-::: {.fig data-figure="files" aria-label="The files panel lying flat: the tree, and the file's pane beside it. The file under the pointer opens in the pane, drawn as its kind."}
+::: {.fig data-figure="files" aria-label="Emaki's window with the Files Panel standing forward of it at the chat's left: the tree with git's marks. The pointer turns the window and brings the panel further forward."}
 :::
 ### [Files](docs/files.qmd) [⌘⇧F]{.kbd}
 The Files Panel provides a file tree with Catppuccin icons. You can live-render, preview, and edit your files. Most major file types are supported. With the git system, you can view git changes on the file tree and trigger git commands with an intuitive UI.
 :::
 
 ::: {.card}
-::: {.fig data-figure="outline" aria-label="The outline beside the chat, lying flat. The entry under the pointer scrolls the chat to its round."}
+::: {.fig data-figure="shell" aria-label="Emaki's window with the Terminal Panel standing forward of it at the chat's right: a shell in tabs. The pointer turns the window and brings the panel further forward."}
+:::
+### [Terminal](docs/terminal.qmd) [⌘⇧S]{.kbd}
+Opening a terminal and `cd`-ing to the correct location is trivial, but repeatedly doing it is a pain. Emaki's Terminal Panel does it for you. It also supports multiple tabs. The terminal UI is based on [Kaku](https://kaku.fun), a terminal made by [tw93](https://github.com/tw93).
+:::
+
+:::
+
+::: {.band .rise}
+## Margins
+
+Two more things live in the chat's margins, each behind a seam, a line down the margin with a knob halfway: the outline, a drawer at the chat's left, and your agent's own CLI, which takes the chat's place from the right.
+:::
+
+::: {.cards .cards-2 .rise}
+
+::: {.card}
+::: {.fig data-figure="outline" aria-label="Emaki's window with the Outline standing forward of it, a drawer in the chat's left margin: an entry for every round under its day. The pointer turns the window and brings the drawer further forward."}
 :::
 ### [Outline](docs/outline.qmd) [⌘⇧O]{.kbd}
-In agent sessions, going through the history is a pain. Emaki's Outline Panel uses your basic AI model to summarize past conversations so you can quickly go through and locate them.
+In agent sessions, going through the history is a pain. Emaki's Outline is a drawer at the chat's left: every round, labeled by what came of it, and a summary of the session when you ask for one, so you can quickly go through and locate them.
 :::
 
 ::: {.card}
-::: {.fig data-figure="shell" aria-label="A terminal standing up with three tabs. The tab under the pointer comes up, and its screen types itself in."}
+::: {.fig data-figure="agent" aria-label="Emaki's window with the Agent CLI standing forward of it, in the chat's place: the agent's own screen. The pointer turns the window and brings the terminal further forward."}
 :::
-### [Shell Terminal](docs/terminals.qmd#shell) [⌘⇧S]{.kbd}
-Opening a terminal and `cd`-ing to the correct location is trivial, but repeatedly doing it is a pain. Emaki's Shell Terminal Panel does it for you. It also supports multiple tabs. The terminal UI is based on [Kaku](https://kaku.fun), a terminal made by [tw93](https://github.com/tw93).
-:::
-
-::: {.card}
-::: {.fig data-figure="agent" aria-label="The chat and the agent's own terminal standing side by side. The step under the pointer stands out of both."}
-:::
-### [Agent Terminal](docs/terminals.qmd#agent) [⌘⇧A]{.kbd}
-If you need the original CLI layout of your agent session, this is the right panel. It supports keyboard commands and mouse scrolling. Responding in this CLI is equivalent to responding in the chat interface.
+### [Agent CLI](docs/agent-cli.qmd) [⌘⇧L]{.kbd}
+If you need the original CLI of your agent session, this is it. The Agent CLI takes the chat's place, from a seam in the chat's right margin, with keyboard commands and mouse scrolling. Responding in it is equivalent to responding in the chat.
 :::
 
 :::

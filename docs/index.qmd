@@ -47,11 +47,11 @@ On the first launch, Emaki copies every Claude Code session into `~/.emaki/archi
 
 ## Layout {.i-app-window}
 
-The sidebar and the chat are always there. The four panels are hidden by default: the Files Panel or the Outline Panel opens on the left of the chat, the Shell Terminal Panel or the Agent Terminal Panel on its right.
+The sidebar and the chat are always there. Two panels are hidden until you need them: the Files Panel opens at the chat's left and the Terminal Panel at its right, each from a button at an end of the strip over the chat. Two more things wait in the chat's margins. The Outline is a drawer that slides out into the left margin, and the Agent CLI, your agent's own screen, takes the chat's place from the right margin and gives it back. Each has a seam in its margin, a line with a knob halfway, which shows when the pointer comes near. [Settings](settings.qmd#panels) puts each on the side you choose.
 
 ::: {.layout}
 
-::: {.fig data-figure="layout" aria-label="Emaki's window as it opens: the sidebar with the projects, and the chat. The four panels are named over it, Files, Outline, Shell Terminal and Agent Terminal, each with a line to its button; Projects and Chats are named under it. A panel's name or button brings the panel in beside the chat, and a part under the pointer stands forward of the window."}
+::: {.fig data-figure="layout" aria-label="Emaki's window as it opens: the sidebar with the projects, and the chat. Four things are named over it, Files, Outline, Agent CLI and Terminal, each with a line to what brings it in, the panels' buttons at the ends of the strip and the seams in the chat's margins; Projects and Chats are named under it. A name or its control brings the thing in, the panels beside the chat, the outline out into its left margin as a drawer, the agent CLI in the chat's place, and a part under the pointer stands forward of the window."}
 :::
 
 ::: {.layout-part .i-folder data-part="projects"}
@@ -66,16 +66,16 @@ The sidebar and the chat are always there. The four panels are hidden by default
 [Files](files.qmd) [⌘⇧F]{.kbd}
 :::
 
-::: {.layout-part .i-list-numbers data-part="outline"}
+::: {.layout-part .i-list-bullets data-part="outline"}
 [Outline](outline.qmd) [⌘⇧O]{.kbd}
 :::
 
 ::: {.layout-part .i-terminal data-part="shell"}
-[Shell Terminal](terminals.qmd#shell) [⌘⇧S]{.kbd}
+[Terminal](terminal.qmd) [⌘⇧S]{.kbd}
 :::
 
-::: {.layout-part .i-sparkles data-part="agent"}
-[Agent Terminal](terminals.qmd#agent) [⌘⇧A]{.kbd}
+::: {.layout-part .i-square-terminal data-part="agent"}
+[Agent CLI](agent-cli.qmd) [⌘⇧L]{.kbd}
 :::
 
 :::

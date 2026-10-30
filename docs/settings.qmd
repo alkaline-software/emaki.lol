@@ -1,36 +1,47 @@
 ---
 title: "Settings [⌘,]{.kbd}"
 pagetitle: "Settings"
-subtitle: "Nine sections in a window of their own, from Appearance to About."
+subtitle: "Ten sections in a window of their own, from Appearance to About."
 ---
 
 ## Appearance {.i-palette}
 
-::: {.fig .settings-fig data-figure="settings-appearance" aria-label="The Appearance section of Emaki's settings: under You, the avatar with Choose and Remove, and the name; under Window, the theme, System, Light or Dark, and the seven accents, the chosen one ringed and named. A click picks a theme or an accent."}
+::: {.fig .settings-fig data-figure="settings-appearance" aria-label="The Appearance section of Emaki's settings: under You, the avatar with Choose and Remove, and the name; under Window, the theme, System, Light or Dark, and the seven accents, the chosen one ringed and named; under Power, keeping the display on while a session works. A click picks a theme or an accent, or flips the switch."}
 :::
 
-Your avatar and name, the window's theme, and its accent: Periwinkle, Orchid, Rose, Amber, Moss, Jade or Teal.
+Your avatar and name, the window's theme, and its accent: Periwinkle, Orchid, Rose, Amber, Moss, Jade or Teal. The list at the right of the section's name picks the window's language, from eight. Under Power, a switch keeps the display on while a session works.
 
-## Fonts {.i-typography}
+## Text {.i-a-large-small}
 
-::: {.fig .settings-fig data-figure="settings-fonts" aria-label="The Fonts section of Emaki's settings: the chat's font, four serif faces and four sans serif faces, each a tile with its name, and the monospace font, four faces. A click on a tile chooses it."}
+Two pages, Fonts and Size, chosen at the right of the section's name.
+
+### Fonts
+
+::: {.fig .settings-fig data-figure="settings-fonts" aria-label="The Fonts page of the Text section of Emaki's settings: the chat's font, four serif faces and four sans serif faces, each a tile with its name, and the monospace font, four faces. A click on a tile chooses it."}
 :::
 
 Eight faces for the chat, four serif and four sans serif, and four monospace faces for code and the terminals.
 
-## Text Size {.i-a-large-small}
+### Size
 
-::: {.fig .settings-fig data-figure="settings-text" aria-label="The Text Size section of Emaki's settings: Small, Medium, Large or Custom, and under it the size of the conversation, the composer, the file preview, the file editor and the terminal, each with a step down and a step up. A click picks a preset; under Custom the steps change a size."}
+::: {.fig .settings-fig data-figure="settings-size" aria-label="The Size page of the Text section of Emaki's settings: Small, Medium, Large or Custom, and under it the size of the conversation, the composer, the file preview, the file editor and the terminal, each with a step down and a step up. A click picks a preset; under Custom the steps change a size."}
 :::
 
 Small, Medium and Large set every place at once. Custom is your own set: each place's size, stepped a point at a time or typed.
 
-## Composer {.i-keyboard}
+## Conversation {.i-book-open}
 
-::: {.fig .settings-fig data-figure="settings-composer" aria-label="The Composer section of Emaki's settings: the key that sends, ⌘↩ or ↩, auto-capitalization, and spelling and grammar checked as you type in one of five languages. A click flips a switch or picks a choice; with the check off, the languages are dimmed."}
+::: {.fig .settings-fig data-figure="settings-conversation" aria-label="The Conversation section of Emaki's settings: under Agent, folding runs of tool calls and the Outline; under Composer, the key that sends, ⌘↩ or ↩, and auto-capitalization; under Spelling and grammar, the check as you type and its language. A click flips a switch or picks a choice; with the check off, the languages are dimmed."}
 :::
 
-The key that sends, auto-capitalization, and spelling and grammar checked as you type, in US or UK English, Spanish, French or German. Spanish, French and German are checked on a Mac only.
+How the chat draws the agent's work: three or more tool calls in a row fold into one row that opens, and the [Outline](outline.qmd) can be turned off. Then the composer: the key that sends, auto-capitalization, and spelling and grammar checked as you type, in US or UK English, Spanish, French or German. Spanish, French and German are checked on a Mac only.
+
+## Model calls {.i-sparkles}
+
+::: {.fig .settings-fig data-figure="settings-models" aria-label="The Model calls section of Emaki's settings: two switches, Explain tool calls and Outline summaries, and under Model a row for each agent, Claude Code and Codex, with the model its sessions ask, the agent's fast model to begin with. A click flips a switch or turns a model to the next."}
+:::
+
+Everything Emaki asks a small model for, each a call on your account: the plain-word explanations of tool calls, and the Outline's labels and summaries. Each has a switch, and each agent has a model to choose for them, from its own list.
 
 ## New sessions {.i-square-terminal}
 
@@ -39,16 +50,34 @@ The key that sends, auto-capitalization, and spelling and grammar checked as you
 
 Each agent's permission mode, model and effort for a new session. The pills under the composer change them for one session ([Chats](chats.qmd#mode-model-and-effort)).
 
+## Panels {.i-layout-dashboard}
+
+::: {.fig .settings-fig data-figure="settings-panels" aria-label="The Panels section of Emaki's settings: a picture of the window, the Files Panel and the Terminal Panel at either side of the chat and the Outline's and the layout's seams in its margins, over two choices, Side panels and Margins, each the pair's two icons in the order they stand. A click on a choice moves its pair to the other sides in the picture."}
+:::
+
+Which side each goes on: the [Files Panel](files.qmd) and the [Terminal Panel](terminal.qmd), one at each side of the chat, and in its margins the [Outline](outline.qmd)'s seam and the layout's, which brings in the [Agent CLI](agent-cli.qmd). Each pair is one choice, in the order they stand from left to right.
+
+## Files {.i-tree-view}
+
+::: {.fig .settings-fig data-figure="settings-files" aria-label="The Files section of Emaki's settings: whether a file opens as it reads or as it is written, format on save, and the languages it covers, each ticked, with its formatter. A click picks a choice or ticks a language; with format on save off, the languages are dimmed."}
+:::
+
+Whether a file opens as it reads or as it is written, and format on save with the languages it covers, each with its own formatter.
+
 ## Terminal {.i-terminal}
 
 ::: {.fig .settings-fig data-figure="settings-terminal" aria-label="The Terminal section of Emaki's settings: under Look, the theme, the cursor, whether it blinks, the font and the size; under Behavior, ligatures and copy on select. A click flips a switch or picks a choice."}
 :::
 
-The terminal's theme, its cursor, ligatures and copy on select. Its face is set in Fonts and its size in Text Size.
+The terminal's theme, its cursor, ligatures and copy on select. Its face is set in Fonts and its size in Size.
 
-## Files {.i-tree-view}
+## Shortcuts {.i-keyboard}
 
-::: {.fig .settings-fig data-figure="settings-files" aria-label="The Files section of Emaki's settings: format on save, and the languages it covers, each ticked, with its formatter. A click ticks a language; with format on save off, the languages are dimmed."}
+::: {.fig .settings-fig data-figure="settings-shortcuts" aria-label="The Shortcuts section of Emaki's settings: the window's commands in two groups, Sessions and Panels, or the file editor's, Lines and Text, chosen at the right of the section's name; each command its name and its keys on caps, two to a row. A click on a command's keys waits for new ones, and a click elsewhere keeps them."}
 :::
 
-Format on save, and the languages it covers, each with its own formatter.
+The keys of the window's commands, in two lists: the window's, Sessions and Panels, and the file editor's Sublime Text commands, Lines and Text. Click a command's keys and press new ones; a key already taken is refused, and a button puts a changed key back. The [Keys](keys.qmd) page lists them as they begin.
+
+## About {.i-info}
+
+Who makes Emaki, the version, and updates: Emaki checks once a day, and installs nothing without you.

@@ -1,14 +1,22 @@
 ---
-title: "Outline Panel [⌘⇧O]{.kbd}"
-pagetitle: "Outline Panel"
-subtitle: "Summaries of your past prompts."
+title: "Outline [⌘⇧O]{.kbd}"
+pagetitle: "Outline"
+subtitle: "A drawer at the chat's left: every round, labeled by what came of it."
 ---
 
 ::: {.layout .layout-page}
-::: {.fig data-figure="layout-outline" aria-label="Emaki's window with the Outline Panel shown in color at the chat's left: an entry for every prompt. The rest is gray. The panel stands forward under the pointer, and its button in the chrome puts it away."}
+::: {.fig data-figure="layout-outline" aria-label="Emaki's window with the Outline's drawer out in color in the chat's left margin: a day's head, then an entry for every round with its time. The rest is gray. The drawer stands forward under the pointer, and the seam on its edge puts it away."}
 :::
 :::
 
-Going back through a long session is a pain. The Outline Panel lists a summary of each of your past prompts, with its time in front. As with the plain-word explanations of the agent's tool calls, the summaries are written by the lightest model your session's agent has.
+Going back through a long session is a pain. The Outline lists every round of the chat under its day, each with its time and a short label of what came of it, written by the lightest model your session's agent has. Click an entry to scroll back to its round.
 
-Click an entry to scroll back to its prompt.
+## The drawer {.i-list-bullets}
+
+The Outline lives in the chat's left margin. Move the pointer there and a seam appears, a line down the margin with a knob halfway. Click the knob, or press [⌘⇧O]{.kbd}, and the drawer slides out, the chat moving over for it; click again to put it away. It belongs to the chat: switching to the [Agent CLI](agent-cli.qmd) folds it away, and the chat brings it back as it was.
+
+## Summaries {.i-sparkles}
+
+**Summarize session**, under the entries, writes a summary of the session in bullets and heads the entries with sections. **Update** brings it up to date from the new rounds alone, and **Hide** puts it away.
+
+Each label and summary is a call to a small model of your agent's, on your account. [Settings](settings.qmd#model-calls) turns them off, which keeps the Outline without them, and chooses the model for each agent. Settings, Conversation, turns the Outline itself off.

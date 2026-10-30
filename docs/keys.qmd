@@ -7,16 +7,17 @@ subtitle: "A collection of all keyboard commands on Emaki."
 
 ## Panels {.i-app-window}
 
-Hold [⇧]{.kbd} with [⌘]{.kbd}, and the letter shows or hides a panel beside the chat. The letter is the panel's first, and B is the sidebar's.
+Hold [⇧]{.kbd} with [⌘]{.kbd}, and the letter shows or hides something beside the chat, or switches what shows. The letter is the thing's first, and B is the sidebar's.
 
 | | |
 |---|---|
 | [⌘⇧B]{.kbd} | the sidebar, with your [projects](projects.qmd) and their sessions; [⌘B]{.kbd} too |
 | [⌘⇧F]{.kbd} | [Files Panel](files.qmd) |
-| [⌘⇧O]{.kbd} | [Outline Panel](outline.qmd) |
-| [⌘⇧S]{.kbd} | [Shell Terminal Panel](terminals.qmd#shell) |
-| [⌘⇧A]{.kbd} | [Agent Terminal Panel](terminals.qmd#agent) |
+| [⌘⇧S]{.kbd} | [Terminal Panel](terminal.qmd) |
+| [⌘⇧O]{.kbd} | the [Outline](outline.qmd)'s drawer |
+| [⌘⇧L]{.kbd} | the layout: the [Agent CLI](agent-cli.qmd) in the chat's place, or the chat |
 | [⌘⇧G]{.kbd} | git's [Changes](files.qmd#git) sheet |
+| [⌘⇧V]{.kbd} | a file in the [Files Panel](files.qmd) as it reads, or as it is written |
 
 : {.table-keys tbl-colwidths="[38,62]"}
 
@@ -52,4 +53,8 @@ The rest of [⌘]{.kbd} each does one thing where you are.
 
 : {.table-keys tbl-colwidths="[38,62]"}
 
-In the terminal, [⌘T]{.kbd} opens a tab, [⌘W]{.kbd} closes it and [⌘K]{.kbd} clears the screen.
+In the terminal, [⌘T]{.kbd} or [⌘N]{.kbd} opens a tab, [⌘W]{.kbd} closes it and [⌘K]{.kbd} clears the screen.
+
+## Your own {.i-settings}
+
+[Settings, Shortcuts](settings.qmd#shortcuts), changes the keys of the window's commands above, and of the file editor's Sublime Text commands. A key already taken is refused, and a button puts a changed key back.
