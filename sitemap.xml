@@ -2,42 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://emaki.lol/index.html</loc>
-    <lastmod>2026-10-25T10:16:53.860Z</lastmod>
+    <lastmod>2026-10-30T03:37:59.716Z</lastmod>
   </url>
   <url>
     <loc>https://emaki.lol/docs/settings.html</loc>
-    <lastmod>2026-10-25T10:16:53.860Z</lastmod>
+    <lastmod>2026-10-30T03:37:59.716Z</lastmod>
   </url>
   <url>
     <loc>https://emaki.lol/docs/outline.html</loc>
-    <lastmod>2026-10-25T10:16:53.860Z</lastmod>
+    <lastmod>2026-10-30T03:37:59.716Z</lastmod>
   </url>
   <url>
     <loc>https://emaki.lol/docs/index.html</loc>
-    <lastmod>2026-10-25T10:16:53.860Z</lastmod>
+    <lastmod>2026-10-30T03:37:59.716Z</lastmod>
   </url>
   <url>
     <loc>https://emaki.lol/docs/chats.html</loc>
-    <lastmod>2026-10-25T10:16:53.859Z</lastmod>
+    <lastmod>2026-10-30T03:37:59.716Z</lastmod>
   </url>
   <url>
     <loc>https://emaki.lol/about.html</loc>
-    <lastmod>2026-10-25T10:16:53.840Z</lastmod>
+    <lastmod>2026-10-30T03:37:59.687Z</lastmod>
+  </url>
+  <url>
+    <loc>https://emaki.lol/docs/agent-cli.html</loc>
+    <lastmod>2026-10-30T03:37:59.716Z</lastmod>
   </url>
   <url>
     <loc>https://emaki.lol/docs/files.html</loc>
-    <lastmod>2026-10-25T10:16:53.860Z</lastmod>
+    <lastmod>2026-10-30T03:37:59.716Z</lastmod>
   </url>
   <url>
     <loc>https://emaki.lol/docs/keys.html</loc>
-    <lastmod>2026-10-25T10:16:53.860Z</lastmod>
+    <lastmod>2026-10-30T03:37:59.716Z</lastmod>
   </url>
   <url>
     <loc>https://emaki.lol/docs/projects.html</loc>
-    <lastmod>2026-10-25T10:16:53.860Z</lastmod>
+    <lastmod>2026-10-30T03:37:59.716Z</lastmod>
   </url>
   <url>
-    <loc>https://emaki.lol/docs/terminals.html</loc>
-    <lastmod>2026-10-25T10:16:53.860Z</lastmod>
+    <loc>https://emaki.lol/docs/terminal.html</loc>
+    <lastmod>2026-10-30T03:37:59.716Z</lastmod>
   </url>
 </urlset>

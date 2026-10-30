@@ -49,9 +49,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-747ee3b6b2e6005217a5460e691a7e4e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-548e3c1b0710ed252f6ceef81dd89dc6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-747ee3b6b2e6005217a5460e691a7e4e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1a068c1b3d0caf3b5cb20e2a65dd108c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-4300e45dde8d865b7ceed99a91ddd2ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-1a068c1b3d0caf3b5cb20e2a65dd108c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Settings">
-<meta property="og:description" content="Nine sections in a window of their own, from Appearance to About.">
+<meta property="og:description" content="Ten sections in a window of their own, from Appearance to About.">
 <meta property="og:image" content="https://emaki.lol/docs/assets/emaki-icon.png">
 <meta property="og:site_name" content="Emaki">
 </head>
@@ -369,14 +369,32 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../docs/terminal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Terminal</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Margins</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../docs/outline.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Outline</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../docs/terminals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Terminals</span></a>
+  <a href="../docs/agent-cli.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Agent CLI</span></a>
   </div>
 </li>
       </ul>
@@ -405,12 +423,19 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#appearance" id="toc-appearance" class="nav-link active" data-scroll-target="#appearance">Appearance</a></li>
+  <li><a href="#text" id="toc-text" class="nav-link" data-scroll-target="#text">Text</a>
+  <ul class="collapse">
   <li><a href="#fonts" id="toc-fonts" class="nav-link" data-scroll-target="#fonts">Fonts</a></li>
-  <li><a href="#text-size" id="toc-text-size" class="nav-link" data-scroll-target="#text-size">Text Size</a></li>
-  <li><a href="#composer" id="toc-composer" class="nav-link" data-scroll-target="#composer">Composer</a></li>
+  <li><a href="#size" id="toc-size" class="nav-link" data-scroll-target="#size">Size</a></li>
+  </ul></li>
+  <li><a href="#conversation" id="toc-conversation" class="nav-link" data-scroll-target="#conversation">Conversation</a></li>
+  <li><a href="#model-calls" id="toc-model-calls" class="nav-link" data-scroll-target="#model-calls">Model calls</a></li>
   <li><a href="#new-sessions" id="toc-new-sessions" class="nav-link" data-scroll-target="#new-sessions">New sessions</a></li>
-  <li><a href="#terminal" id="toc-terminal" class="nav-link" data-scroll-target="#terminal">Terminal</a></li>
+  <li><a href="#panels" id="toc-panels" class="nav-link" data-scroll-target="#panels">Panels</a></li>
   <li><a href="#files" id="toc-files" class="nav-link" data-scroll-target="#files">Files</a></li>
+  <li><a href="#terminal" id="toc-terminal" class="nav-link" data-scroll-target="#terminal">Terminal</a></li>
+  <li><a href="#shortcuts" id="toc-shortcuts" class="nav-link" data-scroll-target="#shortcuts">Shortcuts</a></li>
+  <li><a href="#about" id="toc-about" class="nav-link" data-scroll-target="#about">About</a></li>
   </ul>
 </nav>
     </div>
@@ -421,7 +446,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title d-none d-lg-block">Settings <kbd>⌘,</kbd></h1>
-<p class="subtitle lead">Nine sections in a window of their own, from Appearance to About.</p>
+<p class="subtitle lead">Ten sections in a window of their own, from Appearance to About.</p>
 </div>
 
 
@@ -440,31 +465,42 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="appearance" class="level2 i-palette">
 <h2 class="i-palette anchored" data-anchor-id="appearance">Appearance</h2>
-<div class="fig settings-fig" data-figure="settings-appearance" aria-label="The Appearance section of Emaki's settings: under You, the avatar with Choose and Remove, and the name; under Window, the theme, System, Light or Dark, and the seven accents, the chosen one ringed and named. A click picks a theme or an accent.">
+<div class="fig settings-fig" data-figure="settings-appearance" aria-label="The Appearance section of Emaki's settings: under You, the avatar with Choose and Remove, and the name; under Window, the theme, System, Light or Dark, and the seven accents, the chosen one ringed and named; under Power, keeping the display on while a session works. A click picks a theme or an accent, or flips the switch.">
 
 </div>
-<p>Your avatar and name, the window’s theme, and its accent: Periwinkle, Orchid, Rose, Amber, Moss, Jade or Teal.</p>
+<p>Your avatar and name, the window’s theme, and its accent: Periwinkle, Orchid, Rose, Amber, Moss, Jade or Teal. The list at the right of the section’s name picks the window’s language, from eight. Under Power, a switch keeps the display on while a session works.</p>
 </section>
-<section id="fonts" class="level2 i-typography">
-<h2 class="i-typography anchored" data-anchor-id="fonts">Fonts</h2>
-<div class="fig settings-fig" data-figure="settings-fonts" aria-label="The Fonts section of Emaki's settings: the chat's font, four serif faces and four sans serif faces, each a tile with its name, and the monospace font, four faces. A click on a tile chooses it.">
+<section id="text" class="level2 i-a-large-small">
+<h2 class="i-a-large-small anchored" data-anchor-id="text">Text</h2>
+<p>Two pages, Fonts and Size, chosen at the right of the section’s name.</p>
+<section id="fonts" class="level3">
+<h3 class="anchored" data-anchor-id="fonts">Fonts</h3>
+<div class="fig settings-fig" data-figure="settings-fonts" aria-label="The Fonts page of the Text section of Emaki's settings: the chat's font, four serif faces and four sans serif faces, each a tile with its name, and the monospace font, four faces. A click on a tile chooses it.">
 
 </div>
 <p>Eight faces for the chat, four serif and four sans serif, and four monospace faces for code and the terminals.</p>
 </section>
-<section id="text-size" class="level2 i-a-large-small">
-<h2 class="i-a-large-small anchored" data-anchor-id="text-size">Text Size</h2>
-<div class="fig settings-fig" data-figure="settings-text" aria-label="The Text Size section of Emaki's settings: Small, Medium, Large or Custom, and under it the size of the conversation, the composer, the file preview, the file editor and the terminal, each with a step down and a step up. A click picks a preset; under Custom the steps change a size.">
+<section id="size" class="level3">
+<h3 class="anchored" data-anchor-id="size">Size</h3>
+<div class="fig settings-fig" data-figure="settings-size" aria-label="The Size page of the Text section of Emaki's settings: Small, Medium, Large or Custom, and under it the size of the conversation, the composer, the file preview, the file editor and the terminal, each with a step down and a step up. A click picks a preset; under Custom the steps change a size.">
 
 </div>
 <p>Small, Medium and Large set every place at once. Custom is your own set: each place’s size, stepped a point at a time or typed.</p>
 </section>
-<section id="composer" class="level2 i-keyboard">
-<h2 class="i-keyboard anchored" data-anchor-id="composer">Composer</h2>
-<div class="fig settings-fig" data-figure="settings-composer" aria-label="The Composer section of Emaki's settings: the key that sends, ⌘↩ or ↩, auto-capitalization, and spelling and grammar checked as you type in one of five languages. A click flips a switch or picks a choice; with the check off, the languages are dimmed.">
+</section>
+<section id="conversation" class="level2 i-book-open">
+<h2 class="i-book-open anchored" data-anchor-id="conversation">Conversation</h2>
+<div class="fig settings-fig" data-figure="settings-conversation" aria-label="The Conversation section of Emaki's settings: under Agent, folding runs of tool calls and the Outline; under Composer, the key that sends, ⌘↩ or ↩, and auto-capitalization; under Spelling and grammar, the check as you type and its language. A click flips a switch or picks a choice; with the check off, the languages are dimmed.">
 
 </div>
-<p>The key that sends, auto-capitalization, and spelling and grammar checked as you type, in US or UK English, Spanish, French or German. Spanish, French and German are checked on a Mac only.</p>
+<p>How the chat draws the agent’s work: three or more tool calls in a row fold into one row that opens, and the <a href="../docs/outline.html">Outline</a> can be turned off. Then the composer: the key that sends, auto-capitalization, and spelling and grammar checked as you type, in US or UK English, Spanish, French or German. Spanish, French and German are checked on a Mac only.</p>
+</section>
+<section id="model-calls" class="level2 i-sparkles">
+<h2 class="i-sparkles anchored" data-anchor-id="model-calls">Model calls</h2>
+<div class="fig settings-fig" data-figure="settings-models" aria-label="The Model calls section of Emaki's settings: two switches, Explain tool calls and Outline summaries, and under Model a row for each agent, Claude Code and Codex, with the model its sessions ask, the agent's fast model to begin with. A click flips a switch or turns a model to the next.">
+
+</div>
+<p>Everything Emaki asks a small model for, each a call on your account: the plain-word explanations of tool calls, and the Outline’s labels and summaries. Each has a switch, and each agent has a model to choose for them, from its own list.</p>
 </section>
 <section id="new-sessions" class="level2 i-square-terminal">
 <h2 class="i-square-terminal anchored" data-anchor-id="new-sessions">New sessions</h2>
@@ -473,19 +509,37 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>Each agent’s permission mode, model and effort for a new session. The pills under the composer change them for one session (<a href="../docs/chats.html#mode-model-and-effort">Chats</a>).</p>
 </section>
+<section id="panels" class="level2 i-layout-dashboard">
+<h2 class="i-layout-dashboard anchored" data-anchor-id="panels">Panels</h2>
+<div class="fig settings-fig" data-figure="settings-panels" aria-label="The Panels section of Emaki's settings: a picture of the window, the Files Panel and the Terminal Panel at either side of the chat and the Outline's and the layout's seams in its margins, over two choices, Side panels and Margins, each the pair's two icons in the order they stand. A click on a choice moves its pair to the other sides in the picture.">
+
+</div>
+<p>Which side each goes on: the <a href="../docs/files.html">Files Panel</a> and the <a href="../docs/terminal.html">Terminal Panel</a>, one at each side of the chat, and in its margins the <a href="../docs/outline.html">Outline</a>’s seam and the layout’s, which brings in the <a href="../docs/agent-cli.html">Agent CLI</a>. Each pair is one choice, in the order they stand from left to right.</p>
+</section>
+<section id="files" class="level2 i-tree-view">
+<h2 class="i-tree-view anchored" data-anchor-id="files">Files</h2>
+<div class="fig settings-fig" data-figure="settings-files" aria-label="The Files section of Emaki's settings: whether a file opens as it reads or as it is written, format on save, and the languages it covers, each ticked, with its formatter. A click picks a choice or ticks a language; with format on save off, the languages are dimmed.">
+
+</div>
+<p>Whether a file opens as it reads or as it is written, and format on save with the languages it covers, each with its own formatter.</p>
+</section>
 <section id="terminal" class="level2 i-terminal">
 <h2 class="i-terminal anchored" data-anchor-id="terminal">Terminal</h2>
 <div class="fig settings-fig" data-figure="settings-terminal" aria-label="The Terminal section of Emaki's settings: under Look, the theme, the cursor, whether it blinks, the font and the size; under Behavior, ligatures and copy on select. A click flips a switch or picks a choice.">
 
 </div>
-<p>The terminal’s theme, its cursor, ligatures and copy on select. Its face is set in Fonts and its size in Text Size.</p>
+<p>The terminal’s theme, its cursor, ligatures and copy on select. Its face is set in Fonts and its size in Size.</p>
 </section>
-<section id="files" class="level2 i-tree-view">
-<h2 class="i-tree-view anchored" data-anchor-id="files">Files</h2>
-<div class="fig settings-fig" data-figure="settings-files" aria-label="The Files section of Emaki's settings: format on save, and the languages it covers, each ticked, with its formatter. A click ticks a language; with format on save off, the languages are dimmed.">
+<section id="shortcuts" class="level2 i-keyboard">
+<h2 class="i-keyboard anchored" data-anchor-id="shortcuts">Shortcuts</h2>
+<div class="fig settings-fig" data-figure="settings-shortcuts" aria-label="The Shortcuts section of Emaki's settings: the window's commands in two groups, Sessions and Panels, or the file editor's, Lines and Text, chosen at the right of the section's name; each command its name and its keys on caps, two to a row. A click on a command's keys waits for new ones, and a click elsewhere keeps them.">
 
 </div>
-<p>Format on save, and the languages it covers, each with its own formatter.</p>
+<p>The keys of the window’s commands, in two lists: the window’s, Sessions and Panels, and the file editor’s Sublime Text commands, Lines and Text. Click a command’s keys and press new ones; a key already taken is refused, and a button puts a changed key back. The <a href="../docs/keys.html">Keys</a> page lists them as they begin.</p>
+</section>
+<section id="about" class="level2 i-info">
+<h2 class="i-info anchored" data-anchor-id="about">About</h2>
+<p>Who makes Emaki, the version, and updates: Emaki checks once a day, and installs nothing without you.</p>
 
 
 </section>

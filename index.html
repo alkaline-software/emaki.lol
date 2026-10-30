@@ -47,9 +47,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-747ee3b6b2e6005217a5460e691a7e4e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-548e3c1b0710ed252f6ceef81dd89dc6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-747ee3b6b2e6005217a5460e691a7e4e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-1a068c1b3d0caf3b5cb20e2a65dd108c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-4300e45dde8d865b7ceed99a91ddd2ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-1a068c1b3d0caf3b5cb20e2a65dd108c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -364,14 +364,14 @@ ul.task-list li input[type="checkbox"] {
 <p>IDEs are made for hand crafting, with numerous panels and a steep learning curve. In agentic workflows, the chat does most of the work, yet the editor still takes the middle of the screen and the chat gets a narrow pane at the edge.</p>
 </div>
 <svg class="shift-arrow" viewbox="0 0 24 56" aria-hidden="true"><path d="M12 4 V50 M3 40 l9 10 l9 -10"></path></svg>
-<div class="fig shift-pane shift-ade" data-figure="shift-ade" aria-label="Emaki's window with its panes named: the sidebar with its sessions under their projects, and the agent chat in the middle. Four panels slide in beside the chat when the pointer finds their buttons in the chrome, files or outline at the left, the shell terminal or the agent terminal at the right, and the pane under the pointer stands forward.">
+<div class="fig shift-pane shift-ade" data-figure="shift-ade" aria-label="Emaki's window with its panes named: the sidebar with its sessions under their projects, and the agent chat in the middle. The files panel and the terminal slide in beside the chat when the pointer finds their buttons in the chrome, the outline slides out into the chat's left margin as a drawer from the seam there, and the agent CLI takes the chat's place from the seam in its right margin; the pane under the pointer stands forward.">
 
 </div>
 <div class="shift-words">
 <div class="shift-label">
 <p><strong>ADE</strong> agentic development environment</p>
 </div>
-<p>Emaki turns this around, and we call it ADE. The agent chat takes the main space, and the sidebar groups your sessions under their projects. The supporting panels (files, outline and the two terminals) stay hidden until you need them.</p>
+<p>Emaki turns this around, and we call it ADE. The agent chat takes the main space, and the sidebar groups your sessions under their projects. The rest stays hidden until you need it: the files and a terminal in panels at the chat’s sides, and in its margins the outline and your agent’s own CLI.</p>
 </div>
 </section>
 <div class="rule">
@@ -417,7 +417,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <div class="cards cards-2 rise">
 <div class="card">
-<div class="fig" data-figure="projects" aria-label="Emaki's sidebar lying flat: projects in rows, the open one with its sessions under it. The project under the pointer unfolds its sessions, and the rows below make room.">
+<div class="fig" data-figure="projects" aria-label="Emaki's window with the sidebar standing forward of it: projects in rows, the open one with its sessions under it. The pointer turns the window and brings the sidebar further forward.">
 
 </div>
 <section id="projects" class="level3">
@@ -426,7 +426,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </div>
 <div class="card">
-<div class="fig" data-figure="chats" aria-label="Emaki's chat lying flat: the transcript, and the composer under it. With the pointer on the composer, the draft rises as a bubble and lands at the transcript's end.">
+<div class="fig" data-figure="chats" aria-label="Emaki's window with the chat standing forward of it: the transcript, and the composer under it. The pointer turns the window and brings the chat further forward.">
 
 </div>
 <section id="chats" class="level3">
@@ -440,11 +440,11 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="panels" class="level2 band rise">
 <h2 data-anchor-id="panels">Panels</h2>
-<p>Emaki provides 4 panels, hidden by default, since they are essential but used less often than the chat.</p>
+<p>Two panels stand at the chat’s sides, hidden until you need them, since they are essential but used less often than the chat: the files at the left and a terminal at the right, each from a button at an end of the strip over the chat.</p>
 </section>
 <div class="cards cards-2 rise">
 <div class="card">
-<div class="fig" data-figure="files" aria-label="The files panel lying flat: the tree, and the file's pane beside it. The file under the pointer opens in the pane, drawn as its kind.">
+<div class="fig" data-figure="files" aria-label="Emaki's window with the Files Panel standing forward of it at the chat's left: the tree with git's marks. The pointer turns the window and brings the panel further forward.">
 
 </div>
 <section id="files-f" class="level3">
@@ -453,30 +453,36 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </div>
 <div class="card">
-<div class="fig" data-figure="outline" aria-label="The outline beside the chat, lying flat. The entry under the pointer scrolls the chat to its round.">
+<div class="fig" data-figure="shell" aria-label="Emaki's window with the Terminal Panel standing forward of it at the chat's right: a shell in tabs. The pointer turns the window and brings the panel further forward.">
+
+</div>
+<section id="terminal-s" class="level3">
+<h3 data-anchor-id="terminal-s"><a href="./docs/terminal.html">Terminal</a> <kbd>⌘⇧S</kbd></h3>
+<p>Opening a terminal and <code>cd</code>-ing to the correct location is trivial, but repeatedly doing it is a pain. Emaki’s Terminal Panel does it for you. It also supports multiple tabs. The terminal UI is based on <a href="https://kaku.fun">Kaku</a>, a terminal made by <a href="https://github.com/tw93">tw93</a>.</p>
+</section>
+</div>
+</div>
+<section id="margins" class="level2 band rise">
+<h2 data-anchor-id="margins">Margins</h2>
+<p>On each side of the agent chat, you can hover and toggle 2 more panels. The left margin gives you the outline panel with quick jumping and summarizing; the right margin lets you switch between the rendered UI and the original CLI.</p>
+</section>
+<div class="cards cards-2 rise">
+<div class="card">
+<div class="fig" data-figure="outline" aria-label="Emaki's window with the Outline standing forward of it, a drawer in the chat's left margin: an entry for every round under its day. The pointer turns the window and brings the drawer further forward.">
 
 </div>
 <section id="outline-o" class="level3">
 <h3 data-anchor-id="outline-o"><a href="./docs/outline.html">Outline</a> <kbd>⌘⇧O</kbd></h3>
-<p>In agent sessions, going through the history is a pain. Emaki’s Outline Panel uses your basic AI model to summarize past conversations so you can quickly go through and locate them.</p>
+<p>In agent sessions, going through the history is a pain. Emaki’s Outline is a drawer at the chat’s left: every round, labeled by what came of it, and a summary of the session when you ask for one, so you can quickly go through and locate them.</p>
 </section>
 </div>
 <div class="card">
-<div class="fig" data-figure="shell" aria-label="A terminal standing up with three tabs. The tab under the pointer comes up, and its screen types itself in.">
+<div class="fig" data-figure="agent" aria-label="Emaki's window with the Agent CLI standing forward of it, in the chat's place: the agent's own screen. The pointer turns the window and brings the terminal further forward.">
 
 </div>
-<section id="shell-terminal-s" class="level3">
-<h3 data-anchor-id="shell-terminal-s"><a href="./docs/terminals.html#shell">Shell Terminal</a> <kbd>⌘⇧S</kbd></h3>
-<p>Opening a terminal and <code>cd</code>-ing to the correct location is trivial, but repeatedly doing it is a pain. Emaki’s Shell Terminal Panel does it for you. It also supports multiple tabs. The terminal UI is based on <a href="https://kaku.fun">Kaku</a>, a terminal made by <a href="https://github.com/tw93">tw93</a>.</p>
-</section>
-</div>
-<div class="card">
-<div class="fig" data-figure="agent" aria-label="The chat and the agent's own terminal standing side by side. The step under the pointer stands out of both.">
-
-</div>
-<section id="agent-terminal-a" class="level3">
-<h3 data-anchor-id="agent-terminal-a"><a href="./docs/terminals.html#agent">Agent Terminal</a> <kbd>⌘⇧A</kbd></h3>
-<p>If you need the original CLI layout of your agent session, this is the right panel. It supports keyboard commands and mouse scrolling. Responding in this CLI is equivalent to responding in the chat interface.</p>
+<section id="agent-cli-l" class="level3">
+<h3 data-anchor-id="agent-cli-l"><a href="./docs/agent-cli.html">Agent CLI</a> <kbd>⌘⇧L</kbd></h3>
+<p>If you need the original CLI of your agent session, this is it. The Agent CLI takes the chat’s place, from a seam in the chat’s right margin, with keyboard commands and mouse scrolling. Responding in it is equivalent to responding in the chat.</p>
 </section>
 </div>
 </div>

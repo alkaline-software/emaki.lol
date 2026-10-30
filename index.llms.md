@@ -20,7 +20,7 @@ IDEs are made for hand crafting, with numerous panels and a steep learning curve
 
 **ADE** agentic development environment
 
-Emaki turns this around, and we call it ADE. The agent chat takes the main space, and the sidebar groups your sessions under their projects. The supporting panels (files, outline and the two terminals) stay hidden until you need them.
+Emaki turns this around, and we call it ADE. The agent chat takes the main space, and the sidebar groups your sessions under their projects. The rest stays hidden until you need it: the files and a terminal in panels at the chat’s sides, and in its margins the outline and your agent’s own CLI.
 
 ## Get started
 
@@ -60,22 +60,26 @@ Agent responses are nicely rendered. The artifacts, subagents, Q&A sessions, and
 
 ## Panels
 
-Emaki provides 4 panels, hidden by default, since they are essential but used less often than the chat.
+Two panels stand at the chat’s sides, hidden until you need them, since they are essential but used less often than the chat: the files at the left and a terminal at the right, each from a button at an end of the strip over the chat.
 
 ### [Files](docs/files.llms.md) ⌘⇧F
 
 The Files Panel provides a file tree with Catppuccin icons. You can live-render, preview, and edit your files. Most major file types are supported. With the git system, you can view git changes on the file tree and trigger git commands with an intuitive UI.
 
+### [Terminal](docs/terminal.llms.md) ⌘⇧S
+
+Opening a terminal and `cd`-ing to the correct location is trivial, but repeatedly doing it is a pain. Emaki’s Terminal Panel does it for you. It also supports multiple tabs. The terminal UI is based on [Kaku](https://kaku.fun), a terminal made by [tw93](https://github.com/tw93).
+
+## Margins
+
+On each side of the agent chat, you can hover and toggle 2 more panels. The left margin gives you the outline panel with quick jumping and summarizing; the right margin lets you switch between the rendered UI and the original CLI.
+
 ### [Outline](docs/outline.llms.md) ⌘⇧O
 
-In agent sessions, going through the history is a pain. Emaki’s Outline Panel uses your basic AI model to summarize past conversations so you can quickly go through and locate them.
+In agent sessions, going through the history is a pain. Emaki’s Outline is a drawer at the chat’s left: every round, labeled by what came of it, and a summary of the session when you ask for one, so you can quickly go through and locate them.
 
-### [Shell Terminal](docs/terminals.llms.md#shell) ⌘⇧S
+### [Agent CLI](docs/agent-cli.llms.md) ⌘⇧L
 
-Opening a terminal and `cd`-ing to the correct location is trivial, but repeatedly doing it is a pain. Emaki’s Shell Terminal Panel does it for you. It also supports multiple tabs. The terminal UI is based on [Kaku](https://kaku.fun), a terminal made by [tw93](https://github.com/tw93).
-
-### [Agent Terminal](docs/terminals.llms.md#agent) ⌘⇧A
-
-If you need the original CLI layout of your agent session, this is the right panel. It supports keyboard commands and mouse scrolling. Responding in this CLI is equivalent to responding in the chat interface.
+If you need the original CLI of your agent session, this is it. The Agent CLI takes the chat’s place, from a seam in the chat’s right margin, with keyboard commands and mouse scrolling. Responding in it is equivalent to responding in the chat.
 
 Back to top

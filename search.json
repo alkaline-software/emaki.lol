@@ -11,7 +11,7 @@
     "href": "index.html#from-the-ide-to-the-ade",
     "title": "Emaki 絵巻",
     "section": "From the IDE to the ADE",
-    "text": "From the IDE to the ADE\n\n\n\n\n\nIDE integrated development environment\n\nIDEs are made for hand crafting, with numerous panels and a steep learning curve. In agentic workflows, the chat does most of the work, yet the editor still takes the middle of the screen and the chat gets a narrow pane at the edge.\n\n\n\n\n\n\n\nADE agentic development environment\n\nEmaki turns this around, and we call it ADE. The agent chat takes the main space, and the sidebar groups your sessions under their projects. The supporting panels (files, outline and the two terminals) stay hidden until you need them."
+    "text": "From the IDE to the ADE\n\n\n\n\n\nIDE integrated development environment\n\nIDEs are made for hand crafting, with numerous panels and a steep learning curve. In agentic workflows, the chat does most of the work, yet the editor still takes the middle of the screen and the chat gets a narrow pane at the edge.\n\n\n\n\n\n\n\nADE agentic development environment\n\nEmaki turns this around, and we call it ADE. The agent chat takes the main space, and the sidebar groups your sessions under their projects. The rest stays hidden until you need it: the files and a terminal in panels at the chat’s sides, and in its margins the outline and your agent’s own CLI."
   },
   {
     "objectID": "index.html#get-started",
@@ -32,14 +32,21 @@
     "href": "index.html#panels",
     "title": "Emaki 絵巻",
     "section": "Panels",
-    "text": "Panels\nEmaki provides 4 panels, hidden by default, since they are essential but used less often than the chat."
+    "text": "Panels\nTwo panels stand at the chat’s sides, hidden until you need them, since they are essential but used less often than the chat: the files at the left and a terminal at the right, each from a button at an end of the strip over the chat."
+  },
+  {
+    "objectID": "index.html#margins",
+    "href": "index.html#margins",
+    "title": "Emaki 絵巻",
+    "section": "Margins",
+    "text": "Margins\nOn each side of the agent chat, you can hover and toggle 2 more panels. The left margin gives you the outline panel with quick jumping and summarizing; the right margin lets you switch between the rendered UI and the original CLI."
   },
   {
     "objectID": "docs/settings.html",
     "href": "docs/settings.html",
     "title": "Settings ⌘,",
     "section": "",
-    "text": "Your avatar and name, the window’s theme, and its accent: Periwinkle, Orchid, Rose, Amber, Moss, Jade or Teal.",
+    "text": "Your avatar and name, the window’s theme, and its accent: Periwinkle, Orchid, Rose, Amber, Moss, Jade or Teal. The list at the right of the section’s name picks the window’s language, from eight. Under Power, a switch keeps the display on while a session works.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Settings"
@@ -50,40 +57,40 @@
     "href": "docs/settings.html#appearance",
     "title": "Settings ⌘,",
     "section": "",
-    "text": "Your avatar and name, the window’s theme, and its accent: Periwinkle, Orchid, Rose, Amber, Moss, Jade or Teal.",
+    "text": "Your avatar and name, the window’s theme, and its accent: Periwinkle, Orchid, Rose, Amber, Moss, Jade or Teal. The list at the right of the section’s name picks the window’s language, from eight. Under Power, a switch keeps the display on while a session works.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Settings"
     ]
   },
   {
-    "objectID": "docs/settings.html#fonts",
-    "href": "docs/settings.html#fonts",
+    "objectID": "docs/settings.html#text",
+    "href": "docs/settings.html#text",
     "title": "Settings ⌘,",
-    "section": "Fonts",
-    "text": "Fonts\n\n\n\nEight faces for the chat, four serif and four sans serif, and four monospace faces for code and the terminals.",
+    "section": "Text",
+    "text": "Text\nTwo pages, Fonts and Size, chosen at the right of the section’s name.\n\nFonts\n\n\n\nEight faces for the chat, four serif and four sans serif, and four monospace faces for code and the terminals.\n\n\nSize\n\n\n\nSmall, Medium and Large set every place at once. Custom is your own set: each place’s size, stepped a point at a time or typed.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Settings"
     ]
   },
   {
-    "objectID": "docs/settings.html#text-size",
-    "href": "docs/settings.html#text-size",
+    "objectID": "docs/settings.html#conversation",
+    "href": "docs/settings.html#conversation",
     "title": "Settings ⌘,",
-    "section": "Text Size",
-    "text": "Text Size\n\n\n\nSmall, Medium and Large set every place at once. Custom is your own set: each place’s size, stepped a point at a time or typed.",
+    "section": "Conversation",
+    "text": "Conversation\n\n\n\nHow the chat draws the agent’s work: three or more tool calls in a row fold into one row that opens, and the Outline can be turned off. Then the composer: the key that sends, auto-capitalization, and spelling and grammar checked as you type, in US or UK English, Spanish, French or German. Spanish, French and German are checked on a Mac only.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Settings"
     ]
   },
   {
-    "objectID": "docs/settings.html#composer",
-    "href": "docs/settings.html#composer",
+    "objectID": "docs/settings.html#model-calls",
+    "href": "docs/settings.html#model-calls",
     "title": "Settings ⌘,",
-    "section": "Composer",
-    "text": "Composer\n\n\n\nThe key that sends, auto-capitalization, and spelling and grammar checked as you type, in US or UK English, Spanish, French or German. Spanish, French and German are checked on a Mac only.",
+    "section": "Model calls",
+    "text": "Model calls\n\n\n\nEverything Emaki asks a small model for, each a call on your account: the plain-word explanations of tool calls, and the Outline’s labels and summaries. Each has a switch, and each agent has a model to choose for them, from its own list.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Settings"
@@ -101,11 +108,11 @@
     ]
   },
   {
-    "objectID": "docs/settings.html#terminal",
-    "href": "docs/settings.html#terminal",
+    "objectID": "docs/settings.html#panels",
+    "href": "docs/settings.html#panels",
     "title": "Settings ⌘,",
-    "section": "Terminal",
-    "text": "Terminal\n\n\n\nThe terminal’s theme, its cursor, ligatures and copy on select. Its face is set in Fonts and its size in Text Size.",
+    "section": "Panels",
+    "text": "Panels\n\n\n\nWhich side each goes on: the Files Panel and the Terminal Panel, one at each side of the chat, and in its margins the Outline’s seam and the layout’s, which brings in the Agent CLI. Each pair is one choice, in the order they stand from left to right.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Settings"
@@ -116,7 +123,40 @@
     "href": "docs/settings.html#files",
     "title": "Settings ⌘,",
     "section": "Files",
-    "text": "Files\n\n\n\nFormat on save, and the languages it covers, each with its own formatter.",
+    "text": "Files\n\n\n\nWhether a file opens as it reads or as it is written, and format on save with the languages it covers, each with its own formatter.",
+    "crumbs": [
+      "<span id='nav-version' class='nav-version'>Releases</span>",
+      "Settings"
+    ]
+  },
+  {
+    "objectID": "docs/settings.html#terminal",
+    "href": "docs/settings.html#terminal",
+    "title": "Settings ⌘,",
+    "section": "Terminal",
+    "text": "Terminal\n\n\n\nThe terminal’s theme, its cursor, ligatures and copy on select. Its face is set in Fonts and its size in Size.",
+    "crumbs": [
+      "<span id='nav-version' class='nav-version'>Releases</span>",
+      "Settings"
+    ]
+  },
+  {
+    "objectID": "docs/settings.html#shortcuts",
+    "href": "docs/settings.html#shortcuts",
+    "title": "Settings ⌘,",
+    "section": "Shortcuts",
+    "text": "Shortcuts\n\n\n\nThe keys of the window’s commands, in two lists: the window’s, Sessions and Panels, and the file editor’s Sublime Text commands, Lines and Text. Click a command’s keys and press new ones; a key already taken is refused, and a button puts a changed key back. The Keys page lists them as they begin.",
+    "crumbs": [
+      "<span id='nav-version' class='nav-version'>Releases</span>",
+      "Settings"
+    ]
+  },
+  {
+    "objectID": "docs/settings.html#about",
+    "href": "docs/settings.html#about",
+    "title": "Settings ⌘,",
+    "section": "About",
+    "text": "About\nWho makes Emaki, the version, and updates: Emaki checks once a day, and installs nothing without you.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Settings"
@@ -125,12 +165,36 @@
   {
     "objectID": "docs/outline.html",
     "href": "docs/outline.html",
-    "title": "Outline Panel ⌘⇧O",
+    "title": "Outline ⌘⇧O",
     "section": "",
-    "text": "Going back through a long session is a pain. The Outline Panel lists a summary of each of your past prompts, with its time in front. As with the plain-word explanations of the agent’s tool calls, the summaries are written by the lightest model your session’s agent has.\nClick an entry to scroll back to its prompt.\n\n\n\n Back to top",
+    "text": "Going back through a long session is a pain. The Outline lists every round of the chat under its day, each with its time and a short label of what came of it, written by a small model of your agent’s, the one Settings, Model calls names for it. Click an entry to scroll back to its round.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
-      "Panels",
+      "Margins",
+      "Outline"
+    ]
+  },
+  {
+    "objectID": "docs/outline.html#the-drawer",
+    "href": "docs/outline.html#the-drawer",
+    "title": "Outline ⌘⇧O",
+    "section": "The drawer",
+    "text": "The drawer\nThe Outline lives in the chat’s left margin. Move the pointer there and a seam appears, a line down the margin with a knob halfway. Click the knob, or press ⌘⇧O, and the drawer slides out, the chat moving over for it; click again to put it away. It belongs to the chat: switching to the Agent CLI folds it away, and the chat brings it back as it was.",
+    "crumbs": [
+      "<span id='nav-version' class='nav-version'>Releases</span>",
+      "Margins",
+      "Outline"
+    ]
+  },
+  {
+    "objectID": "docs/outline.html#summaries",
+    "href": "docs/outline.html#summaries",
+    "title": "Outline ⌘⇧O",
+    "section": "Summaries",
+    "text": "Summaries\nSummarize session, under the entries, writes a summary of the session in bullets and heads the entries with sections. Update brings it up to date from the new rounds alone, and Hide puts it away. The Outline summaries switch in Settings, Model calls turns the labels and summaries off while keeping the Outline.\nEach label and summary is a call to a small model of your agent’s, on your account. Settings turns them off, which keeps the Outline without them, and chooses the model for each agent. Settings, Conversation, turns the Outline itself off.",
+    "crumbs": [
+      "<span id='nav-version' class='nav-version'>Releases</span>",
+      "Margins",
       "Outline"
     ]
   },
@@ -172,7 +236,7 @@
     "href": "docs/index.html#layout",
     "title": "Get Started",
     "section": "Layout",
-    "text": "Layout\nThe sidebar and the chat are always there. The four panels are hidden by default: the Files Panel or the Outline Panel opens on the left of the chat, the Shell Terminal Panel or the Agent Terminal Panel on its right.\n\n\n\n\n\nProjects\n\n\nChats\n\n\nFiles ⌘⇧F\n\n\nOutline ⌘⇧O\n\n\nShell Terminal ⌘⇧S\n\n\nAgent Terminal ⌘⇧A",
+    "text": "Layout\nThe sidebar and the chat are always there. Two panels are hidden until you need them: the Files Panel opens at the chat’s left and the Terminal Panel at its right, each from a button at an end of the strip over the chat. Two more things wait in the chat’s margins. The Outline is a drawer that slides out into the left margin, and the Agent CLI, your agent’s own screen, takes the chat’s place from the right margin and gives it back. Each has a seam in its margin, a line with a knob halfway, which shows when the pointer comes near. Settings puts each on the side you choose.\n\n\n\n\n\nProjects\n\n\nChats\n\n\nFiles ⌘⇧F\n\n\nOutline ⌘⇧O\n\n\nTerminal ⌘⇧S\n\n\nAgent CLI ⌘⇧L",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Get Started"
@@ -202,11 +266,23 @@
     ]
   },
   {
+    "objectID": "docs/chats.html#margins",
+    "href": "docs/chats.html#margins",
+    "title": "Chats",
+    "section": "Margins",
+    "text": "Margins\nThe chat’s two margins each hold a seam, a line down the margin with a knob halfway, shown while the pointer is near. The left one slides out the Outline, a drawer of every round. The right one switches the chat for the Agent CLI, your agent’s own screen, and back. Settings puts each on the side you choose.",
+    "crumbs": [
+      "<span id='nav-version' class='nav-version'>Releases</span>",
+      "Main System",
+      "Chats"
+    ]
+  },
+  {
     "objectID": "docs/chats.html#composer",
     "href": "docs/chats.html#composer",
     "title": "Chats",
     "section": "Composer",
-    "text": "Composer\nAttach files by pasting, dropping, or the + button. @ picks a file or folder from the project, and / lists the agent’s slash commands and skills. Spelling and grammar are checked as you type.\n\nWe proudly recommend using Kotoba as your dictation app on Emaki or any other composer on your machine. It supports light-weighted models for voice-to-text dictation and post-processing.",
+    "text": "Composer\nAttach files by pasting, dropping, or the + button. @ picks a file or folder from the project, and / lists the agent’s slash commands and skills. A message that starts with ! runs as a shell command in the project’s folder, and the chat shows it with its output. Spelling and grammar are checked as you type.\n\nWe proudly recommend using Kotoba as your dictation app on Emaki or any other composer on your machine. It supports light-weighted models for voice-to-text dictation and post-processing.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Main System",
@@ -263,7 +339,7 @@
     "href": "about.html#app-structure",
     "title": "About",
     "section": "App structure",
-    "text": "App structure\nEmaki is written in Rust, with GPUI, the Zed editor’s UI framework, and gpui-component for the window.\ncrates/emaki-core   core logic\ncrates/emaki-app    the window\nvendor/             gpui, modified to meet our needs\nscripts/            miscellaneous"
+    "text": "App structure\nEmaki is written in Rust, with GPUI, the Zed editor’s UI framework, and gpui-component for the window.\ncrates/emaki-core   core logic\ncrates/emaki-app    the window\nvendor/             gpui, modified to meet our needs\ndocs/               how each part is built\nscripts/            miscellaneous"
   },
   {
     "objectID": "about.html#meet-the-team",
@@ -287,11 +363,23 @@
     "text": "License\nMIT. © 2026 John Paul Helveston, Pingfan Hu, and Alkaline Software.\nThe source is at github.com/alkaline-software/emaki, and this site’s at github.com/alkaline-software/emaki.lol."
   },
   {
+    "objectID": "docs/agent-cli.html",
+    "href": "docs/agent-cli.html",
+    "title": "Agent CLI ⌘⇧L",
+    "section": "",
+    "text": "If you want your agent’s original CLI, this is it. The Agent CLI is Claude Code’s or Codex’s own screen, running the same session, and it takes the chat’s place. Move the pointer to the chat’s right margin and a seam appears, a line down the margin with a knob halfway. Click the knob, or press ⌘⇧L, and the terminal slides in over the chat; the same seam switches back. The app calls the two the CLI layout and the rendered layout, and each tab keeps the one you chose for it.\nA message typed in either shows in the other, so you can continue the session in whichever you like. As in the Terminal Panel, you can use your mouse, scrolling, and keyboard shortcuts. The Outline folds away with the chat and comes back with it.\n\n\n\n Back to top",
+    "crumbs": [
+      "<span id='nav-version' class='nav-version'>Releases</span>",
+      "Margins",
+      "Agent CLI"
+    ]
+  },
+  {
     "objectID": "docs/files.html#file-tree",
     "href": "docs/files.html#file-tree",
     "title": "Files Panel ⌘⇧F",
     "section": "File tree",
-    "text": "File tree\nWhen you open the Files Panel, the file tree is shown with its root folder expanded. Folders and files are drawn with Catppuccin’s file icons. If the project is a git repository, its changes are shown on the folders and files. The file tree supports mouse dragging and common keyboard shortcuts.",
+    "text": "File tree\nThe Files Panel opens from the button at the left end of the strip over the chat, and stays open or closed across launches. The file tree is shown with its root folder expanded. Folders and files are drawn with Catppuccin’s file icons. If the project is a git repository, its changes are shown on the folders and files. The file tree supports mouse dragging and common keyboard shortcuts.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Panels",
@@ -303,7 +391,7 @@
     "href": "docs/files.html#file-preview-editing",
     "title": "Files Panel ⌘⇧F",
     "section": "File preview & editing",
-    "text": "File preview & editing\nClick a file to open it in a pane between the tree and the chat; click it again to close it. The enlarge button gives the pane the chat’s room. You can use common keyboard shortcuts to undo, redo, save, and close.\nEmaki supports format on save for common languages. It is off by default and can be turned on in Settings: tick all the languages, or only the ones you want.\nSupported file types:\n\n\nCode\nMarkdown\nCSV and TSV\nParquet\nWord\nExcel\nPowerPoint\nPDF\nHTML\nPictures",
+    "text": "File preview & editing\nClick a file to open it in a pane between the tree and the chat; click it again to close it. Markdown, Quarto, LaTeX and Typst documents open rendered, and ⌘⇧V switches a file between its rendered and raw views. The enlarge button gives the pane the chat’s room. You can use common keyboard shortcuts to undo, redo, save, and close.\nEmaki supports format on save for common languages. It is off by default and can be turned on in Settings: tick all the languages, or only the ones you want.\nSupported file types:\n\n\nCode\nMarkdown\nLaTeX\nTypst\nCSV and TSV\nParquet\nWord\nExcel\nPowerPoint\nPDF\nHTML\nPictures",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Panels",
@@ -315,7 +403,7 @@
     "href": "docs/files.html#git",
     "title": "Files Panel ⌘⇧F",
     "section": "Git",
-    "text": "Git\nIf the project is a git repository, the git buttons appear in the Files Panel’s header. Click the branch name to switch branches or create a new one (⌘⇧N). You can also fetch, pull, and publish from there.\nThe Changes pill (⌘⇧G) opens the Changes sheet. There you can review your changes, write a commit message, commit (⌘↩︎), and push (⌘P). The sheet’s History side lists your past commits.",
+    "text": "Git\nIf the project is a git repository, the git buttons appear in the Files Panel’s header. Click the branch name to switch branches or create a new one (⌘⇧N). You can also fetch, pull, and push from there.\nThe Changes pill (⌘⇧G) opens the Changes sheet. There you can review your changes, write a commit message, commit (⌘↩︎), and push (⌘P). The sheet’s History side lists your past commits.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Panels",
@@ -338,7 +426,7 @@
     "href": "docs/keys.html#panels",
     "title": "Keys",
     "section": "Panels",
-    "text": "Panels\nHold ⇧ with ⌘, and the letter shows or hides a panel beside the chat. The letter is the panel’s first, and B is the sidebar’s.\n\n\n\n\n\n\n\n⌘⇧B\nthe sidebar, with your projects and their sessions; ⌘B too\n\n\n⌘⇧F\nFiles Panel\n\n\n⌘⇧O\nOutline Panel\n\n\n⌘⇧S\nShell Terminal Panel\n\n\n⌘⇧A\nAgent Terminal Panel\n\n\n⌘⇧G\ngit’s Changes sheet",
+    "text": "Panels\nHold ⇧ with ⌘, and the letter shows or hides something beside the chat, or switches what shows. The letter is the thing’s first, and B is the sidebar’s.\n\n\n\n\n\n\n\n⌘⇧B\nthe sidebar, with your projects and their sessions; ⌘B too\n\n\n⌘⇧F\nFiles Panel\n\n\n⌘⇧S\nTerminal Panel\n\n\n⌘⇧O\nthe Outline’s drawer\n\n\n⌘⇧L\nthe layout: the Agent CLI in the chat’s place, or the chat\n\n\n⌘⇧G\ngit’s Changes sheet\n\n\n⌘⇧V\na file in the Files Panel as it reads, or as it is written",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Keys"
@@ -349,7 +437,18 @@
     "href": "docs/keys.html#pages",
     "title": "Keys",
     "section": "Pages",
-    "text": "Pages\n⌘ and a letter opens a page or a sheet over the window.\n\n\n\n\n\n\n\n⌘K\nsearch every session\n\n\n⌘N\nnew session\n\n\n⌘T\nnew session in this project\n\n\n⌘O\nchoose a folder\n\n\n⌘L\nAll Sessions\n\n\n⌘E\nAgents\n\n\n⌘,\nSettings\n\n\n\nThe rest of ⌘ each does one thing where you are.\n\n\n\n\n\n\n\n⌘F · ⌘G\nfind in this chat, and the next hit; ⌘⇧G is the previous while the find bar is open\n\n\n⌘↩︎\nsend, or commit in the Changes sheet\n\n\n⌘P\npush, in the Changes sheet\n\n\n⌘S\nsave the file\n\n\n⌘1 to ⌘9\ntabs\n\n\n⌘W · ⌘⇧T\nclose a tab, reopen the last\n\n\n⌘⇧N\nnew branch\n\n\n⌘R\nrefresh\n\n\nEsc\nstop, or close what is open\n\n\n\nIn the terminal, ⌘T opens a tab, ⌘W closes it and ⌘K clears the screen.",
+    "text": "Pages\n⌘ and a letter opens a page or a sheet over the window.\n\n\n\n\n\n\n\n⌘K\nsearch every session\n\n\n⌘N\nnew session\n\n\n⌘T\nnew session in this project\n\n\n⌘O\nchoose a folder\n\n\n⌘L\nAll Sessions\n\n\n⌘E\nAgents\n\n\n⌘,\nSettings\n\n\n\nThe rest of ⌘ each does one thing where you are.\n\n\n\n\n\n\n\n⌘F · ⌘G\nfind in this chat, and the next hit; ⌘⇧G is the previous while the find bar is open\n\n\n⌘↩︎\nsend, or commit in the Changes sheet\n\n\n⌘P\npush, in the Changes sheet\n\n\n⌘S\nsave the file\n\n\n⌘1 to ⌘9\ntabs\n\n\n⌘W · ⌘⇧T\nclose a tab, reopen the last\n\n\n⌘⇧N\nnew branch\n\n\n⌘R\nrefresh\n\n\nEsc\nstop, or close what is open\n\n\n\nIn the terminal, ⌘T or ⌘N opens a tab, ⌘W closes it and ⌘K clears the screen.",
+    "crumbs": [
+      "<span id='nav-version' class='nav-version'>Releases</span>",
+      "Keys"
+    ]
+  },
+  {
+    "objectID": "docs/keys.html#your-own",
+    "href": "docs/keys.html#your-own",
+    "title": "Keys",
+    "section": "Your own",
+    "text": "Your own\nSettings, Shortcuts, changes the keys of the window’s commands above, and of the file editor’s Sublime Text commands. A key already taken is refused, and a button puts a changed key back.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Keys"
@@ -360,7 +459,7 @@
     "href": "docs/projects.html#projects",
     "title": "Projects",
     "section": "Projects",
-    "text": "Projects\nAll sessions in Emaki are project-based, all listed in the sidebar. You can pin your selected projects and show or hide sessions. To start a new session, you can either click the + button on an existing project or press ⌘T in the project you are in. With ⌘N, you can start one anywhere (the same as going to your landing page).",
+    "text": "Projects\nAll sessions in Emaki are project-based, all listed in the sidebar. You can pin your selected projects and show or hide sessions. To start a new session, you can either click the + button on an existing project or press ⌘T in the project you are in. With ⌘N, you can start one anywhere (the same as going to your landing page).\nPut away (⌘⇧B), the sidebar folds to a rail of icons: search, New Session, All Sessions, Agents, and Projects, which opens your projects beside the rail until you choose one.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Main System",
@@ -372,7 +471,7 @@
     "href": "docs/projects.html#sessions",
     "title": "Projects",
     "section": "Sessions",
-    "text": "Sessions\n\nIn the sidebar\nSessions are managed under their projects. A session’s leading logo tells you which agent it belongs to and lights up while the agent runs. A dot shows where the session stands, and a bar at the left marks one that is open in a tab. Claude Code and Codex sessions sit side by side, each read from the agent’s own files.\n\n\nAll Sessions\nAll Sessions (⌘L) lists every project and session with the day it was last used. This page provides plenty of ways of easily managing your existing sessions.",
+    "text": "Sessions\n\nIn the sidebar\nSessions are managed under their projects. A session’s leading logo tells you which agent it belongs to and lights up while the agent runs. A dot shows where the session stands: orange while a question waits for you, blue while the agent works or something it started still runs, green for half an hour after it finishes. A bar at the left marks a session that is open in a tab. Claude Code and Codex sessions sit side by side, each read from the agent’s own files.\n\n\nAll Sessions\nAll Sessions (⌘L) lists every project and session with the day it was last used. This page provides plenty of ways of easily managing your existing sessions.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Main System",
@@ -384,7 +483,7 @@
     "href": "docs/projects.html#archiving",
     "title": "Projects",
     "section": "Archiving",
-    "text": "Archiving\nClaude Code deletes its transcripts after 30 days. Emaki copies each one into ~/.emaki/archive. Codex never deletes sessions by age, so Emaki reads them in place.\nArchived sessions cannot be interacted. You can actively archive/unarchive your sessions. When you unarchive a Claude Code session, it will be treated as if it were created by the time you unarchive it.",
+    "text": "Archiving\nClaude Code deletes its transcripts after 30 days. Emaki copies each one into ~/.emaki/archive. Codex never deletes sessions by age, so Emaki reads them in place.\nAn archived session is kept but not continued until you unarchive it. You can archive and unarchive sessions yourself. An unarchived Claude Code session goes back to Claude Code dated now, so its thirty days start again.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Main System",
@@ -404,39 +503,15 @@
     ]
   },
   {
-    "objectID": "docs/terminals.html",
-    "href": "docs/terminals.html",
-    "title": "Terminals",
+    "objectID": "docs/terminal.html",
+    "href": "docs/terminal.html",
+    "title": "Terminal Panel ⌘⇧S",
     "section": "",
-    "text": "Opening a terminal and cd-ing to the project is easy, but doing it again and again is a pain. Emaki solves it for you! The Shell Terminal Panel gives you terminal tabs that open in the project’s folder. Use the + button or ⌘T to open a new tab, and ⌘W to close one. Inside the terminal, you can use your mouse, scrolling, and keyboard shortcuts. On Windows and Linux the keys are your system terminal’s: Ctrl with a letter goes to the shell, and the panel’s own keys add Shift (Ctrl⇧T, Ctrl⇧W, Ctrl⇧C, Ctrl⇧V).\nIts look is inspired by Kaku, in the window’s own colors and font.",
+    "text": "Opening a terminal and cd-ing to the project is easy, but doing it again and again is a pain. Emaki solves it for you! The Terminal Panel gives you terminal tabs that open in the project’s folder, from the button at the right end of the strip over the chat. Use the + button or ⌘T to open a new tab, and ⌘W to close one. Inside the terminal, you can use your mouse, scrolling, and keyboard shortcuts. On Windows and Linux the keys are your system terminal’s: Ctrl with a letter goes to the shell, and the panel’s own keys add Shift (Ctrl⇧T, Ctrl⇧W, Ctrl⇧C, Ctrl⇧V).\nIts look is inspired by Kaku, in the window’s own colors and font.\n\n\n\n Back to top",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Panels",
-      "Terminals"
-    ]
-  },
-  {
-    "objectID": "docs/terminals.html#shell",
-    "href": "docs/terminals.html#shell",
-    "title": "Terminals",
-    "section": "",
-    "text": "Opening a terminal and cd-ing to the project is easy, but doing it again and again is a pain. Emaki solves it for you! The Shell Terminal Panel gives you terminal tabs that open in the project’s folder. Use the + button or ⌘T to open a new tab, and ⌘W to close one. Inside the terminal, you can use your mouse, scrolling, and keyboard shortcuts. On Windows and Linux the keys are your system terminal’s: Ctrl with a letter goes to the shell, and the panel’s own keys add Shift (Ctrl⇧T, Ctrl⇧W, Ctrl⇧C, Ctrl⇧V).\nIts look is inspired by Kaku, in the window’s own colors and font.",
-    "crumbs": [
-      "<span id='nav-version' class='nav-version'>Releases</span>",
-      "Panels",
-      "Terminals"
-    ]
-  },
-  {
-    "objectID": "docs/terminals.html#agent",
-    "href": "docs/terminals.html#agent",
-    "title": "Terminals",
-    "section": "Agent Terminal Panel ⌘⇧A",
-    "text": "Agent Terminal Panel ⌘⇧A\n\n\n\n\n\nIf you want your agent’s original CLI, this is the right panel. You can use it as a fallback, or even continue your session in it. As in the Shell Terminal Panel, you can use your mouse, scrolling, and keyboard shortcuts.",
-    "crumbs": [
-      "<span id='nav-version' class='nav-version'>Releases</span>",
-      "Panels",
-      "Terminals"
+      "Terminal"
     ]
   }
 ]

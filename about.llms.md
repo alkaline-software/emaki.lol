@@ -25,6 +25,7 @@ Emaki is written in Rust, with [GPUI](https://www.gpui.rs), the Zed editor’s U
     crates/emaki-core   core logic
     crates/emaki-app    the window
     vendor/             gpui, modified to meet our needs
+    docs/               how each part is built
     scripts/            miscellaneous
 
 ## Meet the team

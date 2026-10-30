@@ -49,9 +49,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-4a93137e1f464f6b571849bbdd2e7ac0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-747ee3b6b2e6005217a5460e691a7e4e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-548e3c1b0710ed252f6ceef81dd89dc6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-747ee3b6b2e6005217a5460e691a7e4e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1a068c1b3d0caf3b5cb20e2a65dd108c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-4300e45dde8d865b7ceed99a91ddd2ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-1a068c1b3d0caf3b5cb20e2a65dd108c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -369,14 +369,32 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../docs/terminal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Terminal</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Margins</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../docs/outline.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Outline</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../docs/terminals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Terminals</span></a>
+  <a href="../docs/agent-cli.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Agent CLI</span></a>
   </div>
 </li>
       </ul>
@@ -406,6 +424,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#panels" id="toc-panels" class="nav-link active" data-scroll-target="#panels">Panels</a></li>
   <li><a href="#pages" id="toc-pages" class="nav-link" data-scroll-target="#pages">Pages</a></li>
+  <li><a href="#your-own" id="toc-your-own" class="nav-link" data-scroll-target="#your-own">Your own</a></li>
   </ul>
 </nav>
     </div>
@@ -436,7 +455,7 @@ ul.task-list li input[type="checkbox"] {
 <p><kbd>⌘</kbd> on macOS, <kbd>Ctrl</kbd> elsewhere.</p>
 <section id="panels" class="level2 i-app-window">
 <h2 class="i-app-window anchored" data-anchor-id="panels">Panels</h2>
-<p>Hold <kbd>⇧</kbd> with <kbd>⌘</kbd>, and the letter shows or hides a panel beside the chat. The letter is the panel’s first, and B is the sidebar’s.</p>
+<p>Hold <kbd>⇧</kbd> with <kbd>⌘</kbd>, and the letter shows or hides something beside the chat, or switches what shows. The letter is the thing’s first, and B is the sidebar’s.</p>
 <table class="table-keys caption-top table">
 <colgroup>
 <col style="width: 38%">
@@ -452,20 +471,24 @@ ul.task-list li input[type="checkbox"] {
 <td><a href="../docs/files.html">Files Panel</a></td>
 </tr>
 <tr class="odd">
-<td><kbd>⌘⇧O</kbd></td>
-<td><a href="../docs/outline.html">Outline Panel</a></td>
+<td><kbd>⌘⇧S</kbd></td>
+<td><a href="../docs/terminal.html">Terminal Panel</a></td>
 </tr>
 <tr class="even">
-<td><kbd>⌘⇧S</kbd></td>
-<td><a href="../docs/terminals.html#shell">Shell Terminal Panel</a></td>
+<td><kbd>⌘⇧O</kbd></td>
+<td>the <a href="../docs/outline.html">Outline</a>’s drawer</td>
 </tr>
 <tr class="odd">
-<td><kbd>⌘⇧A</kbd></td>
-<td><a href="../docs/terminals.html#agent">Agent Terminal Panel</a></td>
+<td><kbd>⌘⇧L</kbd></td>
+<td>the layout: the <a href="../docs/agent-cli.html">Agent CLI</a> in the chat’s place, or the chat</td>
 </tr>
 <tr class="even">
 <td><kbd>⌘⇧G</kbd></td>
 <td>git’s <a href="../docs/files.html#git">Changes</a> sheet</td>
+</tr>
+<tr class="odd">
+<td><kbd>⌘⇧V</kbd></td>
+<td>a file in the <a href="../docs/files.html">Files Panel</a> as it reads, or as it is written</td>
 </tr>
 </tbody>
 </table>
@@ -554,7 +577,11 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<p>In the terminal, <kbd>⌘T</kbd> opens a tab, <kbd>⌘W</kbd> closes it and <kbd>⌘K</kbd> clears the screen.</p>
+<p>In the terminal, <kbd>⌘T</kbd> or <kbd>⌘N</kbd> opens a tab, <kbd>⌘W</kbd> closes it and <kbd>⌘K</kbd> clears the screen.</p>
+</section>
+<section id="your-own" class="level2 i-settings">
+<h2 class="i-settings anchored" data-anchor-id="your-own">Your own</h2>
+<p><a href="../docs/settings.html#shortcuts">Settings, Shortcuts</a>, changes the keys of the window’s commands above, and of the file editor’s Sublime Text commands. A key already taken is refused, and a button puts a changed key back.</p>
 
 
 </section>
