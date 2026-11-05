@@ -1,7 +1,7 @@
 ---
 title: "Settings [⌘,]{.kbd}"
 pagetitle: "Settings"
-subtitle: "Ten sections in a window of their own, from Appearance to About."
+subtitle: "Eleven sections in a window of their own, from Appearance to About."
 ---
 
 ## Appearance {.i-palette}
@@ -70,6 +70,35 @@ Whether a file opens as it reads or as it is written, and format on save with th
 :::
 
 The terminal's theme, its cursor, ligatures and copy on select. Its face is set in Fonts and its size in Size.
+
+## Connected Devices {.i-devices}
+
+::: {.fig .settings-fig data-figure="settings-remote" aria-label="The Connected Devices section of Emaki's settings, in two sections. This computer → Target computer: under New connection, with Connect at its head, the target address and the target password; under Saved computers, an entry for each computer. A MacBook Air, its Claude Code mark ticked green and its Codex mark amber, with a pencil to rename it and a bin to remove it, and under it two addresses: Local network, me@MacBook-Air.local, its Connect pale, and Remote, me@macbook-air, connected, with Disconnect. A Linux box with one address on the local network, disconnected, with Connect. Each address has a round cross that removes it. Other computer → This computer: Remote Login on with Open Sharing Settings, and this computer's address with a copy button. A click presses a button."}
+:::
+
+In this section, you can connect to another computer in your local network, or other networks (which needs online service like [Tailscale](https://tailscale.com)).
+
+::: {.starts .stack}
+
+::: {.start}
+### Turn on Remote Login
+
+On the target computer, in System Settings, Sharing (for Linux, start its ssh server).
+:::
+
+::: {.start}
+### Connect
+
+Fill in the address and password of the target computer.
+:::
+
+::: {.start}
+### Sign in
+
+The sign-in credentials don't work cross-computer, so you need to sign in from your controlling computer. Click on the agent icon(s) to sign in.
+:::
+
+:::
 
 ## Shortcuts {.i-keyboard}
 

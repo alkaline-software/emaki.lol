@@ -9,9 +9,10 @@ import { icon, value } from "./composer.js";
  * One section of Emaki's settings window, on its own (Settings): the
  * section's groups as the app lays them out (`workbench/settings.rs`), a
  * card of rows each, a name at the left and its control at the right, on
- * the pane's ground, with no window round it. Ten figures: Appearance,
+ * the pane's ground, with no window round it. Eleven figures: Appearance,
  * Text's two pages, Fonts and Size, Conversation, Model calls, New
- * sessions, Panels, Files, Terminal and Shortcuts; About is not drawn.
+ * sessions, Panels, Files, Terminal, Connected Devices and Shortcuts; About is not
+ * drawn.
  *
  * A click or a tap works a control as the app's does, and nothing else
  * changes: a switch's knob slides and its track fills with the accent, a
@@ -170,6 +171,92 @@ function button(parent, u0, u1, yc, word, cls = "") {
     c.frame = () => { wash.el.style.opacity = fl.x; };
     c.hits.push({ r: box(u0, yc - 6, u1, yc + 6), act: () => { flash(fl); return word; } });
   });
+}
+
+/** The button a card is for, filled with the accent, its word on it: it flashes when pressed. */
+function primary(parent, u0, u1, yc, word) {
+  return control(parent, (c, add) => {
+    const p = pen();
+    ring(p, u0, yc - 6, u1, yc + 6, 6, "emk-fill-accent");
+    ring(p, u0, yc - 6, u1, yc + 6, 6, "emk-press");
+    text(p, (u0 + u1) / 2, yc, word, CS, "emk-text emk-mid emk-on-accent", 1.6);
+    const [, wash] = add(p);
+    const fl = press();
+    c.springs.push(fl);
+    c.frame = () => { wash.el.style.opacity = fl.x; };
+    c.hits.push({ r: box(u0, yc - 6, u1, yc + 6), act: () => { flash(fl); return word; } });
+  });
+}
+
+/** A value to read and type on another computer, in the code face at the row's right, and the copy button after it. */
+function copyable(parent, base, yc, value) {
+  text(base, R - 13, yc, value, SS, "emk-text emk-aa-mono emk-end", 1.4);
+  return control(parent, (c, add) => {
+    const p = pen(), u = R - 4.5;
+    ring(p, u - 5, yc - 5, u + 5, yc + 5, 2, "emk-press");
+    ring(p, u - 2.6, yc - 1.4, u + 1.4, yc + 2.6, 0.8, "nf emk-ico", 1.3);
+    line(p, [[u - 2.6, yc - 2.4], [u - 2.6, yc - 2.6], [u + 2.4, yc - 2.6], [u + 2.4, yc + 1.6]], "nf emk-ico", 1.3);
+    const [wash] = add(p);
+    const fl = press();
+    c.springs.push(fl);
+    c.frame = () => { wash.el.style.opacity = fl.x; };
+    c.hits.push({ r: box(u - 6, yc - 6, u + 6, yc + 6), act: () => { flash(fl); return "Copied " + value; } });
+  });
+}
+
+/** A round button with its icon alone, as the app's bin, pencil and cross: it flashes when pressed; `off`, pale and pressing nothing. */
+function round(parent, u, yc, glyph, word, off = false) {
+  return control(parent, (c, add) => {
+    const p = pen();
+    ring(p, u - 5, yc - 5, u + 5, yc + 5, 5, "emk-press");
+    ring(p, u - 5, yc - 5, u + 5, yc + 5, 5, "nf emk-btnline");
+    GLYPHS[glyph](p, u, yc);
+    const [wash] = add(p);
+    const fl = press();
+    c.springs.push(fl);
+    c.live = () => !off;
+    c.frame = () => { wash.el.style.opacity = fl.x; };
+    c.hits.push({ r: box(u - 5.5, yc - 5.5, u + 5.5, yc + 5.5), act: () => { if (off) return null; flash(fl); return word; } });
+  });
+}
+/** The small icons of a saved computer's entry, drawn about (u, yc). */
+const GLYPHS = {
+  bin(p, u, yc) {
+    hl(p, u - 2.4, u + 2.4, yc - 1.8, "nf emk-ico", 1.2);
+    line(p, [[u - 1.8, yc - 1.8], [u - 1.4, yc + 2.4], [u + 1.4, yc + 2.4], [u + 1.8, yc - 1.8]], "nf emk-ico", 1.2);
+    hl(p, u - 0.8, u + 0.8, yc - 2.8, "nf emk-ico", 1.2);
+  },
+  pencil(p, u, yc) {
+    line(p, [[u - 2.2, yc + 2.2], [u + 1.6, yc - 1.6]], "nf emk-ico", 1.3);
+    line(p, [[u + 0.8, yc - 2.4], [u + 2.4, yc - 0.8]], "nf emk-ico", 1.3);
+    line(p, [[u - 2.2, yc + 2.2], [u - 2.4, yc + 2.4]], "nf emk-ico", 1.3);
+  },
+  cross(p, u, yc) {
+    line(p, [[u - 1.8, yc - 1.8], [u + 1.8, yc + 1.8]], "nf emk-ico", 1.3);
+    line(p, [[u - 1.8, yc + 1.8], [u + 1.8, yc - 1.8]], "nf emk-ico", 1.3);
+  },
+  /** The network at home: a box over two, joined. */
+  network(p, u, yc) {
+    ring(p, u - 1, yc - 2.8, u + 1, yc - 0.8, 0.4, "nf emk-ico", 1.2);
+    ring(p, u - 3, yc + 0.9, u - 1, yc + 2.9, 0.4, "nf emk-ico", 1.2);
+    ring(p, u + 1, yc + 0.9, u + 3, yc + 2.9, 0.4, "nf emk-ico", 1.2);
+    line(p, [[u, yc - 0.8], [u, yc], [u - 2, yc], [u - 2, yc + 0.9]], "nf emk-ico", 1.2);
+    line(p, [[u, yc], [u + 2, yc], [u + 2, yc + 0.9]], "nf emk-ico", 1.2);
+  },
+  /** Anywhere: a globe. */
+  globe(p, u, yc) {
+    ring(p, u - 2.8, yc - 2.8, u + 2.8, yc + 2.8, 2.8, "nf emk-ico", 1.2);
+    ring(p, u - 1.2, yc - 2.8, u + 1.2, yc + 2.8, 1.2, "nf emk-ico", 1.1);
+    hl(p, u - 2.8, u + 2.8, yc, "nf emk-ico", 1.1);
+  },
+};
+
+/** A computer, as its row marks it: a screen on its stand, and a dot of how its link stands. */
+function computer(p, u, yc, tint) {
+  ring(p, u - 4.4, yc - 3.6, u + 4.4, yc + 2.2, 0.8, "nf emk-ico", 1.3);
+  hl(p, u - 2.4, u + 2.4, yc + 4.4, "nf emk-ico", 1.3);
+  line(p, [[u, yc + 2.2], [u, yc + 4.4]], "nf emk-ico", 1.3);
+  p.dot(u + 4.4, -(yc + 3.2), 1.7, "dot emk-fill-" + tint, 1.4);
 }
 
 /** A tick before a name: the box fills with the accent and the tick comes. */
@@ -622,6 +709,75 @@ const SECTIONS = {
     ]);
     text(pn.base, L - 1.5, pn.y, "The styling and UI design are from Kaku, made by tw93.", SS, "emk-text", 0.8);
     pn.gap(6);
+  },
+  /**
+   * Connected Devices, in two sections, one a way: This computer → Target
+   * computer, its New connection the target's address and password with
+   * Connect at the group's head, and its Saved computers, an entry a
+   * computer in two levels as the app lists them: the computer's own row,
+   * its name with its agents' marks, each wearing whether it is signed in
+   * there, and the round pencil and bin; under it a row a way to it, the
+   * network it goes over, its address, how the one in use stands with
+   * Disconnect, the others' Connect pale until it is disconnected, and a
+   * round cross each. Other computer → This computer: Remote Login with
+   * the way to the system's switch, and the address to give the
+   * controlling computer, with its copy button.
+   */
+  remote(pn, g) {
+    // A section's name, a step larger and in the ink, over its groups.
+    const sect = (word) => { text(pn.base, L - 6, pn.y + 6, word, TS + 0.6, "emk-text emk-row emk-head", 1); pn.gap(16); };
+    sect("This computer → Target computer");
+    const top = pn.y;
+    pn.head("New connection");
+    pn.card([
+      [RH, "Target Address", null, (yc) => { const p = pen(); ring(p, C0, yc - 6, R, yc + 6, 3.2, "emk-field"); p.out.forEach((q) => { element(q, g); pn.base.out.push(q); }); return []; }],
+      [RH, "Target Password", null, (yc) => { const p = pen(); ring(p, C0, yc - 6, R, yc + 6, 3.2, "emk-field"); p.out.forEach((q) => { element(q, g); pn.base.out.push(q); }); return []; }],
+    ]);
+    pn.rows.push({ make: () => primary(g, R - 36, R, top + 5, "Connect") });
+    pn.gap(4);
+    pn.head("Saved computers");
+    // An entry: the computer's row, then a row a way, at its name's indent.
+    const HEAD = 26, WAY = 20, IN = L + 16;
+    const entry = (name, nameW, agents, ways) => [HEAD + WAY * ways.length, null, null, (yc0) => {
+      const top = yc0 - (HEAD + WAY * ways.length) / 2, yh = top + HEAD / 2;
+      const p = pen(), on = ways.some((w) => w.state === "on"), busy = ways.some((w) => w.state);
+      ring(p, L - 4, yh - 6.5, L + 9, yh + 6.5, 2.6, "emk-track");
+      computer(p, L + 2.5, yh - 0.6, on ? "sage" : "plate");
+      text(p, IN, yh, name, TS, "emk-text emk-row", 1);
+      agents.forEach(([a, signed], k) => {
+        const u = IN + 4 + nameW + k * 8;
+        mark(p, a, u, yh, 4.6);
+        p.dot(u + 2.6, -(yh - 2.6), 1.5, "dot emk-fill-" + (signed ? "sage" : "ochre"), 1.4);
+      });
+      const made = [round(g, R - 17, yh, "pencil", "Rename"), round(g, R - 5, yh, "bin", "Remove this computer?")];
+      ways.forEach((w, k) => {
+        const yc = top + HEAD + WAY * k + WAY / 2;
+        hl(p, IN, R, yc - WAY / 2);
+        GLYPHS[w.local ? "network" : "globe"](p, IN + 3, yc);
+        text(p, IN + 9, yc, w.local ? "Local network" : "Remote", SS + 0.4, "emk-text emk-row", 1);
+        text(p, IN + (w.local ? 49 : 33), yc, w.address, SS, "emk-text emk-aa-mono", 1);
+        if (w.state === "on") text(p, R - 60, yc, "✓ Connected", SS, "emk-text emk-end emk-on", 1.4);
+        const b = button(g, R - 56, R - 14, yc, w.state ? "Disconnect" : "Connect");
+        // Another way in use: pale, and no press, until it is disconnected.
+        if (busy && !w.state) b.live = () => false;
+        made.push(b, round(g, R - 5, yc, "cross", "Remove Connection", !!w.state));
+      });
+      p.out.forEach((q) => { element(q, g); pn.base.out.push(q); });
+      return made;
+    }];
+    pn.card([
+      entry("MacBook Air", 36, [["claude", true], ["codex", false]], [
+        { local: true, address: "me@MacBook-Air.local" },
+        { local: false, address: "me@macbook-air", state: "on" },
+      ]),
+      entry("Linux box", 28, [["claude", true]], [{ local: true, address: "me@192.168.1.30" }]),
+    ]);
+    pn.gap(10);
+    sect("Other computer → This computer");
+    pn.card([
+      [RH2, "Remote Login", "Turn on to let this computer be controlled", (yc) => { text(pn.base, R - 80, yc, "On", CS, "emk-text emk-on emk-end", 1.4); return button(g, R - 74, R, yc, "Open Sharing Settings"); }],
+      [RH2, "Address", "Provide to your controlling computer", (yc) => copyable(g, pn.base, yc, "me@Studio.local")],
+    ]);
   },
   files(pn, g) {
     let format = true;

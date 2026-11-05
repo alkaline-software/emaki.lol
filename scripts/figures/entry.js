@@ -49,6 +49,7 @@ const OWN = {
   "settings-panels": { engine: settings({ section: "panels" }), label: "The Panels section of Emaki's settings." },
   "settings-files": { engine: settings({ section: "files" }), label: "The Files section of Emaki's settings." },
   "settings-terminal": { engine: settings({ section: "terminal" }), label: "The Terminal section of Emaki's settings." },
+  "settings-remote": { engine: settings({ section: "remote" }), label: "The Connected Devices section of Emaki's settings." },
   "settings-shortcuts": { engine: settings({ section: "shortcuts" }), label: "The Shortcuts section of Emaki's settings." },
   // Chats: the composer's foot close up, the pills or the status line its own.
   "composer-pills": { engine: composer({ focus: "pills" }), label: "The foot of Emaki's composer, close up, with its mode, effort and model pills." },
