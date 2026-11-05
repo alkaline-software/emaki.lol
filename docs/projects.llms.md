@@ -6,6 +6,8 @@ The sidebar lists your sessions grouped under their projects.
 
 All sessions in Emaki are project-based, all listed in the sidebar. You can pin your selected projects and show or hide sessions. To start a new session, you can either click the + button on an existing project or press ⌘T in the project you are in. With ⌘N, you can start one anywhere (the same as going to your landing page).
 
+The projects card belongs to one computer, named at its top: This computer, or a device you saved in [Connected Devices](../docs/settings.llms.md#connected-devices). Your other computers wait in a small card at the bottom of the sidebar, each with a dot that is green while it’s connected; click one to open its projects. A connected one shows at its top whether it’s reached over your local network or from anywhere. While one isn’t connected, it shows a button for each of its addresses to connect by, and one to its settings. With no device saved, the small card holds Connect a Device….
+
 Put away (⌘⇧B), the sidebar folds to a rail of icons: search, New Session, All Sessions, Agents, and Projects, which opens your projects beside the rail until you choose one.
 
 ## Sessions

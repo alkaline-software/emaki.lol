@@ -1,6 +1,6 @@
 # Settings ⌘,
 
-Ten sections in a window of their own, from Appearance to About.
+Eleven sections in a window of their own, from Appearance to About.
 
 ## Appearance
 
@@ -41,6 +41,22 @@ Whether a file opens as it reads or as it is written, and format on save with th
 ## Terminal
 
 The terminal’s theme, its cursor, ligatures and copy on select. Its face is set in Fonts and its size in Size.
+
+## Connected Devices
+
+In this section, you can connect to another computer in your local network, or other networks (which needs online service like [Tailscale](https://tailscale.com)).
+
+### Turn on Remote Login
+
+On the target computer, in System Settings, Sharing (for Linux, start its ssh server).
+
+### Connect
+
+Fill in the address and password of the target computer.
+
+### Sign in
+
+The sign-in credentials don’t work cross-computer, so you need to sign in from your controlling computer. Click on the agent icon(s) to sign in.
 
 ## Shortcuts
 
