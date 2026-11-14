@@ -68,7 +68,7 @@
     "href": "docs/settings.html#text",
     "title": "Settings ⌘,",
     "section": "Text",
-    "text": "Text\nTwo pages, Fonts and Size, chosen at the right of the section’s name.\n\nFonts\n\n\n\nEight faces for the chat, four serif and four sans serif, and four monospace faces for code and the terminals.\n\n\nSize\n\n\n\nSmall, Medium and Large set every place at once. Custom is your own set: each place’s size, stepped a point at a time or typed.",
+    "text": "Text\nTwo pages, Fonts and Size, chosen at the right of the section’s name.\n\nFonts\n\n\n\nEight faces for the chat, four for CJK text, and four monospace faces for code and the terminals. Custom uses any font on your computer.\n\n\nSize\n\n\n\nSmall, Medium and Large set every place at once. Custom is your own set: each place’s size, stepped a point at a time or typed. The rendered editor’s size is the previews’ too.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Settings"
@@ -79,7 +79,7 @@
     "href": "docs/settings.html#conversation",
     "title": "Settings ⌘,",
     "section": "Conversation",
-    "text": "Conversation\n\n\n\nHow the chat draws the agent’s work: three or more tool calls in a row fold into one row that opens, and the Outline can be turned off. Then the composer: the key that sends, auto-capitalization, and spelling and grammar checked as you type, in US or UK English, Spanish, French or German. Spanish, French and German are checked on a Mac only.",
+    "text": "Conversation\n\n\n\nHow the chat draws the agent’s work: three or more tool calls in a row fold into one row that opens, and the Outline can be turned off. Then the composer: the key that sends, auto-capitalization, live markdown, and spelling and grammar checked as you type, in US or UK English, Spanish, French or German. Spanish, French and German are checked on a Mac only.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Settings"
@@ -123,7 +123,7 @@
     "href": "docs/settings.html#files",
     "title": "Settings ⌘,",
     "section": "Files",
-    "text": "Files\n\n\n\nWhether a file opens as it reads or as it is written, and format on save with the languages it covers, each with its own formatter.",
+    "text": "Files\n\n\n\nWhether a file opens rendered or in the raw editor, and format on save with the languages it covers, each with its own formatter.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Settings"
@@ -145,7 +145,7 @@
     "href": "docs/settings.html#connected-devices",
     "title": "Settings ⌘,",
     "section": "Connected Devices",
-    "text": "Connected Devices\n\n\n\nIn this section, you can connect to another computer in your local network, or other networks (which needs online service like Tailscale).\n\n\nTurn on Remote Login\nOn the target computer, in System Settings, Sharing (for Linux, start its ssh server).\n\n\nConnect\nFill in the address and password of the target computer.\n\n\nSign in\nThe sign-in credentials don’t work cross-computer, so you need to sign in from your controlling computer. Click on the agent icon(s) to sign in.",
+    "text": "Connected Devices\n\n\n\nIn this section, you can connect to another computer in your local network, or other networks (which needs online service like Tailscale).\n\n\nTurn on Remote Login\nOn the target computer, in System Settings, Sharing (for Linux, start its ssh server).\n\n\nConnect\nFill in the address and password of the target computer.\n\n\nSign in\nThe sign-in credentials don’t work cross-computer, so you need to sign in from your controlling computer. Click Sign in beside an agent’s mark.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Settings"
@@ -156,7 +156,7 @@
     "href": "docs/settings.html#shortcuts",
     "title": "Settings ⌘,",
     "section": "Shortcuts",
-    "text": "Shortcuts\n\n\n\nThe keys of the window’s commands, in two lists: the window’s, Sessions and Panels, and the file editor’s Sublime Text commands, Lines and Text. Click a command’s keys and press new ones; a key already taken is refused, and a button puts a changed key back. The Keys page lists them as they begin.",
+    "text": "Shortcuts\n\n\n\nThe keys of the window’s commands, in two lists: the window’s, Sessions and Panels, and the raw editor’s Sublime Text commands, Lines and Text. Click a command’s keys and press new ones; a key already taken is refused, and a button puts a changed key back. The Keys page lists them as they begin.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Settings"
@@ -258,7 +258,7 @@
     "href": "docs/index.html#what-emaki-keeps",
     "title": "Get Started",
     "section": "What Emaki keeps",
-    "text": "What Emaki keeps\nEverything Emaki keeps is in ~/.emaki:\n\n\n\n\n\n\n\narchive/\nevery Claude Code session, copied byte for byte\n\n\nlogs/\neach session rendered as markdown\n\n\nsearch.db\nthe full-text index\n\n\nconfig.json\nyour settings\n\n\n\nCodex has its own archiving system, so archive/ only stores Claude Code sessions.\nEmaki changes one setting in Claude Code: its status line, which feeds Emaki’s own status line under the composer. To put yours back, run emaki-core statusline restore.",
+    "text": "What Emaki keeps\nEverything Emaki keeps is in ~/.emaki:\n\n\n\n\n\n\n\narchive/\nevery Claude Code session, copied byte for byte\n\n\nlogs/\neach session rendered as markdown\n\n\nsearch.db\nthe full-text index\n\n\nconfig.json\nyour settings\n\n\nremote/\nsessions copied from your connected computers\n\n\nremote-files/\nfiles you opened on them\n\n\n\nCodex has its own archiving system, so archive/ only stores Claude Code sessions.\nEmaki changes one setting in Claude Code: its status line, which feeds Emaki’s own status line under the composer. To put yours back, run emaki-core statusline restore.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Get Started"
@@ -269,7 +269,7 @@
     "href": "docs/chats.html#transcript",
     "title": "Chats",
     "section": "Transcript",
-    "text": "Transcript\nChat transcripts are well-rendered with high-quality interface. Agent tool calls are stacked to release reading pressure. You can expand them and even get summaries of each tool call to understand what happened. Artifacts, background jobs, subagents, Q&A sessions are all properly taken care of with smooth UI.",
+    "text": "Transcript\nChat transcripts are well-rendered with high-quality interface. Agent tool calls are stacked to release reading pressure. You can expand them and even get summaries of each tool call to understand what happened. Q&A sessions are properly taken care of with smooth UI. Artifacts, background jobs, subagents and important notifications are shown at the bottom right of the composer, and you can toggle them as you need.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Main System",
@@ -293,7 +293,7 @@
     "href": "docs/chats.html#composer",
     "title": "Chats",
     "section": "Composer",
-    "text": "Composer\nAttach files by pasting, dropping, or the + button. @ picks a file or folder from the project, and / lists the agent’s slash commands and skills. A message that starts with ! runs as a shell command in the project’s folder, and the chat shows it with its output. Spelling and grammar are checked as you type.\n\nWe proudly recommend using Kotoba as your dictation app on Emaki or any other composer on your machine. It supports light-weighted models for voice-to-text dictation and post-processing.",
+    "text": "Composer\nAttach files by pasting, dropping, or the + button. @ picks a file or folder from the project, and / lists the agent’s slash commands and skills. A message that starts with ! runs as a shell command in the project’s folder, and the chat shows it with its output. Spelling and grammar are checked as you type. The composer supports real-time markdown rendering and common keyboard shortcuts.\n\nWe proudly recommend using Kotoba as your dictation app on Emaki or any other composer on your machine. It supports light-weighted models for voice-to-text dictation and post-processing.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Main System",
@@ -390,7 +390,7 @@
     "href": "docs/files.html#file-tree",
     "title": "Files Panel ⌘⇧F",
     "section": "File tree",
-    "text": "File tree\nThe Files Panel opens from the button at the left end of the strip over the chat, and stays open or closed across launches. The file tree is shown with its root folder expanded. Folders and files are drawn with Catppuccin’s file icons. If the project is a git repository, its changes are shown on the folders and files. The file tree supports mouse dragging and common keyboard shortcuts.",
+    "text": "File tree\nThe Files Panel opens from the button at the left end of the strip over the chat, and stays open or closed across launches. The file tree is shown with its root folder expanded. Folders and files are drawn with Catppuccin’s file icons. If the project is a git repository, its changes are shown on the folders and files. The file tree supports mouse dragging and common keyboard shortcuts. Folders stick to the top as you scroll.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Panels",
@@ -398,11 +398,11 @@
     ]
   },
   {
-    "objectID": "docs/files.html#file-preview-editing",
-    "href": "docs/files.html#file-preview-editing",
+    "objectID": "docs/files.html#file-view-editing",
+    "href": "docs/files.html#file-view-editing",
     "title": "Files Panel ⌘⇧F",
-    "section": "File preview & editing",
-    "text": "File preview & editing\nClick a file to open it in a pane between the tree and the chat; click it again to close it. Markdown, Quarto, LaTeX and Typst documents open rendered, and ⌘⇧V switches a file between its rendered and raw views. The enlarge button gives the pane the chat’s room. You can use common keyboard shortcuts to undo, redo, save, and close.\nEmaki supports format on save for common languages. It is off by default and can be turned on in Settings: tick all the languages, or only the ones you want.\nSupported file types:\n\n\nCode\nMarkdown\nLaTeX\nTypst\nCSV and TSV\nParquet\nWord\nExcel\nPowerPoint\nPDF\nHTML\nPictures",
+    "section": "File view & editing",
+    "text": "File view & editing\nClick a file to open it in a pane between the tree and the chat; click it again to close it. Markdown, Quarto, LaTeX and Typst documents open in the rendered editor, where you edit them as they read. Other documents, such as HTML, PDF and Word, open in a preview. ⌘⇧V switches a file to the raw editor and back. The enlarge button gives the pane the chat’s room. You can use common keyboard shortcuts to undo, redo, save, and close.\nEmaki supports format on save for common languages. It is off by default and can be turned on in Settings: tick all the languages, or only the ones you want.\nSupported file types:\n\n\nCode\nMarkdown\nLaTeX\nTypst\nCSV and TSV\nParquet\nWord\nExcel\nPowerPoint\nPDF\nHTML\nPictures",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Panels",
@@ -437,7 +437,7 @@
     "href": "docs/keys.html#panels",
     "title": "Keys",
     "section": "Panels",
-    "text": "Panels\nHold ⇧ with ⌘, and the letter shows or hides something beside the chat, or switches what shows. The letter is the thing’s first, and B is the sidebar’s.\n\n\n\n\n\n\n\n⌘⇧B\nthe sidebar, with your projects and their sessions; ⌘B too\n\n\n⌘⇧F\nFiles Panel\n\n\n⌘⇧S\nTerminal Panel\n\n\n⌘⇧O\nthe Outline’s drawer\n\n\n⌘⇧L\nthe layout: the Agent CLI in the chat’s place, or the chat\n\n\n⌘⇧G\ngit’s Changes sheet\n\n\n⌘⇧V\na file in the Files Panel as it reads, or as it is written",
+    "text": "Panels\nHold ⇧ with ⌘, and the letter shows or hides something beside the chat, or switches what shows. The letter is the thing’s first, and B is the sidebar’s.\n\n\n\n\n\n\n\n⌘⇧B\nthe sidebar, with your projects and their sessions; ⌘B too\n\n\n⌘⇧F\nFiles Panel\n\n\n⌘⇧S\nTerminal Panel\n\n\n⌘⇧O\nthe Outline’s drawer\n\n\n⌘⇧L\nthe layout: the Agent CLI in the chat’s place, or the chat\n\n\n⌘⇧G\ngit’s Changes sheet\n\n\n⌘⇧V\na file, rendered or in the raw editor",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Keys"
@@ -459,7 +459,7 @@
     "href": "docs/keys.html#your-own",
     "title": "Keys",
     "section": "Your own",
-    "text": "Your own\nSettings, Shortcuts, changes the keys of the window’s commands above, and of the file editor’s Sublime Text commands. A key already taken is refused, and a button puts a changed key back.",
+    "text": "Your own\nSettings, Shortcuts, changes the keys of the window’s commands above, and of the raw editor’s Sublime Text commands. A key already taken is refused, and a button puts a changed key back.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Keys"
@@ -470,7 +470,7 @@
     "href": "docs/projects.html#projects",
     "title": "Projects",
     "section": "Projects",
-    "text": "Projects\nAll sessions in Emaki are project-based, all listed in the sidebar. You can pin your selected projects and show or hide sessions. To start a new session, you can either click the + button on an existing project or press ⌘T in the project you are in. With ⌘N, you can start one anywhere (the same as going to your landing page).\nThe projects card belongs to one computer, named at its top: This computer, or a device you saved in Connected Devices. Your other computers wait in a small card at the bottom of the sidebar, each with a dot that is green while it’s connected; click one to open its projects. A connected one shows at its top whether it’s reached over your local network or from anywhere. While one isn’t connected, it shows a button for each of its addresses to connect by, and one to its settings. With no device saved, the small card holds Connect a Device….\nPut away (⌘⇧B), the sidebar folds to a rail of icons: search, New Session, All Sessions, Agents, and Projects, which opens your projects beside the rail until you choose one.",
+    "text": "Projects\nAll sessions in Emaki are project-based, all listed in the sidebar. You can pin your selected projects and show or hide sessions. To start a new session, you can either click the + button on an existing project or press ⌘T in the project you are in. With ⌘N, you can start one anywhere (the same as going to your landing page).\nThe projects card belongs to one computer, named at its top: This computer, or a device you saved in Connected Devices. Your other computers wait in a small card at the bottom of the sidebar, each with a dot that is green while it’s connected; click one to open its projects. A connected one shows at its top whether it’s reached over your local network or from anywhere. While one isn’t connected, it shows a button for each of its addresses to connect by, and one to its settings. With no device saved, the small card holds Connect a Device….\nA session on another computer runs there, with that computer’s files, terminal and git.\nArchived, temporary and hidden projects have their own sections under your projects, with the Trash at the bottom. If you rename or move a project’s folder, its sessions follow it.\nPut away (⌘⇧B), the sidebar folds to a rail of icons: search, New Session, All Sessions, Agents, and Projects, which opens your projects beside the rail until you choose one.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Main System",
@@ -482,7 +482,7 @@
     "href": "docs/projects.html#sessions",
     "title": "Projects",
     "section": "Sessions",
-    "text": "Sessions\n\nIn the sidebar\nSessions are managed under their projects. A session’s leading logo tells you which agent it belongs to and lights up while the agent runs. A dot shows where the session stands: orange while a question waits for you, blue while the agent works or something it started still runs, green for half an hour after it finishes. A bar at the left marks a session that is open in a tab. Claude Code and Codex sessions sit side by side, each read from the agent’s own files.\n\n\nAll Sessions\nAll Sessions (⌘L) lists every project and session with the day it was last used. This page provides plenty of ways of easily managing your existing sessions.",
+    "text": "Sessions\n\nIn the sidebar\nSessions are managed under their projects. A session’s leading logo tells you which agent it belongs to and lights up while the agent runs. A dot shows where the session stands: orange while a question waits for you, blue while the agent works or something it started still runs, green for half an hour after it finishes. A project’s folder shows the most urgent of these colors. A bar at the left marks a session that is open in a tab. Claude Code and Codex sessions sit side by side, each read from the agent’s own files.\n\n\nAll Sessions\nAll Sessions (⌘L) lists every project and session with the day it was last used. This page provides plenty of ways of easily managing your existing sessions.",
     "crumbs": [
       "<span id='nav-version' class='nav-version'>Releases</span>",
       "Main System",

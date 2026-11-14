@@ -4,7 +4,7 @@ Main panel of Emaki, with high-quality rendering and smooth UX.
 
 ## Transcript
 
-Chat transcripts are well-rendered with high-quality interface. Agent tool calls are stacked to release reading pressure. You can expand them and even get summaries of each tool call to understand what happened. Artifacts, background jobs, subagents, Q&A sessions are all properly taken care of with smooth UI.
+Chat transcripts are well-rendered with high-quality interface. Agent tool calls are stacked to release reading pressure. You can expand them and even get summaries of each tool call to understand what happened. Q&A sessions are properly taken care of with smooth UI. Artifacts, background jobs, subagents and important notifications are shown at the bottom right of the composer, and you can toggle them as you need.
 
 ## Margins
 
@@ -12,7 +12,7 @@ The chat’s two margins each hold a seam, a line down the margin with a knob ha
 
 ## Composer
 
-Attach files by pasting, dropping, or the + button. **`@`** picks a file or folder from the project, and **`/`** lists the agent’s slash commands and skills. A message that starts with **`!`** runs as a shell command in the project’s folder, and the chat shows it with its output. Spelling and grammar are checked as you type.
+Attach files by pasting, dropping, or the + button. **`@`** picks a file or folder from the project, and **`/`** lists the agent’s slash commands and skills. A message that starts with **`!`** runs as a shell command in the project’s folder, and the chat shows it with its output. Spelling and grammar are checked as you type. The composer supports real-time markdown rendering and common keyboard shortcuts.
 
 We proudly recommend using [Kotoba](https://github.com/alkaline-software/kotoba) as your dictation app on Emaki or any other composer on your machine. It supports light-weighted models for voice-to-text dictation and post-processing.
 

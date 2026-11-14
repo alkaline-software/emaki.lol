@@ -52,12 +52,14 @@ The sidebar and the chat are always there. Two panels are hidden until you need 
 
 Everything Emaki keeps is in `~/.emaki`:
 
-|               |                                                 |
-|---------------|-------------------------------------------------|
-| `archive/`    | every Claude Code session, copied byte for byte |
-| `logs/`       | each session rendered as markdown               |
-| `search.db`   | the full-text index                             |
-| `config.json` | your settings                                   |
+|  |  |
+|----|----|
+| `archive/` | every Claude Code session, copied byte for byte |
+| `logs/` | each session rendered as markdown |
+| `search.db` | the full-text index |
+| `config.json` | your settings |
+| `remote/` | sessions copied from your [connected computers](../docs/settings.llms.md#connected-devices) |
+| `remote-files/` | files you opened on them |
 
 Codex has its own archiving system, so `archive/` only stores Claude Code sessions.
 

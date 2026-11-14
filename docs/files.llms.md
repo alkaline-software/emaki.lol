@@ -1,14 +1,14 @@
 # Files Panel ⌘⇧F
 
-The file tree, file preview and editing, and git.
+The file tree, file view and editing, and git.
 
 ## File tree
 
-The Files Panel opens from the button at the left end of the strip over the chat, and stays open or closed across launches. The file tree is shown with its root folder expanded. Folders and files are drawn with [Catppuccin’s file icons](https://catppuccin.com). If the project is a git repository, its changes are shown on the folders and files. The file tree supports mouse dragging and common keyboard shortcuts.
+The Files Panel opens from the button at the left end of the strip over the chat, and stays open or closed across launches. The file tree is shown with its root folder expanded. Folders and files are drawn with [Catppuccin’s file icons](https://catppuccin.com). If the project is a git repository, its changes are shown on the folders and files. The file tree supports mouse dragging and common keyboard shortcuts. Folders stick to the top as you scroll.
 
-## File preview & editing
+## File view & editing
 
-Click a file to open it in a pane between the tree and the chat; click it again to close it. Markdown, Quarto, LaTeX and Typst documents open rendered, and ⌘⇧V switches a file between its rendered and raw views. The enlarge button gives the pane the chat’s room. You can use common keyboard shortcuts to undo, redo, save, and close.
+Click a file to open it in a pane between the tree and the chat; click it again to close it. Markdown, Quarto, LaTeX and Typst documents open in the rendered editor, where you edit them as they read. Other documents, such as HTML, PDF and Word, open in a preview. ⌘⇧V switches a file to the raw editor and back. The enlarge button gives the pane the chat’s room. You can use common keyboard shortcuts to undo, redo, save, and close.
 
 Emaki supports format on save for common languages. It is off by default and can be turned on in [Settings](../docs/settings.llms.md): tick all the languages, or only the ones you want.
 

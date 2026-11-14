@@ -50,9 +50,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-1562915e16a7bb36b6a85835f6e478fd.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-1b830ce677c95578a1caf1c3beeee7fd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-19a1044d2ca03b64fbec6b11e2336902.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-1b830ce677c95578a1caf1c3beeee7fd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-0cd6c0e07e440331b865c390fd0da181.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-95820a60681905cf0a34605b30d78814.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-0cd6c0e07e440331b865c390fd0da181.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -479,25 +479,25 @@ ul.task-list li input[type="checkbox"] {
 <p>Two pages, Fonts and Size, chosen at the right of the section’s name.</p>
 <section id="fonts" class="level3">
 <h3 class="anchored" data-anchor-id="fonts">Fonts</h3>
-<div class="fig settings-fig" data-figure="settings-fonts" aria-label="The Fonts page of the Text section of Emaki's settings: the chat's font, four serif faces and four sans serif faces, each a tile with its name, and the monospace font, four faces. A click on a tile chooses it.">
+<div class="fig settings-fig" data-figure="settings-fonts" aria-label="The Fonts page of the Text section of Emaki's settings, three groups in columns of five: the chat's font, four serif faces over four sans serif faces beside a tall Custom tile; the CJK font, Auto, Noto Serif SC, Noto Sans SC and LXGW WenKai, each sampled by its name in Chinese, and Custom; the monospace font, four faces and Custom. A click on a tile chooses it.">
 
 </div>
-<p>Eight faces for the chat, four serif and four sans serif, and four monospace faces for code and the terminals.</p>
+<p>Eight faces for the chat, four for CJK text, and four monospace faces for code and the terminals. Custom uses any font on your computer.</p>
 </section>
 <section id="size" class="level3">
 <h3 class="anchored" data-anchor-id="size">Size</h3>
-<div class="fig settings-fig" data-figure="settings-size" aria-label="The Size page of the Text section of Emaki's settings: Small, Medium, Large or Custom, and under it the size of the conversation, the composer, the file preview, the file editor and the terminal, each with a step down and a step up. A click picks a preset; under Custom the steps change a size.">
+<div class="fig settings-fig" data-figure="settings-size" aria-label="The Size page of the Text section of Emaki's settings: Small, Medium, Large or Custom, and under it the size of the conversation, the composer, the rendered editor, the raw editor and the terminal, each with a step down and a step up. A click picks a preset; under Custom the steps change a size.">
 
 </div>
-<p>Small, Medium and Large set every place at once. Custom is your own set: each place’s size, stepped a point at a time or typed.</p>
+<p>Small, Medium and Large set every place at once. Custom is your own set: each place’s size, stepped a point at a time or typed. The rendered editor’s size is the previews’ too.</p>
 </section>
 </section>
 <section id="conversation" class="level2 i-book-open">
 <h2 class="i-book-open anchored" data-anchor-id="conversation">Conversation</h2>
-<div class="fig settings-fig" data-figure="settings-conversation" aria-label="The Conversation section of Emaki's settings: under Agent, folding runs of tool calls and the Outline; under Composer, the key that sends, ⌘↩ or ↩, and auto-capitalization; under Spelling and grammar, the check as you type and its language. A click flips a switch or picks a choice; with the check off, the languages are dimmed.">
+<div class="fig settings-fig" data-figure="settings-conversation" aria-label="The Conversation section of Emaki's settings: under Agent, folding runs of tool calls and the Outline; under Composer, the key that sends, ⌘↩ or ↩, auto-capitalization and live markdown; under Spelling and grammar, the check as you type and its language. A click flips a switch or picks a choice; with the check off, the languages are dimmed.">
 
 </div>
-<p>How the chat draws the agent’s work: three or more tool calls in a row fold into one row that opens, and the <a href="../docs/outline.html">Outline</a> can be turned off. Then the composer: the key that sends, auto-capitalization, and spelling and grammar checked as you type, in US or UK English, Spanish, French or German. Spanish, French and German are checked on a Mac only.</p>
+<p>How the chat draws the agent’s work: three or more tool calls in a row fold into one row that opens, and the <a href="../docs/outline.html">Outline</a> can be turned off. Then the composer: the key that sends, auto-capitalization, live markdown, and spelling and grammar checked as you type, in US or UK English, Spanish, French or German. Spanish, French and German are checked on a Mac only.</p>
 </section>
 <section id="model-calls" class="level2 i-sparkles">
 <h2 class="i-sparkles anchored" data-anchor-id="model-calls">Model calls</h2>
@@ -522,10 +522,10 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="files" class="level2 i-tree-view">
 <h2 class="i-tree-view anchored" data-anchor-id="files">Files</h2>
-<div class="fig settings-fig" data-figure="settings-files" aria-label="The Files section of Emaki's settings: whether a file opens as it reads or as it is written, format on save, and the languages it covers, each ticked, with its formatter. A click picks a choice or ticks a language; with format on save off, the languages are dimmed.">
+<div class="fig settings-fig" data-figure="settings-files" aria-label="The Files section of Emaki's settings: whether a file opens rendered or in the raw editor, format on save, and the languages it covers, each ticked, with its formatter. A click picks a choice or ticks a language; with format on save off, the languages are dimmed.">
 
 </div>
-<p>Whether a file opens as it reads or as it is written, and format on save with the languages it covers, each with its own formatter.</p>
+<p>Whether a file opens rendered or in the raw editor, and format on save with the languages it covers, each with its own formatter.</p>
 </section>
 <section id="terminal" class="level2 i-terminal">
 <h2 class="i-terminal anchored" data-anchor-id="terminal">Terminal</h2>
@@ -536,7 +536,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="connected-devices" class="level2 i-devices">
 <h2 class="i-devices anchored" data-anchor-id="connected-devices">Connected Devices</h2>
-<div class="fig settings-fig" data-figure="settings-remote" aria-label="The Connected Devices section of Emaki's settings, in two sections. This computer → Target computer: under New connection, with Connect at its head, the target address and the target password; under Saved computers, an entry for each computer. A MacBook Air, its Claude Code mark ticked green and its Codex mark amber, with a pencil to rename it and a bin to remove it, and under it two addresses: Local network, me@MacBook-Air.local, its Connect pale, and Remote, me@macbook-air, connected, with Disconnect. A Linux box with one address on the local network, disconnected, with Connect. Each address has a round cross that removes it. Other computer → This computer: Remote Login on with Open Sharing Settings, and this computer's address with a copy button. A click presses a button.">
+<div class="fig settings-fig" data-figure="settings-remote" aria-label="The Connected Devices section of Emaki's settings, in two sections. This computer → Target computer: under New connection, with Connect at its head, the target address and the target password; under Saved computers, an entry for each computer. A MacBook Air, its Claude Code mark ticked green and its Codex mark amber on a Sign in pill, with a pencil to rename it and a bin to remove it, and under it two addresses: Local network, me@MacBook-Air.local, its Connect pale, and Remote, me@macbook-air, connected, with Disconnect. A Linux box with one address on the local network, disconnected, with Connect. Each address has a round cross that removes it. Other computer → This computer: Remote Login on with Open Sharing Settings, and this computer's address with a copy button. A click presses a button.">
 
 </div>
 <p>In this section, you can connect to another computer in your local network, or other networks (which needs online service like <a href="https://tailscale.com">Tailscale</a>).</p>
@@ -551,16 +551,16 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="sign-in" class="level3 start">
 <h3 class="anchored" data-anchor-id="sign-in">Sign in</h3>
-<p>The sign-in credentials don’t work cross-computer, so you need to sign in from your controlling computer. Click on the agent icon(s) to sign in.</p>
+<p>The sign-in credentials don’t work cross-computer, so you need to sign in from your controlling computer. Click Sign in beside an agent’s mark.</p>
 </section>
 </div>
 </section>
 <section id="shortcuts" class="level2 i-keyboard">
 <h2 class="i-keyboard anchored" data-anchor-id="shortcuts">Shortcuts</h2>
-<div class="fig settings-fig" data-figure="settings-shortcuts" aria-label="The Shortcuts section of Emaki's settings: the window's commands in two groups, Sessions and Panels, or the file editor's, Lines and Text, chosen at the right of the section's name; each command its name and its keys on caps, two to a row. A click on a command's keys waits for new ones, and a click elsewhere keeps them.">
+<div class="fig settings-fig" data-figure="settings-shortcuts" aria-label="The Shortcuts section of Emaki's settings: the window's commands in two groups, Sessions and Panels, or the raw editor's, Lines and Text, chosen at the right of the section's name; each command its name and its keys on caps, two to a row. A click on a command's keys waits for new ones, and a click elsewhere keeps them.">
 
 </div>
-<p>The keys of the window’s commands, in two lists: the window’s, Sessions and Panels, and the file editor’s Sublime Text commands, Lines and Text. Click a command’s keys and press new ones; a key already taken is refused, and a button puts a changed key back. The <a href="../docs/keys.html">Keys</a> page lists them as they begin.</p>
+<p>The keys of the window’s commands, in two lists: the window’s, Sessions and Panels, and the raw editor’s Sublime Text commands, Lines and Text. Click a command’s keys and press new ones; a key already taken is refused, and a button puts a changed key back. The <a href="../docs/keys.html">Keys</a> page lists them as they begin.</p>
 </section>
 <section id="about" class="level2 i-info">
 <h2 class="i-info anchored" data-anchor-id="about">About</h2>

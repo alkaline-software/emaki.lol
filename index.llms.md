@@ -64,7 +64,7 @@ Two panels stand at the chat’s sides, hidden until you need them, since they a
 
 ### [Files](docs/files.llms.md) ⌘⇧F
 
-The Files Panel provides a file tree with Catppuccin icons. You can live-render, preview, and edit your files. Most major file types are supported. With the git system, you can view git changes on the file tree and trigger git commands with an intuitive UI.
+The Files Panel provides a file tree with Catppuccin icons. You can edit documents as they render, preview other files, and edit code. Most major file types are supported. With the git system, you can view git changes on the file tree and trigger git commands with an intuitive UI.
 
 ### [Terminal](docs/terminal.llms.md) ⌘⇧S
 

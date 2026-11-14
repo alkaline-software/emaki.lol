@@ -12,15 +12,15 @@ Two pages, Fonts and Size, chosen at the right of the section’s name.
 
 ### Fonts
 
-Eight faces for the chat, four serif and four sans serif, and four monospace faces for code and the terminals.
+Eight faces for the chat, four for CJK text, and four monospace faces for code and the terminals. Custom uses any font on your computer.
 
 ### Size
 
-Small, Medium and Large set every place at once. Custom is your own set: each place’s size, stepped a point at a time or typed.
+Small, Medium and Large set every place at once. Custom is your own set: each place’s size, stepped a point at a time or typed. The rendered editor’s size is the previews’ too.
 
 ## Conversation
 
-How the chat draws the agent’s work: three or more tool calls in a row fold into one row that opens, and the [Outline](../docs/outline.llms.md) can be turned off. Then the composer: the key that sends, auto-capitalization, and spelling and grammar checked as you type, in US or UK English, Spanish, French or German. Spanish, French and German are checked on a Mac only.
+How the chat draws the agent’s work: three or more tool calls in a row fold into one row that opens, and the [Outline](../docs/outline.llms.md) can be turned off. Then the composer: the key that sends, auto-capitalization, live markdown, and spelling and grammar checked as you type, in US or UK English, Spanish, French or German. Spanish, French and German are checked on a Mac only.
 
 ## Model calls
 
@@ -36,7 +36,7 @@ Which side each goes on: the [Files Panel](../docs/files.llms.md) and the [Termi
 
 ## Files
 
-Whether a file opens as it reads or as it is written, and format on save with the languages it covers, each with its own formatter.
+Whether a file opens rendered or in the raw editor, and format on save with the languages it covers, each with its own formatter.
 
 ## Terminal
 
@@ -56,11 +56,11 @@ Fill in the address and password of the target computer.
 
 ### Sign in
 
-The sign-in credentials don’t work cross-computer, so you need to sign in from your controlling computer. Click on the agent icon(s) to sign in.
+The sign-in credentials don’t work cross-computer, so you need to sign in from your controlling computer. Click Sign in beside an agent’s mark.
 
 ## Shortcuts
 
-The keys of the window’s commands, in two lists: the window’s, Sessions and Panels, and the file editor’s Sublime Text commands, Lines and Text. Click a command’s keys and press new ones; a key already taken is refused, and a button puts a changed key back. The [Keys](../docs/keys.llms.md) page lists them as they begin.
+The keys of the window’s commands, in two lists: the window’s, Sessions and Panels, and the raw editor’s Sublime Text commands, Lines and Text. Click a command’s keys and press new ones; a key already taken is refused, and a button puts a changed key back. The [Keys](../docs/keys.llms.md) page lists them as they begin.
 
 ## About
 

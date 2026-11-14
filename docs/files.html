@@ -50,9 +50,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-1562915e16a7bb36b6a85835f6e478fd.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-1b830ce677c95578a1caf1c3beeee7fd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-19a1044d2ca03b64fbec6b11e2336902.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-1b830ce677c95578a1caf1c3beeee7fd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-0cd6c0e07e440331b865c390fd0da181.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-95820a60681905cf0a34605b30d78814.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-0cd6c0e07e440331b865c390fd0da181.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Files Panel">
-<meta property="og:description" content="The file tree, file preview and editing, and git.">
+<meta property="og:description" content="The file tree, file view and editing, and git.">
 <meta property="og:image" content="https://emaki.lol/assets/emaki-icon.png">
 <meta property="og:site_name" content="emaki.lol">
 <meta property="og:image:height" content="512">
@@ -426,7 +426,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#file-tree" id="toc-file-tree" class="nav-link active" data-scroll-target="#file-tree">File tree</a></li>
-  <li><a href="#file-preview-editing" id="toc-file-preview-editing" class="nav-link" data-scroll-target="#file-preview-editing">File preview &amp; editing</a></li>
+  <li><a href="#file-view-editing" id="toc-file-view-editing" class="nav-link" data-scroll-target="#file-view-editing">File view &amp; editing</a></li>
   <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">Git</a></li>
   </ul>
 </nav>
@@ -438,7 +438,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title d-none d-lg-block">Files Panel <kbd>⌘⇧F</kbd></h1>
-<p class="subtitle lead">The file tree, file preview and editing, and git.</p>
+<p class="subtitle lead">The file tree, file view and editing, and git.</p>
 </div>
 
 
@@ -462,11 +462,11 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="file-tree" class="level2 i-tree-view">
 <h2 class="i-tree-view anchored" data-anchor-id="file-tree">File tree</h2>
-<p>The Files Panel opens from the button at the left end of the strip over the chat, and stays open or closed across launches. The file tree is shown with its root folder expanded. Folders and files are drawn with <a href="https://catppuccin.com">Catppuccin’s file icons</a>. If the project is a git repository, its changes are shown on the folders and files. The file tree supports mouse dragging and common keyboard shortcuts.</p>
+<p>The Files Panel opens from the button at the left end of the strip over the chat, and stays open or closed across launches. The file tree is shown with its root folder expanded. Folders and files are drawn with <a href="https://catppuccin.com">Catppuccin’s file icons</a>. If the project is a git repository, its changes are shown on the folders and files. The file tree supports mouse dragging and common keyboard shortcuts. Folders stick to the top as you scroll.</p>
 </section>
-<section id="file-preview-editing" class="level2 i-file-text">
-<h2 class="i-file-text anchored" data-anchor-id="file-preview-editing">File preview &amp; editing</h2>
-<p>Click a file to open it in a pane between the tree and the chat; click it again to close it. Markdown, Quarto, LaTeX and Typst documents open rendered, and <kbd>⌘⇧V</kbd> switches a file between its rendered and raw views. The enlarge button gives the pane the chat’s room. You can use common keyboard shortcuts to undo, redo, save, and close.</p>
+<section id="file-view-editing" class="level2 i-file-text">
+<h2 class="i-file-text anchored" data-anchor-id="file-view-editing">File view &amp; editing</h2>
+<p>Click a file to open it in a pane between the tree and the chat; click it again to close it. Markdown, Quarto, LaTeX and Typst documents open in the rendered editor, where you edit them as they read. Other documents, such as HTML, PDF and Word, open in a preview. <kbd>⌘⇧V</kbd> switches a file to the raw editor and back. The enlarge button gives the pane the chat’s room. You can use common keyboard shortcuts to undo, redo, save, and close.</p>
 <p>Emaki supports format on save for common languages. It is off by default and can be turned on in <a href="../docs/settings.html">Settings</a>: tick all the languages, or only the ones you want.</p>
 <p>Supported file types:</p>
 <div class="types">

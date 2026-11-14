@@ -16,7 +16,7 @@ Hold ⇧ with ⌘, and the letter shows or hides something beside the chat, or s
 | ⌘⇧O | the [Outline](../docs/outline.llms.md)’s drawer |
 | ⌘⇧L | the layout: the [Agent CLI](../docs/agent-cli.llms.md) in the chat’s place, or the chat |
 | ⌘⇧G | git’s [Changes](../docs/files.llms.md#git) sheet |
-| ⌘⇧V | a file in the [Files Panel](../docs/files.llms.md) as it reads, or as it is written |
+| ⌘⇧V | [a file](../docs/files.llms.md#file-view-editing), rendered or in the raw editor |
 
 ## Pages
 
@@ -50,6 +50,6 @@ In the terminal, ⌘T or ⌘N opens a tab, ⌘W closes it and ⌘K clears the sc
 
 ## Your own
 
-[Settings, Shortcuts](../docs/settings.llms.md#shortcuts), changes the keys of the window’s commands above, and of the file editor’s Sublime Text commands. A key already taken is refused, and a button puts a changed key back.
+[Settings, Shortcuts](../docs/settings.llms.md#shortcuts), changes the keys of the window’s commands above, and of the raw editor’s Sublime Text commands. A key already taken is refused, and a button puts a changed key back.
 
 Back to top
