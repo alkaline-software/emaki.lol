@@ -90,6 +90,8 @@ Everything Emaki keeps is in `~/.emaki`:
 | `logs/` | each session rendered as markdown |
 | `search.db` | the full-text index |
 | `config.json` | your settings |
+| `remote/` | sessions copied from your [connected computers](settings.qmd#connected-devices) |
+| `remote-files/` | files you opened on them |
 
 : {.table-keys tbl-colwidths="[24,76]"}
 

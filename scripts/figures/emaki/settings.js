@@ -27,7 +27,7 @@ import { icon, value } from "./composer.js";
  * Leaving keeps what was set. The pointer turns the pane a little, as
  * every figure on the docs pages (window.js, SLIGHT).
  *
- * A section of two pages (Shortcuts: the window's commands and the file
+ * A section of two pages (Shortcuts: the window's commands and the raw
  * editor's) draws both on one pane, each tagged with its page, and shows
  * the one its control at the head chooses.
  *
@@ -204,6 +204,23 @@ function copyable(parent, base, yc, value) {
   });
 }
 
+/** An agent's mark that can be signed in, as the app draws it on a connected computer: a pill, the mark with its warning and then Sign in; it flashes when pressed. */
+function signIn(parent, u, yc, agent) {
+  return control(parent, (c, add) => {
+    const p = pen(), u0 = u - 5, u1 = u + 27;
+    ring(p, u0, yc - 5.5, u1, yc + 5.5, 5.5, "emk-press");
+    ring(p, u0, yc - 5.5, u1, yc + 5.5, 5.5, "nf emk-btnline");
+    mark(p, agent, u, yc, 4.6, 1.6);
+    p.dot(u + 2.6, -(yc - 2.6), 1.5, "dot emk-fill-ochre", 1.8);
+    text(p, u + 5.5, yc, "Sign in", SS, "emk-text emk-lit", 1.6);
+    const [wash] = add(p);
+    const fl = press();
+    c.springs.push(fl);
+    c.frame = () => { wash.el.style.opacity = fl.x; };
+    c.hits.push({ r: box(u0, yc - 5.5, u1, yc + 5.5), act: () => { flash(fl); return "Signing in to " + (agent === "claude" ? "Claude Code" : "Codex"); } });
+  });
+}
+
 /** A round button with its icon alone, as the app's bin, pencil and cross: it flashes when pressed; `off`, pale and pressing nothing. */
 function round(parent, u, yc, glyph, word, off = false) {
   return control(parent, (c, add) => {
@@ -330,15 +347,23 @@ function dropdown(parent, yc, kind, lists, which, start = 0) {
   });
 }
 
-/** A face's tile: its sample over its name; the one chosen washed, its edge in the accent. */
-function faceTile(parent, u0, y0, u1, y1, sample, cls, name, i, pick) {
+/**
+ * A face's tile: its sample over its name, both about its middle; the one
+ * chosen washed, its edge in the accent. `own` is the custom tile, which
+ * opens the system's faces in the app: up and down chevrons at its right.
+ */
+function faceTile(parent, u0, y0, u1, y1, sample, cls, name, i, pick, own = false) {
   return control(parent, (c, add) => {
-    const p = pen();
+    const p = pen(), yc = (y0 + y1) / 2;
     ring(p, u0, y0, u1, y1, 3, "emk-tilewash");
     ring(p, u0, y0, u1, y1, 3, "nf emk-tileline");
     ring(p, u0, y0, u1, y1, 3, "nf emk-acc", 1.3);
-    text(p, u0 + 5, y0 + 10, sample, cls === "emk-aa-mono" ? 6.2 : 9, "emk-text " + cls, 1.6);
-    text(p, u0 + 5, y1 - 6, name, SS, "emk-text", 1.6);
+    text(p, u0 + 5, yc - 4.5, sample, cls === "emk-aa-mono" ? 5.4 : cls.includes("cjk") ? 7.2 : 9, "emk-text " + cls.replace(" cjk", ""), 1.6);
+    text(p, u0 + 5, yc + 8.5, name, SS, "emk-text", 1.6);
+    if (own) {
+      line(p, [[u1 - 7, yc + 7.5], [u1 - 5.5, yc + 6], [u1 - 4, yc + 7.5]], "nf emk-ico", 1.6);
+      line(p, [[u1 - 7, yc + 9.5], [u1 - 5.5, yc + 11], [u1 - 4, yc + 9.5]], "nf emk-ico", 1.6);
+    }
     const [wash, , edge, , label] = add(p);
     const amt = spring(pick.at === i ? 1 : 0, { k: 200, c: 24, eps: 0.002 });
     c.springs.push(amt);
@@ -391,7 +416,7 @@ function pane() {
   return api;
 }
 
-/** The window's commands and the file editor's, as Settings, Shortcuts lists them, with their keys as the Mac has them (shortcuts.rs). */
+/** The window's commands and the raw editor's, as Settings, Shortcuts lists them, with their keys as the Mac has them (shortcuts.rs). */
 const SHORTCUTS = [
   [
     ["Sessions", [["Search", "⌘K"], ["New Session", "⌘N"], ["New Session Here", "⌘T"], ["Choose Folder…", "⌘O"], ["New Branch…", "⌘⇧N"], ["All Sessions", "⌘L"], ["Agents", "⌘E"], ["Reopen Tab", "⌘⇧T"], ["Refresh", "⌘R"]]],
@@ -408,9 +433,9 @@ const HELPERS = {
   codex: [["Default (GPT-6-Luna)", ""]],
 };
 
-/** Text Size's presets, as the app's (`TextSizes`): conversation, composer, file preview, file editor, terminal. */
+/** Text Size's presets, as the app's (`TextSizes`): conversation, composer, rendered editor, raw editor, terminal. */
 const PRESETS = [[15, 13, 14, 12, 12], [16, 14, 15, 13, 13], [18, 16, 17, 15, 15]];
-const PLACES = ["Conversation", "Composer", "File preview", "File editor", "Terminal"];
+const PLACES = ["Conversation", "Composer", "Rendered editor", "Raw editor", "Terminal"];
 const ACCENTS = [["Periwinkle", "accent"], ["Orchid", "mauve"], ["Rose", "rose"], ["Amber", "ochre"], ["Moss", "sage"], ["Jade", "teal"], ["Teal", "slate"]];
 /** New sessions: each agent's lists, the first the value shown at rest. The model and the effort start at the agent's default. */
 const AGENT_LISTS = {
@@ -464,14 +489,30 @@ const SECTIONS = {
     pn.head("Power");
     pn.card([[RH, "Keep the display on while a session works", null, (yc) => toggle(g, yc, false)]]);
   },
+  /**
+   * Fonts: three groups, the chat's, the CJK font behind it and the
+   * monospace font, each in columns of five with Custom the fifth: the
+   * chat's two rows, serif and sans serif, beside one tall custom tile. A
+   * CJK tile's sample is its name in Chinese, Auto's 汉字.
+   */
   fonts(pn, g) {
-    const chat = { at: 0 }, mono = { at: 0 }, tw = (W - 2 * M - 14 - 12) / 4;
-    const tiles = (y0, faces, cls, sample, pick, from = 0) => faces.map((name, i) => faceTile(g, M + 7 + i * (tw + 4), y0, M + 7 + i * (tw + 4) + tw, y0 + 29, sample, cls, name, from + i, pick));
+    const chat = { at: 0 }, cjk = { at: 0 }, mono = { at: 0 }, tw = (W - 2 * M - 14 - 16) / 5;
+    const col = (i) => M + 7 + i * (tw + 4);
+    // A face is its name, or [name, sample, class] where those are its own.
+    const tiles = (y0, faces, cls, sample, pick, from = 0) => faces.map((face, i) => {
+      const [name, own = sample, oc = cls] = Array.isArray(face) ? face : [face];
+      return faceTile(g, col(i), y0, col(i) + tw, y0 + 29, own, oc, name, from + i, pick);
+    });
+    const custom = (y0, y1, cls, sample, pick) => faceTile(g, col(4), y0, col(4) + tw, y1, sample, cls, "Custom", 9, pick, true);
     pn.head("Chat font");
     const top = pn.y;
     pn.card([[93, null, null, null]]);
     text(pn.base, L, top + 8, "Serif", SS, "emk-text", 1);
     text(pn.base, L, top + 53, "Sans serif", SS, "emk-text", 1);
+    pn.gap(4);
+    pn.head("CJK font");
+    const ctop = pn.y;
+    pn.card([[43, null, null, null]]);
     pn.gap(4);
     pn.head("Monospace font");
     const mtop = pn.y;
@@ -479,7 +520,11 @@ const SECTIONS = {
     pn.rows.push({ make: () => [
       ...tiles(top + 14, ["Source Serif", "Newsreader", "Literata", "Lora"], "emk-aa", "Ag", chat),
       ...tiles(top + 59, ["Inter", "IBM Plex Sans", "Source Sans", "Geist"], "emk-aa-sans", "Ag", chat, 4),
+      custom(top + 14, top + 88, "emk-aa", "Ag", chat),
+      ...tiles(ctop + 7, [["Auto", "汉字"], ["Noto Serif SC", "思源宋体"], ["Noto Sans SC", "思源黑体", "emk-aa-sans cjk"], ["LXGW WenKai", "霞鹜文楷"]], "emk-aa cjk", "", cjk),
+      custom(ctop + 7, ctop + 36, "emk-aa cjk", "汉字", cjk),
       ...tiles(mtop + 7, ["JetBrains Mono", "Monaco", "Maple Mono", "Geist Mono"], "emk-aa-mono", "fn(0) -> 1", mono),
+      custom(mtop + 7, mtop + 36, "emk-aa-mono", "fn(0) -> 1", mono),
     ] });
   },
   size(pn, g) {
@@ -582,7 +627,7 @@ const SECTIONS = {
     ]);
   },
   /**
-   * Shortcuts: the window's commands and the file editor's, two pages
+   * Shortcuts: the window's commands and the raw editor's, two pages
    * chosen at the head's right, each in two groups, a card of rows, two
    * commands to a row parted by a hairline, the name at the left and the
    * keys at the right on caps. A click on a command's keys waits for new
@@ -633,7 +678,7 @@ const SECTIONS = {
     pn.y = Math.max(...ends);
     pn.miss.push(() => { waiting = null; });
     pn.gone.push(() => { waiting = null; });
-    pn.rows.push({ make: () => choice(g, R - 76, R, top + 5, ["Window", "File editor"], page, (i) => { page = i; pn.current = i; waiting = null; }, 11) });
+    pn.rows.push({ make: () => choice(g, R - 76, R, top + 5, ["Window", "Raw editor"], page, (i) => { page = i; pn.current = i; waiting = null; }, 11) });
   },
   composer(pn, g) {
     let enter = false, check = true;
@@ -649,6 +694,7 @@ const SECTIONS = {
         return [note, choice(g, C0, R, yc, ["⌘↩", "↩"], 0, (i) => { enter = i === 1; })];
       }],
       [RH, "Auto-capitalization", null, (yc) => toggle(g, yc, true)],
+      [RH, "Live markdown", null, (yc) => toggle(g, yc, true)],
     ]);
     pn.gap(4);
     pn.head("Spelling and grammar");
@@ -744,12 +790,21 @@ const SECTIONS = {
       ring(p, L - 4, yh - 6.5, L + 9, yh + 6.5, 2.6, "emk-track");
       computer(p, L + 2.5, yh - 0.6, on ? "sage" : "plate");
       text(p, IN, yh, name, TS, "emk-text emk-row", 1);
-      agents.forEach(([a, signed], k) => {
-        const u = IN + 4 + nameW + k * 8;
+      // A mark is a status; one that can be signed in, its computer
+      // connected, is a pill, the mark and then Sign in, the marks after it
+      // moved over.
+      const made = [round(g, R - 17, yh, "pencil", "Rename"), round(g, R - 5, yh, "bin", "Remove this computer?")];
+      let u = IN + 4 + nameW;
+      agents.forEach(([a, signed]) => {
+        if (on && !signed) {
+          made.push(signIn(g, u + 4, yh, a));
+          u += 38;
+          return;
+        }
         mark(p, a, u, yh, 4.6);
         p.dot(u + 2.6, -(yh - 2.6), 1.5, "dot emk-fill-" + (signed ? "sage" : "ochre"), 1.4);
+        u += 8;
       });
-      const made = [round(g, R - 17, yh, "pencil", "Rename"), round(g, R - 5, yh, "bin", "Remove this computer?")];
       ways.forEach((w, k) => {
         const yc = top + HEAD + WAY * k + WAY / 2;
         hl(p, IN, R, yc - WAY / 2);

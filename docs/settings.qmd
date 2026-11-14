@@ -17,24 +17,24 @@ Two pages, Fonts and Size, chosen at the right of the section's name.
 
 ### Fonts
 
-::: {.fig .settings-fig data-figure="settings-fonts" aria-label="The Fonts page of the Text section of Emaki's settings: the chat's font, four serif faces and four sans serif faces, each a tile with its name, and the monospace font, four faces. A click on a tile chooses it."}
+::: {.fig .settings-fig data-figure="settings-fonts" aria-label="The Fonts page of the Text section of Emaki's settings, three groups in columns of five: the chat's font, four serif faces over four sans serif faces beside a tall Custom tile; the CJK font, Auto, Noto Serif SC, Noto Sans SC and LXGW WenKai, each sampled by its name in Chinese, and Custom; the monospace font, four faces and Custom. A click on a tile chooses it."}
 :::
 
-Eight faces for the chat, four serif and four sans serif, and four monospace faces for code and the terminals.
+Eight faces for the chat, four for CJK text, and four monospace faces for code and the terminals. Custom uses any font on your computer.
 
 ### Size
 
-::: {.fig .settings-fig data-figure="settings-size" aria-label="The Size page of the Text section of Emaki's settings: Small, Medium, Large or Custom, and under it the size of the conversation, the composer, the file preview, the file editor and the terminal, each with a step down and a step up. A click picks a preset; under Custom the steps change a size."}
+::: {.fig .settings-fig data-figure="settings-size" aria-label="The Size page of the Text section of Emaki's settings: Small, Medium, Large or Custom, and under it the size of the conversation, the composer, the rendered editor, the raw editor and the terminal, each with a step down and a step up. A click picks a preset; under Custom the steps change a size."}
 :::
 
-Small, Medium and Large set every place at once. Custom is your own set: each place's size, stepped a point at a time or typed.
+Small, Medium and Large set every place at once. Custom is your own set: each place's size, stepped a point at a time or typed. The rendered editor's size is the previews' too.
 
 ## Conversation {.i-book-open}
 
-::: {.fig .settings-fig data-figure="settings-conversation" aria-label="The Conversation section of Emaki's settings: under Agent, folding runs of tool calls and the Outline; under Composer, the key that sends, ⌘↩ or ↩, and auto-capitalization; under Spelling and grammar, the check as you type and its language. A click flips a switch or picks a choice; with the check off, the languages are dimmed."}
+::: {.fig .settings-fig data-figure="settings-conversation" aria-label="The Conversation section of Emaki's settings: under Agent, folding runs of tool calls and the Outline; under Composer, the key that sends, ⌘↩ or ↩, auto-capitalization and live markdown; under Spelling and grammar, the check as you type and its language. A click flips a switch or picks a choice; with the check off, the languages are dimmed."}
 :::
 
-How the chat draws the agent's work: three or more tool calls in a row fold into one row that opens, and the [Outline](outline.qmd) can be turned off. Then the composer: the key that sends, auto-capitalization, and spelling and grammar checked as you type, in US or UK English, Spanish, French or German. Spanish, French and German are checked on a Mac only.
+How the chat draws the agent's work: three or more tool calls in a row fold into one row that opens, and the [Outline](outline.qmd) can be turned off. Then the composer: the key that sends, auto-capitalization, live markdown, and spelling and grammar checked as you type, in US or UK English, Spanish, French or German. Spanish, French and German are checked on a Mac only.
 
 ## Model calls {.i-sparkles}
 
@@ -59,10 +59,10 @@ Which side each goes on: the [Files Panel](files.qmd) and the [Terminal Panel](t
 
 ## Files {.i-tree-view}
 
-::: {.fig .settings-fig data-figure="settings-files" aria-label="The Files section of Emaki's settings: whether a file opens as it reads or as it is written, format on save, and the languages it covers, each ticked, with its formatter. A click picks a choice or ticks a language; with format on save off, the languages are dimmed."}
+::: {.fig .settings-fig data-figure="settings-files" aria-label="The Files section of Emaki's settings: whether a file opens rendered or in the raw editor, format on save, and the languages it covers, each ticked, with its formatter. A click picks a choice or ticks a language; with format on save off, the languages are dimmed."}
 :::
 
-Whether a file opens as it reads or as it is written, and format on save with the languages it covers, each with its own formatter.
+Whether a file opens rendered or in the raw editor, and format on save with the languages it covers, each with its own formatter.
 
 ## Terminal {.i-terminal}
 
@@ -73,7 +73,7 @@ The terminal's theme, its cursor, ligatures and copy on select. Its face is set 
 
 ## Connected Devices {.i-devices}
 
-::: {.fig .settings-fig data-figure="settings-remote" aria-label="The Connected Devices section of Emaki's settings, in two sections. This computer → Target computer: under New connection, with Connect at its head, the target address and the target password; under Saved computers, an entry for each computer. A MacBook Air, its Claude Code mark ticked green and its Codex mark amber, with a pencil to rename it and a bin to remove it, and under it two addresses: Local network, me@MacBook-Air.local, its Connect pale, and Remote, me@macbook-air, connected, with Disconnect. A Linux box with one address on the local network, disconnected, with Connect. Each address has a round cross that removes it. Other computer → This computer: Remote Login on with Open Sharing Settings, and this computer's address with a copy button. A click presses a button."}
+::: {.fig .settings-fig data-figure="settings-remote" aria-label="The Connected Devices section of Emaki's settings, in two sections. This computer → Target computer: under New connection, with Connect at its head, the target address and the target password; under Saved computers, an entry for each computer. A MacBook Air, its Claude Code mark ticked green and its Codex mark amber on a Sign in pill, with a pencil to rename it and a bin to remove it, and under it two addresses: Local network, me@MacBook-Air.local, its Connect pale, and Remote, me@macbook-air, connected, with Disconnect. A Linux box with one address on the local network, disconnected, with Connect. Each address has a round cross that removes it. Other computer → This computer: Remote Login on with Open Sharing Settings, and this computer's address with a copy button. A click presses a button."}
 :::
 
 In this section, you can connect to another computer in your local network, or other networks (which needs online service like [Tailscale](https://tailscale.com)).
@@ -95,17 +95,17 @@ Fill in the address and password of the target computer.
 ::: {.start}
 ### Sign in
 
-The sign-in credentials don't work cross-computer, so you need to sign in from your controlling computer. Click on the agent icon(s) to sign in.
+The sign-in credentials don't work cross-computer, so you need to sign in from your controlling computer. Click Sign in beside an agent's mark.
 :::
 
 :::
 
 ## Shortcuts {.i-keyboard}
 
-::: {.fig .settings-fig data-figure="settings-shortcuts" aria-label="The Shortcuts section of Emaki's settings: the window's commands in two groups, Sessions and Panels, or the file editor's, Lines and Text, chosen at the right of the section's name; each command its name and its keys on caps, two to a row. A click on a command's keys waits for new ones, and a click elsewhere keeps them."}
+::: {.fig .settings-fig data-figure="settings-shortcuts" aria-label="The Shortcuts section of Emaki's settings: the window's commands in two groups, Sessions and Panels, or the raw editor's, Lines and Text, chosen at the right of the section's name; each command its name and its keys on caps, two to a row. A click on a command's keys waits for new ones, and a click elsewhere keeps them."}
 :::
 
-The keys of the window's commands, in two lists: the window's, Sessions and Panels, and the file editor's Sublime Text commands, Lines and Text. Click a command's keys and press new ones; a key already taken is refused, and a button puts a changed key back. The [Keys](keys.qmd) page lists them as they begin.
+The keys of the window's commands, in two lists: the window's, Sessions and Panels, and the raw editor's Sublime Text commands, Lines and Text. Click a command's keys and press new ones; a key already taken is refused, and a button puts a changed key back. The [Keys](keys.qmd) page lists them as they begin.
 
 ## About {.i-info}
 

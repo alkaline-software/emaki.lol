@@ -17,7 +17,7 @@ Hold [⇧]{.kbd} with [⌘]{.kbd}, and the letter shows or hides something besid
 | [⌘⇧O]{.kbd} | the [Outline](outline.qmd)'s drawer |
 | [⌘⇧L]{.kbd} | the layout: the [Agent CLI](agent-cli.qmd) in the chat's place, or the chat |
 | [⌘⇧G]{.kbd} | git's [Changes](files.qmd#git) sheet |
-| [⌘⇧V]{.kbd} | a file in the [Files Panel](files.qmd) as it reads, or as it is written |
+| [⌘⇧V]{.kbd} | [a file](files.qmd#file-view-editing), rendered or in the raw editor |
 
 : {.table-keys tbl-colwidths="[38,62]"}
 
@@ -57,4 +57,4 @@ In the terminal, [⌘T]{.kbd} or [⌘N]{.kbd} opens a tab, [⌘W]{.kbd} closes i
 
 ## Your own {.i-settings}
 
-[Settings, Shortcuts](settings.qmd#shortcuts), changes the keys of the window's commands above, and of the file editor's Sublime Text commands. A key already taken is refused, and a button puts a changed key back.
+[Settings, Shortcuts](settings.qmd#shortcuts), changes the keys of the window's commands above, and of the raw editor's Sublime Text commands. A key already taken is refused, and a button puts a changed key back.

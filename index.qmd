@@ -141,7 +141,7 @@ Two panels stand at the chat's sides, hidden until you need them, since they are
 ::: {.fig data-figure="files" aria-label="Emaki's window with the Files Panel standing forward of it at the chat's left: the tree with git's marks. The pointer turns the window and brings the panel further forward."}
 :::
 ### [Files](docs/files.qmd) [⌘⇧F]{.kbd}
-The Files Panel provides a file tree with Catppuccin icons. You can live-render, preview, and edit your files. Most major file types are supported. With the git system, you can view git changes on the file tree and trigger git commands with an intuitive UI.
+The Files Panel provides a file tree with Catppuccin icons. You can edit documents as they render, preview other files, and edit code. Most major file types are supported. With the git system, you can view git changes on the file tree and trigger git commands with an intuitive UI.
 :::
 
 ::: {.card}
